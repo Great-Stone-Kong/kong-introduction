@@ -4315,12 +4315,12 @@ document.querySelectorAll('.mlim').forEach(r=>{
 });
 const PAGES=[...document.querySelectorAll('.page')];
 /* ---------- 버전 · 다운로드 · CHANGELOG ---------- */
-const KONG_INTRO_VERSION="2026.10.08.1a005";
+const KONG_INTRO_VERSION="2026.10.08.6ac73872";
 const VER={
   cur:KONG_INTRO_VERSION,
   dl:'https://drive.google.com/uc?export=download&id=1kk3xhzUhGwl3EfxU6CJYD3gZAAa7R61t',
   check:'https://script.google.com/macros/s/AKfycbyRLwJaxET_mpvuQ75BpZjtOxVrJ13rE3-LYNI6OAAull0WgEhg5BEmCg5RlU3BRBnYNg/exec',
-  changelog:'https://raw.githubusercontent.com/Great-Stone-Kong/kong-introduction/main/CHANGELOG.md'
+  changelog:['https://raw.githubusercontent.com/Great-Stone-Kong/kong-introduction/main/CHANGELOG.md','https://raw.githubusercontent.com/Great-Stone-Kong/kong-introduction/main/Changelog.md']
 };
 let VLATEST=null, VSTATE=VER.check?'checking':'unknown', CL_OK=false, CL_CACHE=null;
 const CL_SVG='<svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M3 .25C1.486.25.25 1.486.25 3V8c0 .414.336.75.75.75s.75-.336.75-.75V3c0-.686.564-1.25 1.25-1.25S4.25 2.314 4.25 3V21C4.25 22.514 5.486 23.75 7 23.75H21C22.514 23.75 23.75 22.514 23.75 21V18c0-.414-.336-.75-.75-.75H19.75V3.125C19.75 1.586 18.556.25 17 .25H3ZM5.448 1.75c.193.375.302.8.302 1.25V21c0 .686.564 1.25 1.25 1.25S8.25 21.686 8.25 21V18c0-.414.336-.75.75-.75H18.25V3.125c0-.798-.606-1.375-1.25-1.375H5.448ZM9.75 18.75H22.25V21c0 .686-.564 1.25-1.25 1.25H9.448c.193-.375.302-.8.302-1.25v-2.25Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M8.25 7c0-.414.336-.75.75-.75h6c.414 0 .75.336.75.75s-.336.75-.75.75H9A.75.75 0 0 1 8.25 7Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M8.25 12c0-.414.336-.75.75-.75h6c.414 0 .75.336.75.75s-.336.75-.75.75H9a.75.75 0 0 1-.75-.75Z" fill="currentColor"/></svg>';
@@ -4367,7 +4367,8 @@ function openClModal(){
   md.hidden=false; md.classList.add('open');
   if(CL_CACHE){ body.innerHTML=mdToHtml(CL_CACHE); return; }
   body.innerHTML='<p class="cl-load">불러오는 중…</p>';
-  fetch(VER.changelog+(VER.changelog.indexOf('?')<0?'?':'&')+'t='+Date.now(),{cache:'no-store'})
+  const clUrl=VER.changelogUrl||(Array.isArray(VER.changelog)?VER.changelog[0]:VER.changelog);
+  fetch(clUrl+(clUrl.indexOf('?')<0?'?':'&')+'t='+Date.now(),{cache:'no-store'})
     .then(r=>{ if(!r.ok) throw 0; return r.text(); })
     .then(t=>{ CL_CACHE=t; body.innerHTML=mdToHtml(t); })
     .catch(()=>{ body.innerHTML='<p class="cl-err">변경 이력을 불러오지 못했습니다.</p>'; });
@@ -4391,14 +4392,19 @@ function closeClModal(){ const md=document.getElementById('cl-modal'); if(!md) r
   setInterval(()=>{ if(!document.hidden&&VSTATE!=='new') check(0); },1800000);
 })();
 (function(){
-  if(!VER.changelog||!window.fetch) return;
-  fetch(VER.changelog,{method:'GET',cache:'no-store'}).then(r=>{
-    if(!r.ok) throw 0;
-    return r.text();
-  }).then(t=>{
-    if(!t||!String(t).trim()) throw 0;
-    CL_CACHE=t; CL_OK=true; vrender();
-  }).catch(()=>{ CL_OK=false; });
+  const urls=Array.isArray(VER.changelog)?VER.changelog:(VER.changelog?[VER.changelog]:[]);
+  if(!urls.length||!window.fetch) return;
+  function tryUrl(i){
+    if(i>=urls.length){ CL_OK=false; return; }
+    fetch(urls[i],{method:'GET',cache:'no-store'}).then(r=>{
+      if(!r.ok) throw 0;
+      return r.text();
+    }).then(t=>{
+      if(!t||!String(t).trim()) throw 0;
+      CL_CACHE=t; CL_OK=true; VER.changelogUrl=urls[i]; vrender();
+    }).catch(()=>tryUrl(i+1));
+  }
+  tryUrl(0);
   const md=document.getElementById('cl-modal'), cl=document.getElementById('cl-close');
   if(cl) cl.addEventListener('click',closeClModal);
   if(md) md.addEventListener('click',e=>{ if(e.target===md) closeClModal(); });
