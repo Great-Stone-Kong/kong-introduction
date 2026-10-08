@@ -1,0 +1,5 @@
+# Track only the deck HTML, changelog, and this file.
+*
+!.gitignore
+!kong-introduction.html
+!Changelog.md
