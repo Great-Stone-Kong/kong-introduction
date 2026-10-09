@@ -1672,39 +1672,64 @@ h1.light{font-weight:400}h1.light em.gw{font-weight:800}
 .iorg .card p{font-size:13.5px}
 /* Postman migrate + AI */
 .pmig-lead{margin:0 0 18px}
-.pmig-cols{display:grid;grid-template-columns:minmax(170px,220px) minmax(0,1fr);gap:16px;margin:14px 0 8px;align-items:stretch}
-.pm-exwin .iwin-c{min-height:0}
-.pm-reswin .iwin-c{min-height:420px;align-items:stretch}
-.pm-reswin .qyi{min-height:420px}
+.pmig-cols{display:grid;grid-template-columns:1fr 1fr 2fr;gap:14px;margin:14px 0 8px;align-items:stretch}
+.pm-exwin .iwin-c,.pm-impwin .iwin-c,.pm-reswin .iwin-c{min-height:380px;align-items:stretch}
+.pm-pmbg{background:#6e6e6e!important;display:flex!important;align-items:center;justify-content:center;padding:14px!important}
+.pm-export{background:#fff;color:#212121;border-radius:8px;padding:16px 18px 14px;font-size:11.5px;text-align:left;width:100%;max-width:100%;box-shadow:0 8px 28px rgba(0,0,0,.28)}
+.pm-export .pm-exh{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.pm-export .pm-exh b{font-size:14px;font-weight:700;color:#212121}
+.pm-export .pm-exh i{font-style:normal;color:#8a8a8a;font-size:14px;line-height:1}
+.pm-export .pm-sub{margin:0 0 14px;color:#6b6b6b;line-height:1.45;font-size:11px}
+.pm-export label{display:flex;align-items:center;gap:10px;margin:8px 0;color:#212121;cursor:default;font-size:12.5px}
+.pm-export .pm-cb{flex:none;width:16px;height:16px;border-radius:3px;background:#0265d2;position:relative}
+.pm-export .pm-cb::after{content:"";position:absolute;left:4px;top:1px;width:5px;height:9px;border:2px solid #fff;border-top:0;border-left:0;transform:rotate(45deg)}
+.pm-export .pm-acts{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}
+.pm-export .pm-can{background:#f2f2f2;border:none;border-radius:4px;padding:7px 12px;color:#333;font-weight:600;font-size:11.5px}
+.pm-export .pm-go{background:#ff6c37;border:none;border-radius:4px;padding:7px 12px;color:#fff;font-weight:700;font-size:11.5px;white-space:nowrap}
+.pm-pref{background:#2a2a2a;color:#e8e8e8;height:100%;min-height:380px;display:flex;flex-direction:column;text-align:left;font-size:11.5px}
+.pm-pref-h{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid #3a3a3a}
+.pm-pref-h b{font-weight:600;color:#fff;font-size:12px}
+.pm-pref-h i{font-style:normal;color:#9a9a9a}
+.pm-pref-tabs{display:flex;flex-wrap:wrap;gap:2px;padding:8px 8px 0;border-bottom:1px solid #3a3a3a}
+.pm-pref-tabs span{padding:6px 9px;border-radius:6px 6px 0 0;color:#9a9a9a;font-size:11px}
+.pm-pref-tabs span.on{background:#3a3a3a;color:#fff;font-weight:600}
+.pm-pref-b{padding:12px;flex:1;display:flex;flex-direction:column;gap:10px;overflow:auto}
+.pm-ibox{border:1px solid #4a4a4a;border-radius:6px;padding:10px}
+.pm-ibox-h{display:flex;align-items:center;gap:6px;margin-bottom:8px}
+.pm-ibox-h i{font-style:normal;color:#cfcfcf}
+.pm-ibox-h b{color:#fff;font-size:12.5px}
+.pm-ibtn{display:block;width:100%;text-align:left;background:#323232;border:1px solid #555;border-radius:4px;color:#e8e8e8;padding:8px 10px;margin:6px 0 0;font-size:11px;line-height:1.35}
+.pm-ibtn.on{border-color:#7400e1;background:#2d2442;color:#fff}
+.pm-scan{display:none}
+.pmig-anim.run .pm-scan,.pmig-anim.done .pm-scan{display:block}
+.pm-file{display:flex;align-items:center;gap:8px;padding:7px 9px;background:#1f1f1f;border-radius:5px;margin-top:6px}
+.pm-file i{width:7px;height:7px;border-radius:50%;background:#7400e1;flex:none}
+.pm-file code{font-family:var(--mono);font-size:10.5px;color:#c8b3ff}
+.pm-file span{margin-left:auto;font-size:10px;color:#7ff0a8}
 .pm-badge{font-size:10px;font-weight:800;color:#7ff0a8;background:#1f4d33;border-radius:999px;padding:3px 9px}
 .pm-envtag{font-style:normal;font-size:9.5px;color:#a991ff;margin-left:4px}
 .pm-scripts{margin-top:8px;padding:8px 0 0;border-top:1px solid #2e2e33}
 .pm-scripts em{display:block;font-style:normal;font-size:9px;font-weight:800;color:#a991ff;letter-spacing:.05em;margin-bottom:4px}
-.pm-export{background:#f4f5f7;color:#1a1a1a;border-radius:8px;padding:12px 12px;font-size:11.5px;text-align:left;border:1px solid #e2e4e8}
-.pm-export h4{margin:0 0 4px;font-size:13px;color:#1a1a1a;font-weight:700}
-.pm-export .pm-sub{margin:0 0 10px;color:#666;line-height:1.4;font-size:11px}
-.pm-export label{display:flex;align-items:center;gap:8px;margin:5px 0;color:#222;cursor:default}
-.pm-export .pm-cb{flex:none;width:13px;height:13px;border:1.5px solid #ff6c37;border-radius:3px;background:#ff6c37;position:relative}
-.pm-export .pm-cb::after{content:"";position:absolute;left:3px;top:0;width:4px;height:7px;border:2px solid #fff;border-top:0;border-left:0;transform:rotate(45deg)}
-.pm-export .pm-acts{display:flex;margin-top:12px}
-.pm-export .pm-go{flex:1;text-align:center;background:#ff6c37;border:none;border-radius:4px;padding:6px 10px;color:#fff;font-weight:700;font-size:11.5px}
+.pm-reswin .qyi{min-height:380px}
 .pmig-anim{margin:22px 0 8px}
 .pmig-anim .pm-flow{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
 .pmig-anim .pm-step{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;background:var(--navy-2);border:1px solid var(--line);color:var(--g200);font-size:13px;opacity:.4;transition:opacity .3s,border-color .3s}
 .pmig-anim .pm-step b{color:#fff;font-weight:700}
 .pmig-anim .pm-step i{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:11px;font-weight:800;background:#2a2d28;color:var(--lime)}
 .pmig-anim .pm-arr{color:var(--g200);opacity:.5}
-.pmig-anim.run .pm-step.s1{opacity:1;border-color:rgba(185,140,255,.5)}
-.pmig-anim.run .pm-step.s2{opacity:1;border-color:rgba(204,255,0,.45);transition-delay:.7s}
-.pmig-anim.run .pm-step.s3{opacity:1;border-color:rgba(204,255,0,.6);transition-delay:1.4s}
+.pmig-anim.run .pm-step.s1{opacity:1;border-color:rgba(255,108,55,.55)}
+.pmig-anim.run .pm-step.s2{opacity:1;border-color:rgba(185,140,255,.5);transition-delay:.6s}
+.pmig-anim.run .pm-step.s3{opacity:1;border-color:rgba(204,255,0,.6);transition-delay:1.2s}
 .pmig-anim .qys .pm-row,.pmig-anim .pm-main{opacity:0;transform:translateY(6px)}
-.pmig-anim.run .qys .pm-row{animation:pmrow .4s ease forwards;animation-delay:calc(1.5s + var(--i,0)*.1s)}
-.pmig-anim.run .pm-main{animation:pmrow .5s ease forwards;animation-delay:2.4s}
+.pmig-anim.run .qys .pm-row{animation:pmrow .4s ease forwards;animation-delay:calc(1.4s + var(--i,0)*.1s)}
+.pmig-anim.run .pm-main{animation:pmrow .5s ease forwards;animation-delay:2.2s}
 .pmig-anim.done .pm-step,.pmig-anim.done .qys .pm-row,.pmig-anim.done .pm-main{opacity:1;transform:none;animation:none;transition:none;transition-delay:0s}
 @keyframes pmrow{to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){
   .pmig-anim .pm-step,.pmig-anim .qys .pm-row,.pmig-anim .pm-main{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}
+  .pmig-anim .pm-scan{display:block}
 }
+@media (max-width:1100px){.pmig-cols{grid-template-columns:1fr}.pm-exwin .iwin-c,.pm-impwin .iwin-c,.pm-reswin .iwin-c{min-height:300px}}
 .iaipref{display:grid;grid-template-columns:1fr 1.2fr;gap:18px;margin:18px 0 22px;align-items:stretch}
 .iaip-card{background:#161618;border:1px solid #2e2e33;border-radius:10px;padding:16px 18px;text-align:left;color:#dcdce0;font-size:12.5px}
 .iaip-card h4{margin:0 0 12px;font-size:14px;color:#fff}
@@ -1729,7 +1754,7 @@ h1.light{font-weight:400}h1.light em.gw{font-weight:800}
 .iai-work.run .pane.on{animation:iaipane .45s ease}
 @keyframes iaipane{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.iai-work .pane.on{animation:none}}
-@media (max-width:1100px){.pmig-cols,.iaipref{grid-template-columns:1fr}}
+@media (max-width:1100px){.iaipref{grid-template-columns:1fr}}
 @media (max-width:1100px){.ihero,.ikg,.isso{grid-template-columns:1fr}.ihero-i{transform:none}.icaps{grid-template-columns:repeat(3,1fr)}.itour{grid-template-columns:1fr}.it-list{flex-direction:row;overflow-x:auto}.it-b{flex:none}.istor{grid-template-columns:repeat(2,1fr)}.iproof{grid-template-columns:1fr}}
 @media (max-width:700px){.icaps,.istor{grid-template-columns:1fr 1fr}.it-l{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.ilife .il-spin,.ilife .il-n circle,.ih-p circle,.pmig-anim .pm-row,.iai-work .pane{animation:none}}
@@ -3370,14 +3395,10 @@ claude
 
   <p class="note">출처: <a href="https://developer.konghq.com/insomnia/storage/" target="_blank" rel="noopener noreferrer">Kong Docs · Storage options in Insomnia ↗</a> · Essentials 요금제는 Git Sync 사용 시 조직당 3명까지로 제한됩니다.</p>
 </section>
-</div>
-
-<!-- ============ 6. 보안 및 규제 매핑 ============ -->
-<!-- ============ 인프라 구성 ============ -->
 <section class="sec" id="n-migrate" data-title="Postman 마이그레이션">
   <div class="eyebrow">Migration</div>
   <h2>Postman에서 Insomnia로</h2>
-  <p class="sub pmig-lead">컬렉션 · 환경 · 글로벌을 ZIP 또는 JSON으로 보낸 뒤 Insomnia로 가져오면, 요청 · 폴더 · 환경 변수가 그대로 테스트 항목으로 올라갑니다. 스크립트는 Postman 문법이 Insomnia 형식으로 자동 변환됩니다.</p>
+  <p class="sub pmig-lead">컬렉션 · 환경을 Export한 뒤 Insomnia Preferences · Data에서 Import하면, 요청 · 폴더 · 환경 변수가 테스트 항목으로 올라갑니다. 스크립트는 Postman 문법이 Insomnia 형식으로 자동 변환됩니다.</p>
   <div class="tw rv"><table class="cmp">
     <thead><tr><th>항목</th><th class="c k">Insomnia</th><th class="c">Postman</th></tr></thead>
     <tbody>
@@ -3394,78 +3415,100 @@ claude
   <p class="note">출처: <a href="https://konghq.com/performance-comparison/kong-vs-postman" target="_blank" rel="noopener">Kong Insomnia vs Postman</a> · <a href="https://konghq.com/blog/engineering/migrating-collections-and-requests-from-postman-to-insomnia" target="_blank" rel="noopener">마이그레이션 가이드</a></p>
   <div class="pmig-anim" id="pmig-anim">
     <div class="pm-flow">
-      <div class="pm-step s1"><i>1</i><b>Export</b> Postman ZIP · JSON</div>
+      <div class="pm-step s1"><i>1</i><b>Export</b> Postman</div>
       <span class="pm-arr">→</span>
-      <div class="pm-step s2"><i>2</i><b>Import</b> Insomnia 스캔 · 반영</div>
+      <div class="pm-step s2"><i>2</i><b>Import</b> Insomnia Data</div>
       <span class="pm-arr">→</span>
-      <div class="pm-step s3"><i>3</i><b>Test</b> 요청 · 환경으로 바로 검증</div>
+      <div class="pm-step s3"><i>3</i><b>완료</b> 바로 테스트</div>
     </div>
     <div class="pmig-cols">
-      <div class="iwin pm-exwin"><div class="iwin-b"><i></i><i></i><i></i><span>Postman · Export</span></div><div class="iwin-c" style="background:#eceef1;padding:10px">
-        <div class="pm-export">
-          <h4>Export</h4>
-          <p class="pm-sub">Collections · Environments</p>
-          <label><i class="pm-cb"></i>Collections</label>
-          <label><i class="pm-cb"></i>Environments</label>
-          <label><i class="pm-cb"></i>Globals</label>
-          <div class="pm-acts"><span class="pm-go">Export</span></div>
+      <div class="iwin pm-exwin"><div class="iwin-b"><i></i><i></i><i></i><span>1 · Postman Export</span></div>
+        <div class="iwin-c pm-pmbg">
+          <div class="pm-export">
+            <div class="pm-exh"><b>Request data export</b><i>✕</i></div>
+            <p class="pm-sub">Select the data you want to export. You’ll be notified via email once the data is ready to download.</p>
+            <label><i class="pm-cb"></i>Collection</label>
+            <label><i class="pm-cb"></i>Environment</label>
+            <div class="pm-acts"><span class="pm-can">Cancel</span><span class="pm-go">Request Data Export</span></div>
+          </div>
         </div>
-      </div></div>
-      <div class="iwin pm-reswin"><div class="iwin-b"><i></i><i></i><i></i><span>Insomnia · After import</span></div><div class="iwin-c">
-        <div class="qyi">
-          <div class="qyi-top"><span class="qyi-lg"><i></i></span><span class="qyi-cr">Kong Demo Org <i>›</i> <b>Grocery API</b> <i class="cv">▾</i></span>
-            <span class="qyi-sr">⌕ Search… <em>⌘K</em></span><span class="pm-badge">Imported</span><span class="qyi-up">Invite</span></div>
-          <div class="qyi-body">
-            <div class="qys">
-              <div class="qys-h"><b>Grocery API</b><i>⋯</i></div>
-              <div class="qys-env"><i class="dot"></i>Production <em class="pm-envtag">from Postman</em><i class="cv">▾</i></div>
-              <div class="qys-f"><span>⌕ Filter</span><i>＋</i></div>
-              <div class="qyh pm-row" style="--i:0">Grocery API</div>
-              <div class="qyr fo pm-row" style="--i:1;padding-left:8px"><i class="car">▾</i><i class="fic">▣</i>Groceries</div>
-              <div class="qyr pm-row" style="--i:2;padding-left:20px"><i class="qym m-get">GET</i><span>Get the list of groceries</span></div>
-              <div class="qyr on pm-row" style="--i:3;padding-left:20px"><i class="qym m-post">POST</i><span>Add a grocery to the list</span></div>
-              <div class="qyr pm-row" style="--i:4;padding-left:20px"><i class="qym m-put">PUT</i><span>Update grocery</span></div>
-              <div class="qyr pm-row" style="--i:5;padding-left:20px"><i class="qym m-delete">DELETE</i><span>Delete a grocery</span></div>
-              <div class="qyh pm-row" style="--i:6">Environments</div>
-              <div class="qyr pm-row" style="--i:7;padding-left:8px"><span>● Production</span></div>
-              <div class="qyr pm-row" style="--i:8;padding-left:8px"><span>○ Staging</span></div>
-              <div class="qys-b"><span>⎇ main</span><span>● Ready to test</span></div>
+      </div>
+      <div class="iwin pm-impwin"><div class="iwin-b"><i></i><i></i><i></i><span>2 · Insomnia Import</span></div>
+        <div class="iwin-c">
+          <div class="pm-pref">
+            <div class="pm-pref-h"><b>Insomnia Preferences</b><i>✕</i></div>
+            <div class="pm-pref-tabs"><span>General</span><span>Proxy</span><span class="on">Data</span><span>Themes</span><span>AI Settings</span></div>
+            <div class="pm-pref-b">
+              <div class="pm-ibox">
+                <div class="pm-ibox-h"><i>↧</i><b>Import</b></div>
+                <button type="button" class="pm-ibtn on">Import to the ‘Grocery API’ Project</button>
+                <button type="button" class="pm-ibtn">Import projects to the ‘Kong Demo Org’ Organization</button>
+              </div>
+              <div class="pm-scan">
+                <div class="pm-file"><i></i><code>postman-export.zip</code><span>Ready</span></div>
+                <div class="pm-file"><i></i><code>Grocery API.postman_collection.json</code><span>Ready</span></div>
+              </div>
             </div>
-            <div class="qyi-main pm-main">
-              <div class="qysplit">
-                <div class="qyp">
-                  <div class="qyu"><span class="qyu-m"><i class="qym m-post">POST</i><i class="cv">▾</i></span><code><b class="var">_.base_url</b>/grocery</code><span class="qyu-s">Send<i>▾</i></span></div>
-                  <div class="qyt"><span class="on">Body <i class="bd">JSON</i></span><span>Auth</span><span>Headers</span><span>Scripts <i class="bd p">2</i></span></div>
-                  <pre class="qyc"><i class="ln">1</i>{
+          </div>
+        </div>
+      </div>
+      <div class="iwin pm-reswin"><div class="iwin-b"><i></i><i></i><i></i><span>3 · 마이그레이션 완료</span></div>
+        <div class="iwin-c">
+          <div class="qyi">
+            <div class="qyi-top"><span class="qyi-lg"><i></i></span><span class="qyi-cr">Kong Demo Org <i>›</i> <b>Grocery API</b> <i class="cv">▾</i></span>
+              <span class="qyi-sr">⌕ Search… <em>⌘K</em></span><span class="pm-badge">Imported</span><span class="qyi-up">Invite</span></div>
+            <div class="qyi-body">
+              <div class="qys">
+                <div class="qys-h"><b>Grocery API</b><i>⋯</i></div>
+                <div class="qys-env"><i class="dot"></i>Production <em class="pm-envtag">from Postman</em><i class="cv">▾</i></div>
+                <div class="qys-f"><span>⌕ Filter</span><i>＋</i></div>
+                <div class="qyh pm-row" style="--i:0">Grocery API</div>
+                <div class="qyr fo pm-row" style="--i:1;padding-left:8px"><i class="car">▾</i><i class="fic">▣</i>Groceries</div>
+                <div class="qyr pm-row" style="--i:2;padding-left:20px"><i class="qym m-get">GET</i><span>Get the list of groceries</span></div>
+                <div class="qyr on pm-row" style="--i:3;padding-left:20px"><i class="qym m-post">POST</i><span>Add a grocery to the list</span></div>
+                <div class="qyr pm-row" style="--i:4;padding-left:20px"><i class="qym m-put">PUT</i><span>Update grocery</span></div>
+                <div class="qyr pm-row" style="--i:5;padding-left:20px"><i class="qym m-delete">DELETE</i><span>Delete a grocery</span></div>
+                <div class="qyh pm-row" style="--i:6">Environments</div>
+                <div class="qyr pm-row" style="--i:7;padding-left:8px"><span>● Production</span></div>
+                <div class="qys-b"><span>⎇ main</span><span>● Ready to test</span></div>
+              </div>
+              <div class="qyi-main pm-main">
+                <div class="qysplit">
+                  <div class="qyp">
+                    <div class="qyu"><span class="qyu-m"><i class="qym m-post">POST</i><i class="cv">▾</i></span><code><b class="var">_.base_url</b>/grocery</code><span class="qyu-s">Send<i>▾</i></span></div>
+                    <div class="qyt"><span class="on">Body <i class="bd">JSON</i></span><span>Auth</span><span>Scripts <i class="bd p">2</i></span></div>
+                    <pre class="qyc"><i class="ln">1</i>{
 <i class="ln">2</i>  <b class="s">&quot;name&quot;</b>: <b class="s">&quot;Organic Avocado&quot;</b>,
-<i class="ln">3</i>  <b class="s">&quot;quantity&quot;</b>: <b class="n">3</b>,
-<i class="ln">4</i>  <b class="s">&quot;store&quot;</b>: <b class="s">&quot;{{ _.store_id }}&quot;</b>
-<i class="ln">5</i>}</pre>
-                  <div class="qytests pm-scripts">
-                    <em>AFTER-RESPONSE · converted from Postman</em>
-                    <pre class="qyc"><i class="ln">1</i>insomnia.<b class="f">test</b>(<b class="s">'Status is 201'</b>, () =&gt;
+<i class="ln">3</i>  <b class="s">&quot;quantity&quot;</b>: <b class="n">3</b>
+<i class="ln">4</i>}</pre>
+                    <div class="qytests pm-scripts">
+                      <em>AFTER-RESPONSE · converted from Postman</em>
+                      <pre class="qyc"><i class="ln">1</i>insomnia.<b class="f">test</b>(<b class="s">'Status is 201'</b>, () =&gt;
 <i class="ln">2</i>  insomnia.<b class="f">expect</b>(insomnia.response.code).to.<b class="f">eql</b>(<b class="n">201</b>));</pre>
+                    </div>
                   </div>
-                </div>
-                <div class="qyp">
-                  <div class="qyrh"><b class="sc ok">201 Created</b><span>142 ms</span><span>312 B</span><em>Just now ▾</em></div>
-                  <div class="qyt"><span class="on">Preview</span><span>Headers</span><span>Tests <i class="bd ok">1 / 1</i></span></div>
-                  <pre class="qyc"><i class="ln">1</i>{
+                  <div class="qyp">
+                    <div class="qyrh"><b class="sc ok">201 Created</b><span>142 ms</span><span>312 B</span></div>
+                    <div class="qyt"><span class="on">Preview</span><span>Tests <i class="bd ok">1 / 1</i></span></div>
+                    <pre class="qyc"><i class="ln">1</i>{
 <i class="ln">2</i>  <b class="s">&quot;id&quot;</b>: <b class="s">&quot;gr_8f21c0&quot;</b>,
-<i class="ln">3</i>  <b class="s">&quot;name&quot;</b>: <b class="s">&quot;Organic Avocado&quot;</b>,
-<i class="ln">4</i>  <b class="s">&quot;quantity&quot;</b>: <b class="n">3</b>
-<i class="ln">5</i>}</pre>
-                  <div class="qyenvs"><em>ENVIRONMENTS · imported</em><span class="on">Production</span><span>Staging</span><code>base_url = https://api.company.com/v1</code></div>
+<i class="ln">3</i>  <b class="s">&quot;name&quot;</b>: <b class="s">&quot;Organic Avocado&quot;</b>
+<i class="ln">4</i>}</pre>
+                    <div class="qyenvs"><em>ENVIRONMENTS · imported</em><span class="on">Production</span><code>base_url = https://api.company.com/v1</code></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div></div>
+      </div>
     </div>
   </div>
 </section>
+</div>
 
+<!-- ============ 6. 보안 및 규제 매핑 ============ -->
+<!-- ============ 인프라 구성 ============ -->
 <div class="page" id="p-infra" data-label="인프라 구성">
 <section class="sec hero" id="inf-intro" data-title="개요">
   <div class="eyebrow">Infrastructure</div>
@@ -4578,7 +4621,7 @@ document.querySelectorAll('.mlim').forEach(r=>{
 });
 const PAGES=[...document.querySelectorAll('.page')];
 /* ---------- 버전 · 다운로드 · CHANGELOG ---------- */
-const KONG_INTRO_VERSION="2026.10.09.6ac843e8";
+const KONG_INTRO_VERSION="2026.10.09.6ac845f9";
 const VER={
   cur:KONG_INTRO_VERSION,
   dl:'https://github.com/Great-Stone-Kong/kong-introduction/releases/latest/download/kong-introduction.html',

@@ -5,6 +5,15 @@
 
 ---
 
+## 2026.10.09.6ac845f9
+
+### 변경
+
+- Insomnia > Postman 마이그레이션
+  - 사이드바에 섹션 표시되도록 페이지 안으로 배치
+  - Export → Import → 완료 3단계 목업 (1:1:2)
+  - Postman Export · Insomnia Preferences Data Import 화면 기준으로 표현
+
 ## 2026.10.09.6ac843e8
 
 ### 변경
