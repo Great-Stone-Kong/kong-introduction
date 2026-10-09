@@ -4315,11 +4315,11 @@ document.querySelectorAll('.mlim').forEach(r=>{
 });
 const PAGES=[...document.querySelectorAll('.page')];
 /* ---------- 버전 · 다운로드 · CHANGELOG ---------- */
-const KONG_INTRO_VERSION="2026.10.08.6ac738c1";
+const KONG_INTRO_VERSION="2026.10.09.6ac83c95";
 const VER={
   cur:KONG_INTRO_VERSION,
-  dl:'https://drive.google.com/uc?export=download&id=1kk3xhzUhGwl3EfxU6CJYD3gZAAa7R61t',
-  check:'https://script.google.com/macros/s/AKfycbyRLwJaxET_mpvuQ75BpZjtOxVrJ13rE3-LYNI6OAAull0WgEhg5BEmCg5RlU3BRBnYNg/exec',
+  dl:'https://github.com/Great-Stone-Kong/kong-introduction/releases/latest/download/kong-introduction.html',
+  check:'https://api.github.com/repos/Great-Stone-Kong/kong-introduction/releases/latest',
   changelogApi:'https://api.github.com/repos/Great-Stone-Kong/kong-introduction/contents/CHANGELOG.md'
 };
 let VLATEST=null, VSTATE=VER.check?'checking':'unknown', CL_OK=false, CL_CACHE=null;
@@ -4376,9 +4376,9 @@ function closeClModal(){ const md=document.getElementById('cl-modal'); if(!md) r
   let last=0;
   function check(n){
     last=Date.now();
-    fetch(VER.check+(VER.check.indexOf('?')<0?'?':'&')+'t='+Date.now(),{cache:'no-store'}).then(r=>r.text()).then(t=>{
-      const j=JSON.parse(t); if(!j||!j.version) throw 0;
-      VLATEST=j.version;
+    fetch(VER.check+(VER.check.indexOf('?')<0?'?':'&')+'t='+Date.now(),{cache:'no-store'}).then(r=>{ if(!r.ok) throw 0; return r.json(); }).then(j=>{
+      const v=j&&(j.version||j.tag_name); if(!v) throw 0;
+      VLATEST=String(v).replace(/^v/,'');
       VSTATE=vcmp(VLATEST,VER.cur)>0?'new':'latest'; vrender();
     }).catch(()=>{ if(n<3) setTimeout(()=>check(n+1),1500*(n+1)); else if(VSTATE!=='new'){ VSTATE='unknown'; vrender(); } });
   }
