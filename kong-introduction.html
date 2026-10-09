@@ -1670,9 +1670,88 @@ h1.light{font-weight:400}h1.light em.gw{font-weight:800}
 .iog .o{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:7px;border:1.5px solid #B98CFF;border-radius:8px;background:rgba(116,0,225,.1);align-content:center}
 .iog .o i{height:12px;border-radius:3px;background:#CCFF00;opacity:.75}
 .iorg .card p{font-size:13.5px}
+/* Postman migrate + AI */
+.pmig-lead{margin:0 0 18px}
+.pmig-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:18px 0 22px}
+.pm-export{background:#f4f5f7;color:#1a1a1a;border-radius:10px;padding:18px 20px;font-size:12.5px;text-align:left;border:1px solid #e2e4e8}
+.pm-export h4{margin:0 0 6px;font-size:15px;color:#1a1a1a;font-weight:700}
+.pm-export .pm-sub{margin:0 0 14px;color:#666;line-height:1.45;font-size:12px}
+.pm-export label{display:flex;align-items:center;gap:9px;margin:7px 0;color:#222;cursor:default}
+.pm-export .pm-cb{flex:none;width:14px;height:14px;border:1.5px solid #ff6c37;border-radius:3px;background:#ff6c37;position:relative}
+.pm-export .pm-cb::after{content:"";position:absolute;left:3px;top:0;width:5px;height:8px;border:2px solid #fff;border-top:0;border-left:0;transform:rotate(45deg)}
+.pm-export .pm-cb.off{background:#fff;border-color:#bbb}
+.pm-export .pm-cb.off::after{display:none}
+.pm-export .pm-acts{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
+.pm-export .pm-can{background:#fff;border:1px solid #ccc;border-radius:4px;padding:7px 14px;color:#333;font-weight:600;font-size:12px}
+.pm-export .pm-go{background:#ff6c37;border:none;border-radius:4px;padding:7px 16px;color:#fff;font-weight:700;font-size:12px;box-shadow:0 0 0 3px rgba(255,108,55,.22)}
+.pm-imp{background:#161618;color:#dcdce0;border-radius:10px;padding:0;overflow:hidden;border:1px solid #2e2e33;text-align:left;font-size:12px}
+.pm-imp .pm-ih{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#1b1b1d;border-bottom:1px solid #2e2e33}
+.pm-imp .pm-ih b{font-weight:600;color:#fff}
+.pm-imp .pm-ib{padding:16px 18px}
+.pm-imp .pm-drop{border:1.5px dashed #4a4a52;border-radius:8px;padding:22px 16px;text-align:center;color:#a3a3ab;background:#121214}
+.pm-imp .pm-drop strong{display:block;color:#fff;margin-bottom:4px;font-size:13px}
+.pm-imp .pm-drop em{font-style:normal;font-size:11px;color:#6a6a72}
+.pm-imp .pm-scan{margin-top:12px;display:none}
+.pm-imp .pm-file{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#1f1f23;border-radius:6px;margin-bottom:8px}
+.pm-imp .pm-file i{width:8px;height:8px;border-radius:50%;background:#7400e1;flex:none}
+.pm-imp .pm-file code{font-family:var(--mono);font-size:11px;color:#c8b3ff}
+.pm-imp .pm-file span{margin-left:auto;font-size:10px;color:#7ff0a8}
+.pm-imp .pm-bar{height:3px;background:#2a2a30;border-radius:2px;overflow:hidden;margin:10px 0 4px}
+.pm-imp .pm-bar u{display:block;height:100%;width:0;background:linear-gradient(90deg,#7400e1,#b98cff);border-radius:2px}
+.pmig-anim{margin:22px 0 8px}
+.pmig-anim .pm-flow{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.pmig-anim .pm-step{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;background:var(--navy-2);border:1px solid var(--line);color:var(--g200);font-size:13px;opacity:.4;transition:opacity .3s,border-color .3s}
+.pmig-anim .pm-step b{color:#fff;font-weight:700}
+.pmig-anim .pm-step i{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:11px;font-weight:800;background:#2a2d28;color:var(--lime)}
+.pmig-anim .pm-arr{color:var(--g200);opacity:.5}
+.pmig-anim.run .pm-step.s1{opacity:1;border-color:rgba(185,140,255,.5)}
+.pmig-anim.run .pm-step.s2{opacity:1;border-color:rgba(204,255,0,.45);transition-delay:.7s}
+.pmig-anim.run .pm-step.s3{opacity:1;border-color:rgba(204,255,0,.6);transition-delay:1.4s}
+.pmig-anim .pm-tree{background:#0d0e14;border:1px solid #2d2f3a;border-radius:10px;padding:14px 16px;text-align:left;min-height:200px}
+.pmig-anim .pm-tree .pm-th{font-size:11px;color:#9a9cab;margin-bottom:10px;letter-spacing:.06em;text-transform:uppercase}
+.pmig-anim .pm-row{display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:5px;font-size:12.5px;color:#dcdce0;opacity:0;transform:translateY(6px)}
+.pmig-anim.run .pm-row{animation:pmrow .45s ease forwards;animation-delay:calc(1.6s + var(--i,0)*.12s)}
+.pmig-anim .pm-row.fold{color:#a3a3ab;font-weight:600}
+.pmig-anim .pm-row .qym{flex:none}
+@keyframes pmrow{to{opacity:1;transform:none}}
+.pmig-anim.run .pm-imp .pm-scan{display:block}
+.pmig-anim.run .pm-imp .pm-bar u{width:100%;transition:width 1s ease .2s}
+.pmig-anim.done .pm-row,.pmig-anim.done .pm-step{opacity:1;transform:none;animation:none;transition:none;transition-delay:0s}
+.pmig-anim.done .pm-imp .pm-scan{display:block}
+.pmig-anim.done .pm-imp .pm-bar u{width:100%;transition:none}
+@media (prefers-reduced-motion:reduce){
+  .pmig-anim .pm-row,.pmig-anim .pm-step{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}
+  .pmig-anim .pm-imp .pm-scan{display:block}
+  .pmig-anim .pm-imp .pm-bar u{width:100%!important;transition:none!important}
+}
+.iaipref{display:grid;grid-template-columns:1fr 1.2fr;gap:18px;margin:18px 0 22px;align-items:stretch}
+.iaip-card{background:#161618;border:1px solid #2e2e33;border-radius:10px;padding:16px 18px;text-align:left;color:#dcdce0;font-size:12.5px}
+.iaip-card h4{margin:0 0 12px;font-size:14px;color:#fff}
+.iaip-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid #2a2a30}
+.iaip-row:last-child{border-bottom:0}
+.iaip-row b{font-weight:600;color:#fff;display:block}
+.iaip-row span{color:#8a8a94;font-size:11.5px}
+.iaip-tog{width:36px;height:20px;border-radius:10px;background:#3a3a40;position:relative;flex:none}
+.iaip-tog.on{background:#7400e1}
+.iaip-tog i{position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .2s}
+.iaip-tog.on i{left:18px}
+.iaip-llm{margin-top:4px}
+.iaip-llm label{display:block;font-size:11px;color:#8a8a94;margin:8px 0 4px}
+.iaip-llm .qin{background:#121214;border:1px solid #3a3a40;border-radius:6px;padding:8px 10px;color:#c8b3ff;font-family:var(--mono);font-size:11.5px}
+.iaip-llm .qin.ok{border-color:#2f9e5e;color:#7ff0a8}
+.iaip-acts{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}
+.iaip-acts .go{background:#7400e1;color:#fff;font-weight:700;border-radius:6px;padding:7px 14px;font-size:12px}
+.iaip-acts .can{color:#a3a3ab;padding:7px 10px}
+.iai-work{margin-top:8px}
+.iai-work .iwin-c{min-height:380px;align-items:stretch}
+.iai-work .iwin-c .qyi{min-height:380px}
+.iai-work.run .pane.on{animation:iaipane .45s ease}
+@keyframes iaipane{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.iai-work .pane.on{animation:none}}
+@media (max-width:1100px){.pmig-cols,.iaipref{grid-template-columns:1fr}}
 @media (max-width:1100px){.ihero,.ikg,.isso{grid-template-columns:1fr}.ihero-i{transform:none}.icaps{grid-template-columns:repeat(3,1fr)}.itour{grid-template-columns:1fr}.it-list{flex-direction:row;overflow-x:auto}.it-b{flex:none}.istor{grid-template-columns:repeat(2,1fr)}.iproof{grid-template-columns:1fr}}
 @media (max-width:700px){.icaps,.istor{grid-template-columns:1fr 1fr}.it-l{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:reduce){.ilife .il-spin,.ilife .il-n circle,.ih-p circle{animation:none}}
+@media (prefers-reduced-motion:reduce){.ilife .il-spin,.ilife .il-n circle,.ih-p circle,.pmig-anim .pm-row,.iai-work .pane{animation:none}}
 </style>
 </head>
 <body>
@@ -3058,6 +3137,182 @@ claude
  <em class="qypal-h">COLLECTIONS AND DOCUMENTS</em>
  <div class="qypal-i"><i class="qym p-doc">DOC</i><span><mark>Groce</mark>ry API Spec</span><code>Kong Demo Org · Design</code></div></div></div></div></div></div><ul class="it-l"><li>조직 · 워크스페이스를 넘나드는 요청 · 문서 · 컬렉션 실시간 검색(서버 통신 없음)</li><li>randomUUID · randomIP · randomFirstName 등 Faker로 호출마다 다른 테스트 데이터</li><li>Ver. 9.3 이후 로컬 앱 속도 향상, 리포지토리 전환도 즉시</li></ul></div></div></div>
 </section>
+<section class="sec" id="n-migrate" data-title="Postman 마이그레이션">
+  <div class="eyebrow">Migration</div>
+  <h2>Postman에서 Insomnia로</h2>
+  <p class="sub pmig-lead">컬렉션 · 환경 · 글로벌을 ZIP 또는 개별 JSON으로 보낸 뒤 Insomnia Import로 가져옵니다. 저장 위치와 프로토콜 · Runner · Mock · AI를 한 번에 이어 씁니다.</p>
+  <div class="pmig-cols">
+    <div class="iwin"><div class="iwin-b"><i></i><i></i><i></i><span>Postman · Export</span></div><div class="iwin-c" style="background:#eceef1;padding:14px">
+      <div class="pm-export">
+        <h4>Export</h4>
+        <p class="pm-sub">내보낼 데이터를 선택한 뒤 ZIP 또는 JSON으로 저장합니다.</p>
+        <label><i class="pm-cb"></i>Collections</label>
+        <label><i class="pm-cb"></i>Environments</label>
+        <label><i class="pm-cb"></i>Globals</label>
+        <label><i class="pm-cb off"></i>History</label>
+        <div class="pm-acts"><span class="pm-can">Cancel</span><span class="pm-go">Export</span></div>
+      </div>
+    </div></div>
+    <div class="iwin"><div class="iwin-b"><i></i><i></i><i></i><span>Insomnia · Import</span></div><div class="iwin-c">
+      <div class="pm-imp" id="pm-imp-mock">
+        <div class="pm-ih"><span class="qyi-lg"><i></i></span><b>Import</b></div>
+        <div class="pm-ib">
+          <div class="pm-drop"><strong>Drop Postman export here</strong><em>ZIP · Collection v2.1 · Environment JSON</em></div>
+          <div class="pm-scan">
+            <div class="pm-file"><i></i><code>postman-export.zip</code><span>Scanned</span></div>
+            <div class="pm-file"><i></i><code>Grocery API.postman_collection.json</code><span>Ready</span></div>
+            <div class="pm-bar"><u></u></div>
+          </div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+  <div class="tblw rv"><table class="cmpp">
+    <thead><tr><th>항목</th><th>Insomnia</th><th>Postman</th></tr></thead>
+    <tbody>
+      <tr><td>저장 위치</td><td>Local Vault · Git Sync · Cloud Sync</td><td>Cloud 중심 저장</td></tr>
+      <tr><td>저장 정책</td><td>조직 단위로 저장 위치 강제 가능</td><td>저장 위치 강제 옵션 제한</td></tr>
+      <tr><td>UI</td><td>경량 · 키보드 친화 UI</td><td>기능 밀도 높은 UI · 협업 익숙함</td></tr>
+      <tr><td>프로토콜</td><td>HTTP · GraphQL · gRPC · WS · SSE · SOAP</td><td>HTTP · GraphQL · gRPC · WS 등</td></tr>
+      <tr><td>Runner</td><td>무제한 Collection Runner · Inso CLI</td><td>Collection Runner · CLI</td></tr>
+      <tr><td>Mock</td><td>Cloud Mock · Self-hosted Mock</td><td>Cloud Mock</td></tr>
+      <tr><td>AI · MCP</td><td>BYO LLM · Smart Commits · MCP Client</td><td>내장 AI 기능 · 생태계 확장</td></tr>
+      <tr><td>커뮤니티</td><td>오픈소스 코어 · 플러그인 확장</td><td>넓은 사용자 · 협업 생태계</td></tr>
+    </tbody>
+  </table></div>
+  <div class="pmig-anim" id="pmig-anim">
+    <div class="pm-flow">
+      <div class="pm-step s1"><i>1</i><b>Scan</b> ZIP · JSON 인식</div>
+      <span class="pm-arr">→</span>
+      <div class="pm-step s2"><i>2</i><b>Import</b> 컬렉션 · 환경 반영</div>
+      <span class="pm-arr">→</span>
+      <div class="pm-step s3"><i>3</i><b>Ready</b> 사이드바에서 바로 실행</div>
+    </div>
+    <div class="pm-tree">
+      <div class="pm-th">Imported · Grocery API</div>
+      <div class="pm-row fold" style="--i:0"><i class="car">▾</i><i class="fic">▣</i>Groceries</div>
+      <div class="pm-row" style="--i:1;padding-left:24px"><i class="qym m-get">GET</i><span>Get the list of groceries</span></div>
+      <div class="pm-row" style="--i:2;padding-left:24px"><i class="qym m-post">POST</i><span>Add a grocery to the list</span></div>
+      <div class="pm-row" style="--i:3;padding-left:24px"><i class="qym m-put">PUT</i><span>Update grocery</span></div>
+      <div class="pm-row" style="--i:4;padding-left:24px"><i class="qym m-delete">DELETE</i><span>Delete a grocery</span></div>
+      <div class="pm-row fold" style="--i:5"><i class="car">▾</i><i class="fic">▣</i>Environments</div>
+      <div class="pm-row" style="--i:6;padding-left:24px"><span>● Production</span><code style="margin-left:auto;font-size:11px;color:#8a8a94">base_url</code></div>
+      <div class="pm-row" style="--i:7;padding-left:24px"><span>○ Staging</span></div>
+    </div>
+  </div>
+</section>
+<section class="sec" id="n-ai" data-title="AI 연동">
+  <div class="eyebrow">AI-Native</div>
+  <h2>원하는 LLM을 연결하고 바로 작업</h2>
+  <p class="sub">Claude · OpenAI · Gemini · 로컬 · 자체 호스팅 LLM을 Bring Your Own으로 연결합니다. 데이터 레지던시를 유지한 채 Mock · Smart Commits · MCP를 씁니다.</p>
+  <ul class="list">
+    <li>조직 정책에 맞는 LLM URL · API 키로 Activate</li>
+    <li>자연어 · OpenAPI로 Mock 경로 · 응답 생성</li>
+    <li>Git 변경을 묶어 AI 커밋 메시지 제안, MCP 도구를 API처럼 호출</li>
+  </ul>
+  <div class="tblw rv" style="margin-top:18px"><table class="cmpp">
+    <thead><tr><th>기능</th><th>동작</th></tr></thead>
+    <tbody>
+      <tr><td>Mock</td><td>자연어 · OpenAPI · 응답 예시로 Mock 서버 경로와 바디 생성</td></tr>
+      <tr><td>Smart Commits</td><td>변경 파일을 논리 단위로 묶고 커밋 메시지 제안</td></tr>
+      <tr><td>MCP Client</td><td>HTTP · STDIO MCP 서버 연결 후 tools · prompts 실행</td></tr>
+    </tbody>
+  </table></div>
+  <div class="iaipref rv">
+    <div class="iaip-card">
+      <h4>Preferences</h4>
+      <div class="iaip-row"><div><b>AI Features</b><span>Smart Commit · Mock generate</span></div><div class="iaip-tog on"><i></i></div></div>
+      <div class="iaip-row"><div><b>Send telemetry</b><span>사용 통계만 · 본문 제외</span></div><div class="iaip-tog"><i></i></div></div>
+      <div class="iaip-row"><div><b>Local-only mode</b><span>요청 본문을 외부로 보내지 않음</span></div><div class="iaip-tog on"><i></i></div></div>
+    </div>
+    <div class="iaip-card iaip-llm">
+      <h4>AI Settings · Bring your own LLM</h4>
+      <label>Provider</label>
+      <div class="qin">Claude (Anthropic) ▾</div>
+      <label>Base URL</label>
+      <div class="qin ok">https://api.anthropic.com</div>
+      <label>API Key</label>
+      <div class="qin">•••••••••••••••• sk-ant-…</div>
+      <div class="iaip-acts"><span class="can">Cancel</span><span class="go">Activate</span></div>
+    </div>
+  </div>
+  <div class="iai-work" id="iai-work">
+    <div class="tabs" data-tabs><button class="on">Mock</button><button>Smart Commits</button><button>MCP Client</button></div>
+    <div class="pane on"><div class="iwin"><div class="iwin-b"><i></i><i></i><i></i><span>Insomnia · Mock from AI</span></div><div class="iwin-c"><div class="qyi">
+      <div class="qyi-top"><span class="qyi-lg"><i></i></span><span class="qyi-cr">Kong Demo Org <i>›</i> <b>Orders Mock</b></span><span class="qyi-sr">⌕ Search…</span><span class="qyi-up">Invite</span></div>
+      <div class="qyi-body"><div class="qys"><div class="qys-h"><b>Mock Server</b><i>⋯</i></div>
+        <div class="qys-env"><i class="dot"></i>☁ Cloud Mock</div>
+        <div class="qyh">Generated routes</div>
+        <div class="qyr on" style="padding-left:8px"><i class="qym m-get">GET</i><span>/orders</span></div>
+        <div class="qyr" style="padding-left:8px"><i class="qym m-post">POST</i><span>/orders</span></div>
+        <div class="qyr" style="padding-left:8px"><i class="qym m-get">GET</i><span>/orders/{id}</span></div>
+        <div class="qymk-url"><em>MOCK URL</em><code>https://ord.mock.insomnia.rest</code></div>
+      </div><div class="qyi-main"><div class="qysplit">
+        <div class="qyp"><div class="qyu"><span class="qyu-m"><i class="qym m-get">GET</i></span><code>/orders</code><span class="qyu-s">Test</span></div>
+          <div class="qyt"><span class="on">Prompt</span><span>Mock Body</span><span>Status <i class="bd">200</i></span></div>
+          <pre class="qyc"><i class="ln">1</i><b class="cm"># Natural language</b>
+<i class="ln">2</i>주문 목록을 페이지네이션과
+<i class="ln">3</i>상태로 필터할 수 있게 Mock
+<i class="ln">4</i><b class="cm"># + OpenAPI paths./orders</b></pre>
+          <div class="qymk-gen"><b>✨ Generate from</b><span class="on">Natural language</span><span>OpenAPI spec</span><span>Response</span></div>
+        </div>
+        <div class="qyp"><div class="qyt"><span class="on">Mock Body</span><span>Preview</span></div>
+          <pre class="qyc"><i class="ln">1</i>{
+<i class="ln">2</i>  <b class="s">&quot;items&quot;</b>: [{ <b class="s">&quot;id&quot;</b>: <b class="s">&quot;ord_91&quot;</b>, <b class="s">&quot;status&quot;</b>: <b class="s">&quot;paid&quot;</b> }],
+<i class="ln">3</i>  <b class="s">&quot;page&quot;</b>: <b class="n">1</b>,
+<i class="ln">4</i>  <b class="s">&quot;total&quot;</b>: <b class="n">42</b>
+<i class="ln">5</i>}</pre>
+        </div>
+      </div></div></div>
+    </div></div></div></div>
+    <div class="pane"><div class="iwin"><div class="iwin-b"><i></i><i></i><i></i><span>Insomnia · Smart Commits</span></div><div class="iwin-c"><div class="qyi">
+      <div class="qyi-top"><span class="qyi-lg"><i></i></span><span class="qyi-cr">Kong Demo Org <i>›</i> <b>Grocery API</b></span><span class="qyi-up">Invite</span></div>
+      <div class="qyi-body dim"><div class="qys"><div class="qys-h"><b>Grocery API</b></div>
+        <div class="qyr on" style="padding-left:8px"><i class="qym m-get">GET</i><span>/orders</span></div>
+        <div class="qys-b"><span>⎇ main</span><span>● 4 changes</span></div>
+      </div><div class="qyi-main"></div></div>
+      <div class="qyov"><div class="qydlg"><div class="qydlg-h"><b>Commit changes</b><span class="ai">✨ Suggested by AI · Claude</span><i>✕</i></div>
+        <div class="qydlg-b">
+          <div class="qycg"><em>COMMIT 1 · feat(orders)</em>
+            <div class="qyfile"><i class="cb on"></i><b class="fs m">M</b><code>grocery-api.yaml</code><span>paths./orders 페이지네이션</span></div>
+            <div class="qyfile"><i class="cb on"></i><b class="fs m">M</b><code>Add a grocery.request</code><span>Body 스키마 갱신</span></div>
+            <div class="qymsg">feat(orders): add pagination params to GET /orders</div>
+          </div>
+          <div class="qycg"><em>COMMIT 2 · test(orders)</em>
+            <div class="qyfile"><i class="cb on"></i><b class="fs a">A</b><code>orders.test.js</code><span>400 응답 테스트</span></div>
+            <div class="qymsg">test(orders): cover 400 on invalid page size</div>
+          </div>
+        </div>
+        <div class="qydlg-f"><span class="llm">LLM <b>Claude</b> ▾</span><span>Cancel</span><span class="go">Commit 2 &amp; Push</span></div>
+      </div></div>
+    </div></div></div></div>
+    <div class="pane"><div class="iwin"><div class="iwin-b"><i></i><i></i><i></i><span>Insomnia · MCP Client</span></div><div class="iwin-c"><div class="qyi">
+      <div class="qyi-top"><span class="qyi-lg"><i></i></span><span class="qyi-cr">Kong Demo Org <i>›</i> <b>Support MCP</b></span><span class="qyi-up">Invite</span></div>
+      <div class="qyi-body"><div class="qys"><div class="qys-h"><b>MCP Workspace</b></div>
+        <div class="qyr on" style="padding-left:8px"><i class="qym p-mcp">MCP</i><span>Support MCP</span></div>
+        <div class="qys-b"><span>● Connected</span></div>
+      </div><div class="qyi-main"><div class="qysplit m">
+        <div class="qyp"><div class="qyu"><span class="qyu-m"><i class="qym p-mcp">MCP</i></span><code>https://mcp.company.com/mcp</code><span class="qyu-s red">Disconnect</span></div>
+          <div class="qymcp"><div class="qymcp-l"><div class="qyt"><span class="on">Tools <i class="bd">4</i></span><span>Prompts</span></div>
+            <div class="qytool on"><b>search_runbook</b><span>런북 검색</span></div>
+            <div class="qytool"><b>get_incident_status</b><span>장애 상태</span></div>
+            <div class="qytool"><b>create_ticket</b><span>티켓 생성</span></div>
+          </div>
+          <div class="qymcp-r"><div class="qymcp-h"><b>search_runbook</b><span class="go">Call Tool</span></div>
+            <label>query <em>string</em></label><div class="qyin">INC-1007 동기화 지연</div>
+          </div></div>
+        </div>
+        <div class="qyp"><div class="qyrh"><b class="sc ok">200 OK</b><span>412 ms</span></div>
+          <div class="qyt"><span class="on">Response</span><span>Events</span></div>
+          <pre class="qyc"><i class="ln">1</i>{
+<i class="ln">2</i>  <b class="s">&quot;content&quot;</b>: [{ <b class="s">&quot;type&quot;</b>: <b class="s">&quot;text&quot;</b>, <b class="s">&quot;text&quot;</b>: <b class="s">&quot;RB-221 …&quot;</b> }],
+<i class="ln">3</i>  <b class="s">&quot;isError&quot;</b>: <b class="k">false</b>
+<i class="ln">4</i>}</pre>
+        </div>
+      </div></div></div>
+    </div></div></div></div>
+  </div>
+</section>
 <section class="sec" id="n-konnect" data-title="Kong Konnect 연동">
   <div class="eyebrow">Native Integration</div>
   <h2>게이트웨이와 네이티브로 연결된 유일한 API 클라이언트</h2>
@@ -4314,7 +4569,7 @@ document.querySelectorAll('.mlim').forEach(r=>{
 });
 const PAGES=[...document.querySelectorAll('.page')];
 /* ---------- 버전 · 다운로드 · CHANGELOG ---------- */
-const KONG_INTRO_VERSION="2026.10.09.6ac83df9";
+const KONG_INTRO_VERSION="2026.10.09.6ac840a6";
 const VER={
   cur:KONG_INTRO_VERSION,
   dl:'https://github.com/Great-Stone-Kong/kong-introduction/releases/latest/download/kong-introduction.html',
@@ -4537,6 +4792,29 @@ fromHash();
   render();
 })();
 
+/* ---------- Postman Import 애니 · AI 작업 ---------- */
+(function(){
+  const anim=document.getElementById('pmig-anim');
+  if(anim){
+    if(REDUCED){ anim.classList.add('done','run'); }
+    else {
+      let done=false;
+      new IntersectionObserver(es=>es.forEach(e=>{
+        if(!e.isIntersecting) return;
+        if(done){ anim.classList.add('run'); return; }
+        done=true;
+        anim.classList.remove('run'); void anim.offsetWidth; anim.classList.add('run');
+      }),{threshold:.35}).observe(anim);
+    }
+  }
+  const work=document.getElementById('iai-work');
+  if(work){
+    const kick=()=>{ if(REDUCED){ work.classList.add('run'); return; } work.classList.remove('run'); void work.offsetWidth; work.classList.add('run'); };
+    new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) kick(); }),{threshold:.25}).observe(work);
+    const tabs=work.querySelector('[data-tabs]');
+    if(tabs) tabs.addEventListener('click',e=>{ if(e.target.closest('button')) setTimeout(kick,0); });
+  }
+})();
 /* ---------- Insomnia 기능 둘러보기 ---------- */
 (function(){
   const r=document.getElementById('itour'); if(!r) return;
