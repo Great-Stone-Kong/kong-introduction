@@ -2,33 +2,21 @@
 
 - 문의 gs.lee@konghq.com
 - 경로는 **상위 메뉴 > 하위 메뉴(섹션) > 항목** 형식입니다.
+- `##` 버전은 GitHub Release와 맞춥니다. Release 전에는 맨 위 초안 섹션 하나만 갱신합니다.
 
 ---
 
 ## 2026.10.09.6ac845f9
 
-### 변경
-
-- Insomnia > Postman 마이그레이션
-  - 사이드바에 섹션 표시되도록 페이지 안으로 배치
-  - Export → Import → 완료 3단계 목업 (1:1:2)
-  - Postman Export · Insomnia Preferences Data Import 화면 기준으로 표현
-
-## 2026.10.09.6ac843e8
-
-### 변경
-
-- Insomnia > Postman 마이그레이션
-  - 섹션을 Insomnia 맨 끝으로 이동
-  - Import 후 요청 · 환경 · 스크립트가 테스트 UI에 올라가는 흐름으로 표현
-  - 비교표 Insomnia 열 강조 (경쟁 제품 비교와 동일 방식)
-
-## 2026.10.09.6ac840a6
-
 ### 추가
 
 - Insomnia > Postman 마이그레이션
+  - Export → Import → 완료 3단계 목업 (1:1:2)
+  - Postman Export · Insomnia Preferences Data Import · 테스트 UI
+  - 비교표 Insomnia 열 강조 (경쟁 제품 비교와 동일 방식)
 - Insomnia > AI 연동
+  - Preferences · AI Settings 목업
+  - Mock · Smart Commits · MCP Client 작업 목업
 
 ## 2026.10.08.1a004
 
