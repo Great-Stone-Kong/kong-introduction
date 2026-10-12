@@ -25,6 +25,11 @@
 - API Gateway > Event Gateway > 효과
   - Core Use Cases & Business Outcomes 10건으로 재정리
 
+### 추가
+
+- API Gateway > Event Gateway > Failover
+  - Partner DR 모델 · Planned Failover 5단계 애니메이션
+
 ### 삭제
 
 - API Gateway > Event Gateway > Kong 적용 전후

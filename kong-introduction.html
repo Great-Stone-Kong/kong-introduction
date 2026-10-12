@@ -695,6 +695,62 @@ h1.light{font-weight:400}h1.light em.gw{font-weight:800}
 @media (max-width:820px){.econ{grid-template-columns:1fr}.ec-ar{transform:rotate(90deg)}}
 @media (prefers-reduced-motion:reduce){.eco .ln{stroke-dashoffset:0}.eco .wb,.eco .hub{opacity:1}}
 
+/* Event Gateway Failover */
+.efo{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:18px 0 8px;overflow:hidden}
+.efo svg{display:block;width:100%;height:auto}
+.efo .efo-cap{font-size:13px;color:var(--g300);margin:12px 0 0;line-height:1.55}
+.efo .n{opacity:0;transform:translateY(8px)}
+.efo.in .n{animation:rise .5s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i)*.08s)}
+.efo .hub{opacity:0}
+.efo.in .hub{animation:pop .5s .15s both}
+.efo .bk{transition:opacity .4s,stroke .4s}
+.efo .deny{opacity:0}
+.efo .phase{opacity:0;font-size:12px;font-weight:800}
+.efo .pkt-pri,.efo .pkt-sec{opacity:0}
+.efo.in .deny{animation:efoDeny 14s ease-in-out infinite}
+.efo.in .bk-pri{animation:efoPri 14s ease-in-out infinite}
+.efo.in .bk-sec{animation:efoSec 14s ease-in-out infinite}
+.efo.in .pkt-pri{animation:efoPktPri 14s linear infinite}
+.efo.in .pkt-sec{animation:efoPktSec 14s linear infinite}
+.efo.in .phase{animation:efoPhase 14s ease-in-out infinite}
+.efo.in .dest-lbl{animation:efoDest 14s ease-in-out infinite}
+@keyframes efoPri{
+  0%,42%{opacity:1} 50%,100%{opacity:.35}
+}
+@keyframes efoSec{
+  0%,48%{opacity:.35} 55%,100%{opacity:1}
+}
+@keyframes efoDeny{
+  0%,18%{opacity:0} 22%,40%{opacity:1} 48%,100%{opacity:0}
+}
+@keyframes efoPktPri{
+  0%,18%{opacity:1} 22%,48%{opacity:0} 50%,100%{opacity:0}
+}
+@keyframes efoPktSec{
+  0%,55%{opacity:0} 58%,100%{opacity:1}
+}
+@keyframes efoPhase{
+  0%,17%{opacity:0} 20%,38%{opacity:1} 42%,100%{opacity:0}
+}
+@keyframes efoDest{
+  0%,48%{opacity:1} 52%,100%{opacity:0}
+}
+.efo .dest-lbl-b{opacity:0}
+.efo.in .dest-lbl-b{animation:efoDestB 14s ease-in-out infinite}
+@keyframes efoDestB{
+  0%,52%{opacity:0} 55%,100%{opacity:1}
+}
+.pipe.efo-pipe{grid-template-columns:repeat(5,minmax(0,1fr));margin-top:8px}
+.pipe.efo-pipe .stg{animation-duration:14s;animation-delay:calc(var(--i)*2.5s)}
+@media (max-width:1100px){.pipe.efo-pipe{grid-template-columns:repeat(3,1fr)}.pipe.efo-pipe .fp-line{display:none}}
+@media (prefers-reduced-motion:reduce){
+  .efo .n,.efo .hub{opacity:1;transform:none;animation:none}
+  .efo .bk-pri,.efo .bk-sec{opacity:1;animation:none}
+  .efo .deny,.efo .phase,.efo .dest-lbl,.efo .dest-lbl-b,.efo .pkt-pri,.efo .pkt-sec{animation:none}
+  .efo .deny,.efo .phase,.efo .pkt-sec{opacity:0}
+  .efo .dest-lbl,.efo .pkt-pri{opacity:1}.efo .dest-lbl-b{opacity:0}
+}
+
 .pf-st li span{min-width:0;overflow-wrap:anywhere}
 .pf-st .pf-h span,.pf-st .pf-h em{overflow-wrap:anywhere}
 @media (min-width:1101px) and (max-width:1560px){
@@ -2843,6 +2899,71 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
     <div class="card"><span class="tag">10 · Transform</span><h3>헤더 수정 · 필터</h3><p>Produce · Consume 시점에 헤더 추가 · 삭제 · 변경과 레코드 skip을 Policy로 적용합니다. 앱 코드를 바꾸지 않고 라우팅 · 태깅 · 필터링을 둡니다.</p></div>
   </div>
   <p class="note">출처: Kong Event Gateway Partner · Core Use Cases &amp; Business Outcomes.</p>
+</section>
+
+<section class="sec" id="e-failover" data-title="Failover">
+  <div class="eyebrow">Disaster Recovery</div>
+  <h2>Failover 모델 · 절차</h2>
+  <p class="sub">클라이언트는 항상 Virtual Cluster bootstrap만 봅니다. Primary · Secondary 전환은 Gateway에서 deny-writes와 destination 교체로 처리합니다.</p>
+  <div class="efo rv">
+    <svg viewBox="0 0 960 320" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Event Gateway Failover: Virtual Cluster destination을 Primary에서 Secondary로 전환">
+      <text x="70" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#CCFF00" letter-spacing="1.2">CLIENTS</text>
+      <text x="380" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#CCFF00" letter-spacing="1.2">EVENT GATEWAY</text>
+      <text x="760" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#CCFF00" letter-spacing="1.2">BACKEND CLUSTERS</text>
+      <g class="n" style="--i:0"><rect x="20" y="100" width="100" height="40" rx="20" fill="#0A1F10" stroke="#4A4D49"/><text x="70" y="125" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Producers</text></g>
+      <g class="n" style="--i:1"><rect x="20" y="180" width="100" height="40" rx="20" fill="#0A1F10" stroke="#4A4D49"/><text x="70" y="205" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Consumers</text></g>
+      <g class="hub">
+        <rect x="220" y="70" width="320" height="200" rx="14" fill="#0A1F10" stroke="#CCFF00" stroke-width="2"/>
+        <text x="380" y="98" text-anchor="middle" font-size="14" font-weight="800" fill="#CCFF00">Virtual Cluster</text>
+        <text x="380" y="118" text-anchor="middle" font-size="11" fill="#A1A69F">bootstrap 고정 · 인증은 VC에 유지</text>
+        <rect x="248" y="138" width="264" height="36" rx="8" fill="#13301C" stroke="#54660A"/>
+        <text class="dest-lbl" x="380" y="161" text-anchor="middle" font-size="13" font-weight="700" fill="#E7EDE5">destination → Primary</text>
+        <text class="dest-lbl-b" x="380" y="161" text-anchor="middle" font-size="13" font-weight="700" fill="#CCFF00">destination → Secondary</text>
+        <g class="deny">
+          <rect x="248" y="188" width="264" height="30" rx="8" fill="#2A0E0E" stroke="#ff6b6b"/>
+          <text x="380" y="208" text-anchor="middle" font-size="12" font-weight="800" fill="#ff8b8b">deny-writes · Produce 차단</text>
+        </g>
+        <text class="phase" x="380" y="248" text-anchor="middle" fill="#CCFF00">drain · lag → 0 · offset sync</text>
+      </g>
+      <g class="n bk bk-pri" style="--i:2">
+        <rect x="620" y="72" width="280" height="88" rx="10" fill="#0A1F10" stroke="#CCFF00" stroke-width="2"/>
+        <text x="760" y="108" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">Primary Kafka</text>
+        <text x="760" y="132" text-anchor="middle" font-size="11" fill="#A1A69F">활성 Backend</text>
+      </g>
+      <g class="n bk bk-sec" style="--i:3">
+        <rect x="620" y="182" width="280" height="88" rx="10" fill="#0A1F10" stroke="#4A4D49" stroke-width="2"/>
+        <text x="760" y="218" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">Secondary Kafka</text>
+        <text x="760" y="242" text-anchor="middle" font-size="11" fill="#A1A69F">DR · MirrorMaker2 / Cluster Linking</text>
+      </g>
+      <path d="M120 120H220" stroke="#CCFF00" stroke-width="1.8" fill="none"/>
+      <path d="M120 200H220" stroke="#CCFF00" stroke-width="1.8" fill="none"/>
+      <path d="M540 116H620" stroke="#CCFF00" stroke-width="1.8" fill="none" stroke-opacity=".85"/>
+      <path d="M540 226H620" stroke="#CCFF00" stroke-width="1.8" fill="none" stroke-opacity=".55" stroke-dasharray="5 4"/>
+      <g class="pkt-pri">
+        <circle r="4" fill="#CCFF00" opacity="0"><animateMotion dur="2.4s" begin="0.4s" repeatCount="indefinite" path="M120 120H540H620"/><animate attributeName="opacity" dur="2.4s" begin="0.4s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.08;.85;1"/></circle>
+        <circle r="4" fill="#CCFF00" opacity="0"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite" path="M120 200H540V116H620"/><animate attributeName="opacity" dur="2.4s" begin="1.2s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.08;.85;1"/></circle>
+      </g>
+      <g class="pkt-sec">
+        <circle r="4" fill="#CCFF00" opacity="0"><animateMotion dur="2.4s" begin="0.6s" repeatCount="indefinite" path="M120 120H540V226H620"/><animate attributeName="opacity" dur="2.4s" begin="0.6s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.08;.85;1"/></circle>
+        <circle r="4" fill="#CCFF00" opacity="0"><animateMotion dur="2.4s" begin="1.4s" repeatCount="indefinite" path="M120 200H540H620"/><animate attributeName="opacity" dur="2.4s" begin="1.4s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.08;.85;1"/></circle>
+      </g>
+    </svg>
+    <p class="efo-cap">Fleet-wide DR처럼 모든 클라이언트 bootstrap을 바꾸지 않습니다. VC destination만 Primary ↔ Secondary로 교체합니다. VC 수 · 라이선스에는 추가되지 않습니다.</p>
+  </div>
+  <h3 style="margin-top:20px">Planned Failover 절차</h3>
+  <div class="pipe fpipe efo-pipe">
+    <div class="fp-line"><i class="fp-pk"></i><i class="fp-pk b"></i></div>
+    <div class="stg" style="--i:0"><span class="fp-n">1</span><h5>STOP</h5><strong>Produce 중단</strong><span>deny-writes</span><span>읽기는 유지</span></div>
+    <div class="stg" style="--i:1"><span class="fp-n">2</span><h5>DRAIN</h5><strong>드레인 대기</strong><span>inflight → 0</span><span>lag · offset sync</span></div>
+    <div class="stg" style="--i:2"><span class="fp-n">3</span><h5>SWAP</h5><strong>Backend 교체</strong><span>VC destination</span><span>→ Secondary</span></div>
+    <div class="stg" style="--i:3"><span class="fp-n">4</span><h5>CHECK</h5><strong>헬스체크</strong><span>canary topic</span><span>produce · consume</span></div>
+    <div class="stg" style="--i:4"><span class="fp-n">5</span><h5>RESUME</h5><strong>Produce 재개</strong><span>deny-writes 해제</span><span>Secondary 유입</span></div>
+  </div>
+  <div class="grid g2" style="margin-top:8px">
+    <div class="card"><span class="tag">Authentication</span><h3>인증은 이동하지 않음</h3><p>클라이언트 측 SASL · OAUTHBEARER · mTLS는 Virtual Cluster에 둡니다. Gateway가 Backend에 붙는 자격 증명만 Backend Cluster에 있습니다. 전환 시 클라이언트 자격 증명은 바뀌지 않습니다.</p></div>
+    <div class="card"><span class="tag">Planned · Unplanned</span><h3>계획 · 비상 전환</h3><p>계획(DR 드릴 · 리전 이전 · 점검)은 1→5단계를 모두 수행합니다. Primary가 이미 다운된 비상은 1단계를 건너뛰고 destination을 바로 교체합니다. 미복제 데이터 손실은 허용 범위로 둡니다.</p></div>
+  </div>
+  <p class="note">Gateway는 복제를 exactly-once로 보장하지 않습니다. Failover 안전 범위는 MirrorMaker2 · Cluster Linking lag에 종속됩니다. 출처: Kong Event Gateway Partner · Failover.</p>
 </section>
 
 <section class="sec" id="e-change" data-title="적용 시 변경 범위">
