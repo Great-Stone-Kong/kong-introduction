@@ -36,6 +36,7 @@
 
 - API Gateway > Event Gateway > Virtual Cluster
   - 거버넌스 모델 카드를 VC 동작 · 논리 격리 아키텍처로 교체
+  - Client topic → VC prefix → Backend 토픽 매핑 표현
 
 ### 삭제
 
