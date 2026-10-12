@@ -2765,16 +2765,9 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
         <text x="56" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#CCFF00" letter-spacing="1">CLIENTS</text>
         <text x="220" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#CCFF00" letter-spacing="1">EVENT GATEWAY</text>
         <text x="372" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#CCFF00" letter-spacing="1">BACKEND</text>
-        <path class="ln" pathLength="1" style="--i:0" d="M112 58H148" stroke="#CCFF00" stroke-width="1.8" fill="none"/>
-        <path class="ln" pathLength="1" style="--i:1" d="M112 134H148" stroke="#CCFF00" stroke-width="1.8" fill="none"/>
-        <path class="ln" pathLength="1" style="--i:2" d="M112 210H148" stroke="#CCFF00" stroke-width="1.8" fill="none"/>
-        <path class="ln" pathLength="1" style="--i:3" d="M292 134H318" stroke="#CCFF00" stroke-width="1.8" fill="none"/>
-        <circle class="pkt" r="4" fill="#CCFF00" opacity="0"><animateMotion dur="2.8s" begin="1.0s" repeatCount="indefinite" path="M112 58H148V134H292H318"/><animate attributeName="opacity" dur="2.8s" begin="1.0s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.88;1"/></circle>
-        <circle class="pkt" r="4" fill="#CCFF00" opacity="0"><animateMotion dur="2.8s" begin="1.7s" repeatCount="indefinite" path="M112 134H148H292H318"/><animate attributeName="opacity" dur="2.8s" begin="1.7s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.88;1"/></circle>
-        <circle class="pkt" r="4" fill="#CCFF00" opacity="0"><animateMotion dur="2.8s" begin="2.4s" repeatCount="indefinite" path="M112 210H148V134H292H318"/><animate attributeName="opacity" dur="2.8s" begin="2.4s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.88;1"/></circle>
-        <g class="n" style="--i:0"><rect x="16" y="40" width="96" height="36" rx="18" fill="#0A1F10" stroke="#4A4D49"/><text x="64" y="63" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">team-a</text></g>
-        <g class="n" style="--i:1"><rect x="16" y="116" width="96" height="36" rx="18" fill="#0A1F10" stroke="#4A4D49"/><text x="64" y="139" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">team-b</text></g>
-        <g class="n" style="--i:2"><rect x="16" y="192" width="96" height="36" rx="18" fill="#0A1F10" stroke="#4A4D49"/><text x="64" y="215" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">partner</text></g>
+        <g class="n" style="--i:0"><rect x="16" y="82" width="96" height="36" rx="18" fill="#0A1F10" stroke="#4A4D49"/><text x="64" y="105" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">team-a</text></g>
+        <g class="n" style="--i:1"><rect x="16" y="118" width="96" height="36" rx="18" fill="#0A1F10" stroke="#4A4D49"/><text x="64" y="141" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">team-b</text></g>
+        <g class="n" style="--i:2"><rect x="16" y="154" width="96" height="36" rx="18" fill="#0A1F10" stroke="#4A4D49"/><text x="64" y="177" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">partner</text></g>
         <g class="hub"><rect x="148" y="48" width="144" height="172" rx="12" fill="#0A1F10" stroke="#CCFF00" stroke-width="2"/>
           <text x="220" y="72" text-anchor="middle" font-size="11" font-weight="800" fill="#CCFF00">Event Gateway</text>
           <rect x="162" y="86" width="116" height="28" rx="6" fill="#13301C" stroke="#54660A"/><text x="220" y="104" text-anchor="middle" font-size="11" font-weight="700" fill="#E7EDE5">VC · team-a</text>
@@ -2783,6 +2776,16 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
           <g class="pol" style="--i:0"><rect x="162" y="196" width="116" height="14" rx="4" fill="#CCFF00"/><text x="220" y="207" text-anchor="middle" font-size="9" font-weight="800" fill="#001408">Gateway Policy</text></g>
         </g>
         <g class="n" style="--i:3"><rect x="318" y="88" width="108" height="92" rx="10" fill="#fff"/><text x="372" y="124" text-anchor="middle" font-size="12" font-weight="800" fill="#001408">Backend</text><text x="372" y="144" text-anchor="middle" font-size="12" font-weight="800" fill="#001408">Kafka</text><text x="372" y="164" text-anchor="middle" font-size="10" fill="#4A4D49">단일 클러스터</text></g>
+        <!-- lanes overlaid: each client → matching VC row → Backend -->
+        <path class="ln" pathLength="1" style="--i:0" d="M112 100H162" stroke="#CCFF00" stroke-width="1.8" fill="none"/>
+        <path class="ln" pathLength="1" style="--i:1" d="M112 136H162" stroke="#CCFF00" stroke-width="1.8" fill="none"/>
+        <path class="ln" pathLength="1" style="--i:2" d="M112 172H162" stroke="#CCFF00" stroke-width="1.8" fill="none"/>
+        <path class="ln" pathLength="1" style="--i:3" d="M278 100H300V134H318" stroke="#CCFF00" stroke-width="1.6" fill="none" stroke-opacity=".75"/>
+        <path class="ln" pathLength="1" style="--i:4" d="M278 136H318" stroke="#CCFF00" stroke-width="1.8" fill="none"/>
+        <path class="ln" pathLength="1" style="--i:5" d="M278 172H300V134H318" stroke="#CCFF00" stroke-width="1.6" fill="none" stroke-opacity=".75"/>
+        <circle class="pkt" r="4" fill="#CCFF00" opacity="0"><animateMotion dur="2.6s" begin="1.0s" repeatCount="indefinite" path="M112 100H278H300V134H318"/><animate attributeName="opacity" dur="2.6s" begin="1.0s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.88;1"/></circle>
+        <circle class="pkt" r="4" fill="#CCFF00" opacity="0"><animateMotion dur="2.6s" begin="1.7s" repeatCount="indefinite" path="M112 136H318"/><animate attributeName="opacity" dur="2.6s" begin="1.7s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.88;1"/></circle>
+        <circle class="pkt" r="4" fill="#CCFF00" opacity="0"><animateMotion dur="2.6s" begin="2.4s" repeatCount="indefinite" path="M112 172H278H300V134H318"/><animate attributeName="opacity" dur="2.6s" begin="2.4s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.88;1"/></circle>
         <text x="148" y="260" font-size="11" fill="#CCFF00">VC 격리 · Gateway Policy 일원화 · 물리 클러스터 축소</text>
       </svg>
       <p class="ew-cap">클라이언트가 보는 것은 Virtual Cluster뿐입니다. ACL · 스키마 · 필터는 Gateway Policy 한 레이어에서 강제합니다.</p>
