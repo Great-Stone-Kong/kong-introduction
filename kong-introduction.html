@@ -3310,10 +3310,10 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
       <span class="mk-pill">Last 7 days · GMT+9</span>
     </div>
     <div class="mk-kpis">
-      <div class="mk-kpi"><span>Total bytes produced</span><b>740 B</b><em class="na">Record size (sum)</em></div>
-      <div class="mk-kpi"><span>Total bytes consumed</span><b>1.86 kB</b><em class="na">Record size (sum)</em></div>
-      <div class="mk-kpi"><span>Unique principals</span><b>1</b><em class="na">—</em></div>
-      <div class="mk-kpi"><span>Errors</span><b>6</b><em class="na">Request count (sum)</em></div>
+      <div class="mk-kpi"><span>Total bytes produced</span><b>84.2 GB</b><em class="up">+12.4% vs prev</em></div>
+      <div class="mk-kpi"><span>Total bytes consumed</span><b>218 GB</b><em class="up">+9.1% vs prev</em></div>
+      <div class="mk-kpi"><span>Unique principals</span><b>48</b><em class="up">+6 vs prev</em></div>
+      <div class="mk-kpi"><span>Errors</span><b>1.24K</b><em class="na">Request count (sum)</em></div>
     </div>
     <div class="ega-grid">
       <div class="mk-card">
@@ -3321,8 +3321,11 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
         <table class="ega-tbl">
           <thead><tr><th>Topic name</th><th>Virtual cluster</th><th>Backend cluster</th><th>Record size</th></tr></thead>
           <tbody>
-            <tr><td>my-test-topic</td><td>demo-virtual-cluster</td><td>demo-backend-cluster</td><td class="num">419 B</td></tr>
-            <tr><td>blocked-topic</td><td>demo-virtual-cluster</td><td>demo-backend-cluster</td><td class="num">321 B</td></tr>
+            <tr><td>orders.events</td><td>vc-team-a</td><td>kafka-prod</td><td class="num">48.6 GB</td></tr>
+            <tr><td>payments.notify</td><td>vc-team-b</td><td>kafka-prod</td><td class="num">22.1 GB</td></tr>
+            <tr><td>partner.ingest</td><td>vc-partner</td><td>kafka-prod</td><td class="num">8.4 GB</td></tr>
+            <tr><td>audit.trail</td><td>vc-team-a</td><td>kafka-prod</td><td class="num">3.2 GB</td></tr>
+            <tr><td>agent.signals</td><td>vc-team-b</td><td>kafka-prod</td><td class="num">1.9 GB</td></tr>
           </tbody>
         </table>
       </div>
@@ -3331,7 +3334,11 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
         <table class="ega-tbl">
           <thead><tr><th>Topic name</th><th>Virtual cluster</th><th>Backend cluster</th><th>Record size</th></tr></thead>
           <tbody>
-            <tr><td>my-test-topic</td><td>demo-virtual-cluster</td><td>demo-backend-cluster</td><td class="num">1.82 kB</td></tr>
+            <tr><td>orders.events</td><td>vc-team-a</td><td>kafka-prod</td><td class="num">126 GB</td></tr>
+            <tr><td>payments.notify</td><td>vc-team-b</td><td>kafka-prod</td><td class="num">58.2 GB</td></tr>
+            <tr><td>partner.ingest</td><td>vc-partner</td><td>kafka-prod</td><td class="num">21.4 GB</td></tr>
+            <tr><td>audit.trail</td><td>vc-team-a</td><td>kafka-prod</td><td class="num">8.1 GB</td></tr>
+            <tr><td>agent.signals</td><td>vc-team-b</td><td>kafka-prod</td><td class="num">4.3 GB</td></tr>
           </tbody>
         </table>
       </div>
@@ -3340,7 +3347,11 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
         <table class="ega-tbl">
           <thead><tr><th>Name</th><th>Record size</th></tr></thead>
           <tbody>
-            <tr><td>anonymous</td><td class="num">740 B</td></tr>
+            <tr><td>orders-svc</td><td class="num">41.2 GB</td></tr>
+            <tr><td>payment-worker</td><td class="num">18.7 GB</td></tr>
+            <tr><td>partner-gateway</td><td class="num">12.4 GB</td></tr>
+            <tr><td>batch-etl</td><td class="num">7.1 GB</td></tr>
+            <tr><td>cs-agent</td><td class="num">4.8 GB</td></tr>
           </tbody>
         </table>
       </div>
@@ -3349,7 +3360,11 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
         <table class="ega-tbl">
           <thead><tr><th>Name</th><th>Record size</th></tr></thead>
           <tbody>
-            <tr><td>anonymous</td><td class="num">1.82 kB</td></tr>
+            <tr><td>analytics-consumer</td><td class="num">98.4 GB</td></tr>
+            <tr><td>billing-reconcile</td><td class="num">52.1 GB</td></tr>
+            <tr><td>partner-mirror</td><td class="num">31.6 GB</td></tr>
+            <tr><td>risk-scorer</td><td class="num">22.8 GB</td></tr>
+            <tr><td>search-indexer</td><td class="num">13.1 GB</td></tr>
           </tbody>
         </table>
       </div>
@@ -3358,9 +3373,11 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
         <table class="ega-tbl">
           <thead><tr><th>Name</th><th>Request count</th></tr></thead>
           <tbody>
-            <tr><td>TOPIC_AUTHORIZATION_FAILED</td><td class="num">4</td></tr>
-            <tr><td>COORDINATOR_NOT_AVAILABLE</td><td class="num">1</td></tr>
-            <tr><td>GROUP_AUTHORIZATION_FAILED</td><td class="num">1</td></tr>
+            <tr><td>TOPIC_AUTHORIZATION_FAILED</td><td class="num">842</td></tr>
+            <tr><td>GROUP_AUTHORIZATION_FAILED</td><td class="num">214</td></tr>
+            <tr><td>COORDINATOR_NOT_AVAILABLE</td><td class="num">96</td></tr>
+            <tr><td>UNKNOWN_TOPIC_OR_PARTITION</td><td class="num">58</td></tr>
+            <tr><td>REQUEST_TIMED_OUT</td><td class="num">31</td></tr>
           </tbody>
         </table>
       </div>
@@ -3369,10 +3386,11 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
         <table class="ega-tbl">
           <thead><tr><th>Name</th><th>Request count</th></tr></thead>
           <tbody>
-            <tr><td>FindCoordinator</td><td class="num">210</td></tr>
-            <tr><td>Metadata</td><td class="num">39</td></tr>
-            <tr><td>ListOffsets</td><td class="num">19</td></tr>
-            <tr><td>ApiVersions</td><td class="num">16</td></tr>
+            <tr><td>FindCoordinator</td><td class="num">1.28M</td></tr>
+            <tr><td>Metadata</td><td class="num">412K</td></tr>
+            <tr><td>ListOffsets</td><td class="num">186K</td></tr>
+            <tr><td>ApiVersions</td><td class="num">94K</td></tr>
+            <tr><td>Heartbeat</td><td class="num">71K</td></tr>
           </tbody>
         </table>
       </div>
