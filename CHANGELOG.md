@@ -11,6 +11,7 @@
 
 - API Gateway > Event Gateway
 - API Gateway > Kafka Plugins
+- API Gateway > Kafka Plugins > 관측성
 - Insomnia > Postman 마이그레이션
 - Insomnia > AI 연동
 
