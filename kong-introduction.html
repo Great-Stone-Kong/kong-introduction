@@ -3271,15 +3271,17 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
     <p class="edep-cap">Client ↔ Data Plane ↔ Backend로 Kafka 트래픽이 흐릅니다. Control Plane(Konnect)은 Listener · Virtual Cluster · Policy 설정을 Data Plane에 푸시하며 메시지 payload는 보지 않습니다.</p>
   </div>
   <div class="tw rv"><table class="cmp">
-    <thead><tr><th>항목</th><th class="c k">Kong Event Gateway</th></tr></thead>
+    <thead><tr><th>구성 요소</th><th class="c">역할</th></tr></thead>
     <tbody>
-      <tr><td>Control Plane</td><td class="c kc">Konnect에서 관리형 제공</td></tr>
-      <tr><td>Data Plane</td><td class="c kc">고객 환경 self-managed 가능</td></tr>
-      <tr><td>EE만으로 native GW 재현</td><td class="c">불가 · HTTP 중재(플러그인)로 요구를 낮추거나 Konnect Event GW 도입</td></tr>
-      <tr><td>에어갭 · Konnect 불가</td><td class="c">Event GW 현재 선택지 아님 · EE 플러그인 + 브로커 ACL/네트워크 분리</td></tr>
+      <tr><td>Overview</td><td class="c">Event Gateway Control Plane 개요 · Data Plane 연결 상태 확인</td></tr>
+      <tr><td>Data Plane Nodes</td><td class="c">고객 환경 self-managed 프록시 노드 · CP에서 인증서 발급 후 기동 · 설정 pull</td></tr>
+      <tr><td>Backend Clusters</td><td class="c">프록시 대상 물리 Kafka · bootstrap · 인증 · TLS · metadata 갱신 간격</td></tr>
+      <tr><td>Virtual Clusters</td><td class="c">클라이언트에 보이는 논리 클러스터 · Auth mediation · ACL · namespace · VC Policy</td></tr>
+      <tr><td>Listeners</td><td class="c">Kafka 클라이언트 TCP 접속점 · TLS/mTLS · SNI/port mapping · Listener Policy</td></tr>
+      <tr><td>Resources</td><td class="c">Schema Registry 등 공유 리소스 · Schema Validation Policy에서 참조</td></tr>
     </tbody>
   </table></div>
-  <p class="note">공식 FAQ: Event Gateway는 on-prem CP로 동작하지 않으며 Konnect를 통해서만 제공됩니다. DP는 망내에 둘 수 있어도 라이선스·설정은 Konnect입니다. 참고: <a href="https://developer.konghq.com/event-gateway/architecture/" target="_blank" rel="noopener">Kong Event Gateway architecture</a></p>
+  <p class="note">Control Plane은 Konnect 전용입니다. Data Plane은 self-managed이며 라이선스는 Konnect가 처리합니다. 참고: <a href="https://developer.konghq.com/event-gateway/" target="_blank" rel="noopener">Kong Event Gateway</a> · <a href="https://developer.konghq.com/event-gateway/architecture/" target="_blank" rel="noopener">Architecture</a> · <a href="https://developer.konghq.com/event-gateway/entities/schema-registry/" target="_blank" rel="noopener">Schema registry</a></p>
 </section>
 
 <section class="sec" id="eg-vs" data-title="vs Confluent Gateway">
