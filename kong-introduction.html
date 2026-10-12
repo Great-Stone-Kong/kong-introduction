@@ -2098,7 +2098,7 @@ h1.light{font-weight:400}h1.light em.gw{font-weight:800}
 </div>
 
 <!-- ============ 3. API GATEWAY ============ -->
-<div class="page" id="p-apigw" data-label="API Gateway">
+<div class="page" id="p-apigw" data-label="API Gateway" data-group="API Gateway" data-desc="API 트래픽 거버넌스">
 
 <section class="sec hero" id="a-intro" data-title="개요">
   <div class="eyebrow">Kong API Gateway</div>
@@ -2291,7 +2291,7 @@ trace.parent       orders-service · POST /checkout</pre></div>
 
 
 <!-- ============ 4. EVENT GATEWAY ============ -->
-<div class="page" id="p-event" data-label="Event Gateway" data-group="Event Gateway" data-desc="Kafka · 이벤트 스트림 거버넌스 · 개요">
+<div class="page" id="p-event" data-label="Event Gateway" data-group="API Gateway" data-desc="Kafka · 이벤트 스트림 거버넌스">
 
 <section class="sec hero" id="e-intro" data-title="개요">
   <div class="eyebrow">Kong Event Gateway</div>
@@ -2401,12 +2401,75 @@ trace.parent       orders-service · POST /checkout</pre></div>
     <div class="card hl"><span class="tag">Kafka Plugins</span><h3>HTTP(S) ↔ Kafka</h3><p>기존 Kong Gateway 위에 produce · consume 플러그인을 올립니다. REST / SSE / WebSocket 클라이언트가 대상입니다.</p>
       <ul><li>EE · Konnect Gateway에서 사용</li><li>거버넌스 단위: Route · Service · Plugin</li><li>온프렘 CP 가능</li></ul>
       <button class="btn s" onclick="go('kplugin')">Kafka Plugins</button></div>
-    <div class="card hl"><span class="tag">Event Gateway</span><h3>Native Kafka Proxy</h3><p>Kafka 클라이언트가 브로커처럼 붙는 전용 프록시입니다. Virtual Cluster · Policy로 테넌트와 토픽을 격리합니다.</p>
+    <div class="card hl"><span class="tag">Event Gateway</span><h3>Native Kafka Proxy</h3><p>Kafka 클라이언트가 브로커처럼 붙는 전용 프록시입니다. Virtual Cluster · Policy로 테넌트와 토픽을 격리합니다. 아래 섹션에서 모델을 이어 봅니다.</p>
       <ul><li>CP는 Konnect 전용</li><li>거버넌스 단위: Listener · Virtual Cluster · Backend · Policy</li><li>DP는 self-managed 가능</li></ul>
-      <button class="btn s" onclick="go('egw')">Native Proxy</button></div>
+      <button class="btn s" onclick="go('event','eg-model')">거버넌스 모델</button></div>
   </div>
   <div class="chain" style="margin-top:22px"><span class="n">REST · SSE · WS</span><span class="ar"></span><span class="n k">Kafka Plugins</span><span class="ar"></span><span class="n">Kafka Brokers</span></div>
   <div class="chain" style="margin-top:10px"><span class="n">Kafka Client</span><span class="ar"></span><span class="n k">Event Gateway</span><span class="ar"></span><span class="n">Kafka Brokers</span></div>
+</section>
+
+
+<!-- Native Event Gateway (merged from Native Proxy page) -->
+<section class="sec" id="eg-model" data-title="거버넌스 모델">
+  <div class="eyebrow">Model</div>
+  <h2>Listener · Virtual Cluster · Backend · Policy</h2>
+  <div class="grid g2">
+    <div class="card"><span class="tag">Listener</span><h3>접속점</h3><p>Hostname mapping · 포트 · SNI로 클라이언트가 보는 bootstrap 엔드포인트를 제공합니다.</p></div>
+    <div class="card"><span class="tag">Virtual Cluster</span><h3>논리 클러스터</h3><p>테넌트·환경 격리. 클라이언트 입장에서는 실제 브로커처럼 보입니다.</p></div>
+    <div class="card"><span class="tag">Backend Cluster</span><h3>업스트림</h3><p>실제 Kafka 클러스터 연결 정보. API Gateway의 Service에 해당합니다.</p></div>
+    <div class="card"><span class="tag">Policy</span><h3>메시지 정책</h3><p>Topic ACL, 인증, 스키마 검증, 필드 암복호, record skip/filter를 중앙에서 강제합니다.</p></div>
+  </div>
+  <p class="note">참고: <a href="https://developer.konghq.com/event-gateway/architecture/" target="_blank" rel="noopener">Kong Event Gateway architecture</a></p>
+</section>
+
+<section class="sec" id="eg-cap" data-title="핵심 기능">
+  <div class="eyebrow">Capabilities</div>
+  <h2>네이티브 경로의 핵심 기능</h2>
+  <div class="grid g3">
+    <div class="card"><h3>보안</h3><p>Topic ACL · OAuth · mTLS · 필드 암복호로 토픽·페이로드 경계를 강제합니다.</p></div>
+    <div class="card"><h3>데이터 품질</h3><p>스키마 검증 · record filter/skip으로 비정상 레코드 유입을 막습니다.</p></div>
+    <div class="card"><h3>상품화</h3><p>AsyncAPI · Dev Portal · Service Catalog로 이벤트 데이터를 API처럼 공개합니다.</p></div>
+  </div>
+</section>
+
+<section class="sec" id="eg-change" data-title="적용 변경">
+  <div class="eyebrow">Change List</div>
+  <h2>Event Gateway 경로에서 바꾸는 것</h2>
+  <div class="grid g2">
+    <div class="card"><h3>클라이언트</h3><ul><li>Kafka 프로토콜·SDK는 유지</li><li>bootstrap / advertised host를 Event GW Listener로</li><li>인증을 GW Policy(OAuth/mTLS 등)에 맞춤</li></ul></div>
+    <div class="card"><h3>플랫폼</h3><ul><li>Virtual Cluster · Backend Cluster 매핑</li><li>브로커 ACL 일부를 GW Policy로 이전</li><li>Konnect Control Plane 온보딩 · DP 인증서</li></ul></div>
+  </div>
+</section>
+
+<section class="sec" id="eg-deploy" data-title="배포 · 라이선스">
+  <div class="eyebrow">Deploy</div>
+  <h2>Konnect 전용 Control Plane</h2>
+  <div class="tw rv"><table class="cmp">
+    <thead><tr><th>항목</th><th class="c k">Kong Event Gateway</th></tr></thead>
+    <tbody>
+      <tr><td>Control Plane</td><td class="c kc">Konnect만 (온프렘 CP 없음)</td></tr>
+      <tr><td>Data Plane</td><td class="c kc">고객 환경 self-managed 가능</td></tr>
+      <tr><td>EE만으로 native GW 재현</td><td class="c">불가 · HTTP 중재(플러그인)로 요구를 낮추거나 Konnect Event GW 도입</td></tr>
+      <tr><td>에어갭 · Konnect 불가</td><td class="c">Event GW 현재 선택지 아님 · EE 플러그인 + 브로커 ACL/네트워크 분리</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">공식 FAQ: Event Gateway는 on-prem CP로 동작하지 않으며 Konnect를 통해서만 제공됩니다. DP는 망내에 둘 수 있어도 라이선스·설정은 Konnect입니다.</p>
+</section>
+
+<section class="sec" id="eg-vs" data-title="vs Confluent Gateway">
+  <div class="eyebrow">vs Confluent</div>
+  <h2>Kong Event Gateway와 Confluent Cloud Gateway</h2>
+  <div class="tw rv"><table class="cmp">
+    <thead><tr><th>항목</th><th class="c k">Kong Event Gateway</th><th class="c">Confluent Cloud Gateway</th></tr></thead>
+    <tbody>
+      <tr><td>프로토콜</td><td class="c kc">Native Kafka proxy</td><td class="c">Native Kafka proxy</td></tr>
+      <tr><td>추상화</td><td class="c kc">Virtual Cluster · Backend · Policy</td><td class="c">Route · Streaming Domain · Policy</td></tr>
+      <tr><td>강점 시나리오</td><td class="c kc">API·AI 플랫폼과 이벤트 거버넌스 통합 · Portal/Catalog</td><td class="c">Confluent Cloud 마이그레이션 · DR · 파트너 접속 · Schema Registry 거버넌스</td></tr>
+      <tr><td>Control Plane</td><td class="c kc">Konnect SaaS</td><td class="c">Gateway는 self-managed · Confluent 라이선스/Cloud 축</td></tr>
+      <tr><td>HTTP Event API</td><td class="c kc">별도 Kafka Plugins로 동일 플랫폼에서 제공</td><td class="c">별도 REST Proxy / Cloud REST</td></tr>
+    </tbody>
+  </table></div>
 </section>
 
 <section class="sec" id="e-vs" data-title="Confluent 비교">
@@ -2450,7 +2513,7 @@ trace.parent       orders-service · POST /checkout</pre></div>
 </div>
 
 <!-- ============ 4b. KAFKA PLUGINS ============ -->
-<div class="page" id="p-kplugin" data-label="Kafka Plugins" data-group="Event Gateway" data-desc="HTTP Event API · 프로토콜 중재">
+<div class="page" id="p-kplugin" data-label="Kafka Plugins" data-group="API Gateway" data-desc="HTTP Event API · 프로토콜 중재">
 
 <section class="sec hero" id="kp-intro" data-title="개요">
   <div class="eyebrow">Kafka Plugins</div>
@@ -2515,80 +2578,6 @@ trace.parent       orders-service · POST /checkout</pre></div>
 </section>
 
 </div>
-
-<!-- ============ 4c. NATIVE PROXY ============ -->
-<div class="page" id="p-egw" data-label="Native Proxy" data-group="Event Gateway" data-desc="Konnect Event Gateway · Kafka 프로토콜">
-
-<section class="sec hero" id="eg-intro" data-title="개요">
-  <div class="eyebrow">Kong Event Gateway</div>
-  <h1>Kafka 클라이언트가 붙는 <em>네이티브 프록시</em></h1>
-  <p class="lead">Event Gateway는 Kafka 프로토콜 프록시입니다. 클라이언트가 브로커처럼 접속하고, Virtual Cluster가 실제 클러스터 메타를 감춘 채 Topic ACL · OAuth/mTLS · 스키마 · 필드 암복호 · 필터를 적용합니다. HTTP 중재 플러그인으로 대체되지 않습니다.</p>
-  <div class="chain" style="margin-top:28px"><span class="n">Kafka Client</span><span class="ar"></span><span class="n k">Listener · Virtual Cluster</span><span class="ar"></span><span class="n">Backend Cluster</span><span class="ar"></span><span class="n">Brokers</span></div>
-</section>
-
-<section class="sec" id="eg-model" data-title="거버넌스 모델">
-  <div class="eyebrow">Model</div>
-  <h2>Listener · Virtual Cluster · Backend · Policy</h2>
-  <div class="grid g2">
-    <div class="card"><span class="tag">Listener</span><h3>접속점</h3><p>Hostname mapping · 포트 · SNI로 클라이언트가 보는 bootstrap 엔드포인트를 제공합니다.</p></div>
-    <div class="card"><span class="tag">Virtual Cluster</span><h3>논리 클러스터</h3><p>테넌트·환경 격리. 클라이언트 입장에서는 실제 브로커처럼 보입니다.</p></div>
-    <div class="card"><span class="tag">Backend Cluster</span><h3>업스트림</h3><p>실제 Kafka 클러스터 연결 정보. API Gateway의 Service에 해당합니다.</p></div>
-    <div class="card"><span class="tag">Policy</span><h3>메시지 정책</h3><p>Topic ACL, 인증, 스키마 검증, 필드 암복호, record skip/filter를 중앙에서 강제합니다.</p></div>
-  </div>
-  <p class="note">참고: <a href="https://developer.konghq.com/event-gateway/architecture/" target="_blank" rel="noopener">Kong Event Gateway architecture</a></p>
-</section>
-
-<section class="sec" id="eg-cap" data-title="핵심 기능">
-  <div class="eyebrow">Capabilities</div>
-  <h2>네이티브 경로의 핵심 기능</h2>
-  <div class="grid g3">
-    <div class="card"><h3>보안</h3><p>Topic ACL · OAuth · mTLS · 필드 암복호로 토픽·페이로드 경계를 강제합니다.</p></div>
-    <div class="card"><h3>데이터 품질</h3><p>스키마 검증 · record filter/skip으로 비정상 레코드 유입을 막습니다.</p></div>
-    <div class="card"><h3>상품화</h3><p>AsyncAPI · Dev Portal · Service Catalog로 이벤트 데이터를 API처럼 공개합니다.</p></div>
-  </div>
-</section>
-
-<section class="sec" id="eg-change" data-title="적용 변경">
-  <div class="eyebrow">Change List</div>
-  <h2>Event Gateway 경로에서 바꾸는 것</h2>
-  <div class="grid g2">
-    <div class="card"><h3>클라이언트</h3><ul><li>Kafka 프로토콜·SDK는 유지</li><li>bootstrap / advertised host를 Event GW Listener로</li><li>인증을 GW Policy(OAuth/mTLS 등)에 맞춤</li></ul></div>
-    <div class="card"><h3>플랫폼</h3><ul><li>Virtual Cluster · Backend Cluster 매핑</li><li>브로커 ACL 일부를 GW Policy로 이전</li><li>Konnect Control Plane 온보딩 · DP 인증서</li></ul></div>
-  </div>
-</section>
-
-<section class="sec" id="eg-deploy" data-title="배포 · 라이선스">
-  <div class="eyebrow">Deploy</div>
-  <h2>Konnect 전용 Control Plane</h2>
-  <div class="tw rv"><table class="cmp">
-    <thead><tr><th>항목</th><th class="c k">Kong Event Gateway</th></tr></thead>
-    <tbody>
-      <tr><td>Control Plane</td><td class="c kc">Konnect만 (온프렘 CP 없음)</td></tr>
-      <tr><td>Data Plane</td><td class="c kc">고객 환경 self-managed 가능</td></tr>
-      <tr><td>EE만으로 native GW 재현</td><td class="c">불가 · HTTP 중재(플러그인)로 요구를 낮추거나 Konnect Event GW 도입</td></tr>
-      <tr><td>에어갭 · Konnect 불가</td><td class="c">Event GW 현재 선택지 아님 · EE 플러그인 + 브로커 ACL/네트워크 분리</td></tr>
-    </tbody>
-  </table></div>
-  <p class="note">공식 FAQ: Event Gateway는 on-prem CP로 동작하지 않으며 Konnect를 통해서만 제공됩니다. DP는 망내에 둘 수 있어도 라이선스·설정은 Konnect입니다.</p>
-</section>
-
-<section class="sec" id="eg-vs" data-title="vs Confluent Gateway">
-  <div class="eyebrow">vs Confluent</div>
-  <h2>Kong Event Gateway와 Confluent Cloud Gateway</h2>
-  <div class="tw rv"><table class="cmp">
-    <thead><tr><th>항목</th><th class="c k">Kong Event Gateway</th><th class="c">Confluent Cloud Gateway</th></tr></thead>
-    <tbody>
-      <tr><td>프로토콜</td><td class="c kc">Native Kafka proxy</td><td class="c">Native Kafka proxy</td></tr>
-      <tr><td>추상화</td><td class="c kc">Virtual Cluster · Backend · Policy</td><td class="c">Route · Streaming Domain · Policy</td></tr>
-      <tr><td>강점 시나리오</td><td class="c kc">API·AI 플랫폼과 이벤트 거버넌스 통합 · Portal/Catalog</td><td class="c">Confluent Cloud 마이그레이션 · DR · 파트너 접속 · Schema Registry 거버넌스</td></tr>
-      <tr><td>Control Plane</td><td class="c kc">Konnect SaaS</td><td class="c">Gateway는 self-managed · Confluent 라이선스/Cloud 축</td></tr>
-      <tr><td>HTTP Event API</td><td class="c kc">별도 Kafka Plugins로 동일 플랫폼에서 제공</td><td class="c">별도 REST Proxy / Cloud REST</td></tr>
-    </tbody>
-  </table></div>
-</section>
-
-</div>
-
 
 <!-- ============ 5. AI GATEWAY ============ -->
 <div class="page" id="p-ai" data-label="AI Gateway" data-group="AI Gateway" data-desc="LLM 트래픽 거버넌스 · 개요">

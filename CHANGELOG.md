@@ -9,9 +9,8 @@
 
 ### 추가
 
-- Event Gateway
-- Event Gateway > Kafka Plugins
-- Event Gateway > Native Proxy
+- API Gateway > Event Gateway
+- API Gateway > Kafka Plugins
 - Insomnia > Postman 마이그레이션
 - Insomnia > AI 연동
 
