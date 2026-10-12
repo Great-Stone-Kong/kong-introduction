@@ -849,6 +849,25 @@ h1.light{font-weight:400}h1.light em.gw{font-weight:800}
   .evc .ln{stroke-dashoffset:0;animation:none}
 }
 
+/* Event Gateway deploy architecture (CP / DP) */
+.edep{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:0 0 18px;overflow:hidden}
+.edep svg{display:block;width:100%;height:auto}
+.edep .edep-cap{font-size:13px;color:var(--g300);margin:12px 0 0;line-height:1.55}
+.edep .n{opacity:0;transform:translateY(8px)}
+.edep.in .n{animation:rise .5s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i)*.09s)}
+.edep .hub{opacity:0}
+.edep.in .hub{animation:pop .55s .15s both}
+.edep .ln{stroke-dasharray:1;stroke-dashoffset:1}
+.edep.in .ln{animation:ndraw .7s ease forwards;animation-delay:calc(.25s + var(--i)*.08s)}
+.edep .pkt{opacity:0}
+.edep.in .pkt{opacity:1}
+.edep .cfg{opacity:0}
+.edep.in .cfg{animation:pop .45s .55s both}
+@media (prefers-reduced-motion:reduce){
+  .edep .n,.edep .hub,.edep .cfg{opacity:1;transform:none;animation:none}
+  .edep .ln{stroke-dashoffset:0;animation:none}
+}
+
 .pf-st li span{min-width:0;overflow-wrap:anywhere}
 .pf-st .pf-h span,.pf-st .pf-h em{overflow-wrap:anywhere}
 @media (min-width:1101px) and (max-width:1560px){
@@ -3195,6 +3214,64 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 <section class="sec" id="eg-deploy" data-title="배포 · 라이선스">
   <div class="eyebrow">Deploy</div>
   <h2>Konnect 전용 Control Plane</h2>
+  <p class="sub">Control Plane은 Konnect에서 Listener · Virtual Cluster · Policy를 관리합니다. Data Plane은 고객 환경에서 Kafka 트래픽을 프록시하고, Backend Cluster는 비공개 업스트림으로 둡니다.</p>
+  <div class="edep rv">
+    <svg viewBox="0 0 980 420" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Kong Event Gateway Control Plane과 Data Plane 하이브리드 아키텍처">
+      <text x="90" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#CCFF00" letter-spacing="1.2">CLIENT</text>
+      <text x="490" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#CCFF00" letter-spacing="1.2">EVENT GATEWAY</text>
+      <text x="860" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#CCFF00" letter-spacing="1.2">BACKEND</text>
+      <!-- Client -->
+      <g class="n" style="--i:0">
+        <rect x="24" y="240" width="132" height="100" rx="12" fill="#0A1F10" stroke="#4A4D49"/>
+        <text x="90" y="280" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">Client</text>
+        <text x="90" y="304" text-anchor="middle" font-size="11" fill="#A1A69F">users · apps</text>
+        <text x="90" y="322" text-anchor="middle" font-size="11" fill="#A1A69F">producers · consumers</text>
+      </g>
+      <!-- Control Plane -->
+      <g class="hub">
+        <rect x="220" y="48" width="540" height="200" rx="14" fill="#0A1F10" stroke="#CCFF00" stroke-width="2"/>
+        <text x="490" y="74" text-anchor="middle" font-size="14" font-weight="800" fill="#CCFF00">Control Plane · Konnect</text>
+        <text x="490" y="94" text-anchor="middle" font-size="11" fill="#A1A69F">Kong-managed · 설정 푸시 · payload 미열람</text>
+        <g class="n" style="--i:1">
+          <rect x="244" y="112" width="230" height="116" rx="10" fill="#13301C" stroke="#54660A" stroke-dasharray="5 4"/>
+          <text x="359" y="140" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">Listener</text>
+          <text x="359" y="162" text-anchor="middle" font-size="11" fill="#A1A69F">TCP 연결 · TLS / SNI</text>
+          <rect x="274" y="178" width="170" height="32" rx="8" fill="#0A1F10" stroke="#CCFF00"/>
+          <text x="359" y="199" text-anchor="middle" font-size="12" font-weight="700" fill="#CCFF00">policies</text>
+        </g>
+        <g class="n" style="--i:2">
+          <rect x="506" y="112" width="230" height="116" rx="10" fill="#13301C" stroke="#54660A" stroke-dasharray="5 4"/>
+          <text x="621" y="140" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">Virtual Cluster</text>
+          <text x="621" y="162" text-anchor="middle" font-size="11" fill="#A1A69F">Backend 노출 · 격리</text>
+          <rect x="536" y="178" width="170" height="32" rx="8" fill="#0A1F10" stroke="#CCFF00"/>
+          <text x="621" y="199" text-anchor="middle" font-size="12" font-weight="700" fill="#CCFF00">policies</text>
+        </g>
+      </g>
+      <!-- Data Plane -->
+      <g class="n" style="--i:3">
+        <rect x="220" y="292" width="540" height="100" rx="14" fill="#0A1F10" stroke="#CCFF00" stroke-width="2"/>
+        <text x="490" y="320" text-anchor="middle" font-size="14" font-weight="800" fill="#CCFF00">Data Plane · self-managed</text>
+        <rect x="300" y="336" width="380" height="40" rx="10" fill="#13301C" stroke="#54660A"/>
+        <text x="490" y="362" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">Data plane node</text>
+      </g>
+      <!-- Backend -->
+      <g class="n" style="--i:4">
+        <rect x="800" y="240" width="156" height="100" rx="12" fill="#0A1F10" stroke="#CCFF00" stroke-width="2"/>
+        <text x="878" y="280" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">Backend</text>
+        <text x="878" y="302" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">Cluster</text>
+        <text x="878" y="324" text-anchor="middle" font-size="11" fill="#A1A69F">Kafka brokers</text>
+      </g>
+      <!-- config link CP ↔ DP -->
+      <path class="ln" pathLength="1" style="--i:0" d="M490 248V292" stroke="#CCFF00" stroke-width="2" fill="none"/>
+      <g class="cfg"><text x="510" y="276" font-size="11" font-weight="700" fill="#A1A69F">config push</text></g>
+      <!-- traffic Client ↔ DP ↔ Backend -->
+      <path class="ln" pathLength="1" style="--i:1" d="M156 290H220" stroke="#CCFF00" stroke-width="2" fill="none"/>
+      <path class="ln" pathLength="1" style="--i:2" d="M760 342H800" stroke="#CCFF00" stroke-width="2" fill="none"/>
+      <circle class="pkt" r="4" fill="#CCFF00" opacity="0"><animateMotion dur="2.8s" begin="0.9s" repeatCount="indefinite" path="M156 290H490H760H800"/><animate attributeName="opacity" dur="2.8s" begin="0.9s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.88;1"/></circle>
+      <circle class="pkt" r="4" fill="#CCFF00" opacity="0"><animateMotion dur="2.8s" begin="2.0s" repeatCount="indefinite" path="M800 342H490H220H156"/><animate attributeName="opacity" dur="2.8s" begin="2.0s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.88;1"/></circle>
+    </svg>
+    <p class="edep-cap">Client ↔ Data Plane ↔ Backend로 Kafka 트래픽이 흐릅니다. Control Plane(Konnect)은 Listener · Virtual Cluster · Policy 설정을 Data Plane에 푸시하며 메시지 payload는 보지 않습니다.</p>
+  </div>
   <div class="tw rv"><table class="cmp">
     <thead><tr><th>항목</th><th class="c k">Kong Event Gateway</th></tr></thead>
     <tbody>
@@ -3204,7 +3281,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
       <tr><td>에어갭 · Konnect 불가</td><td class="c">Event GW 현재 선택지 아님 · EE 플러그인 + 브로커 ACL/네트워크 분리</td></tr>
     </tbody>
   </table></div>
-  <p class="note">공식 FAQ: Event Gateway는 on-prem CP로 동작하지 않으며 Konnect를 통해서만 제공됩니다. DP는 망내에 둘 수 있어도 라이선스·설정은 Konnect입니다.</p>
+  <p class="note">공식 FAQ: Event Gateway는 on-prem CP로 동작하지 않으며 Konnect를 통해서만 제공됩니다. DP는 망내에 둘 수 있어도 라이선스·설정은 Konnect입니다. 참고: <a href="https://developer.konghq.com/event-gateway/architecture/" target="_blank" rel="noopener">Kong Event Gateway architecture</a></p>
 </section>
 
 <section class="sec" id="eg-vs" data-title="vs Confluent Gateway">

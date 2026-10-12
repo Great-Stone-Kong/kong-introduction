@@ -39,6 +39,8 @@
   - Client topic → VC prefix → Backend 토픽 매핑 표현
 - API Gateway > Event Gateway > vs Confluent Gateway
   - Event Gateway 관점만으로 추상화 · 테넌시 · 거버넌스 · DR · CP 비교 보강
+- API Gateway > Event Gateway > 배포 · 라이선스
+  - Konnect CP / self-managed DP / Backend 아키텍처 도식 추가
 
 ### 삭제
 
