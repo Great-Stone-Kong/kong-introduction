@@ -18,6 +18,7 @@
 ### 변경
 
 - API Gateway > Event Gateway > 필요한 이유
+  - 물리 다수 클러스터 vs Virtual Cluster 단일 Backend 2열 아키텍처 비교 추가
   - 거버넌스 필요성을 3행 도식(프로토콜 · 접속점 HA · 정책)으로 정리
   - 브로커 HA와 접속점 HA를 구분해 서술
 
