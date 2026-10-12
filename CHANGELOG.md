@@ -32,9 +32,15 @@
   - 아키텍처와 5단계 타임라인 동기화 · 동선 · 단계 폭 정리
   - 단계 숫자 중앙 정렬 · 클릭 시 해당 단계 고정
 
+### 변경
+
+- API Gateway > Event Gateway > Virtual Cluster
+  - 거버넌스 모델 카드를 VC 동작 · 논리 격리 아키텍처로 교체
+
 ### 삭제
 
 - API Gateway > Event Gateway > Kong 적용 전후
+- API Gateway > Event Gateway > 적용 시 변경 범위
 
 ## 2026.10.08.1a004
 
