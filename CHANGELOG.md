@@ -37,12 +37,16 @@
 - API Gateway > Event Gateway > Virtual Cluster
   - 거버넌스 모델 카드를 VC 동작 · 논리 격리 아키텍처로 교체
   - Client topic → VC prefix → Backend 토픽 매핑 표현
+- API Gateway > Event Gateway > vs Confluent Gateway
+  - Event Gateway 관점만으로 추상화 · 테넌시 · 거버넌스 · DR · CP 비교 보강
 
 ### 삭제
 
 - API Gateway > Event Gateway > Kong 적용 전후
 - API Gateway > Event Gateway > 적용 시 변경 범위
 - API Gateway > Event Gateway > 핵심 기능
+- API Gateway > Event Gateway > Confluent 비교
+  - HTTP 경로 표를 제거하고 vs Confluent Gateway로 통합
 
 ## 2026.10.08.1a004
 

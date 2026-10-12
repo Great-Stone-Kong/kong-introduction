@@ -3210,38 +3210,29 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 <section class="sec" id="eg-vs" data-title="vs Confluent Gateway">
   <div class="eyebrow">vs Confluent</div>
   <h2>Kong Event Gateway와 Confluent Cloud Gateway</h2>
+  <p class="sub">둘 다 Native Kafka proxy입니다. 차이는 추상화 단위 · 거버넌스 깊이 · 제어면 · 어떤 플랫폼에 붙이느냐입니다. HTTP Event API(Kafka Plugins · REST Proxy)는 이 표에서 제외합니다.</p>
   <div class="tw rv"><table class="cmp">
     <thead><tr><th>항목</th><th class="c k">Kong Event Gateway</th><th class="c">Confluent Cloud Gateway</th></tr></thead>
     <tbody>
-      <tr><td>프로토콜</td><td class="c kc">Native Kafka proxy</td><td class="c">Native Kafka proxy</td></tr>
-      <tr><td>추상화</td><td class="c kc">Virtual Cluster · Backend · Policy</td><td class="c">Route · Streaming Domain · Policy</td></tr>
-      <tr><td>강점 시나리오</td><td class="c kc">API·AI 플랫폼과 이벤트 거버넌스 통합 · Portal/Catalog</td><td class="c">Confluent Cloud 마이그레이션 · DR · 파트너 접속 · Schema Registry 거버넌스</td></tr>
-      <tr><td>Control Plane</td><td class="c kc">Konnect SaaS</td><td class="c">Gateway는 self-managed · Confluent 라이선스/Cloud 축</td></tr>
-      <tr><td>HTTP Event API</td><td class="c kc">별도 Kafka Plugins로 동일 플랫폼에서 제공</td><td class="c">별도 REST Proxy / Cloud REST</td></tr>
-    </tbody>
-  </table></div>
-</section>
-
-<section class="sec" id="e-vs" data-title="Confluent 비교">
-  <div class="eyebrow">Comparison</div>
-  <h2>Kong과 Confluent의 대응 제품</h2>
-  <p class="sub">Confluent에도 유사 계층이 있습니다. 선택은 “게이트 유무”가 아니라 API 플랫폼 결합이냐, 스트리밍 스택 밀착이냐입니다.</p>
-  <div class="tw rv"><table class="cmp">
-    <thead><tr><th>경로</th><th class="c k">Kong</th><th class="c">Confluent</th></tr></thead>
-    <tbody>
-      <tr><td>HTTP 중재</td><td class="c kc">Kafka Plugins (kafka-upstream · kafka-consume · confluent*)</td><td class="c">REST Proxy · Cloud Kafka REST APIs</td></tr>
-      <tr><td>Native Kafka proxy</td><td class="c kc">Kong Event Gateway (Konnect)</td><td class="c">Confluent Cloud Gateway · Private Cloud Gateway</td></tr>
-      <tr><td>거버넌스 단위</td><td class="c kc">Route/Plugin · Virtual Cluster/Policy</td><td class="c">REST 엔드포인트 · Route / Streaming Domain / Policy</td></tr>
-      <tr><td>플랫폼 결합</td><td class="c kc">API · AI · Event 동일 플랫폼 · Portal · Catalog</td><td class="c">스트리밍 플랫폼 중심 · Schema Registry · Cluster Linking/DR</td></tr>
-      <tr><td>배포</td><td class="c kc">Plugin=EE 온프렘 가능 · Event GW CP=Konnect only</td><td class="c">Gateway proxy self-managed + Confluent 라이선스 축</td></tr>
-      <tr><td>업스트림</td><td class="c kc">Apache Kafka · Confluent Cloud 등 브로커 중립</td><td class="c">Confluent Cloud 마이그레이션·DR·파트너 접속에 최적화</td></tr>
+      <tr><td>프로토콜</td><td class="c kc">Native Kafka proxy (SDK 무변경)</td><td class="c">Native Kafka proxy (SDK 무변경)</td></tr>
+      <tr><td>추상화</td><td class="c kc">Listener · Virtual Cluster · Backend · Policy</td><td class="c">Route · Streaming Domain · Policy</td></tr>
+      <tr><td>멀티테넌시</td><td class="c kc">VC로 동일 Backend 논리 격리 · namespace/prefix · Topic ACL</td><td class="c">Route 단위 엔드포인트 · 파트너 전용 Route · 브로커 비공개</td></tr>
+      <tr><td>메시지 거버넌스</td><td class="c kc">ACL · Schema · 필드 암복호 · Headers · Skip (VC Policy)</td><td class="c">Schema Registry 연동 검증 · 암복호 규칙 (Centralized Governance, Early Access)</td></tr>
+      <tr><td>인증</td><td class="c kc">VC에서 클라이언트 인증 · Backend는 Gateway 자격 증명으로 재인증</td><td class="c">Identity passthrough 또는 Authentication swapping</td></tr>
+      <tr><td>마이그레이션 · DR</td><td class="c kc">VC destination 교체 · deny-writes 절차 (복제는 MM2/Cluster Linking)</td><td class="c">Route의 Streaming Domain 스위치로 클라이언트 무변경 switchover</td></tr>
+      <tr><td>트래픽 차단</td><td class="c kc">deny-writes 등 VC/Policy로 Produce 중단</td><td class="c">Route fencing (ALL / NONE)</td></tr>
+      <tr><td>Control Plane</td><td class="c kc">Konnect SaaS only</td><td class="c">Self-managed 설정 · Confluent Cloud / Private Cloud 라이선스 축</td></tr>
+      <tr><td>Data Plane</td><td class="c kc">고객 환경 self-managed</td><td class="c">Self-managed (Docker · CFK 등)</td></tr>
+      <tr><td>업스트림</td><td class="c kc">브로커 중립 (Apache Kafka · Confluent Cloud 등)</td><td class="c">Cloud Gateway는 Confluent Cloud 연결·이전에 최적화 · Private Cloud Gateway는 별도 제품</td></tr>
+      <tr><td>플랫폼 결합</td><td class="c kc">API · AI · Event · Dev Portal · Catalog</td><td class="c">Confluent 스트리밍 · Schema Registry · Cluster Linking</td></tr>
+      <tr><td>강점 시나리오</td><td class="c kc">API 플랫폼과 이벤트 거버넌스 통합 · VC 멀티테넌시 · 메시지 Policy</td><td class="c">온프렘→Confluent Cloud 이전 · DR switchover · Schema Registry 거버넌스</td></tr>
     </tbody>
   </table></div>
   <div class="grid g2" style="margin-top:18px">
-    <div class="card"><span class="tag">Kong</span><h3>이미 쓰는 API Gateway와 같이</h3><p>이벤트까지 같은 거버넌스·포털·관측으로 올립니다. “Kafka만의 게이트”가 아닙니다.</p></div>
-    <div class="card"><span class="tag">Confluent</span><h3>스트리밍 스택 안의 밀착</h3><p>브로커·스키마·클러스터 이동이 Confluent 안에 있을 때 운영 밀착도가 높습니다.</p></div>
+    <div class="card"><span class="tag">Kong Event Gateway</span><h3>API 플랫폼과 같은 거버넌스</h3><p>이미 Kong으로 API·AI를 운영할 때, Native Kafka도 Virtual Cluster · Policy · Portal로 같은 운영 모델에 올립니다. CP는 Konnect가 전제입니다.</p></div>
+    <div class="card"><span class="tag">Confluent Cloud Gateway</span><h3>스트리밍 스택 안의 라우팅</h3><p>클라이언트를 고정한 채 Route→Streaming Domain만 바꿔 Cloud로 이전하거나 DR합니다. Schema Registry 거버넌스는 Cloud 축과 맞물립니다.</p></div>
   </div>
-  <p class="note">출처: <a href="https://docs.confluent.io/platform/current/kafka-rest/" target="_blank" rel="noopener">Confluent REST Proxy</a> · <a href="https://docs.confluent.io/cloud/current/kafka-rest/kafka-rest-cc.html" target="_blank" rel="noopener">Cloud Kafka REST</a> · <a href="https://docs.confluent.io/cloud/current/cp-component/gateway/overview.html" target="_blank" rel="noopener">Confluent Cloud Gateway</a> · <a href="https://developer.konghq.com/event-gateway/" target="_blank" rel="noopener">Kong Event Gateway</a>. 시장에 Conduktor Gateway 등 순수 Kafka proxy도 있으나 1차 비교는 Confluent에 집중합니다.</p>
+  <p class="note">Confluent Cloud Gateway와 Private Cloud Gateway는 동일 proxy 계열이지만 라이선스가 분리됩니다. Confluent 거버넌스(스키마·암복호)는 Early Access이며 배포 제약이 있을 수 있습니다. 출처: <a href="https://developer.konghq.com/event-gateway/" target="_blank" rel="noopener">Kong Event Gateway</a> · <a href="https://developer.konghq.com/event-gateway/entities/virtual-cluster/" target="_blank" rel="noopener">Virtual clusters</a> · <a href="https://docs.confluent.io/cloud/current/cp-component/gateway/overview.html" target="_blank" rel="noopener">Confluent Cloud Gateway</a> · <a href="https://docs.confluent.io/cloud/current/cp-component/gateway/gateway-migrate.html" target="_blank" rel="noopener">Migrate with Gateway</a> · <a href="https://docs.confluent.io/cloud/current/cp-component/gateway/governance/gateway-governance.html" target="_blank" rel="noopener">Centralized governance</a>.</p>
 </section>
 
 
