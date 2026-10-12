@@ -2315,209 +2315,7 @@ trace.parent       orders-service · POST /checkout</pre></div>
 </div>
 
 
-<!-- ============ 4. EVENT GATEWAY ============ -->
-<div class="page" id="p-event" data-label="Event Gateway" data-group="API Gateway" data-desc="Kafka · 이벤트 스트림 거버넌스">
-
-<section class="sec hero" id="e-intro" data-title="개요">
-  <div class="eyebrow">Kong Event Gateway</div>
-  <h1>네이티브 Kafka를 <em>거버넌스</em>하는 프록시</h1>
-  <p class="lead">Kafka 클라이언트가 브로커에 직접 붙으면 ACL·SASL·스키마·감사가 클러스터와 앱에 흩어집니다. Kong Event Gateway는 Kafka 프로토콜 프록시로 Virtual Cluster와 Policy를 두고, 브로커는 비공개 업스트림으로 둡니다.</p>
-  <div class="tabs" data-tabs style="margin-top:28px"><button class="bad on">Kong 미 적용시</button><button>Kong 적용 시</button></div>
-  <div class="pane on"><div class="dia ecow"><svg viewBox="0 0 1000 360" class="eco" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Kafka 클라이언트가 브로커에 직접 연결되는 구조">
-    <text x="130" y="36" text-anchor="middle" font-size="11" font-weight="700" fill="#CCFF00" letter-spacing="1.4">KAFKA CLIENTS</text>
-    <text x="865" y="36" text-anchor="middle" font-size="11" font-weight="700" fill="#CCFF00" letter-spacing="1.4">KAFKA CLUSTER</text>
-    <path class="ln" pathLength="1" style="--i:0" d="M220 90C480 90 560 180 770 180" stroke="#ff6b6b" stroke-opacity=".55" stroke-width="1.5" fill="none"/>
-    <path class="ln" pathLength="1" style="--i:1" d="M220 160C480 160 560 180 770 180" stroke="#ff6b6b" stroke-opacity=".55" stroke-width="1.5" fill="none"/>
-    <path class="ln" pathLength="1" style="--i:2" d="M220 230C480 230 560 180 770 180" stroke="#ff6b6b" stroke-opacity=".55" stroke-width="1.5" fill="none"/>
-    <path class="ln" pathLength="1" style="--i:3" d="M220 300C480 300 560 180 770 180" stroke="#ff6b6b" stroke-opacity=".55" stroke-width="1.5" fill="none"/>
-    <circle r="5" fill="#ff6b6b" opacity="0"><animateMotion dur="3.0s" begin="0.8s" repeatCount="indefinite" path="M220 90C480 90 560 180 770 180"/><animate attributeName="opacity" dur="3.0s" begin="0.8s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle><circle r="5" fill="#ff6b6b" opacity="0"><animateMotion dur="3.0s" begin="1.4500000000000002s" repeatCount="indefinite" path="M220 160C480 160 560 180 770 180"/><animate attributeName="opacity" dur="3.0s" begin="1.4500000000000002s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle><circle r="5" fill="#ff6b6b" opacity="0"><animateMotion dur="3.0s" begin="2.1s" repeatCount="indefinite" path="M220 230C480 230 560 180 770 180"/><animate attributeName="opacity" dur="3.0s" begin="2.1s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle><circle r="5" fill="#ff6b6b" opacity="0"><animateMotion dur="3.0s" begin="2.75s" repeatCount="indefinite" path="M220 300C480 300 560 180 770 180"/><animate attributeName="opacity" dur="3.0s" begin="2.75s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle>
-    <g><rect x="40" y="68" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="95" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Producer 앱</text></g><g><rect x="40" y="138" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="165" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Consumer 앱</text></g><g><rect x="40" y="208" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="235" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">스트리밍 잡</text></g><g><rect x="40" y="278" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="305" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">파트너 Kafka SDK</text></g>
-    <g><rect x="770" y="130" width="190" height="100" rx="10" fill="#0A1F10" stroke="#4A4D49"/><text x="865" y="172" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">Kafka Brokers</text><text x="865" y="196" text-anchor="middle" font-size="11" fill="#A1A69F">ACL · SASL 분산</text></g>
-    <g class="wb" style="--i:0"><rect x="400" y="88" width="200" height="36" rx="18" fill="#2A0E0E" stroke="#ff6b6b"/><text x="500" y="111" text-anchor="middle" font-size="13" font-weight="800" fill="#ff8b8b">브로커 직접 노출</text></g>
-    <g class="wb" style="--i:1"><rect x="400" y="220" width="200" height="36" rx="18" fill="#2A0E0E" stroke="#ff6b6b"/><text x="500" y="243" text-anchor="middle" font-size="13" font-weight="800" fill="#ff8b8b">정책 · 감사 제각각</text></g>
-  </svg></div><p class="cap">네이티브 클라이언트마다 bootstrap이 브로커를 가리키면 네트워크 경계와 토픽 ACL이 앱·클러스터에 흩어집니다.</p></div>
-  <div class="pane"><div class="dia ecow"><svg viewBox="0 0 1000 360" class="eco" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Kong Event Gateway가 네이티브 Kafka 트래픽을 거버넌스하는 구조">
-    <text x="130" y="36" text-anchor="middle" font-size="11" font-weight="700" fill="#CCFF00" letter-spacing="1.4">KAFKA CLIENTS</text>
-    <text x="865" y="36" text-anchor="middle" font-size="11" font-weight="700" fill="#CCFF00" letter-spacing="1.4">KAFKA CLUSTER</text>
-    <path class="ln" pathLength="1" style="--i:0" d="M220 90C300 90 320 180 390 180" stroke="#CCFF00" stroke-width="2" fill="none"/>
-    <path class="ln" pathLength="1" style="--i:1" d="M220 160C300 160 320 180 390 180" stroke="#CCFF00" stroke-width="2" fill="none"/>
-    <path class="ln" pathLength="1" style="--i:2" d="M220 230C300 230 320 180 390 180" stroke="#CCFF00" stroke-width="2" fill="none"/>
-    <path class="ln" pathLength="1" style="--i:3" d="M220 300C300 300 320 180 390 180" stroke="#CCFF00" stroke-width="2" fill="none"/>
-    <path class="ln" pathLength="1" style="--i:4" d="M610 180C690 180 720 180 770 180" stroke="#CCFF00" stroke-width="2" fill="none"/>
-    <circle r="5" fill="#CCFF00" opacity="0"><animateMotion dur="3.2s" begin="1.0s" repeatCount="indefinite" path="M220 90C300 90 320 180 390 180L610 180C690 180 720 180 770 180"/><animate attributeName="opacity" dur="3.2s" begin="1.0s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle><circle r="5" fill="#CCFF00" opacity="0"><animateMotion dur="3.2s" begin="1.65s" repeatCount="indefinite" path="M220 160C300 160 320 180 390 180L610 180C690 180 720 180 770 180"/><animate attributeName="opacity" dur="3.2s" begin="1.65s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle><circle r="5" fill="#CCFF00" opacity="0"><animateMotion dur="3.2s" begin="2.3s" repeatCount="indefinite" path="M220 230C300 230 320 180 390 180L610 180C690 180 720 180 770 180"/><animate attributeName="opacity" dur="3.2s" begin="2.3s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle><circle r="5" fill="#CCFF00" opacity="0"><animateMotion dur="3.2s" begin="2.95s" repeatCount="indefinite" path="M220 300C300 300 320 180 390 180L610 180C690 180 720 180 770 180"/><animate attributeName="opacity" dur="3.2s" begin="2.95s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle>
-    <g><rect x="40" y="68" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="95" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Producer 앱</text></g><g><rect x="40" y="138" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="165" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Consumer 앱</text></g><g><rect x="40" y="208" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="235" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">스트리밍 잡</text></g><g><rect x="40" y="278" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="305" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">파트너 Kafka SDK</text></g>
-    <g class="hub"><rect x="390" y="70" width="220" height="220" rx="14" fill="#0A1F10" stroke="#CCFF00" stroke-width="2"/>
-      <text x="500" y="88" text-anchor="middle" font-size="10.5" font-weight="700" fill="#CCFF00" letter-spacing="1.2">NATIVE KAFKA PROXY</text>
-      <g transform="translate(462 92) scale(.45)" fill="#CCFF00"><path d="M50.5,112.9l-3.7,4.7,8.4,13.2-.9,6.1h35.6l2.5-6.1-14.3-17.9s-27.6,0-27.6,0Z"/><path d="M69.9,32.6l-12.9,22.7,62.9,74.8-1.8,6.9h28.8l5.2-24.3L84.9,32.5h-15Z"/><path d="M78.5,15.5l-6.1,11.3h15.2l26.1,31.2,15.5-12.8v-8.1l-5.4-7.6,4-4.2L96.7.6l-18.2,14.9Z"/><path d="M31.7,78.7h-8.5L.8,107.3v29.6h24l4.2-5.5,18.5-24.1h26.8l8.3-12.7-29.1-34.7-21.9,18.9h0Z"/></g>
-      <text x="500" y="178" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">Event Gateway</text>
-      <text x="500" y="200" text-anchor="middle" font-size="11" fill="#A1A69F">Virtual Cluster · Policy</text>
-      <g class="hc" style="--i:0"><rect x="410" y="218" width="87" height="28" rx="14" fill="#13301C" stroke="#54660A"/><text x="453.5" y="237" text-anchor="middle" font-size="11" font-weight="700" fill="#E7EDE5">ACL</text></g>
-      <g class="hc" style="--i:1"><rect x="503" y="218" width="87" height="28" rx="14" fill="#13301C" stroke="#54660A"/><text x="546.5" y="237" text-anchor="middle" font-size="11" font-weight="700" fill="#E7EDE5">스키마</text></g>
-      <g class="hc" style="--i:2"><rect x="410" y="252" width="87" height="28" rx="14" fill="#13301C" stroke="#54660A"/><text x="453.5" y="271" text-anchor="middle" font-size="11" font-weight="700" fill="#E7EDE5">암복호</text></g>
-      <g class="hc" style="--i:3"><rect x="503" y="252" width="87" height="28" rx="14" fill="#13301C" stroke="#54660A"/><text x="546.5" y="271" text-anchor="middle" font-size="11" font-weight="700" fill="#E7EDE5">필터</text></g>
-    </g>
-    <g><rect x="770" y="130" width="190" height="100" rx="10" fill="#fff"/><text x="865" y="172" text-anchor="middle" font-size="16" font-weight="800" fill="#001408">Kafka Brokers</text><text x="865" y="196" text-anchor="middle" font-size="11" fill="#4A4D49">비공개 업스트림</text></g>
-  </svg></div><p class="cap">클라이언트는 Kafka 프로토콜을 유지한 채 bootstrap만 Event Gateway로 바꿉니다. 정책은 Virtual Cluster에서 한 번에 적용됩니다.</p></div>
-</section>
-
-<section class="sec" id="e-why" data-title="필요한 이유">
-  <div class="eyebrow">Why Event Gateway</div>
-  <h2>네이티브 Kafka 앞에 거버넌스가 필요한 이유</h2>
-  <p class="sub">스트리밍 팀은 Kafka SDK를 포기하기 어렵습니다. 그래도 브로커를 밖에 열어 두면 테넌트 격리·스키마·감사를 클러스터마다 따로 맞춰야 합니다.</p>
-  <div class="grid g3">
-    <div class="card"><span class="tag">Protocol</span><h3>SDK 유지</h3><p>기존 producer/consumer 코드를 유지한 채 접속점만 바꿉니다.</p></div>
-    <div class="card"><span class="tag">Isolation</span><h3>논리 클러스터</h3><p>Virtual Cluster로 환경·테넌트를 나누고 실제 브로커 메타를 감춥니다.</p></div>
-    <div class="card"><span class="tag">Policy</span><h3>메시지 정책</h3><p>Topic ACL · 스키마 · 암복호 · filter를 브로커 앞 한곳에서 강제합니다.</p></div>
-  </div>
-</section>
-
-<section class="sec" id="e-cmp" data-title="Kong 적용 전후">
-  <div class="eyebrow">Before · After</div>
-  <h2>브로커 직결과 Event Gateway 비교</h2>
-  <div class="tw rv"><table class="cmp">
-    <thead><tr><th>항목</th><th class="c">기존 방식</th><th class="c k">Event Gateway</th></tr></thead>
-    <tbody>
-      <tr><td>Bootstrap</td><td class="c">브로커 주소 직결</td><td class="c kc">Listener · Virtual Cluster 엔드포인트</td></tr>
-      <tr><td>네트워크</td><td class="c">브로커 리스너 광범위 개방 위험</td><td class="c kc">브로커 비공개 · GW만 공개</td></tr>
-      <tr><td>인가</td><td class="c">브로커 ACL · SASL 분산</td><td class="c kc">OAuth · mTLS · Topic Policy</td></tr>
-      <tr><td>스키마 · 필터</td><td class="c">앱·레지스트리·브로커마다 제각각</td><td class="c kc">Gateway Policy에서 검증·skip</td></tr>
-      <tr><td>관측</td><td class="c">브로커·앱 로그 분리</td><td class="c kc">Event 트래픽 통합 관측 (Konnect)</td></tr>
-      <tr><td>상품화</td><td class="c">Wiki · 티켓</td><td class="c kc">AsyncAPI · Dev Portal · Catalog</td></tr>
-    </tbody>
-  </table></div>
-</section>
-
-<section class="sec" id="e-effect" data-title="효과">
-  <div class="eyebrow">Outcomes</div>
-  <h2>Event Gateway 적용 효과</h2>
-  <div class="grid g2">
-    <div class="card"><span class="tag">Security</span><h3>브로커 은닉</h3><p>클라이언트가 보는 것은 Virtual Cluster뿐입니다. 실제 브로커 토폴로지를 노출하지 않습니다.</p></div>
-    <div class="card"><span class="tag">Governance</span><h3>정책 일원화</h3><p>Topic ACL·스키마·암복호·필터를 클러스터 앞 한 레이어에서 강제합니다.</p></div>
-    <div class="card"><span class="tag">DX</span><h3>SDK 유지</h3><p>Kafka 프로토콜을 그대로 쓰므로 스트리밍 팀의 학습·재작성이 최소화됩니다.</p></div>
-    <div class="card"><span class="tag">Platform</span><h3>API 플랫폼 결합</h3><p>Portal·Catalog로 이벤트 데이터를 REST API와 같은 상품 흐름에 올립니다.</p></div>
-  </div>
-</section>
-
-<section class="sec" id="e-change" data-title="적용 시 변경 범위">
-  <div class="eyebrow">Adoption</div>
-  <h2>Event Gateway 적용 시 변경 범위</h2>
-  <p class="sub">토픽 설계는 유지합니다. bootstrap과 정책의 위치를 옮깁니다.</p>
-  <div class="tw rv"><table class="cmp">
-    <thead><tr><th>구분</th><th class="c">내용</th></tr></thead>
-    <tbody>
-      <tr><td>유지</td><td class="c kc">Kafka 클러스터 · 토픽 · 파티션 · (대체로) 스키마 레지스트리 · SDK</td></tr>
-      <tr><td>클라이언트</td><td class="c">bootstrap / advertised host → Event GW Listener</td></tr>
-      <tr><td>플랫폼</td><td class="c">Virtual Cluster · Backend 매핑 · Policy · Konnect CP 온보딩</td></tr>
-      <tr><td>네트워크</td><td class="c">브로커 직접 노출 축소 · GW만 클라이언트 도달</td></tr>
-      <tr><td>오해 방지</td><td class="c">EE Kafka 플러그인만으로 native Event Gateway를 재현할 수 없음</td></tr>
-    </tbody>
-  </table></div>
-</section>
-
-<!-- Native Event Gateway (merged from Native Proxy page) -->
-<section class="sec" id="eg-model" data-title="거버넌스 모델">
-  <div class="eyebrow">Model</div>
-  <h2>Listener · Virtual Cluster · Backend · Policy</h2>
-  <div class="grid g2">
-    <div class="card"><span class="tag">Listener</span><h3>접속점</h3><p>Hostname mapping · 포트 · SNI로 클라이언트가 보는 bootstrap 엔드포인트를 제공합니다.</p></div>
-    <div class="card"><span class="tag">Virtual Cluster</span><h3>논리 클러스터</h3><p>테넌트·환경 격리. 클라이언트 입장에서는 실제 브로커처럼 보입니다.</p></div>
-    <div class="card"><span class="tag">Backend Cluster</span><h3>업스트림</h3><p>실제 Kafka 클러스터 연결 정보. API Gateway의 Service에 해당합니다.</p></div>
-    <div class="card"><span class="tag">Policy</span><h3>메시지 정책</h3><p>Topic ACL, 인증, 스키마 검증, 필드 암복호, record skip/filter를 중앙에서 강제합니다.</p></div>
-  </div>
-  <p class="note">참고: <a href="https://developer.konghq.com/event-gateway/architecture/" target="_blank" rel="noopener">Kong Event Gateway architecture</a></p>
-</section>
-
-<section class="sec" id="eg-cap" data-title="핵심 기능">
-  <div class="eyebrow">Capabilities</div>
-  <h2>네이티브 경로의 핵심 기능</h2>
-  <div class="grid g3">
-    <div class="card"><h3>보안</h3><p>Topic ACL · OAuth · mTLS · 필드 암복호로 토픽·페이로드 경계를 강제합니다.</p></div>
-    <div class="card"><h3>데이터 품질</h3><p>스키마 검증 · record filter/skip으로 비정상 레코드 유입을 막습니다.</p></div>
-    <div class="card"><h3>상품화</h3><p>AsyncAPI · Dev Portal · Service Catalog로 이벤트 데이터를 API처럼 공개합니다.</p></div>
-  </div>
-</section>
-
-
-<section class="sec" id="eg-deploy" data-title="배포 · 라이선스">
-  <div class="eyebrow">Deploy</div>
-  <h2>Konnect 전용 Control Plane</h2>
-  <div class="tw rv"><table class="cmp">
-    <thead><tr><th>항목</th><th class="c k">Kong Event Gateway</th></tr></thead>
-    <tbody>
-      <tr><td>Control Plane</td><td class="c kc">Konnect만 (온프렘 CP 없음)</td></tr>
-      <tr><td>Data Plane</td><td class="c kc">고객 환경 self-managed 가능</td></tr>
-      <tr><td>EE만으로 native GW 재현</td><td class="c">불가 · HTTP 중재(플러그인)로 요구를 낮추거나 Konnect Event GW 도입</td></tr>
-      <tr><td>에어갭 · Konnect 불가</td><td class="c">Event GW 현재 선택지 아님 · EE 플러그인 + 브로커 ACL/네트워크 분리</td></tr>
-    </tbody>
-  </table></div>
-  <p class="note">공식 FAQ: Event Gateway는 on-prem CP로 동작하지 않으며 Konnect를 통해서만 제공됩니다. DP는 망내에 둘 수 있어도 라이선스·설정은 Konnect입니다.</p>
-</section>
-
-<section class="sec" id="eg-vs" data-title="vs Confluent Gateway">
-  <div class="eyebrow">vs Confluent</div>
-  <h2>Kong Event Gateway와 Confluent Cloud Gateway</h2>
-  <div class="tw rv"><table class="cmp">
-    <thead><tr><th>항목</th><th class="c k">Kong Event Gateway</th><th class="c">Confluent Cloud Gateway</th></tr></thead>
-    <tbody>
-      <tr><td>프로토콜</td><td class="c kc">Native Kafka proxy</td><td class="c">Native Kafka proxy</td></tr>
-      <tr><td>추상화</td><td class="c kc">Virtual Cluster · Backend · Policy</td><td class="c">Route · Streaming Domain · Policy</td></tr>
-      <tr><td>강점 시나리오</td><td class="c kc">API·AI 플랫폼과 이벤트 거버넌스 통합 · Portal/Catalog</td><td class="c">Confluent Cloud 마이그레이션 · DR · 파트너 접속 · Schema Registry 거버넌스</td></tr>
-      <tr><td>Control Plane</td><td class="c kc">Konnect SaaS</td><td class="c">Gateway는 self-managed · Confluent 라이선스/Cloud 축</td></tr>
-      <tr><td>HTTP Event API</td><td class="c kc">별도 Kafka Plugins로 동일 플랫폼에서 제공</td><td class="c">별도 REST Proxy / Cloud REST</td></tr>
-    </tbody>
-  </table></div>
-</section>
-
-<section class="sec" id="e-vs" data-title="Confluent 비교">
-  <div class="eyebrow">Comparison</div>
-  <h2>Kong과 Confluent의 대응 제품</h2>
-  <p class="sub">Confluent에도 유사 계층이 있습니다. 선택은 “게이트 유무”가 아니라 API 플랫폼 결합이냐, 스트리밍 스택 밀착이냐입니다.</p>
-  <div class="tw rv"><table class="cmp">
-    <thead><tr><th>경로</th><th class="c k">Kong</th><th class="c">Confluent</th></tr></thead>
-    <tbody>
-      <tr><td>HTTP 중재</td><td class="c kc">Kafka Plugins (kafka-upstream · kafka-consume · confluent*)</td><td class="c">REST Proxy · Cloud Kafka REST APIs</td></tr>
-      <tr><td>Native Kafka proxy</td><td class="c kc">Kong Event Gateway (Konnect)</td><td class="c">Confluent Cloud Gateway · Private Cloud Gateway</td></tr>
-      <tr><td>거버넌스 단위</td><td class="c kc">Route/Plugin · Virtual Cluster/Policy</td><td class="c">REST 엔드포인트 · Route / Streaming Domain / Policy</td></tr>
-      <tr><td>플랫폼 결합</td><td class="c kc">API · AI · Event 동일 플랫폼 · Portal · Catalog</td><td class="c">스트리밍 플랫폼 중심 · Schema Registry · Cluster Linking/DR</td></tr>
-      <tr><td>배포</td><td class="c kc">Plugin=EE 온프렘 가능 · Event GW CP=Konnect only</td><td class="c">Gateway proxy self-managed + Confluent 라이선스 축</td></tr>
-      <tr><td>업스트림</td><td class="c kc">Apache Kafka · Confluent Cloud 등 브로커 중립</td><td class="c">Confluent Cloud 마이그레이션·DR·파트너 접속에 최적화</td></tr>
-    </tbody>
-  </table></div>
-  <div class="grid g2" style="margin-top:18px">
-    <div class="card"><span class="tag">Kong</span><h3>이미 쓰는 API Gateway와 같이</h3><p>이벤트까지 같은 거버넌스·포털·관측으로 올립니다. “Kafka만의 게이트”가 아닙니다.</p></div>
-    <div class="card"><span class="tag">Confluent</span><h3>스트리밍 스택 안의 밀착</h3><p>브로커·스키마·클러스터 이동이 Confluent 안에 있을 때 운영 밀착도가 높습니다.</p></div>
-  </div>
-  <p class="note">출처: <a href="https://docs.confluent.io/platform/current/kafka-rest/" target="_blank" rel="noopener">Confluent REST Proxy</a> · <a href="https://docs.confluent.io/cloud/current/kafka-rest/kafka-rest-cc.html" target="_blank" rel="noopener">Cloud Kafka REST</a> · <a href="https://docs.confluent.io/cloud/current/cp-component/gateway/overview.html" target="_blank" rel="noopener">Confluent Cloud Gateway</a> · <a href="https://developer.konghq.com/event-gateway/" target="_blank" rel="noopener">Kong Event Gateway</a>. 시장에 Conduktor Gateway 등 순수 Kafka proxy도 있으나 1차 비교는 Confluent에 집중합니다.</p>
-</section>
-
-
-<section class="sec" id="e-pick" data-title="Event Gateway vs Plugins">
-  <div class="eyebrow">Which Path</div>
-  <h2>Event Gateway와 Kafka Plugins 선택</h2>
-  <p class="sub">둘 다 Kafka를 안전하게 노출하지만 프로토콜·배포·클라이언트 전제가 다릅니다. Plugin은 Event Gateway의 축소판이 아닙니다.</p>
-  <div class="tw rv"><table class="cmp">
-    <thead><tr><th>항목</th><th class="c k">Event Gateway</th><th class="c">Kafka Plugins</th></tr></thead>
-    <tbody>
-      <tr><td>프로토콜</td><td class="c kc">Native Kafka (producer/consumer SDK)</td><td class="c">HTTP(S) · SSE · WebSocket</td></tr>
-      <tr><td>클라이언트</td><td class="c kc">기존 Kafka 앱 · 스트리밍 팀</td><td class="c">REST 파트너 · 모바일 · 에이전트 · Kafka 비숙련팀</td></tr>
-      <tr><td>거버넌스 단위</td><td class="c kc">Listener · Virtual Cluster · Backend · Policy</td><td class="c">Service · Route · Plugin · Consumer</td></tr>
-      <tr><td>배포</td><td class="c kc">CP = Konnect only · DP self-managed</td><td class="c">Kong Gateway EE 온프렘 · 하이브리드 · Konnect</td></tr>
-      <tr><td>이런 때</td><td class="c kc">브로커 앞 네이티브 정책 프록시 · 테넌트 격리 · 메타 은닉</td><td class="c">HTTP Event API로 상품화 · 기존 API 정책 재사용</td></tr>
-      <tr><td>이런 때는 아님</td><td class="c">에어갭 · Konnect 불가 (현재 CP 공백)</td><td class="c">순수 Kafka 프로토콜만 허용 · native ACL/암복호 프록시 필요</td></tr>
-    </tbody>
-  </table></div>
-  <div class="grid g2" style="margin-top:18px">
-    <div class="card hl"><span class="tag">Event Gateway</span><h3>Kafka 클라이언트를 그대로</h3><p>SDK·프로토콜은 유지하고 bootstrap만 Event Gateway로 바꿉니다.</p>
-      <button class="btn s" onclick="go('event')">Event Gateway</button></div>
-    <div class="card hl"><span class="tag">Kafka Plugins</span><h3>HTTP로 스트림을 열 때</h3><p>앱은 REST·SSE·WS만 쓰고, Kong Route에 produce/consume 플러그인을 붙입니다.</p>
-      <button class="btn s" onclick="go('kplugin')">Kafka Plugins</button></div>
-  </div>
-</section>
-
-
-</div>
-
-<!-- ============ 4b. KAFKA PLUGINS ============ -->
+<!-- ============ 4. KAFKA PLUGINS ============ -->
 <div class="page" id="p-kplugin" data-label="Kafka Plugins" data-group="API Gateway" data-desc="HTTP Event API · 프로토콜 중재">
 
 <section class="sec hero" id="kp-intro" data-title="개요">
@@ -2851,6 +2649,208 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 
 </div>
 
+
+<!-- ============ 4b. EVENT GATEWAY ============ -->
+<div class="page" id="p-event" data-label="Event Gateway" data-group="API Gateway" data-desc="Kafka · 이벤트 스트림 거버넌스">
+
+<section class="sec hero" id="e-intro" data-title="개요">
+  <div class="eyebrow">Kong Event Gateway</div>
+  <h1>네이티브 Kafka를 <em>거버넌스</em>하는 프록시</h1>
+  <p class="lead">Kafka 클라이언트가 브로커에 직접 붙으면 ACL·SASL·스키마·감사가 클러스터와 앱에 흩어집니다. Kong Event Gateway는 Kafka 프로토콜 프록시로 Virtual Cluster와 Policy를 두고, 브로커는 비공개 업스트림으로 둡니다.</p>
+  <div class="tabs" data-tabs style="margin-top:28px"><button class="bad on">Kong 미 적용시</button><button>Kong 적용 시</button></div>
+  <div class="pane on"><div class="dia ecow"><svg viewBox="0 0 1000 360" class="eco" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Kafka 클라이언트가 브로커에 직접 연결되는 구조">
+    <text x="130" y="36" text-anchor="middle" font-size="11" font-weight="700" fill="#CCFF00" letter-spacing="1.4">KAFKA CLIENTS</text>
+    <text x="865" y="36" text-anchor="middle" font-size="11" font-weight="700" fill="#CCFF00" letter-spacing="1.4">KAFKA CLUSTER</text>
+    <path class="ln" pathLength="1" style="--i:0" d="M220 90C480 90 560 180 770 180" stroke="#ff6b6b" stroke-opacity=".55" stroke-width="1.5" fill="none"/>
+    <path class="ln" pathLength="1" style="--i:1" d="M220 160C480 160 560 180 770 180" stroke="#ff6b6b" stroke-opacity=".55" stroke-width="1.5" fill="none"/>
+    <path class="ln" pathLength="1" style="--i:2" d="M220 230C480 230 560 180 770 180" stroke="#ff6b6b" stroke-opacity=".55" stroke-width="1.5" fill="none"/>
+    <path class="ln" pathLength="1" style="--i:3" d="M220 300C480 300 560 180 770 180" stroke="#ff6b6b" stroke-opacity=".55" stroke-width="1.5" fill="none"/>
+    <circle r="5" fill="#ff6b6b" opacity="0"><animateMotion dur="3.0s" begin="0.8s" repeatCount="indefinite" path="M220 90C480 90 560 180 770 180"/><animate attributeName="opacity" dur="3.0s" begin="0.8s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle><circle r="5" fill="#ff6b6b" opacity="0"><animateMotion dur="3.0s" begin="1.4500000000000002s" repeatCount="indefinite" path="M220 160C480 160 560 180 770 180"/><animate attributeName="opacity" dur="3.0s" begin="1.4500000000000002s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle><circle r="5" fill="#ff6b6b" opacity="0"><animateMotion dur="3.0s" begin="2.1s" repeatCount="indefinite" path="M220 230C480 230 560 180 770 180"/><animate attributeName="opacity" dur="3.0s" begin="2.1s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle><circle r="5" fill="#ff6b6b" opacity="0"><animateMotion dur="3.0s" begin="2.75s" repeatCount="indefinite" path="M220 300C480 300 560 180 770 180"/><animate attributeName="opacity" dur="3.0s" begin="2.75s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle>
+    <g><rect x="40" y="68" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="95" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Producer 앱</text></g><g><rect x="40" y="138" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="165" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Consumer 앱</text></g><g><rect x="40" y="208" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="235" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">스트리밍 잡</text></g><g><rect x="40" y="278" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="305" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">파트너 Kafka SDK</text></g>
+    <g><rect x="770" y="130" width="190" height="100" rx="10" fill="#0A1F10" stroke="#4A4D49"/><text x="865" y="172" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">Kafka Brokers</text><text x="865" y="196" text-anchor="middle" font-size="11" fill="#A1A69F">ACL · SASL 분산</text></g>
+    <g class="wb" style="--i:0"><rect x="400" y="88" width="200" height="36" rx="18" fill="#2A0E0E" stroke="#ff6b6b"/><text x="500" y="111" text-anchor="middle" font-size="13" font-weight="800" fill="#ff8b8b">브로커 직접 노출</text></g>
+    <g class="wb" style="--i:1"><rect x="400" y="220" width="200" height="36" rx="18" fill="#2A0E0E" stroke="#ff6b6b"/><text x="500" y="243" text-anchor="middle" font-size="13" font-weight="800" fill="#ff8b8b">정책 · 감사 제각각</text></g>
+  </svg></div><p class="cap">네이티브 클라이언트마다 bootstrap이 브로커를 가리키면 네트워크 경계와 토픽 ACL이 앱·클러스터에 흩어집니다.</p></div>
+  <div class="pane"><div class="dia ecow"><svg viewBox="0 0 1000 360" class="eco" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Kong Event Gateway가 네이티브 Kafka 트래픽을 거버넌스하는 구조">
+    <text x="130" y="36" text-anchor="middle" font-size="11" font-weight="700" fill="#CCFF00" letter-spacing="1.4">KAFKA CLIENTS</text>
+    <text x="865" y="36" text-anchor="middle" font-size="11" font-weight="700" fill="#CCFF00" letter-spacing="1.4">KAFKA CLUSTER</text>
+    <path class="ln" pathLength="1" style="--i:0" d="M220 90C300 90 320 180 390 180" stroke="#CCFF00" stroke-width="2" fill="none"/>
+    <path class="ln" pathLength="1" style="--i:1" d="M220 160C300 160 320 180 390 180" stroke="#CCFF00" stroke-width="2" fill="none"/>
+    <path class="ln" pathLength="1" style="--i:2" d="M220 230C300 230 320 180 390 180" stroke="#CCFF00" stroke-width="2" fill="none"/>
+    <path class="ln" pathLength="1" style="--i:3" d="M220 300C300 300 320 180 390 180" stroke="#CCFF00" stroke-width="2" fill="none"/>
+    <path class="ln" pathLength="1" style="--i:4" d="M610 180C690 180 720 180 770 180" stroke="#CCFF00" stroke-width="2" fill="none"/>
+    <circle r="5" fill="#CCFF00" opacity="0"><animateMotion dur="3.2s" begin="1.0s" repeatCount="indefinite" path="M220 90C300 90 320 180 390 180L610 180C690 180 720 180 770 180"/><animate attributeName="opacity" dur="3.2s" begin="1.0s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle><circle r="5" fill="#CCFF00" opacity="0"><animateMotion dur="3.2s" begin="1.65s" repeatCount="indefinite" path="M220 160C300 160 320 180 390 180L610 180C690 180 720 180 770 180"/><animate attributeName="opacity" dur="3.2s" begin="1.65s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle><circle r="5" fill="#CCFF00" opacity="0"><animateMotion dur="3.2s" begin="2.3s" repeatCount="indefinite" path="M220 230C300 230 320 180 390 180L610 180C690 180 720 180 770 180"/><animate attributeName="opacity" dur="3.2s" begin="2.3s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle><circle r="5" fill="#CCFF00" opacity="0"><animateMotion dur="3.2s" begin="2.95s" repeatCount="indefinite" path="M220 300C300 300 320 180 390 180L610 180C690 180 720 180 770 180"/><animate attributeName="opacity" dur="3.2s" begin="2.95s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle>
+    <g><rect x="40" y="68" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="95" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Producer 앱</text></g><g><rect x="40" y="138" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="165" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Consumer 앱</text></g><g><rect x="40" y="208" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="235" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">스트리밍 잡</text></g><g><rect x="40" y="278" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="305" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">파트너 Kafka SDK</text></g>
+    <g class="hub"><rect x="390" y="70" width="220" height="220" rx="14" fill="#0A1F10" stroke="#CCFF00" stroke-width="2"/>
+      <text x="500" y="88" text-anchor="middle" font-size="10.5" font-weight="700" fill="#CCFF00" letter-spacing="1.2">NATIVE KAFKA PROXY</text>
+      <g transform="translate(462 92) scale(.45)" fill="#CCFF00"><path d="M50.5,112.9l-3.7,4.7,8.4,13.2-.9,6.1h35.6l2.5-6.1-14.3-17.9s-27.6,0-27.6,0Z"/><path d="M69.9,32.6l-12.9,22.7,62.9,74.8-1.8,6.9h28.8l5.2-24.3L84.9,32.5h-15Z"/><path d="M78.5,15.5l-6.1,11.3h15.2l26.1,31.2,15.5-12.8v-8.1l-5.4-7.6,4-4.2L96.7.6l-18.2,14.9Z"/><path d="M31.7,78.7h-8.5L.8,107.3v29.6h24l4.2-5.5,18.5-24.1h26.8l8.3-12.7-29.1-34.7-21.9,18.9h0Z"/></g>
+      <text x="500" y="178" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">Event Gateway</text>
+      <text x="500" y="200" text-anchor="middle" font-size="11" fill="#A1A69F">Virtual Cluster · Policy</text>
+      <g class="hc" style="--i:0"><rect x="410" y="218" width="87" height="28" rx="14" fill="#13301C" stroke="#54660A"/><text x="453.5" y="237" text-anchor="middle" font-size="11" font-weight="700" fill="#E7EDE5">ACL</text></g>
+      <g class="hc" style="--i:1"><rect x="503" y="218" width="87" height="28" rx="14" fill="#13301C" stroke="#54660A"/><text x="546.5" y="237" text-anchor="middle" font-size="11" font-weight="700" fill="#E7EDE5">스키마</text></g>
+      <g class="hc" style="--i:2"><rect x="410" y="252" width="87" height="28" rx="14" fill="#13301C" stroke="#54660A"/><text x="453.5" y="271" text-anchor="middle" font-size="11" font-weight="700" fill="#E7EDE5">암복호</text></g>
+      <g class="hc" style="--i:3"><rect x="503" y="252" width="87" height="28" rx="14" fill="#13301C" stroke="#54660A"/><text x="546.5" y="271" text-anchor="middle" font-size="11" font-weight="700" fill="#E7EDE5">필터</text></g>
+    </g>
+    <g><rect x="770" y="130" width="190" height="100" rx="10" fill="#fff"/><text x="865" y="172" text-anchor="middle" font-size="16" font-weight="800" fill="#001408">Kafka Brokers</text><text x="865" y="196" text-anchor="middle" font-size="11" fill="#4A4D49">비공개 업스트림</text></g>
+  </svg></div><p class="cap">클라이언트는 Kafka 프로토콜을 유지한 채 bootstrap만 Event Gateway로 바꿉니다. 정책은 Virtual Cluster에서 한 번에 적용됩니다.</p></div>
+</section>
+
+<section class="sec" id="e-why" data-title="필요한 이유">
+  <div class="eyebrow">Why Event Gateway</div>
+  <h2>네이티브 Kafka 앞에 거버넌스가 필요한 이유</h2>
+  <p class="sub">스트리밍 팀은 Kafka SDK를 포기하기 어렵습니다. 그래도 브로커를 밖에 열어 두면 테넌트 격리·스키마·감사를 클러스터마다 따로 맞춰야 합니다.</p>
+  <div class="grid g3">
+    <div class="card"><span class="tag">Protocol</span><h3>SDK 유지</h3><p>기존 producer/consumer 코드를 유지한 채 접속점만 바꿉니다.</p></div>
+    <div class="card"><span class="tag">Isolation</span><h3>논리 클러스터</h3><p>Virtual Cluster로 환경·테넌트를 나누고 실제 브로커 메타를 감춥니다.</p></div>
+    <div class="card"><span class="tag">Policy</span><h3>메시지 정책</h3><p>Topic ACL · 스키마 · 암복호 · filter를 브로커 앞 한곳에서 강제합니다.</p></div>
+  </div>
+</section>
+
+<section class="sec" id="e-cmp" data-title="Kong 적용 전후">
+  <div class="eyebrow">Before · After</div>
+  <h2>브로커 직결과 Event Gateway 비교</h2>
+  <div class="tw rv"><table class="cmp">
+    <thead><tr><th>항목</th><th class="c">기존 방식</th><th class="c k">Event Gateway</th></tr></thead>
+    <tbody>
+      <tr><td>Bootstrap</td><td class="c">브로커 주소 직결</td><td class="c kc">Listener · Virtual Cluster 엔드포인트</td></tr>
+      <tr><td>네트워크</td><td class="c">브로커 리스너 광범위 개방 위험</td><td class="c kc">브로커 비공개 · GW만 공개</td></tr>
+      <tr><td>인가</td><td class="c">브로커 ACL · SASL 분산</td><td class="c kc">OAuth · mTLS · Topic Policy</td></tr>
+      <tr><td>스키마 · 필터</td><td class="c">앱·레지스트리·브로커마다 제각각</td><td class="c kc">Gateway Policy에서 검증·skip</td></tr>
+      <tr><td>관측</td><td class="c">브로커·앱 로그 분리</td><td class="c kc">Event 트래픽 통합 관측 (Konnect)</td></tr>
+      <tr><td>상품화</td><td class="c">Wiki · 티켓</td><td class="c kc">AsyncAPI · Dev Portal · Catalog</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="sec" id="e-effect" data-title="효과">
+  <div class="eyebrow">Outcomes</div>
+  <h2>Event Gateway 적용 효과</h2>
+  <div class="grid g2">
+    <div class="card"><span class="tag">Security</span><h3>브로커 은닉</h3><p>클라이언트가 보는 것은 Virtual Cluster뿐입니다. 실제 브로커 토폴로지를 노출하지 않습니다.</p></div>
+    <div class="card"><span class="tag">Governance</span><h3>정책 일원화</h3><p>Topic ACL·스키마·암복호·필터를 클러스터 앞 한 레이어에서 강제합니다.</p></div>
+    <div class="card"><span class="tag">DX</span><h3>SDK 유지</h3><p>Kafka 프로토콜을 그대로 쓰므로 스트리밍 팀의 학습·재작성이 최소화됩니다.</p></div>
+    <div class="card"><span class="tag">Platform</span><h3>API 플랫폼 결합</h3><p>Portal·Catalog로 이벤트 데이터를 REST API와 같은 상품 흐름에 올립니다.</p></div>
+  </div>
+</section>
+
+<section class="sec" id="e-change" data-title="적용 시 변경 범위">
+  <div class="eyebrow">Adoption</div>
+  <h2>Event Gateway 적용 시 변경 범위</h2>
+  <p class="sub">토픽 설계는 유지합니다. bootstrap과 정책의 위치를 옮깁니다.</p>
+  <div class="tw rv"><table class="cmp">
+    <thead><tr><th>구분</th><th class="c">내용</th></tr></thead>
+    <tbody>
+      <tr><td>유지</td><td class="c kc">Kafka 클러스터 · 토픽 · 파티션 · (대체로) 스키마 레지스트리 · SDK</td></tr>
+      <tr><td>클라이언트</td><td class="c">bootstrap / advertised host → Event GW Listener</td></tr>
+      <tr><td>플랫폼</td><td class="c">Virtual Cluster · Backend 매핑 · Policy · Konnect CP 온보딩</td></tr>
+      <tr><td>네트워크</td><td class="c">브로커 직접 노출 축소 · GW만 클라이언트 도달</td></tr>
+      <tr><td>오해 방지</td><td class="c">EE Kafka 플러그인만으로 native Event Gateway를 재현할 수 없음</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- Native Event Gateway (merged from Native Proxy page) -->
+<section class="sec" id="eg-model" data-title="거버넌스 모델">
+  <div class="eyebrow">Model</div>
+  <h2>Listener · Virtual Cluster · Backend · Policy</h2>
+  <div class="grid g2">
+    <div class="card"><span class="tag">Listener</span><h3>접속점</h3><p>Hostname mapping · 포트 · SNI로 클라이언트가 보는 bootstrap 엔드포인트를 제공합니다.</p></div>
+    <div class="card"><span class="tag">Virtual Cluster</span><h3>논리 클러스터</h3><p>테넌트·환경 격리. 클라이언트 입장에서는 실제 브로커처럼 보입니다.</p></div>
+    <div class="card"><span class="tag">Backend Cluster</span><h3>업스트림</h3><p>실제 Kafka 클러스터 연결 정보. API Gateway의 Service에 해당합니다.</p></div>
+    <div class="card"><span class="tag">Policy</span><h3>메시지 정책</h3><p>Topic ACL, 인증, 스키마 검증, 필드 암복호, record skip/filter를 중앙에서 강제합니다.</p></div>
+  </div>
+  <p class="note">참고: <a href="https://developer.konghq.com/event-gateway/architecture/" target="_blank" rel="noopener">Kong Event Gateway architecture</a></p>
+</section>
+
+<section class="sec" id="eg-cap" data-title="핵심 기능">
+  <div class="eyebrow">Capabilities</div>
+  <h2>네이티브 경로의 핵심 기능</h2>
+  <div class="grid g3">
+    <div class="card"><h3>보안</h3><p>Topic ACL · OAuth · mTLS · 필드 암복호로 토픽·페이로드 경계를 강제합니다.</p></div>
+    <div class="card"><h3>데이터 품질</h3><p>스키마 검증 · record filter/skip으로 비정상 레코드 유입을 막습니다.</p></div>
+    <div class="card"><h3>상품화</h3><p>AsyncAPI · Dev Portal · Service Catalog로 이벤트 데이터를 API처럼 공개합니다.</p></div>
+  </div>
+</section>
+
+
+<section class="sec" id="eg-deploy" data-title="배포 · 라이선스">
+  <div class="eyebrow">Deploy</div>
+  <h2>Konnect 전용 Control Plane</h2>
+  <div class="tw rv"><table class="cmp">
+    <thead><tr><th>항목</th><th class="c k">Kong Event Gateway</th></tr></thead>
+    <tbody>
+      <tr><td>Control Plane</td><td class="c kc">Konnect만 (온프렘 CP 없음)</td></tr>
+      <tr><td>Data Plane</td><td class="c kc">고객 환경 self-managed 가능</td></tr>
+      <tr><td>EE만으로 native GW 재현</td><td class="c">불가 · HTTP 중재(플러그인)로 요구를 낮추거나 Konnect Event GW 도입</td></tr>
+      <tr><td>에어갭 · Konnect 불가</td><td class="c">Event GW 현재 선택지 아님 · EE 플러그인 + 브로커 ACL/네트워크 분리</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">공식 FAQ: Event Gateway는 on-prem CP로 동작하지 않으며 Konnect를 통해서만 제공됩니다. DP는 망내에 둘 수 있어도 라이선스·설정은 Konnect입니다.</p>
+</section>
+
+<section class="sec" id="eg-vs" data-title="vs Confluent Gateway">
+  <div class="eyebrow">vs Confluent</div>
+  <h2>Kong Event Gateway와 Confluent Cloud Gateway</h2>
+  <div class="tw rv"><table class="cmp">
+    <thead><tr><th>항목</th><th class="c k">Kong Event Gateway</th><th class="c">Confluent Cloud Gateway</th></tr></thead>
+    <tbody>
+      <tr><td>프로토콜</td><td class="c kc">Native Kafka proxy</td><td class="c">Native Kafka proxy</td></tr>
+      <tr><td>추상화</td><td class="c kc">Virtual Cluster · Backend · Policy</td><td class="c">Route · Streaming Domain · Policy</td></tr>
+      <tr><td>강점 시나리오</td><td class="c kc">API·AI 플랫폼과 이벤트 거버넌스 통합 · Portal/Catalog</td><td class="c">Confluent Cloud 마이그레이션 · DR · 파트너 접속 · Schema Registry 거버넌스</td></tr>
+      <tr><td>Control Plane</td><td class="c kc">Konnect SaaS</td><td class="c">Gateway는 self-managed · Confluent 라이선스/Cloud 축</td></tr>
+      <tr><td>HTTP Event API</td><td class="c kc">별도 Kafka Plugins로 동일 플랫폼에서 제공</td><td class="c">별도 REST Proxy / Cloud REST</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="sec" id="e-vs" data-title="Confluent 비교">
+  <div class="eyebrow">Comparison</div>
+  <h2>Kong과 Confluent의 대응 제품</h2>
+  <p class="sub">Confluent에도 유사 계층이 있습니다. 선택은 “게이트 유무”가 아니라 API 플랫폼 결합이냐, 스트리밍 스택 밀착이냐입니다.</p>
+  <div class="tw rv"><table class="cmp">
+    <thead><tr><th>경로</th><th class="c k">Kong</th><th class="c">Confluent</th></tr></thead>
+    <tbody>
+      <tr><td>HTTP 중재</td><td class="c kc">Kafka Plugins (kafka-upstream · kafka-consume · confluent*)</td><td class="c">REST Proxy · Cloud Kafka REST APIs</td></tr>
+      <tr><td>Native Kafka proxy</td><td class="c kc">Kong Event Gateway (Konnect)</td><td class="c">Confluent Cloud Gateway · Private Cloud Gateway</td></tr>
+      <tr><td>거버넌스 단위</td><td class="c kc">Route/Plugin · Virtual Cluster/Policy</td><td class="c">REST 엔드포인트 · Route / Streaming Domain / Policy</td></tr>
+      <tr><td>플랫폼 결합</td><td class="c kc">API · AI · Event 동일 플랫폼 · Portal · Catalog</td><td class="c">스트리밍 플랫폼 중심 · Schema Registry · Cluster Linking/DR</td></tr>
+      <tr><td>배포</td><td class="c kc">Plugin=EE 온프렘 가능 · Event GW CP=Konnect only</td><td class="c">Gateway proxy self-managed + Confluent 라이선스 축</td></tr>
+      <tr><td>업스트림</td><td class="c kc">Apache Kafka · Confluent Cloud 등 브로커 중립</td><td class="c">Confluent Cloud 마이그레이션·DR·파트너 접속에 최적화</td></tr>
+    </tbody>
+  </table></div>
+  <div class="grid g2" style="margin-top:18px">
+    <div class="card"><span class="tag">Kong</span><h3>이미 쓰는 API Gateway와 같이</h3><p>이벤트까지 같은 거버넌스·포털·관측으로 올립니다. “Kafka만의 게이트”가 아닙니다.</p></div>
+    <div class="card"><span class="tag">Confluent</span><h3>스트리밍 스택 안의 밀착</h3><p>브로커·스키마·클러스터 이동이 Confluent 안에 있을 때 운영 밀착도가 높습니다.</p></div>
+  </div>
+  <p class="note">출처: <a href="https://docs.confluent.io/platform/current/kafka-rest/" target="_blank" rel="noopener">Confluent REST Proxy</a> · <a href="https://docs.confluent.io/cloud/current/kafka-rest/kafka-rest-cc.html" target="_blank" rel="noopener">Cloud Kafka REST</a> · <a href="https://docs.confluent.io/cloud/current/cp-component/gateway/overview.html" target="_blank" rel="noopener">Confluent Cloud Gateway</a> · <a href="https://developer.konghq.com/event-gateway/" target="_blank" rel="noopener">Kong Event Gateway</a>. 시장에 Conduktor Gateway 등 순수 Kafka proxy도 있으나 1차 비교는 Confluent에 집중합니다.</p>
+</section>
+
+
+<section class="sec" id="e-pick" data-title="Event Gateway vs Plugins">
+  <div class="eyebrow">Which Path</div>
+  <h2>Event Gateway와 Kafka Plugins 선택</h2>
+  <p class="sub">둘 다 Kafka를 안전하게 노출하지만 프로토콜·배포·클라이언트 전제가 다릅니다. Plugin은 Event Gateway의 축소판이 아닙니다.</p>
+  <div class="tw rv"><table class="cmp">
+    <thead><tr><th>항목</th><th class="c k">Event Gateway</th><th class="c">Kafka Plugins</th></tr></thead>
+    <tbody>
+      <tr><td>프로토콜</td><td class="c kc">Native Kafka (producer/consumer SDK)</td><td class="c">HTTP(S) · SSE · WebSocket</td></tr>
+      <tr><td>클라이언트</td><td class="c kc">기존 Kafka 앱 · 스트리밍 팀</td><td class="c">REST 파트너 · 모바일 · 에이전트 · Kafka 비숙련팀</td></tr>
+      <tr><td>거버넌스 단위</td><td class="c kc">Listener · Virtual Cluster · Backend · Policy</td><td class="c">Service · Route · Plugin · Consumer</td></tr>
+      <tr><td>배포</td><td class="c kc">CP = Konnect only · DP self-managed</td><td class="c">Kong Gateway EE 온프렘 · 하이브리드 · Konnect</td></tr>
+      <tr><td>이런 때</td><td class="c kc">브로커 앞 네이티브 정책 프록시 · 테넌트 격리 · 메타 은닉</td><td class="c">HTTP Event API로 상품화 · 기존 API 정책 재사용</td></tr>
+      <tr><td>이런 때는 아님</td><td class="c">에어갭 · Konnect 불가 (현재 CP 공백)</td><td class="c">순수 Kafka 프로토콜만 허용 · native ACL/암복호 프록시 필요</td></tr>
+    </tbody>
+  </table></div>
+  <div class="grid g2" style="margin-top:18px">
+    <div class="card hl"><span class="tag">Event Gateway</span><h3>Kafka 클라이언트를 그대로</h3><p>SDK·프로토콜은 유지하고 bootstrap만 Event Gateway로 바꿉니다.</p>
+      <button class="btn s" onclick="go('event')">Event Gateway</button></div>
+    <div class="card hl"><span class="tag">Kafka Plugins</span><h3>HTTP로 스트림을 열 때</h3><p>앱은 REST·SSE·WS만 쓰고, Kong Route에 produce/consume 플러그인을 붙입니다.</p>
+      <button class="btn s" onclick="go('kplugin')">Kafka Plugins</button></div>
+  </div>
+</section>
+
+
+</div>
 
 <!-- ============ 5. AI GATEWAY ============ -->
 <div class="page" id="p-ai" data-label="AI Gateway" data-group="AI Gateway" data-desc="LLM 트래픽 거버넌스 · 개요">
