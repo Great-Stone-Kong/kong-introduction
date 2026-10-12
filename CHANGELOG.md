@@ -15,6 +15,12 @@
 - Insomnia > Postman 마이그레이션
 - Insomnia > AI 연동
 
+### 변경
+
+- API Gateway > Event Gateway > 필요한 이유
+  - 거버넌스 필요성을 3행 도식(프로토콜 · 접속점 HA · 정책)으로 정리
+  - 브로커 HA와 접속점 HA를 구분해 서술
+
 ## 2026.10.08.1a004
 
 ### 추가

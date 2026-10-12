@@ -658,6 +658,17 @@ h1.light{font-weight:400}h1.light em.gw{font-weight:800}
 .ec-ch span{font-size:12px;font-weight:700;color:var(--g200);border:1px solid var(--g700);border-radius:999px;padding:4px 10px}
 .ec.k .ec-ch span{border-color:#54660A;color:#fff}
 .ec-ar{display:grid;place-items:center;font-size:28px;color:var(--lime)}
+.ewhy{display:grid;gap:12px;margin-top:8px}
+.ewhy .econ{margin-top:0}
+.ewhy .ec{padding:16px 18px}
+.ewhy .ec h3{font-size:15px;margin:0 0 4px;color:#fff}
+.ewhy .ec .tag{margin-bottom:8px}
+.ewhy .ec p{margin:6px 0 0;font-size:13.5px}
+.ewhy .ec-ar{font-size:22px}
+.ewhy .ec-flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px}
+.ewhy .ec-flow span{font-size:11px;font-weight:700;font-family:var(--mono);color:var(--g300);border:1px solid var(--g700);border-radius:999px;padding:3px 8px}
+.ewhy .ec.k .ec-flow span{border-color:#54660A;color:#E7EDE5}
+.ewhy .ec-flow i{font-style:normal;color:var(--lime);font-size:12px}
 @media (max-width:820px){.econ{grid-template-columns:1fr}.ec-ar{transform:rotate(90deg)}}
 @media (prefers-reduced-motion:reduce){.eco .ln{stroke-dashoffset:0}.eco .wb,.eco .hub{opacity:1}}
 
@@ -2668,7 +2679,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
     <circle r="5" fill="#ff6b6b" opacity="0"><animateMotion dur="3.0s" begin="0.8s" repeatCount="indefinite" path="M220 90C480 90 560 180 770 180"/><animate attributeName="opacity" dur="3.0s" begin="0.8s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle><circle r="5" fill="#ff6b6b" opacity="0"><animateMotion dur="3.0s" begin="1.4500000000000002s" repeatCount="indefinite" path="M220 160C480 160 560 180 770 180"/><animate attributeName="opacity" dur="3.0s" begin="1.4500000000000002s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle><circle r="5" fill="#ff6b6b" opacity="0"><animateMotion dur="3.0s" begin="2.1s" repeatCount="indefinite" path="M220 230C480 230 560 180 770 180"/><animate attributeName="opacity" dur="3.0s" begin="2.1s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle><circle r="5" fill="#ff6b6b" opacity="0"><animateMotion dur="3.0s" begin="2.75s" repeatCount="indefinite" path="M220 300C480 300 560 180 770 180"/><animate attributeName="opacity" dur="3.0s" begin="2.75s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.05;.9;1"/></circle>
     <g><rect x="40" y="68" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="95" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Producer 앱</text></g><g><rect x="40" y="138" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="165" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Consumer 앱</text></g><g><rect x="40" y="208" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="235" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">스트리밍 잡</text></g><g><rect x="40" y="278" width="180" height="44" rx="22" fill="#0A1F10" stroke="#4A4D49"/><text x="130" y="305" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">파트너 Kafka SDK</text></g>
     <g><rect x="770" y="130" width="190" height="100" rx="10" fill="#0A1F10" stroke="#4A4D49"/><text x="865" y="172" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">Kafka Brokers</text><text x="865" y="196" text-anchor="middle" font-size="11" fill="#A1A69F">ACL · SASL 분산</text></g>
-    <g class="wb" style="--i:0"><rect x="400" y="88" width="200" height="36" rx="18" fill="#2A0E0E" stroke="#ff6b6b"/><text x="500" y="111" text-anchor="middle" font-size="13" font-weight="800" fill="#ff8b8b">브로커 직접 노출</text></g>
+    <g class="wb" style="--i:0"><rect x="400" y="128" width="200" height="36" rx="18" fill="#2A0E0E" stroke="#ff6b6b"/><text x="500" y="151" text-anchor="middle" font-size="13" font-weight="800" fill="#ff8b8b">브로커 직접 노출</text></g>
     <g class="wb" style="--i:1"><rect x="400" y="220" width="200" height="36" rx="18" fill="#2A0E0E" stroke="#ff6b6b"/><text x="500" y="243" text-anchor="middle" font-size="13" font-weight="800" fill="#ff8b8b">정책 · 감사 제각각</text></g>
   </svg></div><p class="cap">네이티브 클라이언트마다 bootstrap이 브로커를 가리키면 네트워크 경계와 토픽 ACL이 앱·클러스터에 흩어집니다.</p></div>
   <div class="pane"><div class="dia ecow"><svg viewBox="0 0 1000 360" class="eco" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Kong Event Gateway가 네이티브 Kafka 트래픽을 거버넌스하는 구조">
@@ -2698,12 +2709,25 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 <section class="sec" id="e-why" data-title="필요한 이유">
   <div class="eyebrow">Why Event Gateway</div>
   <h2>네이티브 Kafka 앞에 거버넌스가 필요한 이유</h2>
-  <p class="sub">스트리밍 팀은 Kafka SDK를 포기하기 어렵습니다. 그래도 브로커를 밖에 열어 두면 테넌트 격리·스키마·감사를 클러스터마다 따로 맞춰야 합니다.</p>
-  <div class="grid g3">
-    <div class="card"><span class="tag">Protocol</span><h3>SDK 유지</h3><p>기존 producer/consumer 코드를 유지한 채 접속점만 바꿉니다.</p></div>
-    <div class="card"><span class="tag">Isolation</span><h3>논리 클러스터</h3><p>Virtual Cluster로 환경·테넌트를 나누고 실제 브로커 메타를 감춥니다.</p></div>
-    <div class="card"><span class="tag">Policy</span><h3>메시지 정책</h3><p>Topic ACL · 스키마 · 암복호 · filter를 브로커 앞 한곳에서 강제합니다.</p></div>
+  <p class="sub">Event streaming 워크로드는 Native Kafka SDK와 프로토콜을 전제로 합니다. 브로커 리스너를 클라이언트에 직접 노출하면 ACL · 스키마 · 감사 · 네트워크 경계가 클러스터와 애플리케이션에 분산되어, 테넌트 · 환경 단위로 동일한 거버넌스를 적용하기 어렵습니다.</p>
+  <div class="ewhy">
+    <div class="econ rv">
+      <div class="ec"><span class="tag">Protocol</span><h3>SDK · 프로토콜 유지</h3><p>기존 producer · consumer 코드와 Kafka 프로토콜을 유지해야 합니다.</p><div class="ec-flow"><span>Kafka SDK</span><i>→</i><span>브로커 bootstrap</span></div></div>
+      <div class="ec-ar">→</div>
+      <div class="ec k"><span class="tag">Event Gateway</span><h3>접속점만 교체</h3><p>bootstrap을 Listener · Virtual Cluster로 바꾸고 SDK는 그대로 둡니다.</p><div class="ec-flow"><span>Kafka SDK</span><i>→</i><span>Event Gateway</span><i>→</i><span>Backend Cluster</span></div></div>
+    </div>
+    <div class="econ rv">
+      <div class="ec"><span class="tag">Architecture</span><h3>직결 · 물리 클러스터 분산</h3><p>브로커 주소가 클라이언트에 노출되고, 팀 · 환경 격리마다 물리 클러스터가 늘어납니다.</p><div class="ec-flow"><span>Client</span><i>→</i><span>Broker listeners</span><i>·</i><span>클러스터 복제</span></div></div>
+      <div class="ec-ar">→</div>
+      <div class="ec k"><span class="tag">HA · Isolation</span><h3>접속점 HA · 브로커 은닉</h3><p>LB + 다수 DP로 접속점을 HA하고, Virtual Cluster로 논리 격리합니다. 브로커는 비공개 업스트림이라 토폴로지 변경이 클라이언트 bootstrap과 분리됩니다.</p><div class="ec-flow"><span>Client</span><i>→</i><span>LB · DP</span><i>→</i><span>Virtual Cluster</span><i>→</i><span>비공개 Brokers</span></div></div>
+    </div>
+    <div class="econ rv">
+      <div class="ec"><span class="tag">Policy</span><h3>정책 · 감사 분산</h3><p>Topic ACL · 스키마 · 암복호 · 필터가 앱 · 레지스트리 · 브로커에 제각각입니다.</p><div class="ec-flow"><span>App ACL</span><i>·</i><span>Registry</span><i>·</i><span>Broker ACL</span></div></div>
+      <div class="ec-ar">→</div>
+      <div class="ec k"><span class="tag">Governance</span><h3>Gateway Policy 일원화</h3><p>Virtual Cluster Policy에서 Topic ACL · 스키마 · 암복호 · filter를 한곳에서 강제합니다.</p><div class="ec-flow"><span>ACL</span><i>·</i><span>Schema</span><i>·</i><span>Encrypt</span><i>·</i><span>Filter</span></div></div>
+    </div>
   </div>
+  <p class="note">브로커 복제 · ISR 등 Kafka 자체 HA는 클러스터 영역입니다. Event Gateway는 클라이언트 접속점의 HA, 브로커 토폴로지 변경 흡수, Virtual Cluster로 물리 클러스터 수를 줄이는 운영 구조에 기여합니다.</p>
 </section>
 
 <section class="sec" id="e-cmp" data-title="Kong 적용 전후">
