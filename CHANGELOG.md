@@ -42,6 +42,7 @@
 
 - API Gateway > Event Gateway > Kong 적용 전후
 - API Gateway > Event Gateway > 적용 시 변경 범위
+- API Gateway > Event Gateway > 핵심 기능
 
 ## 2026.10.08.1a004
 
