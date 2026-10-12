@@ -3220,12 +3220,12 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
       <text x="90" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#CCFF00" letter-spacing="1.2">CLIENT</text>
       <text x="490" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#CCFF00" letter-spacing="1.2">EVENT GATEWAY</text>
       <text x="860" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#CCFF00" letter-spacing="1.2">BACKEND</text>
-      <!-- Client -->
+      <!-- Client · DP와 동일 y -->
       <g class="n" style="--i:0">
-        <rect x="24" y="240" width="132" height="100" rx="12" fill="#0A1F10" stroke="#4A4D49"/>
-        <text x="90" y="280" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">Client</text>
-        <text x="90" y="304" text-anchor="middle" font-size="11" fill="#A1A69F">users · apps</text>
-        <text x="90" y="322" text-anchor="middle" font-size="11" fill="#A1A69F">producers · consumers</text>
+        <rect x="24" y="292" width="132" height="100" rx="12" fill="#0A1F10" stroke="#4A4D49"/>
+        <text x="90" y="332" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">Client</text>
+        <text x="90" y="356" text-anchor="middle" font-size="11" fill="#A1A69F">users · apps</text>
+        <text x="90" y="374" text-anchor="middle" font-size="11" fill="#A1A69F">producers · consumers</text>
       </g>
       <!-- Control Plane -->
       <g class="hub">
@@ -3254,28 +3254,26 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
         <rect x="300" y="336" width="380" height="40" rx="10" fill="#13301C" stroke="#54660A"/>
         <text x="490" y="362" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">Data plane node</text>
       </g>
-      <!-- Backend -->
+      <!-- Backend · Client·DP와 동일 y -->
       <g class="n" style="--i:4">
-        <rect x="800" y="240" width="156" height="100" rx="12" fill="#0A1F10" stroke="#CCFF00" stroke-width="2"/>
-        <text x="878" y="280" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">Backend</text>
-        <text x="878" y="302" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">Cluster</text>
-        <text x="878" y="324" text-anchor="middle" font-size="11" fill="#A1A69F">Kafka brokers</text>
+        <rect x="800" y="292" width="156" height="100" rx="12" fill="#0A1F10" stroke="#CCFF00" stroke-width="2"/>
+        <text x="878" y="332" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">Backend</text>
+        <text x="878" y="354" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">Cluster</text>
+        <text x="878" y="376" text-anchor="middle" font-size="11" fill="#A1A69F">Kafka brokers</text>
       </g>
       <!-- config link CP ↔ DP -->
       <path class="ln" pathLength="1" style="--i:0" d="M490 248V292" stroke="#CCFF00" stroke-width="2" fill="none"/>
       <g class="cfg"><text x="510" y="276" font-size="11" font-weight="700" fill="#A1A69F">config push</text></g>
-      <!-- traffic Client ↔ DP ↔ Backend -->
-      <path class="ln" pathLength="1" style="--i:1" d="M156 290H220" stroke="#CCFF00" stroke-width="2" fill="none"/>
+      <!-- traffic · Client ↔ DP ↔ Backend 동일 높이 y=342 -->
+      <path class="ln" pathLength="1" style="--i:1" d="M156 342H220" stroke="#CCFF00" stroke-width="2" fill="none"/>
       <path class="ln" pathLength="1" style="--i:2" d="M760 342H800" stroke="#CCFF00" stroke-width="2" fill="none"/>
-      <circle class="pkt" r="4" fill="#CCFF00" opacity="0"><animateMotion dur="2.8s" begin="0.9s" repeatCount="indefinite" path="M156 290H490H760H800"/><animate attributeName="opacity" dur="2.8s" begin="0.9s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.88;1"/></circle>
-      <circle class="pkt" r="4" fill="#CCFF00" opacity="0"><animateMotion dur="2.8s" begin="2.0s" repeatCount="indefinite" path="M800 342H490H220H156"/><animate attributeName="opacity" dur="2.8s" begin="2.0s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.88;1"/></circle>
     </svg>
     <p class="edep-cap">Client ↔ Data Plane ↔ Backend로 Kafka 트래픽이 흐릅니다. Control Plane(Konnect)은 Listener · Virtual Cluster · Policy 설정을 Data Plane에 푸시하며 메시지 payload는 보지 않습니다.</p>
   </div>
   <div class="tw rv"><table class="cmp">
     <thead><tr><th>항목</th><th class="c k">Kong Event Gateway</th></tr></thead>
     <tbody>
-      <tr><td>Control Plane</td><td class="c kc">Konnect만 (온프렘 CP 없음)</td></tr>
+      <tr><td>Control Plane</td><td class="c kc">Konnect에서 관리형 제공</td></tr>
       <tr><td>Data Plane</td><td class="c kc">고객 환경 self-managed 가능</td></tr>
       <tr><td>EE만으로 native GW 재현</td><td class="c">불가 · HTTP 중재(플러그인)로 요구를 낮추거나 Konnect Event GW 도입</td></tr>
       <tr><td>에어갭 · Konnect 불가</td><td class="c">Event GW 현재 선택지 아님 · EE 플러그인 + 브로커 ACL/네트워크 분리</td></tr>
