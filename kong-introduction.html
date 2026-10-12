@@ -738,17 +738,59 @@ h1.light{font-weight:400}h1.light em.gw{font-weight:800}
 .pipe.efo-pipe .fp-line::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(204,255,0,.35) 0 14px,transparent 14px 28px);animation:fpflow 1.2s linear infinite}
 .pipe.efo-pipe .fp-pk{position:absolute;top:-3px;left:0;width:14px;height:14px;border-radius:50%;background:var(--lime);box-shadow:0 0 14px var(--lime);animation:fppk var(--efo-t) linear infinite}
 .pipe.efo-pipe .fp-pk.b{animation-delay:calc(var(--efo-t) / 2);background:#C9A8FF;box-shadow:0 0 14px #C9A8FF}
-.pipe.efo-pipe .stg{position:relative;margin:0;width:auto;min-width:0;box-sizing:border-box;border:1px solid var(--line);border-radius:10px;padding:14px 8px 12px;text-align:center;display:flex;flex-direction:column;align-items:center;background:var(--card);animation:efoStg var(--efo-t) linear infinite;animation-delay:calc(var(--i) * 3s)}
+.pipe.efo-pipe .stg{position:relative;margin:0;width:auto;min-width:0;box-sizing:border-box;border:1px solid var(--line);border-radius:10px;padding:14px 8px 12px;text-align:center;display:flex;flex-direction:column;align-items:center;background:var(--card);color:inherit;font:inherit;cursor:pointer;appearance:none;-webkit-appearance:none;animation:efoStg var(--efo-t) linear infinite;animation-delay:calc(var(--i) * 3s)}
+.pipe.efo-pipe .stg:hover{border-color:var(--line2)}
 .pipe.efo-pipe .stg::before{content:"";position:absolute;top:-22px;left:50%;width:2px;height:22px;background:linear-gradient(var(--lime),transparent);opacity:.5}
-.pipe.efo-pipe .stg:not(:last-child)::after{content:"›";position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:var(--lime);font-weight:900;font-size:15px;z-index:1}
-.pipe.efo-pipe .fp-n{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--lime);color:var(--lime);font-family:var(--mono);font-size:12px;margin-bottom:6px;background:var(--navy)}
-.pipe.efo-pipe .stg h5{font-size:10px;margin-bottom:2px}
-.pipe.efo-pipe .stg strong{font-size:13.5px;margin-bottom:6px}
-.pipe.efo-pipe .stg span:not(.fp-n){display:block;font-size:10.5px;margin:0 0 4px;padding:2px 6px;width:100%;box-sizing:border-box}
+.pipe.efo-pipe .stg:not(:last-child)::after{content:"›";position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:var(--lime);font-weight:900;font-size:15px;z-index:1;pointer-events:none}
+.pipe.efo-pipe .fp-n{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--lime);color:var(--lime);font-family:var(--mono);font-size:12px;font-weight:800;line-height:1;letter-spacing:0;margin:0 0 6px;padding:0;background:var(--navy);box-sizing:border-box;flex:none}
+.pipe.efo-pipe .stg h5{font-size:10px;margin:0 0 2px;font-weight:700;color:var(--lime);letter-spacing:.06em}
+.pipe.efo-pipe .stg strong{font-size:13.5px;margin:0 0 6px;color:#fff;font-weight:700}
+.pipe.efo-pipe .stg em{display:block;font-style:normal;font-size:10.5px;margin:0 0 4px;padding:2px 6px;width:100%;box-sizing:border-box;color:var(--g200);border:1px solid var(--g700);border-radius:999px}
 @keyframes efoStg{
   0%,19%{border-color:var(--lime);background:rgba(204,255,0,.08);box-shadow:0 0 18px rgba(204,255,0,.18)}
   20%,100%{border-color:var(--line);background:var(--card);box-shadow:none}
 }
+/* click-hold: freeze diagram + step to data-step */
+.efo-sync.hold .deny,.efo-sync.hold .phase,.efo-sync.hold .check,
+.efo-sync.hold .bk-pri,.efo-sync.hold .bk-sec,.efo-sync.hold .ln-pri,.efo-sync.hold .ln-sec,
+.efo-sync.hold .dest-lbl,.efo-sync.hold .dest-lbl-b,
+.efo-sync.hold .pkt-cons-pri,.efo-sync.hold .pkt-canary,.efo-sync.hold .pkt-full-sec,
+.efo-sync.hold .pipe.efo-pipe .stg,
+.efo-sync.hold .pipe.efo-pipe .fp-line::before,
+.efo-sync.hold .pipe.efo-pipe .fp-pk{animation:none!important}
+.efo-sync.hold .pipe.efo-pipe .stg{border-color:var(--line);background:var(--card);box-shadow:none}
+.efo-sync.hold .pipe.efo-pipe .stg.on{border-color:var(--lime);background:rgba(204,255,0,.08);box-shadow:0 0 18px rgba(204,255,0,.18)}
+.efo-sync.hold .pipe.efo-pipe .stg.on .fp-n{background:var(--lime);color:var(--navy)}
+.efo-sync.hold .deny,.efo-sync.hold .phase,.efo-sync.hold .check,
+.efo-sync.hold .pkt-cons-pri,.efo-sync.hold .pkt-canary,.efo-sync.hold .pkt-full-sec,
+.efo-sync.hold .dest-lbl,.efo-sync.hold .dest-lbl-b{opacity:0}
+.efo-sync.hold .bk-pri,.efo-sync.hold .bk-sec{opacity:.38}
+.efo-sync.hold .ln-pri,.efo-sync.hold .ln-sec{stroke:#4A4D49;stroke-opacity:.35}
+.efo-sync.hold[data-step="0"] .deny,
+.efo-sync.hold[data-step="1"] .deny,
+.efo-sync.hold[data-step="2"] .deny,
+.efo-sync.hold[data-step="3"] .deny{opacity:1}
+.efo-sync.hold[data-step="1"] .phase{opacity:1}
+.efo-sync.hold[data-step="3"] .check{opacity:1}
+.efo-sync.hold[data-step="0"] .dest-lbl,
+.efo-sync.hold[data-step="1"] .dest-lbl{opacity:1}
+.efo-sync.hold[data-step="2"] .dest-lbl-b,
+.efo-sync.hold[data-step="3"] .dest-lbl-b,
+.efo-sync.hold[data-step="4"] .dest-lbl-b{opacity:1}
+.efo-sync.hold[data-step="0"] .bk-pri,
+.efo-sync.hold[data-step="1"] .bk-pri{opacity:1}
+.efo-sync.hold[data-step="2"] .bk-sec,
+.efo-sync.hold[data-step="3"] .bk-sec,
+.efo-sync.hold[data-step="4"] .bk-sec{opacity:1}
+.efo-sync.hold[data-step="0"] .ln-pri,
+.efo-sync.hold[data-step="1"] .ln-pri{stroke:#CCFF00;stroke-opacity:.9}
+.efo-sync.hold[data-step="2"] .ln-sec,
+.efo-sync.hold[data-step="3"] .ln-sec,
+.efo-sync.hold[data-step="4"] .ln-sec{stroke:#CCFF00;stroke-opacity:.9}
+.efo-sync.hold[data-step="0"] .pkt-cons-pri,
+.efo-sync.hold[data-step="1"] .pkt-cons-pri{opacity:1}
+.efo-sync.hold[data-step="3"] .pkt-canary{opacity:1}
+.efo-sync.hold[data-step="4"] .pkt-full-sec{opacity:1}
 @media (max-width:900px){
   .pipe.efo-pipe{grid-template-columns:1fr;padding-top:0;gap:8px}
   .pipe.efo-pipe .fp-line,.pipe.efo-pipe .stg::before,.pipe.efo-pipe .stg:not(:last-child)::after{display:none}
@@ -2978,17 +3020,17 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
       <p class="efo-cap">아래 5단계와 같은 15초 주기로 동기화됩니다. VC destination만 바꾸고 클라이언트 bootstrap은 고정합니다.</p>
     </div>
     <h3 style="margin-top:20px">Planned Failover 절차</h3>
-    <div class="pipe efo-pipe">
+    <div class="pipe efo-pipe" role="tablist" aria-label="Planned Failover 절차">
       <div class="fp-line"><i class="fp-pk"></i><i class="fp-pk b"></i></div>
-      <div class="stg" style="--i:0"><span class="fp-n">1</span><h5>STOP</h5><strong>Produce 중단</strong><span>deny-writes</span><span>읽기는 유지</span></div>
-      <div class="stg" style="--i:1"><span class="fp-n">2</span><h5>DRAIN</h5><strong>드레인 대기</strong><span>inflight → 0</span><span>lag · offset sync</span></div>
-      <div class="stg" style="--i:2"><span class="fp-n">3</span><h5>SWAP</h5><strong>Backend 교체</strong><span>VC destination</span><span>→ Secondary</span></div>
-      <div class="stg" style="--i:3"><span class="fp-n">4</span><h5>CHECK</h5><strong>헬스체크</strong><span>canary topic</span><span>produce · consume</span></div>
-      <div class="stg" style="--i:4"><span class="fp-n">5</span><h5>RESUME</h5><strong>Produce 재개</strong><span>deny-writes 해제</span><span>Secondary 유입</span></div>
+      <button type="button" class="stg" style="--i:0" data-efo="0" aria-pressed="false"><span class="fp-n">1</span><h5>STOP</h5><strong>Produce 중단</strong><em>deny-writes</em><em>읽기는 유지</em></button>
+      <button type="button" class="stg" style="--i:1" data-efo="1" aria-pressed="false"><span class="fp-n">2</span><h5>DRAIN</h5><strong>드레인 대기</strong><em>inflight → 0</em><em>lag · offset sync</em></button>
+      <button type="button" class="stg" style="--i:2" data-efo="2" aria-pressed="false"><span class="fp-n">3</span><h5>SWAP</h5><strong>Backend 교체</strong><em>VC destination</em><em>→ Secondary</em></button>
+      <button type="button" class="stg" style="--i:3" data-efo="3" aria-pressed="false"><span class="fp-n">4</span><h5>CHECK</h5><strong>헬스체크</strong><em>canary topic</em><em>produce · consume</em></button>
+      <button type="button" class="stg" style="--i:4" data-efo="4" aria-pressed="false"><span class="fp-n">5</span><h5>RESUME</h5><strong>Produce 재개</strong><em>deny-writes 해제</em><em>Secondary 유입</em></button>
     </div>
   </div>
   <div class="grid g2" style="margin-top:8px">
-    <div class="card"><span class="tag">Authentication</span><h3>인증은 이동하지 않음</h3><p>클라이언트 측 SASL · OAUTHBEARER · mTLS는 Virtual Cluster에 둡니다. Gateway가 Backend에 붙는 자격 증명만 Backend Cluster에 있습니다. 전환 시 클라이언트 자격 증명은 바뀌지 않습니다.</p></div>
+    <div class="card"><span class="tag">Authentication</span><h3>인증은 유지됨</h3><p>클라이언트 측 SASL · OAUTHBEARER · mTLS는 Virtual Cluster에 둡니다. Gateway가 Backend에 붙는 자격 증명만 Backend Cluster에 있습니다. 전환 시 클라이언트 자격 증명은 바뀌지 않습니다.</p></div>
     <div class="card"><span class="tag">Planned · Unplanned</span><h3>계획 · 비상 전환</h3><p>계획(DR 드릴 · 리전 이전 · 점검)은 1→5단계를 모두 수행합니다. Primary가 이미 다운된 비상은 1단계를 건너뛰고 destination을 바로 교체합니다. 미복제 데이터 손실은 허용 범위로 둡니다.</p></div>
   </div>
   <p class="note">Gateway는 복제를 exactly-once로 보장하지 않습니다. Failover 안전 범위는 MirrorMaker2 · Cluster Linking lag에 종속됩니다. 출처: Kong Event Gateway Partner · Failover.</p>
@@ -4848,10 +4890,33 @@ document.querySelectorAll('.rv,.flow,.pipe,.bars,.mqwrap,.tl,.vision').forEach(e
 function resetMotion(page){
   page.querySelectorAll('.rv.in,.tl.in,.vision.in,.geo.in,.namebox.in').forEach(el=>el.classList.remove('in'));
   page.querySelectorAll('.bars.go').forEach(el=>el.classList.remove('go'));
-  page.querySelectorAll('.flow .st,.pipe .stg').forEach(k=>k.classList.remove('lit','now'));
+  page.querySelectorAll('.flow .st,.pipe .stg').forEach(k=>k.classList.remove('lit','now','on'));
+  page.querySelectorAll('.efo-sync.hold').forEach(el=>{el.classList.remove('hold');el.removeAttribute('data-step');});
+  page.querySelectorAll('.efo-pipe .stg[aria-pressed]').forEach(b=>b.setAttribute('aria-pressed','false'));
   page.querySelectorAll('i[data-from]').forEach(i=>{i.textContent=(i.dataset.prefix||'')+fmt(+i.dataset.from,+(i.dataset.dec||0))+(i.dataset.suffix||'');});
   const w=page.querySelector('.gblock'); if(w) w.classList.remove('play');
 }
+/* Event Gateway Failover: 단계 클릭 시 해당 단계 유지, 다시 클릭하면 자동 재생 */
+(function(){
+  const root=document.querySelector('.efo-sync'); if(!root) return;
+  const steps=[...root.querySelectorAll('.efo-pipe .stg[data-efo]')];
+  function clearHold(){
+    root.classList.remove('hold'); root.removeAttribute('data-step');
+    steps.forEach(b=>{b.classList.remove('on');b.setAttribute('aria-pressed','false');});
+  }
+  function hold(i){
+    root.classList.add('hold'); root.dataset.step=String(i);
+    steps.forEach(b=>{
+      const on=b.dataset.efo===String(i);
+      b.classList.toggle('on',on); b.setAttribute('aria-pressed',on?'true':'false');
+    });
+  }
+  steps.forEach(b=>b.addEventListener('click',()=>{
+    const i=b.dataset.efo;
+    if(root.classList.contains('hold')&&root.dataset.step===i) clearHold();
+    else hold(i);
+  }));
+})();
 // 탭 전환 시 차트 재생
 
 
