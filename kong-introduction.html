@@ -2812,11 +2812,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
     </div>
   </div>
   <p class="note">브로커 복제 · ISR 등 Kafka 자체 HA는 클러스터 영역입니다. Event Gateway는 클라이언트 접속점의 HA, 브로커 토폴로지 변경 흡수, Virtual Cluster로 물리 클러스터 수를 줄이는 운영 구조에 기여합니다.</p>
-</section>
-
-<section class="sec" id="e-cmp" data-title="Kong 적용 전후">
-  <div class="eyebrow">Before · After</div>
-  <h2>브로커 직결과 Event Gateway 비교</h2>
+  <h3 style="margin-top:28px">브로커 직결과 Event Gateway 비교</h3>
   <div class="tw rv"><table class="cmp">
     <thead><tr><th>항목</th><th class="c">기존 방식</th><th class="c k">Event Gateway</th></tr></thead>
     <tbody>
