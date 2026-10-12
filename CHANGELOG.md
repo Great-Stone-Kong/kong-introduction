@@ -42,8 +42,23 @@
 - API Gateway > Event Gateway > 배포 · 라이선스
   - Konnect CP / self-managed DP / Backend 아키텍처 도식 추가
   - Konnect UI 구성 요소(Overview · Nodes · Backend · VC · Listeners · Resources) 표로 정리
+  - Virtual Cluster를 Event Management 비용(계약) 산정 단위로 명시
 - API Gateway > Event Gateway > Analytics
   - Konnect Portal Event Gateway Analytics 목업 추가
+
+### 추가
+
+- API Gateway > Event Gateway > 데모
+  - kong-demo/event-gateway-demo와 동일하게 Through EG vs Direct/ACL  Dual 패널
+  - EG only: Virtual Cluster bootstrap · Consume `My-New-Header` · ACL deny
+  - Analytics GB 베이스라인 위에 Through EG 요청 가산 (Direct는 미집계)
+  - Producers · Consumers 3행 (orders-svc / payment-worker / eg-demo-ui 등)
+
+### 변경
+
+- API Gateway > Event Gateway 섹션 순서
+  - Virtual Cluster를 Failover 직전으로 이동
+  - 배포 → 데모 → Analytics 유지 · Analytics를 데모 연동 세션 집계로 전환
 
 ### 삭제
 
