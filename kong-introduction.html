@@ -868,6 +868,20 @@ h1.light{font-weight:400}h1.light em.gw{font-weight:800}
   .edep .ln{stroke-dashoffset:0;animation:none}
 }
 
+/* Event Gateway Analytics mock */
+.ega{margin-top:8px}
+.ega .mk-kpi em.na{color:var(--g500)}
+.ega-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ega-grid .mk-card{margin-bottom:0}
+.ega-sum{font-size:10.5px;color:var(--g500);font-weight:500}
+.ega-tbl{width:100%;border-collapse:collapse;font-size:11.5px}
+.ega-tbl th{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:none;color:var(--g500);text-align:left;padding:6px 8px 8px;background:transparent;border-bottom:1px solid var(--line);white-space:nowrap}
+.ega-tbl td{padding:7px 8px;border-bottom:1px solid #12201A;color:var(--g200);font-family:var(--mono);font-size:11px;vertical-align:middle}
+.ega-tbl tr:last-child td{border-bottom:none}
+.ega-tbl td:first-child{color:#fff;font-weight:600}
+.ega-tbl td.num{text-align:right;color:var(--lime);font-weight:700}
+@media (max-width:900px){.ega-grid{grid-template-columns:1fr}}
+
 .pf-st li span{min-width:0;overflow-wrap:anywhere}
 .pf-st .pf-h span,.pf-st .pf-h em{overflow-wrap:anywhere}
 @media (min-width:1101px) and (max-width:1560px){
@@ -3282,6 +3296,89 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
     </tbody>
   </table></div>
   <p class="note">Control Plane은 Konnect 전용입니다. Data Plane은 self-managed이며 라이선스는 Konnect가 처리합니다. 참고: <a href="https://developer.konghq.com/event-gateway/" target="_blank" rel="noopener">Kong Event Gateway</a> · <a href="https://developer.konghq.com/event-gateway/architecture/" target="_blank" rel="noopener">Architecture</a> · <a href="https://developer.konghq.com/event-gateway/entities/schema-registry/" target="_blank" rel="noopener">Schema registry</a></p>
+</section>
+
+<section class="sec" id="eg-analytics" data-title="Analytics">
+  <div class="eyebrow">Konnect Portal</div>
+  <h2>Event Gateway Analytics</h2>
+  <p class="sub">Konnect에서 produce · consume 바이트, principal, 에러 코드, management command를 Virtual Cluster · Backend 단위로 확인합니다.</p>
+  <div class="mock ega rv">
+    <div class="mk-top">
+      <span class="mk-dot"></span>
+      <b>Analytics</b>
+      <span class="mk-pill">Aggregate volume by · Bytes</span>
+      <span class="mk-pill">Last 7 days · GMT+9</span>
+    </div>
+    <div class="mk-kpis">
+      <div class="mk-kpi"><span>Total bytes produced</span><b>740 B</b><em class="na">Record size (sum)</em></div>
+      <div class="mk-kpi"><span>Total bytes consumed</span><b>1.86 kB</b><em class="na">Record size (sum)</em></div>
+      <div class="mk-kpi"><span>Unique principals</span><b>1</b><em class="na">—</em></div>
+      <div class="mk-kpi"><span>Errors</span><b>6</b><em class="na">Request count (sum)</em></div>
+    </div>
+    <div class="ega-grid">
+      <div class="mk-card">
+        <div class="mk-h"><b>Top 5 topics produced to</b><span class="ega-sum">Last 7 day summary</span></div>
+        <table class="ega-tbl">
+          <thead><tr><th>Topic name</th><th>Virtual cluster</th><th>Backend cluster</th><th>Record size</th></tr></thead>
+          <tbody>
+            <tr><td>my-test-topic</td><td>demo-virtual-cluster</td><td>demo-backend-cluster</td><td class="num">419 B</td></tr>
+            <tr><td>blocked-topic</td><td>demo-virtual-cluster</td><td>demo-backend-cluster</td><td class="num">321 B</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mk-card">
+        <div class="mk-h"><b>Top 5 topics consumed from</b><span class="ega-sum">Last 7 day summary</span></div>
+        <table class="ega-tbl">
+          <thead><tr><th>Topic name</th><th>Virtual cluster</th><th>Backend cluster</th><th>Record size</th></tr></thead>
+          <tbody>
+            <tr><td>my-test-topic</td><td>demo-virtual-cluster</td><td>demo-backend-cluster</td><td class="num">1.82 kB</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mk-card">
+        <div class="mk-h"><b>Top 5 producers</b><span class="ega-sum">Last 7 day summary</span></div>
+        <table class="ega-tbl">
+          <thead><tr><th>Name</th><th>Record size</th></tr></thead>
+          <tbody>
+            <tr><td>anonymous</td><td class="num">740 B</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mk-card">
+        <div class="mk-h"><b>Top 5 consumers</b><span class="ega-sum">Last 7 day summary</span></div>
+        <table class="ega-tbl">
+          <thead><tr><th>Name</th><th>Record size</th></tr></thead>
+          <tbody>
+            <tr><td>anonymous</td><td class="num">1.82 kB</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mk-card">
+        <div class="mk-h"><b>Top 5 error codes</b><span class="ega-sum">Last 7 day summary</span></div>
+        <table class="ega-tbl">
+          <thead><tr><th>Name</th><th>Request count</th></tr></thead>
+          <tbody>
+            <tr><td>TOPIC_AUTHORIZATION_FAILED</td><td class="num">4</td></tr>
+            <tr><td>COORDINATOR_NOT_AVAILABLE</td><td class="num">1</td></tr>
+            <tr><td>GROUP_AUTHORIZATION_FAILED</td><td class="num">1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mk-card">
+        <div class="mk-h"><b>Top 5 management commands</b><span class="ega-sum">Last 7 day summary</span></div>
+        <table class="ega-tbl">
+          <thead><tr><th>Name</th><th>Request count</th></tr></thead>
+          <tbody>
+            <tr><td>FindCoordinator</td><td class="num">210</td></tr>
+            <tr><td>Metadata</td><td class="num">39</td></tr>
+            <tr><td>ListOffsets</td><td class="num">19</td></tr>
+            <tr><td>ApiVersions</td><td class="num">16</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <p class="note">Konnect Event Gateway Analytics 화면을 재현한 목업입니다. 수치는 예시이며 실제 데이터가 아닙니다.</p>
 </section>
 
 <section class="sec" id="eg-vs" data-title="vs Confluent Gateway">

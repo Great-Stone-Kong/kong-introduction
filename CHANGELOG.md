@@ -42,6 +42,8 @@
 - API Gateway > Event Gateway > 배포 · 라이선스
   - Konnect CP / self-managed DP / Backend 아키텍처 도식 추가
   - Konnect UI 구성 요소(Overview · Nodes · Backend · VC · Listeners · Resources) 표로 정리
+- API Gateway > Event Gateway > Analytics
+  - Konnect Portal Event Gateway Analytics 목업 추가
 
 ### 삭제
 
