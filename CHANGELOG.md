@@ -22,6 +22,8 @@
   - 거버넌스 필요성을 3행 도식(프로토콜 · 접속점 HA · 정책)으로 정리
   - 브로커 HA와 접속점 HA를 구분해 서술
   - 브로커 직결 비교표를 동일 섹션 하위로 통합
+- API Gateway > Event Gateway > 효과
+  - Core Use Cases & Business Outcomes 10건으로 재정리
 
 ### 삭제
 
