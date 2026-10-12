@@ -29,6 +29,7 @@
 
 - API Gateway > Event Gateway > Failover
   - Partner DR 모델 · Planned Failover 5단계 애니메이션
+  - 아키텍처와 5단계 타임라인 동기화 · 동선 · 단계 폭 정리
 
 ### 삭제
 
