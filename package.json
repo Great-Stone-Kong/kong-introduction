@@ -1,0 +1,9 @@
+{
+  "name": "kong-introduction",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check-i18n": "node scripts/check-i18n.mjs"
+  }
+}

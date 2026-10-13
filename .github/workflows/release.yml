@@ -15,6 +15,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Check i18n
+        run: node scripts/check-i18n.mjs
+
+      - name: Build deck
+        run: node scripts/build.mjs
+
       - name: Read version
         id: ver
         run: |

@@ -1,8 +1,17 @@
-# Track only the deck HTML, changelog, release workflow, and this file.
+# Track deck sources, build output, changelog, release workflow, and this file.
 *
 !.gitignore
+!package.json
 !kong-introduction.html
 !CHANGELOG.md
+!CHANGELOG.en.md
 !.github/
 !.github/workflows/
 !.github/workflows/release.yml
+!.cursor/
+!.cursor/rules/
+!.cursor/rules/kong-introduction-deck-html.mdc
+!src/
+!src/**
+!scripts/
+!scripts/**
