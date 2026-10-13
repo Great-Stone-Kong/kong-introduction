@@ -1649,6 +1649,8 @@ h1.light{font-weight:400}h1.light em.gw{font-weight:800}
 .ipts span{font-size:13px;color:var(--g300);border-left:2px solid var(--lime);padding:2px 0 2px 12px;line-height:1.55}.ipts b{display:block;color:var(--heading);font-size:13.5px}
 @media (max-width:1000px){.iuser,.ipts{grid-template-columns:1fr}}
 
+/* Product chrome (Insomnia/Postman mocks) stays dark; lock light text when deck is Light */
+.xm,.imk,.qyi,.iwin,.pm-pref,.iph{--heading:#fff;--strong:#fff}
 .xm{width:100%;height:100%;background:#15161e;color:#c9cbd6;font-size:12.5px;text-align:left;display:flex;flex-direction:column;gap:10px;padding:12px;overflow:hidden;font-family:var(--font)}
 .xm code,.xm pre{font-family:var(--mono)}
 .xm-g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;min-height:0}
@@ -1988,7 +1990,7 @@ h1.light{font-weight:400}h1.light em.gw{font-weight:800}
 .pm-export .pm-cb::after{content:"";position:absolute;left:4px;top:1px;width:5px;height:9px;border:2px solid #fff;border-top:0;border-left:0;transform:rotate(45deg)}
 .pm-export .pm-acts{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}
 .pm-export .pm-can{background:#f2f2f2;border:none;border-radius:4px;padding:7px 12px;color:#333;font-weight:600;font-size:11.5px}
-.pm-export .pm-go{background:#ff6c37;border:none;border-radius:4px;padding:7px 12px;color:var(--heading);font-weight:700;font-size:11.5px;white-space:nowrap}
+.pm-export .pm-go{background:#ff6c37;border:none;border-radius:4px;padding:7px 12px;color:#fff;font-weight:700;font-size:11.5px;white-space:nowrap}
 .pm-pref{background:#2a2a2a;color:#e8e8e8;height:100%;min-height:380px;display:flex;flex-direction:column;text-align:left;font-size:11.5px}
 .pm-pref-h{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid #3a3a3a}
 .pm-pref-h b{font-weight:600;color:var(--heading);font-size:12px}
@@ -2110,6 +2112,9 @@ html[data-theme="light"] .dm-pane,
 html[data-theme="light"] .dm-log{border-color:var(--line);box-shadow:inset 0 0 0 1px rgba(0,20,8,.04)}
 html[data-theme="light"] .tabs button.bad.on{background:var(--danger);color:var(--on-danger);border-color:var(--danger)}
 html[data-theme="light"] .sbn,html[data-theme="light"] .gzn{color:var(--danger-ink)}
+html[data-theme="light"] .iwin{box-shadow:0 16px 40px rgba(0,20,8,.16),0 0 0 1px rgba(116,0,225,.14)}
+html[data-theme="light"] .isp.saas{background:rgba(116,0,225,.06)}
+html[data-theme="light"] .istr .card.bad .ipc{color:var(--g300)}
 
 .topnav.nf1 button{padding:8px 12px}.topnav.nf2{gap:2px}.topnav.nf2 button{padding:7px 9px;font-size:13px}.topnav.nf3 button{padding:6px 8px;font-size:12.5px}
 html[data-lang="en"] body{word-break:normal;overflow-wrap:anywhere}
