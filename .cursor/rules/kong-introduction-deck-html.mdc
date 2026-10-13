@@ -21,7 +21,7 @@ git이 추적·push하는 대상 (`.gitignore` allowlist):
 
 - `src/**` · `scripts/**` · `package.json`
 - `kong-introduction.html` (빌드 산출물)
-- `CHANGELOG.md` · (있으면) `CHANGELOG.en.md`
+- `CHANGELOG.md` · `CHANGELOG.en.md` · `CHANGELOG.ja.md`
 - `.github/workflows/release.yml` · 이 규칙 파일 · `.gitignore`
 
 Design System · `achive/` 등은 **로컬 참고용으로 디스크에 둘 수 있으나 커밋·push하지 않는다.**
@@ -116,11 +116,9 @@ Release workflow도 checkout 후 `check-i18n` → `build`를 실행한다.
 
 ## Changelog 언어 정책
 
-- **작성·Release notes 기준은 `CHANGELOG.md` 한국어 1본만** 둔다. 경로 표기는 한국어 메뉴와 1:1.
-- EN/JA용 풀 Changelog를 병렬로 유지하지 않는다.
-- 덱 모달이 비한국어일 때 영문이 필요해지면 **그때** `CHANGELOG.en.md`를 추가한다.  
-  (`VER.changelogApiEn`; 없으면 한국어 `CHANGELOG.md`로 폴백)
-- JA Changelog는 수요가 확정된 뒤에만 추가한다.
+- **작성·Release notes 정본은 `CHANGELOG.md` (한국어).** 경로 표기는 한국어 메뉴와 1:1.
+- 동일 버전·항목을 `CHANGELOG.en.md` · `CHANGELOG.ja.md`에 번역해 둔다. KO를 먼저 쓰고 EN/JA를 맞춘다.
+- 덱 모달: `lang=ko` → `CHANGELOG.md`, `en` → `CHANGELOG.en.md`, `ja` → `CHANGELOG.ja.md` (없으면 KO 폴백).
 - Release workflow notes는 항상 `CHANGELOG.md`의 `## $V`를 사용한다.
 
 ## 작업 방식 (브랜치 · 커밋 · 롤백)
@@ -152,7 +150,7 @@ Release workflow도 checkout 후 `check-i18n` → `build`를 실행한다.
 - 롤백 후에도 상태가 맞으면 **롤백 사실도 커밋으로 남긴다.** Changelog에는 **콘텐츠 롤백**일 때만 변경/삭제 한 줄을 적는다.
 
 사이드바 버전 옆 정보 아이콘은 GitHub Contents API로 Changelog를 읽을 수 있을 때만 표시하고, 모달로 내용을 보여 준다.  
-(`VER.changelogApi` · 비KO 시 `VER.changelogApiEn` 시도 후 KO 폴백)  
+(`VER.changelogApi` / `changelogApiEn` / `changelogApiJa` · 없으면 KO 폴백)  
 아이콘이 안 보이면 미push·오프라인·API rate limit을 먼저 확인한다. macOS에서 파일명 대소문자만 바꾼 경우 raw CDN이 꼬일 수 있으니 **중간 이름(tmp)으로 두 번 rename** 후 push한다.
 
 ## 디자인 시스템
