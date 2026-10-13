@@ -87,12 +87,10 @@ function sw(){ const d=document.createElement('div'); d.className='lsw i18n-no';
   d.querySelectorAll('button').forEach(b=>{ b.classList.toggle('on',b.dataset.l===L); b.onclick=()=>setLang(b.dataset.l); }); return d; }
 function ensureSw(){
   const side=document.getElementById('side'); if(!side) return;
-  if(typeof window.ensureThemeSw==='function') window.ensureThemeSw();
   if(side.querySelector('.lsw')) return;
   const s=sw();
-  const vb=side.querySelector('.vbox'), tsw=side.querySelector('.tsw');
-  if(tsw) tsw.after(s);
-  else if(vb) side.insertBefore(s,vb);
+  const vb=side.querySelector('.vbox');
+  if(vb) side.insertBefore(s,vb);
   else side.appendChild(s);
 }
 function setLang(l){
