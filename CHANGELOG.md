@@ -2,7 +2,7 @@
 
 - 문의 gs.lee@konghq.com
 - 경로는 **상위 메뉴 > 하위 메뉴(섹션) > 항목** 형식입니다.
-- 작성·Release notes 기준은 이 한국어 파일 하나다. 영문 모달이 필요할 때만 `CHANGELOG.en.md`를 추가한다.
+- 작성·Release notes 기준은 이 한국어 파일이다. 동일 내용은 `CHANGELOG.en.md` · `CHANGELOG.ja.md`에 번역한다.
 
 ---
 
