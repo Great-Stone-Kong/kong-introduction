@@ -704,11 +704,11 @@ h1.light{font-weight:400}h1.light em.gw{font-weight:800}
 @media (max-width:600px){.mk-kpis{grid-template-columns:repeat(2,1fr)}.mk-two{grid-template-columns:1fr}}
 .tr-t u.in-bar{color:var(--on-lime);font-weight:700}
 
-.fs-btn,.th-btn{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:999px;border:1px solid var(--line2);background:none;color:var(--g200);cursor:pointer;transition:.15s}
+.top-tools{flex:none;display:flex;align-items:center;gap:4px;margin-left:auto}
+.fs-btn,.th-btn{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:999px;border:1px solid var(--line2);background:none;color:var(--g200);cursor:pointer;transition:.15s}
 .fs-btn:hover,.th-btn:hover{color:var(--on-lime);background:var(--lime);border-color:var(--lime)}
 .fs-btn .i-off{display:none}.fs-btn.on .i-on{display:none}.fs-btn.on .i-off{display:block}
 .fs-btn[hidden]{display:none}
-.th-btn{margin-right:8px}
 .th-btn .i-moon{display:none}
 html[data-theme="light"] .th-btn .i-sun{display:none}
 html[data-theme="light"] .th-btn .i-moon{display:block}
@@ -1461,10 +1461,10 @@ html[data-theme="light"] .th-btn .i-moon{display:block}
 .lin li b{display:block;color:var(--heading);font-size:13px}
 @media(max-width:900px){.ldep,.lin ol{grid-template-columns:1fr}}
 
-.zm{flex:none;display:flex;align-items:center;height:38px;border:1px solid var(--line2);border-radius:999px;margin-right:8px;overflow:hidden}
-.zm button{height:100%;min-width:34px;display:grid;place-items:center;background:none;border:0;color:var(--g200);cursor:pointer;font:700 12px var(--font);transition:.15s}
+.zm{flex:none;display:flex;align-items:center;height:34px;border:1px solid var(--line2);border-radius:999px;overflow:hidden}
+.zm button{height:100%;min-width:30px;display:grid;place-items:center;background:none;border:0;color:var(--g200);cursor:pointer;font:700 11px var(--font);transition:.15s}
 .zm button:hover{color:var(--on-lime);background:var(--lime)}
-.zm .zv{min-width:50px;border-left:1px solid var(--line2);border-right:1px solid var(--line2);font-variant-numeric:tabular-nums}
+.zm .zv{min-width:44px;border-left:1px solid var(--line2);border-right:1px solid var(--line2);font-variant-numeric:tabular-nums}
 @media(max-width:900px){.zm{display:none}}
 
 .eyebrow .kadv{display:inline-flex;align-items:center;gap:5px;margin-left:12px;padding:3px 10px 3px 8px;border-radius:999px;background:var(--lime);color:var(--on-lime);font-size:10.5px;font-weight:800;letter-spacing:.02em;text-transform:none;vertical-align:middle}
@@ -2121,15 +2121,13 @@ html[data-edition="konnect"] [data-show-edition]:not([data-show-edition~="konnec
 .cities span.loc{background:none;border:1px solid var(--mark);color:var(--accent)}
 html:not([data-lang="ko"]) .cities span.kr{display:none}
 html:not([data-lang="ko"]) .card.cert:has(.cst.na){display:none!important}
-.tsw,.lsw{display:flex;width:100%;gap:2px;padding:3px;box-sizing:border-box;border:1px solid var(--line);border-radius:999px;background:var(--navy-2)}
-.tsw{margin-top:auto;padding-top:3px;margin-bottom:0}
-.lsw{margin-top:8px}
-.tsw+.lsw+.vbox,.lsw+.vbox{margin-top:12px;padding-top:0}
-.tsw button,.lsw button{flex:1;min-width:0;font-family:var(--font);font-size:11px;font-weight:700;letter-spacing:.01em;color:var(--g400);background:transparent;border:none;border-radius:999px;padding:0 6px;min-height:28px;line-height:28px;text-align:center;cursor:pointer;white-space:nowrap;transition:background .15s,color .15s}
-.tsw button:hover,.lsw button:hover{color:var(--heading)}
-.tsw button.on,.lsw button.on{background:var(--lime);color:var(--on-lime);box-shadow:0 1px 2px rgba(0,20,8,.12)}
-html[data-theme="light"] .tsw,html[data-theme="light"] .lsw{background:var(--card2);border-color:var(--line)}
-html[data-theme="light"] .tsw button.on,html[data-theme="light"] .lsw button.on{box-shadow:0 1px 2px rgba(0,20,8,.08)}
+.lsw{display:flex;width:100%;gap:2px;padding:3px;box-sizing:border-box;border:1px solid var(--line);border-radius:999px;background:var(--navy-2);margin-top:8px}
+.lsw+.vbox{margin-top:12px;padding-top:0}
+.lsw button{flex:1;min-width:0;font-family:var(--font);font-size:11px;font-weight:700;letter-spacing:.01em;color:var(--g400);background:transparent;border:none;border-radius:999px;padding:0 6px;min-height:28px;line-height:28px;text-align:center;cursor:pointer;white-space:nowrap;transition:background .15s,color .15s}
+.lsw button:hover{color:var(--heading)}
+.lsw button.on{background:var(--lime);color:var(--on-lime);box-shadow:0 1px 2px rgba(0,20,8,.12)}
+html[data-theme="light"] .lsw{background:var(--card2);border-color:var(--line)}
+html[data-theme="light"] .lsw button.on{box-shadow:0 1px 2px rgba(0,20,8,.08)}
 html[data-theme="light"] body::before{opacity:.22}
 html[data-theme="light"] .side a:hover,
 html[data-theme="light"] .topnav button:hover,
@@ -2181,10 +2179,12 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
     <span>The AI Connectivity Company</span>
   </div>
   <nav class="topnav" id="topnav"></nav>
-  <div class="zm" id="zm" role="group" aria-label="화면 배율"><button type="button" data-z="-1" title="축소" aria-label="축소"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 12h12"/></svg></button><button type="button" class="zv" data-z="0" title="100%로 초기화">100%</button><button type="button" data-z="1" title="확대" aria-label="확대"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 12h12M12 6v12"/></svg></button></div>
-  <button class="th-btn" id="th-btn" type="button" title="라이트 모드" aria-label="라이트 모드"><svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"/></svg></button>
-  <button class="fs-btn" id="fs-btn" type="button" title="전체화면" aria-label="전체화면"><svg class="i-on" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><svg class="i-off" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg></button>
-  <button class="menu-btn" onclick="document.getElementById('side').classList.toggle('open')">목차</button>
+  <div class="top-tools">
+    <div class="zm" id="zm" role="group" aria-label="화면 배율"><button type="button" data-z="-1" title="축소" aria-label="축소"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 12h12"/></svg></button><button type="button" class="zv" data-z="0" title="100%로 초기화">100%</button><button type="button" data-z="1" title="확대" aria-label="확대"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 12h12M12 6v12"/></svg></button></div>
+    <button class="th-btn" id="th-btn" type="button" title="라이트 모드" aria-label="라이트 모드"><svg class="i-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="i-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"/></svg></button>
+    <button class="fs-btn" id="fs-btn" type="button" title="전체화면" aria-label="전체화면"><svg class="i-on" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><svg class="i-off" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg></button>
+    <button class="menu-btn" onclick="document.getElementById('side').classList.toggle('open')">목차</button>
+  </div>
 </header>
 
 <div class="shell">
@@ -6232,11 +6232,9 @@ const PAGES=[...document.querySelectorAll('.page')];
   }
   function syncThemeBtn(t){
     const b=document.getElementById('th-btn');
-    if(b){
-      const label=t==='light'?'다크 모드':'라이트 모드';
-      b.title=label; b.setAttribute('aria-label',label);
-    }
-    document.querySelectorAll('.tsw button').forEach(btn=>btn.classList.toggle('on',btn.dataset.t===t));
+    if(!b) return;
+    const label=t==='light'?'다크 모드':'라이트 모드';
+    b.title=label; b.setAttribute('aria-label',label);
   }
   function setTheme(t){
     if(t!=='dark'&&t!=='light') return;
@@ -6261,23 +6259,6 @@ const PAGES=[...document.querySelectorAll('.page')];
   syncThemeBtn(document.documentElement.dataset.theme||'dark');
   const th=document.getElementById('th-btn');
   if(th) th.addEventListener('click',toggleTheme);
-  window.ensureThemeSw=function(){
-    const side=document.getElementById('side'); if(!side||side.querySelector('.tsw')) return;
-    const d=document.createElement('div');
-    d.className='tsw i18n-no';
-    d.setAttribute('role','group');
-    d.setAttribute('aria-label','Theme');
-    d.innerHTML='<button type="button" data-t="dark">Dark</button><button type="button" data-t="light">Light</button>';
-    const cur=document.documentElement.dataset.theme||'dark';
-    d.querySelectorAll('button').forEach(b=>{
-      b.classList.toggle('on',b.dataset.t===cur);
-      b.onclick=()=>setTheme(b.dataset.t);
-    });
-    const vb=side.querySelector('.vbox'), lsw=side.querySelector('.lsw');
-    if(lsw) side.insertBefore(d,lsw);
-    else if(vb) side.insertBefore(d,vb);
-    else side.appendChild(d);
-  };
 })();
 
 /* ---------- 버전 · 다운로드 · CHANGELOG ---------- */
@@ -6724,12 +6705,10 @@ function sw(){ const d=document.createElement('div'); d.className='lsw i18n-no';
   d.querySelectorAll('button').forEach(b=>{ b.classList.toggle('on',b.dataset.l===L); b.onclick=()=>setLang(b.dataset.l); }); return d; }
 function ensureSw(){
   const side=document.getElementById('side'); if(!side) return;
-  if(typeof window.ensureThemeSw==='function') window.ensureThemeSw();
   if(side.querySelector('.lsw')) return;
   const s=sw();
-  const vb=side.querySelector('.vbox'), tsw=side.querySelector('.tsw');
-  if(tsw) tsw.after(s);
-  else if(vb) side.insertBefore(s,vb);
+  const vb=side.querySelector('.vbox');
+  if(vb) side.insertBefore(s,vb);
   else side.appendChild(s);
 }
 function setLang(l){
