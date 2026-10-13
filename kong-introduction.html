@@ -6045,7 +6045,7 @@ document.querySelectorAll('.mlim').forEach(r=>{
 });
 const PAGES=[...document.querySelectorAll('.page')];
 /* ---------- 버전 · 다운로드 · CHANGELOG ---------- */
-const KONG_INTRO_VERSION="2026.10.09.6ac851b8";
+const KONG_INTRO_VERSION="2026.10.12.8b884563";
 const VER={
   cur:KONG_INTRO_VERSION,
   dl:'https://github.com/Great-Stone-Kong/kong-introduction/releases/latest/download/kong-introduction.html',
@@ -6053,7 +6053,7 @@ const VER={
   changelogApi:'https://api.github.com/repos/Great-Stone-Kong/kong-introduction/contents/CHANGELOG.md'
 };
 let VLATEST=null, VSTATE=VER.check?'checking':'unknown', CL_OK=false, CL_CACHE=null;
-const CL_SVG='<svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M3 .25C1.486.25.25 1.486.25 3V8c0 .414.336.75.75.75s.75-.336.75-.75V3c0-.686.564-1.25 1.25-1.25S4.25 2.314 4.25 3V21C4.25 22.514 5.486 23.75 7 23.75H21C22.514 23.75 23.75 22.514 23.75 21V18c0-.414-.336-.75-.75-.75H19.75V3.125C19.75 1.586 18.556.25 17 .25H3ZM5.448 1.75c.193.375.302.8.302 1.25V21c0 .686.564 1.25 1.25 1.25S8.25 21.686 8.25 21V18c0-.414.336-.75.75-.75H18.25V3.125c0-.798-.606-1.375-1.25-1.375H5.448ZM9.75 18.75H22.25V21c0 .686-.564 1.25-1.25 1.25H9.448c.193-.375.302-.8.302-1.25v-2.25Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M8.25 7c0-.414.336-.75.75-.75h6c.414 0 .75.336.75.75s-.336.75-.75.75H9A.75.75 0 0 1 8.25 7Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M8.25 12c0-.414.336-.75.75-.75h6c.414 0 .75.336.75.75s-.336.75-.75.75H9a.75.75 0 0 1-.75-.75Z" fill="currentColor"/></svg>';
+const CL_SVG='<svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.584 0.875828C18.8141 0.722451 19.1097 0.708344 19.3535 0.838718C19.5973 0.969242 19.75 1.22328 19.75 1.49985V6.74985H20C22.0742 6.74985 23.75 8.42564 23.75 10.4999C23.75 12.5741 22.0742 14.2499 20 14.2499H19.75V19.4999C19.7499 19.7764 19.5973 20.0305 19.3535 20.161C19.1097 20.2913 18.814 20.2772 18.584 20.1239L12.7725 16.2499H8.1377L10.6895 22.204C10.8525 22.5846 10.6765 23.0261 10.2959 23.1893C9.91523 23.3524 9.47375 23.1754 9.31055 22.7948L6.50586 16.2499H3C1.48584 16.2499 0.250081 15.014 0.25 13.4999V7.49985C0.250001 5.98564 1.48579 4.74985 3 4.74985H12.7725L18.584 0.875828ZM13.416 6.12387C13.2928 6.20598 13.148 6.24985 13 6.24985H3C2.31421 6.24985 1.75 6.81407 1.75 7.49985V13.4999C1.75008 14.1856 2.31426 14.7499 3 14.7499H13C13.1481 14.7499 13.2928 14.7937 13.416 14.8758L18.25 18.0985V2.90122L13.416 6.12387ZM19.75 12.7499H20C21.2458 12.7499 22.25 11.7456 22.25 10.4999C22.25 9.25406 21.2458 8.24985 20 8.24985H19.75V12.7499Z" fill="currentColor"/></svg>';
 function vcmp(a,b){ const pv=(p,i)=>i>=3?parseInt(p,16):Number(p); const x=String(a).split(/[.\-]/).map(pv), y=String(b).split(/[.\-]/).map(pv); for(let i=0;i<Math.max(x.length,y.length);i++){ const d=(x[i]||0)-(y[i]||0); if(d) return d>0?1:-1; } return 0; }
 function vClBtn(){ return CL_OK?'<button type="button" class="vb-cl" title="변경 이력" aria-label="변경 이력 보기">'+CL_SVG+'</button>':''; }
 function vVerRow(label){ return '<div class="vb-row"><div class="vb-v">'+(label||('v'+VER.cur))+'</div>'+vClBtn()+'</div>'; }

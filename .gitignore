@@ -1,5 +1,8 @@
-# Track only the deck HTML, changelog, and this file.
+# Track only the deck HTML, changelog, release workflow, and this file.
 *
 !.gitignore
 !kong-introduction.html
 !CHANGELOG.md
+!.github/
+!.github/workflows/
+!.github/workflows/release.yml

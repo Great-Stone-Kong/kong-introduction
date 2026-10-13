@@ -1,0 +1,67 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Read version
+        id: ver
+        run: |
+          V=$(sed -n 's/.*KONG_INTRO_VERSION="\([^"]*\)".*/\1/p' kong-introduction.html | head -1)
+          if [ -z "$V" ]; then
+            echo "KONG_INTRO_VERSION not found" >&2
+            exit 1
+          fi
+          echo "version=$V" >> "$GITHUB_OUTPUT"
+          echo "Version: $V"
+
+      - name: Extract changelog notes
+        run: |
+          V="${{ steps.ver.outputs.version }}"
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+          v = os.environ["V"]
+          text = Path("CHANGELOG.md").read_text(encoding="utf-8")
+          lines = text.splitlines()
+          start = None
+          for i, line in enumerate(lines):
+              if line.strip() == f"## {v}":
+                  start = i
+                  break
+          notes = []
+          if start is not None:
+              for line in lines[start + 1:]:
+                  if line.startswith("## "):
+                      break
+                  notes.append(line)
+          body = "\n".join(notes).strip() or f"Release {v}"
+          Path("release-notes.md").write_text(body + "\n", encoding="utf-8")
+          PY
+        env:
+          V: ${{ steps.ver.outputs.version }}
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          V: ${{ steps.ver.outputs.version }}
+        run: |
+          if gh release view "$V" >/dev/null 2>&1; then
+            echo "Release $V already exists — skip"
+            exit 0
+          fi
+          gh release create "$V" \
+            kong-introduction.html \
+            --title "$V" \
+            --notes-file release-notes.md
