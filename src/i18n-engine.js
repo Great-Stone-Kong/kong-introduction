@@ -85,7 +85,16 @@ function fitNav(){
 function sw(){ const d=document.createElement('div'); d.className='lsw i18n-no'; d.setAttribute('role','group');
   d.innerHTML='<button data-l="ko">한국어</button><button data-l="en">English</button><button data-l="ja">日本語</button>';
   d.querySelectorAll('button').forEach(b=>{ b.classList.toggle('on',b.dataset.l===L); b.onclick=()=>setLang(b.dataset.l); }); return d; }
-function ensureSw(){ const side=document.getElementById('side'); if(!side||side.querySelector('.lsw')) return; const vb=side.querySelector('.vbox'); const s=sw(); if(vb) side.insertBefore(s,vb); else side.appendChild(s); }
+function ensureSw(){
+  const side=document.getElementById('side'); if(!side) return;
+  if(typeof window.ensureThemeSw==='function') window.ensureThemeSw();
+  if(side.querySelector('.lsw')) return;
+  const s=sw();
+  const vb=side.querySelector('.vbox'), tsw=side.querySelector('.tsw');
+  if(tsw) tsw.after(s);
+  else if(vb) side.insertBefore(s,vb);
+  else side.appendChild(s);
+}
 function setLang(l){
   if(LANGS.indexOf(l)<0) return; muted=true; applyShort(false); revert(); L=l;
   document.documentElement.lang=l; document.documentElement.dataset.lang=l;
