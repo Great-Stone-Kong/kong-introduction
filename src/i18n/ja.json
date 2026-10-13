@@ -3201,5 +3201,7 @@
   "Virtual Cluster prefix가 Backend 토픽으로 매핑되어 물리 분리되는 구조": "Virtual Cluster prefix が Backend トピックへマッピングされ物理分離される構造",
   "Event Gateway Virtual Cluster로 단일 백엔드 클러스터를 논리 격리하는 구조": "Event Gateway Virtual Cluster で単一バックエンドクラスターを論理分離する構造",
   "Kong Event Gateway Control Plane과 Data Plane 하이브리드 아키텍처": "Kong Event Gateway Control Plane と Data Plane のハイブリッドアーキテクチャ",
-  "출처: Kong Event Gateway Partner · Core Use Cases & Business Outcomes.": "出典: Kong Event Gateway Partner · Core Use Cases & Business Outcomes."
+  "출처: Kong Event Gateway Partner · Core Use Cases & Business Outcomes.": "出典: Kong Event Gateway Partner · Core Use Cases & Business Outcomes.",
+  "라이트 모드": "ライトモード",
+  "다크 모드": "ダークモード"
 }
