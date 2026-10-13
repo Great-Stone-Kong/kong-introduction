@@ -13,6 +13,7 @@
   --g50:#E7EDE5; --g200:#CDD4CB; --g300:#B7BDB5; --g400:#A1A69F; --g500:#858983; --g600:#676B66; --g700:#4A4D49; --g800:#2D2E2C; --g900:#101110;
   --line:#313919; --line2:#54660A; --card:#0A1F10; --card2:#0E2816;
   --on-lime:#001408; --brand:#CCFF00; --on-danger:#1a0000;
+  --robot-eye:#C62828; --robot-eye-ok:#2F4A00;
   --topbar-bg:rgba(0,20,8,.94); --side-bg:rgba(0,20,8,.6);
   --heading:#fff; --strong:#fff;
   --accent-soft:rgba(204,255,0,.08); --accent-wash:rgba(204,255,0,.05); --accent-glow:#CCFF0040;
@@ -29,6 +30,7 @@ html[data-theme="light"]{
   --g50:#001408; --g200:#4A4D49; --g300:#4A4D49; --g400:#676B66; --g500:#858983; --g600:#A1A69F; --g700:#B7BDB5; --g800:#CDD4CB; --g900:#E7EDE5;
   --line:#AEB5A7; --line2:#676B66; --card:#E7EDE5; --card2:#D7DED4;
   --on-lime:#001408; --brand:#2F4A00; --on-danger:#fff;
+  --robot-eye:#ff6b6b; --robot-eye-ok:#CCFF00;
   --topbar-bg:rgba(188,194,186,.96); --side-bg:rgba(188,194,186,.92);
   --heading:#001408; --strong:#000000;
   --accent-soft:rgba(47,74,0,.08); --accent-wash:rgba(47,74,0,.05); --accent-glow:rgba(47,74,0,.12);
@@ -1208,8 +1210,8 @@ h1.light{font-weight:400}h1.light em.gw{font-weight:800}
 .gwk .tabs{margin-top:6px}
 .gwk-w{padding:16px 12px}.gwk-w svg{min-width:640px}
 .gwsvg .gpr{stroke:var(--danger-strong);stroke-width:1.4;transition:stroke .6s}.gwk.k .gwsvg .gpr{stroke:transparent}
-.gwsvg .ie{fill:var(--danger-strong);transition:fill .6s}.gwk.k .gwsvg .ie{fill:var(--mark)}
-.gwsvg .ie2{fill:var(--danger-strong);transition:fill .6s}.gwk.k .gwsvg .ie2{fill:var(--mark)}
+.gwsvg .ie{fill:var(--robot-eye);transition:fill .6s}.gwk.k .gwsvg .ie{fill:var(--robot-eye-ok)}
+.gwsvg .ie2{fill:var(--robot-eye);transition:fill .6s}.gwk.k .gwsvg .ie2{fill:var(--robot-eye-ok)}
 .gwsvg .wo,.gwk .wo-t{transition:opacity .5s}.gwsvg .wi,.gwk .wi-t{opacity:0;transition:opacity .6s .2s}
 .gwk.k .gwsvg .wo,.gwk.k .wo-t{opacity:0}.gwk.k .gwsvg .wi,.gwk.k .wi-t{opacity:1}
 .gwsvg .kn{transform-box:fill-box;transform-origin:center;transform:scale(.3);transition:transform .5s cubic-bezier(.2,.8,.2,1.4);transition-delay:calc(.2s + var(--i)*.07s)}
