@@ -2061,16 +2061,15 @@ html[data-edition="konnect"] [data-show-edition]:not([data-show-edition~="konnec
 .cities span.loc{background:none;border:1px solid var(--lime);color:var(--lime)}
 html:not([data-lang="ko"]) .cities span.kr{display:none}
 html:not([data-lang="ko"]) .card.cert:has(.cst.na){display:none!important}
-.tsw{margin-top:auto;padding-top:16px;display:flex;width:100%;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--navy-2)}
-.tsw button{flex:1;font-family:var(--font);font-size:11.5px;font-weight:700;color:var(--g400);background:none;border:none;border-right:1px solid var(--line);padding:7px 10px;cursor:pointer;line-height:1.3}
-.tsw button:last-child{border-right:none}
-.tsw button:hover{color:var(--heading)}
-.tsw button.on{background:var(--lime);color:var(--on-lime)}
-.lsw{margin-top:8px;padding-top:0;display:flex;gap:4px;flex-wrap:wrap}
-.lsw+.vbox,.tsw+.lsw+.vbox{margin-top:10px;padding-top:0}
-.lsw button{font-family:var(--font);font-size:11.5px;font-weight:700;color:var(--g400);background:none;border:1px solid var(--line);border-radius:999px;padding:4px 10px;cursor:pointer;line-height:1.3}
-.lsw button:hover{color:var(--heading);border-color:var(--line2)}
-.lsw button.on{background:var(--lime);color:var(--on-lime);border-color:var(--lime)}
+.tsw,.lsw{display:flex;width:100%;gap:2px;padding:3px;box-sizing:border-box;border:1px solid var(--line);border-radius:999px;background:var(--navy-2)}
+.tsw{margin-top:auto;padding-top:3px;margin-bottom:0}
+.lsw{margin-top:8px}
+.tsw+.lsw+.vbox,.lsw+.vbox{margin-top:12px;padding-top:0}
+.tsw button,.lsw button{flex:1;min-width:0;font-family:var(--font);font-size:11px;font-weight:700;letter-spacing:.01em;color:var(--g400);background:transparent;border:none;border-radius:999px;padding:0 6px;min-height:28px;line-height:28px;text-align:center;cursor:pointer;white-space:nowrap;transition:background .15s,color .15s}
+.tsw button:hover,.lsw button:hover{color:var(--heading)}
+.tsw button.on,.lsw button.on{background:var(--lime);color:var(--on-lime);box-shadow:0 1px 2px rgba(0,20,8,.12)}
+html[data-theme="light"] .tsw,html[data-theme="light"] .lsw{background:var(--card2);border-color:var(--line)}
+html[data-theme="light"] .tsw button.on,html[data-theme="light"] .lsw button.on{box-shadow:0 1px 2px rgba(0,20,8,.08)}
 html[data-theme="light"] body::before{opacity:.22}
 html[data-theme="light"] .side a:hover,
 html[data-theme="light"] .topnav button:hover,
