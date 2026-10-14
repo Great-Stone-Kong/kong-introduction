@@ -16,6 +16,23 @@ const meta = JSON.parse(readFileSync(join(i18nDir, "meta.json"), "utf8"));
 const engine = readFileSync(join(src, "i18n-engine.js"), "utf8");
 let deck = readFileSync(join(src, "deck.html"), "utf8");
 
+// Sidebar version = first ## heading in CHANGELOG.md (YYYY.MM.DD.<hash>)
+const changelog = readFileSync(join(root, "CHANGELOG.md"), "utf8");
+const verMatch = changelog.match(/^##\s+(\d{4}\.\d{2}\.\d{2}\.[0-9a-f]+)\s*$/m);
+if (!verMatch) {
+  console.error("build: no version heading (## YYYY.MM.DD.<hash>) in CHANGELOG.md");
+  process.exit(1);
+}
+const version = verMatch[1];
+if (!/const KONG_INTRO_VERSION="[^"]*";/.test(deck)) {
+  console.error('build: const KONG_INTRO_VERSION="..." missing in src/deck.html');
+  process.exit(1);
+}
+deck = deck.replace(
+  /const KONG_INTRO_VERSION="[^"]*";/,
+  `const KONG_INTRO_VERSION="${version}";`
+);
+
 const keys = new Set([...Object.keys(en), ...Object.keys(ja)]);
 const T = {};
 for (const k of keys) {
@@ -46,5 +63,5 @@ deck = deck.replace("<!-- I18N_BUNDLE -->", bundle);
 const out = join(root, "kong-introduction.html");
 writeFileSync(out, deck, "utf8");
 console.log(
-  `built ${out} (${deck.length} bytes, T=${Object.keys(T).length}, U=${Object.keys(D.U).length}, F=${D.F.length})`
+  `built ${out} (${deck.length} bytes, version=${version}, T=${Object.keys(T).length}, U=${Object.keys(D.U).length}, F=${D.F.length})`
 );
