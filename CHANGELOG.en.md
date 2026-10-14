@@ -2,9 +2,15 @@
 
 - Contact: gs.lee@konghq.com
 - Paths use **Top menu > Section > Item**.
-- Korean [`CHANGELOG.md`](CHANGELOG.md) is the source of truth for authoring and Release notes. This file is the English translation.
 
 ---
+
+## 2026.10.14.80c47eac
+
+### Added
+
+- Multilingual support in the main release stream
+- Light / Dark mode
 
 ## 2026.10.12.8b884563
 
