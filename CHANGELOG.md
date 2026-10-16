@@ -5,13 +5,18 @@
 
 ---
 
-## 2026.10.16.6ad1c3c6
+## 2026.10.16.6ad1f727
+### 변경
+
+- Event Gateway를 상단 메뉴 단독 항목으로 분리 (AI Gateway와 Insomnia 사이)
+- Event Gateway 도입 서사(이벤트 1문장·Sync 직접호출/Async 방송 애니) · Why×4 · vs Kafka Plugins · vs Confluent 포지셔닝 정리
+- Event Gateway > 멀티테넌시 동작 목업 (역할·토픽 선택 시 Message preview · 암호문 표현)
+- 라이선스 모델 > 가격 구조에 Event Gateway, Insomnia 추가
+
+## 2026.10.16.6ad1ab81
 ### 변경
 
 - API7 비교 설명 개선
-- Event Gateway를 상단 메뉴 단독 항목으로 분리 (AI Gateway와 Insomnia 사이)
-- Event Gateway 도입 서사 · Why×4 · 조직별 VC·암호화 멀티테넌시 데모 추가
-- Event Gateway vs Kafka Plugins · vs Confluent 포지셔닝 정리
 
 ## 2026.10.14.80c47eac
 
