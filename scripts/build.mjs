@@ -2,7 +2,7 @@
 /**
  * Build kong-introduction.html from src/deck.html + i18n JSON + engine.
  */
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -16,14 +16,15 @@ const meta = JSON.parse(readFileSync(join(i18nDir, "meta.json"), "utf8"));
 const engine = readFileSync(join(src, "i18n-engine.js"), "utf8");
 let deck = readFileSync(join(src, "deck.html"), "utf8");
 
-// Sidebar version = first ## heading in CHANGELOG.md (YYYY.MM.DD.<hash>)
-const changelog = readFileSync(join(root, "CHANGELOG.md"), "utf8");
-const verMatch = changelog.match(/^##\s+(\d{4}\.\d{2}\.\d{2}\.[0-9a-f]+)\s*$/m);
-if (!verMatch) {
-  console.error("build: no version heading (## YYYY.MM.DD.<hash>) in CHANGELOG.md");
-  process.exit(1);
+// Sidebar version = YYYY.MM.DD.<unix-seconds hex> (vcmp uses parseInt(_,16) on 4th part)
+function buildVersion() {
+  const pad = (n) => String(n).padStart(2, "0");
+  const now = new Date();
+  const day = `${now.getFullYear()}.${pad(now.getMonth() + 1)}.${pad(now.getDate())}`;
+  const tsHex = Math.floor(now.getTime() / 1000).toString(16);
+  return `${day}.${tsHex}`;
 }
-const version = verMatch[1];
+const version = buildVersion();
 if (!/const KONG_INTRO_VERSION="[^"]*";/.test(deck)) {
   console.error('build: const KONG_INTRO_VERSION="..." missing in src/deck.html');
   process.exit(1);
