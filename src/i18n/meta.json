@@ -919,6 +919,38 @@
     "규제 요건과 Kong 통제 항목 매핑": [
       "Mapping regulatory requirements to <em>Kong controls</em>",
       "規制要件と<em>Kong 統制項目</em>の対応"
+    ],
+    "범주 · 지원 여부. Kong AI Gateway는 API·LLM·MCP·에이전트 트래픽을 하나의 거버넌스로 묶는 엔터프라이즈 AI Connectivity 플랫폼입니다. LiteLLM은 LLM 호출 라우팅·프록시에 특화된 오픈소스/상용 게이트웨이입니다. 아래 표는 동일 “AI Gateway” 기능축으로 지원 여부를 비교합니다.": [
+      "<b>Category · support.</b> Kong AI Gateway is an enterprise AI Connectivity platform that unifies governance for API, LLM, MCP, and agent traffic. LiteLLM is an open-source/commercial gateway focused on LLM call routing and proxying. The table below compares support along the same “AI Gateway” capability axes.",
+      "<b>カテゴリ · サポート有無。</b> Kong AI Gatewayは、API·LLM·MCP·エージェントのトラフィックを一つのガバナンスで束ねるエンタープライズAI Connectivityプラットフォームです。LiteLLMはLLM呼び出しのルーティング·プロキシに特化したオープンソース/商用ゲートウェイです。下表は同一の「AI Gateway」機能軸でサポート有無を比較します。"
+    ],
+    "범주 · 지원 여부. Kong은 안정성·보안·글로벌 기술 협력(NVIDIA 등)을 갖춘 엔터프라이즈 AI Connectivity 플랫폼입니다. API7(APISIX 상용)은 Kong과 유사한 엔티티 모델의 오픈소스·상용 게이트웨이이며, 조직 규모·레퍼런스·AI Agent 깊이에서 검토가 필요합니다. 아래 표는 기능 지원 여부를 동일 축으로 비교합니다.": [
+      "<b>Category · support.</b> Kong is an enterprise AI Connectivity platform with stability, security, and global technology partnerships (including NVIDIA). API7 (commercial APISIX) is an open-source/commercial gateway with a Kong-like entity model; organization scale, references, and AI Agent depth warrant review. The table below compares feature support on the same axes.",
+      "<b>カテゴリ · サポート有無。</b> Kongは安定性·セキュリティ·グローバル技術連携（NVIDIAなど）を備えたエンタープライズAI Connectivityプラットフォームです。API7（APISIX商用）はKongに似たエンティティモデルのオープンソース·商用ゲートウェイであり、組織規模·リファレンス·AI Agentの深さで検討が必要です。下表は機能サポート有無を同一軸で比較します。"
+    ],
+    "Kong 글로벌 유료 고객 기반과 분리된 지원 조직으로 도입 후 SLA·상시 대응이 가능합니다.": [
+      "<b>Kong</b> has a global paid-customer base and a separated support organization, so post-adoption SLA and always-on response are available.",
+      "<b>Kong</b> グローバル有料顧客基盤と分離されたサポート組織により、導入後のSLA·常時対応が可能です。"
+    ],
+    "API7 약 35–50명 규모로, 동일 수준의 엔터프라이즈 상시 지원·SLA를 기대하기 어렵습니다.": [
+      "<b>API7</b> At roughly 35–50 people, enterprise-grade always-on support and SLA at the same level are hard to expect.",
+      "<b>API7</b> 約35–50名規模では、同水準のエンタープライズ常時サポート·SLAを期待しにくいです。"
+    ],
+    "Kong Open Secure AI Alliance 창립 멤버급으로 AI Gateway 가이드를 선도하며, A2A·Agent 거버넌스를 지원합니다.": [
+      "<b>Kong</b> is a founding-member-level participant in the Open Secure AI Alliance, leads AI Gateway guidance, and supports A2A/Agent governance.",
+      "<b>Kong</b> Open Secure AI Alliance創設メンバー級としてAI Gatewayガイドをリードし、A2A·Agentガバナンスをサポートします。"
+    ],
+    "API7 표면 기능 추가 단계이며 A2A 거버넌스·Agent 심층 분석은 미지원, AI GW 미션 크리티컬 글로벌 레퍼런스가 제한적입니다.": [
+      "<b>API7</b> Still adding surface features; A2A governance and deep Agent analysis are unsupported, and mission-critical global AI GW references are limited.",
+      "<b>API7</b> 表面機能の追加段階で、A2Aガバナンス·Agent深層分析は未サポート、AI GWミッションクリティカルなグローバルリファレンスは限定的です。"
+    ],
+    "Kong Services · Routes · Upstreams · Plugin · Consumers를 중심으로 한 엔터프라이즈 아키텍처를 자체적으로 발전시켜 왔습니다.": [
+      "<b>Kong</b> has independently evolved an enterprise architecture centered on Services · Routes · Upstreams · Plugin · Consumers.",
+      "<b>Kong</b> Services · Routes · Upstreams · Plugin · Consumersを中心としたエンタープライズアーキテクチャを独自に発展させてきました。"
+    ],
+    "API7 동일 엔티티 모델을 거의 그대로 따르며 따라잡기 중심입니다. 내부 로직 이해 부족이 이슈화된 예: APISIX #3207에서 Kong 해결 방식을 질문.": [
+      "<b>API7</b> Largely follows the same entity model in a catch-up posture. Example where limited internal-logic understanding surfaced: <a href=\"https://github.com/apache/apisix/issues/3207\" target=\"_blank\" rel=\"noopener noreferrer\">APISIX #3207</a> asking how Kong solved it.",
+      "<b>API7</b> 同一エンティティモデルをほぼそのまま踏襲するキャッチアップ中心です。内部ロジック理解不足が問題化した例: <a href=\"https://github.com/apache/apisix/issues/3207\" target=\"_blank\" rel=\"noopener noreferrer\">APISIX #3207</a>でKongの解決方法を質問。"
     ]
   },
   "F": [

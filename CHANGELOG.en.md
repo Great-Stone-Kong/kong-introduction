@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.10.16.2a578d2b
+
+### Changed
+
+- Improved API7 comparison description
+
 ## 2026.10.14.80c47eac
 
 ### Added
