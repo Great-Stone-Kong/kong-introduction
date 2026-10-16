@@ -5,15 +5,15 @@
 
 ---
 
-## 2026.10.16.6ad1f74d
+## 2026.10.16.6ad1f99c
 ### 変更
 
-- Event Gatewayをトップナビ単独項目へ分離（AI GatewayとInsomniaの間）
-- Event Gateway導入（イベント1文・Sync/Asyncフローアニメ）・Why×4・vs Kafka Plugins・vs Confluentの位置づけを整理
-- Event Gateway > マルチテナント動作モック（役割・トピック選択で Message preview · 暗号文表現）
+- Event Gatewayを上部メニューの独立項目として分離
+- Event Gatewayの必要性およびVirtual Clusterの動作例を追加
 - ライセンスモデル > 価格構造に Event Gateway、Insomnia を追加
 
 ## 2026.10.16.6ad1ab81
+
 ### 変更
 
 - API7比較説明の改善

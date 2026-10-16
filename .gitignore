@@ -2,6 +2,7 @@
 *
 !.gitignore
 !package.json
+!VERSION
 !kong-introduction.html
 !CHANGELOG.md
 !CHANGELOG.en.md

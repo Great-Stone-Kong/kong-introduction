@@ -24,14 +24,18 @@ jobs:
         run: node scripts/check-i18n.mjs
 
       - name: Build deck
-        run: node scripts/build.mjs
+        run: node scripts/build.mjs --ci
 
       - name: Read version
         id: ver
         run: |
-          V=$(sed -n 's/.*KONG_INTRO_VERSION="\([^"]*\)".*/\1/p' kong-introduction.html | head -1)
+          if [ ! -f VERSION ]; then
+            echo "VERSION file missing" >&2
+            exit 1
+          fi
+          V=$(tr -d '[:space:]' < VERSION)
           if [ -z "$V" ]; then
-            echo "KONG_INTRO_VERSION not found" >&2
+            echo "VERSION empty" >&2
             exit 1
           fi
           echo "version=$V" >> "$GITHUB_OUTPUT"
@@ -52,16 +56,12 @@ jobs:
                   start = i
                   break
           if start is None:
-              for i, line in enumerate(lines):
-                  if line.startswith("## "):
-                      start = i
-                      break
+              raise SystemExit(f"CHANGELOG.md missing heading ## {v}")
           notes = []
-          if start is not None:
-              for line in lines[start + 1:]:
-                  if line.startswith("## "):
-                      break
-                  notes.append(line)
+          for line in lines[start + 1:]:
+              if line.startswith("## "):
+                  break
+              notes.append(line)
           body = "\n".join(notes).strip() or f"Release {v}"
           Path("release-notes.md").write_text(body + "\n", encoding="utf-8")
           PY
@@ -74,7 +74,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add kong-introduction.html CHANGELOG.md CHANGELOG.en.md CHANGELOG.ja.md
+          git add kong-introduction.html CHANGELOG.md CHANGELOG.en.md CHANGELOG.ja.md VERSION
           if git diff --staged --quiet; then
             echo "No versioned artifact changes"
             exit 0
