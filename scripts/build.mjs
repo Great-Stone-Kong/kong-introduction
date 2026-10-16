@@ -1,14 +1,20 @@
 #!/usr/bin/env node
 /**
  * Build kong-introduction.html from src/deck.html + i18n JSON + engine.
+ *
+ * Local (default): mint YYYY.MM.DD.<unix-seconds hex> (UTC), write VERSION,
+ * stamp Changelog + KONG_INTRO_VERSION.
+ * CI (`--ci`): read VERSION only — never mint a new wall-clock stamp.
  */
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const src = join(root, "src");
 const i18nDir = join(src, "i18n");
+const versionPath = join(root, "VERSION");
+const ci = process.argv.includes("--ci");
 
 const en = JSON.parse(readFileSync(join(i18nDir, "en.json"), "utf8"));
 const ja = JSON.parse(readFileSync(join(i18nDir, "ja.json"), "utf8"));
@@ -16,15 +22,33 @@ const meta = JSON.parse(readFileSync(join(i18nDir, "meta.json"), "utf8"));
 const engine = readFileSync(join(src, "i18n-engine.js"), "utf8");
 let deck = readFileSync(join(src, "deck.html"), "utf8");
 
-// Sidebar version = YYYY.MM.DD.<unix-seconds hex> (vcmp uses parseInt(_,16) on 4th part)
-function buildVersion() {
+const versionRe = /^\d{4}\.\d{2}\.\d{2}\.[0-9a-f]+$/;
+
+/** Sidebar version = YYYY.MM.DD.<unix-seconds hex> (vcmp uses parseInt(_,16) on 4th part) */
+function mintVersion() {
   const pad = (n) => String(n).padStart(2, "0");
   const now = new Date();
-  const day = `${now.getFullYear()}.${pad(now.getMonth() + 1)}.${pad(now.getDate())}`;
+  const day = `${now.getUTCFullYear()}.${pad(now.getUTCMonth() + 1)}.${pad(now.getUTCDate())}`;
   const tsHex = Math.floor(now.getTime() / 1000).toString(16);
   return `${day}.${tsHex}`;
 }
-const version = buildVersion();
+
+function readVersionFile() {
+  if (!existsSync(versionPath)) {
+    console.error("build: VERSION missing (required with --ci)");
+    process.exit(1);
+  }
+  const v = readFileSync(versionPath, "utf8").trim();
+  if (!versionRe.test(v)) {
+    console.error(`build: VERSION invalid: ${JSON.stringify(v)}`);
+    process.exit(1);
+  }
+  return v;
+}
+
+const version = ci ? readVersionFile() : mintVersion();
+if (!ci) writeFileSync(versionPath, `${version}\n`, "utf8");
+
 if (!/const KONG_INTRO_VERSION="[^"]*";/.test(deck)) {
   console.error('build: const KONG_INTRO_VERSION="..." missing in src/deck.html');
   process.exit(1);
@@ -76,5 +100,5 @@ deck = deck.replace("<!-- I18N_BUNDLE -->", bundle);
 const out = join(root, "kong-introduction.html");
 writeFileSync(out, deck, "utf8");
 console.log(
-  `built ${out} (${deck.length} bytes, version=${version}, T=${Object.keys(T).length}, U=${Object.keys(D.U).length}, F=${D.F.length})`
+  `built ${out} (${deck.length} bytes, version=${version}, mode=${ci ? "ci" : "local"}, T=${Object.keys(T).length}, U=${Object.keys(D.U).length}, F=${D.F.length})`
 );
