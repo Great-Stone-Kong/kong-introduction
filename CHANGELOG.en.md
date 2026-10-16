@@ -5,7 +5,7 @@
 
 ---
 
-## 2026.10.16.6ad1f99c
+## 2026.10.16.6ad1fa36
 ### Changed
 
 - Separated "Event Gateway" into a standalone item in the top menu
