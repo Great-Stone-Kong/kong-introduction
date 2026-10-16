@@ -5,10 +5,13 @@
 
 ---
 
-## 2026.10.16.6ad1ab81
+## 2026.10.16.6ad1c3c6
 ### Changed
 
 - Improved API7 comparison description
+- Promoted Event Gateway to its own top-nav item (between AI Gateway and Insomnia)
+- Added Event Gateway primer, Why×4, and per-org VC/encryption multi-tenancy demo
+- Clarified Event Gateway vs Kafka Plugins and vs Confluent positioning
 
 ## 2026.10.14.80c47eac
 
