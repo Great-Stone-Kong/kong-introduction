@@ -34,6 +34,18 @@ deck = deck.replace(
   `const KONG_INTRO_VERSION="${version}";`
 );
 
+// Keep the newest ## heading in each changelog aligned with this build stamp
+const headingRe = /^##\s+\d{4}\.\d{2}\.\d{2}\.[0-9a-f]+\s*$/m;
+for (const name of ["CHANGELOG.md", "CHANGELOG.en.md", "CHANGELOG.ja.md"]) {
+  const p = join(root, name);
+  let text = readFileSync(p, "utf8");
+  if (!headingRe.test(text)) {
+    console.warn(`build: no version heading in ${name}; skip`);
+    continue;
+  }
+  writeFileSync(p, text.replace(headingRe, `## ${version}`), "utf8");
+}
+
 const keys = new Set([...Object.keys(en), ...Object.keys(ja)]);
 const T = {};
 for (const k of keys) {
