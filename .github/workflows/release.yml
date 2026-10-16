@@ -51,7 +51,6 @@ jobs:
               if line.strip() == f"## {v}":
                   start = i
                   break
-          # Build versions are unix-sec hex; fall back to newest ## section for notes
           if start is None:
               for i, line in enumerate(lines):
                   if line.startswith("## "):
@@ -68,6 +67,20 @@ jobs:
           PY
         env:
           V: ${{ steps.ver.outputs.version }}
+
+      - name: Commit versioned HTML and changelogs
+        env:
+          V: ${{ steps.ver.outputs.version }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kong-introduction.html CHANGELOG.md CHANGELOG.en.md CHANGELOG.ja.md
+          if git diff --staged --quiet; then
+            echo "No versioned artifact changes"
+            exit 0
+          fi
+          git commit -m "chore: release ${V} [skip ci]"
+          git push
 
       - name: Create GitHub Release
         env:
