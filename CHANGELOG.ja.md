@@ -5,10 +5,13 @@
 
 ---
 
-## 2026.10.16.6ad1ab81
+## 2026.10.16.6ad1c3c6
 ### 変更
 
 - API7比較説明の改善
+- Event Gatewayをトップナビ単独項目へ分離（AI GatewayとInsomniaの間）
+- Event Gateway導入・Why×4・組織別VC/暗号化マルチテナントデモを追加
+- Event Gateway vs Kafka Plugins・vs Confluentの位置づけを整理
 
 ## 2026.10.14.80c47eac
 
