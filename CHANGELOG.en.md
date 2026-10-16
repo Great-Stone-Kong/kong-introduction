@@ -5,7 +5,7 @@
 
 ---
 
-## 2026.10.16.6ad1ab74
+## 2026.10.16.6ad1ab81
 ### Changed
 
 - Improved API7 comparison description
