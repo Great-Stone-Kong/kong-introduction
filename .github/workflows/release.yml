@@ -51,6 +51,12 @@ jobs:
               if line.strip() == f"## {v}":
                   start = i
                   break
+          # Build versions are unix-sec hex; fall back to newest ## section for notes
+          if start is None:
+              for i, line in enumerate(lines):
+                  if line.startswith("## "):
+                      start = i
+                      break
           notes = []
           if start is not None:
               for line in lines[start + 1:]:
