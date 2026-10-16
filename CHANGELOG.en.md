@@ -5,7 +5,7 @@
 
 ---
 
-## 2026.10.16.6ad1f727
+## 2026.10.16.6ad1f74d
 ### Changed
 
 - Promoted Event Gateway to its own top-nav item (between AI Gateway and Insomnia)

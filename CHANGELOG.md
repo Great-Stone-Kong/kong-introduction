@@ -5,7 +5,7 @@
 
 ---
 
-## 2026.10.16.6ad1f727
+## 2026.10.16.6ad1f74d
 ### 변경
 
 - Event Gateway를 상단 메뉴 단독 항목으로 분리 (AI Gateway와 Insomnia 사이)

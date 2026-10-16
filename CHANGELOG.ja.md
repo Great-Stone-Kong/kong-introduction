@@ -5,7 +5,7 @@
 
 ---
 
-## 2026.10.16.6ad1f727
+## 2026.10.16.6ad1f74d
 ### 変更
 
 - Event Gatewayをトップナビ単独項目へ分離（AI GatewayとInsomniaの間）
