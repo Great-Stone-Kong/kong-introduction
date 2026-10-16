@@ -5,13 +5,18 @@
 
 ---
 
-## 2026.10.16.6ad1c3c6
+## 2026.10.16.6ad1f727
+### Changed
+
+- Promoted Event Gateway to its own top-nav item (between AI Gateway and Insomnia)
+- Added Event Gateway primer (event one-liner · Sync/Async flow animation), Why×4, and vs Kafka Plugins / vs Confluent positioning
+- Added Event Gateway > multi-tenancy behavior mock (role/topic selection updates Message preview · ciphertext)
+- License model > pricing structure: added Event Gateway and Insomnia
+
+## 2026.10.16.6ad1ab81
 ### Changed
 
 - Improved API7 comparison description
-- Promoted Event Gateway to its own top-nav item (between AI Gateway and Insomnia)
-- Added Event Gateway primer, Why×4, and per-org VC/encryption multi-tenancy demo
-- Clarified Event Gateway vs Kafka Plugins and vs Confluent positioning
 
 ## 2026.10.14.80c47eac
 
