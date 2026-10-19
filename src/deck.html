@@ -1456,12 +1456,13 @@ html[data-theme="light"] .egt-list li.on{box-shadow:0 0 0 1px var(--accent)}
 .d.cp{background:var(--diag-sky-fill)}.d.db{background:#C925D1}.d.dp{background:#CCFF00}
 .sztw{margin:0}.sztw table{font-size:12.5px}.sztw th,.sztw td{padding:7px 9px;white-space:nowrap}
 .sztw.wide td:last-child,.sztw.wide td:nth-child(5){white-space:normal}
-.szg2 .sztw table{table-layout:fixed;width:100%}
-.szg2 .sztw th,.szg2 .sztw td{white-space:normal;line-height:1.35;vertical-align:top}
-.szg2 .sztw th{font-size:11px;font-weight:700}
-.szg2 .sztw td:last-child{min-width:6.5em;overflow-wrap:anywhere;word-break:normal}
-html[data-lang="ja"] .szg2 .sztw td:last-child,
-html[data-lang="ko"] .szg2 .sztw td:last-child{word-break:keep-all;line-break:strict;overflow-wrap:break-word}
+.szai .sztw table{table-layout:fixed;width:100%}
+.szai .sztw th,.szai .sztw td{white-space:normal;line-height:1.35;vertical-align:top;overflow-wrap:anywhere;word-break:normal}
+.szai .sztw th{font-size:11px;font-weight:700}
+html[data-lang="ja"] .szai .sztw th,
+html[data-lang="ja"] .szai .sztw td,
+html[data-lang="ko"] .szai .sztw th,
+html[data-lang="ko"] .szai .sztw td{word-break:keep-all;line-break:strict;overflow-wrap:break-word}
 .szc .sztw th,.szc .sztw td{padding:7px 6px;font-size:12px}.szc .szb{min-width:22px;text-align:center}
 .szb{display:inline-block;font-size:10.5px;font-weight:900;border-radius:4px;padding:2px 7px;letter-spacing:.03em}
 .szb.d{background:var(--g700);color:var(--bay)}.szb.s{background:var(--accent-soft);color:var(--accent)}.szb.m{background:rgba(204,255,0,.42);color:var(--on-lime)}.szb.l{background:#CCFF00;color:var(--on-lime)}.szb.x{background:#fff;color:var(--on-lime)}
@@ -1469,10 +1470,11 @@ html[data-lang="ko"] .szg2 .sztw td:last-child{word-break:keep-all;line-break:st
 .sztips.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
 .sztips li{font-size:12.8px;line-height:1.55;color:var(--g300);border-left:2px solid var(--lime);padding:4px 0 4px 12px}
 .sztips li::before{display:none!important}.sztips li b{display:block;color:var(--heading);font-size:13px;margin-bottom:2px}
-.szks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-.szk{background:var(--accent-wash);border:1px solid var(--line2);border-radius:10px;padding:12px 14px}
+.szks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.szk{background:var(--accent-wash);border:1px solid var(--line2);border-radius:10px;padding:12px 14px;min-width:0}
 .szk b{display:block;font-size:24px;font-weight:800;color:var(--accent);line-height:1.1}.szk span{display:block;font-size:12.8px;color:var(--heading);margin-top:4px}.szk em{font-style:normal;font-size:11.5px;color:var(--svg-muted)}
-.szg2{display:grid;grid-template-columns:1.25fr 1fr;gap:14px}
+.szg2{display:grid;grid-template-columns:1fr;gap:18px}
+.szg2 > div > .szh,.szg3b > div > .szh{margin-top:0}
 .szcalc{display:grid;grid-template-columns:1fr 1.4fr;gap:14px;margin-top:22px;background:var(--navy-2,#061a0c);border:1px solid var(--line2);border-radius:12px;padding:16px}
 .szci h4{margin:0 0 10px;font-size:14px}
 .szci label{display:flex;align-items:center;gap:8px;font-size:12.8px;color:var(--g300);margin:8px 0}
@@ -1483,14 +1485,13 @@ html[data-lang="ko"] .szg2 .sztw td:last-child{word-break:keep-all;line-break:st
 .szco>div.t{border-color:var(--accent)}
 .szco span{display:block;font-size:11.5px;color:var(--svg-muted)}.szco b{display:block;font-size:19px;color:var(--accent);margin-top:4px;white-space:nowrap}
 .szco p{grid-column:1/-1;margin:2px 0 0;font-size:11.8px;line-height:1.55;color:#858983}
-.szms{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
-.szm{position:relative;border-radius:10px;padding:12px;border:1px solid var(--line);background:var(--navy-2,#061a0c)}
+.szms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.szm{position:relative;border-radius:10px;padding:12px;border:1px solid var(--line);background:var(--navy-2,#061a0c);min-width:0}
 .szm.cp{border-top:3px solid var(--diag-sky)}.szm.dp{border-top:3px solid #CCFF00}.szm.db{border-top:3px solid #C925D1}.szm.rd{border-top:3px solid #DC382D}.szm.ob{border-top:3px solid #ED7100}
 .szm .n{position:absolute;top:10px;right:10px;font-size:12px;font-weight:900;color:var(--accent)}
-.szm b{display:block;font-size:13px;color:var(--heading);margin-bottom:6px;padding-right:30px}.szm .s{display:block;font-size:12px;color:var(--bay);line-height:1.5}.szm em{display:block;font-style:normal;font-size:11px;color:var(--svg-muted);margin-top:6px}
-.szg3b{display:grid;grid-template-columns:1.3fr 1.2fr .8fr;gap:14px}
-.szg3b .sztw td{white-space:normal}
-@media(max-width:1100px){.szg3,.szg2,.szg3b,.szcalc{grid-template-columns:1fr}.szms{grid-template-columns:repeat(3,1fr)}.sztips,.szfs,.szks{grid-template-columns:1fr 1fr}.szco{grid-template-columns:repeat(3,1fr)}}
+.szm b{display:block;font-size:13px;color:var(--heading);margin-bottom:6px;padding-right:30px}.szm .s{display:block;font-size:12px;color:var(--bay);line-height:1.5;overflow-wrap:anywhere}.szm em{display:block;font-style:normal;font-size:11px;color:var(--svg-muted);margin-top:6px;overflow-wrap:anywhere}
+.szg3b{display:grid;grid-template-columns:1fr;gap:18px}
+@media(max-width:1100px){.szg3,.szcalc{grid-template-columns:1fr}.szms{grid-template-columns:1fr 1fr}.sztips,.szfs,.szks{grid-template-columns:1fr}.szco{grid-template-columns:repeat(3,1fr)}}
 
 .lpicks{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 8px}
 .lpicks button{font-family:var(--font);font-size:13px;font-weight:700;color:var(--g300);background:none;border:1px solid var(--g700);border-radius:999px;padding:8px 16px;cursor:pointer;transition:.15s}
@@ -5444,13 +5445,13 @@ claude
     <div class="pane">
   <p class="szl">AI Gateway는 요청 수가 아니라 토큰 처리량이 기준입니다. 표의 vCPU는 노드당이 아닌 클러스터 전체 합계입니다.</p>
   <div class="szks"><div class="szk"><b>4~5배</b><span>출력 토큰 처리 비용</span><em>입력 토큰 대비</em></div><div class="szk"><b>1M / 4.4M</b><span>워커당 최대 tokens/s</span><em>출력 / 입력 · vCPU 1개 = 워커 1개</em></div><div class="szk"><b>1 : 2</b><span>vCPU : RAM(GB)</span><em>AI 워크로드 확인 기준</em></div><div class="szk"><b>100 GB</b><span>DP 노드당 SSD</span><em>영구 저장 최소</em></div></div>
-  <div class="szg2">
+  <div class="szg2 szai">
     <div><h4 class="szh">티어별 기준</h4><div class="tw sztw "><table><thead><tr><th>Size</th><th>Services · Routes</th><th>토큰 처리량 (입력 / 출력, tokens/s)</th><th>총 vCPU</th><th>대상</th></tr></thead><tbody><tr><td><span class="szb s">Small</span></td><td>&lt;100</td><td>&lt;10M / &lt;2M</td><td>18</td><td>팀 단위 · 프로토타입 · 저용량 추론</td></tr><tr><td><span class="szb m">Medium</span></td><td>100-500</td><td>10M-60M / 2M-10M</td><td>100</td><td>단일 사업부 프로덕션</td></tr><tr><td><span class="szb l">Large</span></td><td>500-2,000</td><td>60M-200M / 10M-40M</td><td>360</td><td>중앙 플랫폼 · 다중 팀</td></tr><tr><td><span class="szb x">XL</span></td><td>&gt;2,000</td><td>&gt;200M / &gt;40M</td><td>360+</td><td>전사 AI 플랫폼 · 멀티테넌트</td></tr></tbody></table></div></div>
     <div><h4 class="szh">도입 단계별 기준</h4><div class="tw sztw "><table><thead><tr><th>도입 단계</th><th>엔터티</th><th>토큰 처리량 (입력 / 출력)</th><th>노드당 vCPU</th><th>노드 수</th></tr></thead><tbody><tr><td>POC · Lab</td><td>&lt;50</td><td>&lt;1M / &lt;500K</td><td>2-4</td><td>1-2</td></tr><tr><td>Early Adopter</td><td>50-200</td><td>1M-10M / 500K-2M</td><td>4-8</td><td>2-3</td></tr><tr><td>Production</td><td>200-2,000</td><td>10M-60M / 2M-10M</td><td>8-16</td><td>3-6+</td></tr><tr><td>Large Enterprise</td><td>2,000+</td><td>60M+ / 10M+</td><td>16-32+</td><td>6+</td></tr></tbody></table></div></div>
   </div>
   <h4 class="szh">Medium 티어 구성 예 · Hybrid · 단일 사업부 프로덕션</h4>
   <div class="szms"><div class="szm cp"><span class="n">× 2</span><b>Control Plane</b><span class="s">4 vCPU · 8 GB · 100 GB SSD · 1 Gbps+</span><em>AWS m5.large / m5.xlarge</em></div><div class="szm dp"><span class="n">× 3</span><b>Data Plane</b><span class="s">16 vCPU · 32 GB · 100 GB SSD · 10 Gbps+</span><em>AWS c5.2xlarge · c6i.2xlarge · c6g.2xlarge</em></div><div class="szm db"><span class="n">× 2</span><b>PostgreSQL</b><span class="s">4 vCPU · 16 GB · 200 GB SSD · 3,000+ IOPS</span><em>Primary + Standby · 동기 복제</em></div><div class="szm rd"><span class="n">× 2</span><b>Redis · Rate limit</b><span class="s">2 vCPU · 4 GB</span><em>AI Rate Limiting Advanced 사용 시 필수</em></div><div class="szm rd"><span class="n">× 2</span><b>Redis · Semantic Cache</b><span class="s">4 vCPU · 8 GB</span><em>Valkey 벡터 검색 (3.14+)</em></div><div class="szm ob"><span class="n">× 1+</span><b>Prometheus · Grafana</b><span class="s">2 vCPU · 4 GB</span><em>AI Gateway 대시보드</em></div></div>
-  <div class="szg3b">
+  <div class="szg3b szai">
     <div><h4 class="szh">AI 부가 기능 컨테이너</h4><div class="tw sztw "><table><thead><tr><th>별도 컨테이너</th><th>최소 메모리</th><th>CPU / GPU</th><th>권장 노드</th></tr></thead><tbody><tr><td>AI PII Anonymizer</td><td>600 MB+</td><td>CPU 바운드 · 언어 모델 추가 시 메모리 증가</td><td>2+ (HA)</td></tr><tr><td>AI Prompt Compression</td><td>2 GB+</td><td>CPU 가능 · 고부하 시 GPU 권장 (LLMLingua 2)</td><td>2+ (HA)</td></tr></tbody></table></div></div>
     <div><h4 class="szh">버퍼 · 메모리</h4><div class="tw sztw "><table><thead><tr><th>트래픽 유형</th><th>프롬프트 크기</th><th>max_request_body_size</th><th>client_body_buffer_size</th></tr></thead><tbody><tr><td>Chat 앱</td><td>&lt;512 KiB</td><td>2-4 MiB</td><td>256-512 KiB</td></tr><tr><td>RAG (임베딩)</td><td>1-4 MiB</td><td>8-16 MiB</td><td>1-2 MiB</td></tr><tr><td>Batch · 대용량 JSON</td><td>4-16 MiB</td><td>16-64 MiB</td><td>2-4 MiB</td></tr></tbody></table></div></div>
     <div><h4 class="szh">권장 인스턴스</h4><div class="tw sztw "><table><thead><tr><th>클라우드</th><th>권장 인스턴스 계열</th></tr></thead><tbody><tr><td>AWS x86</td><td>c5 · c6i (non-burstable)</td></tr><tr><td>AWS ARM</td><td>c6g · c7g (Graviton)</td></tr><tr><td>GCP</td><td>c2-standard · c3-standard</td></tr><tr><td>Azure</td><td>Fsv2 · Dasv5</td></tr></tbody></table></div></div>
