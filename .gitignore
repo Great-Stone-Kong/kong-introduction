@@ -10,9 +10,6 @@
 !.github/
 !.github/workflows/
 !.github/workflows/release.yml
-!.cursor/
-!.cursor/rules/
-!.cursor/rules/kong-introduction-deck-html.mdc
 !src/
 !src/**
 !scripts/
