@@ -1456,7 +1456,12 @@ html[data-theme="light"] .egt-list li.on{box-shadow:0 0 0 1px var(--accent)}
 .d.cp{background:var(--diag-sky-fill)}.d.db{background:#C925D1}.d.dp{background:#CCFF00}
 .sztw{margin:0}.sztw table{font-size:12.5px}.sztw th,.sztw td{padding:7px 9px;white-space:nowrap}
 .sztw.wide td:last-child,.sztw.wide td:nth-child(5){white-space:normal}
-.szg2 .sztw td:last-child{white-space:normal}
+.szg2 .sztw table{table-layout:fixed;width:100%}
+.szg2 .sztw th,.szg2 .sztw td{white-space:normal;line-height:1.35;vertical-align:top}
+.szg2 .sztw th{font-size:11px;font-weight:700}
+.szg2 .sztw td:last-child{min-width:6.5em;overflow-wrap:anywhere;word-break:normal}
+html[data-lang="ja"] .szg2 .sztw td:last-child,
+html[data-lang="ko"] .szg2 .sztw td:last-child{word-break:keep-all;line-break:strict;overflow-wrap:break-word}
 .szc .sztw th,.szc .sztw td{padding:7px 6px;font-size:12px}.szc .szb{min-width:22px;text-align:center}
 .szb{display:inline-block;font-size:10.5px;font-weight:900;border-radius:4px;padding:2px 7px;letter-spacing:.03em}
 .szb.d{background:var(--g700);color:var(--bay)}.szb.s{background:var(--accent-soft);color:var(--accent)}.szb.m{background:rgba(204,255,0,.42);color:var(--on-lime)}.szb.l{background:#CCFF00;color:var(--on-lime)}.szb.x{background:#fff;color:var(--on-lime)}
@@ -6125,7 +6130,10 @@ function resetMotion(page){
       p.g.setAttribute('opacity',p.op.toFixed(2));
       if(p.st!=='out'&&p.st!=='gone') prev=p;
     }
-    cnt.textContent=`통과 ${pass} · 거부 ${rej} · 대기 ${wait}`;
+    const tpl='통과 ${pass} · 거부 ${rej} · 대기 ${wait}';
+    cnt.textContent=(window.KONG_I18N&&typeof window.KONG_I18N.tpl==='function')
+      ? window.KONG_I18N.tpl(tpl,{pass:pass,rej:rej,wait:wait})
+      : `통과 ${pass} · 거부 ${rej} · 대기 ${wait}`;
     if(P.every(p=>p.st==='gone')){ if(!endAt) endAt=t; else if(t-endAt>1.6) reset(); }
   }
   function loop(ts){ if(!running){raf=0;return;} const dt=Math.min(.05,(ts-last)/1000||0); last=ts; t+=dt; step(dt); raf=requestAnimationFrame(loop); }

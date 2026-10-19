@@ -109,7 +109,11 @@ function geoLocal(){
   document.querySelectorAll('.cities span').forEach(sp=>sp.classList.toggle('loc',!!GEO[L].c&&sp.textContent.trim()===GEO[L].c));
   mo.takeRecords(); muted=false;
 }
-window.KONG_I18N={setLang,get lang(){return L;}};
+function tTpl(koTpl, vars){
+  let s=(L!=='ko'&&D.T[norm(koTpl)])?D.T[norm(koTpl)][IX[L]]:koTpl;
+  return String(s).replace(/\$\{(\w+)\}/g,(_,k)=>vars&&vars[k]!=null?String(vars[k]):'');
+}
+window.KONG_I18N={setLang,get lang(){return L;},tpl:tTpl};
 const sideMo=new MutationObserver(ensureSw);
 function init(){
   const side=document.getElementById('side'); if(side) sideMo.observe(side,{childList:true});
