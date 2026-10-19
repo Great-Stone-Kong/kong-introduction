@@ -6084,8 +6084,14 @@ function resetMotion(page){
   const steps=()=>[...document.querySelectorAll('#imm-flow .st')];
   function flash(k,bad){const l=lights[k]; if(!l) return; l.classList.add(bad?'no':'on'); setTimeout(()=>l.classList.remove('on','no'),bad?900:500);
     const s=steps(); s.forEach((e,i)=>e.classList.toggle('now',i===k)); if(s[k]) s[k].classList.add('lit');}
+  const CNT_TPL='통과 ${pass} · 거부 ${rej} · 대기 ${wait}';
+  function setCnt(p,r,w){
+    cnt.textContent=(window.KONG_I18N&&typeof window.KONG_I18N.tpl==='function')
+      ? window.KONG_I18N.tpl(CNT_TPL,{pass:p,rej:r,wait:w})
+      : `통과 ${p} · 거부 ${r} · 대기 ${w}`;
+  }
   function reset(){
-    layer.textContent=''; t=0; nextFree=0; pass=0; rej=0; endAt=0;
+    layer.textContent=''; t=0; nextFree=0; pass=0; rej=0; endAt=0; setCnt(0,0,0);
     steps().forEach(e=>e.classList.remove('lit','now'));
     P=PLAN.map((r,i)=>{
       const g=document.createElementNS(NS,'g'); g.setAttribute('class','ps');
@@ -6130,10 +6136,7 @@ function resetMotion(page){
       p.g.setAttribute('opacity',p.op.toFixed(2));
       if(p.st!=='out'&&p.st!=='gone') prev=p;
     }
-    const tpl='통과 ${pass} · 거부 ${rej} · 대기 ${wait}';
-    cnt.textContent=(window.KONG_I18N&&typeof window.KONG_I18N.tpl==='function')
-      ? window.KONG_I18N.tpl(tpl,{pass:pass,rej:rej,wait:wait})
-      : `통과 ${pass} · 거부 ${rej} · 대기 ${wait}`;
+    setCnt(pass,rej,wait);
     if(P.every(p=>p.st==='gone')){ if(!endAt) endAt=t; else if(t-endAt>1.6) reset(); }
   }
   function loop(ts){ if(!running){raf=0;return;} const dt=Math.min(.05,(ts-last)/1000||0); last=ts; t+=dt; step(dt); raf=requestAnimationFrame(loop); }
