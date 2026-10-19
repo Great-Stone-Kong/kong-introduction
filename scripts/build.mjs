@@ -6,7 +6,7 @@
  * stamp Changelog + KONG_INTRO_VERSION.
  * CI (`--ci`): read VERSION only — never mint a new wall-clock stamp.
  */
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -99,6 +99,11 @@ deck = deck.replace("<!-- I18N_BUNDLE -->", bundle);
 
 const out = join(root, "kong-introduction.html");
 writeFileSync(out, deck, "utf8");
+// GitHub Pages source folder (/docs) — same artifact as site root index
+const docsDir = join(root, "docs");
+mkdirSync(docsDir, { recursive: true });
+const pagesOut = join(docsDir, "index.html");
+writeFileSync(pagesOut, deck, "utf8");
 console.log(
-  `built ${out} (${deck.length} bytes, version=${version}, mode=${ci ? "ci" : "local"}, T=${Object.keys(T).length}, U=${Object.keys(D.U).length}, F=${D.F.length})`
+  `built ${out} + ${pagesOut} (${deck.length} bytes, version=${version}, mode=${ci ? "ci" : "local"}, T=${Object.keys(T).length}, U=${Object.keys(D.U).length}, F=${D.F.length})`
 );

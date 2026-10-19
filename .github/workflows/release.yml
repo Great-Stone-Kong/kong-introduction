@@ -1,8 +1,6 @@
 name: Release
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -68,19 +66,19 @@ jobs:
         env:
           V: ${{ steps.ver.outputs.version }}
 
-      - name: Commit versioned HTML and changelogs
+      - name: Commit versioned HTML, Pages docs, and changelogs
         env:
           V: ${{ steps.ver.outputs.version }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add kong-introduction.html CHANGELOG.md CHANGELOG.en.md CHANGELOG.ja.md VERSION
+          git add kong-introduction.html docs/index.html CHANGELOG.md CHANGELOG.en.md CHANGELOG.ja.md VERSION
           if git diff --staged --quiet; then
             echo "No versioned artifact changes"
-            exit 0
+          else
+            git commit -m "chore: release ${V} [skip ci]"
+            git push
           fi
-          git commit -m "chore: release ${V} [skip ci]"
-          git push
 
       - name: Create GitHub Release
         env:

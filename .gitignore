@@ -4,6 +4,8 @@
 !package.json
 !VERSION
 !kong-introduction.html
+!docs/
+!docs/**
 !CHANGELOG.md
 !CHANGELOG.en.md
 !CHANGELOG.ja.md
