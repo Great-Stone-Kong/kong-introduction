@@ -3278,7 +3278,7 @@
   "직결 · 전체 토픽": "Direct · all topics",
   "제품이 다릅니다.": "These are different products.",
   "하나의 안정된 진입점": "One stable entry point",
-  "오늘은 Kafka 프로토콜": "Kafka protocol today",
+  "네이티브 Kafka 프로토콜 지원": "ネイティブ Kafka プロトコル対応",
   "Topics · 이 VC만": "Topics · this VC only",
   "여러 클러스터 앞의 한 Gateway": "One gateway in front of many clusters",
   "조직별 VC · 암호화로 테넌트 격리": "Per-org VCs · tenant isolation with encryption",

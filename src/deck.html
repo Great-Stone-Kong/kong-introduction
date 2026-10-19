@@ -4054,7 +4054,7 @@ claude
     <div class="card"><span class="tag">01 · Entry</span><h3>하나의 안정된 진입점</h3><p>Kafka 클라이언트는 본래 모든 브로커에 직접 닿아야 합니다. 브로커가 늘 때마다 방화벽 경로가 늘어납니다. Event Gateway는 하나의 도메인·포트(SNI)로 진입점을 고정하고, 내부 토폴로지는 숨깁니다.</p></div>
     <div class="card"><span class="tag">02 · Topology</span><h3>여러 클러스터 앞의 한 Gateway</h3><p>환경·도메인·인수합병으로 클러스터가 늘어나도 소비자는 하나의 Gateway만 봅니다. 정책은 뒤의 물리 배치와 무관하게 한 평면에서 적용합니다.</p></div>
     <div class="card"><span class="tag">03 · Governance</span><h3>중앙 거버넌스</h3><p>브로커는 의도적으로 얇습니다. 스키마 검증 · 헤더/페이로드 변환 · 필터 · 필드 암복호 · 관측을 Gateway에서 한 번 강제합니다.</p></div>
-    <div class="card"><span class="tag">04 · Protocol</span><h3>오늘은 Kafka 프로토콜</h3><p>Event Gateway는 네이티브 Kafka SDK 경로입니다. HTTP로 produce·consume할 때는 API Gateway의 Kafka Plugins를 씁니다. 둘은 같은 제품이 아닙니다.</p><button type="button" class="btn s" onclick="go('kplugin')">Kafka Plugins</button></div>
+    <div class="card"><span class="tag">04 · Protocol</span><h3>네이티브 Kafka 프로토콜 지원</h3><p>Event Gateway는 네이티브 Kafka SDK 경로입니다. HTTP로 produce·consume할 때는 API Gateway의 Kafka Plugins를 씁니다. 둘은 같은 제품이 아닙니다.</p><button type="button" class="btn s" onclick="go('kplugin')">Kafka Plugins</button></div>
   </div>
   <div class="ewarch rv">
     <div class="ewarch-col bad">
