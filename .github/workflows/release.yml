@@ -22,7 +22,7 @@ jobs:
         run: node scripts/check-i18n.mjs
 
       - name: Build deck
-        run: node scripts/build.mjs --ci
+        run: node scripts/build.mjs
 
       - name: Read version
         id: ver
