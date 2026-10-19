@@ -5,6 +5,11 @@
 
 ---
 
+## 2026.10.19.6ad5f6a0
+### Changed
+
+- Infrastructure > Recommended sizing: improved readability
+
 ## 2026.10.19.6ad56817
 ### Changed
 
