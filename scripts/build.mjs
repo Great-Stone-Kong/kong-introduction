@@ -102,6 +102,7 @@ writeFileSync(out, deck, "utf8");
 // GitHub Pages source folder (/docs) — same artifact as site root index
 const docsDir = join(root, "docs");
 mkdirSync(docsDir, { recursive: true });
+writeFileSync(join(docsDir, ".nojekyll"), "");
 const pagesOut = join(docsDir, "index.html");
 writeFileSync(pagesOut, deck, "utf8");
 console.log(
