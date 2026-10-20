@@ -118,11 +118,12 @@ function setLang(l){
   document.querySelectorAll('.lsw').forEach(syncLsw);
   fitNav(); if(l!=='ko') reobserve(); geoLocal(); if(typeof window.rebuildAudience==='function') window.rebuildAudience(); else if(typeof setupSpy==='function') setupSpy();
 }
-const GEO={ko:{lon:126.98,lat:37.57,t:'대한민국 · Seoul',w:146,c:''},ja:{lon:139.69,lat:35.69,t:'日本 · Tokyo',w:124,c:'Tokyo'},en:{lon:103.82,lat:1.35,t:'Singapore',w:104,c:'Singapore'}};
+/* en: no regional callout — SF HQ marker/label only */
+const GEO={ko:{lon:126.98,lat:37.57,t:'대한민국 · Seoul',w:146,c:''},ja:{lon:139.69,lat:35.69,t:'日本 · Tokyo',w:124,c:'Tokyo'},en:null};
 function geoLocal(){
-  window.KONG_GEO_HL=GEO[L]; muted=true;
+  const g=GEO[L]||null; window.KONG_GEO_HL=g; muted=true;
   if(window.drawGeo) window.drawGeo();
-  document.querySelectorAll('.cities span').forEach(sp=>sp.classList.toggle('loc',!!GEO[L].c&&sp.textContent.trim()===GEO[L].c));
+  document.querySelectorAll('.cities span').forEach(sp=>sp.classList.toggle('loc',!!(g&&g.c)&&sp.textContent.trim()===g.c));
   mo.takeRecords(); muted=false;
 }
 function tTpl(koTpl, vars){

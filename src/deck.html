@@ -5933,9 +5933,14 @@ function drawGeo(){
     s+='<g><circle class="rg" style="--d:'+(2+i*.15)+'s" cx="'+x+'" cy="'+y+'" r="5"/><circle class="mk" style="--d:'+d+'" cx="'+x+'" cy="'+y+'" r="'+(o[3]?5:3.6)+'" fill="var(--mark)"/></g>';
     if(o[3]) s+='<text x="'+(x-9)+'" y="'+(y-8)+'" text-anchor="end" font-size="11" font-weight="700" fill="var(--mark)">San Francisco · HQ</text>';
   });
-  const HL=window.KONG_GEO_HL||{lon:126.98,lat:37.57,t:'대한민국 · Seoul',w:146}; const kx=X(HL.lon), ky=Y(HL.lat);
-  s+='<g><circle class="rg krg" style="--d:2.4s" cx="'+kx+'" cy="'+ky+'" r="7"/><circle class="rg krg" style="--d:3.4s" cx="'+kx+'" cy="'+ky+'" r="7"/><circle class="mk" style="--d:2.4s" cx="'+kx+'" cy="'+ky+'" r="7" fill="var(--heading)" stroke="var(--mark)" stroke-width="3"/></g>';
-  s+='<g class="klbl"><path d="M'+kx+' '+(ky-9)+'V'+(ky-34)+'H'+(kx-24)+'" stroke="var(--mark)" stroke-width="1" fill="none"/><rect x="'+(kx-24-HL.w)+'" y="'+(ky-56)+'" width="'+HL.w+'" height="26" rx="13" fill="var(--card)" fill-opacity=".96" stroke="var(--mark)" stroke-width="1.2"/><text x="'+(kx-37)+'" y="'+(ky-38)+'" text-anchor="end" font-size="15" font-weight="800" fill="var(--heading)">'+HL.t+'</text></g>';
+  const HL=window.KONG_GEO_HL===undefined
+    ? {lon:126.98,lat:37.57,t:'대한민국 · Seoul',w:146}
+    : window.KONG_GEO_HL;
+  if(HL&&HL.lon!=null){
+    const kx=X(HL.lon), ky=Y(HL.lat);
+    s+='<g><circle class="rg krg" style="--d:2.4s" cx="'+kx+'" cy="'+ky+'" r="7"/><circle class="rg krg" style="--d:3.4s" cx="'+kx+'" cy="'+ky+'" r="7"/><circle class="mk" style="--d:2.4s" cx="'+kx+'" cy="'+ky+'" r="7" fill="var(--heading)" stroke="var(--mark)" stroke-width="3"/></g>';
+    s+='<g class="klbl"><path d="M'+kx+' '+(ky-9)+'V'+(ky-34)+'H'+(kx-24)+'" stroke="var(--mark)" stroke-width="1" fill="none"/><rect x="'+(kx-24-HL.w)+'" y="'+(ky-56)+'" width="'+HL.w+'" height="26" rx="13" fill="var(--card)" fill-opacity=".96" stroke="var(--mark)" stroke-width="1.2"/><text x="'+(kx-37)+'" y="'+(ky-38)+'" text-anchor="end" font-size="15" font-weight="800" fill="var(--heading)">'+HL.t+'</text></g>';
+  }
   svg.innerHTML=s;
 }
 drawGeo(); window.drawGeo=drawGeo;
