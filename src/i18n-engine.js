@@ -81,10 +81,26 @@ function fitNav(){
   if(over()) nav.classList.add('nf1'); if(over()&&tg) tg.style.display='none'; if(over()) nav.classList.add('nf2'); if(over()){ nav.classList.add('nf3'); applyShort(true); }
   mo.takeRecords(); muted=false;
 }
-/* ---- 토글 ---- */
-function sw(){ const d=document.createElement('div'); d.className='lsw i18n-no'; d.setAttribute('role','group');
-  d.innerHTML='<button data-l="ko">한국어</button><button data-l="en">English</button><button data-l="ja">日本語</button>';
-  d.querySelectorAll('button').forEach(b=>{ b.classList.toggle('on',b.dataset.l===L); b.onclick=()=>setLang(b.dataset.l); }); return d; }
+/* ---- 언어 드롭다운 ---- */
+const LANG_LAB={ko:'한국어',en:'English',ja:'日本語'};
+const LSW_ICO='<svg class="lsw-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>';
+const LSW_CHEV='<svg class="lsw-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg>';
+function closeLsw(root){ if(!root) return; root.classList.remove('open'); const b=root.querySelector('.lsw-btn'); if(b) b.setAttribute('aria-expanded','false'); }
+function syncLsw(root){
+  if(!root) return;
+  const lab=root.querySelector('.lsw-lab'); if(lab) lab.textContent=LANG_LAB[L]||L;
+  root.querySelectorAll('.lsw-menu [data-l]').forEach(b=>b.classList.toggle('on',b.dataset.l===L));
+  const btn=root.querySelector('.lsw-btn'); if(btn) btn.setAttribute('aria-label','Language: '+(LANG_LAB[L]||L));
+}
+function sw(){
+  const d=document.createElement('div'); d.className='lsw i18n-no';
+  d.innerHTML='<button type="button" class="lsw-btn" aria-haspopup="listbox" aria-expanded="false">'+LSW_ICO+'<span class="lsw-lab"></span>'+LSW_CHEV+'</button>'+
+    '<ul class="lsw-menu" role="listbox">'+LANGS.map(l=>'<li role="none"><button type="button" role="option" data-l="'+l+'">'+LANG_LAB[l]+'</button></li>').join('')+'</ul>';
+  const btn=d.querySelector('.lsw-btn');
+  btn.onclick=e=>{ e.stopPropagation(); const on=!d.classList.contains('open'); document.querySelectorAll('.lsw.open').forEach(x=>{ if(x!==d) closeLsw(x); }); d.classList.toggle('open',on); btn.setAttribute('aria-expanded',on?'true':'false'); };
+  d.querySelectorAll('.lsw-menu [data-l]').forEach(b=>{ b.onclick=e=>{ e.stopPropagation(); setLang(b.dataset.l); closeLsw(d); }; });
+  syncLsw(d); return d;
+}
 function ensureSw(){
   const side=document.getElementById('side'); if(!side) return;
   if(side.querySelector('.lsw')) return;
@@ -99,7 +115,7 @@ function setLang(l){
   try{ localStorage.setItem('kong-lang',l); }catch(e){}
   if(l!=='ko') walk(document.documentElement);
   mo.takeRecords(); muted=false;
-  document.querySelectorAll('.lsw button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+  document.querySelectorAll('.lsw').forEach(syncLsw);
   fitNav(); if(l!=='ko') reobserve(); geoLocal(); if(typeof window.rebuildAudience==='function') window.rebuildAudience(); else if(typeof setupSpy==='function') setupSpy();
 }
 const GEO={ko:{lon:126.98,lat:37.57,t:'대한민국 · Seoul',w:146,c:''},ja:{lon:139.69,lat:35.69,t:'日本 · Tokyo',w:124,c:'Tokyo'},en:{lon:103.82,lat:1.35,t:'Singapore',w:104,c:'Singapore'}};
@@ -118,6 +134,8 @@ const sideMo=new MutationObserver(ensureSw);
 function init(){
   const side=document.getElementById('side'); if(side) sideMo.observe(side,{childList:true});
   ensureSw();
+  document.addEventListener('click',()=>document.querySelectorAll('.lsw.open').forEach(closeLsw));
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') document.querySelectorAll('.lsw.open').forEach(closeLsw); });
   mo.observe(document.documentElement,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:['title','placeholder','aria-label']});
   setLang(L);
   let rt;
