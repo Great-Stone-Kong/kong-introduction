@@ -9,6 +9,11 @@
 ### Changed
 
 - Infrastructure > Recommended sizing: improved readability
+- AI Gateway > Competitive comparison > LiteLLM supply chain
+  - Added the October 21 PyPI 1.107.0 incident
+  - Timeline for Mar 24th, Aug 11th, and Oct 21st
+  - Exposed companies: Korean firms in Korean; impact level in English and Japanese. Dates follow each language
+- About Kong > Overview > Global offices: English shows headquarters only, with no regional highlight
 
 ## 2026.10.19.6ad56817
 ### Changed
