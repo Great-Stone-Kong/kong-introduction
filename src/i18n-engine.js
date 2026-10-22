@@ -82,7 +82,7 @@ function fitNav(){
   mo.takeRecords(); muted=false;
 }
 /* ---- 언어 드롭다운 ---- */
-const LANG_LAB={ko:'한국어',en:'English',ja:'日本語'};
+const LANG_LAB={ko:'KR - 한국어',en:'EN - English',ja:'JA - 日本語'};
 const LSW_ICO='<i class="lsw-ico" aria-hidden="true"></i>';
 const LSW_CHEV='<svg class="lsw-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg>';
 function closeLsw(root){ if(!root) return; root.classList.remove('open'); const b=root.querySelector('.lsw-btn'); if(b) b.setAttribute('aria-expanded','false'); }
