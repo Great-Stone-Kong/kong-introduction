@@ -6005,22 +6005,19 @@ function drawGrowth(){
   }
   const circ=(cx,cy,r)=>r<0.4?'':'M'+cx+' '+(cy-r)+'a'+r+' '+r+' 0 1 0 0 '+(2*r)+'a'+r+' '+r+' 0 1 0 0 '+(-2*r)+'z';
   function renderRound(b,p){
-    const shapes=b.shapes, n=shapes.length, sh=shapes[0], r0=sh.w/2;
+    const shapes=b.shapes, n=shapes.length, sh=shapes[0];
     if(n===1){ const e=ease(p); return drawShape(lerpBox(shrinkBox(shapeBox(sh),.62),shapeBox(sh),e),sh); }
-    const yTop=shapes[0].y+r0, yBot=shapes[n-1].y+r0, x=sh.x+r0, span=Math.max(r0*2,yBot-yTop);
-    const gens=Math.min(7,Math.ceil(Math.log2(n)));
-    const t=Math.min(.999,p)*gens, lv=Math.floor(t), f=ease(t-lv);
-    const radAt=c=>{ const u=(c-1)/Math.max(1,n-1), big=Math.min(Math.max(r0*2.6,r0+4), Math.min(12,span/2)); return r0+(big-r0)*(1-Math.sqrt(u)); };
-    const layout=k=>{ const c=Math.min(n,1<<k), r=radAt(c), ys=[]; for(let i=0;i<c;i++) ys.push(c===1?(yTop+yBot)/2:yTop+(yBot-yTop)*i/(c-1)); return {c,r,ys}; };
+    // 가운데부터 제자리에 싹이 난다. 이미 놓인 점은 다시 위아래로 움직이지 않는다.
+    const mid=(n-1)/2, step=n>1?(shapes[n-1].y-shapes[0].y)/(n-1):0;
     let d='';
-    if(lv>=gens-1){
-      const A=layout(lv);
-      for(let i=0;i<n;i++){ const pi=Math.min(A.c-1,(i*A.c/n)|0), s=shapes[i]; const cy=A.ys[pi]+((s.y+r0)-A.ys[pi])*f, r=A.r+(r0-A.r)*f; d+=circ(x,cy,r); }
-      return d;
+    for(let i=0;i<n;i++){
+      const birth=Math.abs(i-mid)/(mid+1)*0.78;
+      if(p<birth) continue;
+      const local=ease(Math.min(1,(p-birth)/0.16));
+      const s=shapes[i], r0=s.w/2;
+      const cy=s.y+r0+Math.sign(mid-i)*step*0.4*(1-local);
+      d+=circ(s.x+r0, cy, r0*(0.4+0.6*local));
     }
-    const A=layout(lv), B=layout(lv+1);
-    if(f<0.05){ for(let i=0;i<A.c;i++) d+=circ(x,A.ys[i],A.r); return d; }
-    for(let i=0;i<B.c;i++){ const pi=Math.min(A.c-1,i>>1), cy=A.ys[pi]+(B.ys[i]-A.ys[pi])*f, r=A.r+(B.r-A.r)*f; d+=circ(x,cy,r); }
     return d;
   }
   function paintChild(parent,ch,e){
