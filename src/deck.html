@@ -1706,6 +1706,8 @@ html[data-lang="ko"] .szai .sztw td{word-break:keep-all;line-break:strict;overfl
 .dm-sum b{font-weight:600;color:var(--g200);line-height:1.55;word-break:break-word}
 .dm-sum .big b{color:var(--heading);font-size:14.5px;background:rgba(255,255,255,.04);border-left:3px solid var(--g500);padding:6px 10px;border-radius:4px}
 .dm-sum .mk b{color:#9fe0ff;background:rgba(95,200,255,.08);border-left:3px solid #5CC8FF;padding:6px 10px;border-radius:4px}
+.dm-sum .rst b{color:var(--heading);font-size:14.5px;font-weight:800;background:color-mix(in srgb,var(--lime) 28%,transparent);border-left:3px solid var(--lime);padding:6px 10px;border-radius:4px;animation:dm-rst 1.6s ease-out 1}
+@keyframes dm-rst{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--lime) 70%,transparent)}40%{box-shadow:0 0 0 6px color-mix(in srgb,var(--lime) 0%,transparent)}}
 .dm-sum .ok b{color:var(--accent)}.dm-sum .no b{color:var(--danger-soft)}.dm-sum .wr b{color:#FFB86B}
 .dm-sum-e{color:var(--g500);font-size:13px;padding:6px 0}
 .dm-steps{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px}
@@ -6324,7 +6326,10 @@ function KDemo(root,SC,OPT){
     sQ.innerHTML=row('대상',tgt(r.p)+(direct?'  ·  Gateway 없이 직접 연결':''),direct?'wr':'')+row('호출',r.m+' '+r.p)+row('인증',au)+(Object.keys(h).filter(x=>!/^(Content-Type|apikey|Authorization)$/i.test(x)).map(x=>x+': '+h[x]).join('  ·  ')?row('헤더',Object.keys(h).filter(x=>!/^(Content-Type|apikey|Authorization)$/i.test(x)).map(x=>x+': '+h[x]).join('  ·  ')):'')+row('보낸 내용',bodyQ(r.b),r.b==null?'':'big')+(fwd?row('LLM이 실제로 받은 내용',fwd,'mk'):'')+(r.cm?row('상황',r.cm):''); }
   function sumS(s,h,b,k,cmp){ let hs=[]; for(const x in h){ if(/RateLimit|Retry-After|X-Cache|X-Consumer|X-Kong-Upstream|X-Kong-Response/i.test(x)) hs.push(x+': '+h[x]); }
     const cmpRows=cmp?row(cmp.base||'Finance · 전체 필드',Object.keys(cmp.full).join(' · '))+row('이 부서 응답',Object.keys(b||{}).join(' · ')||'(없음)','ok')+row('제거된 필드',(cmp.drop||[]).join(' · ')||'(없음)','mk'):'';
-    sS.innerHTML=row('결과',s+' '+(STX[s]||'')+'  ·  '+(MEAN[s]||''),s<300?'ok':'no')+cmpRows+row('받은 내용',bodyS(b),'big')+(k?k.map(x=>row(x[0],x[1],x[2]||'')).join(''):'')+(hs.length?row('Kong 헤더',hs.join('  ·  ')):''); }
+    const ks=k?k.map(x=>row(x[0],x[1],x[2]||'')).join(''):'';
+    const emph=k&&k.some(x=>x[2]==='rst');
+    const body=row('받은 내용',bodyS(b),emph?'rst':'big');
+    sS.innerHTML=row('결과',s+' '+(STX[s]||'')+'  ·  '+(MEAN[s]||''),s<300?'ok':'no')+cmpRows+(emph?ks+body:body+ks)+(hs.length?row('Kong 헤더',hs.join('  ·  ')):''); }
   function sumClear(){ sQ.innerHTML='<div class="dm-sum-e">위의 케이스 버튼을 눌러 요청을 보내 보세요.</div>'; sS.innerHTML=''; }
   let pol=true; const pg=$('dm-pol');
   if(pg){ pg.innerHTML='<span>Kong 정책</span><button class="on">적용</button><button>없음 · 직접 연결</button>';
@@ -6370,8 +6375,11 @@ function KDemo(root,SC,OPT){
     }
     if(blocked){ pkt.classList.add('red'); await move(client,520*sp); }
     else if(hit){ pkt.classList.add('lime'); await move(client,460*sp); }
-    else { if(c.lg) c.lg.forEach(t=>log('   '+t,'ps')); const u=ups[c.up||0]; await move(u,480*sp); u.classList.add('on'); log('   Upstream '+SC[cur].up[c.up||0]+' 처리 완료','ps'); await sleep(220*sp); pkt.classList.add('lime'); await move(chips[chips.length-1],380*sp); await move(client,420*sp); }
-    showRes(c.res.s,c.res.h,c.res.b(),c.res.k||c.k,c.cmp||c.res.cmp); log('← '+c.res.s+' '+(STX[c.res.s]||''), c.res.s<300?'ok':'bk'); if(c.after) c.after.forEach(t=>log('   '+t,'ps'));
+    else { if(c.lg) c.lg.forEach(t=>log('   '+t,'ps')); const u=ups[c.up||0]; await move(u,480*sp); u.classList.add('on'); log('   Upstream '+SC[cur].up[c.up||0]+' 처리 완료','ps'); await sleep(220*sp); pkt.classList.add('lime');
+      if(c.restore!=null){ const ch=chips[c.restore]; await move(ch,380*sp); ch.classList.remove('mod','ok'); ch.classList.add('chk'); await sleep(240*sp); ch.classList.remove('chk'); ch.classList.add('mod'); ch.querySelector('em').textContent='✎'; (c.after||[]).forEach(t=>log('   '+t,'ps')); }
+      else await move(chips[chips.length-1],380*sp);
+      await move(client,420*sp); }
+    showRes(c.res.s,c.res.h,c.res.b(),c.res.k||c.k,c.cmp||c.res.cmp); log('← '+c.res.s+' '+(STX[c.res.s]||''), c.res.s<300?'ok':'bk'); if(c.after&&c.restore==null) c.after.forEach(t=>log('   '+t,'ps'));
     client.classList.remove('on');
   }
 
@@ -6518,12 +6526,15 @@ const SC_AI=(function(){
   const KA={n:'Key Auth',s:'Agent · Consumer 식별',ic:'key-auth'};
   const PX={n:'AI Proxy Advanced',s:'모델 라우팅 · 폴백',ic:'ai-proxy-advanced'};
   return [
-   {k:'PII 보호',t:'AI PII Sanitizer',d:'프롬프트에 섞인 이름, 전화번호, 이메일, 주민번호 같은 개인정보를 Kong이 LLM에 보내기 전에 마스킹하거나 차단합니다. 앱과 에이전트 코드는 그대로입니다.',
+   {k:'PII 보호',t:'AI PII Sanitizer',d:'프롬프트에 섞인 이름, 전화번호, 이메일, 주민번호 같은 개인정보를 Kong이 LLM에 보내기 전에 마스킹하거나 차단합니다. 응답이 돌아오면 마스킹을 원문으로 되돌린 뒤 앱에 전달합니다.',
     cfg:'ai-sanitizer\n  anonymize         = [general, phone, email, nationalid]\n  sanitization_mode = BOTH   # 요청 · 응답 양방향\n  block_if_detected = false  # 차단 모드 Route는 true',
     pl:[KA,{n:'AI PII Sanitizer',s:'요청 · 응답 양방향',ic:'ai-sanitizer'},PX],up:['LLM'],
     cs:[
      {l:'PII 포함 · 마스킹',req:req('고객 홍길동(010-1234-5678, gildong@acme.co.kr)의 갱신 이슈를 요약해줘'),st:[[0,'pass','support-agent 식별'],[1,'mod','이름 · 전화 · 이메일 3건 마스킹'],[2,'pass','demo-model로 전달']],
-      fwd:'"고객 [PERSON]([PHONE], [EMAIL])의 갱신 이슈를 요약해줘"',up:0,res:{s:200,h:{'Content-Type':'application/json'},b:()=>chat('[PERSON] 고객은 청구 오류와 동기화 지연으로 갱신 위험이 높습니다. 청구 정정과 장애 해결 일정을 먼저 안내하세요.')}},
+      fwd:'"고객 [PERSON]([PHONE], [EMAIL])의 갱신 이슈를 요약해줘"',up:0,restore:1,
+      after:['AI PII Sanitizer · 응답의 [PERSON] · [PHONE] · [EMAIL]을 원문으로 복원해 전달'],
+      res:{s:200,h:{'Content-Type':'application/json'},b:()=>chat('홍길동(010-1234-5678, gildong@acme.co.kr) 고객은 청구 오류와 동기화 지연으로 갱신 위험이 높습니다. 청구 정정과 장애 해결 일정을 먼저 안내하세요.'),
+       k:[['LLM이 만든 원래 응답','[PERSON]([PHONE], [EMAIL]) 고객은 청구 오류와 동기화 지연으로 갱신 위험이 높습니다. 청구 정정과 장애 해결 일정을 먼저 안내하세요.','mk'],['Kong 처리','[PERSON] · [PHONE] · [EMAIL]을 원문으로 복원 → 앱에는 실명 · 전화번호 · 이메일로 전달','rst']]}},
      {l:'차단 모드 · 주민번호',req:req('홍길동 주민번호 900101-1234567로 본인 확인 후 환불 처리해줘'),st:[[0,'pass','support-agent 식별'],[1,'block','주민등록번호 탐지 → 차단']],res:{s:400,h:{'Content-Type':'application/json'},b:()=>({error:{message:'Request blocked: sensitive data (nationalid) detected'}})}},
      {l:'PII 없음',req:req('갱신 위험 고객에게 보낼 사과 메일 초안을 써줘'),st:[[0,'pass','support-agent 식별'],[1,'pass','탐지된 PII 없음'],[2,'pass','demo-model로 전달']],up:0,res:{s:200,h:{'Content-Type':'application/json'},b:()=>chat('안녕하세요, 최근 청구 오류와 서비스 지연으로 불편을 드려 진심으로 사과드립니다. ...')}}
     ]},
