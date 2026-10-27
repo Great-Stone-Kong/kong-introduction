@@ -3555,7 +3555,5 @@
   "partial": "部分",
   "traced": "追跡済",
   "Models · MCP": "Models · MCP",
-  "Tools · APIs": "Tools · APIs",
-  "모든 홉이 한 Gateway 평면을 경유": "すべてのホップが一つのGateway平面を経由",
-  "AI GW만 환경마다 분산 · Event·API는 추적 불가": "AI GWのみ環境ごとに分散 · Event·APIは追跡不可"
+  "Tools · APIs": "Tools · APIs"
 }
