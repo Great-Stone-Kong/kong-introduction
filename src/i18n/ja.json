@@ -3595,7 +3595,6 @@
   "IBM SaaS": "IBM SaaS",
   "배치": "配置",
   "동일 Gateway + 시맨틱·MCP 깊이": "同一Gateway + セマンティック·MCPの深さ",
-  "DataPower 기능(설치 추가 없음)": "DataPower機能（追加インストールなし）",
   "decK · 공식 Terraform · Operator": "decK · 公式Terraform · Operator",
   "공식 TF 없음 · 증분 sync 없음": "公式TFなし · 増分syncなし",
   "IBM API Connect에 적합한 경우": "IBM API Connectが適する場合",
@@ -3671,5 +3670,6 @@
   "AWS·GCP·Azure와 멀티리전 DNS를 제공합니다. Enterprise는 소프트웨어 우선 자체호스팅에 적합합니다.": "AWS·GCP·AzureとマルチリージョンDNSを提供します。Enterpriseはソフトウェア優先のセルフホストに適します。",
   "관리형 SaaS 게이트웨이는 AWS·단일 리전 중심이며, 자체호스팅은 어플라이언스·대형 HA 프로파일이 일반적입니다.": "マネージドSaaSゲートウェイはAWS·単一リージョン中心であり、セルフホストはアプライアンス·大型HAプロファイルが一般的です。",
   "AWS(동일 리전 중심)": "AWS（同一リージョン中心）",
-  "출처: Kong「IBM API Connect vs Kong」공개 비교 페이지, IBM API Connect AI Gateway 공식 문서(10.0.x SaaS), Kong 내부 Competitive Kit 요약(2026). 제품·가격·지원 범위는 시점에 따라 달라지므로 도입 전 최신 문서·견적 확인이 필요합니다. 동일 조건의 공개 성능 벤치는 포함하지 않았습니다.": "出典: Kong「IBM API Connect vs Kong」公開比較ページ、IBM API Connect AI Gateway公式ドキュメント(10.0.x SaaS)、Kong社内Competitive Kit要約(2026)。製品·価格·サポート範囲は時点により異なるため、導入前に最新ドキュメント·見積の確認が必要です。同一条件の公開性能ベンチは含めていません。"
+  "출처: Kong「IBM API Connect vs Kong」공개 비교 페이지, IBM API Connect AI Gateway 공식 문서(10.0.x SaaS), Kong 내부 Competitive Kit 요약(2026). 제품·가격·지원 범위는 시점에 따라 달라지므로 도입 전 최신 문서·견적 확인이 필요합니다. 동일 조건의 공개 성능 벤치는 포함하지 않았습니다.": "出典: Kong「IBM API Connect vs Kong」公開比較ページ、IBM API Connect AI Gateway公式ドキュメント(10.0.x SaaS)、Kong社内Competitive Kit要約(2026)。製品·価格·サポート範囲は時点により異なるため、導入前に最新ドキュメント·見積の確認が必要です。同一条件の公開性能ベンチは含めていません。",
+  "DataPower 기능": "DataPower機能"
 }
