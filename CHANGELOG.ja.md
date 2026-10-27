@@ -8,7 +8,8 @@
 ## 2026.10.27.9737a70
 ### 変更
 
-  - ライセンス > 呼び出し量算定: Stream(TCP/TLS)セッション算定事例を追加
+- AI Gateway > 競合製品との比較 > Kong vs IBM API Connectタブ追加（API7の次）
+- ライセンス > 呼び出し量算定: Stream(TCP/TLS)セッション算定事例を追加
 
 - AI Gateway > 競合製品との比較 > Pure AI Gateway（LiteLLM·Portkey·Bifrost）
   - デプロイ柔軟性 · Throughput/Latency · 反論ブロック

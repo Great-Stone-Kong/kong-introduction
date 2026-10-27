@@ -8,20 +8,10 @@
 ## 2026.10.27.9737a70
 ### 변경
 
-  - 라이선스 > 호출량 산정: Stream(TCP/TLS) 세션 산정 사례 추가
-
-- AI Gateway > 경쟁 제품 비교 > Pure AI Gateway(LiteLLM·Portkey·Bifrost)
-  - 배포 유연성 · Throughput/Latency · 반박 블록
-  - 5열 비교표 (LiteLLM Enterprise 열 제거)
-  - LiteLLM 공급망 사고 유지
-  - Pure AI vs Kong Agent 액션 아키텍처 토글·흐름 애니메이션
-  - Pure: 환경마다 LiteLLM·Portkey·Bifrost 분산 / Kong: Unify
-  - 요약 배지를 사이드 박스 밖으로 이동
-  - 아키텍처를 슬라이드형 2×2 레이어(분산 vs 한 플랫폼)로 재구성
-  - AWS/Azure/GCP/On-prem/Databricks 아이콘을 iconography SVG로 교체
-  - Consumers 제거, Pure GW 간 흐름선, Kong AI/API Gateway 허브 박스
-  - 토글 높이 고정, 흐름 애니 단순화, 사이드 불릿(card li::before) 제거
-  - Kong GW를 레이어 밖 단일 허브로 통합, 사이드 Trace 목업 추가
+- AI Gateway > 경쟁 제품 비교 > Kong vs IBM API Connect 탭 추가 (API7 다음)
+- 라이선스 > 호출량 산정: Stream(TCP/TLS) 세션 산정 사례 추가
+- AI Gateway > 경쟁 제품 비교
+  - 기존 LiteLLM 단일에서 Pure AI Gateway(LiteLLM·Portkey·Bifrost)를 대상으로 변경
 
 ## 2026.10.22.6ad99f11
 ### 변경
