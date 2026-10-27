@@ -13,6 +13,8 @@
   - Five-column comparison table (dropped LiteLLM Enterprise column)
   - Kept the LiteLLM supply-chain incident
   - Pure AI vs Kong agent-action architecture toggle and flow animation
+  - Pure: LiteLLM · Portkey · Bifrost scattered per estate / Kong: Unify
+  - Moved summary badge outside the side panel
 
 ## 2026.10.22.6ad99f11
 ### Changed

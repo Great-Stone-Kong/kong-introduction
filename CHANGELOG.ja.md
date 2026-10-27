@@ -13,6 +13,8 @@
   - 5列比較表（LiteLLM Enterprise列を削除）
   - LiteLLMサプライチェーン事故は維持
   - Pure AI vs Kong Agentアクションのアーキテクチャトグル·フローアニメーション
+  - Pure: エステートごとに LiteLLM·Portkey·Bifrost 分散 / Kong: Unify
+  - 要約バッジをサイドボックス外へ移動
 
 ## 2026.10.22.6ad99f11
 ### 変更
