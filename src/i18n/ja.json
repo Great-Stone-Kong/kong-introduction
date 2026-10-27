@@ -3516,7 +3516,6 @@
   "MCP도 동일 정책": "MCPも同一ポリシー",
   "LiteLLM·Portkey·Bifrost 분산": "LiteLLM・Portkey・Bifrostが分散",
   "4 / 4 hops · Kong으로 Unify · 한 정책 · 한 감사 추적": "4 / 4 hops · KongでUnify · 一つのポリシー · 一つの監査証跡",
-  "Kong은 LiteLLM·Portkey·Bifrost를 한 플랫폼으로 Unify합니다": "KongはLiteLLM・Portkey・Bifrostを一つのプラットフォームにUnifyします",
   "분산 배포": "分散デプロイ",
   "LiteLLM · Portkey · Bifrost — 클라우드·팀마다 다른 AI GW, 제어면 없음": "LiteLLM · Portkey · Bifrost — クラウド・チームごとに別AI GW、制御面なし",
   "Kong Konnect · 1 platform": "Kong Konnect · 1 platform",
@@ -3535,7 +3534,6 @@
   "모든 모델·MCP 트래픽": "すべてのモデル·MCPトラフィック",
   "도구·서비스 API 호출": "ツール·サービスAPI呼び出し",
   "제어면 없음": "制御面なし",
-  "Pure AI Gateway는 환경마다 조각나고, AI 트래픽에서 멈춥니다": "Pure AI Gatewayは環境ごとに断片化し、AIトラフィックで止まります",
   "환경마다 다른 AI GW": "環境ごとに異なるAI GW",
   "2 / 4 hops · AI GW는 환경마다 조각남": "2 / 4 hops · AI GWは環境ごとに断片化",
   "환경마다 AI GW 분산": "環境ごとにAI GW分散",
@@ -3569,5 +3567,9 @@
   "40ms": "40ms",
   "182ms": "182ms",
   "180ms": "180ms",
-  "—": "—"
+  "—": "—",
+  "AI Gateway만으로는 환경마다 파편화를 발생시킵니다.": "AI Gatewayだけでは環境ごとに断片化が発生します。",
+  "Kong은 AI, API, MCP를 한 플랫폼에서 통합 관리합니다": "KongはAI、API、MCPを一つのプラットフォームで統合管理します",
+  "agent.action": "agent.action",
+  "no control plane": "制御面なし"
 }
