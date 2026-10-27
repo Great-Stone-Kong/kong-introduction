@@ -8,6 +8,8 @@
 ## 2026.10.27.9737a70
 ### 변경
 
+  - 라이선스 > 호출량 산정: Stream(TCP/TLS) 세션 산정 사례 추가
+
 - AI Gateway > 경쟁 제품 비교 > Pure AI Gateway(LiteLLM·Portkey·Bifrost)
   - 배포 유연성 · Throughput/Latency · 반박 블록
   - 5열 비교표 (LiteLLM Enterprise 열 제거)

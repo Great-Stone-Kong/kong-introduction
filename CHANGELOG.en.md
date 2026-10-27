@@ -8,6 +8,8 @@
 ## 2026.10.27.9737a70
 ### Changed
 
+  - Licensing > request counting: added Stream (TCP/TLS) session case
+
 - AI Gateway > Competitive comparison > Pure AI Gateway (LiteLLM · Portkey · Bifrost)
   - Deployment flexibility · Throughput/Latency · rebuttal blocks
   - Five-column comparison table (dropped LiteLLM Enterprise column)
