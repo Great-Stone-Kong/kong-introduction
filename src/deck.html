@@ -2601,20 +2601,20 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
     </div>
     <div class="stat big">
       <span class="lbl">Throughput · 처리량</span>
-      <b><i data-from="0" data-to="50000" data-prefix="&gt;" data-dur="2200">&gt;50,000</i><small>TPS / 노드</small></b>
-      <span class="ttl">레거시의 25배</span>
+      <b><i data-from="0" data-to="151800" data-dur="2200">151,800</i><small>RPS</small></b>
+      <span class="ttl">최대 요청 처리량</span>
       <div class="bars">
-        <div class="bar"><em>레거시</em><div class="trk"><div class="fil gray" style="--w:4%"></div></div><u>&lt; 2,000</u></div>
-        <div class="bar"><em>Kong</em><div class="trk"><div class="fil" style="--w:100%"></div></div><u>&gt; 50,000</u></div>
+        <div class="bar"><em>Tyk</em><div class="trk"><div class="fil gray" style="--w:51%"></div></div><u>76,800</u></div>
+        <div class="bar"><em>Kong</em><div class="trk"><div class="fil" style="--w:100%"></div></div><u>151,800</u></div>
       </div>
     </div>
     <div class="stat big">
       <span class="lbl">Latency · 지연 시간</span>
-      <b><i data-from="50" data-to="1" data-prefix="~" data-suffix="ms" data-dur="2200">~1ms</i></b>
-      <span class="ttl">지연은 1/50로</span>
+      <b><i data-from="3" data-to="0.55" data-dec="2" data-suffix="ms" data-dur="2200">0.55ms</i></b>
+      <span class="ttl">동일 부하 P95 지연</span>
       <div class="bars">
-        <div class="bar"><em>레거시</em><div class="trk"><div class="fil gray" style="--w:100%"></div></div><u>50ms+</u></div>
-        <div class="bar"><em>Kong</em><div class="trk"><div class="fil" style="--w:2%"></div></div><u>~1ms</u></div>
+        <div class="bar"><em>Tyk</em><div class="trk"><div class="fil gray" style="--w:100%"></div></div><u>2.96ms</u></div>
+        <div class="bar"><em>Kong</em><div class="trk"><div class="fil" style="--w:19%"></div></div><u>0.55ms</u></div>
       </div>
     </div>
     <div class="stat big">
@@ -2624,7 +2624,7 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
       <span class="desc">단일 바이너리로 온프레미스, 멀티클라우드, 쿠버네티스, 서버리스 어디든. 수평·수직 확장이 자유롭습니다.</span>
     </div>
   </div>
-  <p class="note">* GigaOm API Management Benchmark 2022 기준. 환경과 구성에 따라 달라질 수 있습니다.</p>
+  <p class="note">* GigaOm Benchmark · Kong API Gateway (2025) 기준. Basic Proxy. 환경·구성에 따라 달라질 수 있습니다.</p>
   <div class="gblock">
     <div class="ghead">
       <div>
@@ -2897,16 +2897,16 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
 
 <section class="sec" id="a-perf" data-title="성능 · 확장성">
   <div class="eyebrow">Performance</div>
-  <h2>레거시 대비 25배 처리량과 1/50 수준의 지연</h2>
+  <h2>최대 151,800 RPS · 동일 부하 P95 0.55ms</h2>
   <div class="grid g2 perf2 rv">
-    <div class="stat big"><span class="lbl">Throughput</span><b><i data-from="0" data-to="50000" data-prefix="&gt;">&gt;50,000</i><small>TPS</small></b><span class="ttl">노드당 초당 트랜잭션</span>
-      <div class="bars"><div class="bar"><em>레거시</em><div class="trk"><div class="fil gray" style="--w:4%"></div></div><u>&lt; 2,000</u></div><div class="bar"><em>Kong</em><div class="trk"><div class="fil" style="--w:100%"></div></div><u>&gt; 50,000</u></div></div></div>
-    <div class="stat big"><span class="lbl">Latency</span><b><i data-from="50" data-to="1" data-prefix="~">~1</i><small>ms</small></b><span class="ttl">게이트웨이 처리 지연</span>
-      <div class="bars"><div class="bar"><em>레거시</em><div class="trk"><div class="fil gray" style="--w:100%"></div></div><u>50ms+</u></div><div class="bar"><em>Kong</em><div class="trk"><div class="fil" style="--w:2%"></div></div><u>~1ms</u></div></div></div>
+    <div class="stat big"><span class="lbl">Throughput</span><b><i data-from="0" data-to="151800">151,800</i><small>RPS</small></b><span class="ttl">최대 요청 처리량 (Basic Proxy)</span>
+      <div class="bars"><div class="bar"><em>Tyk</em><div class="trk"><div class="fil gray" style="--w:51%"></div></div><u>76,800</u></div><div class="bar"><em>Kong</em><div class="trk"><div class="fil" style="--w:100%"></div></div><u>151,800</u></div></div></div>
+    <div class="stat big"><span class="lbl">Latency</span><b><i data-from="3" data-to="0.55" data-dec="2">0.55</i><small>ms</small></b><span class="ttl">동일 부하(76.8K RPS) P95 지연</span>
+      <div class="bars"><div class="bar"><em>Tyk</em><div class="trk"><div class="fil gray" style="--w:100%"></div></div><u>2.96ms</u></div><div class="bar"><em>Kong</em><div class="trk"><div class="fil" style="--w:19%"></div></div><u>0.55ms</u></div></div></div>
     <div class="stat big"><span class="lbl">Footprint</span><b><i data-from="0" data-to="20">20</i><small>MB</small></b><span class="ttl">초경량 런타임</span><span class="desc">작은 메모리로 노드를 빠르게 늘리고 줄여 수평 · 수직 확장이 쉽습니다.</span></div>
     <div class="stat big"><span class="lbl">Automation</span><b><i data-from="0" data-to="100">100</i><small>%</small></b><span class="ttl">선언적 구성</span><span class="desc">모든 설정을 코드로 관리하고 CI/CD 파이프라인으로 배포합니다.</span></div>
   </div>
-  <p class="note">출처: GigaOm API Management Benchmark 2022. 배수는 위 수치 비교에 따른 개략값이며 환경에 따라 달라질 수 있습니다.</p>
+  <p class="note">출처: GigaOm Benchmark · Kong API Gateway (2025). Basic Proxy 기준. Key Auth 시 Kong 118,082 RPS. 환경·구성에 따라 달라질 수 있습니다.</p>
 </section>
 
 <section class="sec" id="a-feat" data-title="핵심 기능">
