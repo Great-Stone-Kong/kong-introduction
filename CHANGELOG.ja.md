@@ -13,7 +13,7 @@
   - 5列比較表（LiteLLM Enterprise列を削除）
   - LiteLLMサプライチェーン事故は維持
   - Pure AI vs Kong Agentアクションのアーキテクチャトグル·フローアニメーション
-  - Pure: エステートごとに LiteLLM·Portkey·Bifrost 分散 / Kong: Unify
+  - Pure: 環境ごとに LiteLLM·Portkey·Bifrost 分散 / Kong: Unify
   - 要約バッジをサイドボックス外へ移動
   - アーキテクチャをスライド型2×2レイヤー（分散 vs 1プラットフォーム）に再構成
   - AWS/Azure/GCP/On-prem/Databricksアイコンをiconography SVGへ置換

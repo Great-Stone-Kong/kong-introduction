@@ -13,7 +13,7 @@
   - 5열 비교표 (LiteLLM Enterprise 열 제거)
   - LiteLLM 공급망 사고 유지
   - Pure AI vs Kong Agent 액션 아키텍처 토글·흐름 애니메이션
-  - Pure: 에스테이마다 LiteLLM·Portkey·Bifrost 분산 / Kong: Unify
+  - Pure: 환경마다 LiteLLM·Portkey·Bifrost 분산 / Kong: Unify
   - 요약 배지를 사이드 박스 밖으로 이동
   - 아키텍처를 슬라이드형 2×2 레이어(분산 vs 한 플랫폼)로 재구성
   - AWS/Azure/GCP/On-prem/Databricks 아이콘을 iconography SVG로 교체

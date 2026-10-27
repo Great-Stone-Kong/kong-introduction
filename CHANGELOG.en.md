@@ -13,7 +13,7 @@
   - Five-column comparison table (dropped LiteLLM Enterprise column)
   - Kept the LiteLLM supply-chain incident
   - Pure AI vs Kong agent-action architecture toggle and flow animation
-  - Pure: LiteLLM · Portkey · Bifrost scattered per estate / Kong: Unify
+  - Pure: LiteLLM · Portkey · Bifrost scattered per environment / Kong: Unify
   - Moved summary badge outside the side panel
   - Rebuilt architecture as a 2×2 layer board (scatter vs one platform)
   - Swapped AWS/Azure/GCP/On-prem/Databricks icons to iconography SVGs
