@@ -5,6 +5,14 @@
 
 ---
 
+## 2026.10.27.9737a70
+### 변경
+
+- AI Gateway > 경쟁 제품 비교 > Pure AI Gateway(LiteLLM·Portkey·Bifrost)
+  - 배포 유연성 · Throughput/Latency · 반박 블록
+  - 5열 비교표 (LiteLLM Enterprise 열 제거)
+  - LiteLLM 공급망 사고 유지
+
 ## 2026.10.22.6ad99f11
 ### 변경
 

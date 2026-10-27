@@ -5,6 +5,14 @@
 
 ---
 
+## 2026.10.27.9737a70
+### 変更
+
+- AI Gateway > 競合製品との比較 > Pure AI Gateway（LiteLLM·Portkey·Bifrost）
+  - デプロイ柔軟性 · Throughput/Latency · 反論ブロック
+  - 5列比較表（LiteLLM Enterprise列を削除）
+  - LiteLLMサプライチェーン事故は維持
+
 ## 2026.10.22.6ad99f11
 ### 変更
 

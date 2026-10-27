@@ -924,10 +924,6 @@
       "Mapping regulatory requirements to <em>Kong controls</em>",
       "規制要件と<em>Kong 統制項目</em>の対応"
     ],
-    "범주 · 지원 여부. Kong AI Gateway는 API·LLM·MCP·에이전트 트래픽을 하나의 거버넌스로 묶는 엔터프라이즈 AI Connectivity 플랫폼입니다. LiteLLM은 LLM 호출 라우팅·프록시에 특화된 오픈소스/상용 게이트웨이입니다. 아래 표는 동일 “AI Gateway” 기능축으로 지원 여부를 비교합니다.": [
-      "<b>Category · support.</b> Kong AI Gateway is an enterprise AI Connectivity platform that unifies governance for API, LLM, MCP, and agent traffic. LiteLLM is an open-source/commercial gateway focused on LLM call routing and proxying. The table below compares support along the same “AI Gateway” capability axes.",
-      "<b>カテゴリ · サポート有無。</b> Kong AI Gatewayは、API·LLM·MCP·エージェントのトラフィックを一つのガバナンスで束ねるエンタープライズAI Connectivityプラットフォームです。LiteLLMはLLM呼び出しのルーティング·プロキシに特化したオープンソース/商用ゲートウェイです。下表は同一の「AI Gateway」機能軸でサポート有無を比較します。"
-    ],
     "범주 · 지원 여부. Kong은 안정성·보안·글로벌 기술 협력(NVIDIA 등)을 갖춘 엔터프라이즈 AI Connectivity 플랫폼입니다. API7(APISIX 상용)은 Kong과 유사한 엔티티 모델의 오픈소스·상용 게이트웨이이며, 조직 규모·레퍼런스·AI Agent 깊이에서 검토가 필요합니다. 아래 표는 기능 지원 여부를 동일 축으로 비교합니다.": [
       "<b>Category · support.</b> Kong is an enterprise AI Connectivity platform with stability, security, and global technology partnerships (including NVIDIA). API7 (commercial APISIX) is an open-source/commercial gateway with a Kong-like entity model; organization scale, references, and AI Agent depth warrant review. The table below compares feature support on the same axes.",
       "<b>カテゴリ · サポート有無。</b> Kongは安定性·セキュリティ·グローバル技術連携（NVIDIAなど）を備えたエンタープライズAI Connectivityプラットフォームです。API7（APISIX商用）はKongに似たエンティティモデルのオープンソース·商用ゲートウェイであり、組織規模·リファレンス·AI Agentの深さで検討が必要です。下表は機能サポート有無を同一軸で比較します。"
@@ -955,6 +951,10 @@
     "API7 동일 엔티티 모델을 거의 그대로 따르며 따라잡기 중심입니다. 내부 로직 이해 부족이 이슈화된 예: APISIX #3207에서 Kong 해결 방식을 질문.": [
       "<b>API7</b> Largely follows the same entity model in a catch-up posture. Example where limited internal-logic understanding surfaced: <a href=\"https://github.com/apache/apisix/issues/3207\" target=\"_blank\" rel=\"noopener noreferrer\">APISIX #3207</a> asking how Kong solved it.",
       "<b>API7</b> 同一エンティティモデルをほぼそのまま踏襲するキャッチアップ中心です。内部ロジック理解不足が問題化した例: <a href=\"https://github.com/apache/apisix/issues/3207\" target=\"_blank\" rel=\"noopener noreferrer\">APISIX #3207</a>でKongの解決方法を質問。"
+    ],
+    "범주 · 지원 여부. LiteLLM·Portkey·Bifrost는 LLM 전용/AI-native 게이트웨이입니다. Kong AI Connectivity는 API·LLM·MCP·Agent·Event를 하나의 거버넌스로 묶습니다. 아래 표는 동일 기능축으로 지원 여부를 비교합니다.": [
+      "<b>Category · support.</b> LiteLLM, Portkey, and Bifrost are LLM-focused / AI-native gateways. Kong AI Connectivity unifies governance for API, LLM, MCP, Agent, and Event traffic. The table below compares support on the same capability axes.",
+      "<b>カテゴリ · サポート有無。</b> LiteLLM·Portkey·BifrostはLLM特化/AI-nativeゲートウェイです。Kong AI ConnectivityはAPI·LLM·MCP·Agent·Eventを一つのガバナンスで束ねます。下表は同一の機能軸でサポート有無を比較します。"
     ]
   },
   "F": [
@@ -988,7 +988,7 @@
     "같은 /orders 경로라도 x-region 헤더 값에 따라 다른 Upstream으로 보냅니다. 헤더가 없으면 Catch-all Route가 요청을 받아 Request Termination으로 400을 돌려줍니다.",
     "Keycloak이 발급한 Bearer 토큰을 검증하고, realm_access.roles에 api-access Role이 있을 때만 통과시킵니다. 토큰의 azp 클레임으로 Kong Consumer를 매핑합니다.",
     "요청이 API 계약에 맞는지 Kong에서 먼저 검사합니다. Content-Type, Body 스키마, Query · Header 파라미터가 하나라도 어긋나면 백엔드에 닿기 전에 400을 돌려줍니다.",
-    "성능 비교의 “859% 빠름 · 86% 낮은 지연”은 Kong 자체 벤치마크입니다. LiteLLM은 이후 Rust 코어를 도입해 성능을 개선 중이므로 벤더 벤치마크는 참고용으로 해석하세요.",
+    "처리량·꼬리 지연 수치는 Kong 자체 벤치마크입니다. Bifrost는 동일 조건 공개 벤치가 없습니다. LiteLLM은 Rust 코어 도입 이후 성능이 달라질 수 있으므로 참고용으로 해석하세요.",
     "API Key로 Consumer를 식별하고 등급별로 다른 한도를 적용합니다. Gold는 30초에 10회, Standard는 30초에 5회까지 허용하고 넘으면 429를 돌려줍니다.",
     "프롬프트의 의미를 보고 가장 알맞은 모델로 보냅니다. 운영 · 지원 질문은 경량 모델로, 창작 · 마케팅 요청은 창작에 강한 모델로 자동 분기해 품질과 비용을 함께 맞춥니다.",
     "완전 자체관리·에어갭/망분리, API+AI를 하나의 거버넌스로 통합, 금융·규제 환경, 멀티리전 하이브리드, IaC/GitOps 형상관리가 필요하고 통합 플랫폼을 직접 운영",

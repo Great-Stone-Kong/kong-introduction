@@ -5,6 +5,14 @@
 
 ---
 
+## 2026.10.27.9737a70
+### Changed
+
+- AI Gateway > Competitive comparison > Pure AI Gateway (LiteLLM · Portkey · Bifrost)
+  - Deployment flexibility · Throughput/Latency · rebuttal blocks
+  - Five-column comparison table (dropped LiteLLM Enterprise column)
+  - Kept the LiteLLM supply-chain incident
+
 ## 2026.10.22.6ad99f11
 ### Changed
 
