@@ -3578,6 +3578,6 @@
   "Stream · TCP/TLS": "Stream · TCP/TLS",
   "session": "session",
   "Upstream": "Upstream",
-  "세션 종료": "session end",
-  "Client": "Client"
+  "Client": "Client",
+  "세션 종료 +1": "session end +1"
 }
