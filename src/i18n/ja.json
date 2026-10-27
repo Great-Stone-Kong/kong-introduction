@@ -3535,5 +3535,10 @@
   "4 / 4 hops · Kong 한 플랫폼으로 Unify": "4 / 4 hops · Kong一つのプラットフォームでUnify",
   "Managed Kafka": "Managed Kafka",
   "Pub/Sub": "Pub/Sub",
-  "agents": "agents"
+  "agents": "agents",
+  "AI GW 분산": "AI GW分散",
+  "에스테이마다": "エステートごと",
+  "Event → AI GW": "Event → AI GW",
+  "모든 모델·MCP 트래픽": "すべてのモデル·MCPトラフィック",
+  "도구·서비스 API 호출": "ツール·サービスAPI呼び出し"
 }

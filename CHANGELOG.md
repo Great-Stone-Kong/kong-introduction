@@ -17,6 +17,7 @@
   - 요약 배지를 사이드 박스 밖으로 이동
   - 아키텍처를 슬라이드형 2×2 레이어(분산 vs 한 플랫폼)로 재구성
   - AWS/Azure/GCP/On-prem/Databricks 아이콘을 iconography SVG로 교체
+  - Consumers 제거, Pure GW 간 흐름선, Kong AI/API Gateway 허브 박스
 
 ## 2026.10.22.6ad99f11
 ### 변경

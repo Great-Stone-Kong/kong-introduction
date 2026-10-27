@@ -17,6 +17,7 @@
   - Moved summary badge outside the side panel
   - Rebuilt architecture as a 2×2 layer board (scatter vs one platform)
   - Swapped AWS/Azure/GCP/On-prem/Databricks icons to iconography SVGs
+  - Dropped Consumers; Pure GW flow lines; Kong AI/API Gateway hub boxes
 
 ## 2026.10.22.6ad99f11
 ### Changed
