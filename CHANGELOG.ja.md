@@ -19,6 +19,7 @@
   - AWS/Azure/GCP/On-prem/Databricksアイコンをiconography SVGへ置換
   - Consumers削除、Pure GW間フロー線、Kong AI/API Gatewayハブボックス
   - トグル高さ固定、フロー簡素化、サイドの箇条書き点を除去
+  - レイヤー外の単一Kong GWハブ、サイドにTraceモックを追加
 
 ## 2026.10.22.6ad99f11
 ### 変更
