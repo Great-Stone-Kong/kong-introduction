@@ -638,10 +638,11 @@ h1.light{font-weight:400}h1.light em.gw{font-weight:800}
 @media (max-width:900px){.dm-head,.dm-io{grid-template-columns:1fr}.dm-stage{grid-template-columns:1fr;gap:18px;background-image:none}}
 
 .perf2{gap:20px}
-.perf2 .stat.big b{font-size:clamp(48px,6vw,80px);white-space:nowrap}
-.perf2 .stat.big b small{font-size:20px;margin-left:8px;color:var(--g300);font-weight:700}
-.perf2 .bars{margin-top:18px}
-.perf2 .bar{grid-template-columns:60px 1fr 80px;font-size:13px}
+.perf2 .stat.big{min-height:0}
+.perf2 .stat.big b{font-size:clamp(40px,5vw,68px);white-space:nowrap}
+.perf2 .stat.big b small{font-size:18px;margin-left:8px;color:var(--g300);font-weight:700}
+.perf2 .bars{margin-top:14px;gap:6px}
+.perf2 .bar{grid-template-columns:78px 1fr 72px;font-size:12px;gap:8px}
 .pf-out.o1::before{top:calc(-1px - var(--lh,22px));height:var(--lh,22px)}
 
 .mockrow{margin-top:24px;gap:20px;align-items:stretch}
@@ -2604,8 +2605,12 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
       <b><i data-from="0" data-to="151800" data-dur="2200">151,800</i><small>RPS</small></b>
       <span class="ttl">최대 요청 처리량</span>
       <div class="bars">
-        <div class="bar"><em>Tyk</em><div class="trk"><div class="fil gray" style="--w:51%"></div></div><u>76,800</u></div>
         <div class="bar"><em>Kong</em><div class="trk"><div class="fil" style="--w:100%"></div></div><u>151,800</u></div>
+        <div class="bar"><em>Tyk</em><div class="trk"><div class="fil gray" style="--w:51%"></div></div><u>76,800</u></div>
+        <div class="bar"><em>AWS</em><div class="trk"><div class="fil gray" style="--w:34%"></div></div><u>52,030</u></div>
+        <div class="bar"><em>MuleSoft</em><div class="trk"><div class="fil gray" style="--w:31%"></div></div><u>46,300</u></div>
+        <div class="bar"><em>Azure SH</em><div class="trk"><div class="fil gray" style="--w:25%"></div></div><u>38,420</u></div>
+        <div class="bar"><em>Azure SM</em><div class="trk"><div class="fil gray" style="--w:16%"></div></div><u>24,300</u></div>
       </div>
     </div>
     <div class="stat big">
@@ -2613,8 +2618,11 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
       <b><i data-from="3" data-to="0.55" data-dec="2" data-suffix="ms" data-dur="2200">0.55ms</i></b>
       <span class="ttl">동일 부하 P95 지연</span>
       <div class="bars">
-        <div class="bar"><em>Tyk</em><div class="trk"><div class="fil gray" style="--w:100%"></div></div><u>2.96ms</u></div>
-        <div class="bar"><em>Kong</em><div class="trk"><div class="fil" style="--w:19%"></div></div><u>0.55ms</u></div>
+        <div class="bar"><em>Kong</em><div class="trk"><div class="fil" style="--w:3%"></div></div><u>0.55ms</u></div>
+        <div class="bar"><em>Tyk</em><div class="trk"><div class="fil gray" style="--w:16%"></div></div><u>2.96ms</u></div>
+        <div class="bar"><em>AWS</em><div class="trk"><div class="fil gray" style="--w:42%"></div></div><u>7.69ms</u></div>
+        <div class="bar"><em>MuleSoft</em><div class="trk"><div class="fil gray" style="--w:45%"></div></div><u>8.31ms</u></div>
+        <div class="bar"><em>Azure SH</em><div class="trk"><div class="fil gray" style="--w:100%"></div></div><u>18.30ms</u></div>
       </div>
     </div>
     <div class="stat big">
@@ -2624,7 +2632,7 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
       <span class="desc">단일 바이너리로 온프레미스, 멀티클라우드, 쿠버네티스, 서버리스 어디든. 수평·수직 확장이 자유롭습니다.</span>
     </div>
   </div>
-  <p class="note">* GigaOm Benchmark · Kong API Gateway (2025) 기준. Basic Proxy. 환경·구성에 따라 달라질 수 있습니다.</p>
+  <p class="note">* GigaOm Benchmark · Kong API Gateway (2025) 기준. Basic Proxy. AWS는 50K rate limit, Azure SH/SM은 Self-Hosted / Self-Managed. 환경·구성에 따라 달라질 수 있습니다.</p>
   <div class="gblock">
     <div class="ghead">
       <div>
@@ -2900,13 +2908,44 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
   <h2>최대 151,800 RPS · 동일 부하 P95 0.55ms</h2>
   <div class="grid g2 perf2 rv">
     <div class="stat big"><span class="lbl">Throughput</span><b><i data-from="0" data-to="151800">151,800</i><small>RPS</small></b><span class="ttl">최대 요청 처리량 (Basic Proxy)</span>
-      <div class="bars"><div class="bar"><em>Tyk</em><div class="trk"><div class="fil gray" style="--w:51%"></div></div><u>76,800</u></div><div class="bar"><em>Kong</em><div class="trk"><div class="fil" style="--w:100%"></div></div><u>151,800</u></div></div></div>
-    <div class="stat big"><span class="lbl">Latency</span><b><i data-from="3" data-to="0.55" data-dec="2">0.55</i><small>ms</small></b><span class="ttl">동일 부하(76.8K RPS) P95 지연</span>
-      <div class="bars"><div class="bar"><em>Tyk</em><div class="trk"><div class="fil gray" style="--w:100%"></div></div><u>2.96ms</u></div><div class="bar"><em>Kong</em><div class="trk"><div class="fil" style="--w:19%"></div></div><u>0.55ms</u></div></div></div>
+      <div class="bars">
+        <div class="bar"><em>Kong</em><div class="trk"><div class="fil" style="--w:100%"></div></div><u>151,800</u></div>
+        <div class="bar"><em>Tyk</em><div class="trk"><div class="fil gray" style="--w:51%"></div></div><u>76,800</u></div>
+        <div class="bar"><em>AWS</em><div class="trk"><div class="fil gray" style="--w:34%"></div></div><u>52,030</u></div>
+        <div class="bar"><em>MuleSoft</em><div class="trk"><div class="fil gray" style="--w:31%"></div></div><u>46,300</u></div>
+        <div class="bar"><em>Azure SH</em><div class="trk"><div class="fil gray" style="--w:25%"></div></div><u>38,420</u></div>
+        <div class="bar"><em>Azure SM</em><div class="trk"><div class="fil gray" style="--w:16%"></div></div><u>24,300</u></div>
+      </div></div>
+    <div class="stat big"><span class="lbl">Latency @ Max</span><b><i data-from="30" data-to="4.92" data-dec="2">4.92</i><small>ms</small></b><span class="ttl">최대 처리량 시 P95 지연</span>
+      <div class="bars">
+        <div class="bar"><em>Kong</em><div class="trk"><div class="fil" style="--w:17%"></div></div><u>4.92ms</u></div>
+        <div class="bar"><em>Tyk</em><div class="trk"><div class="fil gray" style="--w:10%"></div></div><u>2.96ms</u></div>
+        <div class="bar"><em>AWS</em><div class="trk"><div class="fil gray" style="--w:27%"></div></div><u>7.69ms</u></div>
+        <div class="bar"><em>MuleSoft</em><div class="trk"><div class="fil gray" style="--w:29%"></div></div><u>8.31ms</u></div>
+        <div class="bar"><em>Azure SH</em><div class="trk"><div class="fil gray" style="--w:65%"></div></div><u>18.30ms</u></div>
+        <div class="bar"><em>Azure SM</em><div class="trk"><div class="fil gray" style="--w:100%"></div></div><u>28.20ms</u></div>
+      </div></div>
+    <div class="stat big"><span class="lbl">Normalized Latency</span><b><i data-from="3" data-to="0.55" data-dec="2">0.55</i><small>ms</small></b><span class="ttl">동일 부하(76.8K RPS) P95 지연</span>
+      <div class="bars">
+        <div class="bar"><em>Kong</em><div class="trk"><div class="fil" style="--w:3%"></div></div><u>0.55ms</u></div>
+        <div class="bar"><em>Tyk</em><div class="trk"><div class="fil gray" style="--w:16%"></div></div><u>2.96ms</u></div>
+        <div class="bar"><em>AWS</em><div class="trk"><div class="fil gray" style="--w:42%"></div></div><u>7.69ms</u></div>
+        <div class="bar"><em>MuleSoft</em><div class="trk"><div class="fil gray" style="--w:45%"></div></div><u>8.31ms</u></div>
+        <div class="bar"><em>Azure SH</em><div class="trk"><div class="fil gray" style="--w:100%"></div></div><u>18.30ms</u></div>
+      </div></div>
+    <div class="stat big"><span class="lbl">Key Auth</span><b><i data-from="0" data-to="118082">118,082</i><small>RPS</small></b><span class="ttl">Key Authentication 적용 시 처리량</span>
+      <div class="bars">
+        <div class="bar"><em>Kong</em><div class="trk"><div class="fil" style="--w:100%"></div></div><u>118,082</u></div>
+        <div class="bar"><em>AWS</em><div class="trk"><div class="fil gray" style="--w:44%"></div></div><u>52,030</u></div>
+        <div class="bar"><em>Tyk</em><div class="trk"><div class="fil gray" style="--w:42%"></div></div><u>49,990</u></div>
+        <div class="bar"><em>Azure SH</em><div class="trk"><div class="fil gray" style="--w:33%"></div></div><u>38,400</u></div>
+        <div class="bar"><em>MuleSoft</em><div class="trk"><div class="fil gray" style="--w:32%"></div></div><u>38,200</u></div>
+        <div class="bar"><em>Azure SM</em><div class="trk"><div class="fil gray" style="--w:21%"></div></div><u>24,300</u></div>
+      </div></div>
     <div class="stat big"><span class="lbl">Footprint</span><b><i data-from="0" data-to="20">20</i><small>MB</small></b><span class="ttl">초경량 런타임</span><span class="desc">작은 메모리로 노드를 빠르게 늘리고 줄여 수평 · 수직 확장이 쉽습니다.</span></div>
     <div class="stat big"><span class="lbl">Automation</span><b><i data-from="0" data-to="100">100</i><small>%</small></b><span class="ttl">선언적 구성</span><span class="desc">모든 설정을 코드로 관리하고 CI/CD 파이프라인으로 배포합니다.</span></div>
   </div>
-  <p class="note">출처: GigaOm Benchmark · Kong API Gateway (2025). Basic Proxy 기준. Key Auth 시 Kong 118,082 RPS. 환경·구성에 따라 달라질 수 있습니다.</p>
+  <p class="note">출처: GigaOm Benchmark · Kong API Gateway (2025). AWS는 API Gateway(50K rate limit), Azure SH는 Self-Hosted, Azure SM은 Self-Managed(24K rate limit). 정규화 지연은 최근접 경쟁사 처리량(76.8K RPS)에 Kong을 맞춘 값. 환경·구성에 따라 달라질 수 있습니다.</p>
 </section>
 
 <section class="sec" id="a-feat" data-title="핵심 기능">

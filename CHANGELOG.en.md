@@ -11,6 +11,7 @@
 - AI Gateway > Competitive comparison > Kong vs IBM API Connect tab (after API7)
 - AI Gateway > Competitive comparison > IBM copy: report tone (no em dash / conversational phrasing)
 - API Gateway > Performance: update to GigaOm Benchmark 2025 (151,800 RPS · P95 0.55ms)
+- API Gateway > Performance: expand comparison cards (Throughput · Latency@Max · Normalized · Key Auth) vs Tyk · AWS · MuleSoft · Azure
 - Licensing > request counting: added Stream (TCP/TLS) session case
 
 - AI Gateway > Competitive comparison > Pure AI Gateway (LiteLLM · Portkey · Bifrost)

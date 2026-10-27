@@ -11,6 +11,7 @@
 - AI Gateway > 競合製品との比較 > Kong vs IBM API Connectタブ追加（API7の次）
 - AI Gateway > 競合製品との比較 > IBM項目: 報告書調の文言整理（em dash・口語除去）
 - API Gateway > 性能 · 拡張性: GigaOm Benchmark 2025数値に更新（151,800 RPS · P95 0.55ms）
+- API Gateway > 性能 · 拡張性: 比較カード拡大（Throughput · Latency@Max · Normalized · Key Auth）と Tyk·AWS·MuleSoft·Azure 比較
 - ライセンス > 呼び出し量算定: Stream(TCP/TLS)セッション算定事例を追加
 
 - AI Gateway > 競合製品との比較 > Pure AI Gateway（LiteLLM·Portkey·Bifrost）
