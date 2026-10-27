@@ -3540,5 +3540,7 @@
   "에스테이마다": "Per estate",
   "Event → AI GW": "Event → AI GW",
   "모든 모델·MCP 트래픽": "All model · MCP traffic",
-  "도구·서비스 API 호출": "Tool · service API calls"
+  "도구·서비스 API 호출": "Tool · service API calls",
+  "제어면 없음": "No control plane",
+  "에스테이마다 AI GW 분산": "AI GW scattered per estate"
 }

@@ -18,6 +18,7 @@
   - アーキテクチャをスライド型2×2レイヤー（分散 vs 1プラットフォーム）に再構成
   - AWS/Azure/GCP/On-prem/Databricksアイコンをiconography SVGへ置換
   - Consumers削除、Pure GW間フロー線、Kong AI/API Gatewayハブボックス
+  - トグル高さ固定、フロー簡素化、サイドの箇条書き点を除去
 
 ## 2026.10.22.6ad99f11
 ### 変更
