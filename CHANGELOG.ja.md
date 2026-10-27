@@ -12,6 +12,7 @@
   - デプロイ柔軟性 · Throughput/Latency · 反論ブロック
   - 5列比較表（LiteLLM Enterprise列を削除）
   - LiteLLMサプライチェーン事故は維持
+  - Pure AI vs Kong Agentアクションのアーキテクチャトグル·フローアニメーション
 
 ## 2026.10.22.6ad99f11
 ### 変更

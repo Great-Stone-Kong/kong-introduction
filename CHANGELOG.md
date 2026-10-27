@@ -12,6 +12,7 @@
   - 배포 유연성 · Throughput/Latency · 반박 블록
   - 5열 비교표 (LiteLLM Enterprise 열 제거)
   - LiteLLM 공급망 사고 유지
+  - Pure AI vs Kong Agent 액션 아키텍처 토글·흐름 애니메이션
 
 ## 2026.10.22.6ad99f11
 ### 변경

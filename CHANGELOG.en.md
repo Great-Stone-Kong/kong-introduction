@@ -12,6 +12,7 @@
   - Deployment flexibility · Throughput/Latency · rebuttal blocks
   - Five-column comparison table (dropped LiteLLM Enterprise column)
   - Kept the LiteLLM supply-chain incident
+  - Pure AI vs Kong agent-action architecture toggle and flow animation
 
 ## 2026.10.22.6ad99f11
 ### Changed
