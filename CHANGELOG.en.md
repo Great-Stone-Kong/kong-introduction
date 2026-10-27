@@ -9,6 +9,7 @@
 ### Changed
 
 - AI Gateway > Competitive comparison > Kong vs IBM API Connect tab (after API7)
+- AI Gateway > Competitive comparison > IBM copy: report tone (no em dash / conversational phrasing)
 - Licensing > request counting: added Stream (TCP/TLS) session case
 
 - AI Gateway > Competitive comparison > Pure AI Gateway (LiteLLM · Portkey · Bifrost)

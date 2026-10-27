@@ -9,6 +9,7 @@
 ### 변경
 
 - AI Gateway > 경쟁 제품 비교 > Kong vs IBM API Connect 탭 추가 (API7 다음)
+- AI Gateway > 경쟁 제품 비교 > IBM 항목: 보고체 문장 정리 (em dash·대화체 제거)
 - 라이선스 > 호출량 산정: Stream(TCP/TLS) 세션 산정 사례 추가
 - AI Gateway > 경쟁 제품 비교
   - 기존 LiteLLM 단일에서 Pure AI Gateway(LiteLLM·Portkey·Bifrost)를 대상으로 변경
