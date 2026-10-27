@@ -3520,5 +3520,20 @@
   "MCP도 동일 정책": "Same policy for MCP",
   "LiteLLM·Portkey·Bifrost 분산": "LiteLLM · Portkey · Bifrost scattered",
   "2 / 4 hops · AI GW는 에스테이마다 조각남": "2 / 4 hops · AI GWs fragmented per estate",
-  "4 / 4 hops · Kong으로 Unify · 한 정책 · 한 감사 추적": "4 / 4 hops · Unified by Kong · one policy · one audit trail"
+  "4 / 4 hops · Kong으로 Unify · 한 정책 · 한 감사 추적": "4 / 4 hops · Unified by Kong · one policy · one audit trail",
+  "Kong은 LiteLLM·Portkey·Bifrost를 한 플랫폼으로 Unify합니다": "Kong unifies LiteLLM, Portkey, and Bifrost into one platform",
+  "분산 배포": "Scattered deploy",
+  "LiteLLM · Portkey · Bifrost — 클라우드·팀마다 다른 AI GW, 제어면 없음": "LiteLLM · Portkey · Bifrost — a different AI GW per cloud/team, no control plane",
+  "Kong Konnect · 1 platform": "Kong Konnect · 1 platform",
+  "1 control plane · 1 policy · 1 audit trail": "1 control plane · 1 policy · 1 audit trail",
+  "KEEP": "KEEP",
+  "보이지 않음 · Event": "Invisible · Event",
+  "보이지 않음 · GCP/내부": "Invisible · GCP/internal",
+  "Self-hosted / A2A": "Self-hosted / A2A",
+  "Internal APIs": "Internal APIs",
+  "services": "services",
+  "4 / 4 hops · Kong 한 플랫폼으로 Unify": "4 / 4 hops · Unified on one Kong platform",
+  "Managed Kafka": "Managed Kafka",
+  "Pub/Sub": "Pub/Sub",
+  "agents": "agents"
 }
