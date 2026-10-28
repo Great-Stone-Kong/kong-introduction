@@ -1473,6 +1473,7 @@ html[data-lang="ko"] .szai .sztw td{word-break:keep-all;line-break:strict;overfl
 .szk{background:var(--accent-wash);border:1px solid var(--line2);border-radius:10px;padding:12px 14px;min-width:0}
 .szk b{display:block;font-size:24px;font-weight:800;color:var(--accent);line-height:1.1}.szk span{display:block;font-size:12.8px;color:var(--heading);margin-top:4px}.szk em{font-style:normal;font-size:11.5px;color:var(--svg-muted)}
 .szg2{display:grid;grid-template-columns:1fr;gap:18px}
+.szg2.cols2{grid-template-columns:1fr 1fr}
 .szg2 > div > .szh,.szg3b > div > .szh{margin-top:0}
 .szcalc{display:grid;grid-template-columns:1fr 1.4fr;gap:14px;margin-top:22px;background:var(--navy-2,#061a0c);border:1px solid var(--line2);border-radius:12px;padding:16px}
 .szci h4{margin:0 0 10px;font-size:14px}
@@ -1490,7 +1491,7 @@ html[data-lang="ko"] .szai .sztw td{word-break:keep-all;line-break:strict;overfl
 .szm .n{position:absolute;top:10px;right:10px;font-size:12px;font-weight:900;color:var(--accent)}
 .szm b{display:block;font-size:13px;color:var(--heading);margin-bottom:6px;padding-right:30px}.szm .s{display:block;font-size:12px;color:var(--bay);line-height:1.5;overflow-wrap:anywhere}.szm em{display:block;font-style:normal;font-size:11px;color:var(--svg-muted);margin-top:6px;overflow-wrap:anywhere}
 .szg3b{display:grid;grid-template-columns:1fr;gap:18px}
-@media(max-width:1100px){.szcalc{grid-template-columns:1fr}.szms{grid-template-columns:1fr 1fr}.sztips,.szfs,.szks{grid-template-columns:1fr}.szco{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:1100px){.szcalc{grid-template-columns:1fr}.szms{grid-template-columns:1fr 1fr}.sztips,.szfs,.szks{grid-template-columns:1fr}.szg2.cols2{grid-template-columns:1fr}.szco{grid-template-columns:repeat(3,1fr)}}
 
 .lpicks{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 8px}
 .lpicks button{font-family:var(--font);font-size:13px;font-weight:700;color:var(--g300);background:none;border:1px solid var(--g700);border-radius:999px;padding:8px 16px;cursor:pointer;transition:.15s}
@@ -5794,8 +5795,8 @@ claude
 <section class="sec" id="inf-size" data-title="권장 사이징">
   <div class="eyebrow">Sizing Guide</div>
   <h2>권장 사이징 가이드</h2>
-  <p class="sub">API Gateway는 초당 요청 수와 엔터티 수, AI Gateway는 토큰 처리량이 산정 기준입니다.</p>
-  <div class="tabs" data-tabs><button class="on">API Gateway</button><button>AI Gateway</button></div>
+  <p class="sub">API Gateway는 초당 요청 수와 엔터티 수, AI Gateway는 토큰 처리량, Redis는 키 수·메모리·처리량이 산정 기준입니다.</p>
+  <div class="tabs" data-tabs><button class="on">API Gateway</button><button>AI Gateway</button><button>Redis</button></div>
   <div class="fbox szbox">
     <div class="pane on">
   <p class="szl">Kong 노드는 무상태라 수평 확장이 쉽습니다. 아래 티셔츠 사이징을 시작점으로 잡고, 실제 환경에서 벤치마크로 조정합니다.</p>
@@ -5824,6 +5825,20 @@ claude
     <div><h4 class="szh">권장 인스턴스</h4><div class="tw sztw "><table><thead><tr><th>클라우드</th><th>권장 인스턴스 계열</th></tr></thead><tbody><tr><td>AWS x86</td><td>c5 · c6i (non-burstable)</td></tr><tr><td>AWS ARM</td><td>c6g · c7g (Graviton)</td></tr><tr><td>GCP</td><td>c2-standard · c3-standard</td></tr><tr><td>Azure</td><td>Fsv2 · Dasv5</td></tr></tbody></table></div></div>
   </div>
   <ul class="sztips c4"><li><b>CPU 바운드</b>토큰 처리에 CPU를 씀. 출력 토큰이 입력보다 4~5배 비쌈</li><li><b>버스트 인스턴스 금지</b>t2/t3 · e2 · B 시리즈의 CPU 제한은 토큰 스트리밍 성능에 악영향</li><li><b>RAG 버퍼 조정</b>1~4 MiB 프롬프트는 client_body_buffer_size 1~2 MiB, max_request_body_size 8~16 MiB</li><li><b>Konnect 사용 시</b>CP는 Kong이 운영. DP · Redis · 로깅 인프라만 산정</li></ul>
+</div>
+    <div class="pane">
+  <p class="szl">Rate Limiting Advanced · Proxy Cache · Semantic Cache가 Redis(또는 Valkey)를 공유합니다. 일반 Redis 용량 기준과 Kong 키 산정 공식을 함께 적용합니다. Kong 전용 공식 Redis 사이징 문서는 없고, Managed Cache 문서 · 플러그인 가이드 · 운영 사례를 합쳐 정리한 시작점입니다.</p>
+  <div class="szfs"><div class="szf"><b>메모리</b><span>소형 문자열 약 85 MB / 100만 키 · 5필드 해시 약 160 MB / 100만 키 (Redis FAQ). 소형 해시·리스트·sorted set은 compact encoding으로 최대 약 10배 절약</span></div><div class="szf"><b>여유율</b><span>평균이 아니라 피크 기준. maxmemory 필수. 가용 RAM의 70–75%만 사용 · 대량 쓰기 시 CoW로 약 2배 순간 증가(경험 규칙)</span></div><div class="szf"><b>처리량</b><span>명령 실행은 단일 스레드. 파이프라인 사용 시 약 1M req/s까지 가능. 연결 수만 단위로 늘면 성능 저하</span></div><div class="szf"><b>클러스터</b><span>최소 마스터 3. 권장 6노드(마스터 3 + 레플리카 3)</span></div></div>
+  <h4 class="szh">Kong Rate Limiting · 키 수 산정</h4>
+  <p class="szl" style="margin-top:0">Key Count ≈ Unique Consumers × Unique Routes × Rate limit windows × Kong Data Plane pods. 프로비저닝 메모리의 70–75%만 실사용으로 봅니다.</p>
+  <div class="szg2 cols2">
+    <div><h4 class="szh">sync_rate</h4><div class="tw sztw"><table><thead><tr><th>항목</th><th>권장</th><th>비고</th></tr></thead><tbody><tr><td>운영(공개 Managed Cache)</td><td>0.5</td><td>측정 기반 공개 권장치</td></tr><tr><td>다른 운영 가이드 하한</td><td>1초</td><td>공개 문서와 불일치. 공개·측정 기준을 우선</td></tr><tr><td>역할</td><td>최대 레버</td><td>값을 낮출수록 Redis 쓰기는 줄고 DP 로컬 오차가 커짐</td></tr></tbody></table></div></div>
+    <div><h4 class="szh">처리량 참고</h4><div class="tw sztw"><table><thead><tr><th>방식</th><th>대략 처리량</th><th>조건</th></tr></thead><tbody><tr><td>파이프라인 있음</td><td>~1M req/s</td><td>단일 스레드 명령 경로 · 배치 전송</td></tr><tr><td>파이프라인 없음</td><td>현저히 낮음</td><td>RTT마다 왕복. 연결 수 증가에 더 민감</td></tr><tr><td>연결 수</td><td>수만 단위부터 저하</td><td>DP 수 · 클라이언트 풀 크기와 함께 산정</td></tr></tbody></table></div></div>
+  </div>
+  <h4 class="szh">워크로드 → Managed Cache 티어 예</h4>
+  <div class="tw sztw wide"><table><thead><tr><th>Consumers</th><th>Routes</th><th>Windows</th><th>RPS</th><th>시작 티어</th><th>비고</th></tr></thead><tbody><tr><td>≤1,000</td><td>100</td><td>3</td><td>10K</td><td>medium</td><td>Rate limit 중심 워크로드</td></tr><tr><td>5,000</td><td>3,000</td><td>—</td><td>20K</td><td>2xlarge</td><td>키 수 · 처리량 동시 상승</td></tr></tbody></table></div>
+  <p class="note">Managed Cache는 업사이즈만 가능합니다. Semantic Cache(벡터 검색)는 micro · small 티어에서 동작하지 않습니다. 최소 동작 티어는 환경별로 확인합니다.</p>
+  <ul class="sztips"><li><b>카운터·캐시 바이트</b>Rate limit 카운터 · Proxy Cache · Semantic Cache 벡터의 항목당 공식 바이트 공개치는 없음. 키 수와 TTL로 상한을 잡음</li><li><b>복제 백로그</b>레플리케이션 backlog 사이징은 이 가이드 범위 밖. 클러스터·복제 정책은 운영 표준을 따름</li><li><b>hash-max-listpack-entries</b>문서에 512와 128이 혼재. 배포본에서 CONFIG GET hash-max-listpack-entries로 확인</li><li><b>자체 호스팅</b>티어 표는 Konnect Managed Cache 기준. 자체 Redis는 동일 키 공식에 피크 메모리·maxmemory·복제를 직접 맞춤</li></ul>
 </div>
   </div>
 </section>
