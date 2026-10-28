@@ -2437,7 +2437,6 @@ html[data-lang="ko"] .szai .sztw td{word-break:keep-all;line-break:strict;overfl
 
 /* ---- print (topnav menu unit) ---- */
 .only-print{display:none!important}
-.side .vb-print{display:block;width:100%;box-sizing:border-box;margin:16px 0 0;padding:8px 10px;font-family:var(--font)}
 /* Belt outside @media print: opacity:0 .rv still consumes layout → blank PDF pages */
 html[data-printing] .rv,
 html[data-printing] .rv .adv-it,
@@ -2465,7 +2464,7 @@ html[data-printing] [data-print="omit"]{display:none!important}
   .no-print,
   .topbar,.side,.navdd,.top-tools,.menu-btn,.orb,
   body::before,
-  .modal,.lsw,.vbox,.vb-print,
+  .modal,.lsw,.vbox,
   .tabs,.dm-tabs,.dm-cases,.egt-nav,.egt-nav-label,
   /* Interactive / empty-shell chrome — screen only */
   .demo,.mock,.mockrow,.dia.airport,.itour,.pmig-anim,.iai-work,
@@ -7771,7 +7770,7 @@ function go(id,sec,push){
   PAGES.forEach(p=>p.classList.toggle('on',p.id==='p-'+id));
   const grp=(document.getElementById('p-'+id)||{}).dataset; [...topnav.children].forEach(b=>b.classList.toggle('on',b.dataset.id===id||(!!b.dataset.group&&grp&&grp.group===b.dataset.group)));
   const pg=document.getElementById('p-'+id);
-  side.innerHTML='<h6>'+pg.dataset.label+'</h6>'+visibleSecs(pg).map(s=>'<a data-s="'+s.id+'" href="#'+id+'/'+s.id+'">'+s.dataset.title+'</a>').join('')+'<button type="button" class="vb-btn vb-print" title="이 메뉴 인쇄">이 메뉴 인쇄</button>'+vbox();
+  side.innerHTML='<h6>'+pg.dataset.label+'</h6>'+visibleSecs(pg).map(s=>'<a data-s="'+s.id+'" href="#'+id+'/'+s.id+'">'+s.dataset.title+'</a>').join('')+vbox();
   side.classList.remove('open');
   document.title=pg.dataset.label+' | Kong 소개';
   if(sec&&document.getElementById(sec)){ setTimeout(()=>document.getElementById(sec).scrollIntoView(),30); }
@@ -7780,7 +7779,6 @@ function go(id,sec,push){
   setupSpy();
 }
 side.addEventListener('click',e=>{
-  if(e.target.closest('.vb-print')){ e.preventDefault(); printMenu(); return; }
   const a=e.target.closest('a'); if(!a||a.classList.contains('vb-btn')) return; e.preventDefault();
   const s=a.dataset.s; document.getElementById(s).scrollIntoView({behavior:'smooth'});
   try{ history.replaceState(null,'','#'+cur+'/'+s); }catch(_){}
@@ -7937,7 +7935,6 @@ function restorePrint(){
   const toc=document.getElementById('print-toc'); if(toc) toc.remove();
   delete root.dataset.printing;
 }
-function printMenu(){ preparePrint(); window.print(); }
 addEventListener('beforeprint',preparePrint);
 addEventListener('afterprint',restorePrint);
 function setupSpy(){
