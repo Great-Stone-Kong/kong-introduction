@@ -967,6 +967,18 @@
     "OpenAI · Anthropic 사례는 AI 기업 평가 환경에서, 출시 모델용 안전장치를 의도적으로 끈 상태로 발생했습니다. Cohere 사례는 자체 호스팅 오픈웨이트 모델의 도구 호출을 샌드박스가 막은 관측입니다. Kong은 이들 사고 대응에 사용되지 않았으며, 위 내용은 같은 유형의 위험을 기업 환경에서 미리 줄이는 방법을 정리한 것입니다. 출처: OpenAI 공지 ↗ · Anthropic 공지 ↗ · Cohere 공지 ↗": [
       "The OpenAI · Anthropic cases occurred in AI-company evaluation environments with release-model safeguards intentionally disabled. The Cohere case is an observation where a sandbox blocked tool calls from a self-hosted open-weight model. Kong was not used in responding to these incidents; the content above outlines how to reduce the same class of risk in enterprise environments in advance. Sources: <a href=\"https://openai.com/index/hugging-face-model-evaluation-security-incident/\" rel=\"noopener noreferrer\" target=\"_blank\">OpenAI announcement ↗</a> · <a href=\"https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals\" rel=\"noopener noreferrer\" target=\"_blank\">Anthropic announcement ↗</a> · <a href=\"https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model\" rel=\"noopener noreferrer\" target=\"_blank\">Cohere announcement ↗</a>",
       "OpenAI · Anthropicの事例はAI企業の評価環境で、リリース済みモデル向けの安全機構を意図的に無効にした状態で発生しました。Cohereの事例は、セルフホストのオープンウェイトモデルのツール呼び出しをサンドボックスが遮断した観測です。Kongはこれらのインシデント対応に使用されておらず、上記の内容は同種のリスクを企業環境で事前に低減する方法をまとめたものです。出典: <a href=\"https://openai.com/index/hugging-face-model-evaluation-security-incident/\" rel=\"noopener noreferrer\" target=\"_blank\">OpenAIの告知 ↗</a> · <a href=\"https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals\" rel=\"noopener noreferrer\" target=\"_blank\">Anthropicの告知 ↗</a> · <a href=\"https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model\" rel=\"noopener noreferrer\" target=\"_blank\">Cohereの告知 ↗</a>"
+    ],
+    "Kong 접근 방식레지스트리를 Gateway 뒤에 두고 Agent마다 인증 · 조회(GET)만 허용. 쓰기 · 업로드 · 미등록 목적지는 차단 · 기록": [
+      "<i>Kong approach</i>Put the registry behind the gateway and allow only authenticated reads (GET) per agent. Block · log writes · uploads · unregistered destinations",
+      "<i>Kongのアプローチ</i>レジストリをGatewayの背後に置き、Agentごとに認証 · 参照（GET）のみを許可。書き込み · アップロード · 未登録の宛先はブロック · 記録"
+    ],
+    "Kong 접근 방식이그레스를 Gateway 등록 목적지만 허용. 미등록 인터넷 · 패키지 업로드를 차단하고 전 구간 추적": [
+      "<i>Kong approach</i>Allow egress only to destinations registered in the gateway. Block unregistered internet · package uploads and trace every hop",
+      "<i>Kongのアプローチ</i>エグレスをGateway登録の宛先のみに許可。未登録のインターネット · パッケージのアップロードを遮断し、全区間を追跡"
+    ],
+    "Kong 접근 방식MCP · API 도구 호출과 목적지를 허용 목록으로 강제 · 기록. 추론(CoT)만으로 허용하지 않음": [
+      "<i>Kong approach</i>Enforce · log MCP · API tool calls and destinations via an allowlist. Do not allow based on chain-of-thought alone",
+      "<i>Kongのアプローチ</i>MCP · APIツール呼び出しと宛先を許可リストで強制 · 記録。推論（CoT）だけでは許可しない"
     ]
   },
   "F": [
