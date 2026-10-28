@@ -12,7 +12,8 @@
 
 ### Changed
 
-- Print: expand scroll-hidden blocks, inactive tabs, and demos; force light tokens for paper
+- Print: expand scroll-hidden blocks and inactive tabs; force light tokens
+- Print: omit demos/trace mockups (screen-only); tighten spacing and page blanks
 
 ## 2026.10.28.df84c27f
 ### Added
