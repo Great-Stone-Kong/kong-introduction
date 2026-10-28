@@ -3573,7 +3573,6 @@
   "5/5": "5/5",
   "Kong vs IBM API Connect": "Kong vs IBM API Connect",
   "IBM API Connect": "IBM API Connect",
-  "IBM API Connect는 API 관리 CP이고, 실행은 DataPower(및 v12 webMethods)로 나뉩니다. AI Gateway는 별도 제품이 아니라 DataPower 기능입니다. Kong은 API·AI·MCP·Event를 같은 Gateway 런타임과 거버넌스로 묶습니다.": "IBM API Connect is an API management control plane; execution splits across DataPower (and webMethods in v12). AI Gateway is not a separate product but a DataPower capability. Kong unifies API, AI, MCP, and Event under the same Gateway runtime and governance.",
   "01 · 구조": "01 · Structure",
   "CP와 실행 평면": "CP and execution planes",
   "API·AI·MCP·Event·Mesh를 동일 Gateway 런타임과 선언적 거버넌스로 운영합니다.": "Runs API, AI, MCP, Event, and Mesh on the same Gateway runtime with declarative governance.",
@@ -3652,7 +3651,6 @@
   "IBM": "IBM",
   "Kong": "Kong",
   "범주 · 지원 여부. 아래 표는 IBM API Connect가 DataPower API Gateway를 데이터 플레인으로 쓰는 구성을 기준으로 합니다. IBM AI Gateway는 DataPower 기능(토큰 한도·응답 캐시·마스킹·AI 분석 등)이며, 시맨틱 캐시·시맨틱 라우팅·런타임 MCP 깊이에서는 Kong과 차이가 있습니다. webMethods 런타임은 AI 네이티브 거버넌스가 없어 별도 평가가 필요합니다. 기능 유무 비교이며 품질 우열을 뜻하지 않습니다.": "Category · support. The table below assumes IBM API Connect with DataPower API Gateway as the data plane. IBM AI Gateway is a DataPower capability (token limits, response cache, masking, AI analytics, etc.); semantic cache, semantic routing, and runtime MCP depth differ from Kong. The webMethods runtime lacks native AI governance and needs separate evaluation. This compares feature availability, not quality.",
-  "단일 컨트롤 플레인 · 이중 런타임 · AI는 DataPower 기능": "Single control plane · dual runtime · AI is a DataPower capability",
   "선정 기준": "Selection criteria",
   "API·AI·에이전트 런타임을 하나의 선언적 플랫폼으로 운영하는 경우에 적합합니다.": "Suitable when API, AI, and agent runtimes are operated as one declarative platform.",
   "SOAP·DMZ 어플라이언스·Drupal급 포털·iPaaS 패키지가 중심인 경우에 적합합니다. 공존 구성도 가능합니다.": "Suitable when SOAP, DMZ appliances, Drupal-class portals, or iPaaS packages are central. Coexistence is also possible.",
@@ -3727,5 +3725,7 @@
   "열기": "Open",
   "바로가기.": "Shortcut.",
   "전체 개요는": "For the full overview, continue in",
-  "에서 이어집니다.": "."
+  "에서 이어집니다.": ".",
+  "Kong은 단일 컨트롤 플레인과 런타임으로 모든 기능을 제공": "Kong delivers every capability on a single control plane and runtime",
+  "IBM API Connect는 API 관리 CP이고, 실행은 DataPower(및 v12 webMethods)로 분리된 구조입니다. Kong은 API·AI·MCP·Event를 같은 Gateway 런타임과 거버넌스로 통합 제공합니다.": "IBM API Connect is an API management control plane, with execution separated onto DataPower (and webMethods in v12). Kong unifies API, AI, MCP, and Event on the same Gateway runtime and governance."
 }
