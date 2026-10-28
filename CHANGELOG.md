@@ -5,7 +5,7 @@
 
 ---
 
-## 2026.10.28.0ccb6299
+## 2026.10.28.df84c27f
 ### 변경
 
 - Agent Gateway > AI Agent 보안 사례: Cohere(Qwen3.8 무단 업로드 시도) 사례 추가
