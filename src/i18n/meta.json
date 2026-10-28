@@ -384,10 +384,6 @@
       "<b>Four reasons to choose Kong.</b> ① Three protocols (LLM · MCP · A2A), one gateway ② Scope-based tool filtering + token authentication ③ Intelligent routing and cost management ④ Custom guardrails (Lakera, Noma, Pangea, NVIDIA NeMo) and an expanded ecosystem (Databricks, DeepSeek, vLLM, Valkey vector search)",
       "<b>Kongを選ぶべき4つの理由。</b> ① 3つのプロトコル（LLM · MCP · A2A）を1つのゲートウェイで ② スコープベースのツールフィルタリング + トークン認証 ③ インテリジェントなルーティングとコスト管理 ④ カスタムガードレール（Lakera、Noma、Pangea、NVIDIA NeMo）と拡張されたエコシステム（Databricks、DeepSeek、vLLM、Valkeyベクトル検索）"
     ],
-    "2026년 여름, OpenAI와 Anthropic은 평가 중이던 AI 모델이 격리 환경을 벗어나 실제 외부 시스템에 접근한 사고를 각각 공개했습니다. 두 사고 모두 Kong과는 관련이 없지만, AI Agent를 도입하려는 기업에 같은 교훈을 줍니다. Agent가 어디로 연결되고 무엇을 하는지 통제 · 관측하는 지점이 있어야 한다는 것입니다.": [
-      "In summer 2026, OpenAI and Anthropic each disclosed incidents in which an AI model under evaluation escaped its isolated environment and accessed real external systems. Neither incident involved Kong, but both teach the same lesson to enterprises adopting AI agents: <b>you need a point that controls and observes where agents connect and what they do</b>.",
-      "2026年夏、OpenAIとAnthropicは、評価中のAIモデルが隔離環境を抜け出して実際の外部システムにアクセスしたインシデントをそれぞれ公表しました。どちらのインシデントもKongとは無関係ですが、AI Agentを導入しようとする企業に同じ教訓を与えています。<b>Agentがどこに接続し何をするのかを統制 · 監視するポイントが必要だ</b>ということです。"
-    ],
     "핵심 원인단 하나 허용한 연결 경로가 뚫림": [
       "<i>Root cause</i>The single allowed connection path was breached",
       "<i>主な原因</i>唯一許可していた接続経路が突破された"
@@ -459,10 +455,6 @@
     "함께 필요한 통제시크릿 순환 · 노출된 토큰 관리": [
       "<i>Complementary controls</i>Secret rotation · management of exposed tokens",
       "<i>併せて必要な統制</i>シークレットのローテーション · 露出したトークンの管理"
-    ],
-    "두 사고는 모두 AI 기업의 평가 환경에서, 출시 모델에 적용되는 안전장치를 의도적으로 끈 상태로 발생했습니다. Kong은 사고 대응에 사용되지 않았으며, 위 내용은 같은 유형의 위험을 기업 환경에서 미리 줄이는 방법을 정리한 것입니다. 출처: OpenAI 공지 ↗ · Anthropic 공지 ↗": [
-      "Both incidents occurred in AI companies' evaluation environments, with the safeguards applied to released models intentionally turned off. Kong was not used in the incident response; the content above outlines how to reduce the same type of risk in enterprise environments in advance. Sources: <a href=\"https://openai.com/index/hugging-face-model-evaluation-security-incident/\" rel=\"noopener noreferrer\" target=\"_blank\">OpenAI announcement ↗</a> · <a href=\"https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals\" rel=\"noopener noreferrer\" target=\"_blank\">Anthropic announcement ↗</a>",
-      "2つのインシデントはいずれもAI企業の評価環境で、リリース済みモデルに適用される安全機構を意図的に無効にした状態で発生しました。Kongはインシデント対応に使用されておらず、上記の内容は同種のリスクを企業環境で事前に低減する方法をまとめたものです。出典: <a href=\"https://openai.com/index/hugging-face-model-evaluation-security-incident/\" rel=\"noopener noreferrer\" target=\"_blank\">OpenAIの告知 ↗</a> · <a href=\"https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals\" rel=\"noopener noreferrer\" target=\"_blank\">Anthropicの告知 ↗</a>"
     ],
     "고객 지원과 사내 업무 자동화 Agent가 보내는 실제 형태의 요청을 골라 보세요. 같은 요청을 Kong 정책 적용과 정책 없음으로 바꿔 실행하면, 앞의 케이스 스터디에서 본 실패 지점이 어떻게 막히는지 비교할 수 있습니다.": [
       "Pick a realistic request sent by a customer support or internal workflow automation agent. Run the same request with <b>Kong policies applied</b> and with <b>no policies</b> to compare how the failure points from the case studies above are blocked.",
@@ -955,6 +947,26 @@
     "범주 · 지원 여부. LiteLLM·Portkey·Bifrost는 LLM 전용/AI-native 게이트웨이입니다. Kong AI Connectivity는 API·LLM·MCP·Agent·Event를 하나의 거버넌스로 묶습니다. 아래 표는 동일 기능축으로 지원 여부를 비교합니다.": [
       "<b>Category · support.</b> LiteLLM, Portkey, and Bifrost are LLM-focused / AI-native gateways. Kong AI Connectivity unifies governance for API, LLM, MCP, Agent, and Event traffic. The table below compares support on the same capability axes.",
       "<b>カテゴリ · サポート有無。</b> LiteLLM·Portkey·BifrostはLLM特化/AI-nativeゲートウェイです。Kong AI ConnectivityはAPI·LLM·MCP·Agent·Eventを一つのガバナンスで束ねます。下表は同一の機能軸でサポート有無を比較します。"
+    ],
+    "2026년 OpenAI · Anthropic · Cohere가 공개한 Agent · 에이전트형 모델 사고는 형태는 다르지만 교훈은 같습니다. Kong과는 무관하나, Agent가 어디로 연결되고 무엇을 하는지 통제 · 관측하는 지점이 있어야 한다는 것입니다. 추론(CoT)이나 “자체 호스팅이면 안전하다”는 가정만으로는 부족합니다.": [
+      "In 2026, agent and agentic-model incidents disclosed by OpenAI · Anthropic · Cohere differ in form but share the same lesson. They are unrelated to Kong, yet <b>you need a control · observation point for where agents connect and what they do</b>. Chain-of-thought or the assumption that self-hosting alone is safe is not enough.",
+      "2026年にOpenAI · Anthropic · Cohereが公表したAgent · エージェント型モデルの事故は形態は異なりますが教訓は同じです。Kongとは無関係ですが、<b>Agentがどこに接続し何をするかを統制 · 観測するポイントが必要だ</b>ということです。推論（CoT）や「セルフホストなら安全」という前提だけでは不十分です。"
+    ],
+    "핵심 원인추론 텍스트를 믿었고, 실제 도구 호출 · 목적지를 막지 않음": [
+      "<i>Root cause</i>Trusted the reasoning text and did not block the actual tool call · destination",
+      "<i>主な原因</i>推論テキストを信じ、実際のツール呼び出し · 宛先を止めなかった"
+    ],
+    "Kong 예방 방식MCP · API 도구 호출과 목적지를 Gateway에서 허용 목록으로 강제 · 기록. 추론 스트림만으로 허용하지 않음": [
+      "<i>How Kong prevents it</i>Enforce · log MCP · API tool calls and destinations via a gateway allowlist. Do not allow based on the reasoning stream alone",
+      "<i>Kongによる予防</i>MCP · APIツール呼び出しと宛先をGatewayの許可リストで強制 · 記録。推論ストリームだけでは許可しない"
+    ],
+    "함께 필요한 통제런타임 네트워크 기본 차단, 미승인 클라우드 스토리지 · 메타데이터 주소 차단": [
+      "<i>Complementary controls</i>Default-deny runtime networking; block unapproved cloud storage · metadata addresses",
+      "<i>併せて必要な統制</i>ランタイムネットワークのデフォルト遮断、未承認のクラウドストレージ · メタデータアドレスの遮断"
+    ],
+    "OpenAI · Anthropic 사례는 AI 기업 평가 환경에서, 출시 모델용 안전장치를 의도적으로 끈 상태로 발생했습니다. Cohere 사례는 자체 호스팅 오픈웨이트 모델의 도구 호출을 샌드박스가 막은 관측입니다. Kong은 이들 사고 대응에 사용되지 않았으며, 위 내용은 같은 유형의 위험을 기업 환경에서 미리 줄이는 방법을 정리한 것입니다. 출처: OpenAI 공지 ↗ · Anthropic 공지 ↗ · Cohere 공지 ↗": [
+      "The OpenAI · Anthropic cases occurred in AI-company evaluation environments with release-model safeguards intentionally disabled. The Cohere case is an observation where a sandbox blocked tool calls from a self-hosted open-weight model. Kong was not used in responding to these incidents; the content above outlines how to reduce the same class of risk in enterprise environments in advance. Sources: <a href=\"https://openai.com/index/hugging-face-model-evaluation-security-incident/\" rel=\"noopener noreferrer\" target=\"_blank\">OpenAI announcement ↗</a> · <a href=\"https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals\" rel=\"noopener noreferrer\" target=\"_blank\">Anthropic announcement ↗</a> · <a href=\"https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model\" rel=\"noopener noreferrer\" target=\"_blank\">Cohere announcement ↗</a>",
+      "OpenAI · Anthropicの事例はAI企業の評価環境で、リリース済みモデル向けの安全機構を意図的に無効にした状態で発生しました。Cohereの事例は、セルフホストのオープンウェイトモデルのツール呼び出しをサンドボックスが遮断した観測です。Kongはこれらのインシデント対応に使用されておらず、上記の内容は同種のリスクを企業環境で事前に低減する方法をまとめたものです。出典: <a href=\"https://openai.com/index/hugging-face-model-evaluation-security-incident/\" rel=\"noopener noreferrer\" target=\"_blank\">OpenAIの告知 ↗</a> · <a href=\"https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals\" rel=\"noopener noreferrer\" target=\"_blank\">Anthropicの告知 ↗</a> · <a href=\"https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model\" rel=\"noopener noreferrer\" target=\"_blank\">Cohereの告知 ↗</a>"
     ]
   },
   "F": [
