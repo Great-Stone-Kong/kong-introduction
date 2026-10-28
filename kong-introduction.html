@@ -2444,12 +2444,23 @@ html[data-lang="ko"] .szai .sztw td{word-break:keep-all;line-break:strict;overfl
   .no-print,
   .topbar,.side,.navdd,.top-tools,.menu-btn,.orb,
   body::before,
-  .modal,.lsw,.vbox,.vb-print{display:none!important}
+  .modal,.lsw,.vbox,.vb-print,
+  .tabs,.dm-tabs,.dm-cases,.egt-nav,.egt-nav-label{display:none!important}
+  /* Force light tokens so dark-theme fills/strokes stay readable on paper */
+  html{
+    color-scheme:light!important;
+    --navy:#CDD4CB; --navy-2:#D7DED4; --navy-3:#E7EDE5; --lime:#CCFF00; --accent:#2F4A00; --mark:#2F4A00; --bay:#4A4D49; --white:#fff;
+    --heading:#001408; --strong:#001408; --g50:#001408; --g200:#1A1F1A; --g300:#2A302A; --g400:#4A4D49; --g500:#6A6D69; --g700:#C5CBC3;
+    --line:#B8BFB6; --line2:#A8AFA6; --card:#FFFFFF; --card2:#F7F9F4; --term:#F7F9F4;
+    --topbar-bg:#BCC2BA; --side-bg:#CDD4CB; --on-lime:#001408; --accent-soft:rgba(47,74,0,.08); --accent-wash:rgba(47,74,0,.12); --accent-glow:rgba(47,74,0,.2);
+    --svg-panel:#FFFFFF; --svg-well:#F7F9F4; --svg-chip:#E7EDE5; --svg-muted:#4A4D49; --svg-fg:#001408; --svg-label:#001408;
+    --brand:#001408;
+  }
   html,body{
     background:#fff!important;color:#000!important;
-    color-scheme:light!important;
     height:auto!important;min-height:0!important;overflow:visible!important;
     font-size:10.5pt!important;line-height:1.65!important;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;
   }
   .shell{display:block!important;padding:0!important;min-height:0!important}
   .main{
@@ -2459,6 +2470,32 @@ html[data-lang="ko"] .szai .sztw td{word-break:keep-all;line-break:strict;overfl
   .page{display:none!important;animation:none!important}
   .page.print-on{display:block!important}
   .page.print-break{break-before:page;page-break-before:always}
+  /* Reveal scroll/IO content that is opacity:0 on screen */
+  .rv,.rv .adv-it,.rv .atl,.rv .acm-call,
+  .tli,.eqi,.eqo,.cities span,.plat .ic,
+  .mq .dotg,.mq .ring,.mq .gl,.mq .callout-b,
+  #geomap .band,#geomap .mk,#geomap .rg,#geomap .klbl,
+  .growth .area,.growth .era,.growth .yl,.growth .ghl,.growth .tip,
+  .eco .wb,.eco .hub,.tl::before{
+    opacity:1!important;transform:none!important;animation:none!important;transition:none!important;
+  }
+  .tl::before{transform:scaleY(1)!important}
+  .words{height:auto!important;overflow:visible!important}
+  .words span{
+    position:static!important;display:inline!important;opacity:1!important;
+    animation:none!important;transform:none!important;
+    font-size:12pt!important;line-height:1.4!important;margin-right:.4em;
+  }
+  /* All tab panes — not only .on */
+  .pane,.fbox>.pane{
+    display:block!important;visibility:visible!important;opacity:1!important;
+    position:static!important;height:auto!important;max-height:none!important;
+    margin:5mm 0 0!important;padding:3mm 0 0!important;
+    border-top:0.35pt solid #999!important;
+    break-inside:avoid-page;
+  }
+  .pane:first-of-type,.fbox>.pane:first-child{margin-top:2mm!important}
+  .print-pane-label{display:block!important;font-size:11pt!important;font-weight:800!important;color:#000!important;margin:0 0 2mm!important}
   .sec{padding:10mm 0 2mm!important;margin-top:4mm!important;border-top:0.25pt solid #ccc!important}
   .sec:first-of-type{border-top:none!important;margin-top:0!important;padding-top:0!important}
   .sec > h2{
@@ -2472,10 +2509,15 @@ html[data-lang="ko"] .szai .sztw td{word-break:keep-all;line-break:strict;overfl
   h2{font-size:14pt!important;color:#000!important}
   h3{font-size:12pt!important;color:#000!important}
   h4,.eyebrow{font-size:10pt!important;color:#000!important}
-  p,.lead,.sec>.sub,li,td,th{color:#000!important}
+  p,.lead,.sec>.sub,li,td,th,b,strong{color:#000!important}
   .lead{font-size:11pt!important}
   a,a:visited{color:#000!important;text-decoration:underline!important}
-  .demo,.mock,.dia.airport{display:none!important}
+  .demo,.mock,.dia{break-inside:avoid-page;overflow:visible!important;max-height:none!important}
+  .dm-pkt,.dm-stage{background-image:none!important}
+  .dm-pane,.dm-log,.dm-cfg pre,.dm-pane pre{
+    max-height:none!important;overflow:visible!important;height:auto!important;min-height:0!important;
+  }
+  .demo:not(.raw) .dm-pane pre{display:block!important}
   .print-doc-head{
     margin:0 0 6mm!important;padding:0 0 3mm!important;
     border-bottom:0.7pt solid #000!important;
@@ -2484,15 +2526,15 @@ html[data-lang="ko"] .szai .sztw td{word-break:keep-all;line-break:strict;overfl
   .print-doc-head strong{display:block;font-size:14pt;margin-bottom:1mm}
   .print-doc-head .print-doc-menu{display:block;font-size:11pt;font-weight:700;margin-bottom:1mm}
   .print-doc-head .print-doc-meta{display:block;font-size:8.5pt;color:#333!important;line-height:1.5}
-  .print-doc-note{font-size:8.5pt;color:#444!important;margin:0 0 5mm;padding:2mm 0;border-bottom:0.25pt solid #bbb}
-  pre,.code{white-space:pre-wrap!important;overflow:visible!important;max-height:none!important;font-size:8.5pt!important;border:0.25pt solid #bbb;break-inside:auto;page-break-inside:auto}
+  .print-doc-note{display:none!important}
+  pre,.code{white-space:pre-wrap!important;overflow:visible!important;max-height:none!important;font-size:8.5pt!important;border:0.25pt solid #bbb;break-inside:auto;page-break-inside:auto;color:#000!important}
   table{width:100%!important;max-width:100%!important;table-layout:fixed!important;font-size:8.5pt!important}
   th,td{overflow-wrap:anywhere;color:#000!important;background:transparent!important}
   thead{display:table-header-group}
-  tr,img,figure,svg{break-inside:avoid-page}
+  tr,img,figure{break-inside:avoid-page}
   img,svg{max-width:100%!important;height:auto!important}
-  .vision{position:static!important}
-  .baw{position:static!important;background:transparent!important}
+  .vision,.baw{position:static!important;background:transparent!important}
+  .card,.npanel,.stat,.cmp,.cmpp{break-inside:avoid-page;overflow:visible!important}
 }
 </style>
 <style id="i18n-css">
@@ -2569,7 +2611,6 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
   <span class="print-doc-menu" id="print-doc-menu"></span>
   <span class="print-doc-meta" id="print-doc-meta"></span>
 </div>
-<p class="only-print print-doc-note">인터랙티브 데모·목업은 화면에서 확인하세요.</p>
 <svg xmlns="http://www.w3.org/2000/svg" class="svg-sprite" aria-hidden="true" focusable="false">
 <defs>
 <linearGradient id="ig-ins" x1="16" y1="27" x2="16" y2="4.6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="var(--ins-purple)"/><stop offset="1" stop-color="#4000bf"/></linearGradient>
@@ -7688,14 +7729,61 @@ function printMenuTitle(targets){
   const pg=targets[0]; if(!pg) return '';
   return pg.dataset.group||pg.dataset.label||'';
 }
+function labelPanesForPrint(root){
+  root.querySelectorAll('.print-pane-label').forEach(el=>el.remove());
+  root.querySelectorAll('.tabs').forEach(tabs=>{
+    const btns=[...tabs.querySelectorAll('button')];
+    if(!btns.length) return;
+    let panes=[];
+    let n=tabs.nextElementSibling;
+    while(n&&n.classList&&n.classList.contains('pane')){ panes.push(n); n=n.nextElementSibling; }
+    if(!panes.length){
+      const box=tabs.parentElement&&tabs.parentElement.querySelector('.fbox');
+      if(box) panes=[...box.children].filter(c=>c.classList&&c.classList.contains('pane'));
+    }
+    if(!panes.length){
+      const shell=tabs.closest('.egt-shell')||tabs.parentElement;
+      if(shell) panes=[...shell.querySelectorAll(':scope > .pane')];
+    }
+    panes.forEach((p,i)=>{
+      if(!btns[i]) return;
+      const lab=document.createElement('h3');
+      lab.className='print-pane-label';
+      lab.textContent=(btns[i].innerText||btns[i].textContent||'').replace(/\s+/g,' ').trim();
+      p.insertBefore(lab,p.firstChild);
+    });
+  });
+  root.querySelectorAll('.egt-nav').forEach(nav=>{
+    const btns=[...nav.querySelectorAll('button')];
+    const shell=nav.closest('.egt-shell')||nav.parentElement;
+    if(!shell||!btns.length) return;
+    const panes=[...shell.querySelectorAll(':scope > .pane')];
+    panes.forEach((p,i)=>{
+      if(!btns[i]||p.querySelector(':scope > .print-pane-label')) return;
+      const lab=document.createElement('h3');
+      lab.className='print-pane-label';
+      lab.textContent=(btns[i].innerText||btns[i].textContent||'').replace(/\s+/g,' ').trim();
+      p.insertBefore(lab,p.firstChild);
+    });
+  });
+}
 function preparePrint(){
+  const root=document.documentElement;
+  if(!root.dataset.printThemeSaved){
+    root.dataset.printThemeSaved=root.dataset.theme||'dark';
+  }
+  root.dataset.theme='light';
   const targets=printTargets();
   const set=new Set(targets);
   PAGES.forEach(p=>{
     p.classList.toggle('print-on',set.has(p));
     p.classList.remove('print-break');
   });
-  targets.forEach((p,i)=>{ if(i>0) p.classList.add('print-break'); });
+  targets.forEach((p,i)=>{
+    if(i>0) p.classList.add('print-break');
+    p.querySelectorAll('.rv,.tl,.vision,.geo,.namebox,.flow,.pipe,.bars,.mqwrap').forEach(el=>el.classList.add('in'));
+    labelPanesForPrint(p);
+  });
   const menu=printMenuTitle(targets);
   const menuEl=document.getElementById('print-doc-menu');
   const metaEl=document.getElementById('print-doc-meta');
@@ -7705,11 +7793,19 @@ function preparePrint(){
     const when=new Date().toISOString().slice(0,10);
     metaEl.textContent='v'+ver+' · '+when+' · '+location.href.split('#')[0]+(menu?'#'+(targets[0].id||'').slice(2):'');
   }
-  document.documentElement.dataset.printing='1';
+  root.dataset.printing='1';
 }
 function restorePrint(){
-  PAGES.forEach(p=>p.classList.remove('print-on','print-break'));
-  delete document.documentElement.dataset.printing;
+  const root=document.documentElement;
+  const saved=root.dataset.printThemeSaved;
+  if(saved==='light') root.dataset.theme='light';
+  else if(saved) root.dataset.theme=saved;
+  delete root.dataset.printThemeSaved;
+  PAGES.forEach(p=>{
+    p.classList.remove('print-on','print-break');
+    p.querySelectorAll('.print-pane-label').forEach(el=>el.remove());
+  });
+  delete root.dataset.printing;
 }
 function printMenu(){ preparePrint(); window.print(); }
 addEventListener('beforeprint',preparePrint);

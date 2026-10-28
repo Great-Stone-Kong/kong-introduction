@@ -10,6 +10,10 @@
 
 - Print / PDF by top menu (sidebar “Print this menu”; group menus include all member pages)
 
+### Changed
+
+- Print: expand scroll-hidden blocks, inactive tabs, and demos; force light tokens for paper
+
 ## 2026.10.28.df84c27f
 ### Added
 
