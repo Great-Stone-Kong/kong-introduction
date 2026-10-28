@@ -5,6 +5,11 @@
 
 ---
 
+## 2026.10.28.63575106
+### Added
+
+- Infrastructure > Recommended sizing > API Gateway: Redis S·M·L sizing and uses
+
 ## 2026.10.28.df84c27f
 ### Added
 
