@@ -6,35 +6,19 @@
 ---
 
 ## 2026.10.28.df84c27f
-### 変更
+### 追加
 
 - Agent Gateway > AI Agent セキュリティ事例: Cohere（Qwen3.8の無断アップロード試行）事例を追加
-- 失敗ポイント7: 推論（CoT）監視と実際のツール · エグレス統制の分離
-- Agent Gateway > AI Agent セキュリティ事例: 各カードの主な原因の下にKongのアプローチを追加
-- AI Gateway > 規制 · コンプライアンスセクション削除（セキュリティおよび規制マッピングへ統合）
-- AI Gateway > 競合製品との比較 > IBM: 要約タイトル·本文をKong単一CP·ランタイム中心に整理
+- AI Gateway > 競合製品との比較 > Kong vs IBM API Connectタブ追加
 
-## 2026.10.27.9737a70
 ### 変更
 
-- AI Gateway > 競合製品との比較 > Kong vs IBM API Connectタブ追加（API7の次）
-- AI Gateway > 競合製品との比較 > IBM項目: 報告書調の文言整理（em dash・口語除去）
-- API Gateway > 性能 · 拡張性: GigaOm Benchmark 2025数値に更新（151,800 RPS · P95 0.55ms）
-- API Gateway > 性能 · 拡張性: 比較カード拡大（Throughput · Latency@Max · Normalized · Key Auth）と Tyk·AWS·MuleSoft·Azure 比較
-- ライセンス > 呼び出し量算定: Stream(TCP/TLS)セッション算定事例を追加
-
-- AI Gateway > 競合製品との比較 > Pure AI Gateway（LiteLLM·Portkey·Bifrost）
-  - デプロイ柔軟性 · Throughput/Latency · 反論ブロック
-  - 5列比較表（LiteLLM Enterprise列を削除）
-  - LiteLLMサプライチェーン事故は維持
-  - Pure AI vs Kong Agentアクションのアーキテクチャトグル·フローアニメーション
-  - Pure: 環境ごとに LiteLLM·Portkey·Bifrost 分散 / Kong: Unify
-  - 要約バッジをサイドボックス外へ移動
-  - アーキテクチャをスライド型2×2レイヤー（分散 vs 1プラットフォーム）に再構成
-  - AWS/Azure/GCP/On-prem/Databricksアイコンをiconography SVGへ置換
-  - Consumers削除、Pure GW間フロー線、Kong AI/API Gatewayハブボックス
-  - トグル高さ固定、フロー簡素化、サイドの箇条書き点を除去
-  - レイヤー外の単一Kong GWハブ、サイドにTraceモックを追加
+- Agent Gateway > AI Agent セキュリティ事例: 各カードの主な原因の下にKongのアプローチを追加
+- AI Gateway > 規制 · コンプライアンスセクション削除（セキュリティおよび規制マッピングへ統合）
+- ライセンス > 呼び出し量算定: Stream(TCP/TLS)セッション算定方式を追加
+- API Gateway > 性能 · 拡張性: GigaOm Benchmark 2025数値に更新
+- AI Gateway > 競合製品との比較
+  - 既存のLiteLLM単体から Pure AI Gateway（LiteLLM·Portkey·Bifrost）を対象に変更
 
 ## 2026.10.22.6ad99f11
 ### 変更

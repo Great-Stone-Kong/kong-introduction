@@ -6,20 +6,17 @@
 ---
 
 ## 2026.10.28.df84c27f
-### 변경
+### 추가
 
 - Agent Gateway > AI Agent 보안 사례: Cohere(Qwen3.8 무단 업로드 시도) 사례 추가
-- 실패 지점 7: 추론(CoT) 감시와 실제 도구 · 이그레스 통제 분리
-- Agent Gateway > AI Agent 보안 사례: 각 카드 핵심 원인 아래 Kong 접근 방식 추가
-- AI Gateway > 규제 · 컴플라이언스 섹션 제거 (보안 및 규제 매핑으로 통합)
-- AI Gateway > 경쟁 제품 비교 > IBM: 요약 제목·본문을 Kong 단일 CP·런타임 중심으로 정리
+- AI Gateway > 경쟁 제품 비교 > Kong vs IBM API Connect 탭 추가
 
-## 2026.10.27.9737a70
 ### 변경
 
-- AI Gateway > 경쟁 제품 비교 > Kong vs IBM API Connect 탭 추가
+- Agent Gateway > AI Agent 보안 사례: 각 카드 핵심 원인 아래 Kong 접근 방식 추가
+- AI Gateway > 규제 · 컴플라이언스 섹션 제거 (보안 및 규제 매핑으로 통합)
+- 라이선스 > 호출량 산정: Stream(TCP/TLS) 세션 산정 방식 추가
 - API Gateway > 성능 · 확장성: GigaOm Benchmark 2025 수치로 갱신
-- 라이선스 > 호출량 산정: Stream(TCP/TLS) 세션 산정 사례 추가
 - AI Gateway > 경쟁 제품 비교
   - 기존 LiteLLM 단일에서 Pure AI Gateway(LiteLLM·Portkey·Bifrost)를 대상으로 변경
 
