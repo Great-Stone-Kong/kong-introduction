@@ -3727,5 +3727,7 @@
   "전체 개요는": "全体の概要は",
   "에서 이어집니다.": "から続きます。",
   "Kong은 단일 컨트롤 플레인과 런타임으로 모든 기능을 제공": "Kongは単一のコントロールプレーンとランタイムですべての機能を提供",
-  "IBM API Connect는 API 관리 CP이고, 실행은 DataPower(및 v12 webMethods)로 분리된 구조입니다. Kong은 API·AI·MCP·Event를 같은 Gateway 런타임과 거버넌스로 통합 제공합니다.": "IBM API ConnectはAPI管理のCPであり、実行はDataPower（およびv12のwebMethods）に分離された構造です。KongはAPI·AI·MCP·Eventを同じGatewayランタイムとガバナンスで統合提供します。"
+  "IBM API Connect는 API 관리 CP이고, 실행은 DataPower(및 v12 webMethods)로 분리된 구조입니다. Kong은 API·AI·MCP·Event를 같은 Gateway 런타임과 거버넌스로 통합 제공합니다.": "IBM API ConnectはAPI管理のCPであり、実行はDataPower（およびv12のwebMethods）に分離された構造です。KongはAPI·AI·MCP·Eventを同じGatewayランタイムとガバナンスで統合提供します。",
+  "이 메뉴 인쇄": "このメニューを印刷",
+  "인터랙티브 데모·목업은 화면에서 확인하세요.": "インタラクティブなデモ・モックは画面で確認してください。"
 }

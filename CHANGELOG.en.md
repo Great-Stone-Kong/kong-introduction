@@ -5,6 +5,11 @@
 
 ---
 
+## Unreleased
+### Added
+
+- Print / PDF by top menu (sidebar “Print this menu”; group menus include all member pages)
+
 ## 2026.10.28.df84c27f
 ### Added
 

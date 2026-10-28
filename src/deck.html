@@ -2434,6 +2434,66 @@ html[data-lang="ko"] .szai .sztw td{word-break:keep-all;line-break:strict;overfl
 @media (max-width:1100px){.ihero,.ikg,.isso{grid-template-columns:1fr}.ihero-i{transform:none}.icaps{grid-template-columns:repeat(3,1fr)}.itour{grid-template-columns:1fr}.it-list{flex-direction:row;overflow-x:auto}.it-b{flex:none}.istor{grid-template-columns:repeat(2,1fr)}.iproof{grid-template-columns:1fr}}
 @media (max-width:700px){.icaps,.istor{grid-template-columns:1fr 1fr}.it-l{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.ilife .il-spin,.ilife .il-n circle,.ih-p circle,.pmig-anim .pm-row,.iai-work .pane{animation:none}}
+
+/* ---- print (topnav menu unit) ---- */
+.only-print{display:none!important}
+.side .vb-print{display:block;width:100%;box-sizing:border-box;margin:16px 0 0;padding:8px 10px;font-family:var(--font)}
+@media print{
+  @page{size:A4;margin:12mm}
+  .only-print{display:block!important}
+  .no-print,
+  .topbar,.side,.navdd,.top-tools,.menu-btn,.orb,
+  body::before,
+  .modal,.lsw,.vbox,.vb-print{display:none!important}
+  html,body{
+    background:#fff!important;color:#000!important;
+    color-scheme:light!important;
+    height:auto!important;min-height:0!important;overflow:visible!important;
+    font-size:10.5pt!important;line-height:1.65!important;
+  }
+  .shell{display:block!important;padding:0!important;min-height:0!important}
+  .main{
+    margin:0!important;width:100%!important;max-width:none!important;
+    padding:0!important;position:static!important;
+  }
+  .page{display:none!important;animation:none!important}
+  .page.print-on{display:block!important}
+  .page.print-break{break-before:page;page-break-before:always}
+  .sec{padding:10mm 0 2mm!important;margin-top:4mm!important;border-top:0.25pt solid #ccc!important}
+  .sec:first-of-type{border-top:none!important;margin-top:0!important;padding-top:0!important}
+  .sec > h2{
+    position:static!important;top:auto!important;z-index:auto!important;
+    background:transparent!important;border-bottom:0.4pt solid #999!important;
+    padding:0 0 2mm!important;margin:0 0 3mm!important;
+    font-size:14pt!important;color:#000!important;
+    break-after:avoid;page-break-after:avoid;
+  }
+  h1{font-size:18pt!important;color:#000!important;line-height:1.3!important}
+  h2{font-size:14pt!important;color:#000!important}
+  h3{font-size:12pt!important;color:#000!important}
+  h4,.eyebrow{font-size:10pt!important;color:#000!important}
+  p,.lead,.sec>.sub,li,td,th{color:#000!important}
+  .lead{font-size:11pt!important}
+  a,a:visited{color:#000!important;text-decoration:underline!important}
+  .demo,.mock,.dia.airport{display:none!important}
+  .print-doc-head{
+    margin:0 0 6mm!important;padding:0 0 3mm!important;
+    border-bottom:0.7pt solid #000!important;
+    break-after:avoid;break-inside:avoid-page;
+  }
+  .print-doc-head strong{display:block;font-size:14pt;margin-bottom:1mm}
+  .print-doc-head .print-doc-menu{display:block;font-size:11pt;font-weight:700;margin-bottom:1mm}
+  .print-doc-head .print-doc-meta{display:block;font-size:8.5pt;color:#333!important;line-height:1.5}
+  .print-doc-note{font-size:8.5pt;color:#444!important;margin:0 0 5mm;padding:2mm 0;border-bottom:0.25pt solid #bbb}
+  pre,.code{white-space:pre-wrap!important;overflow:visible!important;max-height:none!important;font-size:8.5pt!important;border:0.25pt solid #bbb;break-inside:auto;page-break-inside:auto}
+  table{width:100%!important;max-width:100%!important;table-layout:fixed!important;font-size:8.5pt!important}
+  th,td{overflow-wrap:anywhere;color:#000!important;background:transparent!important}
+  thead{display:table-header-group}
+  tr,img,figure,svg{break-inside:avoid-page}
+  img,svg{max-width:100%!important;height:auto!important}
+  .vision{position:static!important}
+  .baw{position:static!important;background:transparent!important}
+}
 </style>
 <style id="i18n-css">
 /* audience: data-show-lang / data-show-edition (space-separated tokens; omit = all) */
@@ -2504,6 +2564,12 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
 </style>
 </head>
 <body>
+<div class="only-print print-doc-head" id="print-doc-head" aria-hidden="true">
+  <strong>Kong 소개</strong>
+  <span class="print-doc-menu" id="print-doc-menu"></span>
+  <span class="print-doc-meta" id="print-doc-meta"></span>
+</div>
+<p class="only-print print-doc-note">인터랙티브 데모·목업은 화면에서 확인하세요.</p>
 <svg xmlns="http://www.w3.org/2000/svg" class="svg-sprite" aria-hidden="true" focusable="false">
 <defs>
 <linearGradient id="ig-ins" x1="16" y1="27" x2="16" y2="4.6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="var(--ins-purple)"/><stop offset="1" stop-color="#4000bf"/></linearGradient>
@@ -7597,7 +7663,7 @@ function go(id,sec,push){
   PAGES.forEach(p=>p.classList.toggle('on',p.id==='p-'+id));
   const grp=(document.getElementById('p-'+id)||{}).dataset; [...topnav.children].forEach(b=>b.classList.toggle('on',b.dataset.id===id||(!!b.dataset.group&&grp&&grp.group===b.dataset.group)));
   const pg=document.getElementById('p-'+id);
-  side.innerHTML='<h6>'+pg.dataset.label+'</h6>'+visibleSecs(pg).map(s=>'<a data-s="'+s.id+'" href="#'+id+'/'+s.id+'">'+s.dataset.title+'</a>').join('')+vbox();
+  side.innerHTML='<h6>'+pg.dataset.label+'</h6>'+visibleSecs(pg).map(s=>'<a data-s="'+s.id+'" href="#'+id+'/'+s.id+'">'+s.dataset.title+'</a>').join('')+'<button type="button" class="vb-btn vb-print" title="이 메뉴 인쇄">이 메뉴 인쇄</button>'+vbox();
   side.classList.remove('open');
   document.title=pg.dataset.label+' | Kong 소개';
   if(sec&&document.getElementById(sec)){ setTimeout(()=>document.getElementById(sec).scrollIntoView(),30); }
@@ -7606,11 +7672,48 @@ function go(id,sec,push){
   setupSpy();
 }
 side.addEventListener('click',e=>{
+  if(e.target.closest('.vb-print')){ e.preventDefault(); printMenu(); return; }
   const a=e.target.closest('a'); if(!a||a.classList.contains('vb-btn')) return; e.preventDefault();
   const s=a.dataset.s; document.getElementById(s).scrollIntoView({behavior:'smooth'});
   try{ history.replaceState(null,'','#'+cur+'/'+s); }catch(_){}
   side.classList.remove('open');
 });
+function printTargets(){
+  const pg=document.getElementById('p-'+cur); if(!pg||!audienceOk(pg)) return [];
+  const g=pg.dataset.group;
+  if(g&&GROUPS[g]) return GROUPS[g].items.filter(audienceOk);
+  return [pg];
+}
+function printMenuTitle(targets){
+  const pg=targets[0]; if(!pg) return '';
+  return pg.dataset.group||pg.dataset.label||'';
+}
+function preparePrint(){
+  const targets=printTargets();
+  const set=new Set(targets);
+  PAGES.forEach(p=>{
+    p.classList.toggle('print-on',set.has(p));
+    p.classList.remove('print-break');
+  });
+  targets.forEach((p,i)=>{ if(i>0) p.classList.add('print-break'); });
+  const menu=printMenuTitle(targets);
+  const menuEl=document.getElementById('print-doc-menu');
+  const metaEl=document.getElementById('print-doc-meta');
+  if(menuEl) menuEl.textContent=menu;
+  if(metaEl){
+    const ver=(typeof KONG_INTRO_VERSION==='string'&&KONG_INTRO_VERSION)||'';
+    const when=new Date().toISOString().slice(0,10);
+    metaEl.textContent='v'+ver+' · '+when+' · '+location.href.split('#')[0]+(menu?'#'+(targets[0].id||'').slice(2):'');
+  }
+  document.documentElement.dataset.printing='1';
+}
+function restorePrint(){
+  PAGES.forEach(p=>p.classList.remove('print-on','print-break'));
+  delete document.documentElement.dataset.printing;
+}
+function printMenu(){ preparePrint(); window.print(); }
+addEventListener('beforeprint',preparePrint);
+addEventListener('afterprint',restorePrint);
 function setupSpy(){
   if(spy) spy.disconnect();
   const links=[...side.querySelectorAll('a')];
