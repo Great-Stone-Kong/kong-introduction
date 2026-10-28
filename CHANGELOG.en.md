@@ -10,6 +10,10 @@
 
 - Infrastructure > Recommended sizing > API Gateway: Redis S·M·L sizing and uses
 
+### Changed
+
+- Infrastructure > Recommended sizing: tightened section intro copy
+
 ## 2026.10.28.df84c27f
 ### Added
 

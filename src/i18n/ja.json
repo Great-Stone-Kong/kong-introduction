@@ -3786,8 +3786,8 @@
   "응답 본문·헤더 캐시. TTL·캐시 대상 비율이 메모리 상한을 좌우": "レスポンス本文 · ヘッダキャッシュ。TTL · キャッシュ対象比率がメモリ上限を左右",
   "클러스터 전역 카운터. DP가 늘수록 키가 배로 늘 수 있어 노드 수와 함께 산정": "クラスタ全体のカウンタ。DPが増えるとキーも増えうるためノード数と合わせて算定",
   "OIDC·세션 플러그인이 Redis를 백엔드로 쓸 때. Rate limit과 인스턴스 분리 권장": "OIDC · セッションプラグインがRedisをバックエンドに使う場合。Rate limitとはインスタンス分離を推奨",
-  "API Gateway는 초당 요청 수와 엔터티 수로 CP · DP · DB · Redis를, AI Gateway는 토큰 처리량으로 산정합니다.": "API Gatewayは秒間リクエスト数とエンティティ数でCP · DP · DB · Redisを、AI Gatewayはトークン処理量で算定します。",
   "S·M은 Primary+Replica. L은 마스터 3+레플리카 3. ElastiCache · Memorystore · Azure Cache for Redis로 대체 가능": "S·MはPrimary+Replica。Lはマスター3+レプリカ3。ElastiCache · Memorystore · Azure Cache for Redisで代替可能",
   "Kong 노드는 무상태라 수평 확장이 쉽습니다. 아래 티셔츠 사이징을 시작점으로 잡고, 실제 환경에서 벤치마크로 조정합니다. Redis는 Rate Limiting Advanced · Proxy Cache 등 DP 공유 상태가 있을 때 인프라에 포함합니다.": "Kongノードはステートレスで水平拡張が容易です。下記のTシャツサイズを出発点にし、実環境のベンチマークで調整します。RedisはRate Limiting Advanced · Proxy CacheなどDP共有状態があるときにインフラへ含めます。",
-  "여러 Data Plane이 같은 카운터·캐시를 볼 때 필요합니다. 키 수 ≈ Unique Consumers × Unique Routes × Rate limit windows × DP pods. 프로비저닝 RAM의 70–75%만 실사용으로 잡고 maxmemory를 설정합니다. sync_rate는 운영 권장치 0.5(공개 Managed Cache 기준).": "複数のData Planeが同じカウンタ · キャッシュを見るときに必要です。キー数 ≈ Unique Consumers × Unique Routes × Rate limit windows × DP pods。プロビジョニングRAMの70–75%のみ実使用としmaxmemoryを設定します。sync_rateの運用推奨値は0.5（公開Managed Cache基準）。"
+  "여러 Data Plane이 같은 카운터·캐시를 볼 때 필요합니다. 키 수 ≈ Unique Consumers × Unique Routes × Rate limit windows × DP pods. 프로비저닝 RAM의 70–75%만 실사용으로 잡고 maxmemory를 설정합니다. sync_rate는 운영 권장치 0.5(공개 Managed Cache 기준).": "複数のData Planeが同じカウンタ · キャッシュを見るときに必要です。キー数 ≈ Unique Consumers × Unique Routes × Rate limit windows × DP pods。プロビジョニングRAMの70–75%のみ実使用としmaxmemoryを設定します。sync_rateの運用推奨値は0.5（公開Managed Cache基準）。",
+  "API Gateway는 초당 요청 수와 엔터티 수로, AI Gateway는 토큰 처리량으로 산정합니다.": "API Gatewayは秒間リクエスト数とエンティティ数で、AI Gatewayはトークン処理量で算定します。"
 }
