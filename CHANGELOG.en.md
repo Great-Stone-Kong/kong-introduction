@@ -5,27 +5,20 @@
 
 ---
 
-## 2026.10.27.9737a70
+## 2026.10.28.df84c27f
+### Added
+
+- Agent Gateway > AI Agent security cases: Cohere (Qwen3.8 unauthorized upload attempt)
+- AI Gateway > Competitive comparison > Kong vs IBM API Connect tab
+
 ### Changed
 
-- AI Gateway > Competitive comparison > Kong vs IBM API Connect tab (after API7)
-- AI Gateway > Competitive comparison > IBM copy: report tone (no em dash / conversational phrasing)
-- API Gateway > Performance: update to GigaOm Benchmark 2025 (151,800 RPS · P95 0.55ms)
-- API Gateway > Performance: expand comparison cards (Throughput · Latency@Max · Normalized · Key Auth) vs Tyk · AWS · MuleSoft · Azure
-- Licensing > request counting: added Stream (TCP/TLS) session case
-
-- AI Gateway > Competitive comparison > Pure AI Gateway (LiteLLM · Portkey · Bifrost)
-  - Deployment flexibility · Throughput/Latency · rebuttal blocks
-  - Five-column comparison table (dropped LiteLLM Enterprise column)
-  - Kept the LiteLLM supply-chain incident
-  - Pure AI vs Kong agent-action architecture toggle and flow animation
-  - Pure: LiteLLM · Portkey · Bifrost scattered per environment / Kong: Unify
-  - Moved summary badge outside the side panel
-  - Rebuilt architecture as a 2×2 layer board (scatter vs one platform)
-  - Swapped AWS/Azure/GCP/On-prem/Databricks icons to iconography SVGs
-  - Dropped Consumers; Pure GW flow lines; Kong AI/API Gateway hub boxes
-  - Stable toggle height, simpler hop animation, removed side bullets
-  - Single Kong GW hub below layers; side Trace mock for coverage compare
+- Agent Gateway > AI Agent security cases: Kong approach under each card's root cause
+- AI Gateway > Regulation · compliance section removed (merged into Security & compliance mapping)
+- Licensing > request counting: Stream (TCP/TLS) session counting method
+- API Gateway > Performance · scalability: updated to GigaOm Benchmark 2025 figures
+- AI Gateway > Competitive comparison
+  - Target shifted from LiteLLM alone to Pure AI Gateway (LiteLLM · Portkey · Bifrost)
 
 ## 2026.10.22.6ad99f11
 ### Changed
