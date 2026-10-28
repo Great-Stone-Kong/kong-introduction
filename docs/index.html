@@ -6257,11 +6257,13 @@ buildCmp();
     function elBy(id){ return root.querySelector('.lx-est[data-id="'+id+'"]'); }
     function paint(){
       if(!flow || !board) return;
-      const w = board.clientWidth, h = board.clientHeight;
+      // viewBox must use the same space as xy() (getBoundingClientRect) — clientWidth drifts under browser zoom
+      const br = board.getBoundingClientRect();
+      const w = br.width, h = br.height;
       if(!w || !h) return;
       flow.setAttribute('viewBox', '0 0 '+w+' '+h);
-      flow.setAttribute('width', w);
-      flow.setAttribute('height', h);
+      flow.removeAttribute('width');
+      flow.removeAttribute('height');
       const mode = root.dataset.mode;
       const mesh = [], hops = [];
       if(mode === 'pure'){
@@ -6345,9 +6347,13 @@ buildCmp();
     new IntersectionObserver(es => es.forEach(e => {
       if(e.isIntersecting) start(); else stop();
     }), {threshold: .25}).observe(root);
+    function repaint(){ if(root.dataset.step !== '0') paint(); }
     if(window.ResizeObserver && board){
-      new ResizeObserver(() => { if(root.dataset.step !== '0') paint(); }).observe(board);
+      new ResizeObserver(repaint).observe(board);
     }
+    // browser zoom often skips ResizeObserver — keep lines glued via viewport resize
+    window.addEventListener('resize', repaint);
+    if(window.visualViewport) window.visualViewport.addEventListener('resize', repaint);
     setMode('pure');
   }
   function scan(){ document.querySelectorAll('.lx-arch').forEach(boot); }
