@@ -3772,5 +3772,22 @@
   "소형 문자열 약 85 MB / 100만 키 · 5필드 해시 약 160 MB / 100만 키 (Redis FAQ). 소형 해시·리스트·sorted set은 compact encoding으로 최대 약 10배 절약": "小型文字列約85 MB / 100万キー · 5フィールドハッシュ約160 MB / 100万キー（Redis FAQ）。小型ハッシュ · リスト · sorted setはcompact encodingで最大約10倍節約",
   "Key Count ≈ Unique Consumers × Unique Routes × Rate limit windows × Kong Data Plane pods. 프로비저닝 메모리의 70–75%만 실사용으로 봅니다.": "Key Count ≈ Unique Consumers × Unique Routes × Rate limit windows × Kong Data Plane pods。プロビジョニングメモリの70–75%のみ実使用とみなします。",
   "Rate Limiting Advanced · Proxy Cache · Semantic Cache가 Redis(또는 Valkey)를 공유합니다. 일반 Redis 용량 기준과 Kong 키 산정 공식을 함께 적용합니다. Kong 전용 공식 Redis 사이징 문서는 없고, Managed Cache 문서 · 플러그인 가이드 · 운영 사례를 합쳐 정리한 시작점입니다.": "Rate Limiting Advanced · Proxy Cache · Semantic CacheがRedis（またはValkey）を共有します。一般Redis容量基準とKongキー算定式を合わせて適用します。Kong専用の公式Redisサイジング文書はなく、Managed Cache文書 · プラグインガイド · 運用事例をまとめた出発点です。",
-  "문서에 512와 128이 혼재. 배포본에서 CONFIG GET hash-max-listpack-entries로 확인": "文書に512と128が混在。配布版でCONFIG GET hash-max-listpack-entriesを確認"
+  "문서에 512와 128이 혼재. 배포본에서 CONFIG GET hash-max-listpack-entries로 확인": "文書に512と128が混在。配布版でCONFIG GET hash-max-listpack-entriesを確認",
+  "노드": "ノード",
+  "키 규모": "キー規模",
+  "<100만": "<100万",
+  "<500만": "<500万",
+  "500만+": "500万+",
+  "DP RPS 대역": "DP RPS帯",
+  "HA · 클라우드 예": "HA · クラウド例",
+  "세션 · 토큰 저장(선택)": "セッション · トークン保存（任意）",
+  "Redis 용도 · 산정 포인트": "Redis用途 · 算定ポイント",
+  "키 수 · DP 공유 상태 · HA 토폴로지 (트래픽 경로 밖)": "キー数 · DP共有状態 · HAトポロジ（トラフィック経路外）",
+  "응답 본문·헤더 캐시. TTL·캐시 대상 비율이 메모리 상한을 좌우": "レスポンス本文 · ヘッダキャッシュ。TTL · キャッシュ対象比率がメモリ上限を左右",
+  "클러스터 전역 카운터. DP가 늘수록 키가 배로 늘 수 있어 노드 수와 함께 산정": "クラスタ全体のカウンタ。DPが増えるとキーも増えうるためノード数と合わせて算定",
+  "OIDC·세션 플러그인이 Redis를 백엔드로 쓸 때. Rate limit과 인스턴스 분리 권장": "OIDC · セッションプラグインがRedisをバックエンドに使う場合。Rate limitとはインスタンス分離を推奨",
+  "API Gateway는 초당 요청 수와 엔터티 수로 CP · DP · DB · Redis를, AI Gateway는 토큰 처리량으로 산정합니다.": "API Gatewayは秒間リクエスト数とエンティティ数でCP · DP · DB · Redisを、AI Gatewayはトークン処理量で算定します。",
+  "S·M은 Primary+Replica. L은 마스터 3+레플리카 3. ElastiCache · Memorystore · Azure Cache for Redis로 대체 가능": "S·MはPrimary+Replica。Lはマスター3+レプリカ3。ElastiCache · Memorystore · Azure Cache for Redisで代替可能",
+  "Kong 노드는 무상태라 수평 확장이 쉽습니다. 아래 티셔츠 사이징을 시작점으로 잡고, 실제 환경에서 벤치마크로 조정합니다. Redis는 Rate Limiting Advanced · Proxy Cache 등 DP 공유 상태가 있을 때 인프라에 포함합니다.": "Kongノードはステートレスで水平拡張が容易です。下記のTシャツサイズを出発点にし、実環境のベンチマークで調整します。RedisはRate Limiting Advanced · Proxy CacheなどDP共有状態があるときにインフラへ含めます。",
+  "여러 Data Plane이 같은 카운터·캐시를 볼 때 필요합니다. 키 수 ≈ Unique Consumers × Unique Routes × Rate limit windows × DP pods. 프로비저닝 RAM의 70–75%만 실사용으로 잡고 maxmemory를 설정합니다. sync_rate는 운영 권장치 0.5(공개 Managed Cache 기준).": "複数のData Planeが同じカウンタ · キャッシュを見るときに必要です。キー数 ≈ Unique Consumers × Unique Routes × Rate limit windows × DP pods。プロビジョニングRAMの70–75%のみ実使用としmaxmemoryを設定します。sync_rateの運用推奨値は0.5（公開Managed Cache基準）。"
 }

@@ -1452,7 +1452,7 @@ html[data-theme="light"] .egt-list li.on{box-shadow:0 0 0 1px var(--accent)}
 .szc{background:var(--navy-2,#061a0c);border:1px solid var(--line);border-radius:10px;padding:14px}
 .szc h4{margin:0 0 4px;font-size:14.5px;display:flex;align-items:center;gap:8px}.szc>p{margin:0 0 10px;font-size:12px;color:var(--svg-muted)}
 .szc .d{width:10px;height:10px;border-radius:3px;display:inline-block}
-.d.cp{background:var(--diag-sky-fill)}.d.db{background:#C925D1}.d.dp{background:#CCFF00}
+.d.cp{background:var(--diag-sky-fill)}.d.db{background:#C925D1}.d.dp{background:#CCFF00}.d.rd{background:#DC382D}
 .sztw{margin:0}.sztw table{font-size:12.5px}.sztw th,.sztw td{padding:7px 9px;white-space:nowrap}
 .sztw.wide td:last-child,.sztw.wide td:nth-child(5){white-space:normal}
 .szai .sztw table{table-layout:fixed;width:100%}
@@ -5795,20 +5795,24 @@ claude
 <section class="sec" id="inf-size" data-title="권장 사이징">
   <div class="eyebrow">Sizing Guide</div>
   <h2>권장 사이징 가이드</h2>
-  <p class="sub">API Gateway는 초당 요청 수와 엔터티 수, AI Gateway는 토큰 처리량, Redis는 키 수·메모리·처리량이 산정 기준입니다.</p>
-  <div class="tabs" data-tabs><button class="on">API Gateway</button><button>AI Gateway</button><button>Redis</button></div>
+  <p class="sub">API Gateway는 초당 요청 수와 엔터티 수로 CP · DP · DB · Redis를, AI Gateway는 토큰 처리량으로 산정합니다.</p>
+  <div class="tabs" data-tabs><button class="on">API Gateway</button><button>AI Gateway</button></div>
   <div class="fbox szbox">
     <div class="pane on">
-  <p class="szl">Kong 노드는 무상태라 수평 확장이 쉽습니다. 아래 티셔츠 사이징을 시작점으로 잡고, 실제 환경에서 벤치마크로 조정합니다.</p>
+  <p class="szl">Kong 노드는 무상태라 수평 확장이 쉽습니다. 아래 티셔츠 사이징을 시작점으로 잡고, 실제 환경에서 벤치마크로 조정합니다. Redis는 Rate Limiting Advanced · Proxy Cache 등 DP 공유 상태가 있을 때 인프라에 포함합니다.</p>
   <div class="szfs"><div class="szf"><b>네트워크 지연</b><span>클라이언트↔Kong↔Upstream 구간 지연</span></div><div class="szf"><b>처리량</b><span>초당 요청 수 · 요청/응답 크기</span></div><div class="szf"><b>Upstream 응답 시간</b><span>백엔드가 빠를수록 Kong 자원 회수도 빠름</span></div><div class="szf"><b>플러그인 수</b><span>실행 플러그인이 많을수록 처리 시간 증가</span></div></div>
   <div class="szg3">
     <div class="szc"><h4><i class="d cp"></i>Control Plane</h4><p>엔터티 수 · DP 수 · 관리 UI 동시 사용자</p><div class="tw sztw "><table><thead><tr><th></th><th>엔터티</th><th>DP 수</th><th>동시 사용자</th><th>CPU</th><th>RAM</th></tr></thead><tbody><tr><td><span class="szb s">S</span></td><td>&lt;1,000</td><td>&lt;50</td><td>&lt;50</td><td>2</td><td>4 GB</td></tr><tr><td><span class="szb m">M</span></td><td>&lt;5,000</td><td>&lt;500</td><td>&lt;500</td><td>4</td><td>8 GB</td></tr><tr><td><span class="szb l">L</span></td><td>&gt;10,000</td><td>&gt;1,000</td><td>&gt;1,000</td><td>8</td><td>16 GB</td></tr></tbody></table></div></div>
     <div class="szc"><h4><i class="d dp"></i>Data Plane</h4><p>초당 요청 · 페이로드 · TLS · 외부 연계</p><div class="tw sztw "><table><thead><tr><th></th><th>초당 요청</th><th>페이로드</th><th>CPU</th><th>RAM</th></tr></thead><tbody><tr><td><span class="szb s">S</span></td><td>&lt;2,000</td><td>KB 수준</td><td>2</td><td>4 GB</td></tr><tr><td><span class="szb m">M</span></td><td>&lt;5,000</td><td>20 MB 이하</td><td>4</td><td>8 GB</td></tr><tr><td><span class="szb l">L</span></td><td>&gt;10,000</td><td>20 MB 초과</td><td>8</td><td>16 GB</td></tr></tbody></table></div></div>
     <div class="szc"><h4><i class="d db"></i>PostgreSQL</h4><p>엔터티 수 · 구성 변경 빈도 (트래픽 미처리)</p><div class="tw sztw "><table><thead><tr><th></th><th>엔터티</th><th>DP 수</th><th>CPU</th><th>RAM</th><th>SSD</th></tr></thead><tbody><tr><td><span class="szb s">S</span></td><td>&lt;1,000</td><td>&lt;50</td><td>2</td><td>4 GB</td><td>+100 GB</td></tr><tr><td><span class="szb m">M</span></td><td>&lt;5,000</td><td>&lt;500</td><td>4</td><td>12 GB</td><td>+150 GB</td></tr><tr><td><span class="szb l">L</span></td><td>&gt;10,000</td><td>&gt;1,000</td><td>8</td><td>32 GB</td><td>+300 GB</td></tr></tbody></table></div></div>
+    <div class="szc"><h4><i class="d rd"></i>Redis</h4><p>키 수 · DP 공유 상태 · HA 토폴로지 (트래픽 경로 밖)</p><div class="tw sztw "><table><thead><tr><th></th><th>키 규모</th><th>DP RPS 대역</th><th>노드</th><th>CPU</th><th>RAM</th></tr></thead><tbody><tr><td><span class="szb s">S</span></td><td>&lt;100만</td><td>&lt;2,000</td><td>Primary + Replica</td><td>2</td><td>4 GB</td></tr><tr><td><span class="szb m">M</span></td><td>&lt;500만</td><td>&lt;10,000</td><td>Primary + Replica</td><td>4</td><td>12 GB</td></tr><tr><td><span class="szb l">L</span></td><td>500만+</td><td>&gt;10,000</td><td>Cluster 6 (3+3)</td><td>8</td><td>32 GB</td></tr></tbody></table></div></div>
   </div>
   <h4 class="szh">요구사항별 시작점 (노드당)</h4>
   <div class="tw sztw wide"><table><thead><tr><th>Size</th><th>구성 엔터티</th><th>지연 요구</th><th>처리량</th><th>사용 패턴</th><th>CPU · RAM (노드당)</th><th>클라우드 인스턴스 예</th></tr></thead><tbody><tr><td><span class="szb d">Dev</span></td><td>&lt;100</td><td>&lt;100 ms</td><td>&lt;500 TPS</td><td>개발 · 테스트</td><td>1-2 core · 2-4 GB</td><td>AWS t3.medium · GCP n1-standard-1 · Azure A1 v2</td></tr><tr><td><span class="szb s">Small</span></td><td>&lt;1,000</td><td>&lt;20 ms</td><td>&lt;2,500 TPS</td><td>프로덕션 · 신규 트래픽</td><td>1-2 core · 2-4 GB</td><td>AWS t3.medium · GCP n1-standard-1 · Azure A1 v2</td></tr><tr><td><span class="szb m">Medium</span></td><td>&lt;10,000</td><td>&lt;10 ms</td><td>&lt;10,000 TPS</td><td>미션 크리티컬 · 중앙 게이트웨이</td><td>2-4 core · 4-8 GB</td><td>AWS m5.large · GCP n1-standard-4 · Azure A1 v4</td></tr><tr><td><span class="szb l">Large</span></td><td>50,000+</td><td>&lt;10 ms</td><td>&lt;10,000 TPS</td><td>미션 크리티컬 · 대규모 엔터티</td><td>8-16 core · 16-32 GB</td><td>AWS c5.xlarge · GCP n1-highcpu-16 · Azure F8s v2</td></tr></tbody></table></div>
   <ul class="sztips"><li><b>최소 2노드 + LB</b>로드밸런서 뒤에 최소 2개 노드. 장애 시 남은 노드로 부하가 몰리지 않도록 여유를 둠</li><li><b>CPU 기준 오토스케일</b>무상태 구조라 수평 확장 우선. 확장 · 축소 기준은 CPU 사용률</li><li><b>워커당 약 500 MB</b>코어 수만큼 워커 실행. 4 core · 8 GB면 mem_cache_size 4~6 GB 할당 권장</li><li><b>버스트 인스턴스 주의</b>대규모 클러스터에서 t2/t3 · e2 · B 시리즈는 CPU 스로틀링으로 성능 저하</li><li><b>엔터티 1,000개 이상</b>dedicated_config_processing 활성화로 재구성 중 프록시 지연 감소</li><li><b>외부 연계가 병목</b>IdP가 초당 1,000 토큰만 발급하면 게이트웨이 처리량도 1,000 TPS로 제한</li></ul>
+  <h4 class="szh">Redis 용도 · 산정 포인트</h4>
+  <p class="szl" style="margin-top:0">여러 Data Plane이 같은 카운터·캐시를 볼 때 필요합니다. 키 수 ≈ Unique Consumers × Unique Routes × Rate limit windows × DP pods. 프로비저닝 RAM의 70–75%만 실사용으로 잡고 maxmemory를 설정합니다. sync_rate는 운영 권장치 0.5(공개 Managed Cache 기준).</p>
+  <div class="szfs"><div class="szf"><b>Rate Limiting Advanced</b><span>클러스터 전역 카운터. DP가 늘수록 키가 배로 늘 수 있어 노드 수와 함께 산정</span></div><div class="szf"><b>Proxy Cache Advanced</b><span>응답 본문·헤더 캐시. TTL·캐시 대상 비율이 메모리 상한을 좌우</span></div><div class="szf"><b>세션 · 토큰 저장(선택)</b><span>OIDC·세션 플러그인이 Redis를 백엔드로 쓸 때. Rate limit과 인스턴스 분리 권장</span></div><div class="szf"><b>HA · 클라우드 예</b><span>S·M은 Primary+Replica. L은 마스터 3+레플리카 3. ElastiCache · Memorystore · Azure Cache for Redis로 대체 가능</span></div></div>
 </div>
     <div class="pane">
   <p class="szl">AI Gateway는 요청 수가 아니라 토큰 처리량이 기준입니다. 표의 vCPU는 노드당이 아닌 클러스터 전체 합계입니다.</p>
@@ -5825,20 +5829,6 @@ claude
     <div><h4 class="szh">권장 인스턴스</h4><div class="tw sztw "><table><thead><tr><th>클라우드</th><th>권장 인스턴스 계열</th></tr></thead><tbody><tr><td>AWS x86</td><td>c5 · c6i (non-burstable)</td></tr><tr><td>AWS ARM</td><td>c6g · c7g (Graviton)</td></tr><tr><td>GCP</td><td>c2-standard · c3-standard</td></tr><tr><td>Azure</td><td>Fsv2 · Dasv5</td></tr></tbody></table></div></div>
   </div>
   <ul class="sztips c4"><li><b>CPU 바운드</b>토큰 처리에 CPU를 씀. 출력 토큰이 입력보다 4~5배 비쌈</li><li><b>버스트 인스턴스 금지</b>t2/t3 · e2 · B 시리즈의 CPU 제한은 토큰 스트리밍 성능에 악영향</li><li><b>RAG 버퍼 조정</b>1~4 MiB 프롬프트는 client_body_buffer_size 1~2 MiB, max_request_body_size 8~16 MiB</li><li><b>Konnect 사용 시</b>CP는 Kong이 운영. DP · Redis · 로깅 인프라만 산정</li></ul>
-</div>
-    <div class="pane">
-  <p class="szl">Rate Limiting Advanced · Proxy Cache · Semantic Cache가 Redis(또는 Valkey)를 공유합니다. 일반 Redis 용량 기준과 Kong 키 산정 공식을 함께 적용합니다. Kong 전용 공식 Redis 사이징 문서는 없고, Managed Cache 문서 · 플러그인 가이드 · 운영 사례를 합쳐 정리한 시작점입니다.</p>
-  <div class="szfs"><div class="szf"><b>메모리</b><span>소형 문자열 약 85 MB / 100만 키 · 5필드 해시 약 160 MB / 100만 키 (Redis FAQ). 소형 해시·리스트·sorted set은 compact encoding으로 최대 약 10배 절약</span></div><div class="szf"><b>여유율</b><span>평균이 아니라 피크 기준. maxmemory 필수. 가용 RAM의 70–75%만 사용 · 대량 쓰기 시 CoW로 약 2배 순간 증가(경험 규칙)</span></div><div class="szf"><b>처리량</b><span>명령 실행은 단일 스레드. 파이프라인 사용 시 약 1M req/s까지 가능. 연결 수만 단위로 늘면 성능 저하</span></div><div class="szf"><b>클러스터</b><span>최소 마스터 3. 권장 6노드(마스터 3 + 레플리카 3)</span></div></div>
-  <h4 class="szh">Kong Rate Limiting · 키 수 산정</h4>
-  <p class="szl" style="margin-top:0">Key Count ≈ Unique Consumers × Unique Routes × Rate limit windows × Kong Data Plane pods. 프로비저닝 메모리의 70–75%만 실사용으로 봅니다.</p>
-  <div class="szg2 cols2">
-    <div><h4 class="szh">sync_rate</h4><div class="tw sztw"><table><thead><tr><th>항목</th><th>권장</th><th>비고</th></tr></thead><tbody><tr><td>운영(공개 Managed Cache)</td><td>0.5</td><td>측정 기반 공개 권장치</td></tr><tr><td>다른 운영 가이드 하한</td><td>1초</td><td>공개 문서와 불일치. 공개·측정 기준을 우선</td></tr><tr><td>역할</td><td>최대 레버</td><td>값을 낮출수록 Redis 쓰기는 줄고 DP 로컬 오차가 커짐</td></tr></tbody></table></div></div>
-    <div><h4 class="szh">처리량 참고</h4><div class="tw sztw"><table><thead><tr><th>방식</th><th>대략 처리량</th><th>조건</th></tr></thead><tbody><tr><td>파이프라인 있음</td><td>~1M req/s</td><td>단일 스레드 명령 경로 · 배치 전송</td></tr><tr><td>파이프라인 없음</td><td>현저히 낮음</td><td>RTT마다 왕복. 연결 수 증가에 더 민감</td></tr><tr><td>연결 수</td><td>수만 단위부터 저하</td><td>DP 수 · 클라이언트 풀 크기와 함께 산정</td></tr></tbody></table></div></div>
-  </div>
-  <h4 class="szh">워크로드 → Managed Cache 티어 예</h4>
-  <div class="tw sztw wide"><table><thead><tr><th>Consumers</th><th>Routes</th><th>Windows</th><th>RPS</th><th>시작 티어</th><th>비고</th></tr></thead><tbody><tr><td>≤1,000</td><td>100</td><td>3</td><td>10K</td><td>medium</td><td>Rate limit 중심 워크로드</td></tr><tr><td>5,000</td><td>3,000</td><td>—</td><td>20K</td><td>2xlarge</td><td>키 수 · 처리량 동시 상승</td></tr></tbody></table></div>
-  <p class="note">Managed Cache는 업사이즈만 가능합니다. Semantic Cache(벡터 검색)는 micro · small 티어에서 동작하지 않습니다. 최소 동작 티어는 환경별로 확인합니다.</p>
-  <ul class="sztips"><li><b>카운터·캐시 바이트</b>Rate limit 카운터 · Proxy Cache · Semantic Cache 벡터의 항목당 공식 바이트 공개치는 없음. 키 수와 TTL로 상한을 잡음</li><li><b>복제 백로그</b>레플리케이션 backlog 사이징은 이 가이드 범위 밖. 클러스터·복제 정책은 운영 표준을 따름</li><li><b>hash-max-listpack-entries</b>문서에 512와 128이 혼재. 배포본에서 CONFIG GET hash-max-listpack-entries로 확인</li><li><b>자체 호스팅</b>티어 표는 Konnect Managed Cache 기준. 자체 Redis는 동일 키 공식에 피크 메모리·maxmemory·복제를 직접 맞춤</li></ul>
 </div>
   </div>
 </section>

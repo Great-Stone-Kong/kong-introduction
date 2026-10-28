@@ -9,7 +9,7 @@
 
 ### 추가
 
-- 인프라 구성 > 권장 사이징: Redis 탭 추가 (일반 Redis · Kong 키 산정 · Managed Cache 티어)
+- 인프라 구성 > 권장 사이징 > API Gateway: Redis S·M·L 항목 및 용도 설명 추가
 
 ## 2026.10.28.df84c27f
 ### 추가
