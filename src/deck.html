@@ -2446,8 +2446,13 @@ html[data-lang="ko"] .szai .sztw td{word-break:keep-all;line-break:strict;overfl
   body::before,
   .modal,.lsw,.vbox,.vb-print,
   .tabs,.dm-tabs,.dm-cases,.egt-nav,.egt-nav-label,
-  /* Interactive chrome: empty stages / packet UI waste paper — screen only */
-  .demo,.mock,.dia.airport,.itour,.pmig-anim,.iai-work{display:none!important}
+  /* Interactive / empty-shell chrome — screen only */
+  .demo,.mock,.mockrow,.dia.airport,.itour,.pmig-anim,.iai-work,
+  .lx-arch,.lx-flow,animate,animateMotion,set,
+  .dlp-w,.pf-resp,.pf-st::after,.pf-out::before,
+  /* Demo-only sections (hiding .demo leaves a blank title page) */
+  #i-demo,#g-demo,
+  [data-print="omit"]{display:none!important}
   /* Force light tokens so dark-theme fills/strokes stay readable on paper */
   html{
     color-scheme:light!important;
@@ -2471,7 +2476,9 @@ html[data-lang="ko"] .szai .sztw td{word-break:keep-all;line-break:strict;overfl
   }
   .page{display:none!important;animation:none!important}
   .page.print-on{display:block!important}
-  .page.print-break{break-before:page;page-break-before:always}
+  /* Soft break between group pages — avoid orphan blank sheets */
+  .page.print-break{break-before:page;page-break-before:always;padding-top:0!important}
+  .page.print-break > .sec:first-of-type{padding-top:0!important}
   /* Reveal scroll/IO content that is opacity:0 on screen */
   .rv,.rv .adv-it,.rv .atl,.rv .acm-call,
   .tli,.eqi,.eqo,.cities span,.plat .ic,
@@ -2518,15 +2525,36 @@ html[data-lang="ko"] .szai .sztw td{word-break:keep-all;line-break:strict;overfl
   .lead{font-size:11pt!important}
   a,a:visited{color:#000!important;text-decoration:underline!important}
   .dia{overflow:visible!important;max-height:none!important;margin:2mm 0!important;padding:2mm!important}
+  .dia svg,.eco svg,.hubsvg,.mlsvg,.mmsvg,.sqsvg,.gzsvg{max-height:85mm!important;width:100%!important}
+  /* Pipeline → vertical document list */
+  .pf{margin:2mm 0!important;padding:2mm!important;border:0.25pt solid #bbb!important;background:transparent!important}
+  .pf-grid{display:none!important}
+  .print-pf-list{display:block!important;margin:2mm 0 0!important;padding-left:5mm!important;font-size:9.5pt!important}
+  .print-pf-list li{margin:0 0 1mm!important;color:#000!important;break-inside:avoid}
+  .pf-title,.pf-cap{text-align:left!important;min-height:0!important;margin:1mm 0!important}
+  /* Land / flow cards denser */
+  .flow,.advflow{display:block!important}
+  .flow .st,.advflow .st{display:block!important;margin:0 0 2mm!important;padding:0!important;border:0!important;background:transparent!important}
+  .flow .st .n,.advflow .st .n{display:inline!important;margin-right:2mm!important;font-weight:800!important}
+  .adv{display:block!important}
+  .adv-core,.adv-plus{break-inside:auto!important}
+  .dlp-g{display:none!important}
   .print-doc-head{
-    margin:0 0 4mm!important;padding:0 0 2mm!important;
+    margin:0 0 3mm!important;padding:0 0 2mm!important;
     border-bottom:0.7pt solid #000!important;
     break-after:avoid;break-inside:avoid-page;
   }
   .print-doc-head strong{display:block;font-size:14pt;margin-bottom:1mm}
   .print-doc-head .print-doc-menu{display:block;font-size:11pt;font-weight:700;margin-bottom:1mm}
   .print-doc-head .print-doc-meta{display:block;font-size:8.5pt;color:#333!important;line-height:1.5}
-  .print-doc-note{font-size:8pt;color:#555!important;margin:0 0 4mm;padding:0 0 2mm;border-bottom:0.25pt solid #bbb}
+  .print-doc-note{font-size:8pt;color:#555!important;margin:0 0 2mm;padding:0 0 2mm;border-bottom:0.25pt solid #bbb}
+  .print-toc{font-size:9pt!important;margin:0 0 4mm!important;padding:0 0 2mm!important;border-bottom:0.25pt solid #bbb;color:#000!important}
+  .print-toc b{display:block;margin:0 0 1mm!important;font-size:10pt!important}
+  .print-toc ol{margin:0;padding-left:5mm}
+  .print-toc li{margin:0 0 .6mm!important}
+  /* Comparison: keep tables; .lx-arch already omitted */
+  #i-cmp .pane{border-top:0.25pt solid #ccc!important;margin-top:2mm!important;padding-top:1.5mm!important}
+  .lx-arch-side,.lx-jg,.lx-trace{display:none!important}
   pre,.code{white-space:pre-wrap!important;overflow:visible!important;max-height:none!important;font-size:8.5pt!important;border:0.25pt solid #bbb;break-inside:auto;page-break-inside:auto;color:#000!important}
   table{width:100%!important;max-width:100%!important;table-layout:fixed!important;font-size:8.5pt!important}
   th,td{overflow-wrap:anywhere;color:#000!important;background:transparent!important}
@@ -2537,6 +2565,7 @@ html[data-lang="ko"] .szai .sztw td{word-break:keep-all;line-break:strict;overfl
   .vision,.baw{position:static!important;background:transparent!important}
   .card,.npanel,.stat,.cmp,.cmpp{break-inside:auto;page-break-inside:auto;overflow:visible!important}
 }
+.print-pf-list{display:none}
 </style>
 <style id="i18n-css">
 /* audience: data-show-lang / data-show-edition (space-separated tokens; omit = all) */
@@ -2612,7 +2641,7 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
   <span class="print-doc-menu" id="print-doc-menu"></span>
   <span class="print-doc-meta" id="print-doc-meta"></span>
 </div>
-<p class="only-print print-doc-note">인터랙티브 데모·트레이스 목업은 화면에서 확인하세요. 인쇄본은 본문·표·다이어그램 중심입니다.</p>
+<p class="only-print print-doc-note">데모·트레이스 목업·아키텍처 애니메이션은 화면 전용입니다. 인쇄본은 본문·표·선정 가이드 중심입니다.</p>
 <svg xmlns="http://www.w3.org/2000/svg" class="svg-sprite" aria-hidden="true" focusable="false">
 <defs>
 <linearGradient id="ig-ins" x1="16" y1="27" x2="16" y2="4.6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="var(--ins-purple)"/><stop offset="1" stop-color="#4000bf"/></linearGradient>
@@ -3772,7 +3801,7 @@ claude
   </div>
 </section>
 
-<section class="sec" id="i-demo" data-title="데모">
+<section class="sec" id="i-demo" data-title="데모" data-print="omit">
   <div class="eyebrow">Interactive Demo</div>
   <h2>데모</h2>
   <p class="sub">시나리오와 케이스를 골라 프롬프트가 Kong AI Gateway의 플러그인을 지나며 마스킹 · 차단 · 캐시 · 한도 · 압축 · 모델 선택이 일어나는 과정을 확인해 보세요.</p>
@@ -4144,7 +4173,7 @@ claude
   <div class="gzrs"><div class="gzr"><span class="gzn">1</span><div class="gzc1"><b>외부로 나가는 경로가 의도와 다르게 열려 있음</b></div><div class="gzc2"><i>Kong 예방 방식</i>Agent가 나갈 수 있는 목적지를 Gateway에 등록된 대상으로만 한정. 미등록 목적지 호출은 차단 · 기록</div><div class="gzc3"><i>함께 필요한 통제</i>런타임 네트워크를 기본 차단으로 두고 Gateway만 통과하도록 강제</div></div><div class="gzr"><span class="gzn">2</span><div class="gzc1"><b>허용한 내부 경로(레지스트리 프록시) 자체가 공격면이 됨</b></div><div class="gzc2"><i>Kong 예방 방식</i>레지스트리를 Gateway 뒤에 두고 Agent마다 인증 · 조회(GET)만 허용. 쓰기 · 업로드 · 다른 Agent 경로 접근 차단</div><div class="gzc3"><i>함께 필요한 통제</i>레지스트리 · 내부 도구의 취약점 패치와 직접 접근 경로 제거</div></div><div class="gzr"><span class="gzn">3</span><div class="gzc1"><b>여러 Agent가 공유 자원을 통해 서로 정보를 주고받음</b></div><div class="gzc2"><i>Kong 예방 방식</i>Agent별 Consumer와 권한을 분리해 공유 쓰기 경로를 없앰. Agent 간 호출은 A2A로만, 허가된 상대에게만</div><div class="gzc3"><i>함께 필요한 통제</i>공유 스토리지 · 볼륨의 쓰기 권한 분리</div></div><div class="gzr"><span class="gzn">4</span><div class="gzc1"><b>수천 건의 자동 행위가 장시간 이어짐</b></div><div class="gzc2"><i>Kong 예방 방식</i>Agent별 호출 · 토큰 상한과 급증 차단. 이상 시 해당 Agent만 즉시 비활성화</div><div class="gzc3"><i>함께 필요한 통제</i>정상 업무량 기준선 설정과 운영 중 조정</div></div><div class="gzr"><span class="gzn">5</span><div class="gzc1"><b>행위가 수개월간 탐지되지 않음</b></div><div class="gzc2"><i>Kong 예방 방식</i>LLM · MCP · A2A · API 호출을 하나의 추적으로 기록하고 SIEM으로 실시간 전송</div><div class="gzc3"><i>함께 필요한 통제</i>SIEM 탐지 규칙 · 관제 운영</div></div><div class="gzr"><span class="gzn">6</span><div class="gzc1"><b>자격증명을 얻어 더 깊이 침투</b></div><div class="gzc2"><i>Kong 예방 방식</i>백엔드 자격증명을 Kong이 Vault 연동으로 보관하고 대신 주입. Agent는 원본 키를 갖지 않음</div><div class="gzc3"><i>함께 필요한 통제</i>시크릿 순환 · 노출된 토큰 관리</div></div><div class="gzr"><span class="gzn">7</span><div class="gzc1"><b>추론(CoT)만 감시하고 실제 도구 호출 · 이그레스는 열려 있음</b></div><div class="gzc2"><i>Kong 예방 방식</i>MCP · API 도구 호출과 목적지를 Gateway에서 허용 목록으로 강제 · 기록. 추론 스트림만으로 허용하지 않음</div><div class="gzc3"><i>함께 필요한 통제</i>런타임 네트워크 기본 차단, 미승인 클라우드 스토리지 · 메타데이터 주소 차단</div></div></div>
   <p class="note">OpenAI · Anthropic 사례는 AI 기업 평가 환경에서, 출시 모델용 안전장치를 의도적으로 끈 상태로 발생했습니다. Cohere 사례는 자체 호스팅 오픈웨이트 모델의 도구 호출을 샌드박스가 막은 관측입니다. Kong은 이들 사고 대응에 사용되지 않았으며, 위 내용은 같은 유형의 위험을 기업 환경에서 미리 줄이는 방법을 정리한 것입니다. 출처: <a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/" target="_blank" rel="noopener noreferrer">OpenAI 공지 ↗</a> · <a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener noreferrer">Anthropic 공지 ↗</a> · <a href="https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model" target="_blank" rel="noopener noreferrer">Cohere 공지 ↗</a></p>
 </section>
-<section class="sec" id="g-demo" data-title="데모">
+<section class="sec" id="g-demo" data-title="데모" data-print="omit">
   <div class="eyebrow">Interactive Demo</div>
   <h2>데모</h2>
   <p class="sub">고객 지원과 사내 업무 자동화 Agent가 보내는 실제 형태의 요청을 골라 보세요. 같은 요청을 <b>Kong 정책 적용</b>과 <b>정책 없음</b>으로 바꿔 실행하면, 앞의 케이스 스터디에서 본 실패 지점이 어떻게 막히는지 비교할 수 있습니다.</p>
@@ -7769,6 +7798,41 @@ function labelPanesForPrint(root){
     });
   });
 }
+function expandPfForPrint(root){
+  root.querySelectorAll('.pf[data-caps]').forEach(pf=>{
+    const old=pf.querySelector('.print-pf-list'); if(old) old.remove();
+    let caps=[];
+    try{ caps=JSON.parse(pf.getAttribute('data-caps')||'[]'); }catch(e){ return; }
+    if(!caps.length) return;
+    const ol=document.createElement('ol');
+    ol.className='print-pf-list';
+    caps.forEach(c=>{ const li=document.createElement('li'); li.textContent=c; ol.appendChild(li); });
+    pf.appendChild(ol);
+  });
+}
+function buildPrintToc(targets){
+  let prev=document.getElementById('print-toc'); if(prev) prev.remove();
+  const note=document.querySelector('.print-doc-note');
+  const nav=document.createElement('nav');
+  nav.className='only-print print-toc';
+  nav.id='print-toc';
+  const title=document.createElement('b');
+  title.textContent='목차';
+  nav.appendChild(title);
+  const ol=document.createElement('ol');
+  targets.forEach(p=>{
+    const pageLab=p.dataset.label||p.id;
+    visibleSecs(p).forEach(s=>{
+      if(s.getAttribute('data-print')==='omit') return;
+      const li=document.createElement('li');
+      li.textContent=(targets.length>1?(pageLab+' · '):'')+(s.dataset.title||s.id);
+      ol.appendChild(li);
+    });
+  });
+  nav.appendChild(ol);
+  if(note&&note.parentNode) note.parentNode.insertBefore(nav, note.nextSibling);
+  else document.body.insertBefore(nav, document.body.firstChild);
+}
 function preparePrint(){
   const root=document.documentElement;
   if(!root.dataset.printThemeSaved){
@@ -7785,7 +7849,9 @@ function preparePrint(){
     if(i>0) p.classList.add('print-break');
     p.querySelectorAll('.rv,.tl,.vision,.geo,.namebox,.flow,.pipe,.bars,.mqwrap').forEach(el=>el.classList.add('in'));
     labelPanesForPrint(p);
+    expandPfForPrint(p);
   });
+  buildPrintToc(targets);
   const menu=printMenuTitle(targets);
   const menuEl=document.getElementById('print-doc-menu');
   const metaEl=document.getElementById('print-doc-meta');
@@ -7805,8 +7871,9 @@ function restorePrint(){
   delete root.dataset.printThemeSaved;
   PAGES.forEach(p=>{
     p.classList.remove('print-on','print-break');
-    p.querySelectorAll('.print-pane-label').forEach(el=>el.remove());
+    p.querySelectorAll('.print-pane-label,.print-pf-list').forEach(el=>el.remove());
   });
+  const toc=document.getElementById('print-toc'); if(toc) toc.remove();
   delete root.dataset.printing;
 }
 function printMenu(){ preparePrint(); window.print(); }
