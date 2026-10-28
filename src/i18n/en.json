@@ -1530,7 +1530,7 @@
   "보안 · 컴플라이언스": "Security · compliance",
   "보안 경계": "Security boundary",
   "보안 및 거버넌스": "Security and governance",
-  "보안 및 규제 매핑": "Security & Compliance",
+  "보안 및 규제 매핑": "Security & compliance mapping",
   "보안 스캐너 자동화 토큰 유출 · 빌드 파이프라인 오염": "Security scanner automation token leaked · build pipeline poisoned",
   "보안 조직이 앱↔LLM·프라이빗 모델 트래픽을 검사·통제(가드레일·DLP·위협방어·레드팀·OWASP/MITRE 가시성)하는 것이 최우선이고, DLP·SSE를 우선하는 경우": "When the security team’s top priority is inspecting and controlling app↔LLM · private model traffic (guardrails · DLP · threat defense · red teaming · OWASP/MITRE visibility), and DLP · SSE come first",
   "보안 통제 우회": "Security control bypass",
@@ -3716,5 +3716,16 @@
   "Kong 접근 방식": "Kong approach",
   "레지스트리를 Gateway 뒤에 두고 Agent마다 인증 · 조회(GET)만 허용. 쓰기 · 업로드 · 미등록 목적지는 차단 · 기록": "Put the registry behind the gateway and allow only authenticated reads (GET) per agent. Block · log writes · uploads · unregistered destinations",
   "이그레스를 Gateway 등록 목적지만 허용. 미등록 인터넷 · 패키지 업로드를 차단하고 전 구간 추적": "Allow egress only to destinations registered in the gateway. Block unregistered internet · package uploads and trace every hop",
-  "MCP · API 도구 호출과 목적지를 허용 목록으로 강제 · 기록. 추론(CoT)만으로 허용하지 않음": "Enforce · log MCP · API tool calls and destinations via an allowlist. Do not allow based on chain-of-thought alone"
+  "MCP · API 도구 호출과 목적지를 허용 목록으로 강제 · 기록. 추론(CoT)만으로 허용하지 않음": "Enforce · log MCP · API tool calls and destinations via an allowlist. Do not allow based on chain-of-thought alone",
+  "규제 · 컴플라이언스": "Regulation · compliance",
+  "규제 매핑은 보안 · 규제 메뉴에서 통합 관리": "Regulatory mapping is centralized under Security & compliance",
+  "개인정보보호법, ISMS-P, ISO 27001, GDPR, 개인정보위 API 점검, 금보원 AI 에이전트 평가기준은 API · AI에 공통으로 적용됩니다. AI Gateway에 중복 표를 두지 않고,": "Personal Information Protection Act, ISMS-P, ISO 27001, GDPR, PIPC API checks, and FSI AI agent evaluation criteria apply across API · AI. We do not keep duplicate tables in AI Gateway;",
+  "에서 한곳에서 확인합니다.": "review them in one place.",
+  "점검 항목별 Kong 대응과 사례 수치": "Kong responses and case figures per checklist item",
+  "17개 항목과 Gateway 대응 범위": "17 items and Gateway coverage",
+  "6개 도메인 · 23개 기능 · 인증 현황": "6 domains · 23 capabilities · certification status",
+  "열기": "Open",
+  "바로가기.": "Shortcut.",
+  "전체 개요는": "For the full overview, continue in",
+  "에서 이어집니다.": "."
 }
