@@ -16,6 +16,7 @@
 - Print: omit demos/trace mockups (screen-only); tighten spacing and page blanks
 - Print: drop empty demo sections and architecture boards; list pipelines; add TOC; cap SVG height
 - Print: clear blank pages from leftover opacity:0 shells; omit mock-only notes and DLP diagrams; fix comparison pane labels
+- Print: unstack `.fbox` toggle panes (e.g. HA architecture) so they print sequentially instead of overlapping
 
 ## 2026.10.28.df84c27f
 ### Added

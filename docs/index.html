@@ -2520,15 +2520,24 @@ html[data-printing] [data-print="omit"]{display:none!important}
     animation:none!important;transform:none!important;
     font-size:12pt!important;line-height:1.4!important;margin-right:.4em;
   }
+  /* fbox stacks panes on grid-area 1/1 on screen — unstack for print or they overlap */
+  .fbox{
+    display:block!important;background:transparent!important;border:0!important;
+    padding:0!important;margin:2mm 0!important;
+  }
   /* All tab panes — not only .on (allow page break; avoid-page caused large blanks) */
   .pane,.fbox>.pane,#cmp-panes>.pane{
     display:block!important;visibility:visible!important;opacity:1!important;
     position:static!important;height:auto!important;max-height:none!important;min-height:0!important;
+    grid-area:auto!important;grid-column:auto!important;grid-row:auto!important;
     margin:3mm 0 0!important;padding:2mm 0 0!important;
     border-top:0.35pt solid #999!important;
     break-inside:auto;page-break-inside:auto;
   }
   .pane:first-of-type,.fbox>.pane:first-child,#cmp-panes>.pane:first-child{margin-top:1mm!important}
+  /* egt-shell also overlays panes in one grid cell */
+  .egt-shell{display:block!important;min-height:0!important}
+  .egt-shell>.pane{grid-column:auto!important;grid-row:auto!important}
   .print-pane-label{display:block!important;font-size:11pt!important;font-weight:800!important;color:#000!important;margin:0 0 1.5mm!important}
   .sec{padding:4mm 0 1mm!important;margin-top:1.5mm!important;border-top:0.25pt solid #ccc!important;break-inside:auto}
   .sec:first-of-type{border-top:none!important;margin-top:0!important;padding-top:0!important}
