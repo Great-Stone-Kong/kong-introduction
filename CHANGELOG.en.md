@@ -7,6 +7,7 @@
 
 ## Unreleased
 
+## 2026.10.29.c92d8cee
 ### Added
 
 - Locale: Simplified Chinese (`zh`, from English · formal written-tone cleanup)
