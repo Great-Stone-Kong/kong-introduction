@@ -5,6 +5,14 @@
 
 ---
 
+## 2026.10.29.66d2a114
+### 新增
+
+- AI Gateway > AI Gateway 2.0：专用二进制 · 实体 · 部署 · 成本模型 · 新功能页面
+- AI Gateway · MCP Gateway · Agent Gateway：跳转到 2.0 页面的简短 CTA
+
+---
+
 ## 2026.10.29.c92d8cee
 ### 新增
 

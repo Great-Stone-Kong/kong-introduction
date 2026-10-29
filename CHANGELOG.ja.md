@@ -5,6 +5,14 @@
 
 ---
 
+## 2026.10.29.66d2a114
+### 追加
+
+- AI Gateway > AI Gateway 2.0: 専用バイナリ · エンティティ · デプロイ · コストモデル · 新機能ページ
+- AI Gateway · MCP Gateway · Agent Gateway: 2.0 ページへの短い CTA
+
+---
+
 ## 2026.10.29.c92d8cee
 ### 追加
 
