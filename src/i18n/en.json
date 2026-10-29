@@ -3845,5 +3845,6 @@
   "Card 조회": "Card lookup",
   "기존 Service Route 구성과 ai-a2a-proxy 동작 차이": "Existing Service · Route vs ai-a2a-proxy behavior",
   "기존 Service · Route만으로는 A2A 본문 · 카드 URL을 해석하지 않음 · 내부 URL로 직접 Task 호출": "Existing Service · Route alone does not parse A2A bodies · card URLs · Tasks go straight to the internal URL",
-  "발견과 Task가 같은 Kong Route를 통과 · 내부 에이전트 주소는 비공개": "Discovery and Task pass the same Kong Route · internal agent URL stays private"
+  "발견과 Task가 같은 Kong Route를 통과 · 내부 에이전트 주소는 비공개": "Discovery and Task pass the same Kong Route · internal agent URL stays private",
+  "Task · 메서드": "Task · method"
 }
