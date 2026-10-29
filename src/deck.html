@@ -4172,56 +4172,49 @@ claude
   <div class="mlim a2ap rv">
     <div class="tabs mlim-t"><button class="bad on">기존 Service · Route 구성으로 충분</button><button>ai-a2a-proxy</button></div>
     <div class="dia ecow"><svg viewBox="0 0 1000 440" class="a2svg" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="기존 Service Route 구성과 ai-a2a-proxy 동작 차이">
-      <text x="500" y="24" text-anchor="middle" font-size="13" font-weight="800" fill="var(--mark)" letter-spacing=".04em">AGENT CARD → TASK 호출 경로</text>
-      <g><!-- actors: Kong taller so discovery + task lanes pass through -->
-        <rect x="40" y="56" width="150" height="54" rx="10" fill="var(--svg-panel)" stroke="var(--g600)"/><text x="115" y="79" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">Client Agent</text><text x="115" y="96" text-anchor="middle" font-size="11" fill="var(--svg-muted)">발견 · 위임</text>
-        <rect x="390" y="48" width="220" height="168" rx="12" fill="var(--svg-chip)" stroke="var(--mark)" stroke-width="2"/>
-        <text x="500" y="76" text-anchor="middle" font-size="16" font-weight="800" fill="var(--mark)">Kong</text>
-        <text x="500" y="96" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Service · Route</text>
-        <text x="500" y="148" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--svg-label)" opacity=".85">Card 조회</text>
-        <text x="500" y="188" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--svg-label)" opacity=".85">Task · 메서드</text>
-        <rect x="810" y="56" width="150" height="54" rx="10" fill="var(--svg-panel)" stroke="var(--g600)"/><text x="885" y="79" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">Target Agent</text><text x="885" y="96" text-anchor="middle" font-size="11" fill="var(--svg-muted)">A2A Server</text>
+      <text x="500" y="22" text-anchor="middle" font-size="13" font-weight="800" fill="var(--mark)" letter-spacing=".04em">AGENT CARD → TASK 호출 경로</text>
+      <!-- Card lane y=118, Task lane y=176 — straight horizontals through Kong -->
+      <g>
+        <rect x="36" y="78" width="158" height="120" rx="12" fill="var(--svg-panel)" stroke="var(--g600)"/>
+        <text x="115" y="128" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">Client Agent</text>
+        <text x="115" y="148" text-anchor="middle" font-size="11" fill="var(--svg-muted)">발견 · 위임</text>
+        <rect x="390" y="52" width="220" height="168" rx="12" fill="var(--svg-chip)" stroke="var(--mark)" stroke-width="2"/>
+        <text x="500" y="74" text-anchor="middle" font-size="15" font-weight="800" fill="var(--mark)">Kong</text>
+        <text x="500" y="92" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Service · Route</text>
+        <rect x="806" y="78" width="158" height="120" rx="12" fill="var(--svg-panel)" stroke="var(--g600)"/>
+        <text x="885" y="128" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">Target Agent</text>
+        <text x="885" y="148" text-anchor="middle" font-size="11" fill="var(--svg-muted)">A2A Server</text>
       </g>
-      <!-- bad: passthrough card + bypass -->
+      <!-- bad -->
       <g class="a2-bad">
-        <text x="500" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="var(--danger-soft)">1. Agent Card 조회 · url이 내부 주소로 남음</text>
-        <path d="M190 83H390" fill="none" stroke="var(--danger)" stroke-width="2" stroke-dasharray="5 5" stroke-opacity=".7"/>
-        <path d="M390 140H610" fill="none" stroke="var(--danger)" stroke-width="2" stroke-dasharray="4 4" stroke-opacity=".45"/>
-        <path d="M610 83H810" fill="none" stroke="var(--danger)" stroke-width="2" stroke-dasharray="5 5" stroke-opacity=".7"/>
-        <circle r="5" fill="var(--danger)" opacity="0"><animateMotion dur="5s" repeatCount="indefinite" path="M190 83H390"/><animate attributeName="opacity" dur="5s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.05;.28;.32;1"/></circle>
-        <circle r="5" fill="var(--danger)" opacity="0"><animateMotion dur="5s" begin=".35s" repeatCount="indefinite" path="M390 140H610"/><animate attributeName="opacity" dur="5s" begin=".35s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.05;.28;.32;1"/></circle>
-        <circle r="5" fill="var(--danger)" opacity="0"><animateMotion dur="5s" begin=".7s" repeatCount="indefinite" path="M610 83H810"/><animate attributeName="opacity" dur="5s" begin=".7s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.05;.28;.32;1"/></circle>
-        <rect x="300" y="248" width="400" height="64" rx="10" fill="#1a0707" stroke="var(--danger)" stroke-opacity=".8"/>
-        <text x="500" y="270" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="12" fill="#ffb3b3">agent-card.json</text>
-        <text x="500" y="290" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="12.5" font-weight="700" fill="#ff9d9d">"url": "https://agent.internal:8001"</text>
-        <text x="500" y="306" text-anchor="middle" font-size="11" fill="#ffd0d0">Kong을 지나도 카드 주소는 내부 URL</text>
-        <text x="500" y="332" text-anchor="middle" font-size="12" font-weight="700" fill="var(--danger-soft)">2. Task 호출이 Gateway를 우회</text>
-        <path d="M115 110C115 360 885 360 885 110" fill="none" stroke="var(--danger)" stroke-width="2.4" stroke-dasharray="6 6"/>
-        <circle r="6" fill="var(--danger)" opacity="0"><animateMotion dur="5s" begin="1.6s" repeatCount="indefinite" path="M115 110C115 360 885 360 885 110"/><animate attributeName="opacity" dur="5s" begin="1.6s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.08;.7;.78;1"/></circle>
+        <text x="500" y="240" text-anchor="middle" font-size="12" font-weight="700" fill="var(--danger-soft)">1. Agent Card 조회 · url이 내부 주소로 남음</text>
+        <path d="M194 118H806" fill="none" stroke="var(--danger)" stroke-width="2.2" stroke-dasharray="5 5" stroke-opacity=".75"/>
+        <circle r="5" fill="var(--danger)" opacity="0"><animateMotion dur="5s" repeatCount="indefinite" path="M194 118H806"/><animate attributeName="opacity" dur="5s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.05;.55;.6;1"/></circle>
+        <text x="478" y="114" text-anchor="end" font-size="10.5" font-weight="700" fill="#ffb3b3">재작성 없음</text>
+        <rect x="300" y="252" width="400" height="56" rx="10" fill="#1a0707" stroke="var(--danger)" stroke-opacity=".8"/>
+        <text x="500" y="274" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="12" fill="#ffb3b3">agent-card.json</text>
+        <text x="500" y="294" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="12.5" font-weight="700" fill="#ff9d9d">"url": "https://agent.internal:8001"</text>
+        <text x="500" y="330" text-anchor="middle" font-size="12" font-weight="700" fill="var(--danger-soft)">2. Task 호출이 Gateway를 우회</text>
+        <path d="M115 176C115 380 885 380 885 176" fill="none" stroke="var(--danger)" stroke-width="2.4" stroke-dasharray="6 6"/>
+        <circle r="6" fill="var(--danger)" opacity="0"><animateMotion dur="5s" begin="1.5s" repeatCount="indefinite" path="M115 176C115 380 885 380 885 176"/><animate attributeName="opacity" dur="5s" begin="1.5s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.08;.7;.78;1"/></circle>
         <rect x="360" y="372" width="280" height="32" rx="16" fill="#1a0707" stroke="var(--danger)"/><text x="500" y="393" text-anchor="middle" font-size="13" font-weight="700" fill="#ffd0d0">인증 · ACL · Task 로그가 Kong에 없음</text>
-        <text x="500" y="424" text-anchor="middle" font-size="12.5" fill="var(--svg-muted)">기존 Service · Route만으로는 A2A 본문 · 카드 URL을 해석하지 않음 · 내부 URL로 직접 Task 호출</text>
+        <text x="500" y="426" text-anchor="middle" font-size="12.5" fill="var(--svg-muted)">기존 Service · Route만으로는 A2A 본문 · 카드 URL을 해석하지 않음 · 내부 URL로 직접 Task 호출</text>
       </g>
-      <!-- ok: rewrite + through kong -->
+      <!-- ok: both lanes straight through Kong -->
       <g class="a2-ok">
-        <text x="500" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="var(--mark)">1. Agent Card 조회 · url을 Gateway로 재작성</text>
-        <path d="M190 83H390" fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-opacity=".85"/>
-        <path d="M390 140H610" fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-opacity=".7"/>
-        <path d="M610 83H810" fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-opacity=".55" stroke-dasharray="5 5"/>
-        <circle r="5" fill="var(--lime)" opacity="0"><animateMotion dur="5s" repeatCount="indefinite" path="M190 83H390"/><animate attributeName="opacity" dur="5s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.05;.25;.3;1"/></circle>
-        <circle r="5" fill="var(--lime)" opacity="0"><animateMotion dur="5s" begin=".35s" repeatCount="indefinite" path="M390 140H610"/><animate attributeName="opacity" dur="5s" begin=".35s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.05;.25;.3;1"/></circle>
-        <circle cx="500" cy="140" r="9" fill="var(--svg-well)" stroke="var(--mark)" stroke-width="1.6"/><path d="M496.5 140l2.5 2.5 4.5-4.5" stroke="var(--mark)" stroke-width="1.8" fill="none"/>
-        <rect x="280" y="248" width="440" height="64" rx="10" fill="var(--svg-panel)" stroke="var(--mark)" stroke-width="1.6"/>
-        <text x="500" y="270" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="12" fill="var(--svg-muted)">agent-card.json · ai-a2a-proxy</text>
-        <text x="500" y="290" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="12.5" font-weight="700" fill="var(--mark)">"url": "https://agents.company.com/support"</text>
-        <text x="500" y="306" text-anchor="middle" font-size="11" fill="var(--svg-label)">공개 · 호출 URL이 같은 Gateway 주소</text>
-        <text x="500" y="332" text-anchor="middle" font-size="12" font-weight="700" fill="var(--mark)">2. Task · 메서드 호출이 Kong을 통과</text>
-        <path d="M190 180H390" fill="none" stroke="var(--ins-lilac4)" stroke-width="2.4"/>
-        <path d="M390 180H610" fill="none" stroke="var(--ins-lilac4)" stroke-width="2.4"/>
-        <path d="M610 180H810" fill="none" stroke="var(--ins-lilac4)" stroke-width="2.4"/>
-        <circle r="6" fill="var(--ins-lilac4)" opacity="0"><animateMotion dur="5s" begin="1.4s" repeatCount="indefinite" path="M190 180H390"/><animate attributeName="opacity" dur="5s" begin="1.4s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.08;.32;.38;1"/></circle>
-        <circle r="6" fill="var(--ins-lilac4)" opacity="0"><animateMotion dur="5s" begin="1.9s" repeatCount="indefinite" path="M390 180H610"/><animate attributeName="opacity" dur="5s" begin="1.9s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.08;.32;.38;1"/></circle>
-        <circle r="6" fill="var(--ins-lilac4)" opacity="0"><animateMotion dur="5s" begin="2.4s" repeatCount="indefinite" path="M610 180H810"/><animate attributeName="opacity" dur="5s" begin="2.4s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.08;.32;.38;1"/></circle>
-        <circle cx="500" cy="180" r="9" fill="var(--svg-well)" stroke="var(--mark)" stroke-width="1.6"/><path d="M496.5 180l2.5 2.5 4.5-4.5" stroke="var(--mark)" stroke-width="1.8" fill="none"/>
+        <text x="500" y="240" text-anchor="middle" font-size="12" font-weight="700" fill="var(--mark)">1. Agent Card 조회 · url을 Gateway로 재작성</text>
+        <path d="M194 118H806" fill="none" stroke="var(--mark)" stroke-width="2.4" stroke-opacity=".9"/>
+        <circle r="5" fill="var(--lime)" opacity="0"><animateMotion dur="5s" repeatCount="indefinite" path="M194 118H806"/><animate attributeName="opacity" dur="5s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.05;.55;.6;1"/></circle>
+        <circle cx="500" cy="118" r="10" fill="var(--svg-well)" stroke="var(--mark)" stroke-width="1.6"/><path d="M496.2 118l2.8 2.8 5-5" stroke="var(--mark)" stroke-width="1.8" fill="none"/>
+        <text x="478" y="114" text-anchor="end" font-size="10.5" font-weight="700" fill="var(--mark)">Card 조회</text>
+        <rect x="280" y="252" width="440" height="56" rx="10" fill="var(--svg-panel)" stroke="var(--mark)" stroke-width="1.6"/>
+        <text x="500" y="274" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="12" fill="var(--svg-muted)">agent-card.json · ai-a2a-proxy</text>
+        <text x="500" y="294" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="12.5" font-weight="700" fill="var(--mark)">"url": "https://agents.company.com/support"</text>
+        <text x="500" y="330" text-anchor="middle" font-size="12" font-weight="700" fill="var(--mark)">2. Task · 메서드 호출이 Kong을 통과</text>
+        <path d="M194 176H806" fill="none" stroke="var(--ins-lilac4)" stroke-width="2.6"/>
+        <circle r="6" fill="var(--ins-lilac4)" opacity="0"><animateMotion dur="5s" begin="1.5s" repeatCount="indefinite" path="M194 176H806"/><animate attributeName="opacity" dur="5s" begin="1.5s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.08;.55;.62;1"/></circle>
+        <circle cx="500" cy="176" r="10" fill="var(--svg-well)" stroke="var(--mark)" stroke-width="1.6"/><path d="M496.2 176l2.8 2.8 5-5" stroke="var(--mark)" stroke-width="1.8" fill="none"/>
+        <text x="478" y="172" text-anchor="end" font-size="10.5" font-weight="700" fill="var(--ins-lilac4)">Task · 메서드</text>
         <g>
           <rect x="250" y="348" width="100" height="32" rx="16" fill="var(--svg-chip)" stroke="var(--line2)"/><text x="300" y="369" text-anchor="middle" font-size="12" font-weight="700" fill="var(--svg-label)">인증 · ACL</text>
           <rect x="370" y="348" width="120" height="32" rx="16" fill="var(--svg-chip)" stroke="var(--line2)"/><text x="430" y="369" text-anchor="middle" font-size="12" font-weight="700" fill="var(--svg-label)">Rate Limit</text>
