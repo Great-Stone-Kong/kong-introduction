@@ -9,13 +9,11 @@
 
 ### Added
 
-- Locale: Simplified Chinese (`zh`, from English with formal written-tone cleanup)
+- Locale: Simplified Chinese (`zh`, from English · formal written-tone cleanup)
 
 ### Changed
 
-- i18n: Hangul-as-key → stable-key (`m.` / `u.` / `s.`) catalogs · engine · reference baseline
-- i18n: keep compact runtime blob (Hangul→EN/JA/ZH + sparse `I` map) to avoid HTML size growth
-- Demo/trace mock outputs (EG Analytics JSON, KDemo summary labels, etc.): fill missing EN/JA/ZH · stop excluding `egd-out` from i18n
+- Infrastructure: 「국내 고객 실 요구사항」→「고객 핵심 요구사항」 (Customer key requirements), shown in all languages
 
 ## 2026.10.29.fb000bae
 ### Added
