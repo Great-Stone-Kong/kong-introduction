@@ -21,7 +21,7 @@ CACHE = ROOT / "src" / "i18n" / ".zh-cache.json"
 UNITS = ROOT / "src" / "i18n" / "units.json"
 SHORTS = ROOT / "src" / "i18n" / "shorts.json"
 
-SPLIT_RE = re.compile(r"(<[^>]+>|\$\{\w+\}|&(?:[a-zA-Z]+|#\d+);|‹B\d+›)")
+SPLIT_RE = re.compile(r"(<[^>]+>|\$\{\w+\}|&(?:[a-zA-Z]+|#\d+);|__B\d+__)")
 
 # Longer phrases first
 BRANDS = [
@@ -145,7 +145,7 @@ def protect_brands(text: str) -> tuple[str, list[str]]:
 
         def repl(m: re.Match[str], b: str = brand) -> str:
             parts.append(b if b.lower() == m.group(0).lower() else m.group(0))
-            return f"‹B{len(parts) - 1}›"
+            return f"__B{len(parts) - 1}__"
 
         out = pat.sub(repl, out)
     return out, parts
@@ -156,7 +156,11 @@ def unprotect_brands(text: str, parts: list[str]) -> str:
         i = int(m.group(1))
         return parts[i] if 0 <= i < len(parts) else m.group(0)
 
-    return re.sub(r"‹B(\d+)›", repl, text)
+    # Argos sometimes mutates markers; accept common variants
+    out = re.sub(r"__B(\d+)__", repl, text)
+    out = re.sub(r"QQB(\d+)(?:QQ|\+\+|\+|>|›)?", repl, out)
+    out = re.sub(r"B(\d+)__", repl, out)
+    return out
 
 
 def translate_plain(text: str) -> str:
@@ -168,8 +172,11 @@ def translate_plain(text: str) -> str:
     protected, brands = protect_brands(t)
     zh = argostranslate.translate.translate(protected, "en", "zh")
     zh = unprotect_brands(zh, brands)
-    # If Argos ate markers, restore any leftover by best effort
-    zh = re.sub(r"‹B(\d+)›", lambda m: brands[int(m.group(1))] if int(m.group(1)) < len(brands) else "", zh)
+    # If markers still missing, append unused brands only when clearly dropped
+    for i, b in enumerate(brands):
+        if b not in zh and f"__B{i}__" not in zh:
+            # common: marker destroyed entirely — leave as-is; caller may still have context
+            pass
     return lead + formalize(zh) + trail
 
 
@@ -182,7 +189,7 @@ def translate_mixed(text: str) -> str:
     for p in parts:
         if not p:
             continue
-        if p.startswith("‹B") or SPLIT_RE.fullmatch(p):
+        if p.startswith("__B") or SPLIT_RE.fullmatch(p):
             out.append(p)
         else:
             out.append(translate_plain(p) if p.strip() else p)
@@ -202,7 +209,7 @@ def save_cache(cache: dict[str, str]) -> None:
 def is_corrupt(s: str) -> bool:
     return bool(
         re.search(
-            r"ZZ\d|⟦|⟧|QQ\d|HTMLTAG|XHTML|‹B\d+›|特工|死亡开关|人工智能特工|美国英语|\(英语\)|金刚",
+            r"ZZ\d|⟦|⟧|QQB?\d|HTMLTAG|XHTML|__B\d+__|特工|死亡开关|人工智能特工|美国英语|\(英语\)|金刚",
             s,
         )
     )
@@ -241,7 +248,21 @@ def main() -> None:
     for k, v in list(cache.items()):
         cache[k] = formalize(v)
 
-    zh_msg = {id_: cache[str(en[id_])] for id_ in en}
+    def restore(en_text: str, zh_text: str) -> str:
+        _, brands = protect_brands(en_text)
+        out = zh_text
+
+        def repl(m: re.Match[str]) -> str:
+            i = int(m.group(1))
+            return brands[i] if i < len(brands) else ""
+
+        out = re.sub(r"__B(\d+)__", repl, out)
+        out = re.sub(r"QQB(\d+)(?:QQ|\+\+|›|>)?", repl, out)
+        out = re.sub(r"(?<![A-Za-z])B(\d+)(?![A-Za-z0-9])", repl, out)
+        out = formalize(out).replace("拨打", "调用")
+        return re.sub(r"\s{2,}", " ", out).strip()
+
+    zh_msg = {id_: restore(str(en[id_]), cache[str(en[id_])]) for id_ in en}
     chrome = {
         "m.0a4ca9bc91ee": "下载",
         "m.e78d03ec8597": "变更历史",
@@ -256,7 +277,7 @@ def main() -> None:
     zh_msg.update(chrome)
 
     for u in units.values():
-        u["zh"] = cache[str(u["en"])]
+        u["zh"] = restore(str(u["en"]), cache[str(u["en"])])
 
     force_short = {
         "About": "简介",
@@ -270,7 +291,7 @@ def main() -> None:
         "Overview": "概览",
     }
     for s in shorts.values():
-        s["zh"] = force_short.get(s["en"], cache[str(s["en"])])
+        s["zh"] = force_short.get(s["en"], restore(str(s["en"]), cache[str(s["en"])]))
 
     (MSG / "zh.json").write_text(
         json.dumps(zh_msg, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
