@@ -5,6 +5,12 @@
 
 ---
 
+## Unreleased
+
+### 추가
+
+- Agent Gateway > A2A Proxy 적용 기준: Service·Route만 vs ai-a2a-proxy 판단 · 장점 · 동작 차이
+
 ## 2026.10.28.63575106
 ### 추가
 

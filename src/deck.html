@@ -1212,6 +1212,24 @@ html[data-theme="light"] .egt-list li.on{box-shadow:0 0 0 1px var(--accent)}
 .mlim-m .vb{color:var(--danger-soft)}.mlim-m .vk{color:var(--accent);position:absolute;right:0;top:0;opacity:0}
 .mlim.k .mlim-m .vb{opacity:0}.mlim.k .mlim-m .vk{opacity:1}
 .mlim.k .mlim-m>div{border-color:var(--line2)}
+.a2svg .a2-bad,.a2svg .a2-ok{transition:opacity .55s}
+.a2svg .a2-ok{opacity:0}
+.mlim.k .a2svg .a2-bad{opacity:0}
+.mlim.k .a2svg .a2-ok{opacity:1}
+.a2pick{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 22px}
+.a2pick .card{padding:18px 18px 16px}
+.a2pick h4{margin:0 0 8px;font-size:15px;color:var(--heading)}
+.a2pick p{margin:0 0 10px;font-size:13.5px;line-height:1.6;color:var(--g300)}
+.a2pick ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.a2pick li{font-size:13px;line-height:1.5;color:var(--g300);padding-left:12px;border-left:2px solid var(--g700)}
+.a2pick .card.yes{border-color:color-mix(in srgb,var(--mark) 45%,var(--line))}
+.a2pick .card.yes li{border-left-color:var(--lime)}
+.a2pick .card.no li{border-left-color:var(--danger)}
+.a2ben{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 22px}
+.a2ben .card{padding:16px}
+.a2ben b{display:block;font-size:14px;color:var(--heading);margin:0 0 6px}
+.a2ben p{margin:0;font-size:13px;line-height:1.55;color:var(--g300)}
+@media (max-width:900px){.a2pick,.a2ben{grid-template-columns:1fr}}
 .lim .card{padding:20px}
 .lim-b,.lim-k{font-size:13.5px;line-height:1.6;border-radius:6px;padding:10px 12px}
 .lim-b{color:var(--g300);background:rgba(255,107,107,.06);border:1px solid color-mix(in srgb,var(--danger) 30%,transparent);margin-bottom:8px}
@@ -2559,7 +2577,7 @@ html[data-printing] [data-print="omit"]{display:none!important}
   .lead{font-size:11pt!important}
   a,a:visited{color:#000!important;text-decoration:underline!important}
   .dia{overflow:visible!important;max-height:none!important;margin:2mm 0!important;padding:2mm!important}
-  .dia svg,.eco svg,.hubsvg,.mlsvg,.mmsvg,.sqsvg,.gzsvg{max-height:85mm!important;width:100%!important}
+  .dia svg,.eco svg,.hubsvg,.mlsvg,.mmsvg,.sqsvg,.a2svg,.gzsvg{max-height:85mm!important;width:100%!important}
   /* Pipeline → vertical document list */
   .pf{margin:2mm 0!important;padding:2mm!important;border:0.25pt solid #bbb!important;background:transparent!important}
   .pf-grid{display:none!important}
@@ -4136,6 +4154,88 @@ claude
     <div class="card rv"><span class="tag">요청 · 비용 제한</span><div class="lim-b"><i>기존 방식</i>에이전트가 서로를 반복 호출하는 루프나 토큰 폭주를 막을 공통 지점이 없음</div><div class="lim-k"><i>Kong Agent Gateway</i>에이전트별 호출 한도와 토큰 예산, 공급자별 하위 한도를 게이트웨이에서 집행</div></div>
     <div class="card rv"><span class="tag">검색 · 관측</span><div class="lim-b"><i>기존 방식</i>에이전트 주소와 Agent Card가 팀마다 흩어지고, 홉마다 로그가 끊김</div><div class="lim-k"><i>Kong Agent Gateway</i>Agent Card를 Kong 경유로 제공하고, context_id · task_id로 전체 실행을 하나의 트레이스로 연결</div></div>
   </div>
+</section>
+<section class="sec" id="g-a2a" data-title="A2A Proxy 적용 기준">
+  <div class="eyebrow">A2A Proxy</div>
+  <h2>ai-a2a-proxy 적용 기준</h2>
+  <p class="sub">에이전트를 Service · Route로 등록하는 것 자체는 동일합니다. 차이는 그 Route에 ai-a2a-proxy를 켤지 여부입니다. 일반 REST 에이전트는 Service · Route만으로 충분하고, A2A(Agent Card · Task · JSON-RPC / HTTP+JSON)이면 카드 URL 재작성과 Task 단위 관측이 필요할 때 플러그인을 켭니다.</p>
+  <div class="a2pick">
+    <div class="card no rv"><h4>Service · Route만</h4><p>에이전트가 일반 HTTP API처럼만 쓰일 때. Gateway는 본문이 A2A Task인지, 카드 URL이 무엇인지는 판독하지 않습니다.</p><ul><li>에이전트가 REST이고 A2A가 아님</li><li>인증 · ACL · Rate Limit · 로그만으로 충분</li><li>클라이언트가 Agent Card로 발견하지 않음</li></ul></div>
+    <div class="card yes rv"><h4>Service · Route + ai-a2a-proxy</h4><p>이미 A2A로 구현된 에이전트를 Gateway로 연결할 때. JSON-RPC와 HTTP+JSON을 A2A로 인식하고, Agent Card의 url을 Gateway 주소로 바꿉니다.</p><ul><li>에이전트가 Agent Card · Task를 사용</li><li>카드 URL · Task 관측 · A2A 단위 통제가 필요</li><li>발견과 호출을 같은 Gateway Route로 단일화</li></ul></div>
+  </div>
+  <h3 class="agh">사용 시 장점</h3>
+  <div class="a2ben">
+    <div class="card rv"><b>Agent Card URL 통제</b><p>카드 안 호출 주소가 내부 에이전트 URL이면 클라이언트는 Gateway를 우회합니다. Proxy는 url을 Gateway로 바꿔 호출을 통제 안에 둡니다.</p></div>
+    <div class="card rv"><b>발견 · 호출 단일화</b><p>/.well-known/agent-card.json 조회와 Task 호출이 같은 Route를 지나, 공개 URL과 호출 URL이 서로 다른 주소로 나뉘지 않습니다.</p></div>
+    <div class="card rv"><b>Task · 메서드 관측</b><p>HTTP 상태만이 아니라 A2A 메서드 · Task 상태를 로그 · 메트릭에 남겨, 위임 실패 횟수 같은 운영 지표를 확인합니다.</p></div>
+  </div>
+  <div class="mlim a2ap rv">
+    <div class="tabs mlim-t"><button class="bad on">Service · Route만</button><button>ai-a2a-proxy</button></div>
+    <div class="dia ecow"><svg viewBox="0 0 1000 420" class="a2svg" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Service Route만과 ai-a2a-proxy 동작 차이">
+      <text x="500" y="28" text-anchor="middle" font-size="13" font-weight="800" fill="var(--mark)" letter-spacing=".04em">AGENT CARD → TASK 호출 경로</text>
+      <g><!-- actors -->
+        <rect x="40" y="56" width="150" height="54" rx="10" fill="var(--svg-panel)" stroke="var(--g600)"/><text x="115" y="79" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">Client Agent</text><text x="115" y="96" text-anchor="middle" font-size="11" fill="var(--svg-muted)">발견 · 위임</text>
+        <rect x="400" y="52" width="200" height="62" rx="10" fill="var(--svg-chip)" stroke="var(--mark)" stroke-width="2"/><text x="500" y="76" text-anchor="middle" font-size="15" font-weight="800" fill="var(--mark)">Kong</text><text x="500" y="96" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Service · Route</text>
+        <rect x="810" y="56" width="150" height="54" rx="10" fill="var(--svg-panel)" stroke="var(--g600)"/><text x="885" y="79" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">Target Agent</text><text x="885" y="96" text-anchor="middle" font-size="11" fill="var(--svg-muted)">A2A Server</text>
+      </g>
+      <!-- bad: passthrough card + bypass -->
+      <g class="a2-bad">
+        <text x="500" y="140" text-anchor="middle" font-size="12" font-weight="700" fill="var(--danger-soft)">1. Agent Card 조회 · url이 내부 주소로 남음</text>
+        <path d="M190 83H400" fill="none" stroke="var(--danger)" stroke-width="2" stroke-dasharray="5 5" stroke-opacity=".7"/>
+        <path d="M600 83H810" fill="none" stroke="var(--danger)" stroke-width="2" stroke-dasharray="5 5" stroke-opacity=".7"/>
+        <circle r="5" fill="var(--danger)" opacity="0"><animateMotion dur="5s" repeatCount="indefinite" path="M190 83H400"/><animate attributeName="opacity" dur="5s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.05;.35;.4;1"/></circle>
+        <circle r="5" fill="var(--danger)" opacity="0"><animateMotion dur="5s" begin=".4s" repeatCount="indefinite" path="M600 83H810"/><animate attributeName="opacity" dur="5s" begin=".4s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.05;.35;.4;1"/></circle>
+        <rect x="300" y="158" width="400" height="72" rx="10" fill="#1a0707" stroke="var(--danger)" stroke-opacity=".8"/>
+        <text x="500" y="182" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="12" fill="#ffb3b3">agent-card.json</text>
+        <text x="500" y="204" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="12.5" font-weight="700" fill="#ff9d9d">"url": "https://agent.internal:8001"</text>
+        <text x="500" y="222" text-anchor="middle" font-size="11" fill="#ffd0d0">Kong을 지나도 카드 주소는 내부 URL</text>
+        <text x="500" y="258" text-anchor="middle" font-size="12" font-weight="700" fill="var(--danger-soft)">2. Task 호출이 Gateway를 우회</text>
+        <path d="M115 110C115 300 885 300 885 110" fill="none" stroke="var(--danger)" stroke-width="2.4" stroke-dasharray="6 6"/>
+        <circle r="6" fill="var(--danger)" opacity="0"><animateMotion dur="5s" begin="1.6s" repeatCount="indefinite" path="M115 110C115 300 885 300 885 110"/><animate attributeName="opacity" dur="5s" begin="1.6s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.08;.7;.78;1"/></circle>
+        <rect x="360" y="292" width="280" height="36" rx="18" fill="#1a0707" stroke="var(--danger)"/><text x="500" y="315" text-anchor="middle" font-size="13" font-weight="700" fill="#ffd0d0">인증 · ACL · Task 로그가 Kong에 없음</text>
+        <text x="500" y="360" text-anchor="middle" font-size="12.5" fill="var(--svg-muted)">Service · Route만으로는 A2A 본문 · 카드 URL을 해석하지 않음</text>
+        <text x="500" y="382" text-anchor="middle" font-size="12.5" fill="var(--svg-muted)">클라이언트는 카드의 내부 URL로 직접 Task를 호출</text>
+      </g>
+      <!-- ok: rewrite + through kong -->
+      <g class="a2-ok">
+        <text x="500" y="140" text-anchor="middle" font-size="12" font-weight="700" fill="var(--mark)">1. Agent Card 조회 · url을 Gateway로 재작성</text>
+        <path d="M190 83H400" fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-opacity=".85"/>
+        <path d="M600 83H810" fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-opacity=".55" stroke-dasharray="5 5"/>
+        <circle r="5" fill="var(--lime)" opacity="0"><animateMotion dur="5s" repeatCount="indefinite" path="M190 83H400"/><animate attributeName="opacity" dur="5s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.05;.3;.35;1"/></circle>
+        <circle cx="500" cy="83" r="9" fill="var(--svg-well)" stroke="var(--mark)" stroke-width="1.6"/><path d="M496.5 83l2.5 2.5 4.5-4.5" stroke="var(--mark)" stroke-width="1.8" fill="none"/>
+        <rect x="280" y="158" width="440" height="72" rx="10" fill="var(--svg-panel)" stroke="var(--mark)" stroke-width="1.6"/>
+        <text x="500" y="182" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="12" fill="var(--svg-muted)">agent-card.json · ai-a2a-proxy</text>
+        <text x="500" y="204" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="12.5" font-weight="700" fill="var(--mark)">"url": "https://agents.company.com/support"</text>
+        <text x="500" y="222" text-anchor="middle" font-size="11" fill="var(--svg-label)">공개 · 호출 URL이 같은 Gateway 주소</text>
+        <text x="500" y="258" text-anchor="middle" font-size="12" font-weight="700" fill="var(--mark)">2. Task · 메서드 호출이 Kong을 통과</text>
+        <path d="M190 110H400" fill="none" stroke="var(--ins-lilac4)" stroke-width="2.4"/>
+        <path d="M600 110H810" fill="none" stroke="var(--ins-lilac4)" stroke-width="2.4"/>
+        <circle r="6" fill="var(--ins-lilac4)" opacity="0"><animateMotion dur="5s" begin="1.4s" repeatCount="indefinite" path="M190 110H400"/><animate attributeName="opacity" dur="5s" begin="1.4s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.08;.4;.48;1"/></circle>
+        <circle r="6" fill="var(--ins-lilac4)" opacity="0"><animateMotion dur="5s" begin="2.2s" repeatCount="indefinite" path="M600 110H810"/><animate attributeName="opacity" dur="5s" begin="2.2s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;.08;.4;.48;1"/></circle>
+        <circle cx="500" cy="110" r="9" fill="var(--svg-well)" stroke="var(--mark)" stroke-width="1.6"/><path d="M496.5 110l2.5 2.5 4.5-4.5" stroke="var(--mark)" stroke-width="1.8" fill="none"/>
+        <g>
+          <rect x="250" y="292" width="100" height="32" rx="16" fill="var(--svg-chip)" stroke="var(--line2)"/><text x="300" y="313" text-anchor="middle" font-size="12" font-weight="700" fill="var(--svg-label)">인증 · ACL</text>
+          <rect x="370" y="292" width="120" height="32" rx="16" fill="var(--svg-chip)" stroke="var(--line2)"/><text x="430" y="313" text-anchor="middle" font-size="12" font-weight="700" fill="var(--svg-label)">Rate Limit</text>
+          <rect x="510" y="292" width="120" height="32" rx="16" fill="var(--svg-chip)" stroke="var(--line2)"/><text x="570" y="313" text-anchor="middle" font-size="12" font-weight="700" fill="var(--svg-label)">Task 로그</text>
+          <rect x="650" y="292" width="100" height="32" rx="16" fill="var(--svg-chip)" stroke="var(--line2)"/><text x="700" y="313" text-anchor="middle" font-size="12" font-weight="700" fill="var(--svg-label)">OTel</text>
+        </g>
+        <text x="500" y="360" text-anchor="middle" font-size="12.5" fill="var(--svg-muted)">발견과 Task가 같은 Route · 내부 에이전트 주소는 비공개</text>
+        <text x="500" y="382" text-anchor="middle" font-size="12.5" fill="var(--svg-muted)">메서드 · Task 상태까지 Gateway 정책 · 관측 범위에 포함</text>
+      </g>
+    </svg></div>
+    <div class="mlim-m">
+      <div><span>Agent Card url</span><b><em class="vb">내부 에이전트</em><em class="vk">Gateway 주소</em></b></div>
+      <div><span>Task 호출 경로</span><b><em class="vb">Gateway 우회</em><em class="vk">Kong 경유</em></b></div>
+      <div><span>A2A 관측</span><b><em class="vb">HTTP 상태만</em><em class="vk">메서드 · Task</em></b></div>
+    </div>
+  </div>
+  <div class="grid g4" style="margin-top:18px">
+    <div class="card rv"><span class="tag">부서 · 업무 ACL</span><p>주문 에이전트가 리스크 · 고객 에이전트를 부를 때 Consumer · Route ACL로 허용 조합만 통과</p></div>
+    <div class="card rv"><span class="tag">파트너 경계</span><p>사내 카드 URL을 Gateway로만 공개하고, 파트너는 mTLS · OAuth로 입구만 사용</p></div>
+    <div class="card rv"><span class="tag">감사 · 비용</span><p>누가 어떤 에이전트 메서드 · Task를 호출했는지 텔레메트리와 액세스 로그로 기록</p></div>
+    <div class="card rv"><span class="tag">킬 스위치</span><p>이상 호출 시 해당 Agent Route나 Consumer를 끄면 신규 A2A 호출이 즉시 차단</p></div>
+  </div>
+  <p class="note">ai-a2a-proxy는 Kong Gateway Enterprise 3.14부터 제공됩니다. A2A v1.0 · Agent Card URL 재작성 · 관측을 보강한 형태이며, AI Gateway 2.0 전용이 아닙니다.</p>
 </section>
 <section class="sec" id="g-flow" data-title="A2A 동작 흐름">
   <div class="eyebrow">How it works</div>
