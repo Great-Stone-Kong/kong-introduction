@@ -1,46 +1,36 @@
-/* i18n engine — D, HG, LANGS, IX injected by build (stable-key catalogs) */
+/* i18n engine — D, HG, LANGS, IX injected by build (compact runtime from stable-key catalogs) */
 const INL=new Set(['B','STRONG','EM','I','A','BR','CODE','U','SMALL','SUP','SUB','SPAN','MARK','S']);
 let L='ko';
 try{ const q=new URLSearchParams(location.search).get('lang'); L=q||localStorage.getItem('kong-lang')||'ko'; }catch(e){}
 if(LANGS.indexOf(L)<0) L='ko';
 const oT=new Map(), oH=new Map(), oA=new Map(), oI18n=new Map();
 const norm=s=>s.replace(/\s+/g,' ').trim();
-function msgId(koOrId){
-  const k=norm(koOrId); if(!k) return null;
+/* Resolve stable id or Hangul key → Hangul catalog key (D.T / D.U). */
+function toKoKey(idOrKo){
+  const k=norm(idOrKo); if(!k) return null;
+  if(D.I&&D.I[k]!=null) return D.I[k];
   if(D.T[k]) return k;
-  return D.K[k]||null;
+  return null;
 }
-function msgVal(id){
-  const row=D.T[id]; if(!row) return null;
-  return row[IX[L]];
+function msgVal(idOrKo){
+  const koKey=toKoKey(idOrKo);
+  if(L==='ko'){
+    if(koKey!=null) return koKey;
+    return idOrKo;
+  }
+  if(koKey==null) return null;
+  const row=D.T[koKey]; return row?row[IX[L]]:null;
 }
 function tLine(s){
   const k=norm(s); if(!k) return s; const lead=s.match(/^\s*/)[0], trail=s.match(/\s*$/)[0];
-  const id=msgId(k); if(id){ const v=msgVal(id); if(v!=null) return lead+v+trail; }
-  const nm=k.match(/^([\d.,+~%]+)\s*(\D.*)$/);
-  if(nm){
-    const id2=msgId(nm[2]);
-    if(id2){
-      if(nm[2]==='만 명'&&L==='en'){
-        const n=parseFloat(nm[1].replace(/,/g,''))*1e4;
-        return lead+(n>=1e6?(+(n/1e6).toFixed(1))+'M':(+(n/1e3).toFixed(0))+'K')+' people'+trail;
-      }
-      const x=msgVal(id2); if(x!=null) return lead+nm[1]+x+trail;
-    }
-  }
-  let o=s;
-  for(const fid of D.F){
-    const ko=D.T[fid]&&D.T[fid][IX.ko];
-    if(!ko||o.indexOf(ko)<0) continue;
-    const rep=msgVal(fid); if(rep==null) continue;
-    o=o.split(ko).join(rep);
-    if(!HG.test(o)) break;
-  }
+  const v=D.T[k]; if(v) return lead+v[IX[L]]+trail;
+  const nm=k.match(/^([\d.,+~%]+)\s*(\D.*)$/); if(nm&&D.T[nm[2]]){ if(nm[2]==='만 명'&&L==='en'){ const n=parseFloat(nm[1].replace(/,/g,''))*1e4; return lead+(n>=1e6?(+(n/1e6).toFixed(1))+'M':(+(n/1e3).toFixed(0))+'K')+' people'+trail; } const x=D.T[nm[2]][IX[L]]; return lead+nm[1]+x+trail; }
+  let o=s; for(const f of D.F){ if(o.indexOf(f)>=0) o=o.split(f).join(D.T[f][IX[L]]); if(!HG.test(o)) break; }
   return o;
 }
 function tText(s){
-  const id=msgId(s);
-  if(id){ const v=msgVal(id); if(v!=null) return s.match(/^\s*/)[0]+v+s.match(/\s*$/)[0]; }
+  const k=norm(s), v=D.T[k];
+  if(v){ return s.match(/^\s*/)[0]+v[IX[L]]+s.match(/\s*$/)[0]; }
   if(s.indexOf('\n')>=0) return s.split('\n').map(x=>HG.test(x)?tLine(x):x).join('\n');
   return tLine(s);
 }
@@ -51,20 +41,22 @@ function inlineOnly(el){ if(el.namespaceURI!=='http://www.w3.org/1999/xhtml') re
 function tryUnit(el){
   if(!el.firstElementChild||el.classList.contains('i18n-no')) return false;
   const explicit=el.getAttribute&&el.getAttribute('data-i18n-html');
-  let id=explicit||null;
-  if(!id){
+  let match=null;
+  if(explicit){
+    match=(D.I&&D.I[explicit])||explicit;
+  }else{
     const tc=el.textContent; if(!HG.test(tc)) return false;
-    id=D.UK[norm(tc)];
+    match=norm(tc);
   }
-  if(!id||!D.U[id]) return false;
+  const pair=D.U[match]||D.U[norm(match)];
+  if(!pair) return false;
   if(!explicit&&!inlineOnly(el)) return false;
-  const pair=D.U[id];
-  const html=L==='ko'?null:(L==='en'?pair[0]:pair[1]);
-  if(html==null) return false;
-  oH.set(el,el.innerHTML); el.innerHTML=html; return true;
+  if(L==='ko') return false;
+  oH.set(el,el.innerHTML); el.innerHTML=pair[IX[L]]; return true;
 }
 function applyDataI18n(el){
-  const id=el.getAttribute&&el.getAttribute('data-i18n'); if(!id||!D.T[id]) return;
+  const id=el.getAttribute&&el.getAttribute('data-i18n'); if(!id) return;
+  if(!(D.I&&D.I[id]!=null)&&!D.T[norm(id)]) return;
   if(!oI18n.has(el)) oI18n.set(el, el.textContent);
   const v=msgVal(id); if(v!=null) el.textContent=v;
 }
@@ -116,11 +108,7 @@ const shortOrig=new Map();
 function applyShort(on){
   const nav=document.getElementById('topnav'); if(!nav) return;
   [...nav.children].forEach(b=>{ const n=[...b.childNodes].find(x=>x.nodeType===3&&x.nodeValue.trim()); if(!n) return;
-    if(on){
-      const ko=norm(oT.get(n)||(shortOrig.has(n)?shortOrig.get(n)[1]:n.nodeValue));
-      const sid=D.SK[ko]; const s=sid&&D.S[sid];
-      if(s){ if(!shortOrig.has(n)) shortOrig.set(n,[n.nodeValue,ko]); n.nodeValue=s[IX[L]]; }
-    }
+    if(on){ const ko=norm(oT.get(n)||(shortOrig.has(n)?shortOrig.get(n)[1]:n.nodeValue)); const s=D.S[ko]; if(s){ if(!shortOrig.has(n)) shortOrig.set(n,[n.nodeValue,ko]); n.nodeValue=s[LANGS.indexOf(L)]; } }
     else if(shortOrig.has(n)){ n.nodeValue=shortOrig.get(n)[0]; shortOrig.delete(n); } });
 }
 function fitNav(){
@@ -178,12 +166,11 @@ function geoLocal(){
   mo.takeRecords(); muted=false;
 }
 function tKey(idOrKo, vars){
-  const id=msgId(idOrKo);
-  const s=id!=null?msgVal(id):idOrKo;
+  const s=msgVal(idOrKo);
   return String(s==null?idOrKo:s).replace(/\$\{(\w+)\}/g,(_,k)=>vars&&vars[k]!=null?String(vars[k]):'');
 }
 function tTpl(koTpl, vars){ return tKey(koTpl, vars); }
-window.KONG_I18N={setLang,get lang(){return L;},tpl:tTpl,t:tKey,id:msgId};
+window.KONG_I18N={setLang,get lang(){return L;},tpl:tTpl,t:tKey,id:toKoKey};
 const sideMo=new MutationObserver(ensureSw);
 function init(){
   const side=document.getElementById('side'); if(side) sideMo.observe(side,{childList:true});

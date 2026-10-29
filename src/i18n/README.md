@@ -23,7 +23,12 @@ Ids look like `m.<12-hex>`, `u.<12-hex>`, `s.<12-hex>` (SHA-256 of normalized KO
 
 Do not rename ids when editing KO text — that is the point of stable keys.
 
-## Runtime
+## Runtime (built HTML)
 
-Build embeds `D.T` (id → `[ko,en,ja]`), `D.K` (KO → id), plus unit/fragment/short indexes.
-DOM walk still resolves unmarked Hangul via `D.K`. Prefer `data-i18n="m.…"` / `KONG_I18N.t(id)` for new UI.
+Build **does not** embed id→`[ko,en,ja]` for every message. It emits a compact blob:
+
+- `D.T`: Hangul → `[en, ja]` (same shape as pre-refactor)
+- `D.U` / `D.F` / `D.S`: Hangul-keyed units / fragments / shorts
+- `D.I`: sparse stable-id → Hangul map, only for ids referenced in the deck (`data-i18n`, `I18N_IDS`, …)
+
+DOM walk matches unmarked Hangul via `D.T`. Prefer `data-i18n="m.…"` / `KONG_I18N.t(id)` for new UI.
