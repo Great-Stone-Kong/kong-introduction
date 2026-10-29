@@ -268,8 +268,8 @@ tr.k td{background:rgba(204,255,0,.06)}
 .stat.big{padding:32px 32px 28px;position:relative;overflow:hidden;min-height:220px}
 .stat.big::after{content:"";position:absolute;right:-30px;top:-30px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(204,255,0,.12),transparent 70%)}
 .stat.big .lbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
-.stat.big b{font-size:clamp(56px,8vw,96px);line-height:1;letter-spacing:-.03em;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.stat.big b i{font-style:normal;font-variant-numeric:tabular-nums}
+.stat.big b{font-size:clamp(56px,8vw,96px);line-height:1;letter-spacing:-.03em;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;max-width:100%;width:100%;min-width:0;box-sizing:border-box}
+.stat.big b i{font-style:normal;font-variant-numeric:tabular-nums;min-width:0}
 .stat.big b small{font-size:16px;font-weight:700;color:var(--g300);letter-spacing:0}
 .stat.big .ttl{font-size:20px;font-weight:700;color:var(--heading);margin-top:12px}
 .stat.big .desc{font-size:14px;color:var(--g300);margin-top:6px}
@@ -6773,18 +6773,30 @@ document.querySelectorAll(RV_SEL).forEach(el=>{
   el.style.setProperty('--d',Math.min(sib.indexOf(el),8)*.08+'s');
 });
 function fmt(n,dec){return dec?n.toFixed(dec):Math.round(n).toLocaleString('en-US');}
+/* Shrink .stat.big > b when the hero number/word exceeds the card width. */
+function fitStatBig(b){
+  if(!b||!b.closest||!b.closest('.stat.big')) return;
+  b.style.fontSize='';
+  const avail=b.clientWidth; if(avail<=0) return;
+  let fs=parseFloat(getComputedStyle(b).fontSize)||56;
+  const floor=16;
+  while(fs>floor&&b.scrollWidth>avail+1){ fs-=0.5; b.style.fontSize=fs+'px'; }
+}
+function fitStatBox(box){ const b=box&&box.querySelector(':scope > b'); if(b) fitStatBig(b); }
+function fitAllStatBig(){ document.querySelectorAll('.stat.big').forEach(fitStatBox); }
 function countUp(el){
   const from=+el.dataset.from, to=+el.dataset.to, dur=+(el.dataset.dur||1600), pre=el.dataset.prefix||'', suf=el.dataset.suffix||'', dec=+(el.dataset.dec||0);
   const final=pre+fmt(to,dec)+suf;
-  if(REDUCED){el.textContent=final;return;}
+  const bump=()=>{ const b=el.closest&&el.closest('b'); if(b) fitStatBig(b); };
+  if(REDUCED){el.textContent=final;bump();return;}
   cancelAnimationFrame(el._raf);
   const t0=performance.now();
   const step=t=>{
     const p=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-p,4);
-    el.textContent=pre+fmt(from+(to-from)*e,dec)+suf;
-    if(p<1) el._raf=requestAnimationFrame(step); else el.textContent=final;
+    el.textContent=pre+fmt(from+(to-from)*e,dec)+suf; bump();
+    if(p<1) el._raf=requestAnimationFrame(step); else { el.textContent=final; bump(); }
   };
-  el.textContent=pre+fmt(from,dec)+suf; el._raf=requestAnimationFrame(step);
+  el.textContent=pre+fmt(from,dec)+suf; bump(); el._raf=requestAnimationFrame(step);
 }
 function sequence(box){
   const kids=[...box.children].filter(c=>c.classList.contains('st')||c.classList.contains('stg'));
@@ -6806,6 +6818,11 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{
   }
 }),{threshold:.15,rootMargin:'0px 0px -6% 0px'});
 document.querySelectorAll('.rv,.flow,.pipe,.bars,.mqwrap,.tl,.vision').forEach(el=>io.observe(el));
+if(window.ResizeObserver){
+  const sro=new ResizeObserver(es=>es.forEach(e=>fitStatBox(e.target)));
+  document.querySelectorAll('.stat.big').forEach(el=>sro.observe(el));
+}
+addEventListener('load',()=>requestAnimationFrame(fitAllStatBig));
 function resetMotion(page){
   page.querySelectorAll('.rv.in,.tl.in,.vision.in,.geo.in,.namebox.in').forEach(el=>el.classList.remove('in'));
   page.querySelectorAll('.bars.go').forEach(el=>el.classList.remove('go'));
@@ -7922,6 +7939,7 @@ window.rebuildAudience=function(){
   if(typeof syncClChrome==='function') syncClChrome();
   if(typeof vrender==='function') vrender();
   if(typeof prefetchChangelog==='function') prefetchChangelog(currentLang());
+  if(typeof fitAllStatBig==='function') requestAnimationFrame(fitAllStatBig);
 };
 function go(id,sec,push,keepScroll){
   let page=document.getElementById('p-'+id); if(!page||!audienceOk(page)) { id='company'; page=document.getElementById('p-company'); }
