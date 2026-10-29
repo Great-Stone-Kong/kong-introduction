@@ -7899,14 +7899,15 @@ window.rebuildAudience=function(){
   const keep=cur;
   rebuildNav();
   const pg=document.getElementById('p-'+keep);
-  if(pg&&audienceOk(pg)) go(keep, null, false);
+  /* Same page (lang/edition refresh): keep scroll. Forced fallback to company: top. */
+  if(pg&&audienceOk(pg)) go(keep, null, false, true);
   else go('company', null, false);
   if(typeof fitNav==='function') fitNav();
   if(typeof syncClChrome==='function') syncClChrome();
   if(typeof vrender==='function') vrender();
   if(typeof prefetchChangelog==='function') prefetchChangelog(currentLang());
 };
-function go(id,sec,push){
+function go(id,sec,push,keepScroll){
   let page=document.getElementById('p-'+id); if(!page||!audienceOk(page)) { id='company'; page=document.getElementById('p-company'); }
   cur=id;
   const nextPg=document.getElementById('p-'+id); if(nextPg&&!nextPg.classList.contains('on')) resetMotion(nextPg);
@@ -7917,7 +7918,7 @@ function go(id,sec,push){
   side.classList.remove('open');
   document.title=pg.dataset.label+' | Kong 소개';
   if(sec&&document.getElementById(sec)){ setTimeout(()=>document.getElementById(sec).scrollIntoView(),30); }
-  else window.scrollTo(0,0);
+  else if(!keepScroll) window.scrollTo(0,0);
   if(push!==false){ try{ history.replaceState(null,'','#'+id+(sec?'/'+sec:'')); }catch(e){ location.hash=id+(sec?'/'+sec:''); } }
   setupSpy();
 }
