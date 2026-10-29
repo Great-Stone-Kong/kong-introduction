@@ -20,3 +20,5 @@ src/i18n/.zh-cache.json
 !scripts/**
 !reference/
 !reference/**
+
+scripts/__pycache__/
