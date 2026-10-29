@@ -8,29 +8,11 @@
 ## 2026.10.29.9b351b37
 ### 新增
 
-- AI Gateway 2.0 > 新功能：AI Proxy 与 Advanced 对照 · NVIDIA NeMo Guardrails Allow/Block 示意
-
----
-
-## 2026.10.29.66d2a114
-### 新增
-
-- AI Gateway > AI Gateway 2.0：专用二进制 · 实体 · 部署 · 成本模型 · 新功能页面
-- AI Gateway · MCP Gateway · Agent Gateway：跳转到 2.0 页面的简短 CTA
-
-### 变更
-
-- AI Gateway 2.0 > 部署：新增 Konnect · on-prem CLI/CP/DP 图示
-- AI Gateway 2.0：改为直述完整句
-- AI Gateway 2.0 > LLM 成本核算：明确提供商使用费用估算与预算/限额基准
-
----
-
-## 2026.10.29.c92d8cee
-### 新增
-
+- AI Gateway > AI Gateway 2.0
 - 语言：简体中文（`zh`，以英文为基准 · 正式书面语校正）
+- Agent Gateway > A2A Proxy 适用标准：仅 Service·Route vs ai-a2a-proxy — 判断 · 优势 · 行为差异
 
 ### 变更
 
-- 基础设施：「국내 고객 실 요구사항」→「고객 핵심 요구사항」（客户核心需求），全语言展示
+- Agent Gateway > A2A Proxy：流程 SVG · 文案整理
+- 侧栏下载 · 版本框及变更历史弹窗文案应用 EN · JA

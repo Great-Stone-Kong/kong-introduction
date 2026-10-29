@@ -72,7 +72,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add kong-introduction.html docs/ CHANGELOG.md CHANGELOG.en.md CHANGELOG.ja.md VERSION
+          git add kong-introduction.html docs/ CHANGELOG.md CHANGELOG.en.md CHANGELOG.ja.md CHANGELOG.zh.md VERSION
           if git diff --staged --quiet; then
             echo "No versioned artifact changes"
           else
