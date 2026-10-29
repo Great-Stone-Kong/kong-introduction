@@ -11,6 +11,11 @@
 - AI Gateway > AI Gateway 2.0: 전용 바이너리 · 엔티티 · 배포 · 비용 모델 · 신규 기능 페이지
 - AI Gateway · MCP Gateway · Agent Gateway: 2.0 페이지 진입 CTA
 
+### 변경
+
+- AI Gateway 2.0 > 배포: Konnect · on-prem CLI/CP/DP 도형 추가
+- AI Gateway 2.0: 문장 직설화 · 미완결 표현 정리
+
 ---
 
 ## 2026.10.29.c92d8cee

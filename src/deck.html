@@ -3653,7 +3653,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
     <div class="card"><span class="tag">Ship profitable</span><h3>수익성</h3><p>토큰 사용량과 비용을 통제하고, AI · API 자산을 상품화해 수익으로 연결합니다.</p></div>
   </div>
   <p class="note">참고: konghq.com</p>
-  <div class="callout" style="margin-top:18px"><b>AI Gateway 2.0.</b> 전용 바이너리, Models · MCP · Agents 엔티티, 조합형 비용 모델이 추가됐습니다. <button type="button" class="btn s" onclick="go('ai2')">AI Gateway 2.0</button></div>
+  <div class="callout" style="margin-top:18px"><b>AI Gateway 2.0</b> 전용 바이너리, Models · MCP · Agents 엔티티, 조합형 비용 모델이 추가되었습니다. <button type="button" class="btn s" onclick="go('ai2')">AI Gateway 2.0</button></div>
 </section>
 
 <section class="sec" id="i-market" data-title="시장 동향 (Gartner)">
@@ -3994,94 +3994,155 @@ claude
 
 <section class="sec hero" id="i2-intro" data-title="개요">
   <div class="eyebrow">AI Gateway 2.0</div>
-  <h1>AI 시대를 위한 전용 Gateway</h1>
-  <p class="lead">AI Gateway 2.0은 전용 런타임 바이너리, Models · MCP Servers · Agents 중심의 엔티티 모델, GitOps 선언 구성을 한 줄기로 묶습니다. API Gateway의 안정성을 이어받으면서, LLM · MCP · 에이전트 트래픽에 맞는 운영 단위를 새로 정의합니다.</p>
+  <h1>AI 전용 Gateway 런타임</h1>
+  <p class="lead">AI Gateway 2.0은 전용 바이너리, Models · MCP Servers · Agents 엔티티, 선언형 GitOps 구성을 한 제품 단위로 제공합니다. API Gateway의 보안·프록시 기반은 유지하고, LLM · MCP · 에이전트 트래픽에 맞는 Control Plane 엔티티와 비용 모델을 추가합니다.</p>
   <div class="grid g3" style="margin-top:28px">
-    <div class="card rv"><span class="tag">01</span><h3>전용 바이너리</h3><p>이미지 kong/kong-ai-gateway:2.0.0으로 배포합니다. API Gateway와 별도 릴리스 트레인을 타며, 매 API Gateway 릴리스가 병합됩니다.</p></div>
-    <div class="card rv"><span class="tag">02</span><h3>네이티브 엔티티</h3><p>Konnect UI · Admin API · 선언형에서 LLM, MCP Server, Agent를 1급 리소스로 관리합니다. 정책은 가드레일 · 접근 · 비용 · 트래픽 · 관측으로 구성합니다.</p></div>
-    <div class="card rv"><span class="tag">03</span><h3>선언형 GitOps</h3><p>decK AI · Terraform · kongctl로 동일 상태를 재현합니다. 환경별 드리프트를 줄이고 변경을 검토·롤백하기 쉬운 형태로 둡니다.</p></div>
+    <div class="card rv"><span class="tag">01</span><h3>전용 바이너리</h3><p>Data Plane 이미지는 kong/kong-ai-gateway:2.0.0입니다. API Gateway와 별도 릴리스로 배포되며, 매 API Gateway 릴리스 내용이 병합됩니다.</p></div>
+    <div class="card rv"><span class="tag">02</span><h3>네이티브 엔티티</h3><p>Konnect UI · Admin API · 선언형 설정에서 Model · MCP Server · Agent를 1급 리소스로 관리합니다. 정책은 가드레일, 접근 제어, 비용, 트래픽, 관측으로 구성합니다.</p></div>
+    <div class="card rv"><span class="tag">03</span><h3>선언형 GitOps</h3><p>decK AI · Terraform · kongctl로 동일 상태를 재현합니다. 환경 간 설정 차이를 줄이고, 변경 검토와 롤백이 가능합니다.</p></div>
   </div>
-  <div class="callout" style="margin-top:22px"><b>기존 AI Gateway 소개와의 관계.</b> LLM 거버넌스 개념·데모·사례는 AI Gateway 페이지에 두고, 이 페이지는 2.0에서 바뀌는 런타임·모델·비용 단위를 정리합니다. <button type="button" class="btn s" onclick="go('ai')">AI Gateway</button></div>
+  <div class="callout" style="margin-top:22px"><b>기존 AI Gateway 소개</b> LLM 거버넌스 개념·데모·사례는 AI Gateway 페이지에 있습니다. 이 페이지는 2.0 바이너리·엔티티·비용 모델 변경만 다룹니다. <button type="button" class="btn s" onclick="go('ai')">AI Gateway</button></div>
 </section>
 
 <section class="sec" id="i2-binary" data-title="바이너리 · 릴리스 트레인">
   <div class="eyebrow">Runtime</div>
   <h2>전용 바이너리와 API Gateway 병합</h2>
-  <p class="sub">AI Gateway는 자체 이미지로 배포하고, API Gateway의 마이너·패치 개선을 릴리스마다 흡수합니다. 호환 가이드에 병합된 API Gateway 버전이 명시됩니다.</p>
+  <p class="sub">AI Gateway는 자체 이미지로 배포합니다. API Gateway의 마이너·패치 변경은 릴리스마다 AI Gateway에 병합되며, 호환 가이드에 병합된 API Gateway 버전이 명시됩니다.</p>
   <div class="grid g2">
-    <div class="card rv"><span class="tag">AI Gateway branch</span><h3>kong/kong-ai-gateway</h3><p>AI 전용 Data Plane 이미지입니다. LLM 프록시, MCP, 에이전트 경로에 맞춘 기본값과 플러그인 구성을 담습니다.</p><p class="note" style="margin:10px 0 0">이미지 태그 예: kong/kong-ai-gateway:2.0.0</p></div>
-    <div class="card rv"><span class="tag">API Gateway branch</span><h3>kong/kong-gateway</h3><p>엔터프라이즈 API Gateway 본선입니다. 매 릴리스·패치가 AI Gateway 브랜치로 병합되어, 보안·프록시 기반의 개선이 함께 따라옵니다.</p></div>
+    <div class="card rv"><span class="tag">AI Gateway branch</span><h3>kong/kong-ai-gateway</h3><p>AI 전용 Data Plane 이미지입니다. LLM 프록시, MCP, 에이전트 경로용 기본값과 플러그인 구성을 포함합니다.</p><p class="note" style="margin:10px 0 0">이미지 태그 예: kong/kong-ai-gateway:2.0.0</p></div>
+    <div class="card rv"><span class="tag">API Gateway branch</span><h3>kong/kong-gateway</h3><p>엔터프라이즈 API Gateway 본선입니다. 각 릴리스·패치가 AI Gateway 브랜치로 병합되어 보안·프록시 개선이 함께 반영됩니다.</p></div>
   </div>
   <div class="grid g3" style="margin-top:18px">
-    <div class="card"><span class="tag">What is included</span><h3>병합 범위</h3><p>API Gateway의 마이너 릴리스와 패치 픽스가 AI Gateway에 반영됩니다.</p></div>
-    <div class="card"><span class="tag">Compatibility</span><h3>호환 가이드</h3><p>어느 API Gateway 버전이 병합됐는지 공개해, 베이스라인을 문서와 배포 매트릭스에서 맞춥니다.</p></div>
-    <div class="card"><span class="tag">Operate</span><h3>운영 관점</h3><p>API 플랫폼과 AI 플랫폼이 같은 게이트웨이 DNA를 공유하면서, AI 전용 CP·엔티티로 운영 경계를 나눕니다.</p></div>
+    <div class="card"><span class="tag">What is included</span><h3>병합 범위</h3><p>API Gateway 마이너 릴리스와 패치 픽스가 AI Gateway에 반영됩니다.</p></div>
+    <div class="card"><span class="tag">Compatibility</span><h3>호환 가이드</h3><p>병합된 API Gateway 버전을 공개합니다. 문서와 배포 매트릭스의 기준 버전을 맞춥니다.</p></div>
+    <div class="card"><span class="tag">Operate</span><h3>운영 경계</h3><p>프록시 엔진은 공유하고, AI 전용 Control Plane과 엔티티로 운영 단위를 분리합니다.</p></div>
   </div>
 </section>
 
 <section class="sec" id="i2-entity" data-title="엔티티 모델">
   <div class="eyebrow">Entity model</div>
   <h2>Models · MCP Servers · Agents · Policies</h2>
-  <p class="sub">AI 리소스를 Service · Route에만 얹지 않고, 논리 단위로 선언합니다. Control Plane이 프록시 배선을 만들고, 정책은 가드레일·접근·비용·트래픽·관측에 묶입니다.</p>
+  <p class="sub">AI 리소스를 Service · Route 플러그인 설정에만 의존하지 않습니다. Model · MCP Server · Agent를 논리 단위로 선언하면 Control Plane이 프록시 경로를 구성하고, 정책은 가드레일·접근·비용·트래픽·관측에 적용됩니다.</p>
   <div class="grid g2">
-    <div class="card rv"><span class="tag">Native</span><h3>1급 AI 리소스</h3><ul class="list"><li>Model · MCP Server · Agent를 각각 하나의 엔티티로 선언</li><li>전용 AI Gateway Control Plane에서 UI · Admin API · 선언형으로 관리</li><li>리소스를 선언하면 프록시 경로가 Control Plane에 의해 연결</li></ul></div>
-    <div class="card rv"><span class="tag">Policies</span><h3>정책 묶음</h3><ul class="list"><li>가드레일 · 프롬프트 통제</li><li>접근 제어 · ACL</li><li>비용 · 쿼터 · 레이트 리밋</li><li>트래픽 제어 · 모니터링 · 로깅</li></ul></div>
+    <div class="card rv"><span class="tag">Native</span><h3>1급 AI 리소스</h3><ul class="list"><li>Model · MCP Server · Agent를 각각 독립 엔티티로 선언합니다.</li><li>전용 AI Gateway Control Plane에서 UI · Admin API · 선언형으로 관리합니다.</li><li>엔티티 선언 후 Control Plane이 프록시 경로를 연결합니다.</li></ul></div>
+    <div class="card rv"><span class="tag">Policies</span><h3>정책 구성</h3><ul class="list"><li>가드레일 · 프롬프트 통제</li><li>접근 제어 · ACL</li><li>비용 · 쿼터 · 레이트 리밋</li><li>트래픽 제어 · 모니터링 · 로깅</li></ul></div>
   </div>
-  <p class="note" style="margin-top:14px">MCP 도구 집약·에이전트 협업의 딥다이브는 MCP Gateway · Agent Gateway 페이지를 이어서 보면 됩니다. <button type="button" class="btn s" onclick="go('mcp')">MCP Gateway</button> <button type="button" class="btn s" onclick="go('agent')">Agent Gateway</button></p>
+  <p class="note" style="margin-top:14px">MCP 도구 집약과 에이전트 협업 상세는 MCP Gateway · Agent Gateway 페이지를 참고합니다. <button type="button" class="btn s" onclick="go('mcp')">MCP Gateway</button> <button type="button" class="btn s" onclick="go('agent')">Agent Gateway</button></p>
 </section>
 
 <section class="sec" id="i2-deploy" data-title="배포">
   <div class="eyebrow">Deployment</div>
-  <h2>Konnect와 on-prem 하이브리드</h2>
-  <p class="sub">Konnect에서는 Models · MCP Servers · Agents 엔티티를 쓰는 AI Gateway Control Plane을 제공합니다. on-prem Enterprise는 동일 이미지로 Data Plane을 두고, 기존 Service · Route · Plugin 운영과 병행합니다.</p>
-  <div class="grid g2">
-    <div class="card rv"><span class="tag">Konnect</span><h3>Managed Control Plane</h3><ul class="list"><li>kongctl · Terraform · decK AI로 선언 적용</li><li>AI Gateway CP에 Model · MCP Server · Agent 엔티티</li><li>Data Plane 이미지 kong/kong-ai-gateway:2.0.0</li></ul></div>
-    <div class="card rv"><span class="tag">Kong EE · on-prem</span><h3>Air-gap 포함</h3><ul class="list"><li>동일 AI Gateway 이미지로 DP 기동</li><li>기존 Service · Route · Plugin 엔티티 유지</li><li>폐쇄망 · Fully Managed · Hybrid 토폴로지 지원</li></ul></div>
+  <h2>Konnect · on-prem · Air-gap</h2>
+  <p class="sub">Konnect와 on-prem 모두 Data Plane 이미지는 kong/kong-ai-gateway:2.0.0입니다. Konnect는 Models · MCP Servers · Agents 엔티티를 쓰는 managed Control Plane을 제공하고, on-prem Enterprise는 동일 이미지로 Control Plane·Data Plane을 운영하며 기존 Service · Route · Plugin을 유지합니다.</p>
+  <div class="edep rv" id="i2-dep">
+    <svg viewBox="0 0 980 470" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Konnect와 on-prem AI Gateway 2.0 배포 구조">
+      <text x="40" y="28" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">LAYER</text>
+      <text x="70" y="118" text-anchor="middle" font-size="13" font-weight="800" fill="var(--svg-muted)">CLI</text>
+      <text x="70" y="248" text-anchor="middle" font-size="13" font-weight="800" fill="var(--svg-muted)">CP</text>
+      <text x="70" y="388" text-anchor="middle" font-size="13" font-weight="800" fill="var(--svg-muted)">DP</text>
+
+      <!-- Konnect column -->
+      <g class="n" style="--i:0">
+        <rect x="130" y="12" width="380" height="36" rx="18" fill="var(--lime)"/>
+        <text x="320" y="36" text-anchor="middle" font-size="16" font-weight="900" fill="var(--on-lime)">Konnect</text>
+      </g>
+      <g class="n" style="--i:1">
+        <rect x="130" y="64" width="380" height="100" rx="12" fill="var(--svg-panel)" stroke="var(--g700)"/>
+        <text x="150" y="92" font-size="12" font-weight="700" fill="var(--mark)" letter-spacing=".8">CLI</text>
+        <rect x="150" y="108" width="150" height="36" rx="8" fill="var(--svg-chip)" stroke="var(--line2)"/>
+        <text x="225" y="131" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">kongctl</text>
+        <rect x="316" y="108" width="170" height="36" rx="8" fill="var(--svg-chip)" stroke="var(--line2)"/>
+        <text x="401" y="131" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">Terraform</text>
+      </g>
+      <path class="ln" pathLength="1" style="--i:0" d="M320 164V190" stroke="var(--mark)" stroke-width="2" fill="none"/>
+      <g class="n" style="--i:2">
+        <rect x="130" y="190" width="380" height="120" rx="12" fill="var(--svg-panel)" stroke="var(--mark)" stroke-width="2"/>
+        <text x="150" y="218" font-size="12" font-weight="700" fill="var(--mark)" letter-spacing=".8">CONTROL PLANE</text>
+        <text x="320" y="250" text-anchor="middle" font-size="16" font-weight="800" fill="var(--svg-fg)">Konnect AI Gateway CP</text>
+        <text x="320" y="278" text-anchor="middle" font-size="13" fill="var(--svg-muted)">Models · MCP Servers · Agents 엔티티</text>
+      </g>
+      <path class="ln" pathLength="1" style="--i:1" d="M320 310V336" stroke="var(--mark)" stroke-width="2" fill="none"/>
+      <g class="n" style="--i:3">
+        <rect x="130" y="336" width="380" height="110" rx="12" fill="var(--svg-panel)" stroke="var(--lime)" stroke-width="2"/>
+        <text x="150" y="364" font-size="12" font-weight="700" fill="var(--mark)" letter-spacing=".8">DATA PLANE</text>
+        <text x="320" y="398" text-anchor="middle" font-size="15" font-weight="800" fill="var(--svg-fg)">Data plane</text>
+        <text x="320" y="424" text-anchor="middle" font-size="14" font-weight="800" fill="var(--lime)">kong/kong-ai-gateway:2.0.0</text>
+      </g>
+
+      <!-- Kong EE column -->
+      <g class="n" style="--i:0">
+        <rect x="540" y="12" width="400" height="36" rx="18" fill="var(--svg-chip)" stroke="var(--g600)"/>
+        <text x="740" y="36" text-anchor="middle" font-size="16" font-weight="900" fill="var(--svg-fg)">Kong EE (on-prem)</text>
+      </g>
+      <g class="n" style="--i:1">
+        <rect x="540" y="64" width="400" height="100" rx="12" fill="var(--svg-panel)" stroke="var(--g700)"/>
+        <text x="560" y="92" font-size="12" font-weight="700" fill="var(--mark)" letter-spacing=".8">CLI</text>
+        <rect x="615" y="108" width="250" height="36" rx="8" fill="var(--svg-chip)" stroke="var(--line2)"/>
+        <text x="740" y="131" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">decK AI</text>
+      </g>
+      <path class="ln" pathLength="1" style="--i:2" d="M740 164V190" stroke="var(--mark)" stroke-width="2" fill="none"/>
+      <g class="n" style="--i:2">
+        <rect x="540" y="190" width="400" height="120" rx="12" fill="var(--svg-panel)" stroke="var(--mark)" stroke-width="2"/>
+        <text x="560" y="218" font-size="12" font-weight="700" fill="var(--mark)" letter-spacing=".8">CONTROL PLANE</text>
+        <text x="740" y="246" text-anchor="middle" font-size="15" font-weight="800" fill="var(--svg-fg)">Kong EE AI Gateway CP</text>
+        <text x="740" y="270" text-anchor="middle" font-size="13" font-weight="800" fill="var(--lime)">kong/kong-ai-gateway:2.0.0</text>
+        <text x="740" y="294" text-anchor="middle" font-size="12.5" fill="var(--svg-muted)">Service · Route · Plugin 엔티티 유지</text>
+      </g>
+      <path class="ln" pathLength="1" style="--i:3" d="M740 310V336" stroke="var(--mark)" stroke-width="2" fill="none"/>
+      <g class="n" style="--i:3">
+        <rect x="540" y="336" width="400" height="110" rx="12" fill="var(--svg-panel)" stroke="var(--lime)" stroke-width="2"/>
+        <text x="560" y="364" font-size="12" font-weight="700" fill="var(--mark)" letter-spacing=".8">DATA PLANE</text>
+        <text x="740" y="398" text-anchor="middle" font-size="15" font-weight="800" fill="var(--svg-fg)">Data plane</text>
+        <text x="740" y="424" text-anchor="middle" font-size="14" font-weight="800" fill="var(--lime)">kong/kong-ai-gateway:2.0.0</text>
+      </g>
+    </svg>
+    <p class="edep-cap">양쪽 Data Plane 이미지는 동일합니다. Konnect는 managed CP에서 Models · MCP Servers · Agents를 관리하고, on-prem은 동일 이미지로 CP·DP를 운영하며 기존 Service · Route · Plugin 운영을 유지합니다. Hybrid · Fully Managed · Air-gap 토폴로지를 지원합니다.</p>
   </div>
 </section>
 
 <section class="sec" id="i2-cost" data-title="비용 모델">
   <div class="eyebrow">Cost management</div>
   <h2>두 요율에서 조합 가격으로</h2>
-  <p class="sub">제공사 청구는 더 이상 입력·출력 두 요율만으로 설명되지 않습니다. 캐시 읽기·쓰기(TTL), 컨텍스트 구간, 서비스 티어, 추론 토큰이 가격에 들어갑니다. 게이트웨이가 이 숫자를 맞춰야 예산 정책과 비용 기반 한도가 올바른 허용·거부를 만듭니다.</p>
+  <p class="sub">LLM 제공사 청구는 입력·출력 두 요율만으로 계산되지 않습니다. 캐시 읽기·쓰기(TTL), 컨텍스트 구간, 서비스 티어, 추론 토큰이 단가에 포함됩니다. 게이트웨이가 이 단가를 반영해야 예산 정책과 비용 기반 rate limit이 올바른 허용·거부를 수행합니다.</p>
   <div class="grid g2">
-    <div class="card rv"><span class="tag">v1</span><h3>두 요율</h3><ul class="list"><li>모든 요청에 하나의 공식</li><li>캐시 읽기는 집계만 하고 가격 반영이 약함</li><li>TTL · 컨텍스트 · 티어가 보이지 않음</li></ul>
+    <div class="card rv"><span class="tag">AI Gateway v1</span><h3>두 요율</h3><p>모든 요청에 입력·출력 두 요율만 적용합니다.</p><ul class="list"><li>캐시 읽기는 집계만 하고 가격에 거의 반영되지 않습니다.</li><li>TTL · 컨텍스트 구간 · 서비스 티어가 단가에 없습니다.</li></ul>
       <pre class="code" style="margin-top:12px">cost = (input × input_cost + output × output_cost) / 1M</pre>
     </div>
-    <div class="card rv k"><span class="tag">v2</span><h3>조합 가격</h3><ul class="list"><li>캐시 읽기 · TTL별 쓰기 가격</li><li>컨텍스트 배율을 요청 전체에 적용</li><li>서비스 티어가 전체를 곱함</li></ul>
+    <div class="card rv k"><span class="tag">AI Gateway v2</span><h3>조합 가격</h3><p>캐시 · 컨텍스트 · 서비스 티어를 한 식에 조합합니다.</p><ul class="list"><li>캐시 읽기와 TTL별 쓰기 단가를 반영합니다.</li><li>컨텍스트 배율을 요청 전체에 적용합니다.</li><li>서비스 티어가 전체 비용을 곱합니다.</li></ul>
       <pre class="code" style="margin-top:12px">cost = service_tier_factor × (
   ctx_in × (input + cache_read + cache_write@TTL)
   + ctx_out × output
 )</pre>
     </div>
   </div>
-  <h3 style="margin-top:28px">가격을 바꾸는 요인</h3>
+  <p class="note" style="margin-top:12px">기존 input_cost · output_cost · cache_read_cost · cache_write_cost 필드는 유지됩니다. 목록이 없으면 스칼라 값이 적용됩니다. managed 모델 단가는 Control Plane이 갱신하고, self-managed·수동 오버라이드는 라우트 설정으로 둡니다.</p>
+  <h3 style="margin-top:28px">단가 구성 요소</h3>
   <div class="grid g3">
-    <div class="card"><span class="tag">Cache</span><h3>읽기 vs 쓰기</h3><p>히트는 입력 대비 큰 할인(예: ~0.1×)이 흔하고, 쓰기는 일반 입력보다 비쌀 수 있습니다. TTL(5분·1시간 등)에 따라 쓰기 단가가 달라집니다.</p></div>
-    <div class="card"><span class="tag">Context</span><h3>컨텍스트 구간</h3><p>긴 컨텍스트 구간에서는 요청 전체 단가가 다시 매겨집니다. 모델·제공사별로 임계값이 다릅니다.</p></div>
-    <div class="card"><span class="tag">Tier · Reasoning</span><h3>티어 · 추론 토큰</h3><p>Priority · Flex 같은 서비스 티어가 입·출력을 한꺼번에 곱하고, 사고(reasoning) 토큰은 응답에 안 보여도 출력 요율로 청구되는 경우가 많습니다.</p></div>
+    <div class="card"><span class="tag">Cache</span><h3>읽기 · 쓰기</h3><p>캐시 히트는 입력 대비 할인(예: 약 0.1×)이 일반적입니다. 캐시 쓰기는 일반 입력보다 비쌀 수 있으며, TTL(5분·1시간 등)에 따라 쓰기 단가가 달라집니다.</p></div>
+    <div class="card"><span class="tag">Context</span><h3>컨텍스트 구간</h3><p>긴 컨텍스트 구간에서는 요청 전체 단가가 다시 산정됩니다. 임계값은 모델·제공사마다 다릅니다.</p></div>
+    <div class="card"><span class="tag">Tier · Reasoning</span><h3>티어 · 추론 토큰</h3><p>Priority · Flex 같은 서비스 티어는 입·출력 전체에 배율을 적용합니다. reasoning 토큰은 응답에 표시되지 않아도 출력 요율로 청구되는 경우가 많습니다.</p></div>
   </div>
-  <div class="callout" style="margin-top:18px"><b>거버넌스와 직결.</b> 비용 수치는 대시보드만이 아니라 예산 정책·비용 기반 rate limit의 입력입니다. 추정이 틀리면 차트만 틀린 것이 아니라 허용·거부 결정이 틀립니다.</div>
+  <div class="callout" style="margin-top:18px"><b>거버넌스 입력값</b> 비용 추정은 대시보드 표시용만이 아닙니다. 예산 정책과 비용 기반 rate limit의 입력입니다. 추정이 틀리면 허용·거부 결정도 틀립니다.</div>
   <div class="grid g3" style="margin-top:18px">
-    <div class="card"><span class="tag">Committed</span><h3>이번 범위</h3><p>TTL별 캐시 쓰기, 컨텍스트 구간, 서비스 티어 배율.</p></div>
-    <div class="card"><span class="tag">Follow-on</span><h3>후속</h3><p>멀티모달 요율 — 캐시 메트릭 수집이 갖춰진 뒤.</p></div>
-    <div class="card"><span class="tag">Out of scope</span><h3>범위 밖</h3><p>시간대·리전별 동적 가격. 리전 단가는 라우트별 수동 설정으로 둡니다.</p></div>
+    <div class="card"><span class="tag">Committed</span><h3>포함 범위</h3><p>TTL별 캐시 쓰기 단가, 컨텍스트 구간, 서비스 티어 배율을 포함합니다.</p></div>
+    <div class="card"><span class="tag">Follow-on</span><h3>후속 범위</h3><p>멀티모달 요율은 멀티모달 캐시 메트릭 수집이 준비된 뒤에 추가합니다.</p></div>
+    <div class="card"><span class="tag">Out of scope</span><h3>제외 범위</h3><p>시간대·리전별 동적 가격은 포함하지 않습니다. 리전 단가는 라우트별로 수동 설정합니다.</p></div>
   </div>
 </section>
 
 <section class="sec" id="i2-feat" data-title="신규 기능">
   <div class="eyebrow">New in 2.0</div>
-  <h2>운영에 바로 쓰는 추가 기능</h2>
-  <p class="sub">포워드 프록시 네이티브 설정, 사람이 읽는 레이트 리밋 창, MoonshotAI Kimi 모델, 내부 MCP 서버 번들링을 한 번에 정리합니다.</p>
+  <h2>Forward proxy · 캘린더 한도 · Kimi · MCP bundling</h2>
+  <p class="sub">포워드 프록시 네이티브 설정, 캘린더형 rate-limit 창, MoonshotAI Kimi 모델, 내부 MCP 서버 번들링을 추가합니다.</p>
   <div class="grid g2">
-    <div class="card rv"><span class="tag">Forward proxy</span><h3>네이티브 포워드 프록시</h3><p>플러그인에서 프록시를 직접 설정합니다. 라우트 우회 구성 없이 폐쇄망·에어갭 환경에서도 AI 경로를 한 플러그인으로 맞춥니다.</p></div>
-    <div class="card rv"><span class="tag">Rate limiting</span><h3>캘린더형 window</h3><p>ai-rate-limiting-advanced가 1hr · 1d · 1w 같은 사람 읽기 형식과 밀리초를 함께 받습니다. 기존 ms 값은 그대로 동작합니다.</p>
+    <div class="card rv"><span class="tag">Forward proxy</span><h3>네이티브 포워드 프록시</h3><p>플러그인에서 포워드 프록시를 직접 설정합니다. 별도 라우트 우회 없이 폐쇄망·에어갭에서도 AI 경로를 구성합니다.</p></div>
+    <div class="card rv"><span class="tag">Rate limiting</span><h3>캘린더형 window</h3><p>ai-rate-limiting-advanced는 1hr · 1d · 1w 형식과 밀리초 값을 모두 받습니다. 기존 밀리초 설정은 그대로 동작합니다.</p>
       <pre class="code" style="margin-top:10px">window_size = 1hr</pre>
     </div>
-    <div class="card rv"><span class="tag">Model support</span><h3>MoonshotAI · Kimi</h3><p>AI Proxy · AI Proxy Advanced에서 Kimi 모델을 다른 제공사와 같은 방식으로 등록합니다. 아시아·태평양 지역 모델 표준화 요구에 맞춥니다.</p></div>
-    <div class="card rv"><span class="tag">MCP bundling</span><h3>한 Route · 여러 MCP</h3><p>하나의 Kong Route가 통합 MCP 진입점이 됩니다. 핸드셰이크와 tools/list 집계를 Kong이 수행하고, MCP ACL과 함께 쓰면 호출자는 허용된 도구만 봅니다.</p>
-      <ul class="list" style="margin-top:8px"><li>통합 진입점 — 호출자는 Kong 한곳만 연결</li><li>tools/list 집계 — 업스트림 도구 목록 병합</li><li>ACL 연동 — 권한 있는 도구만 노출·호출</li></ul>
-      <p class="note" style="margin-top:10px">현재 범위는 내부 MCP 서버입니다. GitHub·Slack·Figma처럼 자체 인증을 쓰는 외부 SaaS 번들링은 토큰 볼트 연동과 함께 후속으로 예정됩니다.</p>
+    <div class="card rv"><span class="tag">Model support</span><h3>MoonshotAI · Kimi</h3><p>AI Proxy · AI Proxy Advanced에서 Kimi 모델을 다른 제공사와 동일한 방식으로 등록합니다. 아시아·태평양 지역 모델 표준화 요구에 대응합니다.</p></div>
+    <div class="card rv"><span class="tag">MCP bundling</span><h3>한 Route · 여러 MCP</h3><p>하나의 Kong Route가 통합 MCP 진입점이 됩니다. Kong이 핸드셰이크와 tools/list 집계를 수행하고, MCP ACL과 함께 쓰면 호출자는 허용된 도구만 조회·호출합니다.</p>
+      <ul class="list" style="margin-top:8px"><li>통합 진입점: 호출자는 Kong 한곳만 연결합니다.</li><li>tools/list 집계: 업스트림 도구 목록을 병합합니다.</li><li>ACL 연동: 권한이 있는 도구만 노출·호출합니다.</li></ul>
+      <p class="note" style="margin-top:10px">현재 범위는 내부 MCP 서버입니다. GitHub · Slack · Figma처럼 자체 인증을 쓰는 외부 SaaS 번들링은 토큰 볼트 연동과 함께 후속으로 제공합니다.</p>
     </div>
   </div>
 </section>
@@ -4210,7 +4271,7 @@ claude
   <p class="sub">기존 MCP 서버 앞단 프록시부터 REST API 변환, 여러 도구의 집약까지 하나의 플러그인(AI MCP Proxy)으로 구성합니다. 모드는 섞어 쓸 수 있어, listener 하나가 여러 conversion-only 도구를 묶어 단일 MCP 엔드포인트로 제공할 수 있습니다.</p>
   <div class="dia ecow mmw rv"><svg viewBox="0 0 1000 480" class="mmsvg" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Kong MCP Proxy 4가지 모드"><defs><marker id="arl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--lime)"/></marker><marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5CC8FF"/></marker></defs><rect class="mm-band" style="--i:0" x="0" y="10" width="1000" height="100" fill="var(--svg-panel)" opacity="0.9"/><rect class="mm-band" style="--i:1" x="0" y="110" width="1000" height="100" fill="var(--svg-well)" opacity="1"/><rect class="mm-band" style="--i:2" x="0" y="210" width="1000" height="90" fill="var(--svg-panel)" opacity="0.9"/><rect class="mm-band" style="--i:3" x="0" y="300" width="1000" height="170" fill="var(--svg-well)" opacity="1"/><text x="16" y="56.0" font-size="16" font-weight="800" fill="var(--svg-fg)" font-family="Roboto Mono, monospace">passthrough-</text><text x="16" y="78.0" font-size="16" font-weight="800" fill="var(--svg-fg)" font-family="Roboto Mono, monospace">listener</text><text x="826" y="54.0" font-size="14.5" fill="var(--svg-muted)">기존 MCP 서버로 요청을</text><text x="826" y="76.0" font-size="14.5" fill="var(--svg-muted)">라우팅하는 프록시</text><text x="16" y="156.0" font-size="16" font-weight="800" fill="var(--svg-fg)" font-family="Roboto Mono, monospace">conversion-</text><text x="16" y="178.0" font-size="16" font-weight="800" fill="var(--svg-fg)" font-family="Roboto Mono, monospace">listener</text><text x="826" y="143.0" font-size="14.5" fill="var(--svg-muted)">REST API에 프로토콜</text><text x="826" y="165.0" font-size="14.5" fill="var(--svg-muted)">변환을 수행하는 MCP</text><text x="826" y="187.0" font-size="14.5" fill="var(--svg-muted)">엔드포인트 제공</text><text x="16" y="260.0" font-size="16" font-weight="800" fill="var(--svg-fg)" font-family="Roboto Mono, monospace">listener</text><text x="826" y="249.0" font-size="14.5" fill="var(--svg-muted)">MCP 엔드포인트만 제공 ·</text><text x="826" y="271.0" font-size="14.5" fill="var(--svg-muted)">여러 도구를 하나로 집약</text><text x="16" y="381.0" font-size="16" font-weight="800" fill="var(--svg-fg)" font-family="Roboto Mono, monospace">conversion-</text><text x="16" y="403.0" font-size="16" font-weight="800" fill="var(--svg-fg)" font-family="Roboto Mono, monospace">only</text><text x="826" y="368.0" font-size="14.5" fill="var(--svg-muted)">REST API에 대한</text><text x="826" y="390.0" font-size="14.5" fill="var(--svg-muted)">MCP/REST 프로토콜</text><text x="826" y="412.0" font-size="14.5" fill="var(--svg-muted)">변환만 수행</text><g class="mm-lines"><path class="mm-ln " d="M308 60H324" fill="none" stroke="var(--mark)" stroke-opacity=".75" stroke-width="1.8" marker-end="url(#arl)"/><path class="mm-ln " d="M522 60H548" fill="none" stroke="var(--mark)" stroke-opacity=".75" stroke-width="1.8" marker-end="url(#arl)"/><path class="mm-ln " d="M662 60H692" fill="none" stroke="#5CC8FF" stroke-opacity=".75" stroke-width="1.8" marker-end="url(#arb)"/><path class="mm-ln " d="M308 160H324" fill="none" stroke="var(--mark)" stroke-opacity=".75" stroke-width="1.8" marker-end="url(#arl)"/><path class="mm-ln " d="M522 160H692" fill="none" stroke="#5CC8FF" stroke-opacity=".75" stroke-width="1.8" marker-end="url(#arb)"/><path class="mm-ln " d="M308 255H324" fill="none" stroke="var(--mark)" stroke-opacity=".75" stroke-width="1.8" marker-end="url(#arl)"/><path class="mm-ln " d="M522 255C552 255 510 345 548 345" fill="none" stroke="var(--mark)" stroke-opacity=".75" stroke-width="1.8" marker-end="url(#arl)"/><path class="mm-ln " d="M662 345H692" fill="none" stroke="#5CC8FF" stroke-opacity=".75" stroke-width="1.8" marker-end="url(#arb)"/><path class="mm-ln " d="M522 255C552 255 510 425 548 425" fill="none" stroke="var(--mark)" stroke-opacity=".75" stroke-width="1.8" marker-end="url(#arl)"/><path class="mm-ln " d="M662 425H692" fill="none" stroke="#5CC8FF" stroke-opacity=".75" stroke-width="1.8" marker-end="url(#arb)"/></g><g><circle r="5" fill="var(--lime)" opacity="0"><animateMotion dur="3.6s" begin="0s" repeatCount="indefinite" path="M308 60H694"/><animate attributeName="opacity" dur="3.6s" begin="0s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.04;.92;1"/><animate attributeName="fill" dur="3.6s" begin="0s" repeatCount="indefinite" calcMode="discrete" values="#CCFF00;#5CC8FF" keyTimes="0;0.917098445595855"/></circle><circle r="5" fill="var(--lime)" opacity="0"><animateMotion dur="3.6s" begin="0.9s" repeatCount="indefinite" path="M308 160H694"/><animate attributeName="opacity" dur="3.6s" begin="0.9s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.04;.92;1"/><animate attributeName="fill" dur="3.6s" begin="0.9s" repeatCount="indefinite" calcMode="discrete" values="#CCFF00;#5CC8FF" keyTimes="0;0.5544041450777202"/></circle><circle r="5" fill="var(--lime)" opacity="0"><animateMotion dur="4.2s" begin="1.8s" repeatCount="indefinite" path="M308 255H522C552 255 510 345 548 345H694"/><animate attributeName="opacity" dur="4.2s" begin="1.8s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.04;.92;1"/><animate attributeName="fill" dur="4.2s" begin="1.8s" repeatCount="indefinite" calcMode="discrete" values="#CCFF00;#5CC8FF" keyTimes="0;0.9306879930333412"/></circle><circle r="5" fill="var(--lime)" opacity="0"><animateMotion dur="4.2s" begin="2.5s" repeatCount="indefinite" path="M308 255H522C552 255 510 425 548 425H694"/><animate attributeName="opacity" dur="4.2s" begin="2.5s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.04;.92;1"/><animate attributeName="fill" dur="4.2s" begin="2.5s" repeatCount="indefinite" calcMode="discrete" values="#CCFF00;#5CC8FF" keyTimes="0;0.9415545927848616"/></circle></g><g class="mm-row" style="--i:0"><rect x="196" y="35.0" width="112" height="50" rx="7" fill="var(--svg-panel)" stroke="var(--g600)" stroke-width="1.5"/><text x="252.0" y="65.0" text-anchor="middle" font-size="15" font-weight="800" fill="var(--svg-fg)">MCP Client</text><rect x="410" y="31.0" width="112" height="58" rx="7" fill="var(--svg-chip)" stroke="var(--mark)" stroke-width="1.5"/><text x="466.0" y="58.0" text-anchor="middle" font-size="15" font-weight="800" fill="var(--mark)">MCP Proxy</text><text x="466.0" y="74.0" text-anchor="middle" font-size="11.5" fill="var(--svg-muted)">ai-mcp-proxy</text></g><g class="mm-row" style="--i:1"><rect x="196" y="135.0" width="112" height="50" rx="7" fill="var(--svg-panel)" stroke="var(--g600)" stroke-width="1.5"/><text x="252.0" y="165.0" text-anchor="middle" font-size="15" font-weight="800" fill="var(--svg-fg)">MCP Client</text><rect x="410" y="131.0" width="112" height="58" rx="7" fill="var(--svg-chip)" stroke="var(--mark)" stroke-width="1.5"/><text x="466.0" y="158.0" text-anchor="middle" font-size="15" font-weight="800" fill="var(--mark)">MCP Proxy</text><text x="466.0" y="174.0" text-anchor="middle" font-size="11.5" fill="var(--svg-muted)">ai-mcp-proxy</text></g><g class="mm-row" style="--i:2"><rect x="196" y="230.0" width="112" height="50" rx="7" fill="var(--svg-panel)" stroke="var(--g600)" stroke-width="1.5"/><text x="252.0" y="260.0" text-anchor="middle" font-size="15" font-weight="800" fill="var(--svg-fg)">MCP Client</text><rect x="410" y="226.0" width="112" height="58" rx="7" fill="var(--svg-chip)" stroke="var(--mark)" stroke-width="1.5"/><text x="466.0" y="253.0" text-anchor="middle" font-size="15" font-weight="800" fill="var(--mark)">MCP Proxy</text><text x="466.0" y="269.0" text-anchor="middle" font-size="11.5" fill="var(--svg-muted)">ai-mcp-proxy</text></g><g class="mm-row" style="--i:0"><rect x="550" y="31.0" width="112" height="58" rx="7" fill="var(--svg-panel)" stroke="#A1A69F" stroke-width="1.5"/><text x="606.0" y="58.0" text-anchor="middle" font-size="15" font-weight="800" fill="var(--svg-fg)">MCP Server</text><text x="606.0" y="74.0" text-anchor="middle" font-size="11.5" fill="var(--svg-muted)">기존 서버</text><rect x="694" y="35.0" width="112" height="50" rx="7" fill="#0B1C26" stroke="#5CC8FF" stroke-width="1.5"/><text x="750.0" y="58.0" text-anchor="middle" font-size="15" font-weight="800" fill="#9FE0FF">Tool</text><text x="750.0" y="74.0" text-anchor="middle" font-size="11.5" fill="var(--svg-muted)">(API)</text></g><g class="mm-row" style="--i:1"><rect x="694" y="135.0" width="112" height="50" rx="7" fill="#0B1C26" stroke="#5CC8FF" stroke-width="1.5"/><text x="750.0" y="158.0" text-anchor="middle" font-size="15" font-weight="800" fill="#9FE0FF">Tool</text><text x="750.0" y="174.0" text-anchor="middle" font-size="11.5" fill="var(--svg-muted)">(API)</text></g><g class="mm-row" style="--i:3"><rect x="550" y="316.0" width="112" height="58" rx="7" fill="var(--svg-chip)" stroke="var(--mark)" stroke-width="1.5"/><text x="606.0" y="343.0" text-anchor="middle" font-size="15" font-weight="800" fill="var(--mark)">MCP Proxy</text><text x="606.0" y="359.0" text-anchor="middle" font-size="11.5" fill="var(--svg-muted)">conversion-only</text><rect x="694" y="320.0" width="112" height="50" rx="7" fill="#0B1C26" stroke="#5CC8FF" stroke-width="1.5"/><text x="750.0" y="343.0" text-anchor="middle" font-size="15" font-weight="800" fill="#9FE0FF">Tool</text><text x="750.0" y="359.0" text-anchor="middle" font-size="11.5" fill="var(--svg-muted)">(API)</text></g><g class="mm-row" style="--i:3"><rect x="550" y="396.0" width="112" height="58" rx="7" fill="var(--svg-chip)" stroke="var(--mark)" stroke-width="1.5"/><text x="606.0" y="423.0" text-anchor="middle" font-size="15" font-weight="800" fill="var(--mark)">MCP Proxy</text><text x="606.0" y="439.0" text-anchor="middle" font-size="11.5" fill="var(--svg-muted)">conversion-only</text><rect x="694" y="400.0" width="112" height="50" rx="7" fill="#0B1C26" stroke="#5CC8FF" stroke-width="1.5"/><text x="750.0" y="423.0" text-anchor="middle" font-size="15" font-weight="800" fill="#9FE0FF">Tool</text><text x="750.0" y="439.0" text-anchor="middle" font-size="11.5" fill="var(--svg-muted)">(API)</text></g><g class="mm-bar"><rect x="326" y="18" width="62" height="444" rx="10" fill="var(--lime)"/><text transform="translate(365 240) rotate(-90)" text-anchor="middle" font-size="22" font-weight="900" fill="var(--on-lime)" letter-spacing=".5">Kong MCP Gateway</text></g><g font-size="11" font-weight="700"><circle cx="202" cy="472" r="4" fill="var(--lime)"/><text x="212" y="476" fill="var(--svg-muted)">MCP 트래픽</text><circle cx="302" cy="472" r="4" fill="#5CC8FF"/><text x="312" y="476" fill="var(--svg-muted)">REST API 호출</text></g></svg></div>
   <p class="note">Kong Gateway 3.12부터 MCP 프로토콜 대응 플러그인을 제공합니다. 2024년 4월 ‘AI Gateway’라는 이름으로 LLM 통신용 플러그인을 처음 선보였습니다.</p>
-  <div class="callout" style="margin-top:18px"><b>2.0 MCP bundling.</b> 한 Route에 여러 내부 MCP 서버를 묶어 통합 진입점 · tools/list 집계 · ACL을 제공합니다. <button type="button" class="btn s" onclick="go('ai2','i2-feat')">AI Gateway 2.0 · 신규 기능</button></div>
+  <div class="callout" style="margin-top:18px"><b>2.0 MCP bundling</b> 한 Route에 여러 내부 MCP 서버를 묶어 통합 진입점, tools/list 집계, ACL을 제공합니다. <button type="button" class="btn s" onclick="go('ai2','i2-feat')">AI Gateway 2.0 · 신규 기능</button></div>
 </section>
 </div>
 
@@ -4220,7 +4281,7 @@ claude
   <div class="eyebrow">Kong Agent Gateway</div>
   <h1>통제된 <em>에이전트 협업</em></h1>
   <p class="lead">하나의 거대한 에이전트보다, 역할이 나뉜 여러 에이전트가 서로 일을 맡기는 멀티 에이전트 구조가 기업 AI의 표준이 되고 있습니다. Kong Agent Gateway는 에이전트 간(A2A) 통신과 그 아래의 MCP 도구 · LLM 호출을 하나의 통제 지점에서 인증 · 제한 · 관측합니다.</p>
-  <div class="callout" style="margin-top:18px"><b>2.0 Agent 엔티티.</b> Konnect AI Gateway Control Plane에서 Agent를 Models · MCP Servers와 함께 1급 리소스로 선언합니다. <button type="button" class="btn s" onclick="go('ai2','i2-entity')">AI Gateway 2.0 · 엔티티</button></div>
+  <div class="callout" style="margin-top:18px"><b>2.0 Agent 엔티티</b> Konnect AI Gateway Control Plane에서 Agent를 Models · MCP Servers와 함께 1급 리소스로 선언합니다. <button type="button" class="btn s" onclick="go('ai2','i2-entity')">AI Gateway 2.0 · 엔티티</button></div>
   <h3 class="agh">Agent 활용 분야</h3>
   <div class="agdg"><div class="agd rv"><span class="agd-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-2 2.5-5 2.5"/></svg></span><b>고객 지원 · CS</b><p>문의 분류 → 이력 조회 → 답변 초안 → 티켓 처리까지 여러 에이전트가 나눠 처리</p><em>상담 대기 시간 단축 · 1차 해결률 향상</em></div><div class="agd rv"><span class="agd-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01M12 7h5M12 17h5"/></svg></span><b>IT 운영 · 장애 대응</b><p>경보 분석, 로그 · 메트릭 조회, 런북 실행, 장애 보고서 작성</p><em>MTTR 단축 · 야간 대응 자동화</em></div><div class="agd rv"><span class="agd-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 21h18"/></svg></span><b>금융 · 리스크 심사</b><p>서류 정리, 신용 · 거래 분석, 규정 점검을 분담하고 심사역이 최종 승인</p><em>심사 리드타임 단축 · 일관된 기준</em></div><div class="agd rv"><span class="agd-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/><path d="M15 6l3-2 3 2"/></svg></span><b>영업 · 고객 성공</b><p>갱신 위험 분석, 계정 브리핑, 제안서 · 회신 초안, 후속 태스크 생성</p><em>이탈 방지 · 영업 생산성</em></div><div class="agd rv"><span class="agd-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></span><b>소프트웨어 개발</b><p>코딩 에이전트가 리뷰 · 테스트 · 문서화 에이전트와 협업하며 사내 API를 호출</p><em>개발 속도 · 품질 동시 확보</em></div><div class="agd rv"><span class="agd-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg></span><b>사내 업무 자동화</b><p>HR · 구매 · 재무 에이전트가 결재, 정산, 정책 문의를 각자 처리하고 연계</p><em>반복 업무 감소 · 처리 이력 확보</em></div></div>
   <h3 class="agh">활용 예시 <small>여러 에이전트의 분업 처리 흐름</small></h3>

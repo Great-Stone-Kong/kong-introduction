@@ -11,6 +11,11 @@
 - AI Gateway > AI Gateway 2.0: 専用バイナリ · エンティティ · デプロイ · コストモデル · 新機能ページ
 - AI Gateway · MCP Gateway · Agent Gateway: 2.0 ページへの短い CTA
 
+### 変更
+
+- AI Gateway 2.0 > デプロイ: Konnect · on-prem CLI/CP/DP 図を追加
+- AI Gateway 2.0: 文を直叙に整理
+
 ---
 
 ## 2026.10.29.c92d8cee

@@ -11,6 +11,11 @@
 - AI Gateway > AI Gateway 2.0：专用二进制 · 实体 · 部署 · 成本模型 · 新功能页面
 - AI Gateway · MCP Gateway · Agent Gateway：跳转到 2.0 页面的简短 CTA
 
+### 变更
+
+- AI Gateway 2.0 > 部署：新增 Konnect · on-prem CLI/CP/DP 图示
+- AI Gateway 2.0：改为直述完整句
+
 ---
 
 ## 2026.10.29.c92d8cee

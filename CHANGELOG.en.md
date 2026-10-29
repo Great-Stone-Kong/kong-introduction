@@ -11,6 +11,11 @@
 - AI Gateway > AI Gateway 2.0: dedicated binary · entities · deploy · cost model · new features page
 - AI Gateway · MCP Gateway · Agent Gateway: short CTAs into the 2.0 page
 
+### Changed
+
+- AI Gateway 2.0 > Deploy: Konnect · on-prem CLI/CP/DP diagram
+- AI Gateway 2.0: clearer declarative copy
+
 ---
 
 ## 2026.10.29.c92d8cee
