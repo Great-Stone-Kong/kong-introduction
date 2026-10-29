@@ -83,7 +83,8 @@ html[data-theme="light"]{
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--top) + 24px)}
-body{background:var(--navy);color:var(--g50);font-family:var(--font);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;word-break:keep-all}
+/* ko: keep-all prefers breaks at spaces; overflow-wrap still allows a long Hangul run to wrap when it would overflow */
+body{background:var(--navy);color:var(--g50);font-family:var(--font);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
 body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
   background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
   background-size:48px 48px;
@@ -2689,6 +2690,8 @@ html[data-theme="light"] .ihub circle[fill="var(--ins-lilac2)"]{opacity:1}
 html[data-lang="en"] body{word-break:normal;overflow-wrap:anywhere}
 html[data-lang="ja"]{--font:'Funnel Sans','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic','Meiryo','Noto Sans JP','Noto Sans KR',system-ui,sans-serif}
 html[data-lang="ja"] body{word-break:normal;line-break:strict;overflow-wrap:anywhere}
+html[data-lang="zh"]{--font:'Funnel Sans','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans SC','Noto Sans KR',system-ui,sans-serif}
+html[data-lang="zh"] body{word-break:normal;line-break:strict;overflow-wrap:anywhere}
 html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-space:normal}
 </style>
 </head>
