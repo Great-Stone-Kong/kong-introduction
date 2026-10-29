@@ -15,6 +15,7 @@
 
 - i18n: Hangul-as-key → stable-key (`m.` / `u.` / `s.`) catalogs · engine · reference baseline
 - i18n: keep compact runtime blob (Hangul→EN/JA/ZH + sparse `I` map) to avoid HTML size growth
+- Demo/trace mock outputs (EG Analytics JSON, KDemo summary labels, etc.): fill missing EN/JA/ZH · stop excluding `egd-out` from i18n
 
 ## 2026.10.29.fb000bae
 ### Added

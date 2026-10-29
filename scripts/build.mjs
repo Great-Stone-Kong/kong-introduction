@@ -95,6 +95,8 @@ for (const id of fragments) {
   }
   F.push(ko[id]);
 }
+/* Longer fragments first so short tokens do not carve up longer phrases. */
+F.sort((a, b) => b.length - a.length);
 
 const S = {};
 for (const [, s] of Object.entries(shorts)) {

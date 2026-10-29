@@ -15,6 +15,7 @@
 
 - i18n：Hangul-as-key → 稳定键（`m.` / `u.` / `s.`）目录 · 引擎 · `reference/` 基准
 - i18n：构建运行时保持紧凑（韩文→EN/JA/ZH + 稀疏 `I` 映射）以控制 HTML 体积
+- 演示/追踪模拟输出（EG Analytics JSON、KDemo 摘要标签等）补全 EN/JA/ZH · 取消对 `egd-out` 的 i18n 排除
 
 ## 2026.10.29.fb000bae
 ### 新增

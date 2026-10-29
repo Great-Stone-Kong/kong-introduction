@@ -15,6 +15,7 @@
 
 - i18n: Hangul-as-key → 安定キー（`m.` / `u.` / `s.`）カタログ · エンジン · 検証基準（`reference/`）
 - i18n: ビルド時ランタイムをコンパクト形式（ハングル→EN/JA/ZH + 疎な `I` マップ）に維持し HTML 容量増を抑制
+- デモ・トレースモック出力（EG Analytics JSON、KDemo 要約ラベルなど）の EN/JA/ZH 欠落を補完 · `egd-out` の i18n 除外を解除
 
 ## 2026.10.29.fb000bae
 ### 追加

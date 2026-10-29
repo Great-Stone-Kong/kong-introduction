@@ -88,6 +88,28 @@ for (const [id, s] of Object.entries(shorts)) {
   }
 }
 
+const found = new Set();
+
+/* Mock/demo JS injects Hangul after walk — require those UI literals in catalogs too. */
+for (const sm of deck.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)) {
+  const sc = sm[1];
+  for (const re of [/'([^'\\]*(?:\\.[^'\\]*)*)'/g, /"([^"\\]*(?:\\.[^"\\]*)*)"/g]) {
+    let m;
+    while ((m = re.exec(sc))) {
+      const raw = norm(
+        m[1]
+          .replace(/\\n/g, "\n")
+          .replace(/\\'/g, "'")
+          .replace(/\\"/g, '"')
+          .replace(/\\\\/g, "\\")
+      );
+      if (!raw || !HG.test(raw) || raw.length > 120) continue;
+      if (/[<{]/.test(raw) || raw.includes("----------")) continue;
+      found.add(raw);
+    }
+  }
+}
+
 let body = deck
   .replace(/<script\b[\s\S]*?<\/script>/gi, " ")
   .replace(/<style\b[\s\S]*?<\/style>/gi, " ")
@@ -98,7 +120,6 @@ body = body.replace(
 );
 
 const attrs = ["data-title", "data-label", "data-desc", "title", "aria-label", "placeholder"];
-const found = new Set();
 for (const a of attrs) {
   const re = new RegExp(`\\b${a}="([^"]*)"`, "g");
   let m;

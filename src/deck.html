@@ -5121,7 +5121,7 @@ claude
           <button type="button" class="btn" id="egd-eg-produce">Produce</button>
           <button type="button" class="btn s" id="egd-eg-consume">Consume</button>
         </div>
-        <pre class="egd-out i18n-no" id="egd-eg-out">Ready.</pre>
+        <pre class="egd-out" id="egd-eg-out">Ready.</pre>
       </article>
       <article class="egd-card direct">
         <div class="egd-h"><b>Direct / ACL</b><em>bypass 또는 EG deny</em></div>
@@ -5132,7 +5132,7 @@ claude
           <button type="button" class="btn" id="egd-dir-produce">Direct produce</button>
           <button type="button" class="btn s" id="egd-blocked">Blocked write (expect deny)</button>
         </div>
-        <pre class="egd-out i18n-no" id="egd-dir-out">Ready.</pre>
+        <pre class="egd-out" id="egd-dir-out">Ready.</pre>
       </article>
     </div>
   </div>
@@ -7415,7 +7415,7 @@ KDemo(document.getElementById('kdemo-kp'),SC_KP,{client:'HTTP Client',kong:'Kong
   };
   const fmtN=n=>n>=1000?(n/1000).toFixed(n%100===0?1:2).replace(/\.0$/,'')+'K':String(n);
   const bumpCmd=(n,c)=>{store.cmds[n]=(store.cmds[n]||0)+c;};
-  const show=(el,obj,cls)=>{el.textContent=pretty(obj); el.className='egd-out i18n-no'+(cls?' '+cls:'');};
+  const show=(el,obj,cls)=>{el.textContent=pretty(obj); el.className='egd-out'+(cls?' '+cls:'');};
   const flash=()=>{ega.classList.remove('flash'); void ega.offsetWidth; ega.classList.add('flash'); setTimeout(()=>ega.classList.remove('flash'),700);};
   function rows4(map){
     return Object.entries(map).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]).slice(0,5)
