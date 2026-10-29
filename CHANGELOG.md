@@ -7,12 +7,14 @@
 
 ## Unreleased
 
+## 2026.10.29.fb000bae
 ### 추가
 
 - Agent Gateway > A2A Proxy 적용 기준: Service·Route만 vs ai-a2a-proxy 판단 · 장점 · 동작 차이
 
 ### 변경
 
+- Agent Gateway > A2A Proxy: 흐름 SVG·카피 정리
 - 사이드바 다운로드·버전 박스 및 변경 이력 모달 문구에 EN·JA 적용
 
 ## 2026.10.28.63575106

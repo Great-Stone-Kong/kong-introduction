@@ -5,6 +5,16 @@
 
 ---
 
+## 2026.10.29.fb000bae
+### 追加
+
+- Agent Gateway > A2A Proxy 適用基準: Service·Routeのみ vs ai-a2a-proxy — 判断 · 利点 · 動作差
+
+### 変更
+
+- Agent Gateway > A2A Proxy: フロー SVG · コピー整理
+- サイドバーのダウンロード · バージョンボックスおよび変更履歴モーダル文言に EN · JA を適用
+
 ## 2026.10.28.63575106
 ### 追加
 

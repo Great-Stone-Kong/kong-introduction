@@ -5,6 +5,16 @@
 
 ---
 
+## 2026.10.29.fb000bae
+### Added
+
+- Agent Gateway > A2A Proxy criteria: Service·Route only vs ai-a2a-proxy — decision, benefits, behavior
+
+### Changed
+
+- Agent Gateway > A2A Proxy: flow SVG and copy refinements
+- Sidebar download · version box and changelog modal chrome: EN · JA
+
 ## 2026.10.28.63575106
 ### Added
 
