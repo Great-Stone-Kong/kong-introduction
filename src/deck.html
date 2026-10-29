@@ -3990,7 +3990,7 @@ claude
 
 
 <!-- ============ AI GATEWAY 2.0 ============ -->
-<div class="page" id="p-ai2" data-label="AI Gateway 2.0" data-group="AI Gateway" data-desc="2.0 바이너리 · 엔티티 · 비용 모델">
+<div class="page" id="p-ai2" data-label="AI Gateway 2.0" data-group="AI Gateway" data-desc="2.0 바이너리 · 엔티티 · LLM 비용 산정">
 
 <section class="sec hero" id="i2-intro" data-title="개요">
   <div class="eyebrow">AI Gateway 2.0</div>
@@ -4100,15 +4100,22 @@ claude
   </div>
 </section>
 
-<section class="sec" id="i2-cost" data-title="비용 모델">
-  <div class="eyebrow">Cost management</div>
-  <h2>두 요율에서 조합 가격으로</h2>
-  <p class="sub">LLM 제공사 청구는 입력·출력 두 요율만으로 계산되지 않습니다. 캐시 읽기·쓰기(TTL), 컨텍스트 구간, 서비스 티어, 추론 토큰이 단가에 포함됩니다. 게이트웨이가 이 단가를 반영해야 예산 정책과 비용 기반 rate limit이 올바른 허용·거부를 수행합니다.</p>
+<section class="sec" id="i2-cost" data-title="LLM 비용 산정">
+  <div class="eyebrow">LLM usage cost</div>
+  <h2>LLM 제공사 사용 요금 산정</h2>
+  <p class="sub">여기서 말하는 비용은 Kong 라이선스나 최종 사용자 과금이 아닙니다. OpenAI · Anthropic 등 <b>LLM 제공사가 기업에 청구하는 토큰·캐시·티어 요금</b>을 게이트웨이가 요청 단위로 추정하는 방식입니다. 이 추정치를 기준으로 팀·앱·모델별 예산과 비용 기반 rate limit의 허용·거부를 결정합니다.</p>
+  <div class="grid g3" style="margin-top:18px">
+    <div class="card"><span class="tag">산정 대상</span><h3>LLM 제공사 청구</h3><p>업스트림 모델 API 호출에 대해 제공사 요금표를 적용한 사용 요금 추정입니다.</p></div>
+    <div class="card"><span class="tag">관리 단위</span><h3>팀 · 앱 · 모델</h3><p>Consumer · 라우트 · 모델별로 예산·한도를 걸고, 추정 비용이 한도를 넘으면 요청을 거부합니다.</p></div>
+    <div class="card"><span class="tag">제외</span><h3>Kong · 최종 과금</h3><p>Kong 제품 요금과, 기업이 자사 고객에게 매기는 과금 모델은 이 섹션 범위가 아닙니다.</p></div>
+  </div>
+  <h3 style="margin-top:28px">산정 식 변경 · v1 → v2</h3>
+  <p class="sub" style="margin-top:0">제공사 요금표가 입력·출력 두 요율을 넘어갔습니다. 캐시 읽기·쓰기(TTL), 컨텍스트 구간, 서비스 티어, 추론 토큰이 단가에 포함됩니다. 게이트웨이 산정식이 이를 반영해야 예산·한도 정책이 실제 청구와 맞습니다.</p>
   <div class="grid g2">
-    <div class="card rv"><span class="tag">AI Gateway v1</span><h3>두 요율</h3><p>모든 요청에 입력·출력 두 요율만 적용합니다.</p><ul class="list"><li>캐시 읽기는 집계만 하고 가격에 거의 반영되지 않습니다.</li><li>TTL · 컨텍스트 구간 · 서비스 티어가 단가에 없습니다.</li></ul>
+    <div class="card rv"><span class="tag">AI Gateway v1</span><h3>두 요율</h3><p>요청마다 입력·출력 두 요율만으로 사용 요금을 추정합니다.</p><ul class="list"><li>캐시 읽기는 집계만 하고 추정 금액에 거의 반영되지 않습니다.</li><li>TTL · 컨텍스트 구간 · 서비스 티어가 산정식에 없습니다.</li></ul>
       <pre class="code" style="margin-top:12px">cost = (input × input_cost + output × output_cost) / 1M</pre>
     </div>
-    <div class="card rv k"><span class="tag">AI Gateway v2</span><h3>조합 가격</h3><p>캐시 · 컨텍스트 · 서비스 티어를 한 식에 조합합니다.</p><ul class="list"><li>캐시 읽기와 TTL별 쓰기 단가를 반영합니다.</li><li>컨텍스트 배율을 요청 전체에 적용합니다.</li><li>서비스 티어가 전체 비용을 곱합니다.</li></ul>
+    <div class="card rv k"><span class="tag">AI Gateway v2</span><h3>조합 가격</h3><p>캐시 · 컨텍스트 · 서비스 티어를 한 식에 넣어 제공사 청구에 가깝게 추정합니다.</p><ul class="list"><li>캐시 읽기와 TTL별 쓰기 단가를 반영합니다.</li><li>컨텍스트 배율을 요청 전체에 적용합니다.</li><li>서비스 티어가 전체 추정 비용을 곱합니다.</li></ul>
       <pre class="code" style="margin-top:12px">cost = service_tier_factor × (
   ctx_in × (input + cache_read + cache_write@TTL)
   + ctx_out × output
@@ -4116,17 +4123,17 @@ claude
     </div>
   </div>
   <p class="note" style="margin-top:12px">기존 input_cost · output_cost · cache_read_cost · cache_write_cost 필드는 유지됩니다. 목록이 없으면 스칼라 값이 적용됩니다. managed 모델 단가는 Control Plane이 갱신하고, self-managed·수동 오버라이드는 라우트 설정으로 둡니다.</p>
-  <h3 style="margin-top:28px">단가 구성 요소</h3>
+  <h3 style="margin-top:28px">제공사 단가 구성 요소</h3>
   <div class="grid g3">
     <div class="card"><span class="tag">Cache</span><h3>읽기 · 쓰기</h3><p>캐시 히트는 입력 대비 할인(예: 약 0.1×)이 일반적입니다. 캐시 쓰기는 일반 입력보다 비쌀 수 있으며, TTL(5분·1시간 등)에 따라 쓰기 단가가 달라집니다.</p></div>
     <div class="card"><span class="tag">Context</span><h3>컨텍스트 구간</h3><p>긴 컨텍스트 구간에서는 요청 전체 단가가 다시 산정됩니다. 임계값은 모델·제공사마다 다릅니다.</p></div>
     <div class="card"><span class="tag">Tier · Reasoning</span><h3>티어 · 추론 토큰</h3><p>Priority · Flex 같은 서비스 티어는 입·출력 전체에 배율을 적용합니다. reasoning 토큰은 응답에 표시되지 않아도 출력 요율로 청구되는 경우가 많습니다.</p></div>
   </div>
-  <div class="callout" style="margin-top:18px"><b>거버넌스 입력값</b> 비용 추정은 대시보드 표시용만이 아닙니다. 예산 정책과 비용 기반 rate limit의 입력입니다. 추정이 틀리면 허용·거부 결정도 틀립니다.</div>
+  <div class="callout" style="margin-top:18px"><b>거버넌스에 쓰는 이유</b> 추정 금액은 대시보드 표시용만이 아닙니다. 팀·앱·모델 예산과 비용 기반 rate limit의 입력입니다. 제공사 실청구와 어긋나면 한도 허용·거부가 틀립니다.</div>
   <div class="grid g3" style="margin-top:18px">
-    <div class="card"><span class="tag">Committed</span><h3>포함 범위</h3><p>TTL별 캐시 쓰기 단가, 컨텍스트 구간, 서비스 티어 배율을 포함합니다.</p></div>
+    <div class="card"><span class="tag">Committed</span><h3>포함 범위</h3><p>TTL별 캐시 쓰기 단가, 컨텍스트 구간, 서비스 티어 배율을 산정식에 포함합니다.</p></div>
     <div class="card"><span class="tag">Follow-on</span><h3>후속 범위</h3><p>멀티모달 요율은 멀티모달 캐시 메트릭 수집이 준비된 뒤에 추가합니다.</p></div>
-    <div class="card"><span class="tag">Out of scope</span><h3>제외 범위</h3><p>시간대·리전별 동적 가격은 포함하지 않습니다. 리전 단가는 라우트별로 수동 설정합니다.</p></div>
+    <div class="card"><span class="tag">Out of scope</span><h3>제외 범위</h3><p>시간대·리전별 동적 가격은 산정식에 넣지 않습니다. 리전 단가는 라우트별로 수동 설정합니다.</p></div>
   </div>
 </section>
 

@@ -15,6 +15,7 @@
 
 - AI Gateway 2.0 > 部署：新增 Konnect · on-prem CLI/CP/DP 图示
 - AI Gateway 2.0：改为直述完整句
+- AI Gateway 2.0 > LLM 成本核算：明确提供商使用费用估算与预算/限额基准
 
 ---
 

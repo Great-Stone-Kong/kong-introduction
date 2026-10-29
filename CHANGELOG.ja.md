@@ -15,6 +15,7 @@
 
 - AI Gateway 2.0 > デプロイ: Konnect · on-prem CLI/CP/DP 図を追加
 - AI Gateway 2.0: 文を直叙に整理
+- AI Gateway 2.0 > LLM コスト算定: プロバイダ利用料金見積 · 予算/上限基準を明示
 
 ---
 

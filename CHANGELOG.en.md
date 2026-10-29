@@ -15,6 +15,7 @@
 
 - AI Gateway 2.0 > Deploy: Konnect · on-prem CLI/CP/DP diagram
 - AI Gateway 2.0: clearer declarative copy
+- AI Gateway 2.0 > LLM cost estimation: provider usage cost vs budgets/limits
 
 ---
 

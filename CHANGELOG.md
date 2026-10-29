@@ -15,6 +15,7 @@
 
 - AI Gateway 2.0 > 배포: Konnect · on-prem CLI/CP/DP 도형 추가
 - AI Gateway 2.0: 문장 직설화 · 미완결 표현 정리
+- AI Gateway 2.0 > LLM 비용 산정: 제공사 사용 요금 추정 · 예산/한도 기준 명시
 
 ---
 
