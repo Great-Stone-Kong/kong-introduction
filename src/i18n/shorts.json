@@ -11,7 +11,7 @@
     "ko": "Gateway란?",
     "en": "Gateway 101",
     "ja": "Gatewayとは",
-    "zh": "Gateway入门"
+    "zh": "Gateway 入门"
   },
   "s.74974ca396aa": {
     "match": "API Gateway",
@@ -46,7 +46,7 @@
     "ko": "보안·규제",
     "en": "Security",
     "ja": "セキュリティ",
-    "zh": "安全"
+    "zh": "安全合规"
   },
   "s.1e9dcde5e734": {
     "match": "라이선스 모델",

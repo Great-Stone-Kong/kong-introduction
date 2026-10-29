@@ -9,7 +9,7 @@
 
 ### Added
 
-- Locale: Simplified Chinese (`zh`, machine-translated draft from English)
+- Locale: Simplified Chinese (`zh`, from English with formal written-tone cleanup)
 
 ### Changed
 
