@@ -7,6 +7,10 @@
 
 ## Unreleased
 
+### 변경
+
+- i18n: Hangul-as-key → 안정 키(`m.`/`u.`/`s.`) 카탈로그 · 엔진 · 검증 기준선(`reference/`)
+
 ## 2026.10.29.fb000bae
 ### 추가
 

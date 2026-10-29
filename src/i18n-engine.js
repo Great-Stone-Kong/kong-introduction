@@ -1,33 +1,78 @@
-/* i18n engine — D, HG, LANGS, IX injected by build */
+/* i18n engine — D, HG, LANGS, IX injected by build (stable-key catalogs) */
 const INL=new Set(['B','STRONG','EM','I','A','BR','CODE','U','SMALL','SUP','SUB','SPAN','MARK','S']);
 let L='ko';
 try{ const q=new URLSearchParams(location.search).get('lang'); L=q||localStorage.getItem('kong-lang')||'ko'; }catch(e){}
 if(LANGS.indexOf(L)<0) L='ko';
-const oT=new Map(), oH=new Map(), oA=new Map();
+const oT=new Map(), oH=new Map(), oA=new Map(), oI18n=new Map();
 const norm=s=>s.replace(/\s+/g,' ').trim();
+function msgId(koOrId){
+  const k=norm(koOrId); if(!k) return null;
+  if(D.T[k]) return k;
+  return D.K[k]||null;
+}
+function msgVal(id){
+  const row=D.T[id]; if(!row) return null;
+  return row[IX[L]];
+}
 function tLine(s){
   const k=norm(s); if(!k) return s; const lead=s.match(/^\s*/)[0], trail=s.match(/\s*$/)[0];
-  const v=D.T[k]; if(v) return lead+v[IX[L]]+trail;
-  const nm=k.match(/^([\d.,+~%]+)\s*(\D.*)$/); if(nm&&D.T[nm[2]]){ if(nm[2]==='만 명'&&L==='en'){ const v=parseFloat(nm[1].replace(/,/g,''))*1e4; return lead+(v>=1e6?(+(v/1e6).toFixed(1))+'M':(+(v/1e3).toFixed(0))+'K')+' people'+trail; } const x=D.T[nm[2]][IX[L]]; return lead+nm[1]+x+trail; }
-  let o=s; for(const f of D.F){ if(o.indexOf(f)>=0) o=o.split(f).join(D.T[f][IX[L]]); if(!HG.test(o)) break; }
+  const id=msgId(k); if(id){ const v=msgVal(id); if(v!=null) return lead+v+trail; }
+  const nm=k.match(/^([\d.,+~%]+)\s*(\D.*)$/);
+  if(nm){
+    const id2=msgId(nm[2]);
+    if(id2){
+      if(nm[2]==='만 명'&&L==='en'){
+        const n=parseFloat(nm[1].replace(/,/g,''))*1e4;
+        return lead+(n>=1e6?(+(n/1e6).toFixed(1))+'M':(+(n/1e3).toFixed(0))+'K')+' people'+trail;
+      }
+      const x=msgVal(id2); if(x!=null) return lead+nm[1]+x+trail;
+    }
+  }
+  let o=s;
+  for(const fid of D.F){
+    const ko=D.T[fid]&&D.T[fid][IX.ko];
+    if(!ko||o.indexOf(ko)<0) continue;
+    const rep=msgVal(fid); if(rep==null) continue;
+    o=o.split(ko).join(rep);
+    if(!HG.test(o)) break;
+  }
   return o;
 }
 function tText(s){
-  const k=norm(s), v=D.T[k];
-  if(v){ return s.match(/^\s*/)[0]+v[IX[L]]+s.match(/\s*$/)[0]; }
+  const id=msgId(s);
+  if(id){ const v=msgVal(id); if(v!=null) return s.match(/^\s*/)[0]+v+s.match(/\s*$/)[0]; }
   if(s.indexOf('\n')>=0) return s.split('\n').map(x=>HG.test(x)?tLine(x):x).join('\n');
   return tLine(s);
 }
 function doText(n){ const v=n.nodeValue; if(!HG.test(v)) return; const r=tText(v); if(r!==v){ oT.set(n,v); n.nodeValue=r; } }
 function doAttr(el){ for(const a of ['title','placeholder','aria-label']){ const v=el.getAttribute&&el.getAttribute(a); if(v&&HG.test(v)){ const r=tLine(v); if(r!==v){ let m=oA.get(el); if(!m){m={};oA.set(el,m);} m[a]=v; el.setAttribute(a,r); } } } }
 function inlineOnly(el){ if(el.namespaceURI!=='http://www.w3.org/1999/xhtml') return false;
-  for(const d of el.querySelectorAll('*')){ if(!INL.has(d.tagName)||d.id) return false; for(const at of d.attributes) if(at.name.indexOf('data-')===0) return false; } return true; }
-function tryUnit(el){ if(!el.firstElementChild||el.classList.contains('i18n-no')) return false; const tc=el.textContent; if(!HG.test(tc)) return false;
-  const v=D.U[norm(tc)]; if(!v||!inlineOnly(el)) return false; oH.set(el,el.innerHTML); el.innerHTML=v[IX[L]]; return true; }
+  for(const d of el.querySelectorAll('*')){ if(!INL.has(d.tagName)||d.id) return false; for(const at of d.attributes) if(at.name.indexOf('data-')===0&&at.name!=='data-i18n'&&at.name!=='data-i18n-html') return false; } return true; }
+function tryUnit(el){
+  if(!el.firstElementChild||el.classList.contains('i18n-no')) return false;
+  const explicit=el.getAttribute&&el.getAttribute('data-i18n-html');
+  let id=explicit||null;
+  if(!id){
+    const tc=el.textContent; if(!HG.test(tc)) return false;
+    id=D.UK[norm(tc)];
+  }
+  if(!id||!D.U[id]) return false;
+  if(!explicit&&!inlineOnly(el)) return false;
+  const pair=D.U[id];
+  const html=L==='ko'?null:(L==='en'?pair[0]:pair[1]);
+  if(html==null) return false;
+  oH.set(el,el.innerHTML); el.innerHTML=html; return true;
+}
+function applyDataI18n(el){
+  const id=el.getAttribute&&el.getAttribute('data-i18n'); if(!id||!D.T[id]) return;
+  if(!oI18n.has(el)) oI18n.set(el, el.textContent);
+  const v=msgVal(id); if(v!=null) el.textContent=v;
+}
 function walk(n){
   if(n.nodeType===3){ doText(n); return; }
   if(n.nodeType!==1) return; const t=n.tagName;
   if(t==='SCRIPT'||t==='STYLE'||t==='NOSCRIPT'||(n.classList&&n.classList.contains('i18n-no'))) return;
+  if(n.getAttribute&&n.getAttribute('data-i18n')){ applyDataI18n(n); doAttr(n); return; }
   doAttr(n);
   if(tryUnit(n)) return;
   for(let c=n.firstChild;c;){ const nx=c.nextSibling; walk(c); c=nx; }
@@ -36,6 +81,7 @@ function revert(){
   oH.forEach((h,el)=>{ el.innerHTML=h; }); oH.clear();
   oT.forEach((v,n)=>{ n.nodeValue=v; }); oT.clear();
   oA.forEach((m,el)=>{ for(const a in m) el.setAttribute(a,m[a]); }); oA.clear();
+  oI18n.forEach((v,el)=>{ el.textContent=v; }); oI18n.clear();
   unfitAll();
 }
 /* ---- 동적 콘텐츠 ---- */
@@ -70,7 +116,11 @@ const shortOrig=new Map();
 function applyShort(on){
   const nav=document.getElementById('topnav'); if(!nav) return;
   [...nav.children].forEach(b=>{ const n=[...b.childNodes].find(x=>x.nodeType===3&&x.nodeValue.trim()); if(!n) return;
-    if(on){ const ko=norm(oT.get(n)||(shortOrig.has(n)?shortOrig.get(n)[1]:n.nodeValue)); const s=D.S[ko]; if(s){ if(!shortOrig.has(n)) shortOrig.set(n,[n.nodeValue,ko]); n.nodeValue=s[LANGS.indexOf(L)]; } }
+    if(on){
+      const ko=norm(oT.get(n)||(shortOrig.has(n)?shortOrig.get(n)[1]:n.nodeValue));
+      const sid=D.SK[ko]; const s=sid&&D.S[sid];
+      if(s){ if(!shortOrig.has(n)) shortOrig.set(n,[n.nodeValue,ko]); n.nodeValue=s[IX[L]]; }
+    }
     else if(shortOrig.has(n)){ n.nodeValue=shortOrig.get(n)[0]; shortOrig.delete(n); } });
 }
 function fitNav(){
@@ -114,6 +164,7 @@ function setLang(l){
   document.documentElement.lang=l; document.documentElement.dataset.lang=l;
   try{ localStorage.setItem('kong-lang',l); }catch(e){}
   if(l!=='ko') walk(document.documentElement);
+  else document.querySelectorAll('[data-i18n]').forEach(applyDataI18n);
   mo.takeRecords(); muted=false;
   document.querySelectorAll('.lsw').forEach(syncLsw);
   fitNav(); if(l!=='ko') reobserve(); geoLocal(); if(typeof window.rebuildAudience==='function') window.rebuildAudience(); else if(typeof setupSpy==='function') setupSpy();
@@ -126,11 +177,13 @@ function geoLocal(){
   document.querySelectorAll('.cities span').forEach(sp=>sp.classList.toggle('loc',!!(g&&g.c)&&sp.textContent.trim()===g.c));
   mo.takeRecords(); muted=false;
 }
-function tTpl(koTpl, vars){
-  let s=(L!=='ko'&&D.T[norm(koTpl)])?D.T[norm(koTpl)][IX[L]]:koTpl;
-  return String(s).replace(/\$\{(\w+)\}/g,(_,k)=>vars&&vars[k]!=null?String(vars[k]):'');
+function tKey(idOrKo, vars){
+  const id=msgId(idOrKo);
+  const s=id!=null?msgVal(id):idOrKo;
+  return String(s==null?idOrKo:s).replace(/\$\{(\w+)\}/g,(_,k)=>vars&&vars[k]!=null?String(vars[k]):'');
 }
-window.KONG_I18N={setLang,get lang(){return L;},tpl:tTpl};
+function tTpl(koTpl, vars){ return tKey(koTpl, vars); }
+window.KONG_I18N={setLang,get lang(){return L;},tpl:tTpl,t:tKey,id:msgId};
 const sideMo=new MutationObserver(ensureSw);
 function init(){
   const side=document.getElementById('side'); if(side) sideMo.observe(side,{childList:true});

@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "generatedFrom": {
+    "en": "reference/i18n/en.json",
+    "ja": "reference/i18n/ja.json",
+    "meta": "reference/i18n/meta.json"
+  },
+  "counts": {
+    "messages": 3852,
+    "units": 245,
+    "fragments": 482,
+    "shorts": 9
+  }
+}

@@ -16,3 +16,5 @@
 !src/**
 !scripts/
 !scripts/**
+!reference/
+!reference/**
