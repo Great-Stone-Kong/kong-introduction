@@ -60,7 +60,11 @@ const byKo = new Map();
 for (const [id, text] of Object.entries(ko)) {
   const n = norm(text);
   if (byKo.has(n) && byKo.get(n) !== id) {
-    errors.push(`duplicate KO text: ${JSON.stringify(n).slice(0, 80)}`);
+    const other = byKo.get(n);
+    // Same KO source shared by multiple stable ids is OK when all locales match.
+    if (en[other] !== en[id] || ja[other] !== ja[id] || zh[other] !== zh[id]) {
+      errors.push(`duplicate KO text with divergent translations: ${JSON.stringify(n).slice(0, 80)}`);
+    }
   }
   byKo.set(n, id);
 }
@@ -116,6 +120,10 @@ function covered(k) {
   if (u !== k && (byKo.has(u) || unitMatch.has(u))) return true;
   const nm = k.match(/^([\d.,+~%]+)\s*(\S.*)$/);
   if (nm && (byKo.has(nm[2]) || unitMatch.has(nm[2]))) return true;
+  // Child text of HTML units is covered by the full unit match string.
+  for (const m of unitMatch) {
+    if (m.includes(k) || m.includes(u)) return true;
+  }
   return false;
 }
 

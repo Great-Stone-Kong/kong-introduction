@@ -1194,9 +1194,9 @@
   "m.058b6032e8ed": "The number of Kong Control Planes and Data Planes does not affect pricing.",
   "m.3ea4a9b415de": "Deployment",
   "m.1583262fcc96": "Korea",
-  "m.2a57c56db022": "Real requirements from Korean customers",
+  "m.2a57c56db022": "Key customer requirements",
   "m.b661ea3f34a9": "Korean customers are anonymized due to lack of marketing consent",
-  "m.d7d9c44b09c6": "Korean enterprise requirements",
+  "m.d7d9c44b09c6": "Key customer requirements",
   "m.a906f6f8a529": "Recommended network · firewall configuration guide (perimeter security)",
   "m.48695db0a352": "Recommended nodes",
   "m.ec9e6c9a0449": "Recommended adoption order",
@@ -3850,5 +3850,6 @@
   "m.06e481291ddd": "Existing Service · Route alone does not parse A2A bodies · card URLs · Tasks go straight to the internal URL",
   "m.59627da2000f": "Discovery and Task pass the same Kong Route · internal agent URL stays private",
   "m.c4c09e3bcd3d": "Task · method",
-  "m.caa22cc94678": "No rewrite"
+  "m.caa22cc94678": "No rewrite",
+  "m.fa681fb2700c": "Four key customer needs"
 }

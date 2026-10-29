@@ -1108,16 +1108,17 @@ html[data-theme="light"] .egt-list li.on{box-shadow:0 0 0 1px var(--accent)}
 .tabs button.bad:hover{color:var(--heading);border-color:var(--danger)}
 .tabs button.bad.on{background:var(--danger);color:var(--on-danger);border-color:var(--danger)}
 .wants{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:14px 0 8px}
-.want{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 22px;position:relative}
+.want{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 22px;position:relative;min-width:0;overflow:hidden}
 .want.hot{border-color:var(--line)}
 .want .wn{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:700}
 .want h4{margin:4px 0 8px;font-size:19px;color:var(--heading)}
-.want p{font-size:14.5px;color:var(--g300);line-height:1.65;margin:0 0 12px}
-.want .wk{font-size:12px;color:var(--accent);font-family:var(--mono);border-top:1px dashed var(--line2);padding-top:10px}
-.want .case{font-size:13.5px;line-height:1.65;color:var(--g200);background:color-mix(in srgb,var(--danger) 8%,transparent);border-left:3px solid var(--danger);border-radius:0 6px 6px 0;padding:10px 12px;margin:0 0 12px}
+.want p{font-size:14.5px;color:var(--g300);line-height:1.65;margin:0 0 12px;overflow-wrap:anywhere;word-break:break-word}
+.want .wk{font-size:12px;color:var(--accent);font-family:var(--mono);border-top:1px dashed var(--line2);padding-top:10px;overflow-wrap:anywhere;word-break:break-word}
+.want .case{font-size:13.5px;line-height:1.65;color:var(--g200);background:color-mix(in srgb,var(--danger) 8%,transparent);border-left:3px solid var(--danger);border-radius:0 6px 6px 0;padding:10px 12px;margin:0 0 12px;min-width:0;overflow-wrap:anywhere;word-break:break-word}
 .want .case b{display:block;color:var(--danger-soft);font-size:12px;margin-bottom:4px}
-.want .case .src{display:block;margin-top:6px;font-size:11.5px;color:var(--g400)}
-.want .case a{color:var(--g200);text-decoration:underline}
+.want .case .src{display:block;margin-top:6px;font-size:11.5px;color:var(--g400);overflow-wrap:anywhere;word-break:break-all}
+.want .case a{color:var(--g200);text-decoration:underline;overflow-wrap:anywhere;word-break:break-all}
+html[data-lang="zh"] .want .case{font-size:12.5px;line-height:1.7}
 @media (max-width:900px){.wants{grid-template-columns:1fr}}
 
 .dm-chip.mod{border-color:#5CC8FF;background:rgba(92,200,255,.08)}.dm-chip.mod em{color:#5CC8FF}
@@ -2625,6 +2626,7 @@ html[data-printing] [data-print="omit"]{display:none!important}
 /* audience: data-show-lang / data-show-edition (space-separated tokens; omit = all) */
 html[data-lang="en"] [data-show-lang]:not([data-show-lang~="en"]),
 html[data-lang="ja"] [data-show-lang]:not([data-show-lang~="ja"]),
+html[data-lang="zh"] [data-show-lang]:not([data-show-lang~="zh"]),
 html[data-lang="ko"] [data-show-lang]:not([data-show-lang~="ko"]){display:none!important}
 html[data-edition="enterprise"] [data-show-edition]:not([data-show-edition~="enterprise"]),
 html[data-edition="konnect"] [data-show-edition]:not([data-show-edition~="konnect"]){display:none!important}
@@ -3685,9 +3687,9 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
     <tr><td>Support for multimodal</td><td>임베딩·멀티모달 API 연동(AI Proxy Advanced), Custom Plugin</td></tr>
   </tbody></table></div></div>
 </section>
-<section class="sec" id="i-req" data-title="국내 기업 요구사항" data-show-lang="ko">
-  <div class="eyebrow">Whitepaper · Korea</div>
-  <h2>국내 고객 실 요구사항</h2>
+<section class="sec" id="i-req" data-title="고객 핵심 요구사항">
+  <div class="eyebrow">Whitepaper</div>
+  <h2>고객 핵심 요구사항</h2>
   <p class="sub">AI Gateway 검토 과정에서 반복 확인된 공통 과제는 여섯 가지입니다. Shadow AI 가시성, 멀티모델·계정 관리, 한국 특화 데이터 보안, 망분리 환경, 엔터프라이즈 가용성과 비용, 에이전트·MCP 거버넌스. 이를 여덟 영역의 요구사항으로 정리하고 Kong의 대응을 매핑했습니다.</p>
   <h3 style="margin-top:8px">고객 핵심 요구 4가지</h3>
   <div class="wants">
