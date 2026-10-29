@@ -83,8 +83,7 @@ html[data-theme="light"]{
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--top) + 24px)}
-/* ko: keep-all prefers breaks at spaces; overflow-wrap still allows a long Hangul run to wrap when it would overflow */
-body{background:var(--navy);color:var(--g50);font-family:var(--font);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
+body{background:var(--navy);color:var(--g50);font-family:var(--font);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;word-break:keep-all}
 body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
   background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
   background-size:48px 48px;
@@ -269,8 +268,9 @@ tr.k td{background:rgba(204,255,0,.06)}
 .stat.big{padding:32px 32px 28px;position:relative;overflow:hidden;min-height:220px}
 .stat.big::after{content:"";position:absolute;right:-30px;top:-30px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(204,255,0,.12),transparent 70%)}
 .stat.big .lbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
-.stat.big b{font-size:clamp(56px,8vw,96px);line-height:1;letter-spacing:-.03em;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;max-width:100%;width:100%;min-width:0;box-sizing:border-box}
-.stat.big b i{font-style:normal;font-variant-numeric:tabular-nums;min-width:0}
+/* Hero value: never wrap / overflow — fitStatBig shrinks font to the card width. */
+.stat.big b{font-size:clamp(56px,8vw,96px);line-height:1;letter-spacing:-.03em;display:flex;align-items:baseline;gap:10px;flex-wrap:nowrap;white-space:nowrap;max-width:100%;width:100%;min-width:0;box-sizing:border-box;overflow:hidden}
+.stat.big b i{font-style:normal;font-variant-numeric:tabular-nums;min-width:0;flex:0 1 auto}
 .stat.big b small{font-size:16px;font-weight:700;color:var(--g300);letter-spacing:0}
 .stat.big .ttl{font-size:20px;font-weight:700;color:var(--heading);margin-top:12px}
 .stat.big .desc{font-size:14px;color:var(--g300);margin-top:6px}
@@ -2690,8 +2690,6 @@ html[data-theme="light"] .ihub circle[fill="var(--ins-lilac2)"]{opacity:1}
 html[data-lang="en"] body{word-break:normal;overflow-wrap:anywhere}
 html[data-lang="ja"]{--font:'Funnel Sans','Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic','Meiryo','Noto Sans JP','Noto Sans KR',system-ui,sans-serif}
 html[data-lang="ja"] body{word-break:normal;line-break:strict;overflow-wrap:anywhere}
-html[data-lang="zh"]{--font:'Funnel Sans','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans SC','Noto Sans KR',system-ui,sans-serif}
-html[data-lang="zh"] body{word-break:normal;line-break:strict;overflow-wrap:anywhere}
 html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-space:normal}
 </style>
 </head>
@@ -6776,14 +6774,20 @@ document.querySelectorAll(RV_SEL).forEach(el=>{
   el.style.setProperty('--d',Math.min(sib.indexOf(el),8)*.08+'s');
 });
 function fmt(n,dec){return dec?n.toFixed(dec):Math.round(n).toLocaleString('en-US');}
-/* Shrink .stat.big > b when the hero number/word exceeds the card width. */
+/* Shrink .stat.big > b to card width — no wrap, no clip (user request). */
 function fitStatBig(b){
   if(!b||!b.closest||!b.closest('.stat.big')) return;
   b.style.fontSize='';
-  const avail=b.clientWidth; if(avail<=0) return;
-  let fs=parseFloat(getComputedStyle(b).fontSize)||56;
-  const floor=16;
-  while(fs>floor&&b.scrollWidth>avail+1){ fs-=0.5; b.style.fontSize=fs+'px'; }
+  b.style.overflow='visible';
+  const avail=b.clientWidth; if(avail<=0){ b.style.overflow=''; return; }
+  let lo=16, hi=parseFloat(getComputedStyle(b).fontSize)||56, best=lo;
+  for(let i=0;i<14;i++){
+    const mid=(lo+hi)/2;
+    b.style.fontSize=mid+'px';
+    if(b.scrollWidth<=avail+1){ best=mid; lo=mid; } else hi=mid;
+  }
+  b.style.fontSize=best+'px';
+  b.style.overflow='';
 }
 function fitStatBox(box){ const b=box&&box.querySelector(':scope > b'); if(b) fitStatBig(b); }
 function fitAllStatBig(){ document.querySelectorAll('.stat.big').forEach(fitStatBox); }
@@ -6815,6 +6819,8 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{
   if(e.isIntersecting){
     el.classList.add('in');
     el.querySelectorAll&&el.querySelectorAll('i[data-to]').forEach(countUp);
+    if(el.matches('.stat.big')) fitStatBox(el);
+    else if(el.querySelectorAll) el.querySelectorAll('.stat.big').forEach(fitStatBox);
     if(el.matches('.flow,.pipe')&&el.id!=='imm-flow') sequence(el);
     if(el.matches('.bars')) el.classList.add('go');
     if(el.matches('.mqwrap')) playMQ();
