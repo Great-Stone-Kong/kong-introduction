@@ -108,6 +108,23 @@ for (const sm of deck.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)) {
       found.add(raw);
     }
   }
+  /* PSUM shows bare JSON field values — including inside escaped mock payload strings. */
+  for (const re of [
+    /"(?:content|description|name|title|text)"\s*:\s*"((?:\\.|[^"\\])*)"/g,
+    /\\"(?:content|description|name|title|text)\\"\s*:\s*\\"((?:\\\\.|[^"\\])*)\\"/g,
+  ]) {
+    let m;
+    while ((m = re.exec(sc))) {
+      const raw = norm(
+        m[1]
+          .replace(/\\\\n/g, "\n")
+          .replace(/\\n/g, "\n")
+          .replace(/\\\\"/g, '"')
+          .replace(/\\"/g, '"')
+      );
+      if (raw && HG.test(raw) && raw.length <= 300) found.add(raw);
+    }
+  }
 }
 
 let body = deck

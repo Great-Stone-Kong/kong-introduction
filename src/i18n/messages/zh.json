@@ -3876,5 +3876,14 @@
   "m.fca358ded882": "同步队列延迟响应",
   "m.5767d07b45c8": "(等待)",
   "m.2a73ed53178a": "待命",
-  "m.6fdc7d45eb16": "kong.plugin opentelemetry · http-log exporter otlp/http → collector:4318 log.payload 含脱敏 prompt · response"
+  "m.6fdc7d45eb16": "kong.plugin opentelemetry · http-log exporter otlp/http → collector:4318 log.payload 含脱敏 prompt · response",
+  "m.a3d1b5e34dd1": "请汇总客户 [PERSON]([PHONE], [EMAIL]) 的计费错误与同步延迟问题，并给出下一步建议",
+  "m.346081a5fa22": "RB-221同步队列延迟响应...",
+  "m.783d33160f1a": "\"内容\":\"由于企业号附加计费错误和INC-1007同步延迟,Customer [Person]处于高续展风险. 建议:1)纠正发票2)共享补丁表3(补丁表3) 在72小时内举行行政会议\".",
+  "m.3d4b8331e081": "RB-221 同步队列延迟应对：1) 调整队列积压告警阈值 2) 重试退避 30s→10s 3) 自动扩展 worker 数",
+  "m.43bf74182e1f": "故障 · runbook 调查代理",
+  "m.16886bdc1c8c": "故障调查",
+  "m.97f7092bcb6a": "请调查 Acme Health 的 INC-1007 故障现状与防复发 runbook",
+  "m.0579f5509c83": "INC-1007：同步队列延迟。补丁部署中。建议应用 runbook RB-221。",
+  "m.55d842f4ba76": "INC-1007 同步延迟防复发"
 }

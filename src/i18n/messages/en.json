@@ -3876,5 +3876,14 @@
   "m.fca358ded882": "Sync queue delay response",
   "m.5767d07b45c8": "(waiting)",
   "m.2a73ed53178a": "standby",
-  "m.6fdc7d45eb16": "kong.plugin opentelemetry · http-log exporter otlp/http → collector:4318 log.payload includes masked prompt · response"
+  "m.6fdc7d45eb16": "kong.plugin opentelemetry · http-log exporter otlp/http → collector:4318 log.payload includes masked prompt · response",
+  "m.a3d1b5e34dd1": "Summarize the billing error and sync delay issues for customer [PERSON] ([PHONE], [EMAIL]) and suggest next steps",
+  "m.346081a5fa22": "RB-221 sync queue delay response…",
+  "m.783d33160f1a": "Customer [PERSON] is at high renewal risk due to an Enterprise add-on billing error and the INC-1007 sync delay. Recommended: 1) correct the invoice 2) share the patch schedule 3) hold an executive call within 72 hours.",
+  "m.3d4b8331e081": "RB-221 sync queue delay response: 1) adjust queue backlog alert threshold 2) retry backoff 30s→10s 3) auto-scale workers",
+  "m.43bf74182e1f": "Incident · runbook investigation agent",
+  "m.16886bdc1c8c": "Incident investigation",
+  "m.97f7092bcb6a": "Investigate Acme Health INC-1007 status and the recurrence-prevention runbook",
+  "m.0579f5509c83": "INC-1007: sync queue delay. Patch deploying. Recommend runbook RB-221.",
+  "m.55d842f4ba76": "INC-1007 sync delay recurrence prevention"
 }

@@ -3876,5 +3876,14 @@
   "m.fca358ded882": "동기화 큐 지연 대응",
   "m.5767d07b45c8": "(대기)",
   "m.2a73ed53178a": "대기",
-  "m.6fdc7d45eb16": "kong.plugin opentelemetry · http-log exporter otlp/http → collector:4318 log.payload masked prompt · response 포함"
+  "m.6fdc7d45eb16": "kong.plugin opentelemetry · http-log exporter otlp/http → collector:4318 log.payload masked prompt · response 포함",
+  "m.a3d1b5e34dd1": "고객 [PERSON]([PHONE], [EMAIL])의 청구 오류와 동기화 지연 이슈를 요약하고 다음 조치를 제안해줘",
+  "m.346081a5fa22": "RB-221 동기화 큐 지연 대응…",
+  "m.783d33160f1a": "[PERSON] 고객은 엔터프라이즈 애드온 과금 오류와 INC-1007 동기화 지연으로 갱신 위험이 높습니다. 1) 청구 정정 2) 패치 일정 공유 3) 72시간 내 경영진 콜을 권장합니다.",
+  "m.3d4b8331e081": "RB-221 동기화 큐 지연 대응: 1) 큐 적체 알림 임계치 조정 2) 재시도 백오프 30s→10s 3) 워커 수 자동 확장",
+  "m.43bf74182e1f": "장애 · 런북 조사 에이전트",
+  "m.16886bdc1c8c": "장애 조사",
+  "m.97f7092bcb6a": "Acme Health의 INC-1007 장애 현황과 재발 방지 런북을 조사해줘",
+  "m.0579f5509c83": "INC-1007: 동기화 큐 지연. 패치 배포 중. 런북 RB-221 적용 권장.",
+  "m.55d842f4ba76": "INC-1007 동기화 지연 재발 방지"
 }

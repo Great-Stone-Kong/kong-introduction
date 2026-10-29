@@ -3876,5 +3876,14 @@
   "m.fca358ded882": "同期キュー遅延への対応",
   "m.5767d07b45c8": "(待機)",
   "m.2a73ed53178a": "待機",
-  "m.6fdc7d45eb16": "kong.plugin opentelemetry · http-log exporter otlp/http → collector:4318 log.payload はマスク済み prompt · response を含む"
+  "m.6fdc7d45eb16": "kong.plugin opentelemetry · http-log exporter otlp/http → collector:4318 log.payload はマスク済み prompt · response を含む",
+  "m.a3d1b5e34dd1": "顧客 [PERSON]([PHONE], [EMAIL])の請求エラーと同期遅延の問題を要約し、次のアクションを提案して",
+  "m.346081a5fa22": "RB-221 同期キュー遅延への対応…",
+  "m.783d33160f1a": "[PERSON] 様は、エンタープライズアドオンの課金エラーと INC-1007 同期遅延により更新リスクが高い状態です。1) 請求の訂正 2) パッチ日程の共有 3) 72時間以内の経営層コールを推奨します。",
+  "m.3d4b8331e081": "RB-221 同期キュー遅延対応: 1) キュー滞留アラート閾値調整 2) リトライ・バックオフ 30s→10s 3) ワーカー数の自動拡張",
+  "m.43bf74182e1f": "障害・ランブック調査エージェント",
+  "m.16886bdc1c8c": "障害調査",
+  "m.97f7092bcb6a": "Acme Health の INC-1007 障害状況と再発防止ランブックを調査して",
+  "m.0579f5509c83": "INC-1007: 同期キュー遅延。パッチ展開中。ランブック RB-221 の適用を推奨。",
+  "m.55d842f4ba76": "INC-1007 同期遅延の再発防止"
 }

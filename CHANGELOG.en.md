@@ -14,6 +14,7 @@
 ### Changed
 
 - Infrastructure: 「국내 고객 실 요구사항」→「고객 핵심 요구사항」 (Customer key requirements), shown in all languages
+- AI trace summary (PSUM): add full payload body keys so fragment partials no longer mix locales
 
 ## 2026.10.29.fb000bae
 ### Added
