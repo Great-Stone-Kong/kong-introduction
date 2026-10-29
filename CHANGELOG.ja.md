@@ -5,6 +5,13 @@
 
 ---
 
+## 2026.10.29.9b351b37
+### 追加
+
+- AI Gateway 2.0 > 新機能: AI Proxy vs Advanced 要約 · NVIDIA NeMo Guardrails Allow/Block モック
+
+---
+
 ## 2026.10.29.66d2a114
 ### 追加
 
