@@ -1,0 +1,56 @@
+{
+  "s.21cecab21f4c": {
+    "match": "Kong 기업 소개",
+    "ko": "기업 소개",
+    "en": "About",
+    "ja": "会社紹介"
+  },
+  "s.40691c21b457": {
+    "match": "Gateway란?",
+    "ko": "Gateway란?",
+    "en": "Gateway 101",
+    "ja": "Gatewayとは"
+  },
+  "s.74974ca396aa": {
+    "match": "API Gateway",
+    "ko": "API GW",
+    "en": "API GW",
+    "ja": "API GW"
+  },
+  "s.47219de2f95b": {
+    "match": "AI Gateway",
+    "ko": "AI GW",
+    "en": "AI GW",
+    "ja": "AI GW"
+  },
+  "s.9dcefd14ed11": {
+    "match": "Insomnia",
+    "ko": "Insomnia",
+    "en": "Insomnia",
+    "ja": "Insomnia"
+  },
+  "s.274c409b4425": {
+    "match": "인프라 구성",
+    "ko": "인프라",
+    "en": "Infra",
+    "ja": "インフラ"
+  },
+  "s.991d26517c51": {
+    "match": "보안 및 규제 매핑",
+    "ko": "보안·규제",
+    "en": "Security",
+    "ja": "セキュリティ"
+  },
+  "s.1e9dcde5e734": {
+    "match": "라이선스 모델",
+    "ko": "라이선스",
+    "en": "Licensing",
+    "ja": "ライセンス"
+  },
+  "s.c83d2ea87535": {
+    "match": "Gateway 개요",
+    "ko": "개요",
+    "en": "Overview",
+    "ja": "概要"
+  }
+}

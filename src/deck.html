@@ -6175,7 +6175,7 @@ claude
 
 <div class="modal cl-modal" id="cl-modal" role="dialog" aria-modal="true" aria-labelledby="cl-title" hidden>
   <div class="box">
-    <div class="mh"><b id="cl-title">변경 이력</b><button class="x" type="button" id="cl-close">닫기 ✕</button></div>
+    <div class="mh"><b id="cl-title" data-i18n="m.e78d03ec8597">변경 이력</b><button class="x" type="button" id="cl-close" data-i18n="m.b5fe570a7d09">닫기 ✕</button></div>
     <div class="cl-body i18n-no" id="cl-body"><p class="cl-load">불러오는 중…</p></div>
   </div>
 </div>
@@ -7727,14 +7727,27 @@ const VER={
 let VLATEST=null, VSTATE=VER.check?'checking':'unknown', CL_OK=false, CL_BY_LANG={};
 const CL_SVG='<svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.584 0.875828C18.8141 0.722451 19.1097 0.708344 19.3535 0.838718C19.5973 0.969242 19.75 1.22328 19.75 1.49985V6.74985H20C22.0742 6.74985 23.75 8.42564 23.75 10.4999C23.75 12.5741 22.0742 14.2499 20 14.2499H19.75V19.4999C19.7499 19.7764 19.5973 20.0305 19.3535 20.161C19.1097 20.2913 18.814 20.2772 18.584 20.1239L12.7725 16.2499H8.1377L10.6895 22.204C10.8525 22.5846 10.6765 23.0261 10.2959 23.1893C9.91523 23.3524 9.47375 23.1754 9.31055 22.7948L6.50586 16.2499H3C1.48584 16.2499 0.250081 15.014 0.25 13.4999V7.49985C0.250001 5.98564 1.48579 4.74985 3 4.74985H12.7725L18.584 0.875828ZM13.416 6.12387C13.2928 6.20598 13.148 6.24985 13 6.24985H3C2.31421 6.24985 1.75 6.81407 1.75 7.49985V13.4999C1.75008 14.1856 2.31426 14.7499 3 14.7499H13C13.1481 14.7499 13.2928 14.7937 13.416 14.8758L18.25 18.0985V2.90122L13.416 6.12387ZM19.75 12.7499H20C21.2458 12.7499 22.25 11.7456 22.25 10.4999C22.25 9.25406 21.2458 8.24985 20 8.24985H19.75V12.7499Z" fill="currentColor"/></svg>';
 function vcmp(a,b){ const pv=(p,i)=>i>=3?parseInt(p,16):Number(p); const x=String(a).split(/[.\-]/).map(pv), y=String(b).split(/[.\-]/).map(pv); for(let i=0;i<Math.max(x.length,y.length);i++){ const d=(x[i]||0)-(y[i]||0); if(d) return d>0?1:-1; } return 0; }
-function vi18n(ko, vars){
-  if(window.KONG_I18N&&typeof window.KONG_I18N.tpl==='function') return window.KONG_I18N.tpl(ko, vars);
-  return String(ko).replace(/\$\{(\w+)\}/g,(_,k)=>vars&&vars[k]!=null?String(vars[k]):'');
+/* stable-key ids (messages/*); KO text kept as fallback before i18n init */
+const I18N_IDS={
+  download:'m.0a4ca9bc91ee',
+  changelog:'m.e78d03ec8597',
+  changelogView:'m.c7b31b84e449',
+  close:'m.b5fe570a7d09',
+  loading:'m.8bf609c884ca',
+  changelogErr:'m.9364c67bcdec',
+  empty:'m.009abcbed3e1',
+  newVer:'m.b46e173c2358',
+  curVer:'m.20ae560946c7'
+};
+function vi18n(idOrKo, vars){
+  if(window.KONG_I18N&&typeof window.KONG_I18N.t==='function') return window.KONG_I18N.t(idOrKo, vars);
+  if(window.KONG_I18N&&typeof window.KONG_I18N.tpl==='function') return window.KONG_I18N.tpl(idOrKo, vars);
+  return String(idOrKo).replace(/\$\{(\w+)\}/g,(_,k)=>vars&&vars[k]!=null?String(vars[k]):'');
 }
-function vClBtn(){ return CL_OK?'<button type="button" class="vb-cl" title="'+vi18n('변경 이력')+'" aria-label="'+vi18n('변경 이력 보기')+'">'+CL_SVG+'</button>':''; }
+function vClBtn(){ return CL_OK?'<button type="button" class="vb-cl" title="'+vi18n(I18N_IDS.changelog)+'" aria-label="'+vi18n(I18N_IDS.changelogView)+'">'+CL_SVG+'</button>':''; }
 function vVerRow(label){ return '<div class="vb-row"><div class="vb-v">'+(label||('v'+VER.cur))+'</div>'+vClBtn()+'</div>'; }
 function vbox(){
-  if(VSTATE==='new') return '<div class="vbox new"><div class="vb-s"><i class="vb-dot"></i>'+vi18n('새 버전 v${v}',{v:VLATEST})+'</div><a class="vb-btn" href="'+VER.dl+'" target="_blank" rel="noopener">'+vi18n('다운로드')+'</a>'+vVerRow(vi18n('현재 v${v}',{v:VER.cur}))+'</div>';
+  if(VSTATE==='new') return '<div class="vbox new"><div class="vb-s"><i class="vb-dot"></i>'+vi18n(I18N_IDS.newVer,{v:VLATEST})+'</div><a class="vb-btn" href="'+VER.dl+'" target="_blank" rel="noopener">'+vi18n(I18N_IDS.download)+'</a>'+vVerRow(vi18n(I18N_IDS.curVer,{v:VER.cur}))+'</div>';
   return '<div class="vbox">'+vVerRow()+'</div>';
 }
 function vrender(){ const o=side.querySelector('.vbox'); if(o) o.outerHTML=vbox(); }
@@ -7765,14 +7778,14 @@ function mdToHtml(md){
     if(!t){ closeUl(); i++; continue; }
     closeUl(); html+='<p>'+mdInline(t)+'</p>'; i++;
   }
-  closeUl(); return html||'<p class="cl-err">'+vi18n('내용이 없습니다.')+'</p>';
+  closeUl(); return html||'<p class="cl-err">'+vi18n(I18N_IDS.empty)+'</p>';
 }
 function currentLang(){ return document.documentElement.dataset.lang||'ko'; }
 function paintClBody(t){ const body=document.getElementById('cl-body'); if(body) body.innerHTML=mdToHtml(t); }
 function syncClChrome(){
   const title=document.getElementById('cl-title'), close=document.getElementById('cl-close');
-  if(title) title.textContent=vi18n('변경 이력');
-  if(close) close.textContent=vi18n('닫기 ✕');
+  if(title) title.textContent=vi18n(I18N_IDS.changelog);
+  if(close) close.textContent=vi18n(I18N_IDS.close);
 }
 function openClModal(){
   const md=document.getElementById('cl-modal'), body=document.getElementById('cl-body');
@@ -7781,9 +7794,9 @@ function openClModal(){
   md.hidden=false; md.classList.add('open');
   const lang=currentLang();
   if(CL_BY_LANG[lang]){ paintClBody(CL_BY_LANG[lang]); return; }
-  body.innerHTML='<p class="cl-load">'+vi18n('불러오는 중…')+'</p>';
+  body.innerHTML='<p class="cl-load">'+vi18n(I18N_IDS.loading)+'</p>';
   fetchChangelog(lang).then(paintClBody)
-    .catch(()=>{ body.innerHTML='<p class="cl-err">'+vi18n('변경 이력을 불러오지 못했습니다.')+'</p>'; });
+    .catch(()=>{ body.innerHTML='<p class="cl-err">'+vi18n(I18N_IDS.changelogErr)+'</p>'; });
 }
 function closeClModal(){ const md=document.getElementById('cl-modal'); if(!md) return; md.classList.remove('open'); md.hidden=true; }
 function refreshClModalIfOpen(){

@@ -16,3 +16,6 @@
 !src/**
 !scripts/
 !scripts/**
+!reference/
+!reference/**
+!README.md

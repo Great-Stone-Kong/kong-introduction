@@ -5,6 +5,12 @@
 
 ---
 
+## Unreleased
+
+### Changed
+
+- i18n: Hangul-as-key → stable-key (`m.` / `u.` / `s.`) catalogs · engine · reference baseline
+
 ## 2026.10.29.fb000bae
 ### Added
 
