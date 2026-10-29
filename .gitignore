@@ -9,11 +9,13 @@
 !CHANGELOG.md
 !CHANGELOG.en.md
 !CHANGELOG.ja.md
+!CHANGELOG.zh.md
 !.github/
 !.github/workflows/
 !.github/workflows/release.yml
 !src/
 !src/**
+src/i18n/.zh-cache.json
 !scripts/
 !scripts/**
 !reference/

@@ -7,10 +7,14 @@
 
 ## Unreleased
 
+### Added
+
+- Locale: Simplified Chinese (`zh`, machine-translated draft from English)
+
 ### Changed
 
 - i18n: Hangul-as-key → stable-key (`m.` / `u.` / `s.`) catalogs · engine · reference baseline
-- i18n: keep compact runtime blob (Hangul→EN/JA + sparse `I` map) to avoid HTML size growth
+- i18n: keep compact runtime blob (Hangul→EN/JA/ZH + sparse `I` map) to avoid HTML size growth
 
 ## 2026.10.29.fb000bae
 ### Added

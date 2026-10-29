@@ -6,6 +6,7 @@
     "build": "node scripts/build.mjs",
     "check-i18n": "node scripts/check-i18n.mjs",
     "verify-i18n": "node scripts/verify-i18n-refactor.mjs",
-    "migrate-i18n-keys": "node scripts/migrate-i18n-keys.mjs"
+    "migrate-i18n-keys": "node scripts/migrate-i18n-keys.mjs",
+    "translate-zh": "python3 scripts/translate-zh-from-en.py"
   }
 }
