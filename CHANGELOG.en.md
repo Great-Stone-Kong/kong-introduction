@@ -12,6 +12,8 @@
 
 ### Changed
 
+- Language: fix broken Simplified/Traditional strings such as “Kong cutover for AI traffic” · apply TW/HK IT lexicon post-edits on zh-Hant
+
 - AI Gateway > Feature overview
   - PII Sanitizer: one vertical grouped bar chart · per-type leak rates · type meanings
   - Behavior diagrams for semantic cache, guard, routing, token compression, kill switch, and virtual keys

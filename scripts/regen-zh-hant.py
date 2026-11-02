@@ -46,3 +46,7 @@ if cl.exists():
     (ROOT / "CHANGELOG.zh-Hant.md").write_text(conv(cl.read_text(encoding="utf-8")), encoding="utf-8")
 
 print(f"regen-zh-hant: messages={len(hans)} units={len(units)} shorts={len(shorts)}")
+# TW/HK lexicon + known MT fixes
+import subprocess
+
+subprocess.check_call([sys.executable, str(ROOT / "scripts" / "postedit-zh-tw.py")])

@@ -21,8 +21,9 @@ Ids look like `m.<12-hex>`, `u.<12-hex>`, `s.<12-hex>` (SHA-256 of normalized KO
 1. Change copy in `src/deck.html` (KO remains visible source in markup).
 2. Update the same string under the **same id** in `messages/ko.json`.
 3. Translate `en` / `ja` / `zh-Hans` for that id when needed, then align `zh-Hant` (OpenCC `s2twp` or manual TW/HK wording).
-4. For bulk Simplified Chinese refresh from EN: `npm run translate-zh` (writes `zh-Hans`; regenerate `zh-Hant` afterward).
-5. `npm run check-i18n && npm run build`
+4. For bulk Simplified Chinese refresh from EN: `npm run translate-zh` (writes `zh-Hans`).
+5. Regenerate Traditional Chinese: `npm run regen-zh-hant` (OpenCC `s2twp` + `npm run postedit-zh-tw` TW/HK lexicon).
+6. `npm run check-i18n && npm run build`
 
 Do not rename ids when editing KO text — that is the point of stable keys.
 
