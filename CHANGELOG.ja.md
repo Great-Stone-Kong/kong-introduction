@@ -6,22 +6,21 @@
 ---
 
 ## 2026.11.02.c92f0e46
+### 追加
+- AI Gateway > 競合比較 > Data Platform（Databricks, Snowflake）
+
 ### 変更
 
-- AI Gateway > 代表機能概要 > PII Sanitizer: 評価セット比較を縦グループ棒グラフに統合 · タイプ別漏えい率 · 項目の意味を整理
-- AI Gateway > 代表機能概要: セマンティックキャッシュ・ガード・ルーティング・トークン圧縮・キルスイッチ・仮想キーの動作図を追加
-- AI Gateway > 代表機能概要: PII Sanitizer · トークン圧縮に Docker Hub イメージリンクを追加
-- AI Gateway > 競合比較: AI DLP 比較を Endpoint AI Security タブに統合 · 単独セクションを削除
-- AI Gateway > 競合比較: API7 · IBM API Connect を Legacy APIM タブに統合 · 製品紹介の後に単一比較表
-- AI Gateway > 競合比較: FortiAIGate · Netskope · Portkey（Prisma AIRS）を AI Runtime Security タブに統合 · 製品紹介の後に単一比較表
-- AI Gateway > 競合比較: AI Runtime Security 案内の単独「함께」表記を「상호보완 구성」（相互補完構成）に変更
+- AI Gateway > 代表機能概要
+  - PII Sanitizer: 評価セット比較を縦グループ棒グラフに統合 · タイプ別漏えい率 · 項目の意味を整理
+  - セマンティックキャッシュ・ガード・ルーティング・トークン圧縮・キルスイッチ・仮想キーの動作図を追加
+  - PII Sanitizer · トークン圧縮に Docker Hub イメージリンクを追加
+  - Kong/OpenAI/Mozilla 漏えい率比較
 
----
-
-## 2026.11.02.4a8a84dc
-### 追加
-
-- AI Gateway > 機能 · デモ > 代表機能概要: PII Sanitizer タブ · Kong/OpenAI/Mozilla 漏えい率比較
+- AI Gateway > 競合比較
+  - AI DLP 比較を Endpoint AI Security タブに統合
+  - API7 · IBM API Connect を Legacy APIM タブに統合
+  - FortiAIGate · Netskope · Portkey を AI Runtime Security タブに統合
 
 ---
 

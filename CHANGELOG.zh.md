@@ -6,22 +6,21 @@
 ---
 
 ## 2026.11.02.c92f0e46
+### 新增
+- AI Gateway > 竞品比较 > Data Platform（Databricks, Snowflake）
+
 ### 变更
 
-- AI Gateway > 代表性功能概览 > PII Sanitizer：评测集对比合并为纵向分组柱状图 · 按类型泄漏率 · 整理字段含义
-- AI Gateway > 代表性功能概览：为语义缓存、护栏、路由、令牌压缩、熔断开关、虚拟密钥补充行为示意图
-- AI Gateway > 代表性功能概览：为 PII Sanitizer · 令牌压缩补充 Docker Hub 镜像链接
-- AI Gateway > 竞品比较：将 AI DLP 对比并入 Endpoint AI Security 标签页 · 删除独立章节
-- AI Gateway > 竞品比较：将 API7 · IBM API Connect 合并为 Legacy APIM 标签页 · 先分产品介绍再统一对比表
-- AI Gateway > 竞品比较：将 FortiAIGate · Netskope · Portkey（Prisma AIRS）合并为 AI Runtime Security 标签页 · 先分产品介绍再统一对比表
-- AI Gateway > 竞品比较：将 AI Runtime Security 说明中的单独「함께」改为「상호보완 구성」（互补架构）
+- AI Gateway > 代表性功能概览
+  - PII Sanitizer：评测集对比合并为纵向分组柱状图 · 按类型泄漏率 · 整理字段含义
+  - 语义缓存 · 护栏 · 路由 · 令牌压缩 · 熔断开关 · 虚拟密钥行为示意图
+  - PII Sanitizer · 令牌压缩 Docker Hub 镜像链接
+  - Kong/OpenAI/Mozilla 泄漏率对比
 
----
-
-## 2026.11.02.4a8a84dc
-### 新增
-
-- AI Gateway > 功能 · 演示 > 代表性功能概览：PII Sanitizer 标签 · Kong/OpenAI/Mozilla 泄漏率对比
+- AI Gateway > 竞品比较
+  - 将 AI DLP 对比并入 Endpoint AI Security 标签页
+  - 将 API7 · IBM API Connect 合并为 Legacy APIM 标签页
+  - 将 FortiAIGate · Netskope · Portkey 合并为 AI Runtime Security 标签页
 
 ---
 

@@ -6,22 +6,21 @@
 ---
 
 ## 2026.11.02.c92f0e46
+### Added
+- AI Gateway > Competitive comparison > Data Platform (Databricks, Snowflake)
+
 ### Changed
 
-- AI Gateway > Feature overview > PII Sanitizer: one vertical grouped bar chart · per-type leak rates · type meanings
-- AI Gateway > Feature overview: add behavior diagrams for semantic cache, guard, routing, compression, kill switch, and virtual keys
-- AI Gateway > Feature overview: add Docker Hub image links for PII Sanitizer and token compression
-- AI Gateway > Competitive comparison: fold AI DLP comparison into an Endpoint AI Security tab · remove standalone section
-- AI Gateway > Competitive comparison: merge API7 and IBM API Connect into a Legacy APIM tab · per-product intros then one table
-- AI Gateway > Competitive comparison: merge FortiAIGate · Netskope · Portkey (Prisma AIRS) into an AI Runtime Security tab · per-product intros then one table
-- AI Gateway > Competitive comparison: replace standalone “함께” wording in AI Runtime Security with “상호보완 구성” (complementary architecture)
+- AI Gateway > Feature overview
+  - PII Sanitizer: one vertical grouped bar chart · per-type leak rates · type meanings
+  - Behavior diagrams for semantic cache, guard, routing, token compression, kill switch, and virtual keys
+  - Docker Hub image links for PII Sanitizer and token compression
+  - Kong/OpenAI/Mozilla leak-rate comparison
 
----
-
-## 2026.11.02.4a8a84dc
-### Added
-
-- AI Gateway > Features · demo > Feature overview: PII Sanitizer tab · Kong/OpenAI/Mozilla leak-rate comparison
+- AI Gateway > Competitive comparison
+  - Fold AI DLP comparison into an Endpoint AI Security tab
+  - Merge API7 · IBM API Connect into a Legacy APIM tab
+  - Merge FortiAIGate · Netskope · Portkey into an AI Runtime Security tab
 
 ---
 

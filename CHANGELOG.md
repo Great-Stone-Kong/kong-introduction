@@ -6,22 +6,21 @@
 ---
 
 ## 2026.11.02.c92f0e46
+### 추가
+- AI Gateway > 경쟁 제품 비교 > Data Platform(Databricks, Snowflake)
+
 ### 변경
 
-- AI Gateway > 대표 기능 개요 > PII Sanitizer: 평가셋 비교를 세로 그룹 막대 차트로 통합 · 유형별 누출률 · 항목 의미 정리
-- AI Gateway > 대표 기능 개요: 시맨틱 캐시·가드·라우팅·토큰 압축·킬 스위치·가상 키 동작 도식 추가
-- AI Gateway > 대표 기능 개요: PII Sanitizer · 토큰 압축에 Docker Hub 이미지 링크 추가
-- AI Gateway > 경쟁 제품 비교: AI DLP 비교를 Endpoint AI Security 탭으로 통합 · 단독 섹션 제거
-- AI Gateway > 경쟁 제품 비교: API7 · IBM API Connect를 Legacy APIM 탭으로 통합 · 제품별 소개 후 단일 비교표
-- AI Gateway > 경쟁 제품 비교: FortiAIGate · Netskope · Portkey(Prisma AIRS)를 AI Runtime Security 탭으로 통합 · 제품별 소개 후 단일 비교표
-- AI Gateway > 경쟁 제품 비교: AI Runtime Security 안내 문구의 「함께」 단독 표기를 「상호보완 구성」으로 변경
+- AI Gateway > 대표 기능 개요
+  - PII Sanitizer: 평가셋 비교를 세로 그룹 막대 차트로 통합 · 유형별 누출률 · 항목 의미 정리
+  - 시맨틱 캐시·가드·라우팅·토큰 압축·킬 스위치·가상 키 동작 도식 추가
+  - PII Sanitizer · 토큰 압축에 Docker Hub 이미지 링크 추가
+  - Kong/OpenAI/Mozilla 누출률 비교
 
----
-
-## 2026.11.02.4a8a84dc
-### 추가
-
-- AI Gateway > 기능 · 데모 > 대표 기능 개요: PII Sanitizer 탭 · Kong/OpenAI/Mozilla 누출률 비교
+- AI Gateway > 경쟁 제품 비교
+  - AI DLP 비교를 Endpoint AI Security 탭으로 통합
+  - API7 · IBM API Connect를 Legacy APIM 탭으로 통합
+  - FortiAIGate · Netskope · Portkey를 AI Runtime Security 탭으로 통합
 
 ---
 
