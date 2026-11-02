@@ -31,8 +31,8 @@
     "match": "출처: konghq.com/company",
     "en": "Source: <a href=\"https://konghq.com/company\" rel=\"noopener noreferrer\" target=\"_blank\">konghq.com/company</a>",
     "ja": "出典: <a href=\"https://konghq.com/company\" rel=\"noopener noreferrer\" target=\"_blank\">konghq.com/company</a>",
-    "zh-Hans": "资料来源: <a href=\"https://konghq.com/company\" rel=\"noopener noreferrer\" target=\"_blank\">Kong hq.com/company (中文(简体) ).</a>",
-    "zh-Hant": "資料來源: <a href=\"https://konghq.com/company\" rel=\"noopener noreferrer\" target=\"_blank\">Kong hq.com/company (中文(簡體) ).</a>"
+    "zh-Hans": "来源: <a href=\"https://konghq.com/company\" rel=\"noopener noreferrer\" target=\"_blank\">konghq.com/company</a>",
+    "zh-Hant": "來源: <a href=\"https://konghq.com/company\" rel=\"noopener noreferrer\" target=\"_blank\">konghq.com/company</a>"
   },
   "u.2ba15c7b7af7": {
     "match": "한국 기업이 마주한 두 개의 벽. 속도(개발자와 현업은 이미 여러 LLM과 코딩 에이전트를 쓰고 있습니다)와 통제(개인정보보호법, 금융권 망분리, 감사 요건). 둘 중 하나를 고르는 문제가 아닙니다. Kong은 트래픽 계층에서 둘을 동시에 해결합니다.",
@@ -276,15 +276,15 @@
     "match": "# Before · LLM 제공자 직접 호출 client = LLMClient( api_key=\"API-KEY-VALUE\" )",
     "en": "<span class=\"c\"># Before · Calling the LLM provider directly</span>\nclient = LLMClient(\n    api_key=<span class=\"k\">\"API-KEY-VALUE\"</span>\n)",
     "ja": "<span class=\"c\"># Before · LLMプロバイダーを直接呼び出し</span>\nclient = LLMClient(\n    api_key=<span class=\"k\">\"API-KEY-VALUE\"</span>\n)",
-    "zh-Hans": "<span class=\"c\"># 在 \\ 直接调用 \\ LLM 供应商之前</span>\n客户端= LLM 客户端(\napi 键=<span class=\"k\">\"API -KEY -VALUE\"</span>\n) (中文(中国大陆)",
-    "zh-Hant": "<span class=\"c\"># 在 \\ 直接呼叫 \\ LLM 供應商之前</span>\n客戶端= LLM 客戶端(\napi 鍵=<span class=\"k\">\"API -KEY -VALUE\"</span>\n) (中文(中國大陸)"
+    "zh-Hans": "# Before · 直接调用 LLM 提供商\nclient = LLMClient(\n    api_key=\"API-KEY-VALUE\"\n)",
+    "zh-Hant": "# Before · 直接呼叫 LLM 供應商\nclient = LLMClient(\n    api_key=\"API-KEY-VALUE\"\n)"
   },
   "u.0c267aeeac1e": {
     "match": "# After · Kong AI Gateway 경유 client = LLMClient( base_url=\"https://address.kong.ai.gateway\", # api_key=\"API-KEY-VALUE\" ← 키는 Kong이 보관 )",
     "en": "<span class=\"c\"># After · Via Kong AI Gateway</span>\nclient = LLMClient(\n    base_url=<span class=\"k\">\"https://address.kong.ai.gateway\"</span>,\n<span class=\"c\">    # api_key=\"API-KEY-VALUE\"  ← Kong stores the key</span>\n)",
     "ja": "<span class=\"c\"># After · Kong AI Gateway経由</span>\nclient = LLMClient(\n    base_url=<span class=\"k\">\"https://address.kong.ai.gateway\"</span>,\n<span class=\"c\">    # api_key=\"API-KEY-VALUE\"  ← キーはKongが保管</span>\n)",
-    "zh-Hans": "<span class=\"c\">{\\fn方正粗倩简体\\fs12\\an8\\1cHFFFF00\\b0}在...</span>\n客户端= AI Gateway 客户端(\n基数 url=<span class=\"k\">\"https://address. AI Gateway ai.gateway\" (中文(简体) ).</span>, (中文).\n<span class=\"c\"> # api key=\"API-KEY-VALUE\" QQ AI Gateway 存储密钥</span>\n) (中文(中国大陆)",
-    "zh-Hant": "<span class=\"c\">{\\fn方正粗倩簡體\\fs12\\an8\\1cHFFFF00\\b0}在...</span>\n客戶端= AI Gateway 客戶端(\n基數 url=<span class=\"k\">\"https://address. AI Gateway ai.gateway\" (中文(簡體) ).</span>, (中文).\n<span class=\"c\"> # api key=\"API-KEY-VALUE\" QQ AI Gateway 儲存金鑰</span>\n) (中文(中國大陸)"
+    "zh-Hans": "<span class=\"c\">在...</span>\n客户端= AI Gateway 客户端(\n基数 url=<span class=\"k\">\"https://address. AI Gateway ai.gateway\"</span>,\n<span class=\"c\"> # api key=\"API-KEY-VALUE\" QQ AI Gateway 存储密钥</span>\n) (中文(中国大陆)",
+    "zh-Hant": "<span class=\"c\">在...</span>\n客戶端= AI Gateway 客戶端(\n基數 url=<span class=\"k\">\"https://address. AI Gateway ai.gateway\"</span>,\n<span class=\"c\"> # api key=\"API-KEY-VALUE\" QQ AI Gateway 儲存金鑰</span>\n) (中文(中國大陸)"
   },
   "u.da08c8eb039f": {
     "match": "# Before · 개발자 PC에서 제공자로 직접 # 개인 API 키가 각 PC에 흩어짐 export ANTHROPIC_API_KEY=\"sk-ant-…(개인 키)\" claude",
@@ -297,8 +297,8 @@
     "match": "# After · Kong AI Gateway 경유 export ANTHROPIC_BASE_URL=\"https://address.kong.ai.gateway/anthropic\" export ANTHROPIC_AUTH_TOKEN=\"<Kong 발급 가상 키>\" claude # 또는 ~/.claude/settings.json (조직 배포용) { \"env\": { \"ANTHROPIC_BASE_URL\": \"https://address.kong.ai.gateway/anthropic\" } }",
     "en": "<span class=\"c\"># After · Via Kong AI Gateway</span>\nexport ANTHROPIC_BASE_URL=<span class=\"k\">\"https://address.kong.ai.gateway/anthropic\"</span>\nexport ANTHROPIC_AUTH_TOKEN=<span class=\"k\">\"&lt;Kong-issued virtual key&gt;\"</span>\nclaude\n\n<span class=\"c\"># Or ~/.claude/settings.json (for org-wide rollout)</span>\n{ <span class=\"k\">\"env\"</span>: { <span class=\"k\">\"ANTHROPIC_BASE_URL\"</span>: <span class=\"k\">\"https://address.kong.ai.gateway/anthropic\"</span> } }",
     "ja": "<span class=\"c\"># After · Kong AI Gateway経由</span>\nexport ANTHROPIC_BASE_URL=<span class=\"k\">\"https://address.kong.ai.gateway/anthropic\"</span>\nexport ANTHROPIC_AUTH_TOKEN=<span class=\"k\">\"&lt;Kong発行の仮想キー&gt;\"</span>\nclaude\n\n<span class=\"c\"># または ~/.claude/settings.json（組織配布用）</span>\n{ <span class=\"k\">\"env\"</span>: { <span class=\"k\">\"ANTHROPIC_BASE_URL\"</span>: <span class=\"k\">\"https://address.kong.ai.gateway/anthropic\"</span> } }",
-    "zh-Hans": "<span class=\"c\">{\\fn方正粗倩简体\\fs12\\an8\\1cHFFFF00\\b0}在...</span>\n导出 ANTHROPIC BASE URL=<span class=\"k\">\"https://address. AI Gateway ai.gateway/harmic\" (中文(中国大陆) ).</span>\n导出 ATHROPIC AUTH TOKEN =<span class=\"k\">\" (中文(简体) ).&lt;AI Gateway - 发行的虚拟密钥&gt;\" (中文(简体) ).</span>\n克劳德 <span class=\"c\">#或~.claude/sets.json(为整个org推出).</span>\n{ <span class=\"k\">\"env\"</span>键盘 : <span class=\"k\">\"ANTHROPIC BASE URL(英语:</span>数字 : <span class=\"k\">\"https://address. AI Gateway ai.gateway/harmic\" (中文(中国大陆) ).</span> {\\fn黑体\\fs22\\bord1\\shad0\\3aHBE\\4aH00\\fscx67\\fscy66\\2cHFFFFFF\\3cH808080}你觉得呢?",
-    "zh-Hant": "<span class=\"c\">{\\fn方正粗倩簡體\\fs12\\an8\\1cHFFFF00\\b0}在...</span>\n匯出 ANTHROPIC BASE URL=<span class=\"k\">\"https://address. AI Gateway ai.gateway/harmic\" (中文(中國大陸) ).</span>\n匯出 ATHROPIC AUTH TOKEN =<span class=\"k\">\" (中文(簡體) ).&lt;AI Gateway - 發行的虛擬金鑰&gt;\" (中文(簡體) ).</span>\n克勞德 <span class=\"c\">#或~.claude/sets.json(為整個org推出).</span>\n{ <span class=\"k\">\"env\"</span>鍵盤 : <span class=\"k\">\"ANTHROPIC BASE URL(英語:</span>數字 : <span class=\"k\">\"https://address. AI Gateway ai.gateway/harmic\" (中文(中國大陸) ).</span> {\\fn黑體\\fs22\\bord1\\shad0\\3aHBE\\4aH00\\fscx67\\fscy66\\2cHFFFFFF\\3cH808080}你覺得呢?"
+    "zh-Hans": "# After · 经 Kong AI Gateway\nexport ANTHROPIC_BASE_URL=\"https://address.kong.ai.gateway/anthropic\"\nexport ANTHROPIC_AUTH_TOKEN=\"<Kong 颁发的虚拟密钥>\"\nclaude\n\n# 或 ~/.claude/settings.json（组织部署用）\n{ \"env\": { \"ANTHROPIC_BASE_URL\": \"https://address.kong.ai.gateway/anthropic\" } }",
+    "zh-Hant": "# After · 經 Kong AI Gateway\nexport ANTHROPIC_BASE_URL=\"https://address.kong.ai.gateway/anthropic\"\nexport ANTHROPIC_AUTH_TOKEN=\"<Kong 核發的虛擬金鑰>\"\nclaude\n\n# 或 ~/.claude/settings.json（組織部署用）\n{ \"env\": { \"ANTHROPIC_BASE_URL\": \"https://address.kong.ai.gateway/anthropic\" } }"
   },
   "u.fc2f80ccbe13": {
     "match": "예: “남은 휴가 일수와 이월되는 휴가일수는?”은 내규·복지 경로로 갑니다. 프롬프트 유형별로 특화된 모델을 호출해 사용량을 최적화하고 비용을 줄입니다. 요청 본문의 model 필드 기반 라우팅과 6종 로드밸런싱도 지원합니다.",
@@ -311,15 +311,15 @@
     "match": "# Prompt · 112 tokens 고객 지원 담당자로서 응대해 주십시오. 고객들이 계정에 로그인할 수 없으며 '잘못된 자격 증명(invalid credentials)' 이라는 오류 메시지가 표시된다고 보고했습니다. 등록된 이메일 주소를 확인하고 비밀번호 재설정 절차를 안내해 주십시오.",
     "en": "<span class=\"c\"># Prompt · 112 tokens</span>\nPlease respond as a customer support\nrepresentative. Customers have reported\nthat they cannot log in to their accounts\nand see the error message\n'invalid credentials'.\nPlease verify the registered email\naddress and guide them through the\npassword reset process.",
     "ja": "<span class=\"c\"># Prompt · 112 tokens</span>\nカスタマーサポート担当者として対応してください。\n顧客がアカウントにログインできず、\n「認証情報が正しくありません（invalid credentials）」\nというエラーメッセージが表示されると\n報告しています。登録済みのメールアドレスを\n確認し、パスワードの再設定手順を案内して\nください。",
-    "zh-Hans": "<span class=\"c\">{\\fn方正粗倩简体\\fs12\\an8\\1cHFFFF00\\b0}112个纪念品</span>\n请作为客户支持回复\n代表。 客户报告\n他们不能入帐,\n查看错误消息\n\"无效证书\"。\n请检查注册邮件\n地址和引导他们通过\n密码重置进程。",
-    "zh-Hant": "<span class=\"c\">{\\fn方正粗倩簡體\\fs12\\an8\\1cHFFFF00\\b0}112個紀念品</span>\n請作為客戶支援回覆\n代表。 客戶報告\n他們不能入帳,\n檢視錯誤訊息\n\"無效證書\"。\n請檢查註冊郵件\n地址和引導他們透過\n密碼重置程序。"
+    "zh-Hans": "# Prompt · 112 tokens\n请以客户支持专员身份回复。\n客户报告无法登录，并看到错误消息\n\"无效凭证\"。\n请确认注册邮箱，并引导其完成密码重置流程。",
+    "zh-Hant": "# Prompt · 112 tokens\n請以客戶支援專員身分回覆。\n客戶回報無法登入，並看到錯誤訊息\n\"無效憑證\"。\n請確認註冊電子郵件，並引導其完成密碼重設流程。"
   },
   "u.c7984328c452": {
     "match": "# Compressed · 89 tokens 지원 봇 역할을 수행하세요. 사용자가 로그인하지 못하고 있으며, '잘못된 자격 증명' 오류가 발생하고 있습니다. 사용자에게 이메일 주소를 물어보고, 비밀번호 재설정 절차를 안내하세요.",
     "en": "<span class=\"c\"># Compressed · 89 tokens</span>\nAct as a support bot.\nUsers cannot log in and\nget an 'invalid credentials'\nerror. Ask for their email\naddress and guide them through\npassword reset.",
     "ja": "<span class=\"c\"># Compressed · 89 tokens</span>\nサポートボットとして振る舞ってください。\nユーザーがログインできず、\n「認証情報が無効」エラーが発生して\nいます。ユーザーにメールアドレスを\n尋ね、パスワードの再設定手順を\n案内してください。",
-    "zh-Hans": "<span class=\"c\">{\\fn方正粗倩简体\\fs12\\an8\\1cHFFFF00\\b0}压缩 89个纪念品</span>\n做个支持机器人\n用户无法登录并\n获得\"无效证书\"\n错误。 问他们的电子邮件\n地址和引导他们通过\n密码重置。",
-    "zh-Hant": "<span class=\"c\">{\\fn方正粗倩簡體\\fs12\\an8\\1cHFFFF00\\b0}壓縮 89個紀念品</span>\n做個支援機器人\n使用者無法登入並\n獲得\"無效證書\"\n錯誤。 問他們的電子郵件\n地址和引導他們透過\n密碼重置。"
+    "zh-Hans": "# Compressed · 89 tokens\n请扮演支持机器人。\n用户无法登录并收到\"无效凭证\"错误。\n询问其邮箱并引导密码重置。",
+    "zh-Hant": "# Compressed · 89 tokens\n請扮演支援機器人。\n使用者無法登入並收到\"無效憑證\"錯誤。\n詢問其電子郵件並引導密碼重設。"
   },
   "u.cbf6de292660": {
     "match": "제어/데이터 평면 분리 폐쇄망에서는 DP만 단독 배포, 페이로드는 외부로 나가지 않음",
@@ -423,8 +423,8 @@
     "match": "기존 방식도구 단위 권한, 백엔드 토큰 · 시크릿 보호, 입력 검증을 서버마다 개별 처리",
     "en": "<i>Traditional approach</i>Handle tool-level permissions, backend token · secret protection, and input validation separately on each server",
     "ja": "<i>従来の方式</i>ツール単位の権限、バックエンドのトークン · シークレット保護、入力検証をサーバーごとに個別処理",
-    "zh-Hans": "<i>传统做法</i>处理工具级权限, 后端符 . 秘密保护, 并在每个服务器上分别进行输入验证",
-    "zh-Hant": "<i>傳統做法</i>處理工具級許可權, 後端符 . 秘密保護, 並在每個伺服器上分別進行輸入驗證"
+    "zh-Hans": "<i>传统做法</i>处理工具级权限, 后端符. 秘密保护, 并在每个服务器上分别进行输入验证",
+    "zh-Hant": "<i>傳統做法</i>處理工具級許可權, 後端符. 秘密保護, 並在每個伺服器上分別進行輸入驗證"
   },
   "u.d77a05b931b2": {
     "match": "Kong MCP GatewayConsumer별 도구 ACL, 백엔드 자격증명 은닉, PII · 가드레일 정책을 일괄 적용",
@@ -444,8 +444,8 @@
     "match": "Kong MCP GatewayConsumer · 도구 단위 Rate Limit, 로드밸런싱, 서킷 브레이커로 부하를 게이트웨이에서 흡수",
     "en": "<i>Kong MCP Gateway</i>Absorb load at the gateway with per-Consumer · per-tool rate limits, load balancing, and circuit breakers",
     "ja": "<i>Kong MCP Gateway</i>Consumer · ツール単位のRate Limit、ロードバランシング、サーキットブレーカーで負荷をゲートウェイで吸収",
-    "zh-Hans": "<i>Kong MCP 网关</i>在网关加载每个消费者 .每工具速率限制、负载平衡和断路器",
-    "zh-Hant": "<i>Kong MCP 閘道</i>在閘道載入每個消費者 .每工具速率限制、負載平衡和斷路器"
+    "zh-Hans": "<i>Kong MCP 网关</i>在网关加载每个消费者.每工具速率限制、负载平衡和断路器",
+    "zh-Hant": "<i>Kong MCP 閘道</i>在閘道載入每個消費者.每工具速率限制、負載平衡和斷路器"
   },
   "u.feec89675b75": {
     "match": "기존 방식팀마다 임의로 띄운 MCP 서버의 주소 · 버전이 흩어지고, 사용 현황을 파악할 수 없음",
@@ -500,8 +500,8 @@
     "match": "3개 MCP · 개별 할당 3개 도구",
     "en": "<b>3</b> MCPs · <b>3</b> tools assigned individually",
     "ja": "<b>3</b>個のMCP · 個別割り当て<b>3</b>個のツール",
-    "zh-Hans": "<b>3个</b> {\\fn黑体\\fs22\\bord1\\shad0\\3aHBE\\4aH00\\fscx67\\fscy66\\2cHFFFFFF\\3cH808080}请检查date=中的日期值 (帮助) <b>3个</b> 个人指定的工具",
-    "zh-Hant": "<b>3個</b> {\\fn黑體\\fs22\\bord1\\shad0\\3aHBE\\4aH00\\fscx67\\fscy66\\2cHFFFFFF\\3cH808080}請檢查date=中的日期值 (幫助) <b>3個</b> 個人指定的工具"
+    "zh-Hans": "<b>3个</b> 请检查date=中的日期值 (帮助) <b>3个</b> 个人指定的工具",
+    "zh-Hant": "<b>3個</b> 請檢查date=中的日期值 (幫助) <b>3個</b> 個人指定的工具"
   },
   "u.801b83a9f506": {
     "match": "통제된 에이전트 협업",
@@ -668,8 +668,8 @@
     "match": "Kong을 선택해야 하는 네 가지 이유. ① 세 가지 프로토콜(LLM · MCP · A2A), 하나의 게이트웨이 ② 범위 기반 도구 필터링 + 토큰 인증 ③ 지능형 라우팅과 비용 관리 ④ 맞춤형 가드레일(Lakera, Noma, Pangea, NVIDIA NeMo)과 확장된 생태계(Databricks, DeepSeek, vLLM, Valkey 벡터 검색)",
     "en": "<b>Four reasons to choose Kong.</b> ① Three protocols (LLM · MCP · A2A), one gateway ② Scope-based tool filtering + token authentication ③ Intelligent routing and cost management ④ Custom guardrails (Lakera, Noma, Pangea, NVIDIA NeMo) and an expanded ecosystem (Databricks, DeepSeek, vLLM, Valkey vector search)",
     "ja": "<b>Kongを選ぶべき4つの理由。</b> ① 3つのプロトコル（LLM · MCP · A2A）を1つのゲートウェイで ② スコープベースのツールフィルタリング + トークン認証 ③ インテリジェントなルーティングとコスト管理 ④ カスタムガードレール（Lakera、Noma、Pangea、NVIDIA NeMo）と拡張されたエコシステム（Databricks、DeepSeek、vLLM、Valkeyベクトル検索）",
-    "zh-Hans": "<b>4个选择理由 Kong .</b> 1 3个协议( MCP Kong A2A),1个网关 2 基于范围的工具过滤 + 令牌认证 3 智能路由和成本管理 4 自定义护栏(Lakera, Noma, Pangea, NVIDIA NeMo) 和扩展的生态系统(Databricks, DeepSeek, v LLM ,Valkey矢量搜索)",
-    "zh-Hant": "<b>4個選擇理由 Kong .</b> 1 3個協議( MCP Kong A2A),1個閘道 2 基於範圍的工具過濾 + 令牌認證 3 智慧路由和成本管理 4 自定義護欄(Lakera, Noma, Pangea, NVIDIA NeMo) 和擴充套件的生態系統(Databricks, DeepSeek, v LLM ,Valkey向量搜尋)"
+    "zh-Hans": "<b>4个选择理由 Kong.</b> 1 3个协议( MCP Kong A2A),1个网关 2 基于范围的工具过滤 + 令牌认证 3 智能路由和成本管理 4 自定义护栏(Lakera, Noma, Pangea, NVIDIA NeMo) 和扩展的生态系统(Databricks, DeepSeek, v LLM ,Valkey矢量搜索)",
+    "zh-Hant": "<b>4個選擇理由 Kong.</b> 1 3個協議( MCP Kong A2A),1個閘道 2 基於範圍的工具過濾 + 令牌認證 3 智慧路由和成本管理 4 自定義護欄(Lakera, Noma, Pangea, NVIDIA NeMo) 和擴充套件的生態系統(Databricks, DeepSeek, v LLM ,Valkey向量搜尋)"
   },
   "u.47f2b19710a3": {
     "match": "핵심 원인단 하나 허용한 연결 경로가 뚫림",
@@ -969,8 +969,8 @@
     "match": "출처: Kong Docs · Storage options in Insomnia ↗ · Essentials 요금제는 Git Sync 사용 시 조직당 3명까지로 제한됩니다.",
     "en": "Source: <a href=\"https://developer.konghq.com/insomnia/storage/\" rel=\"noopener noreferrer\" target=\"_blank\">Kong Docs · Storage options in Insomnia ↗</a> · On the Essentials plan, Git Sync is limited to 3 users per organization.",
     "ja": "出典: <a href=\"https://developer.konghq.com/insomnia/storage/\" rel=\"noopener noreferrer\" target=\"_blank\">Kong Docs · Storage options in Insomnia ↗</a> · Essentialsプランでは、Git Sync利用時は組織あたり3名までに制限されます。",
-    "zh-Hans": "资料来源: <a href=\"https://developer.konghq.com/insomnia/storage/\" rel=\"noopener noreferrer\" target=\"_blank\">Insomnia (中文(简体) ). Docs ・ 存储选项在 Insomnia</a> 在基本计划方面,Git Sync仅限于每个组织3个用户。",
-    "zh-Hant": "資料來源: <a href=\"https://developer.konghq.com/insomnia/storage/\" rel=\"noopener noreferrer\" target=\"_blank\">Insomnia (中文(簡體) ). Docs ・ 儲存選項在 Insomnia</a> 在基本計劃方面,Git Sync僅限於每個組織3個使用者。"
+    "zh-Hans": "资料来源: <a href=\"https://developer.konghq.com/insomnia/storage/\" rel=\"noopener noreferrer\" target=\"_blank\">Insomnia Docs ・ 存储选项在 Insomnia</a> 在基本计划方面,Git Sync仅限于每个组织3个用户。",
+    "zh-Hant": "資料來源: <a href=\"https://developer.konghq.com/insomnia/storage/\" rel=\"noopener noreferrer\" target=\"_blank\">Insomnia Docs ・ 儲存選項在 Insomnia</a> 在基本計劃方面,Git Sync僅限於每個組織3個使用者。"
   },
   "u.211bca4ffc83": {
     "match": "Kong 인프라 구성",
@@ -1312,8 +1312,8 @@
     "match": "적용 범위—",
     "en": "<b>Scope</b>—",
     "ja": "<b>適用範囲</b>—",
-    "zh-Hans": "<b>范围</b>. . . . . . .",
-    "zh-Hant": "<b>範圍</b>. . . . . . ."
+    "zh-Hans": "<b>范围</b>.......",
+    "zh-Hant": "<b>範圍</b>......."
   },
   "u.c64358a943dd": {
     "match": "적용 범위클라우드 보안",

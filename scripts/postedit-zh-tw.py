@@ -22,6 +22,7 @@ SHORTS = ROOT / "src" / "i18n" / "shorts.json"
 
 # id → (zh-Hans, zh-Hant)
 FIX: dict[str, tuple[str, str]] = {
+    "m.620907568264": ("Kong 平台", "Kong 平臺"),
     "m.165244cfc40a": (
         "AI 流量的 Kong 切换方式",
         "AI 流量的 Kong 切換方式",
@@ -126,9 +127,23 @@ TW_REPLACE: list[tuple[str, str]] = [
 ]
 
 
+# Argos/MT sometimes injects locale labels or ASS subtitle tags — never keep these.
+MT_JUNK = [
+    re.compile(r"\s*\(中文\([^)]*\)\s*\)\.?"),
+    re.compile(r"\s*\(简体中文\)\.?"),
+    re.compile(r"\s*\(簡體中文\)\.?"),
+    re.compile(r"\s*\(中文\)\.?"),
+    re.compile(r"\s*\(英語:?[^)]*\)\.?"),
+    re.compile(r"\s*\(英语:?[^)]*\)\.?"),
+    re.compile(r"\{\\fn[^}]+\}"),
+]
+
+
 def clean_dashes(s: str) -> str:
     if not s:
         return s
+    for p in MT_JUNK:
+        s = p.sub("", s)
     s = s.replace(" —— ", " · ").replace("——", " · ")
     s = re.sub(r"^\s*—+\s*", "", s)
     s = re.sub(r"(?:\s*—\s*){2,}", " · ", s)
