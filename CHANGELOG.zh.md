@@ -13,6 +13,7 @@
 - AI Gateway > 代表性功能概览：为 PII Sanitizer · 令牌压缩补充 Docker Hub 镜像链接
 - AI Gateway > 竞品比较：将 AI DLP 对比并入 Endpoint AI Security 标签页 · 删除独立章节
 - AI Gateway > 竞品比较：将 API7 · IBM API Connect 合并为 Legacy APIM 标签页 · 先分产品介绍再统一对比表
+- AI Gateway > 竞品比较：将 FortiAIGate · Netskope · Portkey（Prisma AIRS）合并为 AI Runtime Security 标签页 · 先分产品介绍再统一对比表
 
 ---
 

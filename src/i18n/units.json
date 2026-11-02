@@ -1468,5 +1468,209 @@
     "en": "<i>Kong approach</i>Enforce · log MCP · API tool calls and destinations via an allowlist. Do not allow based on chain-of-thought alone",
     "ja": "<i>Kongのアプローチ</i>MCP · APIツール呼び出しと宛先を許可リストで強制 · 記録。推論（CoT）だけでは許可しない",
     "zh": "<i>Kong 办法</i>通过许可列表执行 ^ log {Kong}} API 工具调用和目的地。 仅凭思想链不允许"
+  },
+  "u.a3b784d9577a": {
+    "match": "범주 · AI Runtime Security. Fortinet · Netskope · Palo Alto(Portkey)는 보안 벤더가 앱↔LLM 경로에 두는 AI 런타임 보안·AI Gateway입니다. Kong은 플랫폼·AI 엔지니어링 팀이 운영하는 API+AI 연결·거버넌스 인프라입니다. 경쟁보다 보완 배치가 일반적이며, 아래는 기능 유무 비교입니다.",
+    "en": "<b>Category · AI Runtime Security.</b> Fortinet · Netskope · Palo Alto (Portkey) are AI runtime security / AI Gateway products that security vendors place on the app ↔ LLM path. Kong is API+AI connectivity and governance infrastructure run by platform · AI engineering teams. Complementary placement is common; the table below is a feature-support comparison.",
+    "ja": "<b>カテゴリ · AI Runtime Security。</b> Fortinet · Netskope · Palo Alto（Portkey）は、セキュリティベンダーがアプリ↔LLM経路に置くAIランタイムセキュリティ・AI Gatewayです。Kongはプラットフォーム・AIエンジニアリングチームが運用するAPI+AI接続・ガバナンス基盤です。競合より補完配置が一般的で、下表は機能サポート有無の比較です。",
+    "zh": "<b>类别 · AI Runtime Security。</b> Fortinet · Netskope · Palo Alto（Portkey）是安全厂商放在应用 ↔ LLM 路径上的 AI 运行时安全 / AI Gateway。Kong 是平台 · AI 工程团队运营的 API+AI 连接与治理基础设施。互补部署更常见；下表为功能支持对比。"
+  },
+  "u.9cd1e592d23d": {
+    "match": "FortiAIGate·Netskope는 AI Firewall/보안 검사 특화, Portkey는 Palo Alto Prisma AIRS AI Gateway(2026-05 인수·2026-07 GA)입니다. 매트릭스 일부는 문서·Kong 내부 경쟁 자료 기준이며 도입 전 최신 공식 문서를 확인하세요.",
+    "en": "FortiAIGate and Netskope specialize in AI Firewall / security inspection; Portkey is Palo Alto Prisma AIRS AI Gateway (acquisition closed 2026-05 · GA 2026-07). Some matrix cells follow documentation and Kong competitive materials—confirm against the latest official docs before adoption.",
+    "ja": "FortiAIGate・NetskopeはAI Firewall/セキュリティ検査特化、PortkeyはPalo Alto Prisma AIRS AI Gateway（2026-05買収完了・2026-07 GA）です。マトリクスの一部はドキュメント・Kong内部競合資料基準であり、導入前に最新の公式ドキュメントを確認してください。",
+    "zh": "FortiAIGate 与 Netskope 侧重 AI Firewall/安全检查；Portkey 为 Palo Alto Prisma AIRS AI Gateway（2026-05 收购完成 · 2026-07 GA）。部分矩阵单元依据文档与 Kong 竞争材料—采购前请核对最新官方文档。"
+  },
+  "u.ee39a6a2ed45": {
+    "match": "네트워크 보안 벤더 Fortinet의 AI 런타임 보안(AI Firewall) 제품입니다. 앱↔모델 사이에 두는 시큐어 프록시로, 양방향 DLP·위협 방어·GPU/SmartNIC 하드웨어 가속이 강점입니다. API 라이프사이클·MCP 서빙·수익화보다는 런타임 보안 검사에 초점을 둡니다.",
+    "en": "Fortinet’s AI runtime security (AI Firewall) product. A secure proxy between apps ↔ models, strong in bidirectional DLP · threat defense · GPU/SmartNIC acceleration. Focused on runtime security inspection rather than API lifecycle · MCP serving · monetization.",
+    "ja": "ネットワークセキュリティベンダーFortinetのAIランタイムセキュリティ（AI Firewall）製品です。アプリ↔モデル間のセキュアプロキシで、双方向DLP・脅威防御・GPU/SmartNICハードウェア加速が強みです。APIライフサイクル・MCPサービング・収益化よりランタイムセキュリティ検査に焦点を当てます。",
+    "zh": "网络安厂商 Fortinet 的 AI 运行时安全（AI Firewall）产品。置于应用 ↔ 模型之间的安全代理，擅长双向 DLP · 威胁防护 · GPU/SmartNIC 硬件加速。侧重运行时安全检查，而非 API 生命周期 · MCP 服务 · 变现。"
+  },
+  "u.76e69d6cdd16": {
+    "match": "AI Firewall · 하드웨어 가속 시큐어 프록시",
+    "en": "AI Firewall · hardware-accelerated secure proxy",
+    "ja": "AI Firewall · ハードウェア加速セキュアプロキシ",
+    "zh": "AI Firewall · 硬件加速安全代理"
+  },
+  "u.39fbc956f650": {
+    "match": "FortiAIGate 컨텍스트 인식 양방향 DLP, 모델 추출·과다소비 억제, OWASP 가시성, Multi-GPU/SmartNIC 가속.",
+    "en": "<b>FortiAIGate</b> Context-aware bidirectional DLP, model-extraction · overconsumption controls, OWASP visibility, Multi-GPU/SmartNIC acceleration.",
+    "ja": "<b>FortiAIGate</b> コンテキスト認識双方向DLP、モデル抽出・過消費抑制、OWASP可視性、Multi-GPU/SmartNIC加速。",
+    "zh": "<b>FortiAIGate</b> 上下文感知双向 DLP、模型窃取 · 过度消耗抑制、OWASP 可见性、Multi-GPU/SmartNIC 加速。"
+  },
+  "u.75f09c808a38": {
+    "match": "Kong 동일 경로에서 PII·가드레일·인증·토큰 한도·라우팅을 API·MCP·Event와 함께 집행.",
+    "en": "<b>Kong</b> Enforces PII · guardrails · auth · token limits · routing on the same path with API · MCP · Event.",
+    "ja": "<b>Kong</b> 同一経路でPII・ガードレール・認証・トークン上限・ルーティングをAPI・MCP・Eventと共に執行。",
+    "zh": "<b>Kong</b> 在同一路径上与 API · MCP · Event 一并执行 PII · 护栏 · 认证 · 令牌限额 · 路由。"
+  },
+  "u.e8eb801cdec3": {
+    "match": "FortiAIGate 시맨틱 라우팅·프롬프트 압축·MCP 서빙·개발자 포털·미터링은 약하거나 없음.",
+    "en": "<b>FortiAIGate</b> Weak or absent semantic routing · prompt compression · MCP serving · developer portal · metering.",
+    "ja": "<b>FortiAIGate</b> セマンティックルーティング・プロンプト圧縮・MCPサービング・開発者ポータル・メータリングは弱い/なし。",
+    "zh": "<b>FortiAIGate</b> 语义路由 · 提示压缩 · MCP 服务 · 开发者门户 · 计量较弱或缺失。"
+  },
+  "u.fb27b2497acf": {
+    "match": "Kong AI Connectivity 플랫폼으로 연결·거버넌스·운영 자동화에 강점.",
+    "en": "<b>Kong</b> Strong as an AI Connectivity platform for connectivity · governance · ops automation.",
+    "ja": "<b>Kong</b> AI Connectivityプラットフォームとして接続・ガバナンス・運用自動化に強み。",
+    "zh": "<b>Kong</b> 作为 AI Connectivity 平台，擅长连接 · 治理 · 运维自动化。"
+  },
+  "u.24fa01026ee2": {
+    "match": "함께 Forti는 위협 검사·하드웨어 경로, Kong은 프로덕션 연결·정책 집행·관측.",
+    "en": "<b>Together</b> Forti for threat inspection · hardware path; Kong for production connectivity · policy enforcement · observability.",
+    "ja": "<b>併用</b> Fortiは脅威検査・ハードウェア経路、Kongは本番接続・ポリシー執行・観測。",
+    "zh": "<b>并用</b> Forti 负责威胁检查 · 硬件路径；Kong 负责生产连接 · 策略执行 · 可观测。"
+  },
+  "u.e940bc77b119": {
+    "match": "출처: fortinet.com/products/fortiaigate · Kong 경쟁 비교 매트릭스(2026.09).",
+    "en": "Sources: fortinet.com/products/fortiaigate · Kong competitive matrix (2026.09).",
+    "ja": "出典: fortinet.com/products/fortiaigate · Kong競合比較マトリクス（2026.09）。",
+    "zh": "来源：fortinet.com/products/fortiaigate · Kong 竞争对比矩阵（2026.09）。"
+  },
+  "u.1455e12d1ac3": {
+    "match": "SSE/클라우드 보안 벤더 Netskope의 AI Gateway입니다. 보안 조직이 앱↔LLM 트래픽을 검사·통제하는 보안 컨트롤 포인트 성격이며, MITRE ATLAS·OWASP 매핑 가드레일·레드팀·컨텍스트 DLP가 강점입니다. 2026년 3월 GA.",
+    "en": "Netskope’s AI Gateway from an SSE/cloud security vendor. A security control point where security teams inspect · control app ↔ LLM traffic; strong in MITRE ATLAS · OWASP-mapped guardrails · red team · contextual DLP. GA March 2026.",
+    "ja": "SSE/クラウドセキュリティベンダーNetskopeのAI Gatewayです。セキュリティ組織がアプリ↔LLMトラフィックを検査・統制するセキュリティコントロールポイントで、MITRE ATLAS・OWASPマッピングのガードレール・レッドチーム・コンテキストDLPが強みです。2026年3月GA。",
+    "zh": "SSE/云安全厂商 Netskope 的 AI Gateway。由安全团队检查 · 管控应用 ↔ LLM 流量的安全控制点；擅长 MITRE ATLAS · OWASP 映射护栏 · 红队 · 上下文 DLP。2026 年 3 月 GA。"
+  },
+  "u.37dc3b928522": {
+    "match": "SSE 보안 조직용 AI 트래픽 검사 계층",
+    "en": "AI traffic inspection layer for SSE security teams",
+    "ja": "SSEセキュリティ組織向けAIトラフィック検査レイヤー",
+    "zh": "面向 SSE 安全团队的 AI 流量检查层"
+  },
+  "u.a8200e04e03c": {
+    "match": "Netskope 네이티브 가드레일·위협 방어·레드팀·에이전트별 토큰·프라이빗 모델 보안 프록시.",
+    "en": "<b>Netskope</b> Native guardrails · threat defense · red team · per-agent tokens · private-model security proxy.",
+    "ja": "<b>Netskope</b> ネイティブガードレール・脅威防御・レッドチーム・エージェント別トークン・プライベートモデルセキュリティプロキシ。",
+    "zh": "<b>Netskope</b> 原生护栏 · 威胁防护 · 红队 · 每智能体令牌 · 私有模型安全代理。"
+  },
+  "u.30417ae2cb65": {
+    "match": "Kong 15+ 프로바이더 라우팅, 시맨틱 캐시, MCP/A2A, IaC, 완전 자체호스팅.",
+    "en": "<b>Kong</b> 15+ provider routing, semantic cache, MCP/A2A, IaC, full self-hosting.",
+    "ja": "<b>Kong</b> 15+プロバイダルーティング、セマンティックキャッシュ、MCP/A2A、IaC、完全セルフホスト。",
+    "zh": "<b>Kong</b> 15+ 提供商路由、语义缓存、MCP/A2A、IaC、完全自托管。"
+  },
+  "u.878f9846faf5": {
+    "match": "Netskope 네이티브 프로바이더 3개 중심, 시맨틱 캐시·압축·RAG·MCP 서빙·K8s 네이티브 약함(VM 어플라이언스).",
+    "en": "<b>Netskope</b> ~3 native providers; weak semantic cache · compression · RAG · MCP serving · K8s-native (VM appliance).",
+    "ja": "<b>Netskope</b> ネイティブプロバイダ約3中心。セマンティックキャッシュ・圧縮・RAG・MCPサービング・K8sネイティブは弱い（VMアプライアンス）。",
+    "zh": "<b>Netskope</b> 约 3 个原生提供商；语义缓存 · 压缩 · RAG · MCP 服务 · K8s 原生较弱（VM 设备）。"
+  },
+  "u.ddc697e52dba": {
+    "match": "함께 Netskope는 위험 판단(탐지·분류·정책), Kong은 프로덕션 연결·집행.",
+    "en": "<b>Together</b> Netskope for risk judgment (detect · classify · policy); Kong for production connectivity · enforcement.",
+    "ja": "<b>併用</b> Netskopeはリスク判断（検知・分類・ポリシー）、Kongは本番接続・執行。",
+    "zh": "<b>并用</b> Netskope 负责风险判断（检测 · 分类 · 策略）；Kong 负责生产连接 · 执行。"
+  },
+  "u.787d72eaaf12": {
+    "match": "출처: Netskope Competitive Pack(2026-07) · netskope.com · 비교 매트릭스(2026.09).",
+    "en": "Sources: Netskope Competitive Pack (2026-07) · netskope.com · comparison matrix (2026.09).",
+    "ja": "出典: Netskope Competitive Pack（2026-07）· netskope.com · 比較マトリクス（2026.09）。",
+    "zh": "来源：Netskope Competitive Pack（2026-07）· netskope.com · 对比矩阵（2026.09）。"
+  },
+  "u.4b49dbc14889": {
+    "match": "Portkey는 원래 Pure AI Gateway(멀티 LLM 라우팅·캐시·거버넌스)였고, 2026년 5월 29일 Palo Alto Networks 인수가 완료되어 Prisma AIRS의 코어 AI Gateway가 되었습니다. 보안 플랫폼 위에 AI Gateway 컨트롤 플레인을 올린 형태입니다. 2026년 7월 Prisma AIRS AI Gateway GA.",
+    "en": "Portkey began as a Pure AI Gateway (multi-LLM routing · cache · governance). Palo Alto Networks closed the acquisition on 2026-05-29 and made it the core AI Gateway of Prisma AIRS—an AI Gateway control plane on a security platform. Prisma AIRS AI Gateway GA July 2026.",
+    "ja": "Portkeyは元来Pure AI Gateway（マルチLLMルーティング・キャッシュ・ガバナンス）で、2026年5月29日にPalo Alto Networksの買収が完了しPrisma AIRSのコアAI Gatewayとなりました。セキュリティプラットフォーム上にAI Gatewayコントロールプレーンを載せた形です。2026年7月Prisma AIRS AI Gateway GA。",
+    "zh": "Portkey 起初是 Pure AI Gateway（多 LLM 路由 · 缓存 · 治理）。Palo Alto Networks 于 2026-05-29 完成收购，使其成为 Prisma AIRS 的核心 AI Gateway——安全平台之上的 AI Gateway 控制面。2026 年 7 月 Prisma AIRS AI Gateway GA。"
+  },
+  "u.858596beebcf": {
+    "match": "보안 벤더가 인수한 AI Gateway 컨트롤 플레인",
+    "en": "AI Gateway control plane acquired by a security vendor",
+    "ja": "セキュリティベンダーが買収したAI Gatewayコントロールプレーン",
+    "zh": "被安全厂商收购的 AI Gateway 控制面"
+  },
+  "u.536c4a5d755c": {
+    "match": "Portkey / Prisma AIRS LLM·MCP·A2A 경로의 통합 게이트웨이 + Prisma AIRS 런타임 보안·에이전트 신원(Idira)·관측 연동.",
+    "en": "<b>Portkey / Prisma AIRS</b> Unified gateway for LLM · MCP · A2A paths + Prisma AIRS runtime security · agent identity (Idira) · observability integration.",
+    "ja": "<b>Portkey / Prisma AIRS</b> LLM・MCP・A2A経路の統合ゲートウェイ + Prisma AIRSランタイムセキュリティ・エージェント身元（Idira）・観測連携。",
+    "zh": "<b>Portkey / Prisma AIRS</b> LLM · MCP · A2A 路径的统一网关 + Prisma AIRS 运行时安全 · 智能体身份（Idira）· 可观测集成。"
+  },
+  "u.dcba56b493dc": {
+    "match": "Kong API·AI·MCP·Event를 단일 자체/하이브리드 플랫폼으로 운영. 보안 벤더 스택에 종속되지 않음.",
+    "en": "<b>Kong</b> Runs API · AI · MCP · Event on one self-managed/hybrid platform. Not tied to a security-vendor stack.",
+    "ja": "<b>Kong</b> API・AI・MCP・Eventを単一のセルフ/ハイブリッドプラットフォームで運用。セキュリティベンダースタックに非依存。",
+    "zh": "<b>Kong</b> 在单一自管/混合平台上运营 API · AI · MCP · Event。不绑定安全厂商技术栈。"
+  },
+  "u.22f3949be97e": {
+    "match": "Portkey AI Gateway·에이전트 거버넌스에 강하나, 전통 API 포털·이벤트·완전 에어갭 CP는 Kong 대비 좁음.",
+    "en": "<b>Portkey</b> Strong in AI Gateway · agent governance, but narrower than Kong on classic API portals · events · fully air-gapped CP.",
+    "ja": "<b>Portkey</b> AI Gateway・エージェントガバナンスに強いが、従来APIポータル・イベント・完全エアギャップCPはKong比で狭い。",
+    "zh": "<b>Portkey</b> 擅长 AI Gateway · 智能体治理，但在传统 API 门户 · 事件 · 完全气隙控制面上窄于 Kong。"
+  },
+  "u.3ff8df7d0b42": {
+    "match": "Kong 선언적 GitOps(decK·Terraform)·멀티리전·에어갭 Enterprise가 강점.",
+    "en": "<b>Kong</b> Strong declarative GitOps (decK · Terraform) · multi-region · air-gapped Enterprise.",
+    "ja": "<b>Kong</b> 宣言的GitOps（decK・Terraform）・マルチリージョン・エアギャップEnterpriseが強み。",
+    "zh": "<b>Kong</b> 擅长声明式 GitOps（decK · Terraform）· 多区域 · 气隙 Enterprise。"
+  },
+  "u.ffcb297f693e": {
+    "match": "동향 Palo Alto는 Portkey를 인수했고, CrowdStrike는 Falcon Guardian용 AI Gateway를 구축 중입니다. 보안 벤더의 AI Gateway 진입이 가속됩니다.",
+    "en": "<b>Trend</b> Palo Alto acquired Portkey; CrowdStrike is building an AI Gateway for Falcon Guardian. Security-vendor entry into AI Gateway is accelerating.",
+    "ja": "<b>動向</b> Palo AltoはPortkeyを買収し、CrowdStrikeはFalcon Guardian向けAI Gatewayを構築中です。セキュリティベンダーのAI Gateway参入が加速しています。",
+    "zh": "<b>趋势</b> Palo Alto 收购了 Portkey；CrowdStrike 正为 Falcon Guardian 构建 AI Gateway。安全厂商进入 AI Gateway 正在加速。"
+  },
+  "u.f293d0b66595": {
+    "match": "출처: Palo Alto 인수 완료(2026-05-29) · Prisma AIRS AI Gateway GA(2026-07) · Kong 비교 매트릭스 Portkey 열(2026.09).",
+    "en": "Sources: Palo Alto acquisition close (2026-05-29) · Prisma AIRS AI Gateway GA (2026-07) · Kong comparison matrix Portkey column (2026.09).",
+    "ja": "出典: Palo Alto買収完了（2026-05-29）· Prisma AIRS AI Gateway GA（2026-07）· Kong比較マトリクス Portkey列（2026.09）。",
+    "zh": "来源：Palo Alto 收购完成（2026-05-29）· Prisma AIRS AI Gateway GA（2026-07）· Kong 对比矩阵 Portkey 列（2026.09）。"
+  },
+  "u.c7f461eb0012": {
+    "match": "엔터프라이즈 관점 요약",
+    "en": "Enterprise summary",
+    "ja": "エンタープライズ観点の要約",
+    "zh": "企业视角摘要"
+  },
+  "u.5e56dd2279a4": {
+    "match": "런타임 보안",
+    "en": "Runtime security",
+    "ja": "ランタイムセキュリティ",
+    "zh": "运行时安全"
+  },
+  "u.622183270dbd": {
+    "match": "플랫폼 깊이",
+    "en": "Platform depth",
+    "ja": "プラットフォーム深度",
+    "zh": "平台深度"
+  },
+  "u.56aaa125563d": {
+    "match": "보완",
+    "en": "Complementary",
+    "ja": "補完",
+    "zh": "互补"
+  },
+  "u.770b37b5edfe": {
+    "match": "탐지·정책",
+    "en": "Detect · policy",
+    "ja": "検知・ポリシー",
+    "zh": "检测 · 策略"
+  },
+  "u.c01ef107776b": {
+    "match": "AI GW 깊이",
+    "en": "AI GW depth",
+    "ja": "AI GW深度",
+    "zh": "AI GW 深度"
+  },
+  "u.1ac521b02630": {
+    "match": "인수 · 통합",
+    "en": "Acquisition · integration",
+    "ja": "買収 · 統合",
+    "zh": "收购 · 整合"
+  },
+  "u.45da68aac08e": {
+    "match": "플랫폼 범위",
+    "en": "Platform scope",
+    "ja": "プラットフォーム範囲",
+    "zh": "平台范围"
+  },
+  "u.b46fa208d9de": {
+    "match": "시장",
+    "en": "Market",
+    "ja": "市場",
+    "zh": "市场"
   }
 }
