@@ -1,7 +1,9 @@
 /* i18n engine — D, HG, LANGS, IX injected by build (compact runtime from stable-key catalogs) */
 const INL=new Set(['B','STRONG','EM','I','A','BR','CODE','U','SMALL','SUP','SUB','SPAN','MARK','S']);
+const LANG_ALIAS={zh:'zh-Hans','zh-CN':'zh-Hans','zh-SG':'zh-Hans','zh-TW':'zh-Hant','zh-HK':'zh-Hant','zh-MO':'zh-Hant'};
 let L='ko';
 try{ const q=new URLSearchParams(location.search).get('lang'); L=q||localStorage.getItem('kong-lang')||'ko'; }catch(e){}
+if(LANG_ALIAS[L]) L=LANG_ALIAS[L];
 if(LANGS.indexOf(L)<0) L='ko';
 const oT=new Map(), oH=new Map(), oA=new Map(), oI18n=new Map();
 const norm=s=>s.replace(/\s+/g,' ').trim();
@@ -120,7 +122,7 @@ function fitNav(){
   mo.takeRecords(); muted=false;
 }
 /* ---- 언어 드롭다운 ---- */
-const LANG_LAB={ko:'KR - 한국어',en:'EN - English',ja:'JA - 日本語',zh:'ZH - 简体中文'};
+const LANG_LAB={ko:'KR - 한국어',en:'EN - English',ja:'JA - 日本語','zh-Hant':'ZH - 繁體中文','zh-Hans':'ZH - 简体中文'};
 const LSW_ICO='<i class="lsw-ico" aria-hidden="true"></i>';
 const LSW_CHEV='<svg class="lsw-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg>';
 function closeLsw(root){ if(!root) return; root.classList.remove('open'); const b=root.querySelector('.lsw-btn'); if(b) b.setAttribute('aria-expanded','false'); }
@@ -158,7 +160,7 @@ function setLang(l){
   fitNav(); if(l!=='ko') reobserve(); geoLocal(); if(typeof window.rebuildAudience==='function') window.rebuildAudience(); else if(typeof setupSpy==='function') setupSpy();
 }
 /* en: no regional callout — SF HQ marker/label only */
-const GEO={ko:{lon:126.98,lat:37.57,t:'대한민국 · Seoul',w:146,c:''},ja:{lon:139.69,lat:35.69,t:'日本 · Tokyo',w:124,c:'Tokyo'},zh:{lon:116.41,lat:39.90,t:'中国 · Beijing',w:140,c:'Beijing'},en:null};
+const GEO={ko:{lon:126.98,lat:37.57,t:'대한민국 · Seoul',w:146,c:''},ja:{lon:139.69,lat:35.69,t:'日本 · Tokyo',w:124,c:'Tokyo'},'zh-Hans':{lon:116.41,lat:39.90,t:'中国 · Beijing',w:140,c:'Beijing'},'zh-Hant':{lon:121.57,lat:25.04,t:'台灣 · Taipei',w:140,c:''},en:null};
 function geoLocal(){
   const g=GEO[L]||null; window.KONG_GEO_HL=g; muted=true;
   if(window.drawGeo) window.drawGeo();

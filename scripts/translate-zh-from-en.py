@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-EN → Simplified Chinese (zh) via Argos Translate.
+EN → Simplified Chinese (zh-Hans) via Argos Translate. Regenerate zh-Hant (s2twp) afterward.
 
 Strategy:
 - Translate plain text only; keep HTML tags / ${vars} out of the MT input
@@ -17,7 +17,7 @@ import argostranslate.translate
 
 ROOT = Path(__file__).resolve().parents[1]
 MSG = ROOT / "src" / "i18n" / "messages"
-CACHE = ROOT / "src" / "i18n" / ".zh-cache.json"
+CACHE = ROOT / "src" / "i18n" / ".zh-Hans-cache.json"
 UNITS = ROOT / "src" / "i18n" / "units.json"
 SHORTS = ROOT / "src" / "i18n" / "shorts.json"
 
@@ -277,7 +277,7 @@ def main() -> None:
     zh_msg.update(chrome)
 
     for u in units.values():
-        u["zh"] = restore(str(u["en"]), cache[str(u["en"])])
+        u["zh-Hans"] = restore(str(u["en"]), cache[str(u["en"])])
 
     force_short = {
         "About": "简介",
@@ -291,16 +291,16 @@ def main() -> None:
         "Overview": "概览",
     }
     for s in shorts.values():
-        s["zh"] = force_short.get(s["en"], restore(str(s["en"]), cache[str(s["en"])]))
+        s["zh-Hans"] = force_short.get(s["en"], restore(str(s["en"]), cache[str(s["en"])]))
 
-    (MSG / "zh.json").write_text(
+    (MSG / "zh-Hans.json").write_text(
         json.dumps(zh_msg, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     UNITS.write_text(json.dumps(units, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     SHORTS.write_text(json.dumps(shorts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     bad = sum(1 for v in zh_msg.values() if is_corrupt(v))
-    ubad = sum(1 for u in units.values() if is_corrupt(u["zh"]))
+    ubad = sum(1 for u in units.values() if is_corrupt(u["zh-Hans"]))
     print(f"done messages={len(zh_msg)} corrupt_msg={bad} corrupt_unit={ubad}")
 
 

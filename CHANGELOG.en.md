@@ -8,6 +8,7 @@
 ## 2026.11.02.6ae86a09
 ### Added
 - AI Gateway > Competitive comparison > Data Platform (Databricks, Snowflake)
+- Language: Traditional Chinese (`zh-Hant`, TW/HK phrasing) · rename Simplified to `zh-Hans` · Hant above Hans in the language dropdown
 
 ### Changed
 

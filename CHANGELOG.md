@@ -8,6 +8,7 @@
 ## 2026.11.02.6ae86a09
 ### 추가
 - AI Gateway > 경쟁 제품 비교 > Data Platform(Databricks, Snowflake)
+- 언어: 번체 중국어(`zh-Hant`, 대만/홍콩 표현) · 간체를 `zh-Hans`로 구분 · 드롭다운에서 번체를 간체 위에 표시
 
 ### 변경
 

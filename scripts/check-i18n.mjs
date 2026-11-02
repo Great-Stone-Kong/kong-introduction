@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Fail if Hangul in src/deck.html lacks a stable-key message/unit,
- * or if ko/en/ja/zh message key sets diverge.
+ * or if ko/en/ja/zh-Hant/zh-Hans message key sets diverge.
  */
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -25,7 +25,8 @@ const norm = (s) => String(s).replace(/\s+/g, " ").trim();
 const ko = JSON.parse(readFileSync(join(msgDir, "ko.json"), "utf8"));
 const en = JSON.parse(readFileSync(join(msgDir, "en.json"), "utf8"));
 const ja = JSON.parse(readFileSync(join(msgDir, "ja.json"), "utf8"));
-const zh = JSON.parse(readFileSync(join(msgDir, "zh.json"), "utf8"));
+const zhHant = JSON.parse(readFileSync(join(msgDir, "zh-Hant.json"), "utf8"));
+const zhHans = JSON.parse(readFileSync(join(msgDir, "zh-Hans.json"), "utf8"));
 const units = JSON.parse(readFileSync(join(i18nDir, "units.json"), "utf8"));
 const fragments = JSON.parse(readFileSync(join(i18nDir, "fragments.json"), "utf8"));
 const shorts = JSON.parse(readFileSync(join(i18nDir, "shorts.json"), "utf8"));
@@ -35,12 +36,14 @@ const errors = [];
 const koIds = new Set(Object.keys(ko));
 const enIds = new Set(Object.keys(en));
 const jaIds = new Set(Object.keys(ja));
-const zhIds = new Set(Object.keys(zh));
+const zhHantIds = new Set(Object.keys(zhHant));
+const zhHansIds = new Set(Object.keys(zhHans));
 
 for (const id of koIds) {
   if (!enIds.has(id)) errors.push(`ko-only message: ${id}`);
   if (!jaIds.has(id)) errors.push(`ko-only (missing ja): ${id}`);
-  if (!zhIds.has(id)) errors.push(`ko-only (missing zh): ${id}`);
+  if (!zhHantIds.has(id)) errors.push(`ko-only (missing zh-Hant): ${id}`);
+  if (!zhHansIds.has(id)) errors.push(`ko-only (missing zh-Hans): ${id}`);
   if (!String(ko[id] || "").trim()) errors.push(`empty ko: ${id}`);
 }
 for (const id of enIds) {
@@ -51,9 +54,13 @@ for (const id of jaIds) {
   if (!koIds.has(id)) errors.push(`ja-only message: ${id}`);
   if (!String(ja[id] || "").trim()) errors.push(`empty ja: ${id}`);
 }
-for (const id of zhIds) {
-  if (!koIds.has(id)) errors.push(`zh-only message: ${id}`);
-  if (!String(zh[id] || "").trim()) errors.push(`empty zh: ${id}`);
+for (const id of zhHantIds) {
+  if (!koIds.has(id)) errors.push(`zh-Hant-only message: ${id}`);
+  if (!String(zhHant[id] || "").trim()) errors.push(`empty zh-Hant: ${id}`);
+}
+for (const id of zhHansIds) {
+  if (!koIds.has(id)) errors.push(`zh-Hans-only message: ${id}`);
+  if (!String(zhHans[id] || "").trim()) errors.push(`empty zh-Hans: ${id}`);
 }
 
 const byKo = new Map();
@@ -62,7 +69,12 @@ for (const [id, text] of Object.entries(ko)) {
   if (byKo.has(n) && byKo.get(n) !== id) {
     const other = byKo.get(n);
     // Same KO source shared by multiple stable ids is OK when all locales match.
-    if (en[other] !== en[id] || ja[other] !== ja[id] || zh[other] !== zh[id]) {
+    if (
+      en[other] !== en[id] ||
+      ja[other] !== ja[id] ||
+      zhHant[other] !== zhHant[id] ||
+      zhHans[other] !== zhHans[id]
+    ) {
       errors.push(`duplicate KO text with divergent translations: ${JSON.stringify(n).slice(0, 80)}`);
     }
   }
@@ -71,7 +83,14 @@ for (const [id, text] of Object.entries(ko)) {
 
 const unitMatch = new Set();
 for (const [id, u] of Object.entries(units)) {
-  if (!u || u.match == null || u.en == null || u.ja == null || u.zh == null) {
+  if (
+    !u ||
+    u.match == null ||
+    u.en == null ||
+    u.ja == null ||
+    u["zh-Hant"] == null ||
+    u["zh-Hans"] == null
+  ) {
     errors.push(`incomplete unit ${id}`);
     continue;
   }
@@ -83,7 +102,15 @@ for (const id of fragments) {
 }
 
 for (const [id, s] of Object.entries(shorts)) {
-  if (!s || s.match == null || s.ko == null || s.en == null || s.ja == null || s.zh == null) {
+  if (
+    !s ||
+    s.match == null ||
+    s.ko == null ||
+    s.en == null ||
+    s.ja == null ||
+    s["zh-Hant"] == null ||
+    s["zh-Hans"] == null
+  ) {
     errors.push(`incomplete short ${id}`);
   }
 }
@@ -183,5 +210,5 @@ if (errors.length) {
   process.exit(1);
 }
 console.log(
-  `check-i18n: OK (messages=${koIds.size}, zh=${zhIds.size}, units=${Object.keys(units).length}, fragments=${fragments.length}, shorts=${Object.keys(shorts).length}, scanned=${found.size})`
+  `check-i18n: OK (messages=${koIds.size}, zh-Hant=${zhHantIds.size}, zh-Hans=${zhHansIds.size}, units=${Object.keys(units).length}, fragments=${fragments.length}, shorts=${Object.keys(shorts).length}, scanned=${found.size})`
 );

@@ -8,6 +8,7 @@
 ## 2026.11.02.6ae86a09
 ### 追加
 - AI Gateway > 競合比較 > Data Platform（Databricks, Snowflake）
+- 言語: 繁体字中国語（`zh-Hant`、台湾/香港表現）· 簡体を `zh-Hans` に区分 · ドロップダウンで繁体を簡体の上に表示
 
 ### 変更
 

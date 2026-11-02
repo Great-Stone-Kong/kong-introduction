@@ -4,62 +4,71 @@
     "ko": "기업 소개",
     "en": "About",
     "ja": "会社紹介",
-    "zh": "简介"
+    "zh-Hans": "简介",
+    "zh-Hant": "簡介"
   },
   "s.40691c21b457": {
     "match": "Gateway란?",
     "ko": "Gateway란?",
     "en": "Gateway 101",
     "ja": "Gatewayとは",
-    "zh": "Gateway 入门"
+    "zh-Hans": "Gateway 入门",
+    "zh-Hant": "Gateway 入門"
   },
   "s.74974ca396aa": {
     "match": "API Gateway",
     "ko": "API GW",
     "en": "API GW",
     "ja": "API GW",
-    "zh": "API GW"
+    "zh-Hans": "API GW",
+    "zh-Hant": "API GW"
   },
   "s.47219de2f95b": {
     "match": "AI Gateway",
     "ko": "AI GW",
     "en": "AI GW",
     "ja": "AI GW",
-    "zh": "AI GW"
+    "zh-Hans": "AI GW",
+    "zh-Hant": "AI GW"
   },
   "s.9dcefd14ed11": {
     "match": "Insomnia",
     "ko": "Insomnia",
     "en": "Insomnia",
     "ja": "Insomnia",
-    "zh": "Insomnia"
+    "zh-Hans": "Insomnia",
+    "zh-Hant": "Insomnia"
   },
   "s.274c409b4425": {
     "match": "인프라 구성",
     "ko": "인프라",
     "en": "Infra",
     "ja": "インフラ",
-    "zh": "基础设施"
+    "zh-Hans": "基础设施",
+    "zh-Hant": "基礎設施"
   },
   "s.991d26517c51": {
     "match": "보안 및 규제 매핑",
     "ko": "보안·규제",
     "en": "Security",
     "ja": "セキュリティ",
-    "zh": "安全合规"
+    "zh-Hans": "安全合规",
+    "zh-Hant": "安全合規"
   },
   "s.1e9dcde5e734": {
     "match": "라이선스 모델",
     "ko": "라이선스",
     "en": "Licensing",
     "ja": "ライセンス",
-    "zh": "许可"
+    "zh-Hans": "许可",
+    "zh-Hant": "許可"
   },
   "s.c83d2ea87535": {
     "match": "Gateway 개요",
     "ko": "개요",
     "en": "Overview",
     "ja": "概要",
-    "zh": "概览"
+    "zh-Hans": "概览",
+    "zh-Hant": "概覽"
   }
 }

@@ -3,8 +3,11 @@
  * Build kong-introduction.html from src/deck.html + stable-key i18n catalogs + engine.
  *
  * Source catalogs use stable ids; the embedded runtime blob stays compact:
- *   T[ko] = [en, ja, zh], U[koMatch] = [enHtml, jaHtml, zhHtml], F = [ko, …],
- *   S[navKo] = [ko,en,ja,zh], plus sparse I (stable id → ko) for deck-referenced ids.
+ *   T[ko] = [en, ja, zh-Hant, zh-Hans],
+ *   U[koMatch] = [enHtml, jaHtml, zh-HantHtml, zh-HansHtml],
+ *   F = [ko, …],
+ *   S[navKo] = [ko, en, ja, zh-Hant, zh-Hans],
+ *   plus sparse I (stable id → ko) for deck-referenced ids.
  *
  * Always reads VERSION (never mints, never edits Changelog).
  */
@@ -21,7 +24,8 @@ const versionPath = join(root, "VERSION");
 const ko = JSON.parse(readFileSync(join(msgDir, "ko.json"), "utf8"));
 const en = JSON.parse(readFileSync(join(msgDir, "en.json"), "utf8"));
 const ja = JSON.parse(readFileSync(join(msgDir, "ja.json"), "utf8"));
-const zh = JSON.parse(readFileSync(join(msgDir, "zh.json"), "utf8"));
+const zhHant = JSON.parse(readFileSync(join(msgDir, "zh-Hant.json"), "utf8"));
+const zhHans = JSON.parse(readFileSync(join(msgDir, "zh-Hans.json"), "utf8"));
 const units = JSON.parse(readFileSync(join(i18nDir, "units.json"), "utf8"));
 const fragments = JSON.parse(readFileSync(join(i18nDir, "fragments.json"), "utf8"));
 const shorts = JSON.parse(readFileSync(join(i18nDir, "shorts.json"), "utf8"));
@@ -59,32 +63,45 @@ const ids = new Set([
   ...Object.keys(ko),
   ...Object.keys(en),
   ...Object.keys(ja),
-  ...Object.keys(zh),
+  ...Object.keys(zhHant),
+  ...Object.keys(zhHans),
 ]);
 const T = {};
 for (const id of ids) {
   const k = ko[id];
   const e = en[id];
   const j = ja[id];
-  const z = zh[id];
-  if (k == null || e == null || j == null || z == null) {
+  const zt = zhHant[id];
+  const zs = zhHans[id];
+  if (k == null || e == null || j == null || zt == null || zs == null) {
     console.error(`build: incomplete message ${id}`);
     process.exit(1);
   }
-  if (T[k] && (T[k][0] !== e || T[k][1] !== j || T[k][2] !== z)) {
-    console.error(`build: duplicate KO key with different translations: ${JSON.stringify(k).slice(0, 80)}`);
+  if (
+    T[k] &&
+    (T[k][0] !== e || T[k][1] !== j || T[k][2] !== zt || T[k][3] !== zs)
+  ) {
+    console.error(
+      `build: duplicate KO key with different translations: ${JSON.stringify(k).slice(0, 80)}`
+    );
     process.exit(1);
   }
-  T[k] = [e, j, z];
+  T[k] = [e, j, zt, zs];
 }
 
 const U = {};
 for (const [id, u] of Object.entries(units)) {
-  if (u.match == null || u.en == null || u.ja == null || u.zh == null) {
+  if (
+    u.match == null ||
+    u.en == null ||
+    u.ja == null ||
+    u["zh-Hant"] == null ||
+    u["zh-Hans"] == null
+  ) {
     console.error(`build: incomplete unit ${id}`);
     process.exit(1);
   }
-  U[u.match] = [u.en, u.ja, u.zh];
+  U[u.match] = [u.en, u.ja, u["zh-Hant"], u["zh-Hans"]];
 }
 
 const F = [];
@@ -100,11 +117,18 @@ F.sort((a, b) => b.length - a.length);
 
 const S = {};
 for (const [, s] of Object.entries(shorts)) {
-  if (s.match == null || s.ko == null || s.en == null || s.ja == null || s.zh == null) {
+  if (
+    s.match == null ||
+    s.ko == null ||
+    s.en == null ||
+    s.ja == null ||
+    s["zh-Hant"] == null ||
+    s["zh-Hans"] == null
+  ) {
     console.error(`build: incomplete short`);
     process.exit(1);
   }
-  S[s.match] = [s.ko, s.en, s.ja, s.zh];
+  S[s.match] = [s.ko, s.en, s.ja, s["zh-Hant"], s["zh-Hans"]];
 }
 
 /* Sparse id → KO map for data-i18n / KONG_I18N.t(stableId) only */
@@ -123,7 +147,7 @@ let blob = JSON.stringify(D);
 blob = blob.replace(/</g, "\\u003c").replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029");
 
 const bundle =
-  `<script id="i18n-js">\n(function(){\nconst D=${blob}, HG=/[가-힣]/, LANGS=['ko','en','ja','zh'], IX={en:0,ja:1,zh:2};\n` +
+  `<script id="i18n-js">\n(function(){\nconst D=${blob}, HG=/[가-힣]/, LANGS=['ko','en','ja','zh-Hant','zh-Hans'], IX={en:0,ja:1,'zh-Hant':2,'zh-Hans':3};\n` +
   engine.replace(/^\/\* i18n engine[^\n]*\n/, "") +
   `</script>`;
 

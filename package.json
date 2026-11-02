@@ -7,6 +7,7 @@
     "check-i18n": "node scripts/check-i18n.mjs",
     "verify-i18n": "node scripts/verify-i18n-refactor.mjs",
     "migrate-i18n-keys": "node scripts/migrate-i18n-keys.mjs",
-    "translate-zh": "python3 scripts/translate-zh-from-en.py"
+    "translate-zh": "python3 scripts/translate-zh-from-en.py",
+    "regen-zh-hant": "python3 scripts/regen-zh-hant.py"
   }
 }

@@ -13,7 +13,7 @@
 Kong(The AI Connectivity Company) 소개 자료를 **단일 HTML 파일**로 만든다. 오프라인에서도 열리도록 CSS·JS·이미지는 HTML 안에 둔다.
 
 - 상단 메뉴(페이지) → 좌측 메뉴(섹션) 구조. 좌측 메뉴는 `.sec[data-title]`에서 자동 생성된다.
-- 언어: 한국어(원문) · 영어 · 일본어 · 간체 중국어(`ko` / `en` / `ja` / `zh`)
+- 언어: 한국어(원문) · 영어 · 일본어 · 번체 중국어 · 간체 중국어(`ko` / `en` / `ja` / `zh-Hant` / `zh-Hans`). 드롭다운은 번체가 간체 위. `?lang=zh`는 `zh-Hans`로 매핑
 - 테마: 다크(기본) · 라이트(`html[data-theme]`)
 - 에디션 가시성: Enterprise / Konnect(`html[data-edition]`)
 
@@ -23,8 +23,8 @@ Kong(The AI Connectivity Company) 소개 자료를 **단일 HTML 파일**로 만
 |---|---|---|
 | `src/deck.html` | **편집 소스.** 한국어 원문 마크업 · CSS · JS · `<!-- I18N_BUNDLE -->` 자리 | 추적 |
 | `src/i18n-engine.js` | 런타임 i18n 엔진(walk / setLang) | 추적 |
-| `src/i18n/messages/{ko,en,ja,zh}.json` | stable id(`m.<12hex>`) → 문구 | 추적 |
-| `src/i18n/units.json` | 인라인 태그가 섞인 단위(`u.…`): `match`(KO textContent) → `en`/`ja`/`zh` innerHTML | 추적 |
+| `src/i18n/messages/{ko,en,ja,zh-Hant,zh-Hans}.json` | stable id(`m.<12hex>`) → 문구 | 추적 |
+| `src/i18n/units.json` | 인라인 태그가 섞인 단위(`u.…`): `match`(KO textContent) → `en`/`ja`/`zh-Hant`/`zh-Hans` innerHTML | 추적 |
 | `src/i18n/fragments.json` | 문장 일부 치환용 message id 목록 | 추적 |
 | `src/i18n/shorts.json` | 상단 메뉴 축약 라벨 | 추적 |
 | `src/i18n/README.md` | i18n 카탈로그 상세 | 추적 |
@@ -35,7 +35,7 @@ Kong(The AI Connectivity Company) 소개 자료를 **단일 HTML 파일**로 만
 | `kong-introduction.html` | **빌드 산출물(배포본).** 직접 수정 금지 | 추적 |
 | `docs/index.html` · `docs/.nojekyll` | GitHub Pages용 사본(빌드가 함께 생성) | 추적 |
 | `VERSION` | 버전 문자열. 빌드가 읽어 `KONG_INTRO_VERSION`에 주입 | 추적 |
-| `CHANGELOG.md` (+ `.en` `.ja` `.zh`) | 콘텐츠 변경 이력. KO가 정본 | 추적 |
+| `CHANGELOG.md` (+ `.en` `.ja` `.zh-Hant` `.zh-Hans`) | 콘텐츠 변경 이력. KO가 정본 | 추적 |
 | `reference/` | stable-key 이전 기준선(동결). **수정 금지** | 추적 |
 | `.github/workflows/release.yml` | 수동 실행 Release 워크플로 | 추적 |
 | `AGENTS.md` · `CLAUDE.md` · `.cursor/rules/` | 에이전트 규칙 | 추적 |
@@ -48,7 +48,7 @@ Kong(The AI Connectivity Company) 소개 자료를 **단일 HTML 파일**로 만
 ## 3. 빌드 · 검증
 
 ```bash
-npm run check-i18n   # 한글 문구의 키 누락, ko/en/ja/zh 키 불일치 검사
+npm run check-i18n   # 한글 문구의 키 누락, ko/en/ja/zh-Hant/zh-Hans 키 불일치 검사
 npm run build        # kong-introduction.html + docs/index.html 생성 (VERSION 주입)
 ./build.sh           # 위 두 명령을 순서대로 실행
 ```
@@ -56,13 +56,14 @@ npm run build        # kong-introduction.html + docs/index.html 생성 (VERSION 
 - Node 20 이상. 외부 npm 의존성 없음.
 - 빌드는 결정적이다. `src/`가 같으면 산출물도 같다(빌드 후 `git status`로 확인 가능).
 - 빌드는 `VERSION`만 읽는다. 버전을 새로 만들거나 Changelog를 고치지 않는다.
-- 확인: 브라우저에서 `kong-introduction.html` 열기 → `?lang=en` · `?lang=ja` · `?lang=zh` · `?edition=konnect` · `?theme=light`
+- 확인: 브라우저에서 `kong-introduction.html` 열기 → `?lang=en` · `?lang=ja` · `?lang=zh-Hant` · `?lang=zh-Hans` · `?edition=konnect` · `?theme=light`
 
 ## 4. 편집 워크플로
 
 1. **`src/deck.html`을 한국어로 수정한다.** `kong-introduction.html` · `docs/index.html`만 고치지 않는다.
-2. 새 한글 문구는 `src/i18n/messages/ko.json`에 id를 만들고, **같은 id**로 `en.json` · `ja.json` · `zh.json`에도 넣는다.
+2. 새 한글 문구는 `src/i18n/messages/ko.json`에 id를 만들고, **같은 id**로 `en.json` · `ja.json` · `zh-Hant.json` · `zh-Hans.json`에도 넣는다.
    - 인라인 태그(`<b>`, `<em>`, `<br>` 등)가 섞인 제목·문장은 `units.json`에 `match`(KO textContent)와 언어별 innerHTML로 넣는다.
+   - 중국어는 간체(`zh-Hans`)를 기준으로 두고, 번체(`zh-Hant`)는 대만/홍콩 표현(OpenCC `s2twp` 등)으로 맞춘다.
    - 기존 문구를 고칠 때는 **id를 유지**하고 값만 바꾼다(stable key).
    - 번역이 빠지면 `check-i18n`·`build`가 실패한다. 사용자가 한국어만 요청해도 빌드 통과용 번역(초벌)은 함께 넣고, 응답에 초벌임을 밝힌다.
 3. `npm run check-i18n && npm run build`
@@ -142,7 +143,7 @@ python3 -c "import time; print(hex(int(time.time()))[2:])"
 
 ### 언어
 
-정본은 `CHANGELOG.md`(한국어). 같은 버전 · 항목을 `CHANGELOG.en.md` · `.ja.md` · `.zh.md`에 번역해 둔다. 덱 모달은 언어별 파일을 읽고 없으면 KO로 폴백한다. Release notes는 항상 `CHANGELOG.md`의 `## $V`를 쓴다.
+정본은 `CHANGELOG.md`(한국어). 같은 버전 · 항목을 `CHANGELOG.en.md` · `.ja.md` · `.zh-Hant.md` · `.zh-Hans.md`에 번역해 둔다. 덱 모달은 언어별 파일을 읽고 없으면 KO로 폴백한다. Release notes는 항상 `CHANGELOG.md`의 `## $V`를 쓴다.
 
 ### Release 절차(사용자 요청 시에만)
 
@@ -158,7 +159,9 @@ const VER={
   cur:KONG_INTRO_VERSION,
   check:'https://api.github.com/repos/Great-Stone-Kong/kong-introduction/releases/latest',
   dl:'https://github.com/Great-Stone-Kong/kong-introduction/releases/latest/download/kong-introduction.html',
-  changelogApi:'https://api.github.com/repos/Great-Stone-Kong/kong-introduction/contents/CHANGELOG.md'
+  changelogApi:'https://api.github.com/repos/Great-Stone-Kong/kong-introduction/contents/CHANGELOG.md',
+  changelogApiZhHant:'…/CHANGELOG.zh-Hant.md',
+  changelogApiZhHans:'…/CHANGELOG.zh-Hans.md'
 };
 ```
 

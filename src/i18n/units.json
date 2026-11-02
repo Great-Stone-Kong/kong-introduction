@@ -3,1758 +3,2051 @@
     "match": "API가 연결하던 세상.이제 AI 에이전트가 연결합니다.",
     "en": "APIs connected the world.<br/>Now <em>AI agents</em> do.",
     "ja": "APIがつないできた世界。<br/>これからは<em>AIエージェント</em>がつなぎます。",
-    "zh": "APIs连接了世界.<br/>随后由<em>AI 智能体</em>完成连接"
+    "zh-Hans": "APIs连接了世界.<br/>随后由<em>AI 智能体</em>完成连接",
+    "zh-Hant": "APIs連線了世界.<br/>隨後由<em>AI 智慧體</em>完成連線"
   },
   "u.d56c5b4e0f7e": {
     "match": "기업 변화차고에서 AI 연결 플랫폼까지",
     "en": "<span class=\"lbl\">Company evolution</span>From a garage to an AI connectivity platform",
     "ja": "<span class=\"lbl\">企業の変遷</span>ガレージからAI接続プラットフォームへ",
-    "zh": "<span class=\"lbl\">公司演变</span>从车库到人工智能连接平台"
+    "zh-Hans": "<span class=\"lbl\">公司演变</span>从车库到人工智能连接平台",
+    "zh-Hant": "<span class=\"lbl\">公司演變</span>從車庫到人工智慧連線平臺"
   },
   "u.3877f44a450c": {
     "match": "Kong 오피스",
     "en": "<i class=\"lg o\"></i> Kong offices",
     "ja": "<i class=\"lg o\"></i> Kongオフィス",
-    "zh": "<i class=\"lg o\"></i> 办事处"
+    "zh-Hans": "<i class=\"lg o\"></i> 办事处",
+    "zh-Hant": "<i class=\"lg o\"></i> 辦事處"
   },
   "u.67c72f2a2a64": {
     "match": "대한민국",
     "en": "<i class=\"lg k\"></i> Singapore",
     "ja": "<i class=\"lg k\"></i> 日本",
-    "zh": "<i class=\"lg k\"></i> 新加坡"
+    "zh-Hans": "<i class=\"lg k\"></i> 新加坡",
+    "zh-Hant": "<i class=\"lg k\"></i> 新加坡"
   },
   "u.1bd9b5f9f58e": {
     "match": "출처: konghq.com/company",
     "en": "Source: <a href=\"https://konghq.com/company\" rel=\"noopener noreferrer\" target=\"_blank\">konghq.com/company</a>",
     "ja": "出典: <a href=\"https://konghq.com/company\" rel=\"noopener noreferrer\" target=\"_blank\">konghq.com/company</a>",
-    "zh": "资料来源: <a href=\"https://konghq.com/company\" rel=\"noopener noreferrer\" target=\"_blank\">Kong hq.com/company (中文(简体) ).</a>"
+    "zh-Hans": "资料来源: <a href=\"https://konghq.com/company\" rel=\"noopener noreferrer\" target=\"_blank\">Kong hq.com/company (中文(简体) ).</a>",
+    "zh-Hant": "資料來源: <a href=\"https://konghq.com/company\" rel=\"noopener noreferrer\" target=\"_blank\">Kong hq.com/company (中文(簡體) ).</a>"
   },
   "u.2ba15c7b7af7": {
     "match": "한국 기업이 마주한 두 개의 벽. 속도(개발자와 현업은 이미 여러 LLM과 코딩 에이전트를 쓰고 있습니다)와 통제(개인정보보호법, 금융권 망분리, 감사 요건). 둘 중 하나를 고르는 문제가 아닙니다. Kong은 트래픽 계층에서 둘을 동시에 해결합니다.",
     "en": "<b>Two walls facing Korean enterprises.</b> Speed (developers and business teams already use multiple LLMs and coding agents) and control (Korea's Personal Information Protection Act (PIPA), financial-sector network separation, audit requirements). It's not a matter of choosing one. Kong solves both at once in the traffic layer.",
     "ja": "<b>韓国企業が直面する2つの壁。</b>スピード（開発者や現場はすでに複数のLLMやコーディングエージェントを使っています）と統制（韓国個人情報保護法、金融業界のネットワーク分離、監査要件）。どちらか一方を選ぶ問題ではありません。Kongはトラフィック層で両方を同時に解決します。",
-    "zh": "<b>面对韩国企业的两面墙.</b> 速度(开发者和商业团队已经使用多个 LLM s和编码代理)和控制(韩国个人信息保护法(PIPA),金融部门网络分离,审计要求). 这不是一个选择的问题。 Kong 在交通层同时解决两个问题."
+    "zh-Hans": "<b>面对韩国企业的两面墙.</b> 速度(开发者和商业团队已经使用多个 LLM s和编码代理)和控制(韩国个人信息保护法(PIPA),金融部门网络分离,审计要求). 这不是一个选择的问题。 Kong 在交通层同时解决两个问题.",
+    "zh-Hant": "<b>面對韓國企業的兩面牆.</b> 速度(開發者和商業團隊已經使用多個 LLM s和編碼代理)和控制(韓國個人資訊保護法(PIPA),金融部門網路分離,審計要求). 這不是一個選擇的問題。 Kong 在交通層同時解決兩個問題."
   },
   "u.2e3a0a9a7f68": {
     "match": "“Kong은 AI 게이트웨이의 하이브리드 및 멀티클라우드 사용 사례를 지원하는 데 완벽한 선택이며, 분산형 아키텍처를 효율적으로 관리할 수 있습니다.”Vestas (고객 인용)",
     "en": "“Kong is the perfect choice to support hybrid and multi-cloud AI gateway use cases, and lets us manage a distributed architecture efficiently.”<small>Vestas (customer quote)</small>",
     "ja": "“Kongは、AIゲートウェイのハイブリッドおよびマルチクラウドのユースケースを支えるのに最適な選択であり、分散型アーキテクチャを効率的に管理できます。”<small>Vestas（顧客の声）</small>",
-    "zh": "“-Kong 是支持混合和多云 AI Gateway 使用案例的完美选择,让高效管理分布式架构。”<small>Vestas( 客户引文)</small>"
+    "zh-Hans": "“-Kong 是支持混合和多云 AI Gateway 使用案例的完美选择,让高效管理分布式架构。”<small>Vestas( 客户引文)</small>",
+    "zh-Hant": "“-Kong 是支援混合和多雲 AI Gateway 使用案例的完美選擇,讓高效管理分散式架構。”<small>Vestas( 客戶引文)</small>"
   },
   "u.40691c21b457": {
     "match": "Gateway란?",
     "en": "What is a <em class=\"gw\">Gateway</em>?",
     "ja": "<em class=\"gw\">Gateway</em>とは？",
-    "zh": "什么是一个 <em class=\"gw\">网关</em>?。"
+    "zh-Hans": "什么是一个 <em class=\"gw\">网关</em>?。",
+    "zh-Hant": "什麼是一個 <em class=\"gw\">閘道器</em>?。"
   },
   "u.0bbea961f4c8": {
     "match": "KONGRoute 매칭 · 요청 수신",
     "en": "<u>KONG</u>Route matching · request intake",
     "ja": "<u>KONG</u>Routeマッチング · リクエスト受信",
-    "zh": "<u>Kong</u>路线匹配 ^ 请求录入"
+    "zh-Hans": "<u>Kong</u>路线匹配 ^ 请求录入",
+    "zh-Hant": "<u>Kong</u>路線匹配 ^ 請求錄入"
   },
   "u.f6324667df1b": {
     "match": "KONGKey Auth · JWT · OIDC 인증",
     "en": "<u>KONG</u>Key Auth · JWT · OIDC authentication",
     "ja": "<u>KONG</u>Key Auth · JWT · OIDC認証",
-    "zh": "<u>Kong</u>密钥 Auth OIDC Kong 认证"
+    "zh-Hans": "<u>Kong</u>密钥 Auth OIDC Kong 认证",
+    "zh-Hant": "<u>Kong</u>金鑰 Auth OIDC Kong 認證"
   },
   "u.96b5ebcf88fa": {
     "match": "KONGACL · OPA 인가 정책",
     "en": "<u>KONG</u>ACL · OPA authorization policies",
     "ja": "<u>KONG</u>ACL · OPA認可ポリシー",
-    "zh": "<u>Kong</u>- ACL+授权政策"
+    "zh-Hans": "<u>Kong</u>- ACL+授权政策",
+    "zh-Hant": "<u>Kong</u>- ACL+授權政策"
   },
   "u.1c179e48c3c9": {
     "match": "KONGRate Limiting 플러그인",
     "en": "<u>KONG</u>Rate Limiting plugin",
     "ja": "<u>KONG</u>Rate Limitingプラグイン",
-    "zh": "<u>Kong</u>速率限制插件"
+    "zh-Hans": "<u>Kong</u>速率限制插件",
+    "zh-Hant": "<u>Kong</u>速率限制外掛"
   },
   "u.542a6d75daa2": {
     "match": "KONGUpstream 프록시 · 로깅 · 관측",
     "en": "<u>KONG</u>Upstream proxy · logging · observability",
     "ja": "<u>KONG</u>Upstreamプロキシ · ロギング · 監視",
-    "zh": "<u>Kong</u>上游代理 · 记录 · 可观察性"
+    "zh-Hans": "<u>Kong</u>上游代理 · 记录 · 可观察性",
+    "zh-Hant": "<u>Kong</u>上游代理 · 記錄 · 可觀察性"
   },
   "u.4430df0c803a": {
     "match": "앱마다 인증·인가·제한 코드를 따로 넣을 필요가 없습니다. 한 번 구축하면 모두 사용합니다.",
     "en": "No need to add authentication, authorization and rate-limiting code to every app. <b>Build it once, use it everywhere.</b>",
     "ja": "アプリごとに認証・認可・制限のコードを個別に組み込む必要はありません。<b>一度構築すれば、全員が使えます。</b>",
-    "zh": "无需在每个应用程序中添加认证,授权和限速码. <b>造一次,随处使用.</b>"
+    "zh-Hans": "无需在每个应用程序中添加认证,授权和限速码. <b>造一次,随处使用.</b>",
+    "zh-Hant": "無需在每個應用程式中新增認證,授權和限速碼. <b>造一次,隨處使用.</b>"
   },
   "u.4d77c340304c": {
     "match": "n = 6 (서비스마다 Gateway 1개만 연결)",
     "en": "n = <b>6</b> <span>(each service connects only to the gateway)</span>",
     "ja": "n = <b>6</b> <span>（各サービスはGatewayに1つ接続するだけ）</span>",
-    "zh": "无= <b>6个</b> <span>(每个服务只连接到网关)</span>"
+    "zh-Hans": "无= <b>6个</b> <span>(每个服务只连接到网关)</span>",
+    "zh-Hant": "無= <b>6個</b> <span>(每個服務只連線到閘道器)</span>"
   },
   "u.c00db0f7b7c2": {
     "match": "PluginsKong의 장점",
     "en": "Plugins<span class=\"kadv\">Kong advantage</span>",
     "ja": "Plugins<span class=\"kadv\">Kongの強み</span>",
-    "zh": "插件<span class=\"kadv\">Kong 优势</span>"
+    "zh-Hans": "插件<span class=\"kadv\">Kong 优势</span>",
+    "zh-Hant": "外掛<span class=\"kadv\">Kong 優勢</span>"
   },
   "u.900cf4757b07": {
     "match": "ArchitectureKong의 장점",
     "en": "Architecture<span class=\"kadv\">Kong advantage</span>",
     "ja": "Architecture<span class=\"kadv\">Kongの強み</span>",
-    "zh": "建筑<span class=\"kadv\">Kong 优势</span>"
+    "zh-Hans": "建筑<span class=\"kadv\">Kong 优势</span>",
+    "zh-Hant": "建築<span class=\"kadv\">Kong 優勢</span>"
   },
   "u.24582c2393a1": {
     "match": "폐쇄망에서도 됩니다. Data Plane이 먼저 연결을 시작하고, Control Plane이 잠시 멈춰도 Data Plane은 설정 캐시로 트래픽을 계속 처리합니다.",
     "en": "<b>Works on air-gapped networks too.</b> The Data Plane initiates the connection, and even if the Control Plane pauses, the Data Plane keeps processing traffic from its cached configuration.",
     "ja": "<b>閉域網でも動作します。</b>Data Planeが先に接続を開始し、Control Planeが一時的に停止してもData Planeは設定キャッシュでトラフィックを処理し続けます。",
-    "zh": "<b>也研究空载网络</b> Data Plane 启动连接,即使 Control Plane 暂停, Data Plane 继续从它的缓存配置处理流量."
+    "zh-Hans": "<b>也研究空载网络</b> Data Plane 启动连接,即使 Control Plane 暂停, Data Plane 继续从它的缓存配置处理流量.",
+    "zh-Hant": "<b>也研究空載網路</b> Data Plane 啟動連線,即使 Control Plane 暫停, Data Plane 繼續從它的快取配置處理流量."
   },
   "u.a5e4bb30cf31": {
     "match": "ChallengesKong의 장점",
     "en": "Challenges<span class=\"kadv\">Kong advantage</span>",
     "ja": "Challenges<span class=\"kadv\">Kongの強み</span>",
-    "zh": "挑战<span class=\"kadv\">Kong 优势</span>"
+    "zh-Hans": "挑战<span class=\"kadv\">Kong 优势</span>",
+    "zh-Hant": "挑戰<span class=\"kadv\">Kong 優勢</span>"
   },
   "u.fc10b5990592": {
     "match": "연결마다 따로 통제 앱 · 에이전트 · MCP 서버 · LLM · 데이터가 서로 직접 연결되어, 인증 · 한도 · 로깅 · 보안 정책이 연결 지점마다 흩어지고 전체 흐름을 볼 수 없습니다.",
     "en": "<b>Separate controls for every connection</b> Apps, agents, MCP servers, LLMs and data connect directly to one another, so authentication, limits, logging and security policies are scattered across connection points and the end-to-end flow is invisible.",
     "ja": "<b>接続ごとに個別の統制</b> アプリ · エージェント · MCPサーバー · LLM · データが互いに直接接続され、認証 · 制限 · ロギング · セキュリティポリシーが接続ポイントごとに散在し、全体の流れを把握できません。",
-    "zh": "<b>对每个连接分别控制</b> Apps,代理, MCP 服务器, LLM s和数据直接互相连接,因此认证,限制,记录和安全政策分散在连接点之间,端到端的流量是看不见的."
+    "zh-Hans": "<b>对每个连接分别控制</b> Apps,代理, MCP 服务器, LLM s和数据直接互相连接,因此认证,限制,记录和安全政策分散在连接点之间,端到端的流量是看不见的.",
+    "zh-Hant": "<b>對每個連線分別控制</b> Apps,代理, MCP 伺服器, LLM s和資料直接互相連線,因此認證,限制,記錄和安全政策分散在連線點之間,端到端的流量是看不見的."
   },
   "u.9c25787b3a30": {
     "match": "하나의 플랫폼에서 통제 모든 연결 지점에 Kong Gateway를 두고 하나의 Control Plane에서 관리해, API · LLM · MCP · 이벤트 트래픽에 같은 정책과 관측을 적용합니다.",
     "en": "<b>Control from one platform</b> Place Kong Gateway at every connection point and manage it from a single Control Plane to apply the same policies and observability to API, LLM, MCP and event traffic.",
     "ja": "<b>1つのプラットフォームで統制</b> すべての接続ポイントにKong Gatewayを配置して1つのControl Planeで管理し、API · LLM · MCP · イベントトラフィックに同じポリシーと監視を適用します。",
-    "zh": "<b>从一个平台控制</b> 地点 Kong 每个连接点的网关并管理它从单 Control Plane ,对API, LLM , MCP 和事件流量应用相同的政策和可观察性."
+    "zh-Hans": "<b>从一个平台控制</b> 地点 Kong 每个连接点的网关并管理它从单 Control Plane ,对API, LLM , MCP 和事件流量应用相同的政策和可观察性.",
+    "zh-Hant": "<b>從一個平臺控制</b> 地點 Kong 每個連線點的閘道器並管理它從單 Control Plane ,對API, LLM , MCP 和事件流量應用相同的政策和可觀察性."
   },
   "u.b88d63ca1f6d": {
     "match": "Why KongKong의 장점",
     "en": "Why Kong<span class=\"kadv\">Kong advantage</span>",
     "ja": "Why Kong<span class=\"kadv\">Kongの強み</span>",
-    "zh": "为什么?<span class=\"kadv\">Kong 优势</span>"
+    "zh-Hans": "为什么?<span class=\"kadv\">Kong 优势</span>",
+    "zh-Hant": "為什麼?<span class=\"kadv\">Kong 優勢</span>"
   },
   "u.46bc68b5472f": {
     "match": "모든 API를 관리하고, 안전하게",
     "en": "<em>Manage and secure</em> every API",
     "ja": "すべてのAPIを<em>管理し、安全に</em>",
-    "zh": "<em>管理和安全</em> 每个 API"
+    "zh-Hans": "<em>管理和安全</em> 每个 API",
+    "zh-Hant": "<em>管理和安全</em> 每個 API"
   },
   "u.fbc19bbe6f87": {
     "match": "그대로 통과인증 우회 · 무작위 대입 · 권한 미검증 요청이 모두 백엔드에 도달하고, 원본 응답이 그대로 유출됩니다.",
     "en": "<b>Passes straight through</b>Authentication bypass, brute-forcing and unauthorized requests all reach the backend, and raw responses leak as is.",
     "ja": "<b>そのまま通過</b>認証回避 · ブルートフォース · 権限未検証のリクエストがすべてバックエンドに到達し、元のレスポンスがそのまま流出します。",
-    "zh": "<b>直接穿过</b>验证绕道,野蛮强制和未经授权的要求都到达后端,原始反应如常泄露."
+    "zh-Hans": "<b>直接穿过</b>验证绕道,野蛮强制和未经授权的要求都到达后端,原始反应如常泄露.",
+    "zh-Hant": "<b>直接穿過</b>驗證繞道,野蠻強制和未經授權的要求都到達後端,原始反應如常洩露."
   },
   "u.9fab5edac5a8": {
     "match": "Gateway에서 차단정상 모집인의 요청만 통과시키고, 우회 · 대입 · 권한 위반 요청은 Kong에서 멈춥니다. 차단 이벤트는 SIEM으로 전송됩니다.",
     "en": "<b>Blocked at the gateway</b>Only legitimate broker requests pass; bypass, brute-force and authorization-violating requests stop at Kong. Block events are sent to SIEM.",
     "ja": "<b>Gatewayでブロック</b>正規の募集人のリクエストだけを通過させ、回避 · 総当たり · 権限違反のリクエストはKongで止めます。ブロックイベントはSIEMに送信されます。",
-    "zh": "<b>封锁了入口</b>只有合法的经纪人请求通过;绕行,蛮横强制和授权激活请求在 Kong 停止. Block活动被发送到SIEM."
+    "zh-Hans": "<b>封锁了入口</b>只有合法的经纪人请求通过;绕行,蛮横强制和授权激活请求在 Kong 停止. Block活动被发送到SIEM.",
+    "zh-Hant": "<b>封鎖了入口</b>只有合法的經紀人請求透過;繞行,蠻橫強制和授權啟用請求在 Kong 停止. Block活動被髮送到SIEM."
   },
   "u.cae725462cd5": {
     "match": "AI는 도구일 뿐, 뚫린 곳은 API입니다. AI 에이전트는 공격 속도를 높였을 뿐이고, 실제 취약점은 API의 인증 · 인가 · 호출 통제 부재였습니다. 객체 단위 권한 검증은 애플리케이션과 함께 설계해야 하며, Kong은 Gateway 단에서 공통 정책으로 1차 방어선과 피해 확산 차단을 맡습니다.",
     "en": "<b>AI is just the tool; the API is what was breached.</b> AI agents only sped up the attack. The real vulnerability was the lack of authentication, authorization and call controls on the API. Object-level authorization must be designed into the application, while Kong provides the first line of defense and contains damage with common policies at the gateway.",
     "ja": "<b>AIは道具にすぎず、破られたのはAPIです。</b>AIエージェントは攻撃のスピードを上げただけで、実際の脆弱性はAPIの認証 · 認可 · 呼び出し統制の欠如でした。オブジェクト単位の権限検証はアプリケーションと併せて設計する必要があり、KongはGateway層で共通ポリシーにより第一の防御線と被害拡大の阻止を担います。",
-    "zh": "<b>AI只是工具;API是被违反的.</b> AI 智能体只加快了攻击速度. 真正的弱点是对API缺乏认证、授权和调用控制。 对象级的授权必须设计在应用程序中,而 Kong 则提供第一道防线,并包含在网关有共同政策的损害."
+    "zh-Hans": "<b>AI只是工具;API是被违反的.</b> AI 智能体只加快了攻击速度. 真正的弱点是对API缺乏认证、授权和调用控制。 对象级的授权必须设计在应用程序中,而 Kong 则提供第一道防线,并包含在网关有共同政策的损害.",
+    "zh-Hant": "<b>AI只是工具;API是被違反的.</b> AI 智慧體只加快了攻擊速度. 真正的弱點是對API缺乏認證、授權和呼叫控制。 物件級的授權必須設計在應用程式中,而 Kong 則提供第一道防線,幷包含在閘道器有共同政策的損害."
   },
   "u.d9df73f41191": {
     "match": "Kong 대응모든 API를 Gateway 뒤에 두고 OIDC · mTLS 인증을 강제. 서비스 카탈로그로 숨은 API까지 목록화",
     "en": "<i>Kong response</i>Put every API behind the gateway and enforce OIDC · mTLS authentication. Inventory even hidden APIs with Service Catalog",
     "ja": "<i>Kongの対応</i>すべてのAPIをGatewayの背後に置き、OIDC · mTLS認証を強制。サービスカタログで隠れたAPIまで一覧化",
-    "zh": "<i>Kong 回应</i>将每个API放到网关后,执行 Kong OIDC 认证. 包含服务目录的隐藏 API"
+    "zh-Hans": "<i>Kong 回应</i>将每个API放到网关后,执行 Kong OIDC 认证. 包含服务目录的隐藏 API",
+    "zh-Hant": "<i>Kong 回應</i>將每個API放到閘道器後,執行 Kong OIDC 認證. 包含服務目錄的隱藏 API"
   },
   "u.a7f072181391": {
     "match": "Kong 대응OPA로 토큰의 모집인 ID와 요청 고객번호를 대조. ACL · Consumer Group으로 호출 가능한 API 범위 제한, Request Validator로 파라미터 형식 검증",
     "en": "<i>Kong response</i>Use OPA to match the broker ID in the token against the requested customer number. Limit callable APIs with ACL · Consumer Groups, and validate parameter formats with Request Validator",
     "ja": "<i>Kongの対応</i>OPAでトークンの募集人IDとリクエストの顧客番号を照合。ACL · Consumer Groupで呼び出し可能なAPIの範囲を制限し、Request Validatorでパラメーター形式を検証",
-    "zh": "<i>Kong 回应</i>使用 ACL 将代号中的经纪人ID与请求的客户号匹配. 使用 Kong 消费者团体限制可调用 API , 用请求验证器验证参数格式"
+    "zh-Hans": "<i>Kong 回应</i>使用 ACL 将代号中的经纪人ID与请求的客户号匹配. 使用 Kong 消费者团体限制可调用 API , 用请求验证器验证参数格式",
+    "zh-Hant": "<i>Kong 回應</i>使用 ACL 將代號中的經紀人ID與請求的客戶號匹配. 使用 Kong 消費者團體限制可呼叫 API , 用請求驗證器驗證引數格式"
   },
   "u.2d06f553f7f0": {
     "match": "Kong 대응Rate Limiting Advanced(Consumer · IP 단위), Bot Detection, IP Restriction으로 반복 호출 차단. 이상 호출은 즉시 알림",
     "en": "<i>Kong response</i>Block repeated calls with Rate Limiting Advanced (per Consumer · IP), Bot Detection and IP Restriction. Instant alerts on abnormal calls",
     "ja": "<i>Kongの対応</i>Rate Limiting Advanced（Consumer · IP単位）、Bot Detection、IP Restrictionで繰り返し呼び出しをブロック。異常な呼び出しは即時アラート",
-    "zh": "<i>Kong 回应</i>以速率限制高级(每名消费者 IP),Bot检测和IP限制的方式阻断重复调用. 对异常调用的即时警报"
+    "zh-Hans": "<i>Kong 回应</i>以速率限制高级(每名消费者 IP),Bot检测和IP限制的方式阻断重复调用. 对异常调用的即时警报",
+    "zh-Hant": "<i>Kong 回應</i>以速率限制高階(每名消費者 IP),Bot檢測和IP限制的方式阻斷重複呼叫. 對異常呼叫的即時警報"
   },
   "u.38abdaec6f5f": {
     "match": "Kong 대응Response Transformer로 민감 필드 제거 · 마스킹, HTTP Log를 SIEM으로 실시간 전송해 확산 전 탐지",
     "en": "<i>Kong response</i>Remove and mask sensitive fields with Response Transformer, and stream HTTP Log to SIEM in real time to detect issues before they spread",
     "ja": "<i>Kongの対応</i>Response Transformerで機密フィールドを削除 · マスキングし、HTTP LogをSIEMへリアルタイム送信して拡散前に検知",
-    "zh": "<i>Kong 回应</i>以响应变换器移除并遮盖敏感字段, 并实时向 SIEM 流出 HTTP 日志, 以便在问题扩散前发现问题"
+    "zh-Hans": "<i>Kong 回应</i>以响应变换器移除并遮盖敏感字段, 并实时向 SIEM 流出 HTTP 日志, 以便在问题扩散前发现问题",
+    "zh-Hant": "<i>Kong 回應</i>以響應變換器移除並遮蓋敏感欄位, 並實時向 SIEM 流出 HTTP 日誌, 以便在問題擴散前發現問題"
   },
   "u.974367f4a5fc": {
     "match": "언론 보도를 바탕으로 재구성했으며, 기관명은 익명 처리했습니다. 조사 결과에 따라 세부 내용은 달라질 수 있습니다. 관련 기사: 보안뉴스 · [은행이 뚫린다] AI 해킹 가시화... 오픈소스 ‘보안도구’ 악용 정황 (2026-10-02) ↗",
     "en": "Reconstructed from press reports, with the institution anonymized. Details may change as investigations proceed. Related article: <a href=\"https://www.boannews.com/news/articleView.html?idxno=146184\" rel=\"noopener noreferrer\" target=\"_blank\">Boannews · [Banks under attack] AI hacking becomes reality... signs of open-source ‘security tool’ abuse (2026-10-02) ↗</a>",
     "ja": "報道をもとに再構成しており、機関名は匿名化しています。調査結果により詳細は変わる可能性があります。関連記事: <a href=\"https://www.boannews.com/news/articleView.html?idxno=146184\" rel=\"noopener noreferrer\" target=\"_blank\">Boan News · [銀行が破られる] AIハッキングが現実に... オープンソース「セキュリティツール」悪用の形跡 (2026-10-02) ↗</a>",
-    "zh": "从新闻报道中重建,机构匿名. 细节可能会随着调查的进行而改变。 相关条款: <a href=\"https://www.boannews.com/news/articleView.html?idxno=146184\" rel=\"noopener noreferrer\" target=\"_blank\">Boannews – [银行受到攻击] AI黑客化为现实... 开源\"安全工具\"滥用的迹象(2026-10-02) QQ</a>"
+    "zh-Hans": "从新闻报道中重建,机构匿名. 细节可能会随着调查的进行而改变。 相关条款: <a href=\"https://www.boannews.com/news/articleView.html?idxno=146184\" rel=\"noopener noreferrer\" target=\"_blank\">Boannews – [银行受到攻击] AI黑客化为现实... 开源\"安全工具\"滥用的迹象(2026-10-02) QQ</a>",
+    "zh-Hant": "從新聞報道中重建,機構匿名. 細節可能會隨著調查的進行而改變。 相關條款: <a href=\"https://www.boannews.com/news/articleView.html?idxno=146184\" rel=\"noopener noreferrer\" target=\"_blank\">Boannews – [銀行受到攻擊] AI駭客化為現實... 開源\"安全工具\"濫用的跡象(2026-10-02) QQ</a>"
   },
   "u.13bdfceefa6b": {
     "match": "API 없이는 AI도 없습니다",
     "en": "No API, <em>no AI</em>",
     "ja": "APIなしでは<em>AIもありません</em>",
-    "zh": "没有API, <em>无AI</em>"
+    "zh-Hans": "没有API, <em>无AI</em>",
+    "zh-Hant": "沒有API, <em>無AI</em>"
   },
   "u.c038692ae590": {
     "match": "AI 에이전트는 LLM을 부르고, MCP로 도구를 쓰고, API로 데이터를 가져오고, 이벤트에 반응합니다. 이 모든 호출은 결국 API입니다. 수많은 모델 · 에이전트 · 도구가 얽힌 AI 생태계에는 이 연결을 한곳에서 보호하고, 통제하고, 비용을 관리하는 AI Connectivity 레이어가 필요합니다. Kong AI Gateway가 그 레이어입니다.",
     "en": "AI agents call LLMs, use tools via MCP, fetch data through APIs and react to events. Every one of these calls is ultimately an API call. An AI ecosystem of countless models, agents and tools needs an <b>AI Connectivity layer</b> that secures, governs and manages the cost of these connections in one place. Kong AI Gateway is that layer.",
     "ja": "AIエージェントはLLMを呼び出し、MCPでツールを使い、APIでデータを取得し、イベントに反応します。これらの呼び出しはすべて、結局はAPIです。多数のモデル · エージェント · ツールが絡み合うAIエコシステムには、これらの接続を一か所で保護し、統制し、コストを管理する<b>AI Connectivityレイヤー</b>が必要です。Kong AI Gatewayがそのレイヤーです。",
-    "zh": "AI 智能体调用 Kong s,通过 AI Gateway 使用工具,通过API获取数据并对事件作出反应. 每一个电话都是API电话。 无数模型、物剂和工具的人工智能生态系统需要 <b>AI 连接层</b> 在一个地方保证、管理和管理这些连接的费用。 Kong AI Gateway AI Gateway 是那个层."
+    "zh-Hans": "AI 智能体调用 Kong s,通过 AI Gateway 使用工具,通过API获取数据并对事件作出反应. 每一个电话都是API电话。 无数模型、物剂和工具的人工智能生态系统需要 <b>AI 连接层</b> 在一个地方保证、管理和管理这些连接的费用。 Kong AI Gateway AI Gateway 是那个层.",
+    "zh-Hant": "AI 智慧體呼叫 Kong s,透過 AI Gateway 使用工具,透過API獲取資料並對事件作出反應. 每一個電話都是API電話。 無數模型、物劑和工具的人工智慧生態系統需要 <b>AI 連線層</b> 在一個地方保證、管理和管理這些連線的費用。 Kong AI Gateway AI Gateway 是那個層."
   },
   "u.dcb8126047ef": {
     "match": "성장의 동력은 AI 에이전트-모델, 에이전트-환경, 에이전트-에이전트(A2A) 통신을 안전하게 연결하려는 수요입니다. 출처: Gartner® AI 게이트웨이 시장 개요 보고서",
     "en": "Growth is driven by demand to securely connect AI agent-to-model, agent-to-environment and agent-to-agent (A2A) communication. Source: <a href=\"https://konghq.com/resources/reports/gartner-complimentary-report\" rel=\"noopener\" target=\"_blank\">Gartner® Market Guide for AI Gateways</a>",
     "ja": "成長の原動力は、AIエージェントとモデル、エージェントと環境、エージェント同士（A2A）の通信を安全に接続したいという需要です。出典: <a href=\"https://konghq.com/resources/reports/gartner-complimentary-report\" rel=\"noopener\" target=\"_blank\">Gartner® AIゲートウェイ市場概要レポート</a>",
-    "zh": "增长的驱动力是需要安全连接AI 智能体到模型,代理到环境和代理到代理(A2A)通信. 资料来源: <a href=\"https://konghq.com/resources/reports/gartner-complimentary-report\" rel=\"noopener\" target=\"_blank\">Gartner AI Gateway s的市场指南</a>"
+    "zh-Hans": "增长的驱动力是需要安全连接AI 智能体到模型,代理到环境和代理到代理(A2A)通信. 资料来源: <a href=\"https://konghq.com/resources/reports/gartner-complimentary-report\" rel=\"noopener\" target=\"_blank\">Gartner AI Gateway s的市场指南</a>",
+    "zh-Hant": "增長的驅動力是需要安全連線AI 智慧體到模型,代理到環境和代理到代理(A2A)通訊. 資料來源: <a href=\"https://konghq.com/resources/reports/gartner-complimentary-report\" rel=\"noopener\" target=\"_blank\">Gartner AI Gateway s的市場指南</a>"
   },
   "u.8f63e25433c2": {
     "match": "실제 사례 · 2023년 4월삼성전자 엔지니어가 반도체 소스코드와 회의록을 ChatGPT에 입력한 사실이 3건 확인되었고, 회사는 생성형 AI 사용을 전면 금지했습니다. 막는 대신 안전하게 쓰게 할 통제 지점이 없었던 것이 문제였습니다.출처: Bloomberg · Forbes",
     "en": "<b>Real case · April 2023</b>Samsung Electronics confirmed three incidents in which engineers entered semiconductor source code and meeting notes into ChatGPT, and the company banned generative AI outright. The real problem was the lack of a control point that would let employees use AI safely instead of blocking it.<span class=\"src\">Sources: <a href=\"https://www.bloomberg.com/news/articles/2023-05-02/samsung-bans-chatgpt-and-other-generative-ai-use-by-staff-after-leak\" rel=\"noopener\" target=\"_blank\">Bloomberg</a> · <a href=\"https://www.forbes.com/sites/siladityaray/2023/05/02/samsung-bans-chatgpt-and-other-chatbots-for-employees-after-sensitive-code-leak/\" rel=\"noopener\" target=\"_blank\">Forbes</a></span>",
     "ja": "<b>実際の事例 · 2023年4月</b>Samsung Electronicsのエンジニアが半導体のソースコードと会議録をChatGPTに入力した事実が3件確認され、同社は生成AIの利用を全面禁止しました。禁止するのではなく安全に使わせるための統制ポイントがなかったことが問題でした。<span class=\"src\">出典: <a href=\"https://www.bloomberg.com/news/articles/2023-05-02/samsung-bans-chatgpt-and-other-generative-ai-use-by-staff-after-leak\" rel=\"noopener\" target=\"_blank\">Bloomberg</a> · <a href=\"https://www.forbes.com/sites/siladityaray/2023/05/02/samsung-bans-chatgpt-and-other-chatbots-for-employees-after-sensitive-code-leak/\" rel=\"noopener\" target=\"_blank\">Forbes</a></span>",
-    "zh": "<b>实际案例 2023年4月</b> 三星电子证实三起事故,工程师将半导体源代码和会议笔记输入ChatGPT,公司直接禁止生成式 AI. 真正的问题是缺乏一个控制点,使雇员能够安全地使用AI而不是屏蔽它.<span class=\"src\">资料来源: <a href=\"https://www.bloomberg.com/news/articles/2023-05-02/samsung-bans-chatgpt-and-other-generative-ai-use-by-staff-after-leak\" rel=\"noopener\" target=\"_blank\">彭博社</a> * 妇女 <a href=\"https://www.forbes.com/sites/siladityaray/2023/05/02/samsung-bans-chatgpt-and-other-chatbots-for-employees-after-sensitive-code-leak/\" rel=\"noopener\" target=\"_blank\">福布斯语Name</a></span>"
+    "zh-Hans": "<b>实际案例 2023年4月</b> 三星电子证实三起事故,工程师将半导体源代码和会议笔记输入ChatGPT,公司直接禁止生成式 AI. 真正的问题是缺乏一个控制点,使雇员能够安全地使用AI而不是屏蔽它.<span class=\"src\">资料来源: <a href=\"https://www.bloomberg.com/news/articles/2023-05-02/samsung-bans-chatgpt-and-other-generative-ai-use-by-staff-after-leak\" rel=\"noopener\" target=\"_blank\">彭博社</a> * 妇女 <a href=\"https://www.forbes.com/sites/siladityaray/2023/05/02/samsung-bans-chatgpt-and-other-chatbots-for-employees-after-sensitive-code-leak/\" rel=\"noopener\" target=\"_blank\">福布斯语Name</a></span>",
+    "zh-Hant": "<b>實際案例 2023年4月</b> 三星電子證實三起事故,工程師將半導體原始碼和會議筆記輸入ChatGPT,公司直接禁止生成式 AI. 真正的問題是缺乏一個控制點,使僱員能夠安全地使用AI而不是遮蔽它.<span class=\"src\">資料來源: <a href=\"https://www.bloomberg.com/news/articles/2023-05-02/samsung-bans-chatgpt-and-other-generative-ai-use-by-staff-after-leak\" rel=\"noopener\" target=\"_blank\">彭博社</a> * 婦女 <a href=\"https://www.forbes.com/sites/siladityaray/2023/05/02/samsung-bans-chatgpt-and-other-chatbots-for-employees-after-sensitive-code-leak/\" rel=\"noopener\" target=\"_blank\">福布斯語Name</a></span>"
   },
   "u.bcd301b46f30": {
     "match": "실제 사례 · 2025년 6월Asana가 출시한 MCP 서버의 테넌트 격리 결함으로, 약 1,000개 고객사의 프로젝트 · 작업 데이터가 다른 조직에 노출될 수 있었고 서버는 2주간 중단됐습니다. API를 AI에 열 때 인증과 권한 경계를 강제하는 계층이 필요합니다.출처: BleepingComputer · The Register",
     "en": "<b>Real case · June 2025</b>A tenant isolation flaw in the MCP server Asana launched may have exposed project and task data of about 1,000 customers to other organizations, and the server was taken offline for two weeks. Opening APIs to AI requires a layer that enforces authentication and authorization boundaries.<span class=\"src\">Sources: <a href=\"https://www.bleepingcomputer.com/news/security/asana-warns-mcp-ai-feature-exposed-customer-data-to-other-orgs/\" rel=\"noopener\" target=\"_blank\">BleepingComputer</a> · <a href=\"https://www.theregister.com/security/2025/06/18/asana-mcp-server-back-online-after-plugging-a-data-leak-hole/1199951\" rel=\"noopener\" target=\"_blank\">The Register</a></span>",
     "ja": "<b>実際の事例 · 2025年6月</b>AsanaがリリースしたMCPサーバーのテナント分離の欠陥により、約1,000社の顧客のプロジェクト · タスクデータが他の組織に露出するおそれがあり、サーバーは2週間停止しました。APIをAIに開放する際には、認証と権限境界を強制するレイヤーが必要です。<span class=\"src\">出典: <a href=\"https://www.bleepingcomputer.com/news/security/asana-warns-mcp-ai-feature-exposed-customer-data-to-other-orgs/\" rel=\"noopener\" target=\"_blank\">BleepingComputer</a> · <a href=\"https://www.theregister.com/security/2025/06/18/asana-mcp-server-back-online-after-plugging-a-data-leak-hole/1199951\" rel=\"noopener\" target=\"_blank\">The Register</a></span>",
-    "zh": "<b>实际案例 2025年6月</b> Asana推出的 MCP 服务器中的租户隔离缺陷可能已经向其他组织披露了约1000名客户的项目和任务数据,服务器被下线两周. 向AI开放API需要一层来强制认证和授权边界.<span class=\"src\">资料来源: <a href=\"https://www.bleepingcomputer.com/news/security/asana-warns-mcp-ai-feature-exposed-customer-data-to-other-orgs/\" rel=\"noopener\" target=\"_blank\">睡眠计算机</a> * 妇女 <a href=\"https://www.theregister.com/security/2025/06/18/asana-mcp-server-back-online-after-plugging-a-data-leak-hole/1199951\" rel=\"noopener\" target=\"_blank\">登记册</a></span>"
+    "zh-Hans": "<b>实际案例 2025年6月</b> Asana推出的 MCP 服务器中的租户隔离缺陷可能已经向其他组织披露了约1000名客户的项目和任务数据,服务器被下线两周. 向AI开放API需要一层来强制认证和授权边界.<span class=\"src\">资料来源: <a href=\"https://www.bleepingcomputer.com/news/security/asana-warns-mcp-ai-feature-exposed-customer-data-to-other-orgs/\" rel=\"noopener\" target=\"_blank\">睡眠计算机</a> * 妇女 <a href=\"https://www.theregister.com/security/2025/06/18/asana-mcp-server-back-online-after-plugging-a-data-leak-hole/1199951\" rel=\"noopener\" target=\"_blank\">登记册</a></span>",
+    "zh-Hant": "<b>實際案例 2025年6月</b> Asana推出的 MCP 伺服器中的租戶隔離缺陷可能已經向其他組織披露了約1000名客戶的專案和任務資料,伺服器被下線兩週. 向AI開放API需要一層來強制認證和授權邊界.<span class=\"src\">資料來源: <a href=\"https://www.bleepingcomputer.com/news/security/asana-warns-mcp-ai-feature-exposed-customer-data-to-other-orgs/\" rel=\"noopener\" target=\"_blank\">睡眠計算機</a> * 婦女 <a href=\"https://www.theregister.com/security/2025/06/18/asana-mcp-server-back-online-after-plugging-a-data-leak-hole/1199951\" rel=\"noopener\" target=\"_blank\">登記冊</a></span>"
   },
   "u.967eb769489b": {
     "match": "실제 사례 · 2026년 6월미국 상무부가 국가안보를 이유로 외국인의 Claude Fable 5 · Mythos 5 사용을 막자, Anthropic은 두 모델을 전 세계에서 즉시 중단했습니다(약 3주 후 복구). 해외 모델 하나에 묶인 서비스는 그대로 멈춥니다.출처: Reuters · CNBC",
     "en": "<b>Real case · June 2026</b>When the US Department of Commerce barred foreign nationals from using Claude Fable 5 · Mythos 5 on national security grounds, Anthropic immediately suspended both models worldwide (restored about three weeks later). A service tied to a single foreign model simply stops.<span class=\"src\">Sources: <a href=\"https://www.dawn.com/news/2007564\" rel=\"noopener\" target=\"_blank\">Reuters</a> · <a href=\"https://www.cnbc.com/2026/06/12/anthropic-disables-access-to-fable-5-and-mythos-5-to-comply-with-government-directive.html\" rel=\"noopener\" target=\"_blank\">CNBC</a></span>",
     "ja": "<b>実際の事例 · 2026年6月</b>米国商務省が国家安全保障を理由に外国人によるClaude Fable 5 · Mythos 5の利用を禁じると、Anthropicは2つのモデルを全世界で即時停止しました（約3週間後に復旧）。海外の1つのモデルに依存したサービスは、そのまま停止します。<span class=\"src\">出典: <a href=\"https://www.dawn.com/news/2007564\" rel=\"noopener\" target=\"_blank\">Reuters</a> · <a href=\"https://www.cnbc.com/2026/06/12/anthropic-disables-access-to-fable-5-and-mythos-5-to-comply-with-government-directive.html\" rel=\"noopener\" target=\"_blank\">CNBC</a></span>",
-    "zh": "<b>实际案例 2026年6月</b> 当美国商务部以国家安全为由禁止外国国民使用Claude Fable 5 — Mythos 5时,Anthropic立即在全世界暂停使用这两种模式(大约三周后恢复)。 与单一的外国模式挂钩的服务就停止了。<span class=\"src\">资料来源: <a href=\"https://www.dawn.com/news/2007564\" rel=\"noopener\" target=\"_blank\">路透社报.</a> * 妇女 <a href=\"https://www.cnbc.com/2026/06/12/anthropic-disables-access-to-fable-5-and-mythos-5-to-comply-with-government-directive.html\" rel=\"noopener\" target=\"_blank\">氯化萘</a></span>"
+    "zh-Hans": "<b>实际案例 2026年6月</b> 当美国商务部以国家安全为由禁止外国国民使用Claude Fable 5 — Mythos 5时,Anthropic立即在全世界暂停使用这两种模式(大约三周后恢复)。 与单一的外国模式挂钩的服务就停止了。<span class=\"src\">资料来源: <a href=\"https://www.dawn.com/news/2007564\" rel=\"noopener\" target=\"_blank\">路透社报.</a> * 妇女 <a href=\"https://www.cnbc.com/2026/06/12/anthropic-disables-access-to-fable-5-and-mythos-5-to-comply-with-government-directive.html\" rel=\"noopener\" target=\"_blank\">氯化萘</a></span>",
+    "zh-Hant": "<b>實際案例 2026年6月</b> 當美國商務部以國家安全為由禁止外國國民使用Claude Fable 5 — Mythos 5時,Anthropic立即在全世界暫停使用這兩種模式(大約三週後恢復)。 與單一的外國模式掛鉤的服務就停止了。<span class=\"src\">資料來源: <a href=\"https://www.dawn.com/news/2007564\" rel=\"noopener\" target=\"_blank\">路透社報.</a> * 婦女 <a href=\"https://www.cnbc.com/2026/06/12/anthropic-disables-access-to-fable-5-and-mythos-5-to-comply-with-government-directive.html\" rel=\"noopener\" target=\"_blank\">氯化萘</a></span>"
   },
   "u.c111dec959dd": {
     "match": "실제 사례 · 2025년 7월Claude Code를 24시간 돌린 일부 사용자가 월 200달러 요금제로 수만 달러어치 모델을 사용하자, Anthropic은 주간 사용 한도를 도입했습니다. 모델 제공사조차 토큰을 통제해야 하는 시대입니다.출처: Slashdot (TechCrunch 인용)",
     "en": "<b>Real case · July 2025</b>After some users ran Claude Code around the clock and consumed tens of thousands of dollars in model usage on a $200/month plan, Anthropic introduced weekly usage limits. Even model providers now have to control tokens.<span class=\"src\">Source: <a href=\"https://developers.slashdot.org/story/25/07/29/0156200/claude-code-users-hit-with-weekly-rate-limits\" rel=\"noopener\" target=\"_blank\">Slashdot (citing TechCrunch)</a></span>",
     "ja": "<b>実際の事例 · 2025年7月</b>Claude Codeを24時間稼働させた一部のユーザーが月額200ドルのプランで数万ドル分のモデルを使用したため、Anthropicは週間の利用上限を導入しました。モデル提供者でさえトークンを統制しなければならない時代です。<span class=\"src\">出典: <a href=\"https://developers.slashdot.org/story/25/07/29/0156200/claude-code-users-hit-with-weekly-rate-limits\" rel=\"noopener\" target=\"_blank\">Slashdot（TechCrunch引用）</a></span>",
-    "zh": "<b>实际案例 2025年7月</b> 一些用户24小时运行Claude Code,并在200美元/月计划上消费了数万美元的模型使用费后,Anthropic引入了每周使用限额. 甚至模型供应商现在也要控制令牌.<span class=\"src\">资料来源: <a href=\"https://developers.slashdot.org/story/25/07/29/0156200/claude-code-users-hit-with-weekly-rate-limits\" rel=\"noopener\" target=\"_blank\">Slashdot( 引用 TechCrunch )</a></span>"
+    "zh-Hans": "<b>实际案例 2025年7月</b> 一些用户24小时运行Claude Code,并在200美元/月计划上消费了数万美元的模型使用费后,Anthropic引入了每周使用限额. 甚至模型供应商现在也要控制令牌.<span class=\"src\">资料来源: <a href=\"https://developers.slashdot.org/story/25/07/29/0156200/claude-code-users-hit-with-weekly-rate-limits\" rel=\"noopener\" target=\"_blank\">Slashdot( 引用 TechCrunch )</a></span>",
+    "zh-Hant": "<b>實際案例 2025年7月</b> 一些使用者24小時執行Claude Code,並在200美元/月計劃上消費了數萬美元的模型使用費後,Anthropic引入了每週使用限額. 甚至模型供應商現在也要控制令牌.<span class=\"src\">資料來源: <a href=\"https://developers.slashdot.org/story/25/07/29/0156200/claude-code-users-hit-with-weekly-rate-limits\" rel=\"noopener\" target=\"_blank\">Slashdot( 引用 TechCrunch )</a></span>"
   },
   "u.3ff0039f6d12": {
     "match": "코드는 한 줄만 바뀝니다. SDK의 base_url을 Kong AI Gateway 주소로 바꾸면, 앱을 고치지 않고 모든 정책이 적용됩니다. 위 예시는 이해를 돕기 위한 것으로 특정 SDK에 한정되지 않습니다.",
     "en": "<b>Only one line of code changes.</b> Point the SDK's <code style=\"font-family:var(--mono)\">base_url</code> to your Kong AI Gateway address, and every policy applies without changing the app. The example above is illustrative and not specific to any SDK.",
     "ja": "<b>コードの変更は1行だけです。</b>SDKの<code style=\"font-family:var(--mono)\">base_url</code>をKong AI Gatewayのアドレスに変えるだけで、アプリを修正せずにすべてのポリシーが適用されます。上の例は理解を助けるためのもので、特定のSDKに限定されません。",
-    "zh": "<b>只有一行代码改变。</b> 指着SDK <code style=\"font-family:var(--mono)\">基数url</code> 您的 Kong AI Gateway 地址, 并且每个政策都适用而不改变应用程序。 以上的例子具有说明性,并非专门针对任何SDK."
+    "zh-Hans": "<b>只有一行代码改变。</b> 指着SDK <code style=\"font-family:var(--mono)\">基数url</code> 您的 Kong AI Gateway 地址, 并且每个政策都适用而不改变应用程序。 以上的例子具有说明性,并非专门针对任何SDK.",
+    "zh-Hant": "<b>只有一行程式碼改變。</b> 指著SDK <code style=\"font-family:var(--mono)\">基數url</code> 您的 Kong AI Gateway 地址, 並且每個政策都適用而不改變應用程式。 以上的例子具有說明性,並非專門針對任何SDK."
   },
   "u.1e7d29d42bf4": {
     "match": "# Before · LLM 제공자 직접 호출 client = LLMClient( api_key=\"API-KEY-VALUE\" )",
     "en": "<span class=\"c\"># Before · Calling the LLM provider directly</span>\nclient = LLMClient(\n    api_key=<span class=\"k\">\"API-KEY-VALUE\"</span>\n)",
     "ja": "<span class=\"c\"># Before · LLMプロバイダーを直接呼び出し</span>\nclient = LLMClient(\n    api_key=<span class=\"k\">\"API-KEY-VALUE\"</span>\n)",
-    "zh": "<span class=\"c\"># 在 \\ 直接调用 \\ LLM 供应商之前</span>\n客户端= LLM 客户端(\napi 键=<span class=\"k\">\"API -KEY -VALUE\"</span>\n) (中文(中国大陆)"
+    "zh-Hans": "<span class=\"c\"># 在 \\ 直接调用 \\ LLM 供应商之前</span>\n客户端= LLM 客户端(\napi 键=<span class=\"k\">\"API -KEY -VALUE\"</span>\n) (中文(中国大陆)",
+    "zh-Hant": "<span class=\"c\"># 在 \\ 直接呼叫 \\ LLM 供應商之前</span>\n客戶端= LLM 客戶端(\napi 鍵=<span class=\"k\">\"API -KEY -VALUE\"</span>\n) (中文(中國大陸)"
   },
   "u.0c267aeeac1e": {
     "match": "# After · Kong AI Gateway 경유 client = LLMClient( base_url=\"https://address.kong.ai.gateway\", # api_key=\"API-KEY-VALUE\" ← 키는 Kong이 보관 )",
     "en": "<span class=\"c\"># After · Via Kong AI Gateway</span>\nclient = LLMClient(\n    base_url=<span class=\"k\">\"https://address.kong.ai.gateway\"</span>,\n<span class=\"c\">    # api_key=\"API-KEY-VALUE\"  ← Kong stores the key</span>\n)",
     "ja": "<span class=\"c\"># After · Kong AI Gateway経由</span>\nclient = LLMClient(\n    base_url=<span class=\"k\">\"https://address.kong.ai.gateway\"</span>,\n<span class=\"c\">    # api_key=\"API-KEY-VALUE\"  ← キーはKongが保管</span>\n)",
-    "zh": "<span class=\"c\">{\\fn方正粗倩简体\\fs12\\an8\\1cHFFFF00\\b0}在...</span>\n客户端= AI Gateway 客户端(\n基数 url=<span class=\"k\">\"https://address. AI Gateway ai.gateway\" (中文(简体) ).</span>, (中文).\n<span class=\"c\"> # api key=\"API-KEY-VALUE\" QQ AI Gateway 存储密钥</span>\n) (中文(中国大陆)"
+    "zh-Hans": "<span class=\"c\">{\\fn方正粗倩简体\\fs12\\an8\\1cHFFFF00\\b0}在...</span>\n客户端= AI Gateway 客户端(\n基数 url=<span class=\"k\">\"https://address. AI Gateway ai.gateway\" (中文(简体) ).</span>, (中文).\n<span class=\"c\"> # api key=\"API-KEY-VALUE\" QQ AI Gateway 存储密钥</span>\n) (中文(中国大陆)",
+    "zh-Hant": "<span class=\"c\">{\\fn方正粗倩簡體\\fs12\\an8\\1cHFFFF00\\b0}在...</span>\n客戶端= AI Gateway 客戶端(\n基數 url=<span class=\"k\">\"https://address. AI Gateway ai.gateway\" (中文(簡體) ).</span>, (中文).\n<span class=\"c\"> # api key=\"API-KEY-VALUE\" QQ AI Gateway 儲存金鑰</span>\n) (中文(中國大陸)"
   },
   "u.da08c8eb039f": {
     "match": "# Before · 개발자 PC에서 제공자로 직접 # 개인 API 키가 각 PC에 흩어짐 export ANTHROPIC_API_KEY=\"sk-ant-…(개인 키)\" claude",
     "en": "<span class=\"c\"># Before · Direct from developer PC to provider</span>\n<span class=\"c\"># Personal API keys scattered across PCs</span>\nexport ANTHROPIC_API_KEY=<span class=\"k\">\"sk-ant-…(personal key)\"</span>\nclaude",
     "ja": "<span class=\"c\"># Before · 開発者PCからプロバイダーへ直接</span>\n<span class=\"c\"># 個人のAPIキーが各PCに散在</span>\nexport ANTHROPIC_API_KEY=<span class=\"k\">\"sk-ant-…(個人キー)\"</span>\nclaude",
-    "zh": "<span class=\"c\">\\ 直接从开发者 PC 到提供者</span>\n<span class=\"c\"># 个人API 密钥分散在个人电脑上</span>\n导出 ATHROPIC API KEY =<span class=\"k\">\"SK -ANT... (个人钥匙)\"</span>\n克劳德"
+    "zh-Hans": "<span class=\"c\">\\ 直接从开发者 PC 到提供者</span>\n<span class=\"c\"># 个人API 密钥分散在个人电脑上</span>\n导出 ATHROPIC API KEY =<span class=\"k\">\"SK -ANT... (个人钥匙)\"</span>\n克劳德",
+    "zh-Hant": "<span class=\"c\">\\ 直接從開發者 PC 到提供者</span>\n<span class=\"c\"># 個人API 金鑰分散在個人電腦上</span>\n匯出 ATHROPIC API KEY =<span class=\"k\">\"SK -ANT... (個人鑰匙)\"</span>\n克勞德"
   },
   "u.5c62cd3864ed": {
     "match": "# After · Kong AI Gateway 경유 export ANTHROPIC_BASE_URL=\"https://address.kong.ai.gateway/anthropic\" export ANTHROPIC_AUTH_TOKEN=\"<Kong 발급 가상 키>\" claude # 또는 ~/.claude/settings.json (조직 배포용) { \"env\": { \"ANTHROPIC_BASE_URL\": \"https://address.kong.ai.gateway/anthropic\" } }",
     "en": "<span class=\"c\"># After · Via Kong AI Gateway</span>\nexport ANTHROPIC_BASE_URL=<span class=\"k\">\"https://address.kong.ai.gateway/anthropic\"</span>\nexport ANTHROPIC_AUTH_TOKEN=<span class=\"k\">\"&lt;Kong-issued virtual key&gt;\"</span>\nclaude\n\n<span class=\"c\"># Or ~/.claude/settings.json (for org-wide rollout)</span>\n{ <span class=\"k\">\"env\"</span>: { <span class=\"k\">\"ANTHROPIC_BASE_URL\"</span>: <span class=\"k\">\"https://address.kong.ai.gateway/anthropic\"</span> } }",
     "ja": "<span class=\"c\"># After · Kong AI Gateway経由</span>\nexport ANTHROPIC_BASE_URL=<span class=\"k\">\"https://address.kong.ai.gateway/anthropic\"</span>\nexport ANTHROPIC_AUTH_TOKEN=<span class=\"k\">\"&lt;Kong発行の仮想キー&gt;\"</span>\nclaude\n\n<span class=\"c\"># または ~/.claude/settings.json（組織配布用）</span>\n{ <span class=\"k\">\"env\"</span>: { <span class=\"k\">\"ANTHROPIC_BASE_URL\"</span>: <span class=\"k\">\"https://address.kong.ai.gateway/anthropic\"</span> } }",
-    "zh": "<span class=\"c\">{\\fn方正粗倩简体\\fs12\\an8\\1cHFFFF00\\b0}在...</span>\n导出 ANTHROPIC BASE URL=<span class=\"k\">\"https://address. AI Gateway ai.gateway/harmic\" (中文(中国大陆) ).</span>\n导出 ATHROPIC AUTH TOKEN =<span class=\"k\">\" (中文(简体) ).&lt;AI Gateway - 发行的虚拟密钥&gt;\" (中文(简体) ).</span>\n克劳德 <span class=\"c\">#或~.claude/sets.json(为整个org推出).</span>\n{ <span class=\"k\">\"env\"</span>键盘 : <span class=\"k\">\"ANTHROPIC BASE URL(英语:</span>数字 : <span class=\"k\">\"https://address. AI Gateway ai.gateway/harmic\" (中文(中国大陆) ).</span> {\\fn黑体\\fs22\\bord1\\shad0\\3aHBE\\4aH00\\fscx67\\fscy66\\2cHFFFFFF\\3cH808080}你觉得呢?"
+    "zh-Hans": "<span class=\"c\">{\\fn方正粗倩简体\\fs12\\an8\\1cHFFFF00\\b0}在...</span>\n导出 ANTHROPIC BASE URL=<span class=\"k\">\"https://address. AI Gateway ai.gateway/harmic\" (中文(中国大陆) ).</span>\n导出 ATHROPIC AUTH TOKEN =<span class=\"k\">\" (中文(简体) ).&lt;AI Gateway - 发行的虚拟密钥&gt;\" (中文(简体) ).</span>\n克劳德 <span class=\"c\">#或~.claude/sets.json(为整个org推出).</span>\n{ <span class=\"k\">\"env\"</span>键盘 : <span class=\"k\">\"ANTHROPIC BASE URL(英语:</span>数字 : <span class=\"k\">\"https://address. AI Gateway ai.gateway/harmic\" (中文(中国大陆) ).</span> {\\fn黑体\\fs22\\bord1\\shad0\\3aHBE\\4aH00\\fscx67\\fscy66\\2cHFFFFFF\\3cH808080}你觉得呢?",
+    "zh-Hant": "<span class=\"c\">{\\fn方正粗倩簡體\\fs12\\an8\\1cHFFFF00\\b0}在...</span>\n匯出 ANTHROPIC BASE URL=<span class=\"k\">\"https://address. AI Gateway ai.gateway/harmic\" (中文(中國大陸) ).</span>\n匯出 ATHROPIC AUTH TOKEN =<span class=\"k\">\" (中文(簡體) ).&lt;AI Gateway - 發行的虛擬金鑰&gt;\" (中文(簡體) ).</span>\n克勞德 <span class=\"c\">#或~.claude/sets.json(為整個org推出).</span>\n{ <span class=\"k\">\"env\"</span>鍵盤 : <span class=\"k\">\"ANTHROPIC BASE URL(英語:</span>數字 : <span class=\"k\">\"https://address. AI Gateway ai.gateway/harmic\" (中文(中國大陸) ).</span> {\\fn黑體\\fs22\\bord1\\shad0\\3aHBE\\4aH00\\fscx67\\fscy66\\2cHFFFFFF\\3cH808080}你覺得呢?"
   },
   "u.fc2f80ccbe13": {
     "match": "예: “남은 휴가 일수와 이월되는 휴가일수는?”은 내규·복지 경로로 갑니다. 프롬프트 유형별로 특화된 모델을 호출해 사용량을 최적화하고 비용을 줄입니다. 요청 본문의 model 필드 기반 라우팅과 6종 로드밸런싱도 지원합니다.",
     "en": "Example: “How many vacation days do I have left, and how many carry over?” goes to the HR policy and benefits route. Calling a model specialized for each prompt type optimizes usage and cuts costs. Routing based on the <code style=\"font-family:var(--mono)\">model</code> field in the request body and six load-balancing algorithms are also supported.",
     "ja": "例: 「残りの休暇日数と繰り越される休暇日数は？」は社内規程・福利厚生ルートに振り分けられます。プロンプトの種類ごとに特化したモデルを呼び出して使用量を最適化し、コストを削減します。リクエスト本文の<code style=\"font-family:var(--mono)\">model</code>フィールドに基づくルーティングと6種類のロードバランシングにも対応しています。",
-    "zh": "例如:“我有多少休假日,有多少假期结转?” 要求为每种速效型专门使用一个模型,以优化使用和削减成本。 根据《公约》 <code style=\"font-family:var(--mono)\">模式</code> 字段和6个负载平衡算法也被支持。"
+    "zh-Hans": "例如:“我有多少休假日,有多少假期结转?” 要求为每种速效型专门使用一个模型,以优化使用和削减成本。 根据《公约》 <code style=\"font-family:var(--mono)\">模式</code> 字段和6个负载平衡算法也被支持。",
+    "zh-Hant": "例如:“我有多少休假日,有多少假期結轉?” 要求為每種速效型專門使用一個模型,以最佳化使用和削減成本。 根據《公約》 <code style=\"font-family:var(--mono)\">模式</code> 欄位和6個負載平衡演算法也被支援。"
   },
   "u.caaa4c383f57": {
     "match": "# Prompt · 112 tokens 고객 지원 담당자로서 응대해 주십시오. 고객들이 계정에 로그인할 수 없으며 '잘못된 자격 증명(invalid credentials)' 이라는 오류 메시지가 표시된다고 보고했습니다. 등록된 이메일 주소를 확인하고 비밀번호 재설정 절차를 안내해 주십시오.",
     "en": "<span class=\"c\"># Prompt · 112 tokens</span>\nPlease respond as a customer support\nrepresentative. Customers have reported\nthat they cannot log in to their accounts\nand see the error message\n'invalid credentials'.\nPlease verify the registered email\naddress and guide them through the\npassword reset process.",
     "ja": "<span class=\"c\"># Prompt · 112 tokens</span>\nカスタマーサポート担当者として対応してください。\n顧客がアカウントにログインできず、\n「認証情報が正しくありません（invalid credentials）」\nというエラーメッセージが表示されると\n報告しています。登録済みのメールアドレスを\n確認し、パスワードの再設定手順を案内して\nください。",
-    "zh": "<span class=\"c\">{\\fn方正粗倩简体\\fs12\\an8\\1cHFFFF00\\b0}112个纪念品</span>\n请作为客户支持回复\n代表。 客户报告\n他们不能入帐,\n查看错误消息\n\"无效证书\"。\n请检查注册邮件\n地址和引导他们通过\n密码重置进程。"
+    "zh-Hans": "<span class=\"c\">{\\fn方正粗倩简体\\fs12\\an8\\1cHFFFF00\\b0}112个纪念品</span>\n请作为客户支持回复\n代表。 客户报告\n他们不能入帐,\n查看错误消息\n\"无效证书\"。\n请检查注册邮件\n地址和引导他们通过\n密码重置进程。",
+    "zh-Hant": "<span class=\"c\">{\\fn方正粗倩簡體\\fs12\\an8\\1cHFFFF00\\b0}112個紀念品</span>\n請作為客戶支援回覆\n代表。 客戶報告\n他們不能入帳,\n檢視錯誤訊息\n\"無效證書\"。\n請檢查註冊郵件\n地址和引導他們透過\n密碼重置程序。"
   },
   "u.c7984328c452": {
     "match": "# Compressed · 89 tokens 지원 봇 역할을 수행하세요. 사용자가 로그인하지 못하고 있으며, '잘못된 자격 증명' 오류가 발생하고 있습니다. 사용자에게 이메일 주소를 물어보고, 비밀번호 재설정 절차를 안내하세요.",
     "en": "<span class=\"c\"># Compressed · 89 tokens</span>\nAct as a support bot.\nUsers cannot log in and\nget an 'invalid credentials'\nerror. Ask for their email\naddress and guide them through\npassword reset.",
     "ja": "<span class=\"c\"># Compressed · 89 tokens</span>\nサポートボットとして振る舞ってください。\nユーザーがログインできず、\n「認証情報が無効」エラーが発生して\nいます。ユーザーにメールアドレスを\n尋ね、パスワードの再設定手順を\n案内してください。",
-    "zh": "<span class=\"c\">{\\fn方正粗倩简体\\fs12\\an8\\1cHFFFF00\\b0}压缩 89个纪念品</span>\n做个支持机器人\n用户无法登录并\n获得\"无效证书\"\n错误。 问他们的电子邮件\n地址和引导他们通过\n密码重置。"
+    "zh-Hans": "<span class=\"c\">{\\fn方正粗倩简体\\fs12\\an8\\1cHFFFF00\\b0}压缩 89个纪念品</span>\n做个支持机器人\n用户无法登录并\n获得\"无效证书\"\n错误。 问他们的电子邮件\n地址和引导他们通过\n密码重置。",
+    "zh-Hant": "<span class=\"c\">{\\fn方正粗倩簡體\\fs12\\an8\\1cHFFFF00\\b0}壓縮 89個紀念品</span>\n做個支援機器人\n使用者無法登入並\n獲得\"無效證書\"\n錯誤。 問他們的電子郵件\n地址和引導他們透過\n密碼重置。"
   },
   "u.cbf6de292660": {
     "match": "제어/데이터 평면 분리 폐쇄망에서는 DP만 단독 배포, 페이로드는 외부로 나가지 않음",
     "en": "<b>Control/data plane separation</b> In air-gapped networks, deploy only the DP; payloads never leave the network",
     "ja": "<b>制御/データプレーンの分離</b> 閉域網ではDPのみを単独デプロイし、ペイロードは外部に出ない",
-    "zh": "<b>控制/ Data Plane 分离</b> 在空载网络中,只部署DP;有效载荷从不离开网络"
+    "zh-Hans": "<b>控制/ Data Plane 分离</b> 在空载网络中,只部署DP;有效载荷从不离开网络",
+    "zh-Hant": "<b>控制/ Data Plane 分離</b> 在空載網路中,只部署DP;有效載荷從不離開網路"
   },
   "u.3d4231ce7809": {
     "match": "배포 중립성 AWS EKS, Azure AKS, VM, 물리서버. HPA 또는 오토스케일링으로 확장",
     "en": "<b>Deployment-agnostic</b> AWS EKS, Azure AKS, VMs, bare metal. Scale with HPA or autoscaling",
     "ja": "<b>デプロイの中立性</b> AWS EKS、Azure AKS、VM、物理サーバー。HPAまたはオートスケーリングで拡張",
-    "zh": "<b>部署-不可知</b> —AWS EKS, —Azure AKS, VMs, 裸金属. 用 HPA 或自动缩放缩放"
+    "zh-Hans": "<b>部署-不可知</b> —AWS EKS, —Azure AKS, VMs, 裸金属. 用 HPA 或自动缩放缩放",
+    "zh-Hant": "<b>部署-不可知</b> —AWS EKS, —Azure AKS, VMs, 裸金屬. 用 HPA 或自動縮放縮放"
   },
   "u.96a19e1140dd": {
     "match": "형상관리 decK와 Terraform으로 코드화",
     "en": "<b>Configuration management</b> Codified with decK and Terraform",
     "ja": "<b>構成管理</b> decKとTerraformでコード化",
-    "zh": "<b>配置管理</b> 用 DCC 和 Terraform 编码"
+    "zh-Hans": "<b>配置管理</b> 用 DCC 和 Terraform 编码",
+    "zh-Hant": "<b>配置管理</b> 用 DCC 和 Terraform 編碼"
   },
   "u.2de64ec863b3": {
     "match": "게이트웨이 경유를 전제로 설계합니다. “모든 AI 트래픽이 Kong을 경유한다”는 전제를 엔드포인트 설정 강제와 네트워크 egress 정책으로 함께 세워야 통제가 완성됩니다.",
     "en": "<b>Design on the premise that all traffic goes through the gateway.</b> Control is complete only when the premise that “all AI traffic goes through Kong” is backed by enforced endpoint settings and network egress policies.",
     "ja": "<b>ゲートウェイ経由を前提に設計します。</b>「すべてのAIトラフィックがKongを経由する」という前提を、エンドポイント設定の強制とネットワークのegressポリシーで併せて確立してはじめて統制が完成します。",
-    "zh": "<b>设计前提是所有流量都通过网关.</b> 只有在“所有AI流量通过 Kong ”这一前提得到强制端点设置和网络入侵政策的支持时,控制才能完成。"
+    "zh-Hans": "<b>设计前提是所有流量都通过网关.</b> 只有在“所有AI流量通过 Kong ”这一前提得到强制端点设置和网络入侵政策的支持时,控制才能完成。",
+    "zh-Hant": "<b>設計前提是所有流量都透過閘道器.</b> 只有在“所有AI流量透過 Kong ”這一前提得到強制端點設定和網路入侵政策的支援時,控制才能完成。"
   },
   "u.f330b0d3e0f6": {
     "match": "일부 시나리오는 사전 설계가 필요합니다. 장시간 스트리밍과 동시에 동작하는 가드레일, 사람 개입 승인 워크플로우는 표준 기능과 커스텀 확장을 함께 씁니다. PoC에서 시나리오별로 검증하세요.",
     "en": "<b>Some scenarios need upfront design.</b> Guardrails that run alongside long-running streaming and human-in-the-loop approval workflows combine standard features with custom extensions. Validate each scenario in a PoC.",
     "ja": "<b>一部のシナリオは事前設計が必要です。</b>長時間のストリーミングと同時に動作するガードレールや、人の介入による承認ワークフローは、標準機能とカスタム拡張を組み合わせて使用します。PoCでシナリオごとに検証してください。",
-    "zh": "<b>有些情况需要预先设计。</b> 与长跑的流线和人行进的审批工作流程同时运行的护卫铁路将标准功能与自定义扩展相结合. 在 PoC 中验证每个情景。"
+    "zh-Hans": "<b>有些情况需要预先设计。</b> 与长跑的流线和人行进的审批工作流程同时运行的护卫铁路将标准功能与自定义扩展相结合. 在 PoC 中验证每个情景。",
+    "zh-Hant": "<b>有些情況需要預先設計。</b> 與長跑的流線和人行進的審批工作流程同時執行的護衛鐵路將標準功能與自定義擴充套件相結合. 在 PoC 中驗證每個情景。"
   },
   "u.b59193637658": {
     "match": "규제 대응은 매핑에서 시작합니다. 규제 매핑을 ISMS-P 인증, 개인정보위 점검 항목과 연결하면 게이트웨이 설정이 증적이 됩니다.",
     "en": "<b>Compliance starts with mapping.</b> Link your regulatory mapping to ISMS-P certification and Korea's Personal Information Protection Commission (PIPC) inspection items, and gateway settings become audit evidence.",
     "ja": "<b>規制対応はマッピングから始まります。</b>規制マッピングをISMS-P認証や韓国個人情報保護委員会の点検項目と結び付けると、ゲートウェイの設定がそのまま証跡になります。",
-    "zh": "<b>遵义从测绘开始.</b> 将您的监管绘图与ISMS-P认证和韩国个人信息保护委员会(PIPC)的检查项目联系起来,网关设置成为审计证据."
+    "zh-Hans": "<b>遵义从测绘开始.</b> 将您的监管绘图与ISMS-P认证和韩国个人信息保护委员会(PIPC)的检查项目联系起来,网关设置成为审计证据.",
+    "zh-Hant": "<b>遵義從測繪開始.</b> 將您的監管繪圖與ISMS-P認證和韓國個人資訊保護委員會(PIPC)的檢查專案聯絡起來,閘道器設定成為審計證據."
   },
   "u.94b2c7370af3": {
     "match": "추가 검토 요소 · Gateway가 집행 지점이 됩니다",
     "en": "Additional considerations <em>· The gateway becomes the enforcement point</em>",
     "ja": "追加検討事項 <em>· Gatewayが執行ポイントになります</em>",
-    "zh": "其他考虑因素 <em>· 网关成为执行点</em>"
+    "zh-Hans": "其他考虑因素 <em>· 网关成为执行点</em>",
+    "zh-Hant": "其他考慮因素 <em>· 閘道器成為執行點</em>"
   },
   "u.110f7e6582b3": {
     "match": "함께 쓰는 구성이 일반적입니다. 직원의 웹 기반 AI 서비스 사용은 AI DLP로, 애플리케이션 · 에이전트 · 코딩 도구의 모델 호출은 AI Gateway로 통제하면 사람과 워크로드 양쪽의 사각지대를 함께 줄일 수 있습니다.",
     "en": "<b>Using both together is common.</b> Govern employees' use of web-based AI services with AI DLP, and model calls from applications · agents · coding tools with AI Gateway, to close blind spots for both people and workloads.",
     "ja": "<b>併用する構成が一般的です。</b>従業員によるWebベースのAIサービス利用はAI DLPで、アプリケーション · エージェント · コーディングツールのモデル呼び出しはAI Gatewayで統制すれば、人とワークロードの両方の死角を同時に減らせます。",
-    "zh": "<b>两者并用是常见的.</b> Govern员工使用AI DLP 的网络AI服务,以及来自应用程序的模型调用 代理 AI Gateway 的编码工具,关闭对人和工作量的盲点."
+    "zh-Hans": "<b>两者并用是常见的.</b> Govern员工使用AI DLP 的网络AI服务,以及来自应用程序的模型调用 代理 AI Gateway 的编码工具,关闭对人和工作量的盲点.",
+    "zh-Hant": "<b>兩者並用是常見的.</b> Govern員工使用AI DLP 的網路AI服務,以及來自應用程式的模型呼叫 代理 AI Gateway 的編碼工具,關閉對人和工作量的盲點."
   },
   "u.bb1f7fb98ade": {
     "match": "네이티브 지원",
     "en": "<i class=\"dot f\"></i> Native support",
     "ja": "<i class=\"dot f\"></i> ネイティブ対応",
-    "zh": "<i class=\"dot f\"></i> 本地支持"
+    "zh-Hans": "<i class=\"dot f\"></i> 本地支持",
+    "zh-Hant": "<i class=\"dot f\"></i> 本地支援"
   },
   "u.359ae7fe5847": {
     "match": "부분·조건부 (구성, 외부 연동, 티어 제한)",
     "en": "<i class=\"dot h\"></i> Partial/conditional (configuration, external integration, tier limits)",
     "ja": "<i class=\"dot h\"></i> 部分的・条件付き（構成、外部連携、ティア制限）",
-    "zh": "<i class=\"dot h\"></i> 部分/有条件(配置、外部整合、等级限制)"
+    "zh-Hans": "<i class=\"dot h\"></i> 部分/有条件(配置、外部整合、等级限制)",
+    "zh-Hant": "<i class=\"dot h\"></i> 部分/有條件(配置、外部整合、等級限制)"
   },
   "u.f762ac7a1dd3": {
     "match": "미지원 · 해당 없음",
     "en": "<i class=\"dot e\"></i> Not supported · N/A",
     "ja": "<i class=\"dot e\"></i> 非対応 · 該当なし",
-    "zh": "<i class=\"dot e\"></i> 不支持 · 不详"
+    "zh-Hans": "<i class=\"dot e\"></i> 不支持 · 不详",
+    "zh-Hant": "<i class=\"dot e\"></i> 不支援 · 不詳"
   },
   "u.aebb611b0286": {
     "match": "기업을 위한 안전한 MCP",
     "en": "Secure <em>MCP</em> for the enterprise",
     "ja": "企業向けの安全な <em>MCP</em>",
-    "zh": "安全 <em>MCP</em> 企业"
+    "zh-Hans": "安全 <em>MCP</em> 企业",
+    "zh-Hant": "安全 <em>MCP</em> 企業"
   },
   "u.7a8eeb52a187": {
     "match": "기존 방식MCP 서버마다 OAuth 2.1 인가 흐름을 구현하고, 스펙이 바뀌면 모든 서버를 수정",
     "en": "<i>Traditional approach</i>Implement the OAuth 2.1 authorization flow on every MCP server, and update every server when the spec changes",
     "ja": "<i>従来の方式</i>MCPサーバーごとにOAuth 2.1の認可フローを実装し、仕様が変わるとすべてのサーバーを修正",
-    "zh": "<i>传统做法</i>在每个 MCP 服务器上执行 OAuth 2.1 授权流, 当光谱变化时更新每个服务器"
+    "zh-Hans": "<i>传统做法</i>在每个 MCP 服务器上执行 OAuth 2.1 授权流, 当光谱变化时更新每个服务器",
+    "zh-Hant": "<i>傳統做法</i>在每個 MCP 伺服器上執行 OAuth 2.1 授權流, 當光譜變化時更新每個伺服器"
   },
   "u.fb319b635b83": {
     "match": "Kong MCP GatewayKong이 OAuth Resource Server 역할을 맡고 보호 리소스 메타데이터를 제공. 단일 설정으로 모든 MCP 서버 보호",
     "en": "<i>Kong MCP Gateway</i>Kong acts as the OAuth Resource Server and serves protected resource metadata. Protect all MCP servers with a single configuration",
     "ja": "<i>Kong MCP Gateway</i>KongがOAuth Resource Serverの役割を担い、保護リソースのメタデータを提供。単一の設定ですべてのMCPサーバーを保護",
-    "zh": "<i>Kong Kong 网关</i>Kong 充当 Kong 资源服务器,并为受保护的资源元数据服务. 以单一配置保护所有 OAuth 服务器"
+    "zh-Hans": "<i>Kong Kong 网关</i>Kong 充当 Kong 资源服务器,并为受保护的资源元数据服务. 以单一配置保护所有 OAuth 服务器",
+    "zh-Hant": "<i>Kong Kong 閘道器</i>Kong 充當 Kong 資源伺服器,併為受保護的資源後設資料服務. 以單一配置保護所有 OAuth 伺服器"
   },
   "u.9bcc9d8d2abe": {
     "match": "기존 방식도구 단위 권한, 백엔드 토큰 · 시크릿 보호, 입력 검증을 서버마다 개별 처리",
     "en": "<i>Traditional approach</i>Handle tool-level permissions, backend token · secret protection, and input validation separately on each server",
     "ja": "<i>従来の方式</i>ツール単位の権限、バックエンドのトークン · シークレット保護、入力検証をサーバーごとに個別処理",
-    "zh": "<i>传统做法</i>处理工具级权限, 后端符 . 秘密保护, 并在每个服务器上分别进行输入验证"
+    "zh-Hans": "<i>传统做法</i>处理工具级权限, 后端符 . 秘密保护, 并在每个服务器上分别进行输入验证",
+    "zh-Hant": "<i>傳統做法</i>處理工具級許可權, 後端符 . 秘密保護, 並在每個伺服器上分別進行輸入驗證"
   },
   "u.d77a05b931b2": {
     "match": "Kong MCP GatewayConsumer별 도구 ACL, 백엔드 자격증명 은닉, PII · 가드레일 정책을 일괄 적용",
     "en": "<i>Kong MCP Gateway</i>Apply per-Consumer tool ACLs, backend credential hiding, and PII · guardrail policies all at once",
     "ja": "<i>Kong MCP Gateway</i>Consumer別のツールACL、バックエンド認証情報の秘匿、PII · ガードレールポリシーを一括適用",
-    "zh": "<i>Kong MCP 网关</i>应用每个消费者工具 Kong s, 后端证书隐藏, 和 PII 护栏政策全部同时使用"
+    "zh-Hans": "<i>Kong MCP 网关</i>应用每个消费者工具 Kong s, 后端证书隐藏, 和 PII 护栏政策全部同时使用",
+    "zh-Hant": "<i>Kong MCP 閘道器</i>應用每個消費者工具 Kong s, 後端證書隱藏, 和 PII 護欄政策全部同時使用"
   },
   "u.633aff3d1e00": {
     "match": "기존 방식에이전트가 만드는 폭증 호출을 서버마다 따로 제어해야 하고, 장애가 다른 서버로 전파",
     "en": "<i>Traditional approach</i>Bursts of agent calls must be controlled server by server, and failures cascade to other servers",
     "ja": "<i>従来の方式</i>エージェントが生み出す急増する呼び出しをサーバーごとに個別に制御する必要があり、障害が他のサーバーに波及",
-    "zh": "<i>传统做法</i>代理电话的故障必须由服务器控制,故障级联到其他服务器"
+    "zh-Hans": "<i>传统做法</i>代理电话的故障必须由服务器控制,故障级联到其他服务器",
+    "zh-Hant": "<i>傳統做法</i>代理電話的故障必須由伺服器控制,故障級聯到其他伺服器"
   },
   "u.e8ff97814548": {
     "match": "Kong MCP GatewayConsumer · 도구 단위 Rate Limit, 로드밸런싱, 서킷 브레이커로 부하를 게이트웨이에서 흡수",
     "en": "<i>Kong MCP Gateway</i>Absorb load at the gateway with per-Consumer · per-tool rate limits, load balancing, and circuit breakers",
     "ja": "<i>Kong MCP Gateway</i>Consumer · ツール単位のRate Limit、ロードバランシング、サーキットブレーカーで負荷をゲートウェイで吸収",
-    "zh": "<i>Kong MCP 网关</i>在网关加载每个消费者 .每工具速率限制、负载平衡和断路器"
+    "zh-Hans": "<i>Kong MCP 网关</i>在网关加载每个消费者 .每工具速率限制、负载平衡和断路器",
+    "zh-Hant": "<i>Kong MCP 閘道器</i>在閘道器載入每個消費者 .每工具速率限制、負載平衡和斷路器"
   },
   "u.feec89675b75": {
     "match": "기존 방식팀마다 임의로 띄운 MCP 서버의 주소 · 버전이 흩어지고, 사용 현황을 파악할 수 없음",
     "en": "<i>Traditional approach</i>Addresses · versions of MCP servers spun up ad hoc by each team are scattered, with no visibility into usage",
     "ja": "<i>従来の方式</i>チームごとに任意に立ち上げたMCPサーバーのアドレス · バージョンが散在し、利用状況を把握できない",
-    "zh": "<i>传统做法</i>每个团队临时推出的 MCP 服务器的地址—— 分散, 无法在使用中看到"
+    "zh-Hans": "<i>传统做法</i>每个团队临时推出的 MCP 服务器的地址—— 分散, 无法在使用中看到",
+    "zh-Hant": "<i>傳統做法</i>每個團隊臨時推出的 MCP 伺服器的地址—— 分散, 無法在使用中看到"
   },
   "u.f50503b94f5f": {
     "match": "Kong MCP Gateway단일 엔드포인트로 집약하고, 도구 사용량 · 지연 · 오류 · 컨텍스트 크기를 관측",
     "en": "<i>Kong MCP Gateway</i>Consolidate into a single endpoint and observe tool usage · latency · errors · context size",
     "ja": "<i>Kong MCP Gateway</i>単一エンドポイントに集約し、ツールの使用量 · レイテンシ · エラー · コンテキストサイズを監視",
-    "zh": "<i>Kong MCP 网关</i>合并到单个端点并观察工具使用 ^ 耐久 → 错误 → 上下文大小"
+    "zh-Hans": "<i>Kong MCP 网关</i>合并到单个端点并观察工具使用 ^ 耐久 → 错误 → 上下文大小",
+    "zh-Hant": "<i>Kong MCP 閘道器</i>合併到單個端點並觀察工具使用 ^ 耐久 → 錯誤 → 上下文大小"
   },
   "u.2f31ff9cd502": {
     "match": "참고: Kong Blog, “Make MCP Production-Ready: Introducing Kong’s Enterprise MCP Gateway” (2025.10)",
     "en": "Reference: <a href=\"https://konghq.com/blog/product-releases/enterprise-mcp-gateway\" rel=\"noopener\" target=\"_blank\">Kong Blog, “Make MCP Production-Ready: Introducing Kong’s Enterprise MCP Gateway” (2025.10)</a>",
     "ja": "参考: <a href=\"https://konghq.com/blog/product-releases/enterprise-mcp-gateway\" rel=\"noopener\" target=\"_blank\">Kong Blog, “Make MCP Production-Ready: Introducing Kong’s Enterprise MCP Gateway” (2025.10)</a>",
-    "zh": "参考: <a href=\"https://konghq.com/blog/product-releases/enterprise-mcp-gateway\" rel=\"noopener\" target=\"_blank\">Kong 博客,\"Make Kong 生产-准备:介绍 Kong 企业 MCP Gateway\"(2025.10)</a>"
+    "zh-Hans": "参考: <a href=\"https://konghq.com/blog/product-releases/enterprise-mcp-gateway\" rel=\"noopener\" target=\"_blank\">Kong 博客,\"Make Kong 生产-准备:介绍 Kong 企业 MCP Gateway\"(2025.10)</a>",
+    "zh-Hant": "參考: <a href=\"https://konghq.com/blog/product-releases/enterprise-mcp-gateway\" rel=\"noopener\" target=\"_blank\">Kong 部落格,\"Make Kong 生產-準備:介紹 Kong 企業 MCP Gateway\"(2025.10)</a>"
   },
   "u.942cbf4a3c2e": {
     "match": "5 / 5 도구 노출",
     "en": "<b>5</b> / 5 tools exposed",
     "ja": "<b>5</b> / 5 ツール公開",
-    "zh": "<b>页:1</b> 接触了5种工具"
+    "zh-Hans": "<b>页:1</b> 接触了5种工具",
+    "zh-Hant": "<b>頁:1</b> 接觸了5種工具"
   },
   "u.9badbddf6eac": {
     "match": "2 / 5 도구 노출 · 읽기 전용",
     "en": "<b>2</b> / 5 tools exposed · read-only",
     "ja": "<b>2</b> / 5 ツール公開 · 読み取り専用",
-    "zh": "<b>2个</b> / 5 个工具 —— 只读"
+    "zh-Hans": "<b>2个</b> / 5 个工具 —— 只读",
+    "zh-Hant": "<b>2個</b> / 5 個工具 —— 只讀"
   },
   "u.7bf251c63296": {
     "match": "장애관리 MCP",
     "en": "<span class=\"dot\"></span>Incident management MCP",
     "ja": "<span class=\"dot\"></span>障害管理MCP",
-    "zh": "<span class=\"dot\"></span>事件管理 MCP"
+    "zh-Hans": "<span class=\"dot\"></span>事件管理 MCP",
+    "zh-Hant": "<span class=\"dot\"></span>事件管理 MCP"
   },
   "u.a429c0b054a6": {
     "match": "문서검색 MCP",
     "en": "<span class=\"dot\"></span>Document search MCP",
     "ja": "<span class=\"dot\"></span>ドキュメント検索MCP",
-    "zh": "<span class=\"dot\"></span>文件搜索 MCP"
+    "zh-Hans": "<span class=\"dot\"></span>文件搜索 MCP",
+    "zh-Hant": "<span class=\"dot\"></span>檔案搜尋 MCP"
   },
   "u.175149aded2d": {
     "match": "3개 MCP · 개별 할당 3개 도구",
     "en": "<b>3</b> MCPs · <b>3</b> tools assigned individually",
     "ja": "<b>3</b>個のMCP · 個別割り当て<b>3</b>個のツール",
-    "zh": "<b>3个</b> {\\fn黑体\\fs22\\bord1\\shad0\\3aHBE\\4aH00\\fscx67\\fscy66\\2cHFFFFFF\\3cH808080}请检查date=中的日期值 (帮助) <b>3个</b> 个人指定的工具"
+    "zh-Hans": "<b>3个</b> {\\fn黑体\\fs22\\bord1\\shad0\\3aHBE\\4aH00\\fscx67\\fscy66\\2cHFFFFFF\\3cH808080}请检查date=中的日期值 (帮助) <b>3个</b> 个人指定的工具",
+    "zh-Hant": "<b>3個</b> {\\fn黑體\\fs22\\bord1\\shad0\\3aHBE\\4aH00\\fscx67\\fscy66\\2cHFFFFFF\\3cH808080}請檢查date=中的日期值 (幫助) <b>3個</b> 個人指定的工具"
   },
   "u.801b83a9f506": {
     "match": "통제된 에이전트 협업",
     "en": "Governed <em>agent collaboration</em>",
     "ja": "統制された<em>エージェント協業</em>",
-    "zh": "管理 <em>代理协作</em>"
+    "zh-Hans": "管理 <em>代理协作</em>",
+    "zh-Hant": "管理 <em>代理協作</em>"
   },
   "u.8f530fd6f3e9": {
     "match": "활용 예시 여러 에이전트가 일을 나눠 처리하는 흐름",
     "en": "Example use cases <small>Multiple agents dividing up the work</small>",
     "ja": "活用例 <small>複数のエージェントが作業を分担して処理する流れ</small>",
-    "zh": "实例 <small>多个智能体分开工作</small>"
+    "zh-Hans": "实例 <small>多个智能体分开工作</small>",
+    "zh-Hant": "例項 <small>多個智慧體分開工作</small>"
   },
   "u.2675eb6ea354": {
     "match": "Kong Agent Gateway모든 A2A · MCP · LLM 호출이 Kong을 지나며 인증 → 권한 확인 → 토큰 한도 → 가드레일 → 단일 트레이스가 적용됩니다.",
     "en": "<span>Kong Agent Gateway</span>Every A2A · MCP · LLM call passes through Kong, applying <b>authentication → authorization → token limits → guardrails → a single trace</b>.",
     "ja": "<span>Kong Agent Gateway</span>すべてのA2A · MCP · LLM呼び出しがKongを通過し、<b>認証 → 権限確認 → トークン上限 → ガードレール → 単一トレース</b>が適用されます。",
-    "zh": "<span>Kong Agent Gateway</span>每一次A2A Kong Kong 电话通过 Agent Gateway ,应用 <b>认证 – 授权 – 令牌限制 – 护栏 – 单一跟踪</b>。"
+    "zh-Hans": "<span>Kong Agent Gateway</span>每一次A2A Kong Kong 电话通过 Agent Gateway ,应用 <b>认证 – 授权 – 令牌限制 – 护栏 – 单一跟踪</b>。",
+    "zh-Hant": "<span>Kong Agent Gateway</span>每一次A2A Kong Kong 電話透過 Agent Gateway ,應用 <b>認證 – 授權 – 令牌限制 – 護欄 – 單一跟蹤</b>。"
   },
   "u.2300de82c2d4": {
     "match": "결과갱신 위험 요약 · 고객 회신 초안 · 후속 태스크 생성",
     "en": "<b>Result</b>Renewal risk summary · draft customer reply · follow-up tasks created",
     "ja": "<b>結果</b>更新リスクの要約 · 顧客への返信草案 · フォローアップタスクの作成",
-    "zh": "<b>结果</b>· 客户答复草稿"
+    "zh-Hans": "<b>结果</b>· 客户答复草稿",
+    "zh-Hant": "<b>結果</b>· 客戶答覆草稿"
   },
   "u.b0505990e8da": {
     "match": "HITL운영자 승인",
     "en": "<b>HITL</b>Operator approval",
     "ja": "<b>HITL</b>運用者の承認",
-    "zh": "<b>危险</b>运营商核准"
+    "zh-Hans": "<b>危险</b>运营商核准",
+    "zh-Hant": "<b>危險</b>運營商核准"
   },
   "u.0e25501f7c84": {
     "match": "결과원인: DB 커넥션 풀 고갈 → 자동 확장 후 정상화 · 보고서 작성",
     "en": "<b>Result</b>Root cause: DB connection pool exhausted → auto-scaled and recovered · report written",
     "ja": "<b>結果</b>原因: DBコネクションプールの枯渇 → 自動拡張後に正常化 · レポート作成",
-    "zh": "<b>结果</b>根原因: DB 连接池已耗尽 □ 自动缩放和恢复 □ 已写报告"
+    "zh-Hans": "<b>结果</b>根原因: DB 连接池已耗尽 □ 自动缩放和恢复 □ 已写报告",
+    "zh-Hant": "<b>結果</b>根原因: DB 連線池已耗盡 □ 自動縮放和恢復 □ 已寫報告"
   },
   "u.a8c7081b6caa": {
     "match": "PII주민번호 마스킹",
     "en": "<b>PII</b>National ID masking",
     "ja": "<b>PII</b>住民登録番号のマスキング",
-    "zh": "<b>临 二</b>国家身份面具"
+    "zh-Hans": "<b>临 二</b>国家身份面具",
+    "zh-Hant": "<b>臨 二</b>國家身份面具"
   },
   "u.45189f1366a9": {
     "match": "HITL심사역 승인",
     "en": "<b>HITL</b>Underwriter approval",
     "ja": "<b>HITL</b>審査担当者の承認",
-    "zh": "<b>危险</b>承销商批准"
+    "zh-Hans": "<b>危险</b>承销商批准",
+    "zh-Hant": "<b>危險</b>承銷商批准"
   },
   "u.aa4b4ef08247": {
     "match": "결과심사 의견서 초안 → 심사역 최종 승인 (Human-in-the-loop)",
     "en": "<b>Result</b>Draft underwriting opinion → final underwriter approval (Human-in-the-loop)",
     "ja": "<b>結果</b>審査意見書の草案 → 審査担当者の最終承認（Human-in-the-loop）",
-    "zh": "<b>结果</b>承销意见草案 – 最后承销商核准(Human-in-loop)"
+    "zh-Hans": "<b>结果</b>承销意见草案 – 最后承销商核准(Human-in-loop)",
+    "zh-Hant": "<b>結果</b>承銷意見草案 – 最後承銷商核准(Human-in-loop)"
   },
   "u.237cd47a64d4": {
     "match": "A2A에이전트 간 위임",
     "en": "<b>A2A</b>Agent-to-agent delegation",
     "ja": "<b>A2A</b>エージェント間の委任",
-    "zh": "<b>A2A 导弹</b>代理对代理代表团"
+    "zh-Hans": "<b>A2A 导弹</b>代理对代理代表团",
+    "zh-Hant": "<b>A2A 導彈</b>代理對代理代表團"
   },
   "u.3e8beb57b380": {
     "match": "MCP도구 호출",
     "en": "<b>MCP</b>Tool calls",
     "ja": "<b>MCP</b>ツール呼び出し",
-    "zh": "<b>MCP</b>工具调用"
+    "zh-Hans": "<b>MCP</b>工具调用",
+    "zh-Hant": "<b>MCP</b>工具呼叫"
   },
   "u.51ec3f7a5e2d": {
     "match": "LLM모델 호출",
     "en": "<b>LLM</b>Model calls",
     "ja": "<b>LLM</b>モデル呼び出し",
-    "zh": "<b>LLM</b>模式调用"
+    "zh-Hans": "<b>LLM</b>模式调用",
+    "zh-Hant": "<b>LLM</b>模式呼叫"
   },
   "u.512cec7ecc44": {
     "match": "PII개인정보 보호",
     "en": "<b>PII</b>Data privacy",
     "ja": "<b>PII</b>個人情報保護",
-    "zh": "<b>临 二</b>数据隐私"
+    "zh-Hans": "<b>临 二</b>数据隐私",
+    "zh-Hant": "<b>臨 二</b>資料隱私"
   },
   "u.95a73e2fc338": {
     "match": "HITL사람 승인",
     "en": "<b>HITL</b>Human approval",
     "ja": "<b>HITL</b>人による承認",
-    "zh": "<b>危险</b>人类批准"
+    "zh-Hans": "<b>危险</b>人类批准",
+    "zh-Hant": "<b>危險</b>人類批准"
   },
   "u.6f732e707991": {
     "match": "기존 방식에이전트마다 토큰 검증 · 상호 인증을 구현하고, 호출 가능한 상대 에이전트를 코드로 관리",
     "en": "<i>Traditional approach</i>Implement token validation · mutual authentication in every agent, and manage callable peer agents in code",
     "ja": "<i>従来の方式</i>エージェントごとにトークン検証 · 相互認証を実装し、呼び出し可能な相手エージェントをコードで管理",
-    "zh": "<i>传统做法</i>· 在每个代理中相互认证,并在代码中管理可调用的对等代理"
+    "zh-Hans": "<i>传统做法</i>· 在每个代理中相互认证,并在代码中管理可调用的对等代理",
+    "zh-Hant": "<i>傳統做法</i>· 在每個代理中相互認證,並在程式碼中管理可呼叫的對等代理"
   },
   "u.518b1c077fbd": {
     "match": "Kong Agent GatewayOAuth 2.1 · mTLS · 토큰 교환(RFC 8693)을 게이트웨이에서 처리하고, Consumer 단위로 호출 가능한 에이전트를 제한",
     "en": "<i>Kong Agent Gateway</i>Handle OAuth 2.1 · mTLS · token exchange (RFC 8693) at the gateway, and restrict callable agents per Consumer",
     "ja": "<i>Kong Agent Gateway</i>OAuth 2.1 · mTLS · トークン交換（RFC 8693）をゲートウェイで処理し、Consumer単位で呼び出し可能なエージェントを制限",
-    "zh": "<i>Kong Agent Gateway</i>在网关上处理 Agent Gateway 2.1 Kong 代币交换(RFC 8693),并限制每个消费者的可调用代理商"
+    "zh-Hans": "<i>Kong Agent Gateway</i>在网关上处理 Agent Gateway 2.1 Kong 代币交换(RFC 8693),并限制每个消费者的可调用代理商",
+    "zh-Hant": "<i>Kong Agent Gateway</i>在閘道器上處理 Agent Gateway 2.1 Kong 代幣交換(RFC 8693),並限制每個消費者的可呼叫代理商"
   },
   "u.d69686fa0cc1": {
     "match": "기존 방식에이전트 사이로 오가는 메시지의 개인정보 · 프롬프트 주입을 각자 점검",
     "en": "<i>Traditional approach</i>Each agent separately checks messages exchanged between agents for personal data · prompt injection",
     "ja": "<i>従来の方式</i>エージェント間でやり取りされるメッセージの個人情報 · プロンプトインジェクションを各自で点検",
-    "zh": "<i>传统做法</i>· 迅速注射"
+    "zh-Hans": "<i>传统做法</i>· 迅速注射",
+    "zh-Hant": "<i>傳統做法</i>· 迅速注射"
   },
   "u.eba89bfe456e": {
     "match": "Kong Agent GatewayA2A 메시지와 LLM 호출에 PII 마스킹 · 프롬프트 가드 · 외부 가드레일을 일괄 적용",
     "en": "<i>Kong Agent Gateway</i>Apply PII masking · prompt guard · external guardrails to A2A messages and LLM calls all at once",
     "ja": "<i>Kong Agent Gateway</i>A2AメッセージとLLM呼び出しにPIIマスキング · プロンプトガード · 外部ガードレールを一括適用",
-    "zh": "<i>Kong Agent Gateway</i>将 PII 掩码 / 快速守护 / 外部守护符应用到 A2A 信件和 /Agent Gateway 全部调用"
+    "zh-Hans": "<i>Kong Agent Gateway</i>将 PII 掩码 / 快速守护 / 外部守护符应用到 A2A 信件和 /Agent Gateway 全部调用",
+    "zh-Hant": "<i>Kong Agent Gateway</i>將 PII 掩碼 / 快速守護 / 外部守護符應用到 A2A 信件和 /Agent Gateway 全部呼叫"
   },
   "u.53e2943b205a": {
     "match": "기존 방식에이전트가 서로를 반복 호출하는 루프나 토큰 폭주를 막을 공통 지점이 없음",
     "en": "<i>Traditional approach</i>No common point to stop loops of agents repeatedly calling each other or runaway token usage",
     "ja": "<i>従来の方式</i>エージェントが互いを繰り返し呼び出すループやトークンの暴走を防ぐ共通ポイントがない",
-    "zh": "<i>传统做法</i>没有共同的点可以阻止代理商反复互调或失控的代号使用"
+    "zh-Hans": "<i>传统做法</i>没有共同的点可以阻止代理商反复互调或失控的代号使用",
+    "zh-Hant": "<i>傳統做法</i>沒有共同的點可以阻止代理商反覆互調或失控的代號使用"
   },
   "u.37751f3fbb11": {
     "match": "Kong Agent Gateway에이전트별 호출 한도와 토큰 예산, 공급자별 하위 한도를 게이트웨이에서 집행",
     "en": "<i>Kong Agent Gateway</i>Enforce per-agent call limits, token budgets, and per-provider sub-limits at the gateway",
     "ja": "<i>Kong Agent Gateway</i>エージェント別の呼び出し上限とトークン予算、プロバイダー別の下位上限をゲートウェイで執行",
-    "zh": "<i>Kong Agent Gateway</i>在网关执行每个代理人的调用限额、象征性预算和每个提供者的分限额"
+    "zh-Hans": "<i>Kong Agent Gateway</i>在网关执行每个代理人的调用限额、象征性预算和每个提供者的分限额",
+    "zh-Hant": "<i>Kong Agent Gateway</i>在閘道器執行每個代理人的呼叫限額、象徵性預算和每個提供者的分限額"
   },
   "u.4072531c22e6": {
     "match": "기존 방식에이전트 주소와 Agent Card가 팀마다 흩어지고, 홉마다 로그가 끊김",
     "en": "<i>Traditional approach</i>Agent addresses and Agent Cards are scattered across teams, and logs break at every hop",
     "ja": "<i>従来の方式</i>エージェントのアドレスとAgent Cardがチームごとに散在し、ホップごとにログが途切れる",
-    "zh": "<i>传统做法</i>代理地址和代理卡 分散在各小组, 日志打破每跳"
+    "zh-Hans": "<i>传统做法</i>代理地址和代理卡 分散在各小组, 日志打破每跳",
+    "zh-Hant": "<i>傳統做法</i>代理地址和代理卡 分散在各小組, 日誌打破每跳"
   },
   "u.514a77a17cf6": {
     "match": "Kong Agent GatewayAgent Card를 Kong 경유로 제공하고, context_id · task_id로 전체 실행을 하나의 트레이스로 연결",
     "en": "<i>Kong Agent Gateway</i>Serve Agent Cards through Kong, and link the entire run into one trace using context_id · task_id",
     "ja": "<i>Kong Agent Gateway</i>Agent CardをKong経由で提供し、context_id · task_idで実行全体を1つのトレースとして連結",
-    "zh": "<i>Kong Agent Gateway</i>通过 Agent Gateway 通过代理卡服务,并使用上下文 id 任务 id将整个运行连接到一个跟踪"
+    "zh-Hans": "<i>Kong Agent Gateway</i>通过 Agent Gateway 通过代理卡服务,并使用上下文 id 任务 id将整个运行连接到一个跟踪",
+    "zh-Hant": "<i>Kong Agent Gateway</i>透過 Agent Gateway 透過代理卡服務,並使用上下文 id 任務 id將整個執行連線到一個跟蹤"
   },
   "u.c4a601b2ce5c": {
     "match": "서브 에이전트의 Agent Card(/.well-known/agent-card.json)를 Kong 경유로 제공합니다. 오케스트레이터는 하나의 주소에서 에이전트와 능력을 찾고, 실제 에이전트 주소는 노출되지 않습니다.",
     "en": "Sub-agents' Agent Cards (<code>/.well-known/agent-card.json</code>) are served through Kong. The orchestrator discovers agents and capabilities at a single address, and actual agent addresses stay hidden.",
     "ja": "サブエージェントのAgent Card（<code>/.well-known/agent-card.json</code>）をKong経由で提供します。オーケストレーターは1つのアドレスでエージェントとその能力を見つけ、実際のエージェントのアドレスは公開されません。",
-    "zh": "副代理代理卡(<code>/. 众所周知/代理卡.json</code>)通过 Kong 服务. 管弦乐团在一个单一的地址发现物剂和能力,实际物剂地址保持隐蔽."
+    "zh-Hans": "副代理代理卡(<code>/. 众所周知/代理卡.json</code>)通过 Kong 服务. 管弦乐团在一个单一的地址发现物剂和能力,实际物剂地址保持隐蔽.",
+    "zh-Hant": "副代理代理卡(<code>/. 眾所周知/代理卡.json</code>)透過 Kong 服務. 管弦樂團在一個單一的地址發現物劑和能力,實際物劑地址保持隱蔽."
   },
   "u.53792c264aed": {
     "match": "Kong을 선택해야 하는 네 가지 이유. ① 세 가지 프로토콜(LLM · MCP · A2A), 하나의 게이트웨이 ② 범위 기반 도구 필터링 + 토큰 인증 ③ 지능형 라우팅과 비용 관리 ④ 맞춤형 가드레일(Lakera, Noma, Pangea, NVIDIA NeMo)과 확장된 생태계(Databricks, DeepSeek, vLLM, Valkey 벡터 검색)",
     "en": "<b>Four reasons to choose Kong.</b> ① Three protocols (LLM · MCP · A2A), one gateway ② Scope-based tool filtering + token authentication ③ Intelligent routing and cost management ④ Custom guardrails (Lakera, Noma, Pangea, NVIDIA NeMo) and an expanded ecosystem (Databricks, DeepSeek, vLLM, Valkey vector search)",
     "ja": "<b>Kongを選ぶべき4つの理由。</b> ① 3つのプロトコル（LLM · MCP · A2A）を1つのゲートウェイで ② スコープベースのツールフィルタリング + トークン認証 ③ インテリジェントなルーティングとコスト管理 ④ カスタムガードレール（Lakera、Noma、Pangea、NVIDIA NeMo）と拡張されたエコシステム（Databricks、DeepSeek、vLLM、Valkeyベクトル検索）",
-    "zh": "<b>4个选择理由 Kong .</b> 1 3个协议( MCP Kong A2A),1个网关 2 基于范围的工具过滤 + 令牌认证 3 智能路由和成本管理 4 自定义护栏(Lakera, Noma, Pangea, NVIDIA NeMo) 和扩展的生态系统(Databricks, DeepSeek, v LLM ,Valkey矢量搜索)"
+    "zh-Hans": "<b>4个选择理由 Kong .</b> 1 3个协议( MCP Kong A2A),1个网关 2 基于范围的工具过滤 + 令牌认证 3 智能路由和成本管理 4 自定义护栏(Lakera, Noma, Pangea, NVIDIA NeMo) 和扩展的生态系统(Databricks, DeepSeek, v LLM ,Valkey矢量搜索)",
+    "zh-Hant": "<b>4個選擇理由 Kong .</b> 1 3個協議( MCP Kong A2A),1個閘道器 2 基於範圍的工具過濾 + 令牌認證 3 智慧路由和成本管理 4 自定義護欄(Lakera, Noma, Pangea, NVIDIA NeMo) 和擴充套件的生態系統(Databricks, DeepSeek, v LLM ,Valkey向量搜尋)"
   },
   "u.47f2b19710a3": {
     "match": "핵심 원인단 하나 허용한 연결 경로가 뚫림",
     "en": "<i>Root cause</i>The single allowed connection path was breached",
     "ja": "<i>主な原因</i>唯一許可していた接続経路が突破された",
-    "zh": "<i>根原因</i>单个允许的连接路径被突破"
+    "zh-Hans": "<i>根原因</i>单个允许的连接路径被突破",
+    "zh-Hant": "<i>根原因</i>單個允許的連線路徑被突破"
   },
   "u.854d05da3eba": {
     "match": "핵심 원인몰랐던 연결 경로가 열려 있음",
     "en": "<i>Root cause</i>An unknown connection path was left open",
     "ja": "<i>主な原因</i>把握していなかった接続経路が開いていた",
-    "zh": "<i>根原因</i>未知的连接路径被打开"
+    "zh-Hans": "<i>根原因</i>未知的连接路径被打开",
+    "zh-Hant": "<i>根原因</i>未知的連線路徑被開啟"
   },
   "u.0a729109e5ef": {
     "match": "Agent가 무엇을 실행할 수 있는가 — 코드 실행 · 파일 접근 격리",
     "en": "What an agent can <em>execute</em> — isolating code execution · file access",
     "ja": "Agentが<em>何を実行</em>できるか — コード実行 · ファイルアクセスの隔離",
-    "zh": "探员能做什么? <em>执行</em> ——隔离代码执行 —— 文件访问"
+    "zh-Hans": "探员能做什么? <em>执行</em> ——隔离代码执行 —— 文件访问",
+    "zh-Hant": "探員能做什麼? <em>執行</em> ——隔離程式碼執行 —— 檔案訪問"
   },
   "u.13503da18636": {
     "match": "Agent가 어디에 연결해 무엇을 할 수 있는가 — 사내 시스템과 함께 일하는 Agent의 핵심 통제",
     "en": "<em>Where an agent can connect and what it can do</em> — the core control for agents working with internal systems",
     "ja": "Agentが<em>どこに接続して何を</em>できるか — 社内システムと連携して働くAgentの中核となる統制",
-    "zh": "<em>智能体可以联系的地方和它能做什么</em> 对与内部系统合作的代理人的核心控制"
+    "zh-Hans": "<em>智能体可以联系的地方和它能做什么</em> 对与内部系统合作的代理人的核心控制",
+    "zh-Hant": "<em>智慧體可以聯絡的地方和它能做什麼</em> 對與內部系統合作的代理人的核心控制"
   },
   "u.59cfba74d614": {
     "match": "연결이 보이지 않음Agent가 사내 시스템 · 모델 · 레지스트리 · 외부 인터넷에 직접 연결하고, 공유 자원으로 서로 통신해도 아무도 알 수 없습니다.",
     "en": "<b>Connections are invisible</b>Agents connect directly to internal systems · models · registries · the public internet, and talk to each other through shared resources, without anyone knowing.",
     "ja": "<b>接続が見えない</b>Agentが社内システム · モデル · レジストリ · 外部インターネットに直接接続し、共有リソースを通じて互いに通信しても、誰も気づけません。",
-    "zh": "<b>连接是无形的</b>代理人与内部系统直接连接 模型 注册 公共互联网 通过共享资源相互交谈 无人知晓"
+    "zh-Hans": "<b>连接是无形的</b>代理人与内部系统直接连接 模型 注册 公共互联网 通过共享资源相互交谈 无人知晓",
+    "zh-Hant": "<b>連線是無形的</b>代理人與內部系統直接連線 模型 註冊 公共網際網路 透過共享資源相互交談 無人知曉"
   },
   "u.b7feaa6b7ee6": {
     "match": "하나의 문에서 통제모든 연결이 Agent Gateway를 지나며 신원 · 최소 권한 · 예산 · 관측 · 즉시 차단이 적용됩니다. 등록되지 않은 목적지와 업로드는 차단됩니다.",
     "en": "<b>Control at a single door</b>Every connection passes through Agent Gateway, applying identity · least privilege · budgets · observability · instant blocking. Unregistered destinations and uploads are blocked.",
     "ja": "<b>1つの入口で統制</b>すべての接続がAgent Gatewayを通過し、アイデンティティ · 最小権限 · 予算 · 監視 · 即時遮断が適用されます。登録されていない宛先やアップロードはブロックされます。",
-    "zh": "<b>单门控制</b>每个连接通过 Agent Gateway ,应用身份 / 最小特权 / 预算 / 可观察 / 即时屏蔽。 未注册的目的地和上传被封锁."
+    "zh-Hans": "<b>单门控制</b>每个连接通过 Agent Gateway ,应用身份 / 最小特权 / 预算 / 可观察 / 即时屏蔽。 未注册的目的地和上传被封锁.",
+    "zh-Hant": "<b>單門控制</b>每個連線透過 Agent Gateway ,應用身份 / 最小特權 / 預算 / 可觀察 / 即時遮蔽。 未註冊的目的地和上傳被封鎖."
   },
   "u.9741199ab3d7": {
     "match": "Kong 예방 방식Agent가 나갈 수 있는 목적지를 Gateway에 등록된 대상으로만 한정. 미등록 목적지 호출은 차단 · 기록",
     "en": "<i>How Kong prevents it</i>Restrict agent egress to destinations registered in the gateway. Calls to unregistered destinations are blocked · logged",
     "ja": "<i>Kongによる予防</i>Agentがアクセスできる宛先をGatewayに登録された対象のみに限定。未登録の宛先への呼び出しはブロック · 記録",
-    "zh": "<i>如何防止它发生</i>限制智能体进入网关注册的目的地。 向未登记目的地发出的电话被封锁 登记"
+    "zh-Hans": "<i>如何防止它发生</i>限制智能体进入网关注册的目的地。 向未登记目的地发出的电话被封锁 登记",
+    "zh-Hant": "<i>如何防止它發生</i>限制智慧體進入閘道器注冊的目的地。 向未登記目的地發出的電話被封鎖 登記"
   },
   "u.e1373f0b90f2": {
     "match": "함께 필요한 통제런타임 네트워크를 기본 차단으로 두고 Gateway만 통과하도록 강제",
     "en": "<i>Complementary controls</i>Deny runtime network traffic by default and force it through the gateway only",
     "ja": "<i>併せて必要な統制</i>ランタイムネットワークをデフォルト遮断とし、Gatewayのみを通過するよう強制",
-    "zh": "<i>辅助控制</i>默认拒绝运行时间网络流量, 并强制它仅通过网关"
+    "zh-Hans": "<i>辅助控制</i>默认拒绝运行时间网络流量, 并强制它仅通过网关",
+    "zh-Hant": "<i>輔助控制</i>預設拒絕執行時間網路流量, 並強制它僅透過閘道器"
   },
   "u.c2dd9594b6a7": {
     "match": "Kong 예방 방식레지스트리를 Gateway 뒤에 두고 Agent마다 인증 · 조회(GET)만 허용. 쓰기 · 업로드 · 다른 Agent 경로 접근 차단",
     "en": "<i>How Kong prevents it</i>Put the registry behind the gateway and allow only authenticated reads (GET) per agent. Block writes · uploads · access to other agents' paths",
     "ja": "<i>Kongによる予防</i>レジストリをGatewayの背後に置き、Agentごとに認証 · 参照（GET）のみを許可。書き込み · アップロード · 他のAgentのパスへのアクセスをブロック",
-    "zh": "<i>如何防止它发生</i>将注册置于网关后,只允许每个代理人读取经认证的(GET). Block 写入 ^ 上传 ^ 访问其它代理的路径"
+    "zh-Hans": "<i>如何防止它发生</i>将注册置于网关后,只允许每个代理人读取经认证的(GET). Block 写入 ^ 上传 ^ 访问其它代理的路径",
+    "zh-Hant": "<i>如何防止它發生</i>將註冊置於閘道器後,只允許每個代理人讀取經認證的(GET). Block 寫入 ^ 上傳 ^ 訪問其它代理的路徑"
   },
   "u.236f4c7ac54c": {
     "match": "함께 필요한 통제레지스트리 · 내부 도구의 취약점 패치와 직접 접근 경로 제거",
     "en": "<i>Complementary controls</i>Patch vulnerabilities in registries · internal tools and remove direct access paths",
     "ja": "<i>併せて必要な統制</i>レジストリ · 内部ツールの脆弱性パッチ適用と直接アクセス経路の排除",
-    "zh": "<i>辅助控制</i>· 内部工具并删除直接进入路径"
+    "zh-Hans": "<i>辅助控制</i>· 内部工具并删除直接进入路径",
+    "zh-Hant": "<i>輔助控制</i>· 內部工具並刪除直接進入路徑"
   },
   "u.2c05704ab223": {
     "match": "Kong 예방 방식Agent별 Consumer와 권한을 분리해 공유 쓰기 경로를 없앰. Agent 간 호출은 A2A로만, 허가된 상대에게만",
     "en": "<i>How Kong prevents it</i>Separate Consumers and permissions per agent to eliminate shared write paths. Agent-to-agent calls only via A2A, and only to authorized peers",
     "ja": "<i>Kongによる予防</i>Agent別にConsumerと権限を分離して共有書き込み経路をなくす。Agent間の呼び出しはA2Aのみで、許可された相手にのみ",
-    "zh": "<i>如何防止它发生</i>将消费者和每个代理商的权限分开,以消除共享的写路径. 代理对代理电话只通过A2A,只给授权的对等者"
+    "zh-Hans": "<i>如何防止它发生</i>将消费者和每个代理商的权限分开,以消除共享的写路径. 代理对代理电话只通过A2A,只给授权的对等者",
+    "zh-Hant": "<i>如何防止它發生</i>將消費者和每個代理商的許可權分開,以消除共享的寫路徑. 代理對代理電話只透過A2A,只給授權的對等者"
   },
   "u.3e0437ea462d": {
     "match": "함께 필요한 통제공유 스토리지 · 볼륨의 쓰기 권한 분리",
     "en": "<i>Complementary controls</i>Separate write permissions on shared storage · volumes",
     "ja": "<i>併せて必要な統制</i>共有ストレージ · ボリュームの書き込み権限の分離",
-    "zh": "<i>辅助控制</i>共享存储中的单独写权限 ^ 卷"
+    "zh-Hans": "<i>辅助控制</i>共享存储中的单独写权限 ^ 卷",
+    "zh-Hant": "<i>輔助控制</i>共享儲存中的單獨寫許可權 ^ 卷"
   },
   "u.3198c882c122": {
     "match": "Kong 예방 방식Agent별 호출 · 토큰 상한과 급증 차단. 이상 시 해당 Agent만 즉시 비활성화",
     "en": "<i>How Kong prevents it</i>Per-agent call · token caps and spike blocking. Instantly disable only the affected agent on anomalies",
     "ja": "<i>Kongによる予防</i>Agent別の呼び出し · トークン上限と急増のブロック。異常時は該当Agentのみを即時無効化",
-    "zh": "<i>如何防止它发生</i>代理调用 ^ 符牌盖和钉子挡住。 在异常情况下立即禁用仅受影响的代理"
+    "zh-Hans": "<i>如何防止它发生</i>代理调用 ^ 符牌盖和钉子挡住。 在异常情况下立即禁用仅受影响的代理",
+    "zh-Hant": "<i>如何防止它發生</i>代理呼叫 ^ 符牌蓋和釘子擋住。 在異常情況下立即禁用僅受影響的代理"
   },
   "u.c732aab3e88b": {
     "match": "함께 필요한 통제정상 업무량 기준선 설정과 운영 중 조정",
     "en": "<i>Complementary controls</i>Set baselines for normal workloads and tune them in operation",
     "ja": "<i>併せて必要な統制</i>通常業務量のベースライン設定と運用中の調整",
-    "zh": "<i>辅助控制</i>为正常工作量设定基线并调整其运行"
+    "zh-Hans": "<i>辅助控制</i>为正常工作量设定基线并调整其运行",
+    "zh-Hant": "<i>輔助控制</i>為正常工作量設定基線並調整其執行"
   },
   "u.133171b56ecc": {
     "match": "Kong 예방 방식LLM · MCP · A2A · API 호출을 하나의 추적으로 기록하고 SIEM으로 실시간 전송",
     "en": "<i>How Kong prevents it</i>Record LLM · MCP · A2A · API calls in a single trace and stream them to SIEM in real time",
     "ja": "<i>Kongによる予防</i>LLM · MCP · A2A · API呼び出しを1つのトレースとして記録し、SIEMへリアルタイム送信",
-    "zh": "<i>如何防止它发生</i>记录 MCP Kong A2A API 调用单个跟踪,实时流到SIEM"
+    "zh-Hans": "<i>如何防止它发生</i>记录 MCP Kong A2A API 调用单个跟踪,实时流到SIEM",
+    "zh-Hant": "<i>如何防止它發生</i>記錄 MCP Kong A2A API 呼叫單個跟蹤,實時流到SIEM"
   },
   "u.b51e105e4ad0": {
     "match": "함께 필요한 통제SIEM 탐지 규칙 · 관제 운영",
     "en": "<i>Complementary controls</i>SIEM detection rules · security monitoring operations",
     "ja": "<i>併せて必要な統制</i>SIEM検知ルール · 監視運用",
-    "zh": "<i>辅助控制</i>· 安全监测行动"
+    "zh-Hans": "<i>辅助控制</i>· 安全监测行动",
+    "zh-Hant": "<i>輔助控制</i>· 安全監測行動"
   },
   "u.cd946d63b5cc": {
     "match": "Kong 예방 방식백엔드 자격증명을 Kong이 Vault 연동으로 보관하고 대신 주입. Agent는 원본 키를 갖지 않음",
     "en": "<i>How Kong prevents it</i>Kong stores backend credentials via Vault integration and injects them on the agent's behalf. Agents never hold the original keys",
     "ja": "<i>Kongによる予防</i>バックエンドの認証情報をKongがVault連携で保管し、代わりに注入。Agentは元のキーを持たない",
-    "zh": "<i>如何防止它发生</i>Kong 通过Vault集成存储后端证书,并代为注入. 智能体从不持有原始钥匙"
+    "zh-Hans": "<i>如何防止它发生</i>Kong 通过Vault集成存储后端证书,并代为注入. 智能体从不持有原始钥匙",
+    "zh-Hant": "<i>如何防止它發生</i>Kong 透過Vault整合儲存後端證書,並代為注入. 智慧體從不持有原始鑰匙"
   },
   "u.4352df68c8b3": {
     "match": "함께 필요한 통제시크릿 순환 · 노출된 토큰 관리",
     "en": "<i>Complementary controls</i>Secret rotation · management of exposed tokens",
     "ja": "<i>併せて必要な統制</i>シークレットのローテーション · 露出したトークンの管理",
-    "zh": "<i>辅助控制</i>秘密旋转 · 管理暴露的令牌"
+    "zh-Hans": "<i>辅助控制</i>秘密旋转 · 管理暴露的令牌",
+    "zh-Hant": "<i>輔助控制</i>秘密旋轉 · 管理暴露的令牌"
   },
   "u.76c1d8d9b04c": {
     "match": "고객 지원과 사내 업무 자동화 Agent가 보내는 실제 형태의 요청을 골라 보세요. 같은 요청을 Kong 정책 적용과 정책 없음으로 바꿔 실행하면, 앞의 케이스 스터디에서 본 실패 지점이 어떻게 막히는지 비교할 수 있습니다.",
     "en": "Pick a realistic request sent by a customer support or internal workflow automation agent. Run the same request with <b>Kong policies applied</b> and with <b>no policies</b> to compare how the failure points from the case studies above are blocked.",
     "ja": "カスタマーサポートや社内業務自動化のAgentが送る実際の形式のリクエストを選んでください。同じリクエストを<b>Kongポリシー適用</b>と<b>ポリシーなし</b>で切り替えて実行すると、前のケーススタディで見た失敗ポイントがどのように防がれるかを比較できます。",
-    "zh": "选择由客户支持或内部工作流程自动化代理发送的现实请求. 运行相同的请求 <b>适用的政策</b> 并带有 <b>无政策</b> 比较上述案例研究的失败点是如何被阻断的。"
+    "zh-Hans": "选择由客户支持或内部工作流程自动化代理发送的现实请求. 运行相同的请求 <b>适用的政策</b> 并带有 <b>无政策</b> 比较上述案例研究的失败点是如何被阻断的。",
+    "zh-Hant": "選擇由客戶支援或內部工作流程自動化代理傳送的現實請求. 執行相同的請求 <b>適用的政策</b> 並帶有 <b>無政策</b> 比較上述案例研究的失敗點是如何被阻斷的。"
   },
   "u.eaba344d64f9": {
     "match": "AI 시대의 API를 함께 만듭니다",
     "en": "Building APIs for the AI era, <em>together</em>",
     "ja": "AI時代のAPIを<em>共に</em>つくります",
-    "zh": "为AI时代建立API, <em>一起来</em>"
+    "zh-Hans": "为AI时代建立API, <em>一起来</em>",
+    "zh-Hant": "為AI時代建立API, <em>一起來</em>"
   },
   "u.1484814c61af": {
     "match": "◈Continue with SSO기업 IdP · SAML / OIDC",
     "en": "<i>◈</i>Continue with SSO<em>Enterprise IdP · SAML / OIDC</em>",
     "ja": "<i>◈</i>Continue with SSO<em>企業IdP · SAML / OIDC</em>",
-    "zh": "<i>◈</i>继续SSO<em>企业 IdP SAML / OIDC</em>"
+    "zh-Hans": "<i>◈</i>继续SSO<em>企业 IdP SAML / OIDC</em>",
+    "zh-Hant": "<i>◈</i>繼續SSO<em>企業 IdP SAML / OIDC</em>"
   },
   "u.4efd788c0546": {
     "match": "Team 단위 역할같은 Team이 여러 Org에 연결되면 모든 Org에서 동일한 역할 적용",
     "en": "<b>Team-based roles</b>When a Team is linked to multiple Orgs, the same role applies in every Org",
     "ja": "<b>Team単位のロール</b>同じTeamが複数のOrgに接続されると、すべてのOrgで同一のロールを適用",
-    "zh": "<b>团队作用</b>当一个团队被链接到多个 Org 时,每个 Org 都适用同样的角色"
+    "zh-Hans": "<b>团队作用</b>当一个团队被链接到多个 Org 时,每个 Org 都适用同样的角色",
+    "zh-Hant": "<b>團隊作用</b>當一個團隊被連結到多個 Org 時,每個 Org 都適用同樣的角色"
   },
   "u.21f1197a981c": {
     "match": "SCIMIdP 그룹 기준으로 Team 구성원을 자동 프로비저닝 (Okta · Azure)",
     "en": "<b>SCIM</b>Auto-provision Team members based on IdP groups (Okta · Azure)",
     "ja": "<b>SCIM</b>IdPグループに基づいてTeamメンバーを自動プロビジョニング（Okta · Azure）",
-    "zh": "<b>SCIM</b>基于 IdP 组的自动提供团队成员 ( Azure SCIM )"
+    "zh-Hans": "<b>SCIM</b>基于 IdP 组的自动提供团队成员 ( Azure SCIM )",
+    "zh-Hant": "<b>SCIM</b>基於 IdP 組的自動提供團隊成員 ( Azure SCIM )"
   },
   "u.5b9c203fe161": {
     "match": "Domain Capture회사 도메인으로 가입한 계정을 Enterprise 계정에 자동 편입해 조직 정책 적용",
     "en": "<b>Domain Capture</b>Automatically bring accounts signed up with the company domain into the Enterprise account and apply org policies",
     "ja": "<b>Domain Capture</b>会社ドメインで登録したアカウントをEnterpriseアカウントに自動編入し、組織ポリシーを適用",
-    "zh": "<b>域捕捉</b>自动将与公司域注册的账户带入企业账户,并应用 Org 政策"
+    "zh-Hans": "<b>域捕捉</b>自动将与公司域注册的账户带入企业账户,并应用 Org 政策",
+    "zh-Hant": "<b>域捕捉</b>自動將與公司域註冊的賬戶帶入企業賬戶,並應用 Org 政策"
   },
   "u.15a2b9a4da16": {
     "match": "협업 시작암호화 저장소로 클라우드 동기화를 시작하고 조직 협업이 가능해집니다.",
     "en": "<b>Start collaborating</b>Start cloud sync with encrypted storage and enable team collaboration.",
     "ja": "<b>コラボレーション開始</b>暗号化ストレージでクラウド同期を開始し、組織でのコラボレーションが可能になります。",
-    "zh": "<b>开始合作</b>以加密存储启动云同步,并启用团队协作."
+    "zh-Hans": "<b>开始合作</b>以加密存储启动云同步,并启用团队协作.",
+    "zh-Hant": "<b>開始合作</b>以加密儲存啟動雲同步,並啟用團隊協作."
   },
   "u.a63facf4be68": {
     "match": "Git 연결Local Vault에 Git 저장소를 연결해 사내 Git으로 버전 관리 · 협업합니다.",
     "en": "<b>Connect Git</b>Connect a Git repository to the Local Vault for version control · collaboration on your internal Git.",
     "ja": "<b>Git接続</b>Local VaultにGitリポジトリを接続し、社内Gitでバージョン管理 · コラボレーションします。",
-    "zh": "<b>连接 Git</b>连接 Git 存储器到本地断层, 以进行版本控制。"
+    "zh-Hans": "<b>连接 Git</b>连接 Git 存储器到本地断层, 以进行版本控制。",
+    "zh-Hant": "<b>連線 Git</b>連線 Git 儲存器到本地斷層, 以進行版本控制。"
   },
   "u.df6ae678a9b7": {
     "match": "클라우드 데이터 삭제클라우드에 저장된 데이터가 영구 삭제되고 협업이 중단됩니다. 전환 전 협업자 모두 최신본을 pull 해야 합니다.",
     "en": "<b>Delete cloud data</b>Data stored in the cloud is permanently deleted and collaboration stops. All collaborators must pull the latest version before switching.",
     "ja": "<b>クラウドデータの削除</b>クラウドに保存されたデータは完全に削除され、コラボレーションが停止します。切り替え前に全コラボレーターが最新版をpullする必要があります。",
-    "zh": "<b>删除云数据</b>云中存储的数据会被永久删除,协作停止. 所有合作者在切换前必须绘制最新版本."
+    "zh-Hans": "<b>删除云数据</b>云中存储的数据会被永久删除,协作停止. 所有合作者在切换前必须绘制最新版本.",
+    "zh-Hant": "<b>刪除雲資料</b>雲中儲存的資料會被永久刪除,協作停止. 所有合作者在切換前必須繪製最新版本."
   },
   "u.735ed59576e5": {
     "match": "로컬로 보관Git 동기화가 끊기고 로컬에만 저장됩니다. 원격 저장소는 삭제 · 변경되지 않습니다.",
     "en": "<b>Keep locally</b>Git sync is disconnected and data is stored locally only. The remote repository is not deleted · changed.",
     "ja": "<b>ローカルに保管</b>Git同期が切断され、ローカルにのみ保存されます。リモートリポジトリは削除 · 変更されません。",
-    "zh": "<b>保持本地状态</b>Git 同步已断开, 只存储本地数据。 远程寄存器没有删除 ^ 更改。"
+    "zh-Hans": "<b>保持本地状态</b>Git 同步已断开, 只存储本地数据。 远程寄存器没有删除 ^ 更改。",
+    "zh-Hant": "<b>保持本地狀態</b>Git 同步已斷開, 只儲存本地資料。 遠端暫存器沒有刪除 ^ 更改。"
   },
   "u.75177f5add00": {
     "match": "Git 연결 해제이후 변경은 클라우드에만 저장되고 저장소에는 반영되지 않습니다. 기존 저장소 파일은 그대로 남습니다.",
     "en": "<b>Disconnect Git</b>Subsequent changes are saved only to the cloud and not reflected in the repository. Existing repository files remain as is.",
     "ja": "<b>Git接続の解除</b>以降の変更はクラウドにのみ保存され、リポジトリには反映されません。既存のリポジトリのファイルはそのまま残ります。",
-    "zh": "<b>断开基特</b>随后的修改只保存到云中,而不在寄存器中反映. 现有仓库文件保持不变。"
+    "zh-Hans": "<b>断开基特</b>随后的修改只保存到云中,而不在寄存器中反映. 现有仓库文件保持不变。",
+    "zh-Hant": "<b>斷開基特</b>隨後的修改只儲存到雲中,而不在暫存器中反映. 現有倉庫檔案保持不變。"
   },
   "u.fe09cd484921": {
     "match": "권장 정책“Local Vault + Git Sync만 허용” → Insomnia Cloud에 데이터 저장 불가",
     "en": "<b>Recommended policy</b>“Allow only Local Vault + Git Sync” → No data can be stored in Insomnia Cloud",
     "ja": "<b>推奨ポリシー</b>「Local Vault + Git Syncのみ許可」→ Insomnia Cloudにデータを保存不可",
-    "zh": "<b>建议的政策</b>“只允许局部断层 + Git Sync” —— 无法存储数据 {Insomnia} 云"
+    "zh-Hans": "<b>建议的政策</b>“只允许局部断层 + Git Sync” —— 无法存储数据 {Insomnia} 云",
+    "zh-Hant": "<b>建議的政策</b>“只允許區域性斷層 + Git Sync” —— 無法儲存資料 {Insomnia} 雲"
   },
   "u.101e917ed970": {
     "match": "권장 정책민감 프로젝트는 E2EE 적용, 필요 시 프로젝트별로 Local · Git과 혼합",
     "en": "<b>Recommended policy</b>Apply E2EE to sensitive projects; mix with Local · Git per project as needed",
     "ja": "<b>推奨ポリシー</b>機密プロジェクトはE2EEを適用し、必要に応じてプロジェクトごとにLocal · Gitと併用",
-    "zh": "<b>建议的政策</b>将 E2EE 应用到敏感项目中; 按需要与本地 → 基特 每个项目混合"
+    "zh-Hans": "<b>建议的政策</b>将 E2EE 应用到敏感项目中; 按需要与本地 → 基特 每个项目混合",
+    "zh-Hant": "<b>建議的政策</b>將 E2EE 應用到敏感專案中; 按需要與本地 → 基特 每個專案混合"
   },
   "u.e49b587b1ab6": {
     "match": "✓클라우드와 원활한 통합, 조직 내 프로젝트에 기본 접근",
     "en": "<i class=\"ok\">✓</i>Seamless cloud integration, default access to org projects",
     "ja": "<i class=\"ok\">✓</i>クラウドとのスムーズな統合、組織内プロジェクトへのデフォルトアクセス",
-    "zh": "<i class=\"ok\">✓</i>无缝云集成, 默认访问 Org 项目"
+    "zh-Hans": "<i class=\"ok\">✓</i>无缝云集成, 默认访问 Org 项目",
+    "zh-Hant": "<i class=\"ok\">✓</i>無縫雲整合, 預設訪問 Org 專案"
   },
   "u.16508c436b52": {
     "match": "✓별도 권한 설정 없이 자유롭게 업데이트",
     "en": "<i class=\"ok\">✓</i>Update freely without separate permission settings",
     "ja": "<i class=\"ok\">✓</i>個別の権限設定なしで自由に更新",
-    "zh": "<i class=\"ok\">✓</i>不另设权限设置而自由更新"
+    "zh-Hans": "<i class=\"ok\">✓</i>不另设权限设置而自由更新",
+    "zh-Hant": "<i class=\"ok\">✓</i>不另設許可權設定而自由更新"
   },
   "u.53887ad4aa0a": {
     "match": "!CLI · API로 접근할 수 없어 APIOps 자동화 통합이 어려움",
     "en": "<i class=\"wn\">!</i>No CLI · API access, making APIOps automation hard to integrate",
     "ja": "<i class=\"wn\">!</i>CLI · APIからアクセスできず、APIOps自動化との統合が困難",
-    "zh": "<i class=\"wn\">来啊!</i>没有 CLI —— API 访问,使APIOPs 自动化难以整合"
+    "zh-Hans": "<i class=\"wn\">来啊!</i>没有 CLI —— API 访问,使APIOPs 自动化难以整合",
+    "zh-Hant": "<i class=\"wn\">來啊!</i>沒有 CLI —— API 訪問,使APIOPs 自動化難以整合"
   },
   "u.faeaf70aafa6": {
     "match": "!백업은 별도 솔루션 필요",
     "en": "<i class=\"wn\">!</i>Backups require a separate solution",
     "ja": "<i class=\"wn\">!</i>バックアップには別途ソリューションが必要",
-    "zh": "<i class=\"wn\">来啊!</i>备份需要单独的解决方案"
+    "zh-Hans": "<i class=\"wn\">来啊!</i>备份需要单独的解决方案",
+    "zh-Hant": "<i class=\"wn\">來啊!</i>備份需要單獨的解決方案"
   },
   "u.659fe1a32cb8": {
     "match": "✓Git push / pull로 협업, Git RBAC로 세밀한 접근 관리",
     "en": "<i class=\"ok\">✓</i>Collaborate with Git push / pull; fine-grained access control with Git RBAC",
     "ja": "<i class=\"ok\">✓</i>Git push / pullでコラボレーション、Git RBACできめ細かなアクセス管理",
-    "zh": "<i class=\"ok\">✓</i>与 Git 推动 / 牵引 合作; 与 Git + RBAC 协作 ; 与 Git + RBAC 合作。"
+    "zh-Hans": "<i class=\"ok\">✓</i>与 Git 推动 / 牵引 合作; 与 Git + RBAC 协作 ; 与 Git + RBAC 合作。",
+    "zh-Hant": "<i class=\"ok\">✓</i>與 Git 推動 / 牽引 合作; 與 Git + RBAC 協作 ; 與 Git + RBAC 合作。"
   },
   "u.1e14679c957f": {
     "match": "✓APIOps 파이프라인으로 자동화",
     "en": "<i class=\"ok\">✓</i>Automate with APIOps pipelines",
     "ja": "<i class=\"ok\">✓</i>APIOpsパイプラインで自動化",
-    "zh": "<i class=\"ok\">✓</i>自动安装APIOPS管道"
+    "zh-Hans": "<i class=\"ok\">✓</i>自动安装APIOPS管道",
+    "zh-Hant": "<i class=\"ok\">✓</i>自動安裝APIOPS管道"
   },
   "u.61bb9ad29886": {
     "match": "!협업 전 리포지토리 clone과 접근 권한 필요",
     "en": "<i class=\"wn\">!</i>Requires a repository clone and access rights before collaborating",
     "ja": "<i class=\"wn\">!</i>コラボレーション前にリポジトリのcloneとアクセス権限が必要",
-    "zh": "<i class=\"wn\">来啊!</i>协作前需要仓库克隆和访问权限"
+    "zh-Hans": "<i class=\"wn\">来啊!</i>协作前需要仓库克隆和访问权限",
+    "zh-Hant": "<i class=\"wn\">來啊!</i>協作前需要倉庫克隆和訪問許可權"
   },
   "u.4d5023781cc5": {
     "match": "!에셋 단위 관리",
     "en": "<i class=\"wn\">!</i>Managed per asset",
     "ja": "<i class=\"wn\">!</i>アセット単位の管理",
-    "zh": "<i class=\"wn\">来啊!</i>每件资产管理"
+    "zh-Hans": "<i class=\"wn\">来啊!</i>每件资产管理",
+    "zh-Hant": "<i class=\"wn\">來啊!</i>每件資產管理"
   },
   "u.e317fc37bb84": {
     "match": "–같은 프로젝트를 Cloud와 Git 양쪽에 보존",
     "en": "<i class=\"nx\">–</i>Keep the same project in both Cloud and Git",
     "ja": "<i class=\"nx\">–</i>同じプロジェクトをCloudとGitの両方に保持",
-    "zh": "<i class=\"nx\">- 说</i>在云和基特都保留同样的项目"
+    "zh-Hans": "<i class=\"nx\">- 说</i>在云和基特都保留同样的项目",
+    "zh-Hant": "<i class=\"nx\">- 說</i>在雲和基特都保留同樣的專案"
   },
   "u.7238c5159853": {
     "match": "✕두 저장소 간 정합성을 사용자가 직접 맞춰야 해 충돌 · 데이터 불일치 위험",
     "en": "<i class=\"nx\">✕</i>Users must keep the two stores in sync themselves, risking conflicts · data inconsistency",
     "ja": "<i class=\"nx\">✕</i>2つのストレージ間の整合性をユーザーが自ら合わせる必要があり、競合 · データ不整合のリスク",
-    "zh": "<i class=\"nx\">✕</i>用户必须保持两家商店的同步,"
+    "zh-Hans": "<i class=\"nx\">✕</i>用户必须保持两家商店的同步,",
+    "zh-Hant": "<i class=\"nx\">✕</i>使用者必須保持兩家商店的同步,"
   },
   "u.fcb357336dc7": {
     "match": "로그인 세션은 데스크톱 앱에서 30일간 유지됩니다(Insomnia 9.0 이후). 망분리 환경의 허용 범위와 오프라인 라이선스 가능 여부는 도입 전에 Kong과 확인이 필요합니다. 허용 도메인 목록: Insomnia proxy and allowlist ↗",
     "en": "Login sessions persist for 30 days in the desktop app (Insomnia 9.0 and later). Confirm with Kong before adoption what is permitted in network-segregated environments and whether offline licensing is available. Allowed domains: <a href=\"https://developer.konghq.com/insomnia/allowlist/\" rel=\"noopener noreferrer\" target=\"_blank\">Insomnia proxy and allowlist ↗</a>",
     "ja": "ログインセッションはデスクトップアプリで30日間維持されます（Insomnia 9.0以降）。ネットワーク分離環境での許可範囲とオフラインライセンスの可否は、導入前にKongへの確認が必要です。許可ドメイン一覧: <a href=\"https://developer.konghq.com/insomnia/allowlist/\" rel=\"noopener noreferrer\" target=\"_blank\">Insomnia proxy and allowlist ↗</a>",
-    "zh": "在桌面应用程序中登录会话持续30天( Insomnia 9.0及以后). 与 Insomnia 确认在通过之前,网络隔离环境中允许的是什么,以及是否有离线许可证。 允许的域 : <a href=\"https://developer.konghq.com/insomnia/allowlist/\" rel=\"noopener noreferrer\" target=\"_blank\">Insomnia 代理服务器和许可列表</a>"
+    "zh-Hans": "在桌面应用程序中登录会话持续30天( Insomnia 9.0及以后). 与 Insomnia 确认在通过之前,网络隔离环境中允许的是什么,以及是否有离线许可证。 允许的域 : <a href=\"https://developer.konghq.com/insomnia/allowlist/\" rel=\"noopener noreferrer\" target=\"_blank\">Insomnia 代理服务器和许可列表</a>",
+    "zh-Hant": "在桌面應用程式中登入會話持續30天( Insomnia 9.0及以後). 與 Insomnia 確認在透過之前,網路隔離環境中允許的是什麼,以及是否有離線許可證。 允許的域 : <a href=\"https://developer.konghq.com/insomnia/allowlist/\" rel=\"noopener noreferrer\" target=\"_blank\">Insomnia 代理伺服器和許可列表</a>"
   },
   "u.0c37987a4026": {
     "match": "출처: Kong Docs · Storage options in Insomnia ↗ · Essentials 요금제는 Git Sync 사용 시 조직당 3명까지로 제한됩니다.",
     "en": "Source: <a href=\"https://developer.konghq.com/insomnia/storage/\" rel=\"noopener noreferrer\" target=\"_blank\">Kong Docs · Storage options in Insomnia ↗</a> · On the Essentials plan, Git Sync is limited to 3 users per organization.",
     "ja": "出典: <a href=\"https://developer.konghq.com/insomnia/storage/\" rel=\"noopener noreferrer\" target=\"_blank\">Kong Docs · Storage options in Insomnia ↗</a> · Essentialsプランでは、Git Sync利用時は組織あたり3名までに制限されます。",
-    "zh": "资料来源: <a href=\"https://developer.konghq.com/insomnia/storage/\" rel=\"noopener noreferrer\" target=\"_blank\">Insomnia (中文(简体) ). Docs ・ 存储选项在 Insomnia</a> 在基本计划方面,Git Sync仅限于每个组织3个用户。"
+    "zh-Hans": "资料来源: <a href=\"https://developer.konghq.com/insomnia/storage/\" rel=\"noopener noreferrer\" target=\"_blank\">Insomnia (中文(简体) ). Docs ・ 存储选项在 Insomnia</a> 在基本计划方面,Git Sync仅限于每个组织3个用户。",
+    "zh-Hant": "資料來源: <a href=\"https://developer.konghq.com/insomnia/storage/\" rel=\"noopener noreferrer\" target=\"_blank\">Insomnia (中文(簡體) ). Docs ・ 儲存選項在 Insomnia</a> 在基本計劃方面,Git Sync僅限於每個組織3個使用者。"
   },
   "u.211bca4ffc83": {
     "match": "Kong 인프라 구성",
     "en": "Kong <em>infrastructure</em>",
     "ja": "Kong の<em>インフラ構成</em>",
-    "zh": "Kong <em>基础设施</em>"
+    "zh-Hans": "Kong <em>基础设施</em>",
+    "zh-Hant": "Kong <em>基礎設施</em>"
   },
   "u.ab287fc3ac80": {
     "match": "Control Plane설정 · 정책 관리",
     "en": "Control Plane<em>Config · policy management</em>",
     "ja": "Control Plane<em>設定 · ポリシー管理</em>",
-    "zh": "Control Plane<em>政策管理</em>"
+    "zh-Hans": "Control Plane<em>政策管理</em>",
+    "zh-Hant": "Control Plane<em>政策管理</em>"
   },
   "u.0344e18c323b": {
     "match": "Data Plane트래픽 처리 · Scale out/in",
     "en": "Data Plane<em>Traffic processing · scale out/in</em>",
     "ja": "Data Plane<em>トラフィック処理 · Scale out/in</em>",
-    "zh": "Data Plane<em>交通处理 扩大/增加</em>"
+    "zh-Hans": "Data Plane<em>交通处理 扩大/增加</em>",
+    "zh-Hant": "Data Plane<em>交通處理 擴大/增加</em>"
   },
   "u.031c82935f00": {
     "match": "클라이언트사람 · 앱 · 외부 기업",
     "en": "Clients<em>People · apps · partners</em>",
     "ja": "クライアント<em>人 · アプリ · 外部企業</em>",
-    "zh": "客户<em>人 应用 伙伴</em>"
+    "zh-Hans": "客户<em>人 应用 伙伴</em>",
+    "zh-Hant": "客戶<em>人 應用 夥伴</em>"
   },
   "u.3084918c1c16": {
     "match": "로드밸런서진입점 · L4/L7",
     "en": "Load balancer<em>Entry point · L4/L7</em>",
     "ja": "ロードバランサー<em>エントリポイント · L4/L7</em>",
-    "zh": "加载平衡器<em>· L4/L7号入境点</em>"
+    "zh-Hans": "加载平衡器<em>· L4/L7号入境点</em>",
+    "zh-Hant": "載入平衡器<em>· L4/L7號入境點</em>"
   },
   "u.e24f3e747110": {
     "match": "PostgreSQLCP 설정 저장소",
     "en": "PostgreSQL<em>CP config store</em>",
     "ja": "PostgreSQL<em>CP設定ストア</em>",
-    "zh": "PostgreSQL<em>CP 配置存储</em>"
+    "zh-Hans": "PostgreSQL<em>CP 配置存储</em>",
+    "zh-Hant": "PostgreSQL<em>CP 配置儲存</em>"
   },
   "u.9788999c6372": {
     "match": "Redis공유 상태 저장소",
     "en": "Redis<em>Shared state store</em>",
     "ja": "Redis<em>共有状態ストア</em>",
-    "zh": "Redis<em>共享状态存储</em>"
+    "zh-Hans": "Redis<em>共享状态存储</em>",
+    "zh-Hant": "Redis<em>共享狀態儲存</em>"
   },
   "u.c71608b5297b": {
     "match": "Vector DB의미 검색 저장소",
     "en": "Vector DB<em>Semantic search store</em>",
     "ja": "Vector DB<em>セマンティック検索ストア</em>",
-    "zh": "矢量 DB<em>语义搜索商店</em>"
+    "zh-Hans": "矢量 DB<em>语义搜索商店</em>",
+    "zh-Hant": "向量 DB<em>語義搜尋商店</em>"
   },
   "u.a941df2c3451": {
     "match": "Upstream 서비스기존 업무 API",
     "en": "Upstream services<em>Existing business APIs</em>",
     "ja": "Upstreamサービス<em>既存の業務API</em>",
-    "zh": "上游服务<em>现有企业</em>"
+    "zh-Hans": "上游服务<em>现有企业</em>",
+    "zh-Hant": "上游服務<em>現有企業</em>"
   },
   "u.6ee7d97f6e2c": {
     "match": "LLM생성형 AI 모델",
     "en": "LLM<em>Generative AI models</em>",
     "ja": "LLM<em>生成AIモデル</em>",
-    "zh": "LLM<em>基因AI模型</em>"
+    "zh-Hans": "LLM<em>基因AI模型</em>",
+    "zh-Hant": "LLM<em>基因AI模型</em>"
   },
   "u.c9699c7bb370": {
     "match": "Embedding 모델텍스트 → 벡터 변환",
     "en": "Embedding model<em>Text → vector conversion</em>",
     "ja": "Embeddingモデル<em>テキスト → ベクトル変換</em>",
-    "zh": "嵌入模型<em>文本 → 矢量转换</em>"
+    "zh-Hans": "嵌入模型<em>文本 → 矢量转换</em>",
+    "zh-Hant": "嵌入模型<em>文字 → 向量轉換</em>"
   },
   "u.1f7dc1987f1b": {
     "match": "적합한 경우설정 변경이 잦지 않고, GitOps로 모든 설정을 코드로 관리하려는 단일 팀 환경",
     "en": "<b>Best for</b>Single-team environments with infrequent config changes that want to manage all config as code with GitOps",
     "ja": "<b>適したケース</b>設定変更が頻繁でなく、GitOpsですべての設定をコードで管理したい単一チーム環境",
-    "zh": "<b>最佳办法</b>配置变化不频繁的单一团队环境, 想要管理所有配置作为 GitOps 的代码"
+    "zh-Hans": "<b>最佳办法</b>配置变化不频繁的单一团队环境, 想要管理所有配置作为 GitOps 的代码",
+    "zh-Hant": "<b>最佳辦法</b>配置變化不頻繁的單一團隊環境, 想要管理所有配置作為 GitOps 的程式碼"
   },
   "u.b8dde31e23ab": {
     "match": "적합한 경우자체 데이터센터에서 Control Plane까지 직접 운영해야 하고, 여러 팀·리전에 게이트웨이를 분산하는 환경",
     "en": "<b>Best for</b>Environments that must run the Control Plane in their own data center and distribute gateways across multiple teams · regions",
     "ja": "<b>適したケース</b>自社データセンターでControl Planeまで自ら運用する必要があり、複数のチーム・リージョンにゲートウェイを分散する環境",
-    "zh": "<b>最佳办法</b>必须在自己的数据中心运行 Control Plane 并在多个团队之间分配网关的环境 区域"
+    "zh-Hans": "<b>最佳办法</b>必须在自己的数据中心运行 Control Plane 并在多个团队之间分配网关的环境 区域",
+    "zh-Hant": "<b>最佳辦法</b>必須在自己的資料中心執行 Control Plane 並在多個團隊之間分配閘道器的環境 區域"
   },
   "u.ef864ceea960": {
     "match": "적합한 경우애플리케이션이 Kubernetes 위에서 운영되고, kubectl · Helm · Argo CD로 배포를 일원화하려는 환경",
     "en": "<b>Best for</b>Environments where applications run on Kubernetes and deployments are unified with kubectl · Helm · Argo CD",
     "ja": "<b>適したケース</b>アプリケーションがKubernetes上で運用され、kubectl · Helm · Argo CDでデプロイを一元化したい環境",
-    "zh": "<b>最佳办法</b>应用程序运行于 {Kubernetes} 和部署与 kubectl \\ Helm \\ Argo CD 统一的环境"
+    "zh-Hans": "<b>最佳办法</b>应用程序运行于 {Kubernetes} 和部署与 kubectl \\ Helm \\ Argo CD 统一的环境",
+    "zh-Hant": "<b>最佳辦法</b>應用程式執行於 {Kubernetes} 和部署與 kubectl \\ Helm \\ Argo CD 統一的環境"
   },
   "u.c8e63d08df32": {
     "match": "적합한 경우운영 부담을 줄이고 멀티클라우드·멀티리전 게이트웨이를 하나의 화면에서 관리하려는 환경",
     "en": "<b>Best for</b>Environments that want to reduce operational overhead and manage multi-cloud · multi-region gateways from a single pane",
     "ja": "<b>適したケース</b>運用負担を減らし、マルチクラウド・マルチリージョンのゲートウェイを1つの画面で管理したい環境",
-    "zh": "<b>最佳办法</b>想要减少业务间接费用和管理多云环境 – 多区域网关来自单一面板"
+    "zh-Hans": "<b>最佳办法</b>想要减少业务间接费用和管理多云环境 – 多区域网关来自单一面板",
+    "zh-Hant": "<b>最佳辦法</b>想要減少業務間接費用和管理多雲環境 – 多區域閘道器來自單一面板"
   },
   "u.a76c355a0d51": {
     "match": "진입 이중화GSLB 센터 간 분산 · L4 스위치 Active/Standby",
     "en": "<b>Redundant ingress</b>GSLB across data centers · L4 switch Active/Standby",
     "ja": "<b>エントリの冗長化</b>GSLBによるセンター間分散 · L4スイッチ Active/Standby",
-    "zh": "<b>重复的入侵</b>L4 主动/Standby交换"
+    "zh-Hans": "<b>重复的入侵</b>L4 主动/Standby交换",
+    "zh-Hant": "<b>重複的入侵</b>L4 主動/Standby交換"
   },
   "u.f238f41706ff": {
     "match": "Data Plane무상태 노드 N+1 · 수평 확장",
     "en": "<b>Data Plane</b>Stateless nodes N+1 · horizontal scaling",
     "ja": "<b>Data Plane</b>ステートレスノード N+1 · 水平スケール",
-    "zh": "<b>Data Plane</b>无国籍的节点 N+1 − 水平缩放"
+    "zh-Hans": "<b>Data Plane</b>无国籍的节点 N+1 − 水平缩放",
+    "zh-Hant": "<b>Data Plane</b>無國籍的節點 N+1 − 水平縮放"
   },
   "u.078c00a06589": {
     "match": "CP · DB · RedisCP 2대 · PostgreSQL · Redis 이중화 및 센터 간 복제",
     "en": "<b>CP · DB · Redis</b>2 CPs · redundant PostgreSQL · Redis with cross-site replication",
     "ja": "<b>CP · DB · Redis</b>CP 2台 · PostgreSQL · Redisの冗長化およびセンター間レプリケーション",
-    "zh": "<b>CP • DB − PostgreSQL</b>2 CP + 冗余 + PostgreSQL + Redis + 跨站复制"
+    "zh-Hans": "<b>CP • DB − PostgreSQL</b>2 CP + 冗余 + PostgreSQL + Redis + 跨站复制",
+    "zh-Hant": "<b>CP • DB − PostgreSQL</b>2 CP + 冗餘 + PostgreSQL + Redis + 跨站複製"
   },
   "u.8e8ab104a829": {
     "match": "장애 시Replica 승격 후 대기 CP 활성화 · DP는 마지막 설정으로 계속 처리",
     "en": "<b>On failure</b>Promote replica, then activate standby CP · DPs keep serving with the last config",
     "ja": "<b>障害時</b>Replica昇格後に待機CPを有効化 · DPは最後の設定で処理を継続",
-    "zh": "<b>失败时</b>推广复制, 然后激活备用的 CP。 DP 继续使用最后一个配置"
+    "zh-Hans": "<b>失败时</b>推广复制, 然后激活备用的 CP。 DP 继续使用最后一个配置",
+    "zh-Hant": "<b>失敗時</b>推廣複製, 然後啟用備用的 CP。 DP 繼續使用最後一個配置"
   },
   "u.13fa0bdc45d7": {
     "match": "진입 이중화Route 53 헬스체크 · ALB/NLB 다중 AZ",
     "en": "<b>Redundant ingress</b>Route 53 health checks · ALB/NLB across multiple AZs",
     "ja": "<b>エントリの冗長化</b>Route 53ヘルスチェック · ALB/NLB マルチAZ",
-    "zh": "<b>重复的入侵</b>跨越多个AZ的ALB/北草坪会议大楼"
+    "zh-Hans": "<b>重复的入侵</b>跨越多个AZ的ALB/北草坪会议大楼",
+    "zh-Hant": "<b>重複的入侵</b>跨越多個AZ的ALB/北草坪會議大樓"
   },
   "u.489dd7e4d880": {
     "match": "Data PlaneAuto Scaling 그룹 또는 EKS로 AZ마다 배치",
     "en": "<b>Data Plane</b>Deployed in each AZ with Auto Scaling groups or EKS",
     "ja": "<b>Data Plane</b>Auto ScalingグループまたはEKSでAZごとに配置",
-    "zh": "<b>Data Plane</b>在每个AZ部署自动缩放组或EKS"
+    "zh-Hans": "<b>Data Plane</b>在每个AZ部署自动缩放组或EKS",
+    "zh-Hant": "<b>Data Plane</b>在每個AZ部署自動縮放組或EKS"
   },
   "u.515fa7f97fef": {
     "match": "CP · DB · RedisAZ별 CP · RDS Multi-AZ · ElastiCache로 Rate limit 카운터 공유",
     "en": "<b>CP · DB · Redis</b>Per-AZ CP · RDS Multi-AZ · ElastiCache to share rate limit counters",
     "ja": "<b>CP · DB · Redis</b>AZ別CP · RDS Multi-AZ · ElastiCacheでRate limitカウンターを共有",
-    "zh": "<b>CP • DB − Redis</b>Per-AZ CP → RDS 多AZ → ElastiCache 共享费率限制计数器"
+    "zh-Hans": "<b>CP • DB − Redis</b>Per-AZ CP → RDS 多AZ → ElastiCache 共享费率限制计数器",
+    "zh-Hant": "<b>CP • DB − Redis</b>Per-AZ CP → RDS 多AZ → ElastiCache 共享費率限制計數器"
   },
   "u.13d11f30c807": {
     "match": "Konnect 사용 시CP · DB 영역을 Kong이 SaaS로 운영 · DP만 VPC에 배치",
     "en": "<b>With Konnect</b>Kong runs the CP · DB tier as SaaS · only DPs are deployed in your VPC",
     "ja": "<b>Konnect利用時</b>CP · DB領域はKongがSaaSとして運用 · DPのみをVPCに配置",
-    "zh": "<b>与 Konnect 联系</b>Konnect 在您的 VPC 中只部署 DP。"
+    "zh-Hans": "<b>与 Konnect 联系</b>Konnect 在您的 VPC 中只部署 DP。",
+    "zh-Hant": "<b>與 Konnect 聯絡</b>Konnect 在您的 VPC 中只部署 DP。"
   },
   "u.2ebd1a20c580": {
     "match": "독립 클러스터사이트별 CP · DB를 따로 운영 · decK · APIOps로 동일 설정 배포",
     "en": "<b>Independent clusters</b>Separate CP · DB per site · deploy identical config with decK · APIOps",
     "ja": "<b>独立クラスター</b>サイトごとにCP · DBを個別に運用 · decK · APIOpsで同一設定をデプロイ",
-    "zh": "<b>独立集群</b>· 部署与 DecK 相同的配置"
+    "zh-Hans": "<b>独立集群</b>· 部署与 DecK 相同的配置",
+    "zh-Hant": "<b>獨立叢集</b>· 部署與 DecK 相同的配置"
   },
   "u.027c7a4936e0": {
     "match": "카운터 키 일치identifier=consumer · counter_key=consumer.username 또는 custom_id (3.15+) · namespace 동일 명시",
     "en": "<b>Matching counter keys</b>identifier=consumer · counter_key=consumer.username or custom_id (3.15+) · explicitly set the same namespace",
     "ja": "<b>カウンターキーの一致</b>identifier=consumer · counter_key=consumer.username または custom_id (3.15+) · namespaceを同一に明示",
-    "zh": "<b>匹配计数器键</b>标识符=消费者 ^ 计数器=消费者. 用户名或自定义 id(3.15+) ^ 明确设置同一名称空间."
+    "zh-Hans": "<b>匹配计数器键</b>标识符=消费者 ^ 计数器=消费者. 用户名或自定义 id(3.15+) ^ 明确设置同一名称空间.",
+    "zh-Hant": "<b>匹配計數器鍵</b>識別符號=消費者 ^ 計數器=消費者. 使用者名稱或自定義 id(3.15+) ^ 明確設定同一名稱空間."
   },
   "u.832089970c84": {
     "match": "공유 Redisstrategy=redis · 같은 Redis · 같은 limit · window_size",
     "en": "<b>Shared Redis</b>strategy=redis · same Redis · same limit · window_size",
     "ja": "<b>共有Redis</b>strategy=redis · 同じRedis · 同じlimit · window_size",
-    "zh": "<b>共享 Redis</b>战略Redis · 同样的 Redis 窗口大小"
+    "zh-Hans": "<b>共享 Redis</b>战略Redis · 同样的 Redis 窗口大小",
+    "zh-Hant": "<b>共享 Redis</b>戰略Redis · 同樣的 Redis 視窗大小"
   },
   "u.e9ce1dab7aeb": {
     "match": "지연 · 장애sync_rate로 비동기 동기화 · Redis 단절 시 노드별 local 한도로 폴백",
     "en": "<b>Latency · failures</b>Async sync via sync_rate · falls back to per-node local limits if Redis is unreachable",
     "ja": "<b>遅延 · 障害</b>sync_rateで非同期同期 · Redis切断時はノードごとのlocal上限にフォールバック",
-    "zh": "<b>失败</b>通过同步 rate 同步 ^ 如果 Redis 无法达到, 返回到每个节点的本地限制"
+    "zh-Hans": "<b>失败</b>通过同步 rate 同步 ^ 如果 Redis 无法达到, 返回到每个节点的本地限制",
+    "zh-Hant": "<b>失敗</b>透過同步 rate 同步 ^ 如果 Redis 無法達到, 返回到每個節點的本地限制"
   },
   "u.5c61f7abf6f6": {
     "match": "최소 2노드 + LB로드밸런서 뒤에 최소 2개 노드. 장애 시 남은 노드로 부하가 몰리지 않도록 여유를 둠",
     "en": "<b>At least 2 nodes + LB</b>At least 2 nodes behind a load balancer. Keep headroom so the remaining nodes are not overloaded on failure",
     "ja": "<b>最低2ノード + LB</b>ロードバランサーの背後に最低2ノード。障害時に残りのノードへ負荷が集中しないよう余裕を確保",
-    "zh": "<b>至少2个节点+LB</b>负载平衡器后面至少有两个节点. 保持头室,使其余的节点不会因故障而超载"
+    "zh-Hans": "<b>至少2个节点+LB</b>负载平衡器后面至少有两个节点. 保持头室,使其余的节点不会因故障而超载",
+    "zh-Hant": "<b>至少2個節點+LB</b>負載平衡器後面至少有兩個節點. 保持頭室,使其餘的節點不會因故障而超載"
   },
   "u.f724ad53572f": {
     "match": "CPU 기준 오토스케일무상태 구조라 수평 확장 우선. 확장 · 축소 기준은 CPU 사용률",
     "en": "<b>CPU-based autoscaling</b>Stateless, so scale horizontally first. Scale out · in based on CPU utilization",
     "ja": "<b>CPUベースのオートスケール</b>ステートレス構造のため水平スケールを優先。スケールアウト · スケールインの基準はCPU使用率",
-    "zh": "<b>基于CPU的自动缩放</b>无国籍者,所以先水平范围。 缩放 ^ 根据CPU 利用率进行缩放"
+    "zh-Hans": "<b>基于CPU的自动缩放</b>无国籍者,所以先水平范围。 缩放 ^ 根据CPU 利用率进行缩放",
+    "zh-Hant": "<b>基於CPU的自動縮放</b>無國籍者,所以先水平範圍。 縮放 ^ 根據CPU 利用率進行縮放"
   },
   "u.322f7a17fea8": {
     "match": "워커당 약 500 MB코어 수만큼 워커 실행. 4 core · 8 GB면 mem_cache_size 4~6 GB 할당 권장",
     "en": "<b>About 500 MB per worker</b>One worker per core. For 4 cores · 8 GB, allocate 4–6 GB to mem_cache_size",
     "ja": "<b>ワーカーあたり約500 MB</b>コア数分のワーカーを実行。4 core · 8 GBならmem_cache_sizeに4~6 GBの割り当てを推奨",
-    "zh": "<b>每名工人约500 MB</b>每个核心一个工人。 对于4个核心 ^ 8 GB,将 4–6 GB 分配到 mem cache 大小"
+    "zh-Hans": "<b>每名工人约500 MB</b>每个核心一个工人。 对于4个核心 ^ 8 GB,将 4–6 GB 分配到 mem cache 大小",
+    "zh-Hant": "<b>每名工人約500 MB</b>每個核心一個工人。 對於4個核心 ^ 8 GB,將 4–6 GB 分配到 mem cache 大小"
   },
   "u.7f3dc0e8dbb8": {
     "match": "버스트 인스턴스 주의대규모 클러스터에서 t2/t3 · e2 · B 시리즈는 CPU 스로틀링으로 성능 저하",
     "en": "<b>Beware burstable instances</b>In large clusters, t2/t3 · e2 · B-series degrade performance through CPU throttling",
     "ja": "<b>バーストインスタンスに注意</b>大規模クラスターではt2/t3 · e2 · BシリーズはCPUスロットリングにより性能が低下",
-    "zh": "<b>当心突发事件</b>在大型集群中, t2/t3 → e2 → B系列通过CPU减速降解性能"
+    "zh-Hans": "<b>当心突发事件</b>在大型集群中, t2/t3 → e2 → B系列通过CPU减速降解性能",
+    "zh-Hant": "<b>當心突發事件</b>在大型叢集中, t2/t3 → e2 → B系列透過CPU減速降解效能"
   },
   "u.730f7dcba449": {
     "match": "엔터티 1,000개 이상dedicated_config_processing 활성화로 재구성 중 프록시 지연 감소",
     "en": "<b>1,000+ entities</b>Enable dedicated_config_processing to reduce proxy latency during rebuilds",
     "ja": "<b>エンティティ1,000個以上</b>dedicated_config_processingを有効化して再構成中のプロキシ遅延を低減",
-    "zh": "<b>1 000多个实体</b>启用专用 配置 处理以减少重建时代理代理空闲"
+    "zh-Hans": "<b>1 000多个实体</b>启用专用 配置 处理以减少重建时代理代理空闲",
+    "zh-Hant": "<b>1 000多個實體</b>啟用專用 配置 處理以減少重建時代理代理空閒"
   },
   "u.4a767a532329": {
     "match": "외부 연계가 병목IdP가 초당 1,000 토큰만 발급하면 게이트웨이 처리량도 1,000 TPS로 제한",
     "en": "<b>External integrations are the bottleneck</b>If the IdP issues only 1,000 tokens per second, gateway throughput is capped at 1,000 TPS",
     "ja": "<b>外部連携がボトルネック</b>IdPが毎秒1,000トークンしか発行しなければ、ゲートウェイのスループットも1,000 TPSに制限",
-    "zh": "<b>外部融合是瓶颈</b>如果IDP每秒发行1000个令牌,网关吞吐量上限为1000个TPS"
+    "zh-Hans": "<b>外部融合是瓶颈</b>如果IDP每秒发行1000个令牌,网关吞吐量上限为1000个TPS",
+    "zh-Hant": "<b>外部融合是瓶頸</b>如果IDP每秒發行1000個令牌,閘道器吞吐量上限為1000個TPS"
   },
   "u.6b7b2f0c9b23": {
     "match": "CPU 바운드토큰 처리에 CPU를 씀. 출력 토큰이 입력보다 4~5배 비쌈",
     "en": "<b>CPU-bound</b>Token processing uses CPU. Output tokens cost 4–5x more than input",
     "ja": "<b>CPUバウンド</b>トークン処理にCPUを使用。出力トークンは入力より4~5倍高価",
-    "zh": "<b>CPU 绑定</b>Token 处理使用 CPU. 4 - 5x 成本超过输入"
+    "zh-Hans": "<b>CPU 绑定</b>Token 处理使用 CPU. 4 - 5x 成本超过输入",
+    "zh-Hant": "<b>CPU 繫結</b>Token 處理使用 CPU. 4 - 5x 成本超過輸入"
   },
   "u.a4ee19bc7341": {
     "match": "버스트 인스턴스 금지t2/t3 · e2 · B 시리즈의 CPU 제한은 토큰 스트리밍 성능에 악영향",
     "en": "<b>No burstable instances</b>CPU limits on t2/t3 · e2 · B-series hurt token streaming performance",
     "ja": "<b>バーストインスタンスは使用禁止</b>t2/t3 · e2 · BシリーズのCPU制限はトークンストリーミング性能に悪影響",
-    "zh": "<b>无突发事件</b>CPU 限制 t2/ t3 → e2 → B系列伤害令牌流化性能"
+    "zh-Hans": "<b>无突发事件</b>CPU 限制 t2/ t3 → e2 → B系列伤害令牌流化性能",
+    "zh-Hant": "<b>無突發事件</b>CPU 限制 t2/ t3 → e2 → B系列傷害令牌流化效能"
   },
   "u.ef6b88a83d90": {
     "match": "RAG 버퍼 조정1~4 MiB 프롬프트는 client_body_buffer_size 1~2 MiB, max_request_body_size 8~16 MiB",
     "en": "<b>Tune RAG buffers</b>For 1–4 MiB prompts, set client_body_buffer_size to 1–2 MiB and max_request_body_size to 8–16 MiB",
     "ja": "<b>RAGバッファの調整</b>1~4 MiBのプロンプトにはclient_body_buffer_size 1~2 MiB、max_request_body_size 8~16 MiB",
-    "zh": "<b>Tune RAG 缓冲器</b>对于1–4 MiB 提示,将客户端 body buffer 大小设置为 1–2 MiB 并最大 request body 大小设置为 8–16 MiB"
+    "zh-Hans": "<b>Tune RAG 缓冲器</b>对于1–4 MiB 提示,将客户端 body buffer 大小设置为 1–2 MiB 并最大 request body 大小设置为 8–16 MiB",
+    "zh-Hant": "<b>Tune RAG 緩衝器</b>對於1–4 MiB 提示,將客戶端 body buffer 大小設定為 1–2 MiB 並最大 request body 大小設定為 8–16 MiB"
   },
   "u.275a060595d7": {
     "match": "Konnect 사용 시CP는 Kong이 운영. DP · Redis · 로깅 인프라만 산정",
     "en": "<b>With Konnect</b>Kong runs the CP. Size only DP · Redis · logging infrastructure",
     "ja": "<b>Konnect利用時</b>CPはKongが運用。DP · Redis · ロギング基盤のみを算定",
-    "zh": "<b>与 Konnect 联系</b>Konnect 运营CP. 只大小 DP Kong 记录基础设施"
+    "zh-Hans": "<b>与 Konnect 联系</b>Konnect 运营CP. 只大小 DP Kong 记录基础设施",
+    "zh-Hant": "<b>與 Konnect 聯絡</b>Konnect 運營CP. 只大小 DP Kong 記錄基礎設施"
   },
   "u.ee6265680eeb": {
     "match": "규제 요건을 Kong 통제 항목으로 매핑합니다",
     "en": "Map regulatory requirements to <em>Kong controls</em>",
     "ja": "規制要件を<em>Kongの統制項目</em>にマッピングします",
-    "zh": "地图管理要求 <em>Kong 控件</em>"
+    "zh-Hans": "地图管理要求 <em>Kong 控件</em>",
+    "zh-Hant": "地圖管理要求 <em>Kong 控制元件</em>"
   },
   "u.243bc09b4eb1": {
     "match": "읽기 전에. 제공 범위는 배포 모델(자체 관리형 Kong Gateway vs Konnect SaaS)과 에디션(OSS vs Enterprise/Konnect)에 따라 다릅니다. ISMS-P, ISO 27001/27701, 개인정보보호법 준수는 고객 조직이 취득·이행하는 것이며, Kong은 통제 항목을 구현하는 수단입니다.",
     "en": "<b>Before you read.</b> Coverage varies by deployment model (self-managed Kong Gateway vs Konnect SaaS) and edition (OSS vs Enterprise/Konnect). ISMS-P, ISO 27001/27701, and compliance with Korea's Personal Information Protection Act (PIPA) are obtained and fulfilled by the customer organization; Kong is a means to implement the controls.",
     "ja": "<b>お読みになる前に。</b>提供範囲はデプロイモデル（セルフマネージドKong Gateway vs Konnect SaaS）とエディション（OSS vs Enterprise/Konnect）によって異なります。ISMS-P、ISO 27001/27701、韓国個人情報保護法への準拠は顧客組織が取得・履行するものであり、Kongは統制項目を実装する手段です。",
-    "zh": "<b>念诵前.</b> 覆盖范围因部署模式(自我管理 Kong Gateway vs Konnect SaaS)和版本(OSS vs Entertainment/ Konnect )而异. ISMS-P,ISO 27001/27701,以及韩国个人信息保护法(PIPA)的遵守情况由客户组织获得并履行; Kong 是实施控制的一种手段."
+    "zh-Hans": "<b>念诵前.</b> 覆盖范围因部署模式(自我管理 Kong Gateway vs Konnect SaaS)和版本(OSS vs Entertainment/ Konnect )而异. ISMS-P,ISO 27001/27701,以及韩国个人信息保护法(PIPA)的遵守情况由客户组织获得并履行; Kong 是实施控制的一种手段.",
+    "zh-Hant": "<b>唸誦前.</b> 覆蓋範圍因部署模式(自我管理 Kong Gateway vs Konnect SaaS)和版本(OSS vs Entertainment/ Konnect )而異. ISMS-P,ISO 27001/27701,以及韓國個人資訊保護法(PIPA)的遵守情況由客戶組織獲得並履行; Kong 是實施控制的一種手段."
   },
   "u.e98656796e4b": {
     "match": "보유(감사·공개)",
     "en": "<i class=\"cst ok sm\"></i> Held (audited · public)",
     "ja": "<i class=\"cst ok sm\"></i> 保有（監査・公開）",
-    "zh": "<i class=\"cst ok sm\"></i> 持有(已审计 )"
+    "zh-Hans": "<i class=\"cst ok sm\"></i> 持有(已审计 )",
+    "zh-Hant": "<i class=\"cst ok sm\"></i> 持有(已審計 )"
   },
   "u.8653f741af74": {
     "match": "표준 준수(공식 문서)",
     "en": "<i class=\"cst comp sm\"></i> Standards-compliant (official docs)",
     "ja": "<i class=\"cst comp sm\"></i> 標準準拠（公式ドキュメント）",
-    "zh": "<i class=\"cst comp sm\"></i> 符合标准(官方文件)"
+    "zh-Hans": "<i class=\"cst comp sm\"></i> 符合标准(官方文件)",
+    "zh-Hant": "<i class=\"cst comp sm\"></i> 符合標準(官方檔案)"
   },
   "u.deae4b0e4392": {
     "match": "자기평가·확약",
     "en": "<i class=\"cst self sm\"></i> Self-assessed · attested",
     "ja": "<i class=\"cst self sm\"></i> 自己評価・確約",
-    "zh": "<i class=\"cst self sm\"></i> 自我评估"
+    "zh-Hans": "<i class=\"cst self sm\"></i> 自我评估",
+    "zh-Hant": "<i class=\"cst self sm\"></i> 自我評估"
   },
   "u.74d18d29d42a": {
     "match": "준수 선언·평가 입력(인증 아님)",
     "en": "<i class=\"cst decl sm\"></i> Declared compliance · assessment input (not certified)",
     "ja": "<i class=\"cst decl sm\"></i> 準拠宣言・評価入力（認証ではない）",
-    "zh": "<i class=\"cst decl sm\"></i> · 评估投入(未经核证)"
+    "zh-Hans": "<i class=\"cst decl sm\"></i> · 评估投入(未经核证)",
+    "zh-Hant": "<i class=\"cst decl sm\"></i> · 評估投入(未經核證)"
   },
   "u.6e6f051cba95": {
     "match": "해당 아님",
     "en": "<i class=\"cst na sm\"></i> Not applicable",
     "ja": "<i class=\"cst na sm\"></i> 該当なし",
-    "zh": "<i class=\"cst na sm\"></i> 不适用"
+    "zh-Hans": "<i class=\"cst na sm\"></i> 不适用",
+    "zh-Hant": "<i class=\"cst na sm\"></i> 不適用"
   },
   "u.61f7a5e3e425": {
     "match": "적용 범위Kong Gateway Enterprise(온프렘) 포함 + Konnect, Dedicated Cloud Gateways, Insomnia, AI Gateway, Mesh",
     "en": "<b>Scope</b>Includes Kong Gateway Enterprise (on-prem) + Konnect, Dedicated Cloud Gateways, Insomnia, AI Gateway, Mesh",
     "ja": "<b>適用範囲</b>Kong Gateway Enterprise（オンプレミス）を含む + Konnect、Dedicated Cloud Gateways、Insomnia、AI Gateway、Mesh",
-    "zh": "<b>范围</b>包括 Kong Gateway Enterprom(在线)+ Konnect ,专用云门, Insomnia , AI Gateway ,Mesh"
+    "zh-Hans": "<b>范围</b>包括 Kong Gateway Enterprom(在线)+ Konnect ,专用云门, Insomnia , AI Gateway ,Mesh",
+    "zh-Hant": "<b>範圍</b>包括 Kong Gateway Enterprom(線上)+ Konnect ,專用雲門, Insomnia , AI Gateway ,Mesh"
   },
   "u.5943cd719023": {
     "match": "적용 범위Kong 조직 정보보호 관리체계",
     "en": "<b>Scope</b>Kong's organizational information security management system",
     "ja": "<b>適用範囲</b>Kong組織の情報セキュリティマネジメントシステム",
-    "zh": "<b>范围</b>Kong 组织信息安全管理系统."
+    "zh-Hans": "<b>范围</b>Kong 组织信息安全管理系统.",
+    "zh-Hant": "<b>範圍</b>Kong 組織資訊保安管理系統."
   },
   "u.1665cdc84b38": {
     "match": "적용 범위Kong Konnect Plus 자체 구독 청구(billing). 제품·서비스 인증이 아닙니다.",
     "en": "<b>Scope</b>Kong Konnect Plus self-serve subscription billing. Not a product · service certification.",
     "ja": "<b>適用範囲</b>Kong Konnect Plusのセルフサブスクリプション請求（billing）。製品・サービスの認証ではありません。",
-    "zh": "<b>范围</b>Kong Konnect 加上自助订阅费. 服务认证。"
+    "zh-Hans": "<b>范围</b>Kong Konnect 加上自助订阅费. 服务认证。",
+    "zh-Hant": "<b>範圍</b>Kong Konnect 加上自助訂閱費. 服務認證。"
   },
   "u.9cdb07cb9af7": {
     "match": "적용 범위공급망 대응",
     "en": "<b>Scope</b>Supply chain readiness",
     "ja": "<b>適用範囲</b>サプライチェーン対応",
-    "zh": "<b>范围</b>供应链准备状态"
+    "zh-Hans": "<b>范围</b>供应链准备状态",
+    "zh-Hant": "<b>範圍</b>供應鏈準備狀態"
   },
   "u.769b83dbffbc": {
     "match": "적용 범위—",
     "en": "<b>Scope</b>—",
     "ja": "<b>適用範囲</b>—",
-    "zh": "<b>范围</b>. . . . . . ."
+    "zh-Hans": "<b>范围</b>. . . . . . .",
+    "zh-Hant": "<b>範圍</b>. . . . . . ."
   },
   "u.c64358a943dd": {
     "match": "적용 범위클라우드 보안",
     "en": "<b>Scope</b>Cloud security",
     "ja": "<b>適用範囲</b>クラウドセキュリティ",
-    "zh": "<b>范围</b>云层安全"
+    "zh-Hans": "<b>范围</b>云层安全",
+    "zh-Hant": "<b>範圍</b>雲層安全"
   },
   "u.df7af743465f": {
     "match": "적용 범위보안 개발 환경, 공급망 무결성, 취약점 관리",
     "en": "<b>Scope</b>Secure development environment, supply chain integrity, vulnerability management",
     "ja": "<b>適用範囲</b>セキュアな開発環境、サプライチェーンの完全性、脆弱性管理",
-    "zh": "<b>范围</b>安全的发展环境、供应链的完整性、脆弱性管理"
+    "zh-Hans": "<b>范围</b>安全的发展环境、供应链的完整性、脆弱性管理",
+    "zh-Hant": "<b>範圍</b>安全的發展環境、供應鏈的完整性、脆弱性管理"
   },
   "u.5b6ffb806512": {
     "match": "적용 범위Kong Gateway Enterprise FIPS 140-3 패키지 (3.14 LTS · 3.16, AMD64) — 코어 및 기본 제공 플러그인 전체",
     "en": "<b>Scope</b>Kong Gateway Enterprise FIPS 140-3 packages (3.14 LTS · 3.16, AMD64) — core and all bundled plugins",
     "ja": "<b>適用範囲</b>Kong Gateway Enterprise FIPS 140-3パッケージ (3.14 LTS · 3.16, AMD64) — コアおよび標準提供プラグイン全体",
-    "zh": "<b>范围</b>Kong Gateway Entertainment FIPS 140-3 套件(3.14 LTS → 3.16,AMD64)——核心及所有捆绑插件"
+    "zh-Hans": "<b>范围</b>Kong Gateway Entertainment FIPS 140-3 套件(3.14 LTS → 3.16,AMD64)——核心及所有捆绑插件",
+    "zh-Hant": "<b>範圍</b>Kong Gateway Entertainment FIPS 140-3 套件(3.14 LTS → 3.16,AMD64)——核心及所有捆綁外掛"
   },
   "u.7d3114444070": {
     "match": "FIPS 모드(fips = on)에서는 FIPS 140-3 승인 알고리즘만 사용하며, OpenSSL FIPS Provider 3.1.2로 검증된 암호 연산을 제공합니다. 제품 자체는 NIST 시험소 검증에 제출되지 않았습니다. TLS 1.2(EMS 필수)·1.3과 AES-GCM 암호군만 허용합니다. 140-2 패키지에서는 제자리 업그레이드가 불가하여 별도 패키지로 신규 설치합니다. 공식 문서 ↗",
     "en": "In FIPS mode (<code>fips = on</code>), only FIPS 140-3 approved algorithms are used, with cryptographic operations validated through OpenSSL FIPS Provider 3.1.2. The product itself has not been submitted for NIST lab validation. Only TLS 1.2 (EMS required) · 1.3 and AES-GCM cipher suites are allowed. In-place upgrades from 140-2 packages are not supported; perform a fresh install with the separate package. <a href=\"https://developer.konghq.com/gateway/fips-support/\" rel=\"noopener noreferrer\" target=\"_blank\">Official docs ↗</a>",
     "ja": "FIPSモード（<code>fips = on</code>）ではFIPS 140-3承認アルゴリズムのみを使用し、OpenSSL FIPS Provider 3.1.2で検証された暗号演算を提供します。製品自体はNIST試験機関の検証には提出されていません。TLS 1.2（EMS必須）・1.3とAES-GCM暗号スイートのみを許可します。140-2パッケージからはインプレースアップグレードができないため、別パッケージとして新規インストールします。<a href=\"https://developer.konghq.com/gateway/fips-support/\" rel=\"noopener noreferrer\" target=\"_blank\">公式ドキュメント ↗</a>",
-    "zh": "在 Kong 模式(<code>*Kong =开始</code>),仅使用 TLS 140-3批准算法,通过OpenSSL FIPS 提供方验证加密操作3.1.2. 该产品本身尚未提交NIST实验室验证. 只允许 Kong 1.2(需要EMS) ^ 1.3和AES-GCM密码套件. 不支持140-2包的就地升级;执行与单独包的新鲜安装. <a href=\"https://developer.konghq.com/gateway/fips-support/\" rel=\"noopener noreferrer\" target=\"_blank\">官方文件 # ###</a>"
+    "zh-Hans": "在 Kong 模式(<code>*Kong =开始</code>),仅使用 TLS 140-3批准算法,通过OpenSSL FIPS 提供方验证加密操作3.1.2. 该产品本身尚未提交NIST实验室验证. 只允许 Kong 1.2(需要EMS) ^ 1.3和AES-GCM密码套件. 不支持140-2包的就地升级;执行与单独包的新鲜安装. <a href=\"https://developer.konghq.com/gateway/fips-support/\" rel=\"noopener noreferrer\" target=\"_blank\">官方文件 # ###</a>",
+    "zh-Hant": "在 Kong 模式(<code>*Kong =開始</code>),僅使用 TLS 140-3批准演算法,透過OpenSSL FIPS 提供方驗證加密操作3.1.2. 該產品本身尚未提交NIST實驗室驗證. 只允許 Kong 1.2(需要EMS) ^ 1.3和AES-GCM密碼套件. 不支援140-2包的就地升級;執行與單獨包的新鮮安裝. <a href=\"https://developer.konghq.com/gateway/fips-support/\" rel=\"noopener noreferrer\" target=\"_blank\">官方檔案 # ###</a>"
   },
   "u.a16d5df0d635": {
     "match": "적용 범위공급망·벤더 리스크",
     "en": "<b>Scope</b>Supply chain · vendor risk",
     "ja": "<b>適用範囲</b>サプライチェーン・ベンダーリスク",
-    "zh": "<b>范围</b>供应链 供应商风险"
+    "zh-Hans": "<b>范围</b>供应链 供应商风险",
+    "zh-Hant": "<b>範圍</b>供應鏈 供應商風險"
   },
   "u.a1effade41f3": {
     "match": "적용 범위법적 컴플라이언스 약속",
     "en": "<b>Scope</b>Legal compliance commitments",
     "ja": "<b>適用範囲</b>法的コンプライアンスの約束",
-    "zh": "<b>范围</b>遵守法律的承诺"
+    "zh-Hans": "<b>范围</b>遵守法律的承诺",
+    "zh-Hant": "<b>範圍</b>遵守法律的承諾"
   },
   "u.f9b358712f55": {
     "match": "적용 범위국내 인증 대상 제품 유형에 해당하지 않음 (API · AI 연결 플랫폼)",
     "en": "<b>Scope</b>Not a product type subject to Korean certification (API · AI connectivity platform)",
     "ja": "<b>適用範囲</b>韓国国内の認証対象製品タイプに該当しない（API · AI接続プラットフォーム）",
-    "zh": "<b>范围</b>不受韩国认证的产品类型(API → AI连接平台)"
+    "zh-Hans": "<b>范围</b>不受韩国认证的产品类型(API → AI连接平台)",
+    "zh-Hant": "<b>範圍</b>不受韓國認證的產品型別(API → AI連線平臺)"
   },
   "u.84486b002d99": {
     "match": "CC 인증 · 보안적합성국가·공공기관이 도입하는 정보보호제품(침입차단·침입방지·구간보안·전송자료 보안·가상화 제품군, 네트워크 장비 등)이 대상입니다. API 게이트웨이는 이 제품 유형 목록에 없어 사전 인증 의무 대상이 아닙니다.",
     "en": "<b>CC certification · security conformity</b>Applies to information security products adopted by Korean government and public agencies (firewalls, intrusion prevention, segment security, data-in-transit security, virtualization products, network equipment, etc.). API gateways are not on this product type list and are not subject to mandatory prior certification.",
     "ja": "<b>CC認証 · セキュリティ適合性</b>韓国の国家・公共機関が導入する情報セキュリティ製品（ファイアウォール・侵入防止・区間セキュリティ・伝送データセキュリティ・仮想化製品群、ネットワーク機器など）が対象です。APIゲートウェイはこの製品タイプの一覧に含まれていないため、事前認証の義務対象ではありません。",
-    "zh": "<b>CC认证 安全合格</b>适用于韩国政府和公共机构采用的信息安全产品(防火墙,防入侵,分区安全,中转数据安全,虚拟化产品,网络设备等). API Gateway s不在本产品类型清单上,无需事先强制认证."
+    "zh-Hans": "<b>CC认证 安全合格</b>适用于韩国政府和公共机构采用的信息安全产品(防火墙,防入侵,分区安全,中转数据安全,虚拟化产品,网络设备等). API Gateway s不在本产品类型清单上,无需事先强制认证.",
+    "zh-Hant": "<b>CC認證 安全合格</b>適用於韓國政府和公共機構採用的資訊保安產品(防火牆,防入侵,分割槽安全,中轉資料安全,虛擬化產品,網路裝置等). API Gateway s不在本產品型別清單上,無需事先強制認證."
   },
   "u.e89095fa324d": {
     "match": "GS 인증소프트웨어 품질에 대한 임의 인증입니다. 나라장터 종합쇼핑몰 등록·우선구매 혜택과 연결된 조달 경로 요건이며, 제품 도입의 법적 요건이 아닙니다.",
     "en": "<b>GS certification</b>A voluntary software quality certification. It is a procurement-path requirement tied to listing on Korea's KONEPS (Nara Marketplace) shopping mall and preferential purchasing, not a legal requirement for product adoption.",
     "ja": "<b>GS認証</b>ソフトウェア品質に関する任意認証です。韓国の公共調達サイト（Nara Marketplace）の総合ショッピングモール登録・優先購入の優遇と結び付いた調達ルートの要件であり、製品導入の法的要件ではありません。",
-    "zh": "<b>一般事务人员认证</b>自愿软件质量认证. 这是与韩国的KONEPS(Nara Marketplace)购物中心上市和优先购买有关的一项采购途径要求,而不是通过产品的法律要求。"
+    "zh-Hans": "<b>一般事务人员认证</b>自愿软件质量认证. 这是与韩国的KONEPS(Nara Marketplace)购物中心上市和优先购买有关的一项采购途径要求,而不是通过产品的法律要求。",
+    "zh-Hant": "<b>一般事務人員認證</b>自願軟體質量認證. 這是與韓國的KONEPS(Nara Marketplace)購物中心上市和優先購買有關的一項採購途徑要求,而不是透過產品的法律要求。"
   },
   "u.0177f4d7127b": {
     "match": "검증필 암호모듈(KCMVP)공공기관이 도입하는 정보보호제품과 DB·파일·구간 암호화 제품에 탑재되는 암호모듈이 대상입니다. Kong은 암호화 전용 제품이 아닙니다.",
     "en": "<b>Validated cryptographic modules (KCMVP)</b>Applies to cryptographic modules embedded in information security products and DB · file · segment encryption products adopted by public agencies. Kong is not a dedicated encryption product.",
     "ja": "<b>検証済み暗号モジュール（KCMVP）</b>韓国の公共機関が導入する情報セキュリティ製品と、DB・ファイル・区間暗号化製品に搭載される暗号モジュールが対象です。Kongは暗号化専用製品ではありません。",
-    "zh": "<b>经验证的加密模块(KCMVP)</b>用于嵌入在信息安全产品和DB中的加密模块 ^ 文件 ^ 由公共机构采用的分区加密产品. Kong 不是专用加密产品."
+    "zh-Hans": "<b>经验证的加密模块(KCMVP)</b>用于嵌入在信息安全产品和DB中的加密模块 ^ 文件 ^ 由公共机构采用的分区加密产品. Kong 不是专用加密产品.",
+    "zh-Hant": "<b>經驗證的加密模組(KCMVP)</b>用於嵌入在資訊保安產品和DB中的加密模組 ^ 檔案 ^ 由公共機構採用的分割槽加密產品. Kong 不是專用加密產品."
   },
   "u.244e52d068e8": {
     "match": "문서 열람 안내. SOC 2 Type II 리포트와 PCI DSS AoC는 기밀 문서로, NDA 하에 Kong Trust Center에서만 열람할 수 있습니다. Request Access Form에 정보를 입력해 요청하세요. 고객 또는 계정팀이 대신 요청할 수도 있습니다. 접근 요청 ↗",
     "en": "<b>Accessing documents.</b> The SOC 2 Type II report and PCI DSS AoC are confidential and available only under NDA through the <a href=\"https://trust.konghq.com/\" rel=\"noopener noreferrer\" target=\"_blank\">Kong Trust Center</a>. Submit your details in the Request Access Form. Customers or the account team can also request on your behalf. <a href=\"https://trust.konghq.com/?requestAccessOpen=true&amp;requestedResources=699c70f761f9bb520a0059cd\" rel=\"noopener noreferrer\" target=\"_blank\">Request access ↗</a>",
     "ja": "<b>ドキュメント閲覧のご案内。</b>SOC 2 Type IIレポートとPCI DSS AoCは機密文書であり、NDAのもと<a href=\"https://trust.konghq.com/\" rel=\"noopener noreferrer\" target=\"_blank\">Kong Trust Center</a>でのみ閲覧できます。Request Access Formに情報を入力してリクエストしてください。顧客またはアカウントチームが代理でリクエストすることもできます。<a href=\"https://trust.konghq.com/?requestAccessOpen=true&amp;requestedResources=699c70f761f9bb520a0059cd\" rel=\"noopener noreferrer\" target=\"_blank\">アクセスをリクエスト ↗</a>",
-    "zh": "<b>获取文档。</b> SOC 2 第二类报告和PCI DSS AoC都是保密的,只能通过国家数据自动化系统在以下方式提供: <a href=\"https://trust.konghq.com/\" rel=\"noopener noreferrer\" target=\"_blank\">Kong 信托中心</a>在请求访问表格中提交详细信息。 客户或账户组也可以代表您申请。 <a href=\"https://trust.konghq.com/?requestAccessOpen=true&amp;requestedResources=699c70f761f9bb520a0059cd\" rel=\"noopener noreferrer\" target=\"_blank\">请求访问 QQ</a>"
+    "zh-Hans": "<b>获取文档。</b> SOC 2 第二类报告和PCI DSS AoC都是保密的,只能通过国家数据自动化系统在以下方式提供: <a href=\"https://trust.konghq.com/\" rel=\"noopener noreferrer\" target=\"_blank\">Kong 信托中心</a>在请求访问表格中提交详细信息。 客户或账户组也可以代表您申请。 <a href=\"https://trust.konghq.com/?requestAccessOpen=true&amp;requestedResources=699c70f761f9bb520a0059cd\" rel=\"noopener noreferrer\" target=\"_blank\">请求访问 QQ</a>",
+    "zh-Hant": "<b>獲取文件。</b> SOC 2 第二類報告和PCI DSS AoC都是保密的,只能透過國家資料自動化系統在以下方式提供: <a href=\"https://trust.konghq.com/\" rel=\"noopener noreferrer\" target=\"_blank\">Kong 信託中心</a>在請求訪問表格中提交詳細資訊。 客戶或賬戶組也可以代表您申請。 <a href=\"https://trust.konghq.com/?requestAccessOpen=true&amp;requestedResources=699c70f761f9bb520a0059cd\" rel=\"noopener noreferrer\" target=\"_blank\">請求訪問 QQ</a>"
   },
   "u.f4ba32f6719e": {
     "match": "서버 수가 아니라, 비즈니스 가치로",
     "en": "Based on <em>business value</em>, not server count",
     "ja": "サーバー数ではなく、<em>ビジネス価値</em>で",
-    "zh": "依据 <em>商业价值</em>,而不是服务器数"
+    "zh-Hans": "依据 <em>商业价值</em>,而不是服务器数",
+    "zh-Hant": "依據 <em>商業價值</em>,而不是伺服器數"
   },
   "u.1d9acba6d949": {
     "match": "Gateway Service 수연동할 백엔드 API · 서비스 수",
     "en": "<b>Number of Gateway Services</b>Backend APIs · services to integrate",
     "ja": "<b>Gateway Service数</b>連携するバックエンドAPI · サービスの数",
-    "zh": "<b>网关服务数目</b>后端 API → 要整合的服务"
+    "zh-Hans": "<b>网关服务数目</b>后端 API → 要整合的服务",
+    "zh-Hant": "<b>閘道器服務數目</b>後端 API → 要整合的服務"
   },
   "u.dbbbb4dff1c2": {
     "match": "연간 API 호출량일 평균 호출 수 × 365",
     "en": "<b>Annual API call volume</b>Average daily calls × 365",
     "ja": "<b>年間API呼び出し量</b>1日平均呼び出し数 × 365",
-    "zh": "<b>每年API调用量</b>每日平均电话x365"
+    "zh-Hans": "<b>每年API调用量</b>每日平均电话x365",
+    "zh-Hant": "<b>每年API呼叫量</b>每日平均電話x365"
   },
   "u.a0957445d01f": {
     "match": "LLM 모델 연계 수AI Gateway 사용 시 모델 수",
     "en": "<b>Number of LLM integrations</b>Models used with AI Gateway",
     "ja": "<b>LLMモデル連携数</b>AI Gateway利用時のモデル数",
-    "zh": "<b>AI Gateway 集成数量</b>使用 AI Gateway 的模型"
+    "zh-Hans": "<b>AI Gateway 集成数量</b>使用 AI Gateway 的模型",
+    "zh-Hant": "<b>AI Gateway 整合數量</b>使用 AI Gateway 的模型"
   },
   "u.3efdcbbcc7a7": {
     "match": "배포 방식 · 지원 수준Self-Managed 또는 Konnect, 계약 기간",
     "en": "<b>Deployment · support level</b>Self-Managed or Konnect, contract term",
     "ja": "<b>デプロイ方式 · サポートレベル</b>Self-ManagedまたはKonnect、契約期間",
-    "zh": "<b>部署/支助</b>自行管理或合同期限"
+    "zh-Hans": "<b>部署/支助</b>自行管理或合同期限",
+    "zh-Hant": "<b>部署/支助</b>自行管理或合同期限"
   },
   "u.f63e2788f0e5": {
     "match": "p95 지연낮을수록 좋음",
     "en": "p95 latency<em>Lower is better</em>",
     "ja": "p95レイテンシ<em>低いほど良い</em>",
-    "zh": "p95 延迟<em>低点更好</em>"
+    "zh-Hans": "p95 延迟<em>低点更好</em>",
+    "zh-Hant": "p95 延遲<em>低點更好</em>"
   },
   "u.cc04d0b97579": {
     "match": "p99 지연낮을수록 좋음",
     "en": "p99 latency<em>Lower is better</em>",
     "ja": "p99レイテンシ<em>低いほど良い</em>",
-    "zh": "p99 延迟<em>低点更好</em>"
+    "zh-Hans": "p99 延迟<em>低点更好</em>",
+    "zh-Hant": "p99 延遲<em>低點更好</em>"
   },
   "u.4b9e60f6c418": {
     "match": "처리량높을수록 좋음",
     "en": "Throughput<em>Higher is better</em>",
     "ja": "スループット<em>高いほど良い</em>",
-    "zh": "流量<em>高点更好</em>"
+    "zh-Hans": "流量<em>高点更好</em>",
+    "zh-Hant": "流量<em>高點更好</em>"
   },
   "u.53b72edd9c17": {
     "match": "삼성전자높음",
     "en": "Samsung Electronics<em>High</em>",
     "ja": "Samsung Electronics<em>高</em>",
-    "zh": "三星电子<em>高级</em>"
+    "zh-Hans": "三星电子<em>高级</em>",
+    "zh-Hant": "三星電子<em>高階</em>"
   },
   "u.56ecaa518022": {
     "match": "카카오중간",
     "en": "Kakao<em>Medium</em>",
     "ja": "Kakao<em>中</em>",
-    "zh": "Kak<em>中型</em>"
+    "zh-Hans": "Kak<em>中型</em>",
+    "zh-Hant": "Kak<em>中型</em>"
   },
   "u.d7a76287aaa9": {
     "match": "토스 (비바리퍼블리카)중간",
     "en": "Toss (Viva Republica)<em>Medium</em>",
     "ja": "Toss（Viva Republica）<em>中</em>",
-    "zh": "托斯(共和国万岁)<em>中型</em>"
+    "zh-Hans": "托斯(共和国万岁)<em>中型</em>",
+    "zh-Hant": "託斯(共和國萬歲)<em>中型</em>"
   },
   "u.841fcfd975bd": {
     "match": "퓨처위즈중간",
     "en": "Futurewiz<em>Medium</em>",
     "ja": "Futurewiz<em>中</em>",
-    "zh": "未来世界<em>中型</em>"
+    "zh-Hans": "未来世界<em>中型</em>",
+    "zh-Hant": "未來世界<em>中型</em>"
   },
   "u.0c1d0f6a536f": {
     "match": "유웍스중간",
     "en": "Uworks<em>Medium</em>",
     "ja": "Uworks<em>中</em>",
-    "zh": "设备<em>中型</em>"
+    "zh-Hans": "设备<em>中型</em>",
+    "zh-Hant": "裝置<em>中型</em>"
   },
   "u.eb362b360e37": {
     "match": "SSR중간",
     "en": "SSR<em>Medium</em>",
     "ja": "SSR<em>中</em>",
-    "zh": "安全部门改革<em>中型</em>"
+    "zh-Hans": "安全部门改革<em>中型</em>",
+    "zh-Hant": "安全部門改革<em>中型</em>"
   },
   "u.905c2c3080a4": {
     "match": "탈취 대상 AWS · GCP · Azure 키, SSH · 저장소 토큰, Kubernetes Secret, AI 공급자 API 키, CI/CD 환경 변수",
     "en": "<b>Targets of theft</b> AWS · GCP · Azure keys, SSH · repository tokens, Kubernetes Secrets, AI provider API keys, CI/CD environment variables",
     "ja": "<b>窃取対象</b> AWS · GCP · Azureのキー、SSH · リポジトリトークン、Kubernetes Secret、AIプロバイダーのAPIキー、CI/CD環境変数",
-    "zh": "<b>盗窃目标</b> AWS GCP Azure 按键,SSH ^ 寄存符, Kubernetes 机密、 AI 提供者 API 密钥、 CI/ CD 环境变量"
+    "zh-Hans": "<b>盗窃目标</b> AWS GCP Azure 按键,SSH ^ 寄存符, Kubernetes 机密、 AI 提供者 API 密钥、 CI/ CD 环境变量",
+    "zh-Hant": "<b>盜竊目標</b> AWS GCP Azure 按鍵,SSH ^ 寄存符, Kubernetes 機密、 AI 提供者 API 金鑰、 CI/ CD 環境變數"
   },
   "u.24556ef2696f": {
     "match": "패치 이후에도 위험 이미 유출된 키는 교체 전까지 유효합니다. CSA는 키 전면 교체, 라우팅 설정 변경 감시, 아웃바운드 허용 목록을 권고했습니다.",
     "en": "<b>Risk persists after patching</b> Keys already leaked remain valid until rotated. CSA recommended rotating all keys, monitoring routing config changes, and enforcing outbound allowlists.",
     "ja": "<b>パッチ適用後もリスクあり</b> すでに流出したキーは交換するまで有効です。CSAはキーの全面交換、ルーティング設定変更の監視、アウトバウンド許可リストを推奨しました。",
-    "zh": "<b>补丁后风险持续存在</b> 已经泄露的密钥在旋转前仍然有效。 加空局建议旋转所有密钥,监测路由配置变化,执行出局许可列表."
+    "zh-Hans": "<b>补丁后风险持续存在</b> 已经泄露的密钥在旋转前仍然有效。 加空局建议旋转所有密钥,监测路由配置变化,执行出局许可列表.",
+    "zh-Hant": "<b>補丁後風險持續存在</b> 已經洩露的金鑰在旋轉前仍然有效。 加空局建議旋轉所有金鑰,監測路由配置變化,執行出局許可列表."
   },
   "u.531b38e81670": {
     "match": "올해 두 번째 3월 1.82.7·1.82.8에 이어 10월 21일 1.107.0이 다시 침해됐습니다. 보도에 따르면 Wiz는 직전 안전 버전으로 1.106.2를 제시했습니다.",
     "en": "<b>Second time this year</b> After 1.82.7 and 1.82.8 in March, 1.107.0 was compromised again on October 21. Reporting says Wiz named 1.106.2 as the latest safe version.",
     "ja": "<b>今年2件目</b> 3月の 1.82.7・1.82.8 に続き、10月21日に 1.107.0 が再び侵害されました。報道によると、Wizは直前の安全なバージョンとして 1.106.2 を示しています。",
-    "zh": "<b>这年第二次</b> 3月1.82.7和1.82.8之后,1.107.0在10月21日再次失密. 报道称Wiz将1.106.2命名为最新安全版本."
+    "zh-Hans": "<b>这年第二次</b> 3月1.82.7和1.82.8之后,1.107.0在10月21日再次失密. 报道称Wiz将1.106.2命名为最新安全版本.",
+    "zh-Hant": "<b>這年第二次</b> 3月1.82.7和1.82.8之後,1.107.0在10月21日再次失密. 報道稱Wiz將1.106.2命名為最新安全版本."
   },
   "u.929814b558f7": {
     "match": "배포물 검증 어떤 소프트웨어도 공급망 위험에서 자유롭지 않습니다. Kong Gateway Enterprise는 이미지 Cosign 서명과 SLSA 빌드 출처(provenance) 검증을 제공하고(3.5+), 공급자 키는 Vault 연동으로 Gateway 밖에 보관할 수 있습니다.",
     "en": "<b>Verify what you deploy</b> No software is free from supply chain risk. Kong Gateway Enterprise provides Cosign image signatures and SLSA build provenance verification (3.5+), and provider keys can be stored outside the gateway via Vault integration.",
     "ja": "<b>配布物の検証</b> どのソフトウェアもサプライチェーンリスクから無縁ではありません。Kong Gateway EnterpriseはイメージのCosign署名とSLSAビルド来歴（provenance）の検証を提供しており（3.5+）、プロバイダーキーはVault連携でGatewayの外に保管できます。",
-    "zh": "<b>检查您的部署</b> 没有任何软件不受供应链风险的影响。 Kong Gateway Entertainment提供Cosign图像签名和SLSA构建出处验证(3.5+),供应商密钥可以通过Vault集成存储在网关外."
+    "zh-Hans": "<b>检查您的部署</b> 没有任何软件不受供应链风险的影响。 Kong Gateway Entertainment提供Cosign图像签名和SLSA构建出处验证(3.5+),供应商密钥可以通过Vault集成存储在网关外.",
+    "zh-Hant": "<b>檢查您的部署</b> 沒有任何軟體不受供應鏈風險的影響。 Kong Gateway Entertainment提供Cosign影象簽名和SLSA構建出處驗證(3.5+),供應商金鑰可以透過Vault整合儲存在閘道器外."
   },
   "u.9616018e668d": {
     "match": "출처: CSA 연구 노트 ↗ · CloudSEK ↗ · CloudSEK 노출 기업 조회 ↗ · Ars Technica ↗ · Cyber Security News ↗ · Kong 이미지 서명 검증 ↗",
     "en": "Sources: <a href=\"https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-gateway-postcompromise-20260829-cs/\" rel=\"noopener noreferrer\" target=\"_blank\">CSA research note ↗</a> · <a href=\"https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines\" rel=\"noopener noreferrer\" target=\"_blank\">CloudSEK ↗</a> · <a href=\"https://exposure.cloudsek.com/ai-supply-chain-incident\" rel=\"noopener noreferrer\" target=\"_blank\">CloudSEK exposed company lookup ↗</a> · <a href=\"https://arstechnica.com/security/2026/08/terabytes-of-credentials-leaked-in-massive-supply-chain-attack/\" rel=\"noopener noreferrer\" target=\"_blank\">Ars Technica ↗</a> · <a href=\"https://cybersecuritynews.com/litellm-compromised/\" rel=\"noopener noreferrer\" target=\"_blank\">Cyber Security News ↗</a> · <a href=\"https://developer.konghq.com/how-to/verify-signatures-for-signed-images/\" rel=\"noopener noreferrer\" target=\"_blank\">Kong image signature verification ↗</a>",
     "ja": "出典: <a href=\"https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-gateway-postcompromise-20260829-cs/\" rel=\"noopener noreferrer\" target=\"_blank\">CSAリサーチノート ↗</a> · <a href=\"https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines\" rel=\"noopener noreferrer\" target=\"_blank\">CloudSEK ↗</a> · <a href=\"https://exposure.cloudsek.com/ai-supply-chain-incident\" rel=\"noopener noreferrer\" target=\"_blank\">CloudSEK 露出企業照会 ↗</a> · <a href=\"https://arstechnica.com/security/2026/08/terabytes-of-credentials-leaked-in-massive-supply-chain-attack/\" rel=\"noopener noreferrer\" target=\"_blank\">Ars Technica ↗</a> · <a href=\"https://cybersecuritynews.com/litellm-compromised/\" rel=\"noopener noreferrer\" target=\"_blank\">Cyber Security News ↗</a> · <a href=\"https://developer.konghq.com/how-to/verify-signatures-for-signed-images/\" rel=\"noopener noreferrer\" target=\"_blank\">Kongイメージ署名の検証 ↗</a>",
-    "zh": "资料来源: <a href=\"https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-gateway-postcompromise-20260829-cs/\" rel=\"noopener noreferrer\" target=\"_blank\">加空局研究说明</a> * 妇女 <a href=\"https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines\" rel=\"noopener noreferrer\" target=\"_blank\">云锋</a> * 妇女 <a href=\"https://exposure.cloudsek.com/ai-supply-chain-incident\" rel=\"noopener noreferrer\" target=\"_blank\">CloudSEK 曝光公司查询</a> * 妇女 <a href=\"https://arstechnica.com/security/2026/08/terabytes-of-credentials-leaked-in-massive-supply-chain-attack/\" rel=\"noopener noreferrer\" target=\"_blank\">阿尔斯·特奇尼察</a> * 妇女 <a href=\"https://cybersecuritynews.com/litellm-compromised/\" rel=\"noopener noreferrer\" target=\"_blank\">网易安全新闻.</a> * 妇女 <a href=\"https://developer.konghq.com/how-to/verify-signatures-for-signed-images/\" rel=\"noopener noreferrer\" target=\"_blank\">Kong 图像签名验证</a>"
+    "zh-Hans": "资料来源: <a href=\"https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-gateway-postcompromise-20260829-cs/\" rel=\"noopener noreferrer\" target=\"_blank\">加空局研究说明</a> * 妇女 <a href=\"https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines\" rel=\"noopener noreferrer\" target=\"_blank\">云锋</a> * 妇女 <a href=\"https://exposure.cloudsek.com/ai-supply-chain-incident\" rel=\"noopener noreferrer\" target=\"_blank\">CloudSEK 曝光公司查询</a> * 妇女 <a href=\"https://arstechnica.com/security/2026/08/terabytes-of-credentials-leaked-in-massive-supply-chain-attack/\" rel=\"noopener noreferrer\" target=\"_blank\">阿尔斯·特奇尼察</a> * 妇女 <a href=\"https://cybersecuritynews.com/litellm-compromised/\" rel=\"noopener noreferrer\" target=\"_blank\">网易安全新闻.</a> * 妇女 <a href=\"https://developer.konghq.com/how-to/verify-signatures-for-signed-images/\" rel=\"noopener noreferrer\" target=\"_blank\">Kong 图像签名验证</a>",
+    "zh-Hant": "資料來源: <a href=\"https://labs.cloudsecurityalliance.org/research/csa-research-note-litellm-gateway-postcompromise-20260829-cs/\" rel=\"noopener noreferrer\" target=\"_blank\">加空局研究說明</a> * 婦女 <a href=\"https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines\" rel=\"noopener noreferrer\" target=\"_blank\">雲鋒</a> * 婦女 <a href=\"https://exposure.cloudsek.com/ai-supply-chain-incident\" rel=\"noopener noreferrer\" target=\"_blank\">CloudSEK 曝光公司查詢</a> * 婦女 <a href=\"https://arstechnica.com/security/2026/08/terabytes-of-credentials-leaked-in-massive-supply-chain-attack/\" rel=\"noopener noreferrer\" target=\"_blank\">阿爾斯·特奇尼察</a> * 婦女 <a href=\"https://cybersecuritynews.com/litellm-compromised/\" rel=\"noopener noreferrer\" target=\"_blank\">網易安全新聞.</a> * 婦女 <a href=\"https://developer.konghq.com/how-to/verify-signatures-for-signed-images/\" rel=\"noopener noreferrer\" target=\"_blank\">Kong 影象簽名驗證</a>"
   },
   "u.0b8ab227f3ff": {
     "match": "포지셔닝. Kong = API+AI 통합 게이트웨이·거버넌스 플랫폼. FortiAIGate = 앱↔모델 사이에 두는 AI 런타임 보안(AI Firewall)·시큐어 프록시.",
     "en": "<b>Positioning.</b> Kong = unified API + AI gateway · governance platform. FortiAIGate = AI runtime security (AI firewall) · secure proxy placed between apps ↔ models.",
     "ja": "<b>ポジショニング。</b> Kong = API+AI統合ゲートウェイ・ガバナンスプラットフォーム。FortiAIGate = アプリ↔モデル間に置くAIランタイムセキュリティ（AI Firewall）・セキュアプロキシ。",
-    "zh": "<b>准备</b> Kong =统一API+ AI Gateway == 治理平台. FortiAIGate = AI 运行时安全(AI防火墙) – 在apps QQ模型之间放置安全代理."
+    "zh-Hans": "<b>准备</b> Kong =统一API+ AI Gateway == 治理平台. FortiAIGate = AI 运行时安全(AI防火墙) – 在apps QQ模型之间放置安全代理.",
+    "zh-Hant": "<b>準備</b> Kong =統一API+ AI Gateway == 治理平臺. FortiAIGate = AI 執行時安全(AI防火牆) – 在apps QQ模型之間放置安全代理."
   },
   "u.52c351582b65": {
     "match": "포지셔닝. Kong AI Gateway = 플랫폼·AI 엔지니어링 팀이 프로덕션 AI를 빌드·운영하는 연결 인프라. Netskope One AI Gateway = SSE/보안 조직이 운영하는 앱↔LLM 트래픽 보안 검사 계층.",
     "en": "<b>Positioning.</b> Kong AI Gateway = connectivity infrastructure for platform · AI engineering teams to build and run production AI. Netskope One AI Gateway = an app ↔ LLM traffic security inspection layer run by SSE/security teams.",
     "ja": "<b>ポジショニング。</b> Kong AI Gateway = プラットフォーム・AIエンジニアリングチームが本番AIを構築・運用するための接続インフラ。Netskope One AI Gateway = SSE/セキュリティ組織が運用するアプリ↔LLMトラフィックのセキュリティ検査レイヤー。",
-    "zh": "<b>准备</b> Kong AI Gateway =平台互联互通基础设施 AI工程组建设和运行生产AI. Netskope One + AI Gateway = aapp → LLM 由SSE/安保团队运营的交通安全检查层."
+    "zh-Hans": "<b>准备</b> Kong AI Gateway =平台互联互通基础设施 AI工程组建设和运行生产AI. Netskope One + AI Gateway = aapp → LLM 由SSE/安保团队运营的交通安全检查层.",
+    "zh-Hant": "<b>準備</b> Kong AI Gateway =平臺互聯互通基礎設施 AI工程組建設和執行生產AI. Netskope One + AI Gateway = aapp → LLM 由SSE/安保團隊運營的交通安全檢查層."
   },
   "u.7431afe942e6": {
     "match": "새 버전 v",
     "en": "<i class=\"vb-dot\"></i>New version v",
     "ja": "<i class=\"vb-dot\"></i>新バージョン v",
-    "zh": "<i class=\"vb-dot\"></i>新版本 v"
+    "zh-Hans": "<i class=\"vb-dot\"></i>新版本 v",
+    "zh-Hant": "<i class=\"vb-dot\"></i>新版本 v"
   },
   "u.2a6e35060d38": {
     "match": "HTTP로 여는 Event API",
     "en": "An <em>Event API</em> over HTTP",
     "ja": "HTTP で開く <em>Event API</em>",
-    "zh": "一个 <em>事件 API</em> 超过 HTTP"
+    "zh-Hans": "一个 <em>事件 API</em> 超过 HTTP",
+    "zh-Hant": "一個 <em>事件 API</em> 超過 HTTP"
   },
   "u.f212b5595c1b": {
     "match": "네이티브 Kafka를 거버넌스하는 프록시",
     "en": "A proxy that <em>governs</em> native Kafka",
     "ja": "ネイティブ Kafka を<em>ガバナンス</em>するプロキシ",
-    "zh": "一个代理 <em>规范</em> 本地 {Kafka}"
+    "zh-Hans": "一个代理 <em>规范</em> 本地 {Kafka}",
+    "zh-Hant": "一個代理 <em>規範</em> 本地 {Kafka}"
   },
   "u.3af12ab46bc1": {
     "match": "AI 시대의 API 협업 개발",
     "en": "<em>Collaborative API development</em> in the AI era",
     "ja": "AI 時代の<em>API 協業開発</em>",
-    "zh": "<em>API合作发展</em> 在AI时代"
+    "zh-Hans": "<em>API合作发展</em> 在AI时代",
+    "zh-Hant": "<em>API合作發展</em> 在AI時代"
   },
   "u.c377ad627fc1": {
     "match": "API 연결 시대 이후,AI 에이전트 연결의 시대",
     "en": "After the age of API connectivity,<br>the age of <em>AI agent</em> connectivity",
     "ja": "API 接続の時代の次は、<br><em>AI エージェント</em>接続の時代",
-    "zh": "在API连接时代之后,<br>年龄 <em>人工智能代理人</em> 连通性"
+    "zh-Hans": "在API连接时代之后,<br>年龄 <em>人工智能代理人</em> 连通性",
+    "zh-Hant": "在API連線時代之後,<br>年齡 <em>人工智慧代理人</em> 連通性"
   },
   "u.f85ee0c117b0": {
     "match": "모든 API의 안전한 관리",
     "en": "Secure management of <em>every API</em>",
     "ja": "すべての API の<em>安全な管理</em>",
-    "zh": "安全管理 <em>每个 API</em>"
+    "zh-Hans": "安全管理 <em>每个 API</em>",
+    "zh-Hant": "安全管理 <em>每個 API</em>"
   },
   "u.2ce05a52d75a": {
     "match": "AI의 전제 조건, API",
     "en": "The prerequisite for AI, <em>APIs</em>",
     "ja": "AI の前提、<em>API</em>",
-    "zh": "AI的先决条件, <em>APIs 图像</em>"
+    "zh-Hans": "AI的先决条件, <em>APIs 图像</em>",
+    "zh-Hant": "AI的先決條件, <em>APIs 影象</em>"
   },
   "u.c8ebad396ef8": {
     "match": "서버 수가 아닌 비즈니스 가치 기준",
     "en": "Priced on <em>business value</em>, not server count",
     "ja": "サーバー数ではなく<em>ビジネス価値</em>基準",
-    "zh": "定价 <em>商业价值</em>,而不是服务器数"
+    "zh-Hans": "定价 <em>商业价值</em>,而不是服务器数",
+    "zh-Hant": "定價 <em>商業價值</em>,而不是伺服器數"
   },
   "u.ade950722757": {
     "match": "규제 요건과 Kong 통제 항목 매핑",
     "en": "Mapping regulatory requirements to <em>Kong controls</em>",
     "ja": "規制要件と<em>Kong 統制項目</em>の対応",
-    "zh": "将监管要求映射到 <em>Kong 控件</em>"
+    "zh-Hans": "将监管要求映射到 <em>Kong 控件</em>",
+    "zh-Hant": "將監管要求對映到 <em>Kong 控制元件</em>"
   },
   "u.cf694a07dad0": {
     "match": "범주 · 지원 여부. Kong은 안정성·보안·글로벌 기술 협력(NVIDIA 등)을 갖춘 엔터프라이즈 AI Connectivity 플랫폼입니다. API7(APISIX 상용)은 Kong과 유사한 엔티티 모델의 오픈소스·상용 게이트웨이이며, 조직 규모·레퍼런스·AI Agent 깊이에서 검토가 필요합니다. 아래 표는 기능 지원 여부를 동일 축으로 비교합니다.",
     "en": "<b>Category · support.</b> Kong is an enterprise AI Connectivity platform with stability, security, and global technology partnerships (including NVIDIA). API7 (commercial APISIX) is an open-source/commercial gateway with a Kong-like entity model; organization scale, references, and AI Agent depth warrant review. The table below compares feature support on the same axes.",
     "ja": "<b>カテゴリ · サポート有無。</b> Kongは安定性·セキュリティ·グローバル技術連携（NVIDIAなど）を備えたエンタープライズAI Connectivityプラットフォームです。API7（APISIX商用）はKongに似たエンティティモデルのオープンソース·商用ゲートウェイであり、組織規模·リファレンス·AI Agentの深さで検討が必要です。下表は機能サポート有無を同一軸で比較します。",
-    "zh": "<b>· 支助类别。</b> Kong 是企业AI互联互通平台,具有稳定性,安全性和全球性技术伙伴关系(包括NVIDIA). API7(商业APISIX)是一个开源/商业网关,具有 Kong 类似实体模式;组织规模,参考文献,以及AI Agent深度授权审查. 下表比较了同一轴上的特征支持."
+    "zh-Hans": "<b>· 支助类别。</b> Kong 是企业AI互联互通平台,具有稳定性,安全性和全球性技术伙伴关系(包括NVIDIA). API7(商业APISIX)是一个开源/商业网关,具有 Kong 类似实体模式;组织规模,参考文献,以及AI Agent深度授权审查. 下表比较了同一轴上的特征支持.",
+    "zh-Hant": "<b>· 支助類別。</b> Kong 是企業AI互聯互通平臺,具有穩定性,安全性和全球性技術夥伴關係(包括NVIDIA). API7(商業APISIX)是一個開源/商業閘道器,具有 Kong 類似實體模式;組織規模,參考文獻,以及AI Agent深度授權審查. 下表比較了同一軸上的特徵支援."
   },
   "u.25ec4b53cceb": {
     "match": "Kong 글로벌 유료 고객 기반과 분리된 지원 조직으로 도입 후 SLA·상시 대응이 가능합니다.",
     "en": "<b>Kong</b> has a global paid-customer base and a separated support organization, so post-adoption SLA and always-on response are available.",
     "ja": "<b>Kong</b> グローバル有料顧客基盤と分離されたサポート組織により、導入後のSLA·常時対応が可能です。",
-    "zh": "<b>Kong</b> 拥有全球付费客户基础和一个独立的支助组织,因此,在采用后提供SLA并随时作出反应。"
+    "zh-Hans": "<b>Kong</b> 拥有全球付费客户基础和一个独立的支助组织,因此,在采用后提供SLA并随时作出反应。",
+    "zh-Hant": "<b>Kong</b> 擁有全球付費客戶基礎和一個獨立的支助組織,因此,在採用後提供SLA並隨時作出反應。"
   },
   "u.a218cf1bf4ab": {
     "match": "API7 약 35–50명 규모로, 동일 수준의 엔터프라이즈 상시 지원·SLA를 기대하기 어렵습니다.",
     "en": "<b>API7</b> At roughly 35–50 people, enterprise-grade always-on support and SLA at the same level are hard to expect.",
     "ja": "<b>API7</b> 約35–50名規模では、同水準のエンタープライズ常時サポート·SLAを期待しにくいです。",
-    "zh": "<b>API7</b> 在大约35-50人中,企业级总是提供支持,而同级的苏丹解放军则难以预料。"
+    "zh-Hans": "<b>API7</b> 在大约35-50人中,企业级总是提供支持,而同级的苏丹解放军则难以预料。",
+    "zh-Hant": "<b>API7</b> 在大約35-50人中,企業級總是提供支援,而同級的蘇丹解放軍則難以預料。"
   },
   "u.fd487c23d2eb": {
     "match": "Kong Open Secure AI Alliance 창립 멤버급으로 AI Gateway 가이드를 선도하며, A2A·Agent 거버넌스를 지원합니다.",
     "en": "<b>Kong</b> is a founding-member-level participant in the Open Secure AI Alliance, leads AI Gateway guidance, and supports A2A/Agent governance.",
     "ja": "<b>Kong</b> Open Secure AI Alliance創設メンバー級としてAI Gatewayガイドをリードし、A2A·Agentガバナンスをサポートします。",
-    "zh": "<b>AI Gateway</b> 是开放安全AI联盟的创始成员级参与者,领导 AI Gateway 指导,并支持A2A/代理治理."
+    "zh-Hans": "<b>AI Gateway</b> 是开放安全AI联盟的创始成员级参与者,领导 AI Gateway 指导,并支持A2A/代理治理.",
+    "zh-Hant": "<b>AI Gateway</b> 是開放安全AI聯盟的創始成員級參與者,領導 AI Gateway 指導,並支援A2A/代理治理."
   },
   "u.b57c36ce319a": {
     "match": "API7 표면 기능 추가 단계이며 A2A 거버넌스·Agent 심층 분석은 미지원, AI GW 미션 크리티컬 글로벌 레퍼런스가 제한적입니다.",
     "en": "<b>API7</b> Still adding surface features; A2A governance and deep Agent analysis are unsupported, and mission-critical global AI GW references are limited.",
     "ja": "<b>API7</b> 表面機能の追加段階で、A2Aガバナンス·Agent深層分析は未サポート、AI GWミッションクリティカルなグローバルリファレンスは限定的です。",
-    "zh": "<b>API7</b> 仍在增加表面特征;A2A治理和深度Agent分析没有支持,任务关键的全球AI GW参考有限."
+    "zh-Hans": "<b>API7</b> 仍在增加表面特征;A2A治理和深度Agent分析没有支持,任务关键的全球AI GW参考有限.",
+    "zh-Hant": "<b>API7</b> 仍在增加表面特徵;A2A治理和深度Agent分析沒有支援,任務關鍵的全球AI GW參考有限."
   },
   "u.b87475803d28": {
     "match": "Kong Services · Routes · Upstreams · Plugin · Consumers를 중심으로 한 엔터프라이즈 아키텍처를 자체적으로 발전시켜 왔습니다.",
     "en": "<b>Kong</b> has independently evolved an enterprise architecture centered on Services · Routes · Upstreams · Plugin · Consumers.",
     "ja": "<b>Kong</b> Services · Routes · Upstreams · Plugin · Consumersを中心としたエンタープライズアーキテクチャを独自に発展させてきました。",
-    "zh": "<b>Kong</b> 已经独立发展了一个以服务为核心的企业结构——路线——上游——插件——消费者。"
+    "zh-Hans": "<b>Kong</b> 已经独立发展了一个以服务为核心的企业结构——路线——上游——插件——消费者。",
+    "zh-Hant": "<b>Kong</b> 已經獨立發展了一個以服務為核心的企業結構——路線——上游——外掛——消費者。"
   },
   "u.3885f233fb7c": {
     "match": "API7 동일 엔티티 모델을 거의 그대로 따르며 따라잡기 중심입니다. 내부 로직 이해 부족이 이슈화된 예: APISIX #3207에서 Kong 해결 방식을 질문.",
     "en": "<b>API7</b> Largely follows the same entity model in a catch-up posture. Example where limited internal-logic understanding surfaced: <a href=\"https://github.com/apache/apisix/issues/3207\" target=\"_blank\" rel=\"noopener noreferrer\">APISIX #3207</a> asking how Kong solved it.",
     "ja": "<b>API7</b> 同一エンティティモデルをほぼそのまま踏襲するキャッチアップ中心です。内部ロジック理解不足が問題化した例: <a href=\"https://github.com/apache/apisix/issues/3207\" target=\"_blank\" rel=\"noopener noreferrer\">APISIX #3207</a>でKongの解決方法を質問。",
-    "zh": "<b>API7</b> 主要遵循同一个实体模式的追赶姿态. 出现有限的内部逻辑理解的例子: <a href=\"https://github.com/apache/apisix/issues/3207\" target=\"_blank\" rel=\"noopener noreferrer\">APISIX #3207</a> 询问 Kong 是如何解决的。"
+    "zh-Hans": "<b>API7</b> 主要遵循同一个实体模式的追赶姿态. 出现有限的内部逻辑理解的例子: <a href=\"https://github.com/apache/apisix/issues/3207\" target=\"_blank\" rel=\"noopener noreferrer\">APISIX #3207</a> 询问 Kong 是如何解决的。",
+    "zh-Hant": "<b>API7</b> 主要遵循同一個實體模式的追趕姿態. 出現有限的內部邏輯理解的例子: <a href=\"https://github.com/apache/apisix/issues/3207\" target=\"_blank\" rel=\"noopener noreferrer\">APISIX #3207</a> 詢問 Kong 是如何解決的。"
   },
   "u.a2c12efff577": {
     "match": "범주 · 지원 여부. LiteLLM·Portkey·Bifrost는 LLM 전용/AI-native 게이트웨이입니다. Kong AI Connectivity는 API·LLM·MCP·Agent·Event를 하나의 거버넌스로 묶습니다. 아래 표는 동일 기능축으로 지원 여부를 비교합니다.",
     "en": "<b>Category · support.</b> LiteLLM, Portkey, and Bifrost are LLM-focused / AI-native gateways. Kong AI Connectivity unifies governance for API, LLM, MCP, Agent, and Event traffic. The table below compares support on the same capability axes.",
     "ja": "<b>カテゴリ · サポート有無。</b> LiteLLM·Portkey·BifrostはLLM特化/AI-nativeゲートウェイです。Kong AI ConnectivityはAPI·LLM·MCP·Agent·Eventを一つのガバナンスで束ねます。下表は同一の機能軸でサポート有無を比較します。",
-    "zh": "<b>· 支助类别。</b> Lite LLM ,Portkey,和Bifrost是 LLM 焦点/AI-本土网关. Kong AI 互联互通统一治理API, LLM , MCP ,代理和事件流量. 下表比较了同一能力轴上的支持."
+    "zh-Hans": "<b>· 支助类别。</b> Lite LLM ,Portkey,和Bifrost是 LLM 焦点/AI-本土网关. Kong AI 互联互通统一治理API, LLM , MCP ,代理和事件流量. 下表比较了同一能力轴上的支持.",
+    "zh-Hant": "<b>· 支助類別。</b> Lite LLM ,Portkey,和Bifrost是 LLM 焦點/AI-本土閘道器. Kong AI 互聯互通統一治理API, LLM , MCP ,代理和事件流量. 下表比較了同一能力軸上的支援."
   },
   "u.1a4dee7bdbda": {
     "match": "2026년 OpenAI · Anthropic · Cohere가 공개한 Agent · 에이전트형 모델 사고는 형태는 다르지만 교훈은 같습니다. Kong과는 무관하나, Agent가 어디로 연결되고 무엇을 하는지 통제 · 관측하는 지점이 있어야 한다는 것입니다. 추론(CoT)이나 “자체 호스팅이면 안전하다”는 가정만으로는 부족합니다.",
     "en": "In 2026, agent and agentic-model incidents disclosed by OpenAI · Anthropic · Cohere differ in form but share the same lesson. They are unrelated to Kong, yet <b>you need a control · observation point for where agents connect and what they do</b>. Chain-of-thought or the assumption that self-hosting alone is safe is not enough.",
     "ja": "2026年にOpenAI · Anthropic · Cohereが公表したAgent · エージェント型モデルの事故は形態は異なりますが教訓は同じです。Kongとは無関係ですが、<b>Agentがどこに接続し何をするかを統制 · 観測するポイントが必要だ</b>ということです。推論（CoT）や「セルフホストなら安全」という前提だけでは不十分です。",
-    "zh": "2026年,OpenAI·Anthropic披露的代理和代理模型事件在形式上不同,但分享同样的教训。 他们和... <b>您需要控制 ^ 观察点,以了解智能体的关联之处和他们的工作</b>思考的链条 或假设 单独自我接待是安全的 是不够的。"
+    "zh-Hans": "2026年,OpenAI·Anthropic披露的代理和代理模型事件在形式上不同,但分享同样的教训。 他们和... <b>您需要控制 ^ 观察点,以了解智能体的关联之处和他们的工作</b>思考的链条 或假设 单独自我接待是安全的 是不够的。",
+    "zh-Hant": "2026年,OpenAI·Anthropic披露的代理和代理模型事件在形式上不同,但分享同樣的教訓。 他們和... <b>您需要控制 ^ 觀察點,以瞭解智慧體的關聯之處和他們的工作</b>思考的鏈條 或假設 單獨自我接待是安全的 是不夠的。"
   },
   "u.677c411b7d28": {
     "match": "핵심 원인추론 텍스트를 믿었고, 실제 도구 호출 · 목적지를 막지 않음",
     "en": "<i>Root cause</i>Trusted the reasoning text and did not block the actual tool call · destination",
     "ja": "<i>主な原因</i>推論テキストを信じ、実際のツール呼び出し · 宛先を止めなかった",
-    "zh": "<i>根原因</i>信任推理文本, 没有屏蔽实际工具调用 ^ 目的地"
+    "zh-Hans": "<i>根原因</i>信任推理文本, 没有屏蔽实际工具调用 ^ 目的地",
+    "zh-Hant": "<i>根原因</i>信任推理文字, 沒有遮蔽實際工具呼叫 ^ 目的地"
   },
   "u.d747babbb15e": {
     "match": "Kong 예방 방식MCP · API 도구 호출과 목적지를 Gateway에서 허용 목록으로 강제 · 기록. 추론 스트림만으로 허용하지 않음",
     "en": "<i>How Kong prevents it</i>Enforce · log MCP · API tool calls and destinations via a gateway allowlist. Do not allow based on the reasoning stream alone",
     "ja": "<i>Kongによる予防</i>MCP · APIツール呼び出しと宛先をGatewayの許可リストで強制 · 記録。推論ストリームだけでは許可しない",
-    "zh": "<i>如何防止它发生</i>通过网关许可列表执行 ^ 日志 Kong API 工具调用和目的地。 仅根据推理流不允许"
+    "zh-Hans": "<i>如何防止它发生</i>通过网关许可列表执行 ^ 日志 Kong API 工具调用和目的地。 仅根据推理流不允许",
+    "zh-Hant": "<i>如何防止它發生</i>透過閘道器許可列表執行 ^ 日誌 Kong API 工具呼叫和目的地。 僅根據推理流不允許"
   },
   "u.b1084572d173": {
     "match": "함께 필요한 통제런타임 네트워크 기본 차단, 미승인 클라우드 스토리지 · 메타데이터 주소 차단",
     "en": "<i>Complementary controls</i>Default-deny runtime networking; block unapproved cloud storage · metadata addresses",
     "ja": "<i>併せて必要な統制</i>ランタイムネットワークのデフォルト遮断、未承認のクラウドストレージ · メタデータアドレスの遮断",
-    "zh": "<i>辅助控制</i>默认密度运行时间网络; 块未批准云存储 ^ 元数据地址"
+    "zh-Hans": "<i>辅助控制</i>默认密度运行时间网络; 块未批准云存储 ^ 元数据地址",
+    "zh-Hant": "<i>輔助控制</i>預設密度執行時間網路; 塊未批准雲端儲存 ^ 後設資料地址"
   },
   "u.f2b7cf716021": {
     "match": "OpenAI · Anthropic 사례는 AI 기업 평가 환경에서, 출시 모델용 안전장치를 의도적으로 끈 상태로 발생했습니다. Cohere 사례는 자체 호스팅 오픈웨이트 모델의 도구 호출을 샌드박스가 막은 관측입니다. Kong은 이들 사고 대응에 사용되지 않았으며, 위 내용은 같은 유형의 위험을 기업 환경에서 미리 줄이는 방법을 정리한 것입니다. 출처: OpenAI 공지 ↗ · Anthropic 공지 ↗ · Cohere 공지 ↗",
     "en": "The OpenAI · Anthropic cases occurred in AI-company evaluation environments with release-model safeguards intentionally disabled. The Cohere case is an observation where a sandbox blocked tool calls from a self-hosted open-weight model. Kong was not used in responding to these incidents; the content above outlines how to reduce the same class of risk in enterprise environments in advance. Sources: <a href=\"https://openai.com/index/hugging-face-model-evaluation-security-incident/\" rel=\"noopener noreferrer\" target=\"_blank\">OpenAI announcement ↗</a> · <a href=\"https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals\" rel=\"noopener noreferrer\" target=\"_blank\">Anthropic announcement ↗</a> · <a href=\"https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model\" rel=\"noopener noreferrer\" target=\"_blank\">Cohere announcement ↗</a>",
     "ja": "OpenAI · Anthropicの事例はAI企業の評価環境で、リリース済みモデル向けの安全機構を意図的に無効にした状態で発生しました。Cohereの事例は、セルフホストのオープンウェイトモデルのツール呼び出しをサンドボックスが遮断した観測です。Kongはこれらのインシデント対応に使用されておらず、上記の内容は同種のリスクを企業環境で事前に低減する方法をまとめたものです。出典: <a href=\"https://openai.com/index/hugging-face-model-evaluation-security-incident/\" rel=\"noopener noreferrer\" target=\"_blank\">OpenAIの告知 ↗</a> · <a href=\"https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals\" rel=\"noopener noreferrer\" target=\"_blank\">Anthropicの告知 ↗</a> · <a href=\"https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model\" rel=\"noopener noreferrer\" target=\"_blank\">Cohereの告知 ↗</a>",
-    "zh": "OpenAI-Athropic案件发生在AI公司评估环境中,故意使释放模型保障措施失效。 Cohere案是一个观察,一个沙盒屏蔽了工具从自托管的开放量级模型发出的调用. Kong 没有用于应对这些事件;以上内容概述了如何提前减少企业环境中相同的风险类别。 资料来源: <a href=\"https://openai.com/index/hugging-face-model-evaluation-security-incident/\" rel=\"noopener noreferrer\" target=\"_blank\">OpenAI 公告 QQ</a> * 妇女 <a href=\"https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals\" rel=\"noopener noreferrer\" target=\"_blank\">[永久失效連結] [永久失效連結] 腾讯网.</a> * 妇女 <a href=\"https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model\" rel=\"noopener noreferrer\" target=\"_blank\">联合公告</a>"
+    "zh-Hans": "OpenAI-Athropic案件发生在AI公司评估环境中,故意使释放模型保障措施失效。 Cohere案是一个观察,一个沙盒屏蔽了工具从自托管的开放量级模型发出的调用. Kong 没有用于应对这些事件;以上内容概述了如何提前减少企业环境中相同的风险类别。 资料来源: <a href=\"https://openai.com/index/hugging-face-model-evaluation-security-incident/\" rel=\"noopener noreferrer\" target=\"_blank\">OpenAI 公告 QQ</a> * 妇女 <a href=\"https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals\" rel=\"noopener noreferrer\" target=\"_blank\">[永久失效連結] [永久失效連結] 腾讯网.</a> * 妇女 <a href=\"https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model\" rel=\"noopener noreferrer\" target=\"_blank\">联合公告</a>",
+    "zh-Hant": "OpenAI-Athropic案件發生在AI公司評估環境中,故意使釋放模型保障措施失效。 Cohere案是一個觀察,一個沙盒遮蔽了工具從自託管的開放量級模型發出的呼叫. Kong 沒有用於應對這些事件;以上內容概述瞭如何提前減少企業環境中相同的風險類別。 資料來源: <a href=\"https://openai.com/index/hugging-face-model-evaluation-security-incident/\" rel=\"noopener noreferrer\" target=\"_blank\">OpenAI 公告 QQ</a> * 婦女 <a href=\"https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals\" rel=\"noopener noreferrer\" target=\"_blank\">[永久失效連結] [永久失效連結] 騰訊網.</a> * 婦女 <a href=\"https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model\" rel=\"noopener noreferrer\" target=\"_blank\">聯合公告</a>"
   },
   "u.5ec7ac62f77f": {
     "match": "Kong 접근 방식레지스트리를 Gateway 뒤에 두고 Agent마다 인증 · 조회(GET)만 허용. 쓰기 · 업로드 · 미등록 목적지는 차단 · 기록",
     "en": "<i>Kong approach</i>Put the registry behind the gateway and allow only authenticated reads (GET) per agent. Block · log writes · uploads · unregistered destinations",
     "ja": "<i>Kongのアプローチ</i>レジストリをGatewayの背後に置き、Agentごとに認証 · 参照（GET）のみを許可。書き込み · アップロード · 未登録の宛先はブロック · 記録",
-    "zh": "<i>Kong 办法</i>将注册置于网关后,只允许每个代理人读取经认证的(GET). 块 日志 上传 未注册的目的地"
+    "zh-Hans": "<i>Kong 办法</i>将注册置于网关后,只允许每个代理人读取经认证的(GET). 块 日志 上传 未注册的目的地",
+    "zh-Hant": "<i>Kong 辦法</i>將註冊置於閘道器後,只允許每個代理人讀取經認證的(GET). 塊 日誌 上傳 未註冊的目的地"
   },
   "u.52d5f3d93627": {
     "match": "Kong 접근 방식이그레스를 Gateway 등록 목적지만 허용. 미등록 인터넷 · 패키지 업로드를 차단하고 전 구간 추적",
     "en": "<i>Kong approach</i>Allow egress only to destinations registered in the gateway. Block unregistered internet · package uploads and trace every hop",
     "ja": "<i>Kongのアプローチ</i>エグレスをGateway登録の宛先のみに許可。未登録のインターネット · パッケージのアップロードを遮断し、全区間を追跡",
-    "zh": "<i>Kong 办法</i>仅允许前往在网关注册的目的地。 屏蔽未注册的互联网... 数据包上传和追踪每一次跳"
+    "zh-Hans": "<i>Kong 办法</i>仅允许前往在网关注册的目的地。 屏蔽未注册的互联网... 数据包上传和追踪每一次跳",
+    "zh-Hant": "<i>Kong 辦法</i>僅允許前往在閘道器注冊的目的地。 遮蔽未註冊的網際網路... 資料包上傳和追蹤每一次跳"
   },
   "u.e2b1da3f2f3c": {
     "match": "Kong 접근 방식MCP · API 도구 호출과 목적지를 허용 목록으로 강제 · 기록. 추론(CoT)만으로 허용하지 않음",
     "en": "<i>Kong approach</i>Enforce · log MCP · API tool calls and destinations via an allowlist. Do not allow based on chain-of-thought alone",
     "ja": "<i>Kongのアプローチ</i>MCP · APIツール呼び出しと宛先を許可リストで強制 · 記録。推論（CoT）だけでは許可しない",
-    "zh": "<i>Kong 办法</i>通过许可列表执行 ^ log {Kong}} API 工具调用和目的地。 仅凭思想链不允许"
+    "zh-Hans": "<i>Kong 办法</i>通过许可列表执行 ^ log {Kong}} API 工具调用和目的地。 仅凭思想链不允许",
+    "zh-Hant": "<i>Kong 辦法</i>透過許可列表執行 ^ log {Kong}} API 工具呼叫和目的地。 僅憑思想鏈不允許"
   },
   "u.a3b784d9577a": {
     "match": "범주 · AI Runtime Security. Fortinet · Netskope · Palo Alto(Portkey)는 보안 벤더가 앱↔LLM 경로에 두는 AI 런타임 보안·AI Gateway입니다. Kong은 플랫폼·AI 엔지니어링 팀이 운영하는 API+AI 연결·거버넌스 인프라입니다. 경쟁보다 보완 배치가 일반적이며, 아래는 기능 유무 비교입니다.",
     "en": "<b>Category · AI Runtime Security.</b> Fortinet · Netskope · Palo Alto (Portkey) are AI runtime security / AI Gateway products that security vendors place on the app ↔ LLM path. Kong is API+AI connectivity and governance infrastructure run by platform · AI engineering teams. Complementary placement is common; the table below is a feature-support comparison.",
     "ja": "<b>カテゴリ · AI Runtime Security。</b> Fortinet · Netskope · Palo Alto（Portkey）は、セキュリティベンダーがアプリ↔LLM経路に置くAIランタイムセキュリティ・AI Gatewayです。Kongはプラットフォーム・AIエンジニアリングチームが運用するAPI+AI接続・ガバナンス基盤です。競合より補完配置が一般的で、下表は機能サポート有無の比較です。",
-    "zh": "<b>类别 · AI Runtime Security。</b> Fortinet · Netskope · Palo Alto（Portkey）是安全厂商放在应用 ↔ LLM 路径上的 AI 运行时安全 / AI Gateway。Kong 是平台 · AI 工程团队运营的 API+AI 连接与治理基础设施。互补部署更常见；下表为功能支持对比。"
+    "zh-Hans": "<b>类别 · AI Runtime Security。</b> Fortinet · Netskope · Palo Alto（Portkey）是安全厂商放在应用 ↔ LLM 路径上的 AI 运行时安全 / AI Gateway。Kong 是平台 · AI 工程团队运营的 API+AI 连接与治理基础设施。互补部署更常见；下表为功能支持对比。",
+    "zh-Hant": "<b>類別 · AI Runtime Security。</b> Fortinet · Netskope · Palo Alto（Portkey）是安全廠商放在應用 ↔ LLM 路徑上的 AI 執行時安全 / AI Gateway。Kong 是平臺 · AI 工程團隊運營的 API+AI 連線與治理基礎設施。互補部署更常見；下表為功能支援對比。"
   },
   "u.9cd1e592d23d": {
     "match": "FortiAIGate·Netskope는 AI Firewall/보안 검사 특화, Portkey는 Palo Alto Prisma AIRS AI Gateway(2026-05 인수·2026-07 GA)입니다. 매트릭스 일부는 문서·Kong 내부 경쟁 자료 기준이며 도입 전 최신 공식 문서를 확인하세요.",
     "en": "FortiAIGate and Netskope specialize in AI Firewall / security inspection; Portkey is Palo Alto Prisma AIRS AI Gateway (acquisition closed 2026-05 · GA 2026-07). Some matrix cells follow documentation and Kong competitive materials—confirm against the latest official docs before adoption.",
     "ja": "FortiAIGate・NetskopeはAI Firewall/セキュリティ検査特化、PortkeyはPalo Alto Prisma AIRS AI Gateway（2026-05買収完了・2026-07 GA）です。マトリクスの一部はドキュメント・Kong内部競合資料基準であり、導入前に最新の公式ドキュメントを確認してください。",
-    "zh": "FortiAIGate 与 Netskope 侧重 AI Firewall/安全检查；Portkey 为 Palo Alto Prisma AIRS AI Gateway（2026-05 收购完成 · 2026-07 GA）。部分矩阵单元依据文档与 Kong 竞争材料—采购前请核对最新官方文档。"
+    "zh-Hans": "FortiAIGate 与 Netskope 侧重 AI Firewall/安全检查；Portkey 为 Palo Alto Prisma AIRS AI Gateway（2026-05 收购完成 · 2026-07 GA）。部分矩阵单元依据文档与 Kong 竞争材料—采购前请核对最新官方文档。",
+    "zh-Hant": "FortiAIGate 與 Netskope 側重 AI Firewall/安全檢查；Portkey 為 Palo Alto Prisma AIRS AI Gateway（2026-05 收購完成 · 2026-07 GA）。部分矩陣單元依據文件與 Kong 競爭材料—採購前請核對最新官方文件。"
   },
   "u.ee39a6a2ed45": {
     "match": "네트워크 보안 벤더 Fortinet의 AI 런타임 보안(AI Firewall) 제품입니다. 앱↔모델 사이에 두는 시큐어 프록시로, 양방향 DLP·위협 방어·GPU/SmartNIC 하드웨어 가속이 강점입니다. API 라이프사이클·MCP 서빙·수익화보다는 런타임 보안 검사에 초점을 둡니다.",
     "en": "Fortinet’s AI runtime security (AI Firewall) product. A secure proxy between apps ↔ models, strong in bidirectional DLP · threat defense · GPU/SmartNIC acceleration. Focused on runtime security inspection rather than API lifecycle · MCP serving · monetization.",
     "ja": "ネットワークセキュリティベンダーFortinetのAIランタイムセキュリティ（AI Firewall）製品です。アプリ↔モデル間のセキュアプロキシで、双方向DLP・脅威防御・GPU/SmartNICハードウェア加速が強みです。APIライフサイクル・MCPサービング・収益化よりランタイムセキュリティ検査に焦点を当てます。",
-    "zh": "网络安厂商 Fortinet 的 AI 运行时安全（AI Firewall）产品。置于应用 ↔ 模型之间的安全代理，擅长双向 DLP · 威胁防护 · GPU/SmartNIC 硬件加速。侧重运行时安全检查，而非 API 生命周期 · MCP 服务 · 变现。"
+    "zh-Hans": "网络安厂商 Fortinet 的 AI 运行时安全（AI Firewall）产品。置于应用 ↔ 模型之间的安全代理，擅长双向 DLP · 威胁防护 · GPU/SmartNIC 硬件加速。侧重运行时安全检查，而非 API 生命周期 · MCP 服务 · 变现。",
+    "zh-Hant": "網路安廠商 Fortinet 的 AI 執行時安全（AI Firewall）產品。置於應用 ↔ 模型之間的安全代理，擅長雙向 DLP · 威脅防護 · GPU/SmartNIC 硬體加速。側重執行時安全檢查，而非 API 生命週期 · MCP 服務 · 變現。"
   },
   "u.76e69d6cdd16": {
     "match": "AI Firewall · 하드웨어 가속 시큐어 프록시",
     "en": "AI Firewall · hardware-accelerated secure proxy",
     "ja": "AI Firewall · ハードウェア加速セキュアプロキシ",
-    "zh": "AI Firewall · 硬件加速安全代理"
+    "zh-Hans": "AI Firewall · 硬件加速安全代理",
+    "zh-Hant": "AI Firewall · 硬體加速安全代理"
   },
   "u.39fbc956f650": {
     "match": "FortiAIGate 컨텍스트 인식 양방향 DLP, 모델 추출·과다소비 억제, OWASP 가시성, Multi-GPU/SmartNIC 가속.",
     "en": "<b>FortiAIGate</b> Context-aware bidirectional DLP, model-extraction · overconsumption controls, OWASP visibility, Multi-GPU/SmartNIC acceleration.",
     "ja": "<b>FortiAIGate</b> コンテキスト認識双方向DLP、モデル抽出・過消費抑制、OWASP可視性、Multi-GPU/SmartNIC加速。",
-    "zh": "<b>FortiAIGate</b> 上下文感知双向 DLP、模型窃取 · 过度消耗抑制、OWASP 可见性、Multi-GPU/SmartNIC 加速。"
+    "zh-Hans": "<b>FortiAIGate</b> 上下文感知双向 DLP、模型窃取 · 过度消耗抑制、OWASP 可见性、Multi-GPU/SmartNIC 加速。",
+    "zh-Hant": "<b>FortiAIGate</b> 上下文感知雙向 DLP、模型竊取 · 過度消耗抑制、OWASP 可見性、Multi-GPU/SmartNIC 加速。"
   },
   "u.75f09c808a38": {
     "match": "Kong 동일 경로에서 PII·가드레일·인증·토큰 한도·라우팅을 API·MCP·Event와 함께 집행.",
     "en": "<b>Kong</b> Enforces PII · guardrails · auth · token limits · routing on the same path with API · MCP · Event.",
     "ja": "<b>Kong</b> 同一経路でPII・ガードレール・認証・トークン上限・ルーティングをAPI・MCP・Eventと共に執行。",
-    "zh": "<b>Kong</b> 在同一路径上与 API · MCP · Event 一并执行 PII · 护栏 · 认证 · 令牌限额 · 路由。"
+    "zh-Hans": "<b>Kong</b> 在同一路径上与 API · MCP · Event 一并执行 PII · 护栏 · 认证 · 令牌限额 · 路由。",
+    "zh-Hant": "<b>Kong</b> 在同一路徑上與 API · MCP · Event 一併執行 PII · 護欄 · 認證 · 令牌限額 · 路由。"
   },
   "u.e8eb801cdec3": {
     "match": "FortiAIGate 시맨틱 라우팅·프롬프트 압축·MCP 서빙·개발자 포털·미터링은 약하거나 없음.",
     "en": "<b>FortiAIGate</b> Weak or absent semantic routing · prompt compression · MCP serving · developer portal · metering.",
     "ja": "<b>FortiAIGate</b> セマンティックルーティング・プロンプト圧縮・MCPサービング・開発者ポータル・メータリングは弱い/なし。",
-    "zh": "<b>FortiAIGate</b> 语义路由 · 提示压缩 · MCP 服务 · 开发者门户 · 计量较弱或缺失。"
+    "zh-Hans": "<b>FortiAIGate</b> 语义路由 · 提示压缩 · MCP 服务 · 开发者门户 · 计量较弱或缺失。",
+    "zh-Hant": "<b>FortiAIGate</b> 語義路由 · 提示壓縮 · MCP 服務 · 開發者門戶 · 計量較弱或缺失。"
   },
   "u.fb27b2497acf": {
     "match": "Kong AI Connectivity 플랫폼으로 연결·거버넌스·운영 자동화에 강점.",
     "en": "<b>Kong</b> Strong as an AI Connectivity platform for connectivity · governance · ops automation.",
     "ja": "<b>Kong</b> AI Connectivityプラットフォームとして接続・ガバナンス・運用自動化に強み。",
-    "zh": "<b>Kong</b> 作为 AI Connectivity 平台，擅长连接 · 治理 · 运维自动化。"
+    "zh-Hans": "<b>Kong</b> 作为 AI Connectivity 平台，擅长连接 · 治理 · 运维自动化。",
+    "zh-Hant": "<b>Kong</b> 作為 AI Connectivity 平臺，擅長連線 · 治理 · 運維自動化。"
   },
   "u.e940bc77b119": {
     "match": "출처: fortinet.com/products/fortiaigate · Kong 경쟁 비교 매트릭스(2026.09).",
     "en": "Sources: fortinet.com/products/fortiaigate · Kong competitive matrix (2026.09).",
     "ja": "出典: fortinet.com/products/fortiaigate · Kong競合比較マトリクス（2026.09）。",
-    "zh": "来源：fortinet.com/products/fortiaigate · Kong 竞争对比矩阵（2026.09）。"
+    "zh-Hans": "来源：fortinet.com/products/fortiaigate · Kong 竞争对比矩阵（2026.09）。",
+    "zh-Hant": "來源：fortinet.com/products/fortiaigate · Kong 競爭對比矩陣（2026.09）。"
   },
   "u.1455e12d1ac3": {
     "match": "SSE/클라우드 보안 벤더 Netskope의 AI Gateway입니다. 보안 조직이 앱↔LLM 트래픽을 검사·통제하는 보안 컨트롤 포인트 성격이며, MITRE ATLAS·OWASP 매핑 가드레일·레드팀·컨텍스트 DLP가 강점입니다. 2026년 3월 GA.",
     "en": "Netskope’s AI Gateway from an SSE/cloud security vendor. A security control point where security teams inspect · control app ↔ LLM traffic; strong in MITRE ATLAS · OWASP-mapped guardrails · red team · contextual DLP. GA March 2026.",
     "ja": "SSE/クラウドセキュリティベンダーNetskopeのAI Gatewayです。セキュリティ組織がアプリ↔LLMトラフィックを検査・統制するセキュリティコントロールポイントで、MITRE ATLAS・OWASPマッピングのガードレール・レッドチーム・コンテキストDLPが強みです。2026年3月GA。",
-    "zh": "SSE/云安全厂商 Netskope 的 AI Gateway。由安全团队检查 · 管控应用 ↔ LLM 流量的安全控制点；擅长 MITRE ATLAS · OWASP 映射护栏 · 红队 · 上下文 DLP。2026 年 3 月 GA。"
+    "zh-Hans": "SSE/云安全厂商 Netskope 的 AI Gateway。由安全团队检查 · 管控应用 ↔ LLM 流量的安全控制点；擅长 MITRE ATLAS · OWASP 映射护栏 · 红队 · 上下文 DLP。2026 年 3 月 GA。",
+    "zh-Hant": "SSE/雲安全廠商 Netskope 的 AI Gateway。由安全團隊檢查 · 管控應用 ↔ LLM 流量的安全控制點；擅長 MITRE ATLAS · OWASP 對映護欄 · 紅隊 · 上下文 DLP。2026 年 3 月 GA。"
   },
   "u.37dc3b928522": {
     "match": "SSE 보안 조직용 AI 트래픽 검사 계층",
     "en": "AI traffic inspection layer for SSE security teams",
     "ja": "SSEセキュリティ組織向けAIトラフィック検査レイヤー",
-    "zh": "面向 SSE 安全团队的 AI 流量检查层"
+    "zh-Hans": "面向 SSE 安全团队的 AI 流量检查层",
+    "zh-Hant": "面向 SSE 安全團隊的 AI 流量檢查層"
   },
   "u.a8200e04e03c": {
     "match": "Netskope 네이티브 가드레일·위협 방어·레드팀·에이전트별 토큰·프라이빗 모델 보안 프록시.",
     "en": "<b>Netskope</b> Native guardrails · threat defense · red team · per-agent tokens · private-model security proxy.",
     "ja": "<b>Netskope</b> ネイティブガードレール・脅威防御・レッドチーム・エージェント別トークン・プライベートモデルセキュリティプロキシ。",
-    "zh": "<b>Netskope</b> 原生护栏 · 威胁防护 · 红队 · 每智能体令牌 · 私有模型安全代理。"
+    "zh-Hans": "<b>Netskope</b> 原生护栏 · 威胁防护 · 红队 · 每智能体令牌 · 私有模型安全代理。",
+    "zh-Hant": "<b>Netskope</b> 原生護欄 · 威脅防護 · 紅隊 · 每智慧體令牌 · 私有模型安全代理。"
   },
   "u.30417ae2cb65": {
     "match": "Kong 15+ 프로바이더 라우팅, 시맨틱 캐시, MCP/A2A, IaC, 완전 자체호스팅.",
     "en": "<b>Kong</b> 15+ provider routing, semantic cache, MCP/A2A, IaC, full self-hosting.",
     "ja": "<b>Kong</b> 15+プロバイダルーティング、セマンティックキャッシュ、MCP/A2A、IaC、完全セルフホスト。",
-    "zh": "<b>Kong</b> 15+ 提供商路由、语义缓存、MCP/A2A、IaC、完全自托管。"
+    "zh-Hans": "<b>Kong</b> 15+ 提供商路由、语义缓存、MCP/A2A、IaC、完全自托管。",
+    "zh-Hant": "<b>Kong</b> 15+ 提供商路由、語義快取、MCP/A2A、IaC、完全自託管。"
   },
   "u.878f9846faf5": {
     "match": "Netskope 네이티브 프로바이더 3개 중심, 시맨틱 캐시·압축·RAG·MCP 서빙·K8s 네이티브 약함(VM 어플라이언스).",
     "en": "<b>Netskope</b> ~3 native providers; weak semantic cache · compression · RAG · MCP serving · K8s-native (VM appliance).",
     "ja": "<b>Netskope</b> ネイティブプロバイダ約3中心。セマンティックキャッシュ・圧縮・RAG・MCPサービング・K8sネイティブは弱い（VMアプライアンス）。",
-    "zh": "<b>Netskope</b> 约 3 个原生提供商；语义缓存 · 压缩 · RAG · MCP 服务 · K8s 原生较弱（VM 设备）。"
+    "zh-Hans": "<b>Netskope</b> 约 3 个原生提供商；语义缓存 · 压缩 · RAG · MCP 服务 · K8s 原生较弱（VM 设备）。",
+    "zh-Hant": "<b>Netskope</b> 約 3 個原生提供商；語義快取 · 壓縮 · RAG · MCP 服務 · K8s 原生較弱（VM 裝置）。"
   },
   "u.787d72eaaf12": {
     "match": "출처: Netskope Competitive Pack(2026-07) · netskope.com · 비교 매트릭스(2026.09).",
     "en": "Sources: Netskope Competitive Pack (2026-07) · netskope.com · comparison matrix (2026.09).",
     "ja": "出典: Netskope Competitive Pack（2026-07）· netskope.com · 比較マトリクス（2026.09）。",
-    "zh": "来源：Netskope Competitive Pack（2026-07）· netskope.com · 对比矩阵（2026.09）。"
+    "zh-Hans": "来源：Netskope Competitive Pack（2026-07）· netskope.com · 对比矩阵（2026.09）。",
+    "zh-Hant": "來源：Netskope Competitive Pack（2026-07）· netskope.com · 對比矩陣（2026.09）。"
   },
   "u.4b49dbc14889": {
     "match": "Portkey는 원래 Pure AI Gateway(멀티 LLM 라우팅·캐시·거버넌스)였고, 2026년 5월 29일 Palo Alto Networks 인수가 완료되어 Prisma AIRS의 코어 AI Gateway가 되었습니다. 보안 플랫폼 위에 AI Gateway 컨트롤 플레인을 올린 형태입니다. 2026년 7월 Prisma AIRS AI Gateway GA.",
     "en": "Portkey began as a Pure AI Gateway (multi-LLM routing · cache · governance). Palo Alto Networks closed the acquisition on 2026-05-29 and made it the core AI Gateway of Prisma AIRS—an AI Gateway control plane on a security platform. Prisma AIRS AI Gateway GA July 2026.",
     "ja": "Portkeyは元来Pure AI Gateway（マルチLLMルーティング・キャッシュ・ガバナンス）で、2026年5月29日にPalo Alto Networksの買収が完了しPrisma AIRSのコアAI Gatewayとなりました。セキュリティプラットフォーム上にAI Gatewayコントロールプレーンを載せた形です。2026年7月Prisma AIRS AI Gateway GA。",
-    "zh": "Portkey 起初是 Pure AI Gateway（多 LLM 路由 · 缓存 · 治理）。Palo Alto Networks 于 2026-05-29 完成收购，使其成为 Prisma AIRS 的核心 AI Gateway——安全平台之上的 AI Gateway 控制面。2026 年 7 月 Prisma AIRS AI Gateway GA。"
+    "zh-Hans": "Portkey 起初是 Pure AI Gateway（多 LLM 路由 · 缓存 · 治理）。Palo Alto Networks 于 2026-05-29 完成收购，使其成为 Prisma AIRS 的核心 AI Gateway——安全平台之上的 AI Gateway 控制面。2026 年 7 月 Prisma AIRS AI Gateway GA。",
+    "zh-Hant": "Portkey 起初是 Pure AI Gateway（多 LLM 路由 · 快取 · 治理）。Palo Alto Networks 於 2026-05-29 完成收購，使其成為 Prisma AIRS 的核心 AI Gateway——安全平臺之上的 AI Gateway 控制面。2026 年 7 月 Prisma AIRS AI Gateway GA。"
   },
   "u.858596beebcf": {
     "match": "보안 벤더가 인수한 AI Gateway 컨트롤 플레인",
     "en": "AI Gateway control plane acquired by a security vendor",
     "ja": "セキュリティベンダーが買収したAI Gatewayコントロールプレーン",
-    "zh": "被安全厂商收购的 AI Gateway 控制面"
+    "zh-Hans": "被安全厂商收购的 AI Gateway 控制面",
+    "zh-Hant": "被安全廠商收購的 AI Gateway 控制面"
   },
   "u.536c4a5d755c": {
     "match": "Portkey / Prisma AIRS LLM·MCP·A2A 경로의 통합 게이트웨이 + Prisma AIRS 런타임 보안·에이전트 신원(Idira)·관측 연동.",
     "en": "<b>Portkey / Prisma AIRS</b> Unified gateway for LLM · MCP · A2A paths + Prisma AIRS runtime security · agent identity (Idira) · observability integration.",
     "ja": "<b>Portkey / Prisma AIRS</b> LLM・MCP・A2A経路の統合ゲートウェイ + Prisma AIRSランタイムセキュリティ・エージェント身元（Idira）・観測連携。",
-    "zh": "<b>Portkey / Prisma AIRS</b> LLM · MCP · A2A 路径的统一网关 + Prisma AIRS 运行时安全 · 智能体身份（Idira）· 可观测集成。"
+    "zh-Hans": "<b>Portkey / Prisma AIRS</b> LLM · MCP · A2A 路径的统一网关 + Prisma AIRS 运行时安全 · 智能体身份（Idira）· 可观测集成。",
+    "zh-Hant": "<b>Portkey / Prisma AIRS</b> LLM · MCP · A2A 路徑的統一閘道器 + Prisma AIRS 執行時安全 · 智慧體身份（Idira）· 可觀測整合。"
   },
   "u.dcba56b493dc": {
     "match": "Kong API·AI·MCP·Event를 단일 자체/하이브리드 플랫폼으로 운영. 보안 벤더 스택에 종속되지 않음.",
     "en": "<b>Kong</b> Runs API · AI · MCP · Event on one self-managed/hybrid platform. Not tied to a security-vendor stack.",
     "ja": "<b>Kong</b> API・AI・MCP・Eventを単一のセルフ/ハイブリッドプラットフォームで運用。セキュリティベンダースタックに非依存。",
-    "zh": "<b>Kong</b> 在单一自管/混合平台上运营 API · AI · MCP · Event。不绑定安全厂商技术栈。"
+    "zh-Hans": "<b>Kong</b> 在单一自管/混合平台上运营 API · AI · MCP · Event。不绑定安全厂商技术栈。",
+    "zh-Hant": "<b>Kong</b> 在單一自管/混合平臺上運營 API · AI · MCP · Event。不繫結安全廠商技術棧。"
   },
   "u.22f3949be97e": {
     "match": "Portkey AI Gateway·에이전트 거버넌스에 강하나, 전통 API 포털·이벤트·완전 에어갭 CP는 Kong 대비 좁음.",
     "en": "<b>Portkey</b> Strong in AI Gateway · agent governance, but narrower than Kong on classic API portals · events · fully air-gapped CP.",
     "ja": "<b>Portkey</b> AI Gateway・エージェントガバナンスに強いが、従来APIポータル・イベント・完全エアギャップCPはKong比で狭い。",
-    "zh": "<b>Portkey</b> 擅长 AI Gateway · 智能体治理，但在传统 API 门户 · 事件 · 完全气隙控制面上窄于 Kong。"
+    "zh-Hans": "<b>Portkey</b> 擅长 AI Gateway · 智能体治理，但在传统 API 门户 · 事件 · 完全气隙控制面上窄于 Kong。",
+    "zh-Hant": "<b>Portkey</b> 擅長 AI Gateway · 智慧體治理，但在傳統 API 門戶 · 事件 · 完全氣隙控制面上窄於 Kong。"
   },
   "u.3ff8df7d0b42": {
     "match": "Kong 선언적 GitOps(decK·Terraform)·멀티리전·에어갭 Enterprise가 강점.",
     "en": "<b>Kong</b> Strong declarative GitOps (decK · Terraform) · multi-region · air-gapped Enterprise.",
     "ja": "<b>Kong</b> 宣言的GitOps（decK・Terraform）・マルチリージョン・エアギャップEnterpriseが強み。",
-    "zh": "<b>Kong</b> 擅长声明式 GitOps（decK · Terraform）· 多区域 · 气隙 Enterprise。"
+    "zh-Hans": "<b>Kong</b> 擅长声明式 GitOps（decK · Terraform）· 多区域 · 气隙 Enterprise。",
+    "zh-Hant": "<b>Kong</b> 擅長宣告式 GitOps（decK · Terraform）· 多區域 · 氣隙 Enterprise。"
   },
   "u.ffcb297f693e": {
     "match": "동향 Palo Alto는 Portkey를 인수했고, CrowdStrike는 Falcon Guardian용 AI Gateway를 구축 중입니다. 보안 벤더의 AI Gateway 진입이 가속됩니다.",
     "en": "<b>Trend</b> Palo Alto acquired Portkey; CrowdStrike is building an AI Gateway for Falcon Guardian. Security-vendor entry into AI Gateway is accelerating.",
     "ja": "<b>動向</b> Palo AltoはPortkeyを買収し、CrowdStrikeはFalcon Guardian向けAI Gatewayを構築中です。セキュリティベンダーのAI Gateway参入が加速しています。",
-    "zh": "<b>趋势</b> Palo Alto 收购了 Portkey；CrowdStrike 正为 Falcon Guardian 构建 AI Gateway。安全厂商进入 AI Gateway 正在加速。"
+    "zh-Hans": "<b>趋势</b> Palo Alto 收购了 Portkey；CrowdStrike 正为 Falcon Guardian 构建 AI Gateway。安全厂商进入 AI Gateway 正在加速。",
+    "zh-Hant": "<b>趨勢</b> Palo Alto 收購了 Portkey；CrowdStrike 正為 Falcon Guardian 構建 AI Gateway。安全廠商進入 AI Gateway 正在加速。"
   },
   "u.f293d0b66595": {
     "match": "출처: Palo Alto 인수 완료(2026-05-29) · Prisma AIRS AI Gateway GA(2026-07) · Kong 비교 매트릭스 Portkey 열(2026.09).",
     "en": "Sources: Palo Alto acquisition close (2026-05-29) · Prisma AIRS AI Gateway GA (2026-07) · Kong comparison matrix Portkey column (2026.09).",
     "ja": "出典: Palo Alto買収完了（2026-05-29）· Prisma AIRS AI Gateway GA（2026-07）· Kong比較マトリクス Portkey列（2026.09）。",
-    "zh": "来源：Palo Alto 收购完成（2026-05-29）· Prisma AIRS AI Gateway GA（2026-07）· Kong 对比矩阵 Portkey 列（2026.09）。"
+    "zh-Hans": "来源：Palo Alto 收购完成（2026-05-29）· Prisma AIRS AI Gateway GA（2026-07）· Kong 对比矩阵 Portkey 列（2026.09）。",
+    "zh-Hant": "來源：Palo Alto 收購完成（2026-05-29）· Prisma AIRS AI Gateway GA（2026-07）· Kong 對比矩陣 Portkey 列（2026.09）。"
   },
   "u.c7f461eb0012": {
     "match": "엔터프라이즈 관점 요약",
     "en": "Enterprise summary",
     "ja": "エンタープライズ観点の要約",
-    "zh": "企业视角摘要"
+    "zh-Hans": "企业视角摘要",
+    "zh-Hant": "企業視角摘要"
   },
   "u.5e56dd2279a4": {
     "match": "런타임 보안",
     "en": "Runtime security",
     "ja": "ランタイムセキュリティ",
-    "zh": "运行时安全"
+    "zh-Hans": "运行时安全",
+    "zh-Hant": "執行時安全"
   },
   "u.622183270dbd": {
     "match": "플랫폼 깊이",
     "en": "Platform depth",
     "ja": "プラットフォーム深度",
-    "zh": "平台深度"
+    "zh-Hans": "平台深度",
+    "zh-Hant": "平臺深度"
   },
   "u.56aaa125563d": {
     "match": "보완",
     "en": "Complementary",
     "ja": "補完",
-    "zh": "互补"
+    "zh-Hans": "互补",
+    "zh-Hant": "互補"
   },
   "u.770b37b5edfe": {
     "match": "탐지·정책",
     "en": "Detect · policy",
     "ja": "検知・ポリシー",
-    "zh": "检测 · 策略"
+    "zh-Hans": "检测 · 策略",
+    "zh-Hant": "檢測 · 策略"
   },
   "u.c01ef107776b": {
     "match": "AI GW 깊이",
     "en": "AI GW depth",
     "ja": "AI GW深度",
-    "zh": "AI GW 深度"
+    "zh-Hans": "AI GW 深度",
+    "zh-Hant": "AI GW 深度"
   },
   "u.1ac521b02630": {
     "match": "인수 · 통합",
     "en": "Acquisition · integration",
     "ja": "買収 · 統合",
-    "zh": "收购 · 整合"
+    "zh-Hans": "收购 · 整合",
+    "zh-Hant": "收購 · 整合"
   },
   "u.45da68aac08e": {
     "match": "플랫폼 범위",
     "en": "Platform scope",
     "ja": "プラットフォーム範囲",
-    "zh": "平台范围"
+    "zh-Hans": "平台范围",
+    "zh-Hant": "平臺範圍"
   },
   "u.b46fa208d9de": {
     "match": "시장",
     "en": "Market",
     "ja": "市場",
-    "zh": "市场"
+    "zh-Hans": "市场",
+    "zh-Hant": "市場"
   },
   "u.92eaeab580c1": {
     "match": "상호보완 구성",
     "en": "Complementary architecture",
     "ja": "相互補完構成",
-    "zh": "互补架构"
+    "zh-Hans": "互补架构",
+    "zh-Hant": "互補架構"
   },
   "u.549aa3deb6f0": {
     "match": "Forti는 위협 검사·하드웨어 경로, Kong은 프로덕션 연결·정책 집행·관측.",
     "en": "Forti for threat inspection · hardware path; Kong for production connectivity · policy enforcement · observability.",
     "ja": "Fortiは脅威検査・ハードウェア経路、Kongは本番接続・ポリシー執行・観測。",
-    "zh": "Forti 负责威胁检查 · 硬件路径；Kong 负责生产连接 · 策略执行 · 可观测。"
+    "zh-Hans": "Forti 负责威胁检查 · 硬件路径；Kong 负责生产连接 · 策略执行 · 可观测。",
+    "zh-Hant": "Forti 負責威脅檢查 · 硬體路徑；Kong 負責生產連線 · 策略執行 · 可觀測。"
   },
   "u.d76ce7dcbf90": {
     "match": "Netskope는 위험 판단(탐지·분류·정책), Kong은 프로덕션 연결·집행.",
     "en": "Netskope for risk judgment (detect · classify · policy); Kong for production connectivity · enforcement.",
     "ja": "Netskopeはリスク判断（検知・分類・ポリシー）、Kongは本番接続・執行。",
-    "zh": "Netskope 负责风险判断（检测 · 分类 · 策略）；Kong 负责生产连接 · 执行。"
+    "zh-Hans": "Netskope 负责风险判断（检测 · 分类 · 策略）；Kong 负责生产连接 · 执行。",
+    "zh-Hant": "Netskope 負責風險判斷（檢測 · 分類 · 策略）；Kong 負責生產連線 · 執行。"
   },
   "u.a7bab755924f": {
     "match": "Data Platform 모든 팀과 앱이 먼저 해당 플랫폼에 온보딩해야 통제됩니다. Databricks와 Snowflake를 함께 쓰면 정책과 감사가 둘로 나뉩니다.",
     "en": "<b>Data Platform</b> Every team and app must onboard to the platform before it can be governed. Running Databricks and Snowflake together splits policy and audit in two.",
     "ja": "<b>Data Platform</b> すべてのチームとアプリは、先にそのプラットフォームへオンボーディングしないと統制されません。DatabricksとSnowflakeを併用すると、ポリシーと監査が二つに分かれます。",
-    "zh": "<b>Data Platform</b> 所有团队与应用须先接入该平台才能受管控。同时使用 Databricks 与 Snowflake 时，策略与审计会被一分为二。"
+    "zh-Hans": "<b>Data Platform</b> 所有团队与应用须先接入该平台才能受管控。同时使用 Databricks 与 Snowflake 时，策略与审计会被一分为二。",
+    "zh-Hant": "<b>Data Platform</b> 所有團隊與應用須先接入該平臺才能受管控。同時使用 Databricks 與 Snowflake 時，策略與審計會被一分為二。"
   },
   "u.d51247d0662c": {
     "match": "Kong 데이터 플랫폼에 중립적입니다. 클라우드 · 온프레미스 · 모델 프로바이더 · 데이터 플랫폼을 하나의 정책으로 다룹니다.",
     "en": "<b>Kong</b> Neutral to any data platform. One policy covers clouds, on-prem, model providers, and data platforms.",
     "ja": "<b>Kong</b> データプラットフォームに中立です。クラウド・オンプレミス・モデルプロバイダー・データプラットフォームを一つのポリシーで扱います。",
-    "zh": "<b>Kong</b> 对数据平台保持中立，以统一策略覆盖云、本地部署、模型提供商与数据平台。"
+    "zh-Hans": "<b>Kong</b> 对数据平台保持中立，以统一策略覆盖云、本地部署、模型提供商与数据平台。",
+    "zh-Hant": "<b>Kong</b> 對資料平臺保持中立，以統一策略覆蓋雲、本地部署、模型提供商與資料平臺。"
   },
   "u.d529ed08a7ae": {
     "match": "Data Platform 플랫폼 내부의 관리형 서비스로만 동작합니다. 앱 옆에 데이터 플레인을 둘 수 없고, 인증은 플랫폼 계정 · 토큰 체계를 따릅니다.",
     "en": "<b>Data Platform</b> Runs only as a managed service inside the platform. You cannot place a data plane next to your apps, and identity follows the platform's own accounts and tokens.",
     "ja": "<b>Data Platform</b> プラットフォーム内のマネージドサービスとしてのみ動作します。アプリの隣にデータプレーンを置けず、認証はプラットフォームのアカウント・トークン体系に従います。",
-    "zh": "<b>Data Platform</b> 仅作为平台内的托管服务运行，无法将数据平面部署在应用旁，认证沿用平台自身的账号与令牌体系。"
+    "zh-Hans": "<b>Data Platform</b> 仅作为平台内的托管服务运行，无法将数据平面部署在应用旁，认证沿用平台自身的账号与令牌体系。",
+    "zh-Hant": "<b>Data Platform</b> 僅作為平臺內的託管服務執行，無法將資料平面部署在應用旁，認證沿用平臺自身的賬號與令牌體系。"
   },
   "u.f3c2a76b6c98": {
     "match": "Kong 자체호스팅 · 하이브리드 · SaaS · 에어갭, decK · Terraform · Operator 기반 IaC, OIDC · mTLS 등 기존 IdP 연동, 10년 이상 검증된 게이트웨이 성능.",
     "en": "<b>Kong</b> Self-hosted, hybrid, SaaS, or air-gapped; IaC with decK, Terraform, and Operator; existing IdP integration via OIDC and mTLS; gateway performance proven over more than a decade.",
     "ja": "<b>Kong</b> セルフホスト・ハイブリッド・SaaS・エアギャップ、decK・Terraform・OperatorによるIaC、OIDC・mTLSなど既存IdPとの連携、10年以上実証されたゲートウェイ性能。",
-    "zh": "<b>Kong</b> 自托管、混合、SaaS、气隙部署；基于 decK、Terraform、Operator 的 IaC；通过 OIDC、mTLS 等对接现有 IdP；十余年验证的网关性能。"
+    "zh-Hans": "<b>Kong</b> 自托管、混合、SaaS、气隙部署；基于 decK、Terraform、Operator 的 IaC；通过 OIDC、mTLS 等对接现有 IdP；十余年验证的网关性能。",
+    "zh-Hant": "<b>Kong</b> 自託管、混合、SaaS、氣隙部署；基於 decK、Terraform、Operator 的 IaC；透過 OIDC、mTLS 等對接現有 IdP；十餘年驗證的閘道器效能。"
   },
   "u.e25ac36a7cb8": {
     "match": "Data Platform AI 트래픽만 다룹니다. 에이전트가 실제로 호출하는 기존 API · 이벤트는 별도 게이트웨이와 별도 감사 체계가 필요합니다.",
     "en": "<b>Data Platform</b> Governs AI traffic only. The existing APIs and events that agents actually call need a separate gateway and a separate audit trail.",
     "ja": "<b>Data Platform</b> AIトラフィックのみを扱います。エージェントが実際に呼び出す既存のAPI・イベントには、別のゲートウェイと別の監査体系が必要です。",
-    "zh": "<b>Data Platform</b> 只治理 AI 流量。智能体实际调用的现有 API 与事件需要另一套网关和审计体系。"
+    "zh-Hans": "<b>Data Platform</b> 只治理 AI 流量。智能体实际调用的现有 API 与事件需要另一套网关和审计体系。",
+    "zh-Hant": "<b>Data Platform</b> 只治理 AI 流量。智慧體實際呼叫的現有 API 與事件需要另一套閘道器和審計體系。"
   },
   "u.3fede5392a38": {
     "match": "Kong LLM · MCP · A2A · API · Event를 하나의 정책 모델과 하나의 감사 추적으로 관리합니다.",
     "en": "<b>Kong</b> Manages LLM, MCP, A2A, API, and event traffic with one policy model and one audit trail.",
     "ja": "<b>Kong</b> LLM・MCP・A2A・API・Eventを一つのポリシーモデルと一つの監査証跡で管理します。",
-    "zh": "<b>Kong</b> 以统一的策略模型与审计追踪管理 LLM、MCP、A2A、API 与事件流量。"
+    "zh-Hans": "<b>Kong</b> 以统一的策略模型与审计追踪管理 LLM、MCP、A2A、API 与事件流量。",
+    "zh-Hant": "<b>Kong</b> 以統一的策略模型與審計追蹤管理 LLM、MCP、A2A、API 與事件流量。"
   },
   "u.61506d535bdd": {
     "match": "Databricks 테이블에서 모델 · 에이전트까지 이어지는 권한 · 계보, 시스템 테이블 기반 비용 귀속, QPM · TPM 레이트리밋, 트래픽 분할 · 폴백.",
     "en": "<b>Databricks</b> Permissions and lineage from tables to models and agents, cost attribution via system tables, QPM and TPM rate limits, traffic splitting and fallbacks.",
     "ja": "<b>Databricks</b> テーブルからモデル・エージェントまでつながる権限・リネージ、システムテーブルによるコスト帰属、QPM・TPMレートリミット、トラフィック分割・フォールバック。",
-    "zh": "<b>Databricks</b> 从表到模型、智能体的权限与血缘，基于系统表的成本归属，QPM 与 TPM 速率限制，流量拆分与回退。"
+    "zh-Hans": "<b>Databricks</b> 从表到模型、智能体的权限与血缘，基于系统表的成本归属，QPM 与 TPM 速率限制，流量拆分与回退。",
+    "zh-Hant": "<b>Databricks</b> 從表到模型、智慧體的許可權與血緣，基於系統表的成本歸屬，QPM 與 TPM 速率限制，流量拆分與回退。"
   },
   "u.14ec80befdbd": {
     "match": "Databricks 지원 리전의 Databricks 워크스페이스 안에서만 동작합니다. 레이트리밋은 응답 후 집계되어 동시 요청 버스트가 한도를 넘을 수 있고, 서비스당 한도 규칙은 20개(그룹 5개)로 제한됩니다.",
     "en": "<b>Databricks</b> Works only inside a Databricks workspace in a supported region. Rate limits are counted after responses, so concurrent bursts can exceed the limit, and each service allows at most 20 rate limits (5 for groups).",
     "ja": "<b>Databricks</b> 対応リージョンのDatabricksワークスペース内でのみ動作します。レートリミットはレスポンス後に集計されるため同時リクエストのバーストが上限を超えることがあり、サービスあたりのルールは20個(グループ5個)までです。",
-    "zh": "<b>Databricks</b> 仅在受支持区域的 Databricks 工作区内运行。速率限制在响应后计数，并发突发可能超出限额；每个服务最多 20 条限流规则（组 5 条）。"
+    "zh-Hans": "<b>Databricks</b> 仅在受支持区域的 Databricks 工作区内运行。速率限制在响应后计数，并发突发可能超出限额；每个服务最多 20 条限流规则（组 5 条）。",
+    "zh-Hant": "<b>Databricks</b> 僅在受支援區域的 Databricks 工作區內執行。速率限制在響應後計數，併發突發可能超出限額；每個服務最多 20 條限流規則（組 5 條）。"
   },
   "u.82c9e2ef2e96": {
     "match": "Kong 앱이 있는 어디에나 데이터 플레인을 배치하고, Redis 기반 클러스터 카운터로 노드 간 한도를 일관되게 집행합니다.",
     "en": "<b>Kong</b> Places data planes wherever your apps run and enforces limits consistently across nodes with Redis-backed cluster counters.",
     "ja": "<b>Kong</b> アプリがある場所ならどこにでもデータプレーンを配置し、Redisベースのクラスターカウンターでノード間の上限を一貫して適用します。",
-    "zh": "<b>Kong</b> 可将数据平面部署在应用所在的任何位置，并通过基于 Redis 的集群计数器在各节点间一致地执行限额。"
+    "zh-Hans": "<b>Kong</b> 可将数据平面部署在应用所在的任何位置，并通过基于 Redis 的集群计数器在各节点间一致地执行限额。",
+    "zh-Hant": "<b>Kong</b> 可將資料平面部署在應用所在的任何位置，並透過基於 Redis 的叢集計數器在各節點間一致地執行限額。"
   },
   "u.d9d0bf8bb25b": {
     "match": "Snowflake 계정별 게이트웨이 자동 생성, 역할 기반 GRANT · REVOKE, 요청별 트레이스 · 토큰 · 지연, 팀 · 사용자 비용 귀속과 예산 연동 차단.",
     "en": "<b>Snowflake</b> Gateway auto-created per account, role-based GRANT and REVOKE, per-request traces, tokens, and latency, cost attribution by team and user, and budget-driven cutoff.",
     "ja": "<b>Snowflake</b> アカウントごとのゲートウェイ自動作成、ロールベースのGRANT・REVOKE、リクエスト単位のトレース・トークン・レイテンシー、チーム・ユーザー別のコスト帰属と予算連動の遮断。",
-    "zh": "<b>Snowflake</b> 每个账号自动创建网关，基于角色的 GRANT 与 REVOKE，按请求的追踪、Token 与延迟，按团队与用户归属成本并按预算阻断。"
+    "zh-Hans": "<b>Snowflake</b> 每个账号自动创建网关，基于角色的 GRANT 与 REVOKE，按请求的追踪、Token 与延迟，按团队与用户归属成本并按预算阻断。",
+    "zh-Hant": "<b>Snowflake</b> 每個賬號自動建立閘道器，基於角色的 GRANT 與 REVOKE，按請求的追蹤、Token 與延遲，按團隊與使用者歸屬成本並按預算阻斷。"
   },
   "u.2ed84b392050": {
     "match": "Snowflake Public Preview 단계이며 Cortex AI 추론 트래픽이 대상입니다. 게이트웨이 가드레일 · 동적 라우팅 · MCP Tools는 예정 또는 Private Preview이고, 계정당 게이트웨이는 하나입니다.",
     "en": "<b>Snowflake</b> In Public Preview and scoped to Cortex AI inference traffic. Gateway guardrails, dynamic routing, and MCP Tools are upcoming or in Private Preview, and there is one gateway per account.",
     "ja": "<b>Snowflake</b> Public Preview段階で、対象はCortex AIの推論トラフィックです。ゲートウェイのガードレール・動的ルーティング・MCP Toolsは予定またはPrivate Previewで、ゲートウェイはアカウントごとに一つです。",
-    "zh": "<b>Snowflake</b> 处于 Public Preview 阶段，范围为 Cortex AI 推理流量。网关护栏、动态路由与 MCP Tools 尚在规划或 Private Preview 中，每个账号仅有一个网关。"
+    "zh-Hans": "<b>Snowflake</b> 处于 Public Preview 阶段，范围为 Cortex AI 推理流量。网关护栏、动态路由与 MCP Tools 尚在规划或 Private Preview 中，每个账号仅有一个网关。",
+    "zh-Hant": "<b>Snowflake</b> 處於 Public Preview 階段，範圍為 Cortex AI 推理流量。閘道器護欄、動態路由與 MCP Tools 尚在規劃或 Private Preview 中，每個賬號僅有一個閘道器。"
   },
   "u.b7ffb5d3ad8b": {
     "match": "Kong 15+ 프로바이더 라우팅 · 시맨틱 캐시 · 가드레일 · MCP · A2A를 GA 기능으로 제공하고, 환경 · 팀별로 게이트웨이를 분리할 수 있습니다.",
     "en": "<b>Kong</b> Ships routing across 15+ providers, semantic caching, guardrails, MCP, and A2A as GA features, with separate gateways per environment or team.",
     "ja": "<b>Kong</b> 15以上のプロバイダーへのルーティング・セマンティックキャッシュ・ガードレール・MCP・A2AをGA機能として提供し、環境・チームごとにゲートウェイを分離できます。",
-    "zh": "<b>Kong</b> 以 GA 功能提供 15+ 提供商路由、语义缓存、护栏、MCP 与 A2A，并可按环境或团队拆分网关。"
+    "zh-Hans": "<b>Kong</b> 以 GA 功能提供 15+ 提供商路由、语义缓存、护栏、MCP 与 A2A，并可按环境或团队拆分网关。",
+    "zh-Hant": "<b>Kong</b> 以 GA 功能提供 15+ 提供商路由、語義快取、護欄、MCP 與 A2A，並可按環境或團隊拆分閘道器。"
   },
   "u.fbdddd8f19f4": {
     "match": "범주 · Data Platform AI Gateway. Databricks Unity Gateway와 Snowflake Cortex AI Gateway는 데이터 플랫폼이 자사 AI 워크로드를 위해 제공하는 거버넌스 계층입니다. Kong은 데이터 플랫폼까지 포함한 조직 전체의 AI · API 트래픽을 하나의 정책으로 다루는 중립 연결 계층입니다. 기능 유무 비교이며 품질 우열을 뜻하지 않습니다.",
     "en": "<b>Category · Data platform AI gateway.</b> Databricks Unity Gateway and Snowflake Cortex AI Gateway are governance layers that data platforms provide for their own AI workloads. Kong is a neutral connectivity layer that governs all AI and API traffic across the organization, data platforms included, with one policy. This compares feature availability, not quality.",
     "ja": "<b>カテゴリ・Data Platform AI Gateway。</b> Databricks Unity GatewayとSnowflake Cortex AI Gatewayは、データプラットフォームが自社のAIワークロード向けに提供するガバナンスレイヤーです。Kongはデータプラットフォームを含む組織全体のAI・APIトラフィックを一つのポリシーで扱う中立的な接続レイヤーです。機能の有無の比較であり、品質の優劣を意味しません。",
-    "zh": "<b>类别 · 数据平台 AI Gateway。</b> Databricks Unity Gateway 与 Snowflake Cortex AI Gateway 是数据平台为自身 AI 工作负载提供的治理层。Kong 是中立的连接层，以统一策略治理包括数据平台在内的全组织 AI 与 API 流量。此处比较功能有无，不代表质量优劣。"
+    "zh-Hans": "<b>类别 · 数据平台 AI Gateway。</b> Databricks Unity Gateway 与 Snowflake Cortex AI Gateway 是数据平台为自身 AI 工作负载提供的治理层。Kong 是中立的连接层，以统一策略治理包括数据平台在内的全组织 AI 与 API 流量。此处比较功能有无，不代表质量优劣。",
+    "zh-Hant": "<b>類別 · 資料平臺 AI Gateway。</b> Databricks Unity Gateway 與 Snowflake Cortex AI Gateway 是資料平臺為自身 AI 工作負載提供的治理層。Kong 是中立的連線層，以統一策略治理包括資料平臺在內的全組織 AI 與 API 流量。此處比較功能有無，不代表質量優劣。"
   }
 }
