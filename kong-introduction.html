@@ -302,6 +302,8 @@ tr.k td{background:rgba(204,255,0,.06)}
 .pii-vb i{display:block;width:100%;height:0;border-radius:7px 7px 2px 2px;background:var(--g600);transition:height 1.15s cubic-bezier(.2,.7,.2,1)}
 .pii-vb.kong i{background:var(--lime);box-shadow:0 0 14px var(--accent-glow)}
 .pii-vb.kong u{color:var(--accent)}
+.pii-vb.moz i{background:#9a3f12}
+.pii-vb.moz u{color:#d97745}
 .pii-vchart.in .pii-vb i,.pii-vchart.go .pii-vb i{height:var(--h)}
 .pii-vchart.in .pii-vb u,.pii-vchart.go .pii-vb u{opacity:1;transform:none;transition-delay:.45s}
 .pii-vg>em{margin-top:10px;font-style:normal;font-size:12.5px;font-weight:800;color:var(--heading);text-align:center;line-height:1.3}
@@ -310,6 +312,8 @@ tr.k td{background:rgba(204,255,0,.06)}
 .pii-vchart-leg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--g600)}
 .pii-vchart-leg .k i{background:var(--lime);box-shadow:0 0 8px var(--accent-glow)}
 .pii-vchart-leg .k{color:var(--accent)}
+.pii-vchart-leg .m i{background:#9a3f12}
+.pii-vchart-leg .m{color:#d97745}
 @media (max-width:900px){
   .pii-vchart-groups{grid-template-columns:1fr;gap:22px;min-height:0}
   .pii-vbars{height:140px}
@@ -3871,7 +3875,7 @@ claude
             <div class="pii-vbars">
               <div class="pii-vb kong" style="--h:28%"><u>14.1%</u><i></i></div>
               <div class="pii-vb" style="--h:51%"><u>25.7%</u><i></i></div>
-              <div class="pii-vb" style="--h:98%"><u>48.8%</u><i></i></div>
+              <div class="pii-vb moz" style="--h:98%"><u>48.8%</u><i></i></div>
             </div>
             <em>Nemotron · en</em>
             <span>영어 일반 PII</span>
@@ -3880,7 +3884,7 @@ claude
             <div class="pii-vbars">
               <div class="pii-vb kong" style="--h:63%"><u>31.7%</u><i></i></div>
               <div class="pii-vb" style="--h:70%"><u>34.8%</u><i></i></div>
-              <div class="pii-vb" style="--h:92%"><u>46.0%</u><i></i></div>
+              <div class="pii-vb moz" style="--h:92%"><u>46.0%</u><i></i></div>
             </div>
             <em>KDPII · ko</em>
             <span>한국어 개인정보</span>
@@ -3889,14 +3893,14 @@ claude
             <div class="pii-vbars">
               <div class="pii-vb kong" style="--h:58%"><u>28.8%</u><i></i></div>
               <div class="pii-vb" style="--h:64%"><u>32.2%</u><i></i></div>
-              <div class="pii-vb" style="--h:66%"><u>32.9%</u><i></i></div>
+              <div class="pii-vb moz" style="--h:66%"><u>32.9%</u><i></i></div>
             </div>
             <em>Gretel · en</em>
             <span>금융 문서 PII</span>
           </div>
         </div>
       </div>
-      <div class="pii-vchart-leg"><span class="k"><i></i>Kong</span><span><i></i>OpenAI</span><span><i></i>Mozilla</span></div>
+      <div class="pii-vchart-leg"><span class="k"><i></i>Kong</span><span><i></i>OpenAI</span><span class="m"><i></i>Mozilla</span></div>
     </div>
     <h3 style="margin-top:22px">유형별 Kong 누출률</h3>
     <div class="grid g3">
