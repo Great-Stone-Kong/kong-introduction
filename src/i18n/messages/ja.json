@@ -4122,5 +4122,7 @@
   "m.3a5cde7006ab": "住民登録 · 口座 · 連絡先など韓国語文書の機微情報",
   "m.ba8dce16665a": "氏名 · 連絡先 · 識別子など英語文書の一般個人情報",
   "m.d3ab7e3959e3": "マスキング後に残った PII 文字比率（leak %）です。棒が短いほど漏えいが少ないです。",
-  "m.24bf30772a3c": "指標は文字単位の leak %（低いほど優秀）です。評価セット: Nemotron-PII · KDPII · Gretel finance"
+  "m.24bf30772a3c": "指標は文字単位の leak %（低いほど優秀）です。評価セット: Nemotron-PII · KDPII · Gretel finance",
+  "m.10114817c38e": "Kong · OpenAI · Mozilla の評価セット別文字単位漏えい率",
+  "m.6beb3c31bda3": "マスキング後に残った PII 文字比率（leak %）です。棒が低いほど漏えいが少ないです。"
 }

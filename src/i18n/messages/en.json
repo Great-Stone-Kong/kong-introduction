@@ -4122,5 +4122,7 @@
   "m.3a5cde7006ab": "RRN, accounts, contacts, and other sensitive data in Korean documents",
   "m.ba8dce16665a": "Names, contacts, identifiers, and other general PII in English documents",
   "m.d3ab7e3959e3": "Share of PII characters left after masking (leak %). Shorter bars mean less leakage.",
-  "m.24bf30772a3c": "Metric is character-level leak % (lower is better). Eval sets: Nemotron-PII · KDPII · Gretel finance"
+  "m.24bf30772a3c": "Metric is character-level leak % (lower is better). Eval sets: Nemotron-PII · KDPII · Gretel finance",
+  "m.10114817c38e": "Character-level leak rate by eval set for Kong · OpenAI · Mozilla",
+  "m.6beb3c31bda3": "Share of PII characters left after masking (leak %). Lower bars mean less leakage."
 }

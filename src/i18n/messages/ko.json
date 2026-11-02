@@ -4122,5 +4122,7 @@
   "m.3a5cde7006ab": "주민등록 · 계좌 · 연락처 등 한국어 문서의 민감정보",
   "m.ba8dce16665a": "이름 · 연락처 · 식별자 등 영어 문서의 일반 개인정보",
   "m.d3ab7e3959e3": "마스킹 후 남은 PII 문자 비율(leak %)입니다. 막대가 짧을수록 누출이 적습니다.",
-  "m.24bf30772a3c": "지표는 문자 단위 leak %(낮을수록 우수)입니다. 평가셋: Nemotron-PII · KDPII · Gretel finance"
+  "m.24bf30772a3c": "지표는 문자 단위 leak %(낮을수록 우수)입니다. 평가셋: Nemotron-PII · KDPII · Gretel finance",
+  "m.10114817c38e": "Kong · OpenAI · Mozilla 평가셋별 문자 단위 누출률",
+  "m.6beb3c31bda3": "마스킹 후 남은 PII 문자 비율(leak %)입니다. 막대가 낮을수록 누출이 적습니다."
 }
