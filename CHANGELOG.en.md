@@ -12,6 +12,9 @@
 
 ### Changed
 
+- AI Gateway > Core features
+  - Retitle copy from plugins to policies and request flow
+
 - AI Gateway > Feature overview
   - PII Sanitizer: one vertical grouped bar chart · per-type leak rates · type meanings
   - Behavior diagrams for semantic cache, guard, routing, token compression, kill switch, and virtual keys

@@ -5,12 +5,17 @@
 
 ---
 
+
+
 ## 2026.11.02.6ae86a09
 ### 추가
 - AI Gateway > 경쟁 제품 비교 > Data Platform(Databricks, Snowflake)
 - 언어: 번체 중국어(`zh-Hant`, 대만/홍콩 표현) · 간체를 `zh-Hans`로 구분
 
 ### 변경
+
+- AI Gateway > 핵심 기능
+  - 제목·본문·흐름 문구에서 플러그인 표현을 정책·요청 흐름으로 정리
 
 - AI Gateway > 대표 기능 개요
   - PII Sanitizer: 평가셋 비교를 세로 그룹 막대 차트로 통합 · 유형별 누출률 · 항목 의미 정리
