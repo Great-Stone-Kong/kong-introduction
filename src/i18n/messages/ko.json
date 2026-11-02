@@ -4635,5 +4635,8 @@
   "m.22f3949be97e": "Portkey AI Gateway·에이전트 거버넌스에 강하나, 전통 API 포털·이벤트·완전 에어갭 CP는 Kong 대비 좁음.",
   "m.3ff8df7d0b42": "Kong 선언적 GitOps(decK·Terraform)·멀티리전·에어갭 Enterprise가 강점.",
   "m.ffcb297f693e": "동향 Palo Alto는 Portkey를 인수했고, CrowdStrike는 Falcon Guardian용 AI Gateway를 구축 중입니다. 보안 벤더의 AI Gateway 진입이 가속됩니다.",
-  "m.f293d0b66595": "출처: Palo Alto 인수 완료(2026-05-29) · Prisma AIRS AI Gateway GA(2026-07) · Kong 비교 매트릭스 Portkey 열(2026.09)."
+  "m.f293d0b66595": "출처: Palo Alto 인수 완료(2026-05-29) · Prisma AIRS AI Gateway GA(2026-07) · Kong 비교 매트릭스 Portkey 열(2026.09).",
+  "m.92eaeab580c1": "상호보완 구성",
+  "m.549aa3deb6f0": "Forti는 위협 검사·하드웨어 경로, Kong은 프로덕션 연결·정책 집행·관측.",
+  "m.d76ce7dcbf90": "Netskope는 위험 판단(탐지·분류·정책), Kong은 프로덕션 연결·집행."
 }

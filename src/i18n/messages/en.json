@@ -4635,5 +4635,8 @@
   "m.22f3949be97e": "Portkey Strong in AI Gateway · agent governance, but narrower than Kong on classic API portals · events · fully air-gapped CP.",
   "m.3ff8df7d0b42": "Kong Strong declarative GitOps (decK · Terraform) · multi-region · air-gapped Enterprise.",
   "m.ffcb297f693e": "Trend Palo Alto acquired Portkey; CrowdStrike is building an AI Gateway for Falcon Guardian. Security-vendor entry into AI Gateway is accelerating.",
-  "m.f293d0b66595": "Sources: Palo Alto acquisition close (2026-05-29) · Prisma AIRS AI Gateway GA (2026-07) · Kong comparison matrix Portkey column (2026.09)."
+  "m.f293d0b66595": "Sources: Palo Alto acquisition close (2026-05-29) · Prisma AIRS AI Gateway GA (2026-07) · Kong comparison matrix Portkey column (2026.09).",
+  "m.92eaeab580c1": "Complementary architecture",
+  "m.549aa3deb6f0": "Forti for threat inspection · hardware path; Kong for production connectivity · policy enforcement · observability.",
+  "m.d76ce7dcbf90": "Netskope for risk judgment (detect · classify · policy); Kong for production connectivity · enforcement."
 }

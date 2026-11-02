@@ -1517,12 +1517,6 @@
     "ja": "<b>Kong</b> AI Connectivityプラットフォームとして接続・ガバナンス・運用自動化に強み。",
     "zh": "<b>Kong</b> 作为 AI Connectivity 平台，擅长连接 · 治理 · 运维自动化。"
   },
-  "u.24fa01026ee2": {
-    "match": "함께 Forti는 위협 검사·하드웨어 경로, Kong은 프로덕션 연결·정책 집행·관측.",
-    "en": "<b>Together</b> Forti for threat inspection · hardware path; Kong for production connectivity · policy enforcement · observability.",
-    "ja": "<b>併用</b> Fortiは脅威検査・ハードウェア経路、Kongは本番接続・ポリシー執行・観測。",
-    "zh": "<b>并用</b> Forti 负责威胁检查 · 硬件路径；Kong 负责生产连接 · 策略执行 · 可观测。"
-  },
   "u.e940bc77b119": {
     "match": "출처: fortinet.com/products/fortiaigate · Kong 경쟁 비교 매트릭스(2026.09).",
     "en": "Sources: fortinet.com/products/fortiaigate · Kong competitive matrix (2026.09).",
@@ -1558,12 +1552,6 @@
     "en": "<b>Netskope</b> ~3 native providers; weak semantic cache · compression · RAG · MCP serving · K8s-native (VM appliance).",
     "ja": "<b>Netskope</b> ネイティブプロバイダ約3中心。セマンティックキャッシュ・圧縮・RAG・MCPサービング・K8sネイティブは弱い（VMアプライアンス）。",
     "zh": "<b>Netskope</b> 约 3 个原生提供商；语义缓存 · 压缩 · RAG · MCP 服务 · K8s 原生较弱（VM 设备）。"
-  },
-  "u.ddc697e52dba": {
-    "match": "함께 Netskope는 위험 판단(탐지·분류·정책), Kong은 프로덕션 연결·집행.",
-    "en": "<b>Together</b> Netskope for risk judgment (detect · classify · policy); Kong for production connectivity · enforcement.",
-    "ja": "<b>併用</b> Netskopeはリスク判断（検知・分類・ポリシー）、Kongは本番接続・執行。",
-    "zh": "<b>并用</b> Netskope 负责风险判断（检测 · 分类 · 策略）；Kong 负责生产连接 · 执行。"
   },
   "u.787d72eaaf12": {
     "match": "출처: Netskope Competitive Pack(2026-07) · netskope.com · 비교 매트릭스(2026.09).",
@@ -1672,5 +1660,23 @@
     "en": "Market",
     "ja": "市場",
     "zh": "市场"
+  },
+  "u.92eaeab580c1": {
+    "match": "상호보완 구성",
+    "en": "Complementary architecture",
+    "ja": "相互補完構成",
+    "zh": "互补架构"
+  },
+  "u.549aa3deb6f0": {
+    "match": "Forti는 위협 검사·하드웨어 경로, Kong은 프로덕션 연결·정책 집행·관측.",
+    "en": "Forti for threat inspection · hardware path; Kong for production connectivity · policy enforcement · observability.",
+    "ja": "Fortiは脅威検査・ハードウェア経路、Kongは本番接続・ポリシー執行・観測。",
+    "zh": "Forti 负责威胁检查 · 硬件路径；Kong 负责生产连接 · 策略执行 · 可观测。"
+  },
+  "u.d76ce7dcbf90": {
+    "match": "Netskope는 위험 판단(탐지·분류·정책), Kong은 프로덕션 연결·집행.",
+    "en": "Netskope for risk judgment (detect · classify · policy); Kong for production connectivity · enforcement.",
+    "ja": "Netskopeはリスク判断（検知・分類・ポリシー）、Kongは本番接続・執行。",
+    "zh": "Netskope 负责风险判断（检测 · 分类 · 策略）；Kong 负责生产连接 · 执行。"
   }
 }

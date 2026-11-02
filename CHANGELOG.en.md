@@ -14,6 +14,7 @@
 - AI Gateway > Competitive comparison: fold AI DLP comparison into an Endpoint AI Security tab · remove standalone section
 - AI Gateway > Competitive comparison: merge API7 and IBM API Connect into a Legacy APIM tab · per-product intros then one table
 - AI Gateway > Competitive comparison: merge FortiAIGate · Netskope · Portkey (Prisma AIRS) into an AI Runtime Security tab · per-product intros then one table
+- AI Gateway > Competitive comparison: replace standalone “함께” wording in AI Runtime Security with “상호보완 구성” (complementary architecture)
 
 ---
 

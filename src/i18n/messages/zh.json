@@ -4635,5 +4635,8 @@
   "m.22f3949be97e": "Portkey 擅长 AI Gateway · 智能体治理，但在传统 API 门户 · 事件 · 完全气隙控制面上窄于 Kong。",
   "m.3ff8df7d0b42": "Kong 擅长声明式 GitOps（decK · Terraform）· 多区域 · 气隙 Enterprise。",
   "m.ffcb297f693e": "趋势 Palo Alto 收购了 Portkey；CrowdStrike 正为 Falcon Guardian 构建 AI Gateway。安全厂商进入 AI Gateway 正在加速。",
-  "m.f293d0b66595": "来源：Palo Alto 收购完成（2026-05-29）· Prisma AIRS AI Gateway GA（2026-07）· Kong 对比矩阵 Portkey 列（2026.09）。"
+  "m.f293d0b66595": "来源：Palo Alto 收购完成（2026-05-29）· Prisma AIRS AI Gateway GA（2026-07）· Kong 对比矩阵 Portkey 列（2026.09）。",
+  "m.92eaeab580c1": "互补架构",
+  "m.549aa3deb6f0": "Forti 负责威胁检查 · 硬件路径；Kong 负责生产连接 · 策略执行 · 可观测。",
+  "m.d76ce7dcbf90": "Netskope 负责风险判断（检测 · 分类 · 策略）；Kong 负责生产连接 · 执行。"
 }

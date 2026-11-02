@@ -14,6 +14,7 @@
 - AI Gateway > 경쟁 제품 비교: AI DLP 비교를 Endpoint AI Security 탭으로 통합 · 단독 섹션 제거
 - AI Gateway > 경쟁 제품 비교: API7 · IBM API Connect를 Legacy APIM 탭으로 통합 · 제품별 소개 후 단일 비교표
 - AI Gateway > 경쟁 제품 비교: FortiAIGate · Netskope · Portkey(Prisma AIRS)를 AI Runtime Security 탭으로 통합 · 제품별 소개 후 단일 비교표
+- AI Gateway > 경쟁 제품 비교: AI Runtime Security 안내 문구의 「함께」 단독 표기를 「상호보완 구성」으로 변경
 
 ---
 
