@@ -11,6 +11,7 @@
 - AI Gateway > 代表機能概要 > PII Sanitizer: 評価セット比較を縦グループ棒グラフに統合 · タイプ別漏えい率 · 項目の意味を整理
 - AI Gateway > 代表機能概要: セマンティックキャッシュ・ガード・ルーティング・トークン圧縮・キルスイッチ・仮想キーの動作図を追加
 - AI Gateway > 代表機能概要: PII Sanitizer · トークン圧縮に Docker Hub イメージリンクを追加
+- AI Gateway > 競合比較: AI DLP 比較を Endpoint AI Security タブに統合 · 単独セクションを削除
 
 ---
 

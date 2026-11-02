@@ -11,6 +11,7 @@
 - AI Gateway > 代表性功能概览 > PII Sanitizer：评测集对比合并为纵向分组柱状图 · 按类型泄漏率 · 整理字段含义
 - AI Gateway > 代表性功能概览：为语义缓存、护栏、路由、令牌压缩、熔断开关、虚拟密钥补充行为示意图
 - AI Gateway > 代表性功能概览：为 PII Sanitizer · 令牌压缩补充 Docker Hub 镜像链接
+- AI Gateway > 竞品比较：将 AI DLP 对比并入 Endpoint AI Security 标签页 · 删除独立章节
 
 ---
 

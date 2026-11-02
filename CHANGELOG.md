@@ -11,6 +11,7 @@
 - AI Gateway > 대표 기능 개요 > PII Sanitizer: 평가셋 비교를 세로 그룹 막대 차트로 통합 · 유형별 누출률 · 항목 의미 정리
 - AI Gateway > 대표 기능 개요: 시맨틱 캐시·가드·라우팅·토큰 압축·킬 스위치·가상 키 동작 도식 추가
 - AI Gateway > 대표 기능 개요: PII Sanitizer · 토큰 압축에 Docker Hub 이미지 링크 추가
+- AI Gateway > 경쟁 제품 비교: AI DLP 비교를 Endpoint AI Security 탭으로 통합 · 단독 섹션 제거
 
 ---
 

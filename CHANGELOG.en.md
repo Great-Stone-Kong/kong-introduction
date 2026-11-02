@@ -11,6 +11,7 @@
 - AI Gateway > Feature overview > PII Sanitizer: one vertical grouped bar chart · per-type leak rates · type meanings
 - AI Gateway > Feature overview: add behavior diagrams for semantic cache, guard, routing, compression, kill switch, and virtual keys
 - AI Gateway > Feature overview: add Docker Hub image links for PII Sanitizer and token compression
+- AI Gateway > Competitive comparison: fold AI DLP comparison into an Endpoint AI Security tab · remove standalone section
 
 ---
 
