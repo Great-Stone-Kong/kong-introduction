@@ -8,11 +8,9 @@
 ## 2026.11.02.6ae86a09
 ### 추가
 - AI Gateway > 경쟁 제품 비교 > Data Platform(Databricks, Snowflake)
-- 언어: 번체 중국어(`zh-Hant`, 대만/홍콩 표현) · 간체를 `zh-Hans`로 구분 · 드롭다운에서 번체를 간체 위에 표시
+- 언어: 번체 중국어(`zh-Hant`, 대만/홍콩 표현) · 간체를 `zh-Hans`로 구분
 
 ### 변경
-
-- 언어: `AI 트래픽의 Kong 전환 방식` 등 간체·번체 오역 수정 · 번체 TW/HK IT 용어 후처리(閘道·品質·存取·回應 등)
 
 - AI Gateway > 대표 기능 개요
   - PII Sanitizer: 평가셋 비교를 세로 그룹 막대 차트로 통합 · 유형별 누출률 · 항목 의미 정리
@@ -26,6 +24,7 @@
   - FortiAIGate · Netskope · Portkey를 AI Runtime Security 탭으로 통합
 
 ---
+
 
 ## 2026.10.29.9b351b37
 ### 추가

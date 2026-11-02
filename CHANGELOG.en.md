@@ -8,11 +8,9 @@
 ## 2026.11.02.6ae86a09
 ### Added
 - AI Gateway > Competitive comparison > Data Platform (Databricks, Snowflake)
-- Language: Traditional Chinese (`zh-Hant`, TW/HK phrasing) · rename Simplified to `zh-Hans` · Hant above Hans in the language dropdown
+- Language: Traditional Chinese (`zh-Hant`, TW/HK phrasing) · Simplified as `zh-Hans`
 
 ### Changed
-
-- Language: fix broken Simplified/Traditional strings such as “Kong cutover for AI traffic” · apply TW/HK IT lexicon post-edits on zh-Hant
 
 - AI Gateway > Feature overview
   - PII Sanitizer: one vertical grouped bar chart · per-type leak rates · type meanings
@@ -26,6 +24,7 @@
   - Merge FortiAIGate · Netskope · Portkey into an AI Runtime Security tab
 
 ---
+
 
 ## 2026.10.29.9b351b37
 ### Added

@@ -7,11 +7,9 @@
 ## 2026.11.02.6ae86a09
 ### 新增
 - AI Gateway > 竞品比较 > Data Platform（Databricks, Snowflake）
-- 语言：繁体中文（`zh-Hant`，台湾/香港用语）· 简体改为 `zh-Hans` · 下拉菜单中繁体排在简体之上
+- 语言：繁体中文（`zh-Hant`，台湾/香港用语）· 简体为 `zh-Hans`
 
 ### 变更
-
-- 语言：修正「AI 流量的 Kong 切换方式」等简体/繁体误译 · 对繁体套用台湾/香港 IT 用语后处理
 
 - AI Gateway > 代表性功能概览
   - PII Sanitizer：评测集对比合并为纵向分组柱状图 · 按类型泄漏率 · 整理字段含义
@@ -25,6 +23,7 @@
   - 将 FortiAIGate · Netskope · Portkey 合并为 AI Runtime Security 标签页
 
 ---
+
 
 ## 2026.10.29.9b351b37
 ### 新增
