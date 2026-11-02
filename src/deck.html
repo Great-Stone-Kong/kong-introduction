@@ -3889,7 +3889,7 @@ claude
     <h3>요청·응답의 개인정보 마스킹</h3>
     <p>AI PII Sanitizer는 LLM으로 나가기 전·돌아온 뒤에 주민등록번호, 계좌, 휴대폰, 카드, 시크릿 등을 탐지해 Placeholder로 치환합니다. 한국어 호칭·계좌·생년월일 인식기를 포함해 국내 업무 문서에도 맞춥니다.</p>
     <ul class="list"><li>게이트웨이 경로에서 일괄 마스킹</li><li>한국어 · 영어 특화 인식기</li><li>커스텀 정규식 룰 추가</li></ul></div>
-    <div class="card"><span class="tag">적용 위치</span><p>앱 · 에이전트는 SDK를 그대로 두고, Kong Route에 AI PII Sanitizer만 붙이면 됩니다. 실제 provider 키와 원문 민감정보는 게이트웨이 뒤에서만 다룹니다.</p></div></div>
+    <div class="card"><span class="tag">적용 위치</span><p>앱 · 에이전트는 SDK를 그대로 두고, Kong Route에 AI PII Sanitizer만 붙이면 됩니다. 실제 provider 키와 원문 민감정보는 게이트웨이 뒤에서만 다룹니다.</p><p>부가 컨테이너: <a href="https://hub.docker.com/r/kong/ai-pii-service" target="_blank" rel="noopener">kong/ai-pii-service</a></p></div></div>
     <h3 style="margin-top:20px">문자 단위 누출률 · 낮을수록 우수</h3>
     <p class="sub" style="margin-top:0">마스킹 후 남은 PII 문자 비율(leak %)입니다. 막대가 낮을수록 누출이 적습니다.</p>
     <div class="pii-vchart rv" aria-label="Kong · OpenAI · Mozilla 평가셋별 문자 단위 누출률">
@@ -3948,6 +3948,7 @@ claude
   <div class="pane"><div>
     <h3>의미 보존형 토큰 절감</h3>
     <p>장황한 입력을 LLM의 컨텍스트 창 안에 들어오도록 압축합니다. 중요한 콘텐츠가 잘리는 일을 막고, 호출 비용과 응답 지연을 함께 줄입니다.</p>
+    <p class="note">부가 컨테이너: <a href="https://hub.docker.com/r/kong/ai-compress-service" target="_blank" rel="noopener">kong/ai-compress-service</a></p>
     <div class="grid g2">
       <div class="code"><span class="c"># Prompt · 112 tokens</span>
 고객 지원 담당자로서 응대해 주십시오.
