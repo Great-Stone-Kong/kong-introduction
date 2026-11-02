@@ -4106,5 +4106,21 @@
   "m.2a6244b2edfa": "Apps and agents keep their SDK; attach AI PII Sanitizer on the Kong Route. Real provider keys and raw sensitive text stay behind the gateway.",
   "m.e6a65f8219d0": "AI PII Sanitizer detects RRNs, accounts, phones, cards, secrets, and more before and after the LLM, then replaces them with placeholders. Korean honorific, bank, and birth-date recognizers fit domestic business documents.",
   "m.9b9c95a343dd": "Eval set",
-  "m.9bcd3f8d4422": "Metric is character-level leak % (lower is better). Eval sets: Nemotron-PII · KDPII · Gretel finance. Source:"
+  "m.9bcd3f8d4422": "Metric is character-level leak % (lower is better). Eval sets: Nemotron-PII · KDPII · Gretel finance. Source:",
+  "m.b261f98c29e2": "3% leak",
+  "m.60792fa17bcb": "6% leak",
+  "m.8afda226c7b8": "12% leak",
+  "m.a4809c67c8b5": "Korean personal data",
+  "m.88d107834795": "General English PII",
+  "m.da78db84debb": "Finance-document PII",
+  "m.4d3f161998f9": "Kong leak rate by type",
+  "m.4c092445962c": "Character-level leak rate · lower is better",
+  "m.241db5c9bf1e": "English sensitive data in finance and account contexts",
+  "m.a9b6e3b9731e": "Date-of-birth and similar date-shaped personal identifiers.",
+  "m.09feb4e12d57": "Financial identifiers such as account and card numbers.",
+  "m.56fb5e0c97fd": "Credentials such as JWT · API keys · cookies.",
+  "m.3a5cde7006ab": "RRN, accounts, contacts, and other sensitive data in Korean documents",
+  "m.ba8dce16665a": "Names, contacts, identifiers, and other general PII in English documents",
+  "m.d3ab7e3959e3": "Share of PII characters left after masking (leak %). Shorter bars mean less leakage.",
+  "m.24bf30772a3c": "Metric is character-level leak % (lower is better). Eval sets: Nemotron-PII · KDPII · Gretel finance"
 }

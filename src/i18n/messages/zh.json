@@ -4106,5 +4106,21 @@
   "m.2a6244b2edfa": "应用与智能体可继续使用原有 SDK，只需在 Kong Route 上挂载 AI PII Sanitizer。真实 provider 密钥与原文敏感信息只在网关后方处理。",
   "m.e6a65f8219d0": "AI PII Sanitizer 在送入 LLM 前与返回后检测住民登录号、账户、手机、卡片、密钥等，并替换为占位符。含韩语敬称、账户、出生日期识别器，适配国内业务文档。",
   "m.9b9c95a343dd": "评测集",
-  "m.9bcd3f8d4422": "指标为字符级 leak %（越低越好）。评测集为 Nemotron-PII · KDPII · Gretel finance。来源："
+  "m.9bcd3f8d4422": "指标为字符级 leak %（越低越好）。评测集为 Nemotron-PII · KDPII · Gretel finance。来源：",
+  "m.b261f98c29e2": "泄漏 3%",
+  "m.60792fa17bcb": "泄漏 6%",
+  "m.8afda226c7b8": "泄漏 12%",
+  "m.a4809c67c8b5": "韩语个人信息",
+  "m.88d107834795": "英语通用 PII",
+  "m.da78db84debb": "金融文档 PII",
+  "m.4d3f161998f9": "按类型的 Kong 泄漏率",
+  "m.4c092445962c": "字符级泄漏率 · 越低越好",
+  "m.241db5c9bf1e": "金融交易 · 账户语境中的英语敏感信息",
+  "m.a9b6e3b9731e": "出生日期等日期型个人身份信息。",
+  "m.09feb4e12d57": "账号 · 卡号等金融标识信息。",
+  "m.56fb5e0c97fd": "JWT · API 密钥 · Cookie 等凭证。",
+  "m.3a5cde7006ab": "住民登录号 · 账户 · 联系方式等韩语文档中的敏感信息",
+  "m.ba8dce16665a": "姓名 · 联系方式 · 标识符等英语文档中的通用个人信息",
+  "m.d3ab7e3959e3": "掩码后仍残留的 PII 字符比例（leak %）。柱越短表示泄漏越少。",
+  "m.24bf30772a3c": "指标为字符级 leak %（越低越好）。评测集：Nemotron-PII · KDPII · Gretel finance"
 }

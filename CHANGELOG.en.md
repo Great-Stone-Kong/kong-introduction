@@ -5,6 +5,13 @@
 
 ---
 
+## 2026.11.02.c92f0e46
+### Changed
+
+- AI Gateway > Feature overview > PII Sanitizer: table → bar charts · per-type leak rates · type meanings
+
+---
+
 ## 2026.11.02.4a8a84dc
 ### Added
 
