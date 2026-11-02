@@ -5,7 +5,7 @@
 
 ---
 
-## 2026.11.02.c92f0e46
+## 2026.11.02.6ae86a09
 ### 추가
 - AI Gateway > 경쟁 제품 비교 > Data Platform(Databricks, Snowflake)
 
