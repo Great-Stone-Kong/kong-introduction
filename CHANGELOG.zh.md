@@ -5,6 +5,13 @@
 
 ---
 
+## 2026.11.02.4a8a84dc
+### 新增
+
+- AI Gateway > 功能 · 演示 > 代表性功能概览：PII Sanitizer 标签 · Kong/OpenAI/Mozilla 泄漏率对比
+
+---
+
 ## 2026.10.29.9b351b37
 ### 新增
 

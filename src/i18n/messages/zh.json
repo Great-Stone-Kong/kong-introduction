@@ -4091,5 +4091,20 @@
   "m.d35d2f5e742c": "在 ai-proxy-advanced 中像其他提供商一样注册 Kimi 模型，契合亚太模型标准化需求。",
   "m.11a08c4ecae5": "Advanced 在包含 Proxy 单目标代理的同时，把多模型选择与故障应对收进一个插件。新建配置只使用 Advanced。",
   "m.e199a2fc554c": "新增正向代理、日历型限流窗口、MoonshotAI Kimi、内部 MCP 捆绑以及 NVIDIA NeMo Guardrails 插件。在 AI Gateway 2.0 二进制中已移除 ai-proxy，仅保留 ai-proxy-advanced。",
-  "m.a4ec1acb7265": "ai-nvidia-nemo-guardrail 不自行评估请求/响应正文，而是委托给 NeMo Guardrails 的 /v1/guardrail/checks。由 Colang 定义的 input · output rail（内容安全 · 主题 · jailbreak 等）决定放行或阻断。guarding_mode 为 INPUT · OUTPUT · BOTH。"
+  "m.a4ec1acb7265": "ai-nvidia-nemo-guardrail 不自行评估请求/响应正文，而是委托给 NeMo Guardrails 的 /v1/guardrail/checks。由 Colang 定义的 input · output rail（内容安全 · 主题 · jailbreak 等）决定放行或阻断。guarding_mode 为 INPUT · OUTPUT · BOTH。",
+  "m.03ce1c9e8ace": "应用位置",
+  "m.e3ce0c4e971b": "添加自定义正则规则",
+  "m.903f423c6215": "请求与响应的个人信息掩码",
+  "m.29a7bdd82954": "韩语 · 英语专用识别器",
+  "m.e8754b02cfcd": "在网关路径上批量掩码",
+  "m.93670a5a2023": "字符级泄漏率对比 · 越低越好",
+  "m.e9c5bae6e2a4": "新增出生日期识别器，几乎全部拦截。",
+  "m.8307aa7c4422": "韩语金融字段泄漏在 PR 后大幅下降。",
+  "m.935468e8d8bf": "加强了 JWT · API 密钥等机密检测。",
+  "m.cbff4d128aa6": "指标为字符级 leak %（越低越好）。来源：",
+  "m.4d6595cd729b": "在公开评测集上掩码后仍残留的 PII 字符比例（leak %）。Kong 数值为 ai-pii-service PR #83 改进后的结果。",
+  "m.2a6244b2edfa": "应用与智能体可继续使用原有 SDK，只需在 Kong Route 上挂载 AI PII Sanitizer。真实 provider 密钥与原文敏感信息只在网关后方处理。",
+  "m.e6a65f8219d0": "AI PII Sanitizer 在送入 LLM 前与返回后检测住民登录号、账户、手机、卡片、密钥等，并替换为占位符。含韩语敬称、账户、出生日期识别器，适配国内业务文档。",
+  "m.9b9c95a343dd": "评测集",
+  "m.9bcd3f8d4422": "指标为字符级 leak %（越低越好）。评测集为 Nemotron-PII · KDPII · Gretel finance。来源："
 }

@@ -3813,7 +3813,7 @@ claude
   </div><p class="note">코딩 에이전트의 모든 모델 호출이 Kong을 지나므로 개발자별 토큰 한도 · 비용 집계 · PII 마스킹 · 감사 로그가 그대로 적용됩니다. 실제 경로와 인증 헤더는 Kong Route 구성에 따라 달라집니다.</p></div>
   <h3 style="margin-top:36px">대표 기능 개요</h3>
   <div class="tabs" data-tabs style="margin-top:28px">
-    <button class="on">시맨틱 캐시</button><button>시맨틱 가드</button><button>시맨틱 라우팅</button><button>토큰 압축</button><button>킬 스위치</button><button>가상 키 · 크리덴셜</button>
+    <button class="on">시맨틱 캐시</button><button>시맨틱 가드</button><button>PII Sanitizer</button><button>시맨틱 라우팅</button><button>토큰 압축</button><button>킬 스위치</button><button>가상 키 · 크리덴셜</button>
   </div>
   <div class="fbox">
   <div class="pane on"><div class="grid g2"><div>
@@ -3826,6 +3826,25 @@ claude
     <p>Deny Rule을 “정치적인 질문과 주제”로 설정하면, “대통령 선거에 대해 알려주세요”뿐 아니라 “정치 성향에 따른 행동을 알려주세요”도 차단됩니다. “오늘 미팅 내용을 정리해줘요”는 통과합니다.</p>
     <ul class="list"><li>컨텐츠 검열</li><li>기업 이미지 보존</li><li>안전한 AI 경험</li></ul></div>
     <div class="card"><span class="tag">외부 가드레일 연동</span><p>AWS Bedrock Guardrails, Azure Content Safety, NVIDIA NeMo, Lakera, Noma, Pangea 등을 설정 파일로 연동합니다.</p></div></div></div>
+  <div class="pane"><div class="grid g2"><div>
+    <h3>요청·응답의 개인정보 마스킹</h3>
+    <p>AI PII Sanitizer는 LLM으로 나가기 전·돌아온 뒤에 주민등록번호, 계좌, 휴대폰, 카드, 시크릿 등을 탐지해 Placeholder로 치환합니다. 한국어 호칭·계좌·생년월일 인식기를 포함해 국내 업무 문서에도 맞춥니다.</p>
+    <ul class="list"><li>게이트웨이 경로에서 일괄 마스킹</li><li>한국어 · 영어 특화 인식기</li><li>커스텀 정규식 룰 추가</li></ul></div>
+    <div class="card"><span class="tag">적용 위치</span><p>앱 · 에이전트는 SDK를 그대로 두고, Kong Route에 AI PII Sanitizer만 붙이면 됩니다. 실제 provider 키와 원문 민감정보는 게이트웨이 뒤에서만 다룹니다.</p></div></div>
+    <h3 style="margin-top:20px">문자 단위 누출률 비교 · 낮을수록 우수</h3>
+    <p class="sub" style="margin-top:0">외부 공개 평가셋에서 마스킹 후 남은 PII 문자 비율(leak %)입니다. Kong 수치는 ai-pii-service PR #83 개선 후 결과입니다.</p>
+    <div class="tw"><table><thead><tr><th>평가셋</th><th>Kong PII</th><th>OpenAI</th><th>Mozilla</th></tr></thead><tbody>
+      <tr><td>Nemotron-PII (en · 2,000)</td><td class="kc"><b>14.1%</b></td><td>25.7%</td><td>48.8%</td></tr>
+      <tr><td>KDPII (ko · 8,129)</td><td class="kc"><b>31.7%</b></td><td>34.8%</td><td>46.0%</td></tr>
+      <tr><td>Gretel finance (en · 400)</td><td class="kc"><b>28.8%</b></td><td>32.2%</td><td>32.9%</td></tr>
+    </tbody></table></div>
+    <div class="grid g3" style="margin-top:14px">
+      <div class="card"><span class="tag">KDPII · FINANCIAL</span><h3>88% → 12%</h3><p>한국어 금융 필드 누출이 PR 이후 크게 줄었습니다.</p></div>
+      <div class="card"><span class="tag">KDPII · DOB</span><h3>100% → 3%</h3><p>생년월일 인식기를 추가해 거의 차단합니다.</p></div>
+      <div class="card"><span class="tag">Nemotron · SECRET</span><h3>91% → 6%</h3><p>JWT · API 키 등 시크릿 탐지를 강화했습니다.</p></div>
+    </div>
+    <p class="note">지표는 문자 단위 leak %(낮을수록 우수)입니다. 평가셋은 Nemotron-PII · KDPII · Gretel finance입니다. 출처: <a href="https://github.com/Kong/ai-pii-service/pull/83" target="_blank" rel="noopener">Kong/ai-pii-service#83</a></p>
+  </div>
   <div class="pane"><div>
     <h3>질문 성격별 모델 선택</h3>
     <div class="tw"><table><thead><tr><th>경로 예시</th><th>모델 선택</th><th>설명</th></tr></thead><tbody>

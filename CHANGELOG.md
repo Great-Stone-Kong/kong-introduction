@@ -5,6 +5,13 @@
 
 ---
 
+## 2026.11.02.4a8a84dc
+### 추가
+
+- AI Gateway > 기능 · 데모 > 대표 기능 개요: PII Sanitizer 탭 · Kong/OpenAI/Mozilla 누출률 비교
+
+---
+
 ## 2026.10.29.9b351b37
 ### 추가
 

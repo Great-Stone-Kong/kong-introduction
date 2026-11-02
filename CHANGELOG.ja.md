@@ -5,6 +5,13 @@
 
 ---
 
+## 2026.11.02.4a8a84dc
+### 追加
+
+- AI Gateway > 機能 · デモ > 代表機能概要: PII Sanitizer タブ · Kong/OpenAI/Mozilla 漏えい率比較
+
+---
+
 ## 2026.10.29.9b351b37
 ### 追加
 

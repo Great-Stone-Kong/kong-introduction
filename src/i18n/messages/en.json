@@ -4091,5 +4091,20 @@
   "m.d35d2f5e742c": "Register Kimi models in ai-proxy-advanced the same way as other providers. Fits APAC model-standardization needs.",
   "m.11a08c4ecae5": "Advanced covers single-target proxying and adds multi-model selection and failover in one plugin. New setups use Advanced only.",
   "m.e199a2fc554c": "Adds native forward proxy, calendar rate-limit windows, MoonshotAI Kimi, internal MCP bundling, and the NVIDIA NeMo Guardrails plugin. On the AI Gateway 2.0 binary, ai-proxy is removed and only ai-proxy-advanced remains.",
-  "m.a4ec1acb7265": "ai-nvidia-nemo-guardrail does not score bodies itself; it delegates to NeMo Guardrails at /v1/guardrail/checks. Colang input · output rails (content safety · topic · jailbreak, …) decide allow/block. guarding_mode is INPUT · OUTPUT · BOTH."
+  "m.a4ec1acb7265": "ai-nvidia-nemo-guardrail does not score bodies itself; it delegates to NeMo Guardrails at /v1/guardrail/checks. Colang input · output rails (content safety · topic · jailbreak, …) decide allow/block. guarding_mode is INPUT · OUTPUT · BOTH.",
+  "m.03ce1c9e8ace": "Where it applies",
+  "m.e3ce0c4e971b": "Add custom regex rules",
+  "m.903f423c6215": "PII masking on requests and responses",
+  "m.29a7bdd82954": "Korean · English specialized recognizers",
+  "m.e8754b02cfcd": "Mask in bulk on the gateway path",
+  "m.93670a5a2023": "Character-level leak rate · lower is better",
+  "m.e9c5bae6e2a4": "A birth-date recognizer was added, so most DOB leaks are blocked.",
+  "m.8307aa7c4422": "Korean finance-field leak dropped sharply after the PR.",
+  "m.935468e8d8bf": "Secret detection for JWT · API keys and similar was strengthened.",
+  "m.cbff4d128aa6": "Metric is character-level leak % (lower is better). Source:",
+  "m.4d6595cd729b": "Share of PII characters left after masking (leak %) on public eval sets. Kong figures are after ai-pii-service PR #83.",
+  "m.2a6244b2edfa": "Apps and agents keep their SDK; attach AI PII Sanitizer on the Kong Route. Real provider keys and raw sensitive text stay behind the gateway.",
+  "m.e6a65f8219d0": "AI PII Sanitizer detects RRNs, accounts, phones, cards, secrets, and more before and after the LLM, then replaces them with placeholders. Korean honorific, bank, and birth-date recognizers fit domestic business documents.",
+  "m.9b9c95a343dd": "Eval set",
+  "m.9bcd3f8d4422": "Metric is character-level leak % (lower is better). Eval sets: Nemotron-PII · KDPII · Gretel finance. Source:"
 }

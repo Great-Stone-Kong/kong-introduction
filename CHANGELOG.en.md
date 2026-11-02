@@ -5,6 +5,13 @@
 
 ---
 
+## 2026.11.02.4a8a84dc
+### Added
+
+- AI Gateway > Features · demo > Feature overview: PII Sanitizer tab · Kong/OpenAI/Mozilla leak-rate comparison
+
+---
+
 ## 2026.10.29.9b351b37
 ### Added
 

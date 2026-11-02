@@ -4091,5 +4091,20 @@
   "m.d35d2f5e742c": "ai-proxy-advanced で Kimi モデルを他プロバイダと同じ方法で登録します。アジア太平洋のモデル標準化ニーズに対応します。",
   "m.11a08c4ecae5": "Advanced は Proxy の単一ターゲット代理を含みつつ、複数モデル選択と障害対応を1プラグインにまとめます。新規構成は Advanced のみを使います。",
   "m.e199a2fc554c": "フォワードプロキシ、カレンダー型 rate-limit ウィンドウ、MoonshotAI Kimi、内部 MCP バンドル、NVIDIA NeMo Guardrails プラグインを追加します。AI Gateway 2.0 バイナリでは ai-proxy が削除され、ai-proxy-advanced のみを使います。",
-  "m.a4ec1acb7265": "ai-nvidia-nemo-guardrail はリクエスト・レスポンス本文を自ら評価せず、NeMo Guardrails の /v1/guardrail/checks に委譲します。Colang で定義した input · output rail（コンテンツ安全 · トピック · jailbreak など）が許可・遮断を決めます。guarding_mode は INPUT · OUTPUT · BOTH です。"
+  "m.a4ec1acb7265": "ai-nvidia-nemo-guardrail はリクエスト・レスポンス本文を自ら評価せず、NeMo Guardrails の /v1/guardrail/checks に委譲します。Colang で定義した input · output rail（コンテンツ安全 · トピック · jailbreak など）が許可・遮断を決めます。guarding_mode は INPUT · OUTPUT · BOTH です。",
+  "m.03ce1c9e8ace": "適用位置",
+  "m.e3ce0c4e971b": "カスタム正規表現ルールを追加",
+  "m.903f423c6215": "リクエスト・レスポンスの個人情報マスキング",
+  "m.29a7bdd82954": "韓国語 · 英語特化認識器",
+  "m.e8754b02cfcd": "ゲートウェイ経路で一括マスキング",
+  "m.93670a5a2023": "文字単位の漏えい率比較 · 低いほど優秀",
+  "m.e9c5bae6e2a4": "生年月日認識器を追加し、ほぼ遮断します。",
+  "m.8307aa7c4422": "韓国語の金融フィールド漏えいが PR 後に大きく減りました。",
+  "m.935468e8d8bf": "JWT · API キーなどのシークレット検知を強化しました。",
+  "m.cbff4d128aa6": "指標は文字単位の leak %（低いほど優秀）です。出典:",
+  "m.4d6595cd729b": "外部公開評価セットでマスキング後に残った PII 文字比率（leak %）です。Kong の数値は ai-pii-service PR #83 改善後の結果です。",
+  "m.2a6244b2edfa": "アプリ · エージェントは SDK をそのまま使い、Kong Route に AI PII Sanitizer を付けるだけです。実際の provider キーと原文の機微情報はゲートウェイの後ろでのみ扱います。",
+  "m.e6a65f8219d0": "AI PII Sanitizer は LLM に送る前・戻った後に住民登録番号、口座、携帯電話、カード、シークレットなどを検知し、Placeholder に置換します。韓国語の敬称・口座・生年月日認識器を含め、国内業務文書にも合わせます。",
+  "m.9b9c95a343dd": "評価セット",
+  "m.9bcd3f8d4422": "指標は文字単位の leak %（低いほど優秀）です。評価セットは Nemotron-PII · KDPII · Gretel finance です。出典:"
 }
