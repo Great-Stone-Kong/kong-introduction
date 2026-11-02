@@ -1,6 +1,12 @@
-# Track deck sources, build output, changelog, release workflow, and this file.
+# Track deck sources, build output, changelog, release workflow, agent rules, and this file.
 *
 !.gitignore
+!AGENTS.md
+!CLAUDE.md
+!build.sh
+!.cursor/
+!.cursor/rules/
+!.cursor/rules/**
 !package.json
 !VERSION
 !kong-introduction.html
