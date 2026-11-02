@@ -113,6 +113,7 @@ npm run build        # kong-introduction.html + docs/index.html 생성 (VERSION 
 
 - 기준: `Korean Docs of Kong Design System [v1.3]/README.md`(로컬). 다크 그린(`#001408`) + electric lime(`#CCFF00`), Funnel Sans, sentence case, 이모지 · 보라 테마 · 카드 남발 지양.
 - 기존 소개 HTML의 CSS 변수 · 클래스와 충돌하면 **기존 패턴을 우선**하고, 새 UI는 디자인 시스템에 가깝게 맞춘다.
+- 글이 많은 섹션 · 문장 속 수치를 시각화할 때는 `Korean Docs of Kong Design System [v1.3]/guides/visual-elements.md`(시각 요소 카탈로그 E1–E16)를 먼저 읽는다. 섹션당 시각 앵커 1개, 라벨 대신 요지 한 문장, 원문은 `details.vr-more` 펼침, 덱에 이미 있는 `.vr-*` 패턴 재사용, 문서의 도식 점검 목록(행 정렬 · HA 수렴 · 왕복 경로 분리 · 선택 UX · 카운트업)을 따른다.
 - 아이콘은 그리기 전에 먼저 찾는다: `achive/kong-iconography/`(`svg/{name}.svg`, `icons.json`, [카탈로그](https://chuca.github.io/kong-iconography/)) → 디자인 시스템 `assets/icons/` → Kong 플러그인 문서 아이콘. `-1` 접미사는 변형본이며 기본은 접미사 없는 파일.
 - 새 클래스는 기존과 겹치지 않게 고유 접두사를 쓴다.
 
