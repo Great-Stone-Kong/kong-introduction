@@ -2865,6 +2865,19 @@ html[data-theme="light"] .vr-donut .s-dn{fill:#fff}html[data-theme="light"] .vr-
 .nctl .ncnt b{color:var(--heading)}
 /* 기타 */
 .vr-kpi p.dg{color:var(--danger-soft);font-weight:700}
+.vr-rw{position:relative;width:120px;height:120px}
+.vr-rw .vr-ring{position:absolute;inset:0}
+.vr-rn{position:absolute;inset:0;display:grid;place-items:center;font-size:26px;font-weight:800;color:var(--heading);font-variant-numeric:tabular-nums}
+.vr-rn i{font-style:normal}
+.vr-kpis .vr-ring .val{stroke-dasharray:0 var(--c);transition:stroke-dasharray 1.5s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--k,0)*.15s)}
+.vr-kpis.in .vr-ring .val{stroke-dasharray:var(--v) var(--c)}
+.vr-kpi .up i{font-style:normal;font-variant-numeric:tabular-nums}
+.vr-kpi .up{font-size:24px;margin:-2px 0 -6px}
+.vr-kpis .protos span{opacity:0;transform:scale(.6);transition:opacity .35s,transform .35s cubic-bezier(.3,1.6,.5,1)}
+.vr-kpis.in .protos span{opacity:1;transform:none}
+.vr-kpis.in .protos span:nth-child(2){transition-delay:.15s}.vr-kpis.in .protos span:nth-child(3){transition-delay:.3s}.vr-kpis.in .protos span:nth-child(4){transition-delay:.45s}
+@media (prefers-reduced-motion:reduce){.vr-kpis .vr-ring .val{transition:none}.vr-kpis .protos span{transition:none}}
+@media print{.vr-kpis .vr-ring .val{stroke-dasharray:var(--v) var(--c)}.vr-kpis .protos span{opacity:1;transform:none}}
 .btn.btn-inl{padding:2px 10px;font-size:12.5px;line-height:1.55;vertical-align:baseline}
 #cmp-tabs{position:sticky;top:calc(var(--top) + var(--cmp-h2,70px));z-index:19;background:var(--navy);margin:0;padding:10px 0 12px;border-bottom:1px solid var(--line)}
 #i-cmp #cmp-panes{margin-top:14px}
@@ -3129,7 +3142,7 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
     <svg id="growsvg" viewBox="0 0 2000 1070" role="img" aria-label="시대별 API 증가 개념도"></svg>
     <p class="cap">도형의 크기는 기존 인프라·서비스 한 단위의 크기입니다. 메인프레임 한 대가 차지하던 자리를 PC, 웹 서버, 클라우드 인스턴스, 마이크로서비스, 그리고 AI 에이전트가 채우면서 단위는 작아지고, 그 사이를 잇는 API는 폭증합니다.</p>
   </div>
-  <div class="vr-kpis"><div class="vr-kpi"><span class="tag">보이지 않는 API</span><svg class="vr-ring" viewBox="0 0 132 132" aria-hidden="true"><circle cx="66.0" cy="66.0" r="58.0" class="trk" stroke-width="12"/><circle cx="66.0" cy="66.0" r="58.0" class="val" stroke-width="12" stroke-dasharray="182.2 364.4" transform="rotate(-90 66.0 66.0)"/><text x="66.0" y="74.0" text-anchor="middle">50%+</text></svg><h4>관리되지 않는 API</h4><p>엔터프라이즈 API의 절반 이상 (2025)</p></div><div class="vr-kpi"><span class="tag">제각각의 구현</span><div class="protos"><span>REST</span><span>GraphQL</span><span>gRPC</span><span>Event</span></div><h4>하이브리드 · 멀티</h4><p>환경마다 다른 구현과 사용 사례</p></div><div class="vr-kpi"><span class="tag">새로운 공격 벡터</span><svg class="vr-ring dg" viewBox="0 0 132 132" aria-hidden="true"><circle cx="66.0" cy="66.0" r="58.0" class="trk" stroke-width="12"/><circle cx="66.0" cy="66.0" r="58.0" class="val" stroke-width="12" stroke-dasharray="182.2 364.4" transform="rotate(-90 66.0 66.0)"/><text x="66.0" y="74.0" text-anchor="middle">50%</text></svg><h4>최근 12개월 API 보안 사고</h4><p class="dg">2030년까지 공격 548% 증가 예측</p></div><div class="vr-kpi"><span class="tag">모든 거래가 중요</span><svg class="vr-ring" viewBox="0 0 132 132" aria-hidden="true"><circle cx="66.0" cy="66.0" r="58.0" class="trk" stroke-width="12"/><circle cx="66.0" cy="66.0" r="58.0" class="val" stroke-width="12" stroke-dasharray="295.2 364.4" transform="rotate(-90 66.0 66.0)"/><text x="66.0" y="74.0" text-anchor="middle">81%</text></svg><h4>다운 1시간당 3.8억원+ 손실</h4><p>응답 기업 비율</p></div></div>
+  <div class="vr-kpis rv"><div class="vr-kpi" style="--k:0"><span class="tag">보이지 않는 API</span><div class="vr-rw"><svg class="vr-ring" viewBox="0 0 132 132" aria-hidden="true"><circle cx="66" cy="66" r="58" class="trk" stroke-width="12"/><circle cx="66" cy="66" r="58" class="val" stroke-width="12" style="--v:182.2;--c:364.4" transform="rotate(-90 66 66)"/></svg><span class="vr-rn"><i data-from="0" data-to="50" data-suffix="%+" data-dur="1500">50%+</i></span></div><h4>엔터프라이즈 API 절반 이상이 관리 밖</h4><p>2025년 보고 기준 · 관리 체계 밖에서 운영되는 API</p></div><div class="vr-kpi" style="--k:1"><span class="tag">제각각의 구현</span><div class="protos"><span>REST</span><span>GraphQL</span><span>gRPC</span><span>Event</span></div><h4>프로토콜 · 환경마다 다른 구현</h4><p>REST · GraphQL · gRPC · 이벤트마다 인증 · 정책이 따로 운영됨</p></div><div class="vr-kpi" style="--k:2"><span class="tag">새로운 공격 벡터</span><div class="vr-rw"><svg class="vr-ring dg" viewBox="0 0 132 132" aria-hidden="true"><circle cx="66" cy="66" r="58" class="trk" stroke-width="12"/><circle cx="66" cy="66" r="58" class="val" stroke-width="12" style="--v:182.2;--c:364.4" transform="rotate(-90 66 66)"/></svg><span class="vr-rn"><i data-from="0" data-to="50" data-suffix="%" data-dur="1500">50%</i></span></div><h4>기업 절반이 최근 1년 내 API 보안 사고</h4><div class="up"><i data-from="0" data-to="548" data-suffix="%" data-dur="1800">548%</i></div><p class="dg">2030년까지 API 공격 증가 예측</p></div><div class="vr-kpi" style="--k:3"><span class="tag">모든 거래가 중요</span><div class="vr-rw"><svg class="vr-ring" viewBox="0 0 132 132" aria-hidden="true"><circle cx="66" cy="66" r="58" class="trk" stroke-width="12"/><circle cx="66" cy="66" r="58" class="val" stroke-width="12" style="--v:295.2;--c:364.4" transform="rotate(-90 66 66)"/></svg><span class="vr-rn"><i data-from="0" data-to="81" data-suffix="%" data-dur="1500">81%</i></span></div><h4>기업 81%가 다운 1시간에 3.8억원+ 손실</h4><p>응답 기업 기준 · 장애 1시간이 곧 매출 손실</p></div></div>
   <div class="callout" data-show-lang="ko"><b>한국 기업이 마주한 두 개의 벽.</b> 속도(개발자와 현업은 이미 여러 LLM과 코딩 에이전트를 쓰고 있습니다)와 통제(개인정보보호법, 금융권 망분리, 감사 요건). 둘 중 하나를 고르는 문제가 아닙니다. Kong은 트래픽 계층에서 둘을 동시에 해결합니다.</div>
 </section>
 
