@@ -1678,5 +1678,83 @@
     "en": "Netskope for risk judgment (detect · classify · policy); Kong for production connectivity · enforcement.",
     "ja": "Netskopeはリスク判断（検知・分類・ポリシー）、Kongは本番接続・執行。",
     "zh": "Netskope 负责风险判断（检测 · 分类 · 策略）；Kong 负责生产连接 · 执行。"
+  },
+  "u.a7bab755924f": {
+    "match": "Data Platform 모든 팀과 앱이 먼저 해당 플랫폼에 온보딩해야 통제됩니다. Databricks와 Snowflake를 함께 쓰면 정책과 감사가 둘로 나뉩니다.",
+    "en": "<b>Data Platform</b> Every team and app must onboard to the platform before it can be governed. Running Databricks and Snowflake together splits policy and audit in two.",
+    "ja": "<b>Data Platform</b> すべてのチームとアプリは、先にそのプラットフォームへオンボーディングしないと統制されません。DatabricksとSnowflakeを併用すると、ポリシーと監査が二つに分かれます。",
+    "zh": "<b>Data Platform</b> 所有团队与应用须先接入该平台才能受管控。同时使用 Databricks 与 Snowflake 时，策略与审计会被一分为二。"
+  },
+  "u.d51247d0662c": {
+    "match": "Kong 데이터 플랫폼에 중립적입니다. 클라우드 · 온프레미스 · 모델 프로바이더 · 데이터 플랫폼을 하나의 정책으로 다룹니다.",
+    "en": "<b>Kong</b> Neutral to any data platform. One policy covers clouds, on-prem, model providers, and data platforms.",
+    "ja": "<b>Kong</b> データプラットフォームに中立です。クラウド・オンプレミス・モデルプロバイダー・データプラットフォームを一つのポリシーで扱います。",
+    "zh": "<b>Kong</b> 对数据平台保持中立，以统一策略覆盖云、本地部署、模型提供商与数据平台。"
+  },
+  "u.d529ed08a7ae": {
+    "match": "Data Platform 플랫폼 내부의 관리형 서비스로만 동작합니다. 앱 옆에 데이터 플레인을 둘 수 없고, 인증은 플랫폼 계정 · 토큰 체계를 따릅니다.",
+    "en": "<b>Data Platform</b> Runs only as a managed service inside the platform. You cannot place a data plane next to your apps, and identity follows the platform's own accounts and tokens.",
+    "ja": "<b>Data Platform</b> プラットフォーム内のマネージドサービスとしてのみ動作します。アプリの隣にデータプレーンを置けず、認証はプラットフォームのアカウント・トークン体系に従います。",
+    "zh": "<b>Data Platform</b> 仅作为平台内的托管服务运行，无法将数据平面部署在应用旁，认证沿用平台自身的账号与令牌体系。"
+  },
+  "u.f3c2a76b6c98": {
+    "match": "Kong 자체호스팅 · 하이브리드 · SaaS · 에어갭, decK · Terraform · Operator 기반 IaC, OIDC · mTLS 등 기존 IdP 연동, 10년 이상 검증된 게이트웨이 성능.",
+    "en": "<b>Kong</b> Self-hosted, hybrid, SaaS, or air-gapped; IaC with decK, Terraform, and Operator; existing IdP integration via OIDC and mTLS; gateway performance proven over more than a decade.",
+    "ja": "<b>Kong</b> セルフホスト・ハイブリッド・SaaS・エアギャップ、decK・Terraform・OperatorによるIaC、OIDC・mTLSなど既存IdPとの連携、10年以上実証されたゲートウェイ性能。",
+    "zh": "<b>Kong</b> 自托管、混合、SaaS、气隙部署；基于 decK、Terraform、Operator 的 IaC；通过 OIDC、mTLS 等对接现有 IdP；十余年验证的网关性能。"
+  },
+  "u.e25ac36a7cb8": {
+    "match": "Data Platform AI 트래픽만 다룹니다. 에이전트가 실제로 호출하는 기존 API · 이벤트는 별도 게이트웨이와 별도 감사 체계가 필요합니다.",
+    "en": "<b>Data Platform</b> Governs AI traffic only. The existing APIs and events that agents actually call need a separate gateway and a separate audit trail.",
+    "ja": "<b>Data Platform</b> AIトラフィックのみを扱います。エージェントが実際に呼び出す既存のAPI・イベントには、別のゲートウェイと別の監査体系が必要です。",
+    "zh": "<b>Data Platform</b> 只治理 AI 流量。智能体实际调用的现有 API 与事件需要另一套网关和审计体系。"
+  },
+  "u.3fede5392a38": {
+    "match": "Kong LLM · MCP · A2A · API · Event를 하나의 정책 모델과 하나의 감사 추적으로 관리합니다.",
+    "en": "<b>Kong</b> Manages LLM, MCP, A2A, API, and event traffic with one policy model and one audit trail.",
+    "ja": "<b>Kong</b> LLM・MCP・A2A・API・Eventを一つのポリシーモデルと一つの監査証跡で管理します。",
+    "zh": "<b>Kong</b> 以统一的策略模型与审计追踪管理 LLM、MCP、A2A、API 与事件流量。"
+  },
+  "u.61506d535bdd": {
+    "match": "Databricks 테이블에서 모델 · 에이전트까지 이어지는 권한 · 계보, 시스템 테이블 기반 비용 귀속, QPM · TPM 레이트리밋, 트래픽 분할 · 폴백.",
+    "en": "<b>Databricks</b> Permissions and lineage from tables to models and agents, cost attribution via system tables, QPM and TPM rate limits, traffic splitting and fallbacks.",
+    "ja": "<b>Databricks</b> テーブルからモデル・エージェントまでつながる権限・リネージ、システムテーブルによるコスト帰属、QPM・TPMレートリミット、トラフィック分割・フォールバック。",
+    "zh": "<b>Databricks</b> 从表到模型、智能体的权限与血缘，基于系统表的成本归属，QPM 与 TPM 速率限制，流量拆分与回退。"
+  },
+  "u.14ec80befdbd": {
+    "match": "Databricks 지원 리전의 Databricks 워크스페이스 안에서만 동작합니다. 레이트리밋은 응답 후 집계되어 동시 요청 버스트가 한도를 넘을 수 있고, 서비스당 한도 규칙은 20개(그룹 5개)로 제한됩니다.",
+    "en": "<b>Databricks</b> Works only inside a Databricks workspace in a supported region. Rate limits are counted after responses, so concurrent bursts can exceed the limit, and each service allows at most 20 rate limits (5 for groups).",
+    "ja": "<b>Databricks</b> 対応リージョンのDatabricksワークスペース内でのみ動作します。レートリミットはレスポンス後に集計されるため同時リクエストのバーストが上限を超えることがあり、サービスあたりのルールは20個(グループ5個)までです。",
+    "zh": "<b>Databricks</b> 仅在受支持区域的 Databricks 工作区内运行。速率限制在响应后计数，并发突发可能超出限额；每个服务最多 20 条限流规则（组 5 条）。"
+  },
+  "u.82c9e2ef2e96": {
+    "match": "Kong 앱이 있는 어디에나 데이터 플레인을 배치하고, Redis 기반 클러스터 카운터로 노드 간 한도를 일관되게 집행합니다.",
+    "en": "<b>Kong</b> Places data planes wherever your apps run and enforces limits consistently across nodes with Redis-backed cluster counters.",
+    "ja": "<b>Kong</b> アプリがある場所ならどこにでもデータプレーンを配置し、Redisベースのクラスターカウンターでノード間の上限を一貫して適用します。",
+    "zh": "<b>Kong</b> 可将数据平面部署在应用所在的任何位置，并通过基于 Redis 的集群计数器在各节点间一致地执行限额。"
+  },
+  "u.d9d0bf8bb25b": {
+    "match": "Snowflake 계정별 게이트웨이 자동 생성, 역할 기반 GRANT · REVOKE, 요청별 트레이스 · 토큰 · 지연, 팀 · 사용자 비용 귀속과 예산 연동 차단.",
+    "en": "<b>Snowflake</b> Gateway auto-created per account, role-based GRANT and REVOKE, per-request traces, tokens, and latency, cost attribution by team and user, and budget-driven cutoff.",
+    "ja": "<b>Snowflake</b> アカウントごとのゲートウェイ自動作成、ロールベースのGRANT・REVOKE、リクエスト単位のトレース・トークン・レイテンシー、チーム・ユーザー別のコスト帰属と予算連動の遮断。",
+    "zh": "<b>Snowflake</b> 每个账号自动创建网关，基于角色的 GRANT 与 REVOKE，按请求的追踪、Token 与延迟，按团队与用户归属成本并按预算阻断。"
+  },
+  "u.2ed84b392050": {
+    "match": "Snowflake Public Preview 단계이며 Cortex AI 추론 트래픽이 대상입니다. 게이트웨이 가드레일 · 동적 라우팅 · MCP Tools는 예정 또는 Private Preview이고, 계정당 게이트웨이는 하나입니다.",
+    "en": "<b>Snowflake</b> In Public Preview and scoped to Cortex AI inference traffic. Gateway guardrails, dynamic routing, and MCP Tools are upcoming or in Private Preview, and there is one gateway per account.",
+    "ja": "<b>Snowflake</b> Public Preview段階で、対象はCortex AIの推論トラフィックです。ゲートウェイのガードレール・動的ルーティング・MCP Toolsは予定またはPrivate Previewで、ゲートウェイはアカウントごとに一つです。",
+    "zh": "<b>Snowflake</b> 处于 Public Preview 阶段，范围为 Cortex AI 推理流量。网关护栏、动态路由与 MCP Tools 尚在规划或 Private Preview 中，每个账号仅有一个网关。"
+  },
+  "u.b7ffb5d3ad8b": {
+    "match": "Kong 15+ 프로바이더 라우팅 · 시맨틱 캐시 · 가드레일 · MCP · A2A를 GA 기능으로 제공하고, 환경 · 팀별로 게이트웨이를 분리할 수 있습니다.",
+    "en": "<b>Kong</b> Ships routing across 15+ providers, semantic caching, guardrails, MCP, and A2A as GA features, with separate gateways per environment or team.",
+    "ja": "<b>Kong</b> 15以上のプロバイダーへのルーティング・セマンティックキャッシュ・ガードレール・MCP・A2AをGA機能として提供し、環境・チームごとにゲートウェイを分離できます。",
+    "zh": "<b>Kong</b> 以 GA 功能提供 15+ 提供商路由、语义缓存、护栏、MCP 与 A2A，并可按环境或团队拆分网关。"
+  },
+  "u.fbdddd8f19f4": {
+    "match": "범주 · Data Platform AI Gateway. Databricks Unity Gateway와 Snowflake Cortex AI Gateway는 데이터 플랫폼이 자사 AI 워크로드를 위해 제공하는 거버넌스 계층입니다. Kong은 데이터 플랫폼까지 포함한 조직 전체의 AI · API 트래픽을 하나의 정책으로 다루는 중립 연결 계층입니다. 기능 유무 비교이며 품질 우열을 뜻하지 않습니다.",
+    "en": "<b>Category · Data platform AI gateway.</b> Databricks Unity Gateway and Snowflake Cortex AI Gateway are governance layers that data platforms provide for their own AI workloads. Kong is a neutral connectivity layer that governs all AI and API traffic across the organization, data platforms included, with one policy. This compares feature availability, not quality.",
+    "ja": "<b>カテゴリ・Data Platform AI Gateway。</b> Databricks Unity GatewayとSnowflake Cortex AI Gatewayは、データプラットフォームが自社のAIワークロード向けに提供するガバナンスレイヤーです。Kongはデータプラットフォームを含む組織全体のAI・APIトラフィックを一つのポリシーで扱う中立的な接続レイヤーです。機能の有無の比較であり、品質の優劣を意味しません。",
+    "zh": "<b>类别 · 数据平台 AI Gateway。</b> Databricks Unity Gateway 与 Snowflake Cortex AI Gateway 是数据平台为自身 AI 工作负载提供的治理层。Kong 是中立的连接层，以统一策略治理包括数据平台在内的全组织 AI 与 API 流量。此处比较功能有无，不代表质量优劣。"
   }
 }
