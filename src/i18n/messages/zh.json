@@ -4322,5 +4322,21 @@
   "m.c03522d596ff": "仅作废 · 更换该虚拟密钥",
   "m.688200c48345": "放行",
   "m.8d948c0d4bf3": "放行 · 拦截对比",
-  "m.068264211b5a": "附加容器："
+  "m.068264211b5a": "附加容器：",
+  "m.8ed4ce09a3f8": "商用 · SaaS",
+  "m.739926f5d155": "适合 API7 的情况",
+  "m.5da974f93659": "限流（令牌 · 请求）",
+  "m.f8e0381d7d33": "Kong：内置与厂商集成",
+  "m.0d02b171d9c0": "企业与 APIM UX",
+  "m.7796721c7a5b": "基于意图（提示/嵌入）的路由",
+  "m.4be6f48e1e51": "IBM SaaS ≈ AWS 同区域",
+  "m.b0616dc072fa": "声明式配置 · IaC / GitOps",
+  "m.055adc78655c": "入站认证（OIDC/mTLS/JWT/Key）",
+  "m.ec5e4836d91c": "SaaS · Software · Cloud Pak · 一体机",
+  "m.18e459827147": "Kong decK · 官方 Terraform · IBM 缺少官方 TF/增量 sync",
+  "m.7abeae2cd575": "托管快速落地、多云 DP、Global DNS、统一分析 · 门户 · 计量",
+  "m.2a9084686e93": "API7：mcp-bridge + 商用管理 · IBM：含 Interact 路径时部分支持",
+  "m.8692091aca03": "保留传统 B2B/一体机 APIM，外部/AI/代理流量治理用 Kong",
+  "m.3ea4f59d194d": "以 APISIX 生态与轻量自托管为主，对企业 SLA、AI Agent、全球案例要求较低时",
+  "m.45d343065d27": "以 SOAP/WSDL · DMZ 一体机、Product/Catalog UI、Drupal 门户、IBM iPaaS/CP4I 套件为主"
 }

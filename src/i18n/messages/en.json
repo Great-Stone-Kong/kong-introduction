@@ -4322,5 +4322,21 @@
   "m.c03522d596ff": "Revoke and replace that virtual key only",
   "m.688200c48345": "Allowed",
   "m.8d948c0d4bf3": "Allow vs. block",
-  "m.068264211b5a": "Sidecar container:"
+  "m.068264211b5a": "Sidecar container:",
+  "m.8ed4ce09a3f8": "Commercial · SaaS",
+  "m.739926f5d155": "When API7 fits",
+  "m.5da974f93659": "Rate limiting (tokens · requests)",
+  "m.f8e0381d7d33": "Kong: built-in and vendor integrations",
+  "m.0d02b171d9c0": "Enterprise and APIM UX",
+  "m.7796721c7a5b": "Intent (prompt/embedding) based routing",
+  "m.4be6f48e1e51": "IBM SaaS ≈ same AWS region",
+  "m.b0616dc072fa": "Declarative config · IaC / GitOps",
+  "m.055adc78655c": "Inbound auth (OIDC/mTLS/JWT/Key)",
+  "m.ec5e4836d91c": "SaaS · Software · Cloud Pak · appliance",
+  "m.18e459827147": "Kong decK · official Terraform · IBM lacks official TF / incremental sync",
+  "m.7abeae2cd575": "Fast managed adoption, multi-cloud DP, Global DNS, unified analytics · portal · metering",
+  "m.2a9084686e93": "API7: mcp-bridge + commercial mgmt · IBM: partial with Interact paths",
+  "m.8692091aca03": "Keep legacy B2B/appliance APIM; govern external/AI/agent traffic with Kong",
+  "m.3ea4f59d194d": "APISIX ecosystem and light self-hosting first; lower need for enterprise SLA, AI Agent, global references",
+  "m.45d343065d27": "SOAP/WSDL · DMZ appliances, Product/Catalog UI, Drupal portal, IBM iPaaS/CP4I packages"
 }

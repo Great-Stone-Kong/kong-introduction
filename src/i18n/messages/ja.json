@@ -4322,5 +4322,21 @@
   "m.c03522d596ff": "該当の仮想キーのみ廃棄 · 交換",
   "m.688200c48345": "許可",
   "m.8d948c0d4bf3": "許可 · ブロックの比較",
-  "m.068264211b5a": "付帯コンテナ:"
+  "m.068264211b5a": "付帯コンテナ:",
+  "m.8ed4ce09a3f8": "商用 · SaaS",
+  "m.739926f5d155": "API7 が適する場合",
+  "m.5da974f93659": "レートリミット (トークン·リクエスト)",
+  "m.f8e0381d7d33": "Kong は専用・ベンダー連携",
+  "m.0d02b171d9c0": "エンタープライズおよび APIM UX",
+  "m.7796721c7a5b": "意図 (プロンプト/埋め込み) ベースルーティング",
+  "m.4be6f48e1e51": "IBM SaaS ≈ AWS 同一リージョン",
+  "m.b0616dc072fa": "宣言的設定 · IaC / GitOps",
+  "m.055adc78655c": "インバウンド認証 (OIDC/mTLS/JWT/Key)",
+  "m.ec5e4836d91c": "SaaS · Software · Cloud Pak · アプライアンス",
+  "m.18e459827147": "Kong decK・公式 Terraform · IBM は公式 TF・増分 sync が制限",
+  "m.7abeae2cd575": "マネージドで迅速導入、マルチクラウド DP、Global DNS、統合分析・ポータル・メータリング",
+  "m.2a9084686e93": "API7 は mcp-bridge + 商用管理 · IBM は Interact 経路を含む場合に部分",
+  "m.8692091aca03": "レガシー B2B・アプライアンス APIM は維持し、外部/AI/エージェント交通のガバナンスは Kong",
+  "m.3ea4f59d194d": "APISIX エコシステム・軽量セルフホスト中心で、エンタープライズ SLA・AI Agent・グローバル実績の要求が低い場合",
+  "m.45d343065d27": "SOAP/WSDL・DMZ アプライアンス、Product/Catalog UI、Drupal ポータル、IBM iPaaS/CP4I パッケージ中心"
 }
