@@ -4,15 +4,33 @@
 - 路径格式为 **上级菜单 > 章节 > 条目**。
 
 ---
+
+## Unreleased
+
+### 新增
+
+- AI Gateway 2.0 > 新功能 > MCP 捆绑与 1.x listener 模式对比
+- AI Gateway > AI GW 1.0 & 2.0：背景 · 对称比较 · 选择标准 · 2.0 链接
+- AI Gateway > 切换方式：按工具条目补充
+
+### 变更
+
+- AI Gateway > 核心功能：插件用语改为策略与请求流程
+- AI Gateway > 竞品比较：按标签页增加支持项数量汇总条
+- 基础设施 > 推荐规模：按规模选择标注所需资源
+- AI Gateway > 工作原理：拆为切换方式 · 代表性功能
+- AI Gateway > 切换方式：路径统一为 /coding-agents · 联调配置语法高亮
+
+### 删除
+
+- Agent Gateway > 概览 > 2.0 Agent 实体说明框
+
 ## 2026.11.02.6ae86a09
 ### 新增
 - AI Gateway > 竞品比较 > Data Platform（Databricks, Snowflake）
 - 语言：繁体中文（`zh-Hant`，台湾/香港用语）· 简体为 `zh-Hans`
 
 ### 变更
-
-- AI Gateway > 核心功能
-  - 标题、正文与流程用语由插件改为策略与请求流程
 
 - AI Gateway > 代表性功能概览
   - PII Sanitizer：评测集对比合并为纵向分组柱状图 · 按类型泄漏率 · 整理字段含义

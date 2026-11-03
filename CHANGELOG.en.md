@@ -5,15 +5,32 @@
 
 ---
 
+## Unreleased
+
+### Added
+
+- AI Gateway 2.0 > New features > MCP bundling vs 1.x listener mode
+- AI Gateway > AI GW 1.0 & 2.0: background · side-by-side comparison · selection criteria · 2.0 link
+- AI Gateway > Switching approach: per-tool integration entries
+
+### Changed
+
+- AI Gateway > Core features: retitle copy from plugins to policies and request flow
+- AI Gateway > Competitive comparison: summary bars for supported-item counts per tab
+- Infrastructure > Recommended sizing: required resources by sizing choice
+- AI Gateway > How it works: split into switching approach · key features
+- AI Gateway > Switching approach: unify paths to /coding-agents · syntax highlight for integration configs
+
+### Removed
+
+- Agent Gateway > Overview > 2.0 Agent entity callout box
+
 ## 2026.11.02.6ae86a09
 ### Added
 - AI Gateway > Competitive comparison > Data Platform (Databricks, Snowflake)
 - Language: Traditional Chinese (`zh-Hant`, TW/HK phrasing) · Simplified as `zh-Hans`
 
 ### Changed
-
-- AI Gateway > Core features
-  - Retitle copy from plugins to policies and request flow
 
 - AI Gateway > Feature overview
   - PII Sanitizer: one vertical grouped bar chart · per-type leak rates · type meanings

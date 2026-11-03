@@ -5,15 +5,32 @@
 
 ---
 
+## Unreleased
+
+### 追加
+
+- AI Gateway 2.0 > 新機能 > MCP バンドルと 1.x listener モードの比較
+- AI Gateway > AI GW 1.0 & 2.0: 背景 · 対称比較 · 選択基準 · 2.0 リンク
+- AI Gateway > 切り替え方式: 個別ツール項目を追加
+
+### 変更
+
+- AI Gateway > コア機能: プラグイン表記をポリシー・リクエストフローに整理
+- AI Gateway > 競合比較: タブ別サポート項目数の要約バーを追加
+- インフラ構成 > 推奨サイジング: サイジング選択に応じた必要リソース表示
+- AI Gateway > 動作原理: 切り替え方式 · 代表機能セクションに分離
+- AI Gateway > 切り替え方式: パスを /coding-agents に統一 · 連携設定の構文ハイライト
+
+### 削除
+
+- Agent Gateway > 概要 > 2.0 Agent エンティティ案内ボックス
+
 ## 2026.11.02.6ae86a09
 ### 追加
 - AI Gateway > 競合比較 > Data Platform（Databricks, Snowflake）
 - 言語: 繁体字中国語（`zh-Hant`、台湾/香港表現）· 簡体を `zh-Hans` に区分
 
 ### 変更
-
-- AI Gateway > コア機能
-  - タイトル・本文・フロー表記をプラグインからポリシー・リクエストフローに整理
 
 - AI Gateway > 代表機能概要
   - PII Sanitizer: 評価セット比較を縦グループ棒グラフに統合 · タイプ別漏えい率 · 項目の意味を整理
