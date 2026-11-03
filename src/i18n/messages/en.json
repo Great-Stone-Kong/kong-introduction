@@ -4877,5 +4877,20 @@
   "m.0db136d84a3f": "The setting appears after Help → Troubleshooting → Enable Developer Mode",
   "m.a6e653aeadae": "Include the /coding-agents path; Cursor appends /chat/completions",
   "m.4553f4474759": "Coding agents and chat tools work the same way as SDKs. Each tool holds only a Kong-issued consumer key, and Kong injects the real provider key from the AI Model Provider. Different request formats are split by Kong AI Model paths.",
-  "m.56fd81a1dde2": "Based on AI Gateway 2.2+ (Konnect). Kong Key Auth accepts apikey, x-api-key, and x-goog-api-key headers, and a global Pre-Function policy copies the Authorization: Bearer value into apikey. Hosts, keys, and model names in the mockups are examples; actual paths and headers follow your Kong AI Model configuration. Per Anthropic's terms, Claude.ai Team seat and session tokens are not relayed through the Gateway. Source: Kong AI Cookbook · AI Tool Integration recipes (Claude Code, Codex CLI, Gemini CLI, Claude Desktop, Cursor, LibreChat, Open WebUI)."
+  "m.56fd81a1dde2": "Based on AI Gateway 2.2+ (Konnect). Kong Key Auth accepts apikey, x-api-key, and x-goog-api-key headers, and a global Pre-Function policy copies the Authorization: Bearer value into apikey. Hosts, keys, and model names in the mockups are examples; actual paths and headers follow your Kong AI Model configuration. Per Anthropic's terms, Claude.ai Team seat and session tokens are not relayed through the Gateway. Source: Kong AI Cookbook · AI Tool Integration recipes (Claude Code, Codex CLI, Gemini CLI, Claude Desktop, Cursor, LibreChat, Open WebUI).",
+  "m.a1af236d6e2e": "Auth · policy · logs",
+  "m.6393180995a3": "Kong key · OAuth token",
+  "m.6fea717a1f0d": "Apps · AI tools · MCP clients",
+  "m.bc9b35e2ed4a": "LLM providers · APIs · MCP servers",
+  "m.cc7e53e1a8e4": "MCP server · AI MCP Server",
+  "m.4c882405b8f6": "Provider key injection · per-tool ACL",
+  "m.6f395dd33da1": "Prompt and response-handling code stay the same",
+  "m.b5a9561f9f6b": "MCP servers you already run sit behind the same OAuth · ACL boundary",
+  "m.d001e323156d": "Unauthorized tools are dropped from the list; direct calls get a 403 from Kong",
+  "m.3b2801a27f79": "Apps hold only a Kong Consumer key; Kong keeps the real provider key",
+  "m.3daa4a769458": "Each team's REST APIs become MCP tools; a listener aggregates them into one MCP server",
+  "m.075fc167f3fc": "Clients sign in with OAuth 2.1 + PKCE; the IdP groups claim drives per-tool ACLs",
+  "m.2ee95225c41f": "Apps and AI tools keep the SDKs, CLIs, chat tools and MCP clients they already use. Point the endpoint at Kong AI Gateway and authentication, guardrails, routing, cost control and logging apply to every request. Clients hold only a Kong-issued key or OAuth token; Kong keeps the real provider keys. Pick an item to see its setup and a screen mockup.",
+  "m.2e8e8434482e": "Based on AI Gateway 2.2+ (Konnect). Kong Key Auth accepts the apikey, x-api-key and x-goog-api-key headers, and a global Pre-Function policy copies the Authorization: Bearer value into apikey. MCP is configured with an AI MCP Server and an AI Auth Strategy (OAuth 2.1). Addresses, keys and model names in the mockups are examples; actual paths and headers follow your Kong configuration. Claude.ai team seat and session tokens are not relayed through the Gateway, per Anthropic's terms. Source: Kong AI Cookbook · AI Tool Integration · Secure Internal MCP Gateway recipes.",
+  "m.d1a2b7f9f77d": "MCP server"
 }

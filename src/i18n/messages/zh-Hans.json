@@ -4877,5 +4877,20 @@
   "m.0db136d84a3f": "启用 Help → Troubleshooting → Enable Developer Mode 后显示设置菜单",
   "m.a6e653aeadae": "Base URL 需包含 /coding-agents 路径,Cursor 会追加 /chat/completions",
   "m.4553f4474759": "编码智能体和聊天工具与 SDK 的方式相同。工具中只放 Kong 颁发的 Consumer 密钥,真正的 provider 密钥由 Kong 从 AI Model Provider 注入。各工具不同的请求格式通过 Kong AI Model 的路径区分。",
-  "m.56fd81a1dde2": "基于 AI Gateway 2.2+(Konnect)。Kong Key Auth 接受 apikey · x-api-key · x-goog-api-key 头,全局 Pre-Function 策略会把 Authorization: Bearer 的值复制到 apikey。示意图中的地址 · 密钥 · 模型名均为示例,实际路径和头以 Kong AI Model 配置为准。根据 Anthropic 条款,Claude.ai 团队席位 · 会话令牌不经 Gateway 中转。来源:Kong AI Cookbook · AI Tool Integration 食谱(Claude Code · Codex CLI · Gemini CLI · Claude Desktop · Cursor · LibreChat · Open WebUI)。"
+  "m.56fd81a1dde2": "基于 AI Gateway 2.2+(Konnect)。Kong Key Auth 接受 apikey · x-api-key · x-goog-api-key 头,全局 Pre-Function 策略会把 Authorization: Bearer 的值复制到 apikey。示意图中的地址 · 密钥 · 模型名均为示例,实际路径和头以 Kong AI Model 配置为准。根据 Anthropic 条款,Claude.ai 团队席位 · 会话令牌不经 Gateway 中转。来源:Kong AI Cookbook · AI Tool Integration 食谱(Claude Code · Codex CLI · Gemini CLI · Claude Desktop · Cursor · LibreChat · Open WebUI)。",
+  "m.a1af236d6e2e": "认证 · 策略 · 日志",
+  "m.6393180995a3": "Kong 密钥 · OAuth 令牌",
+  "m.6fea717a1f0d": "应用 · AI 工具 · MCP 客户端",
+  "m.bc9b35e2ed4a": "LLM 提供商 · API · MCP 服务器",
+  "m.cc7e53e1a8e4": "MCP 服务器 · AI MCP Server",
+  "m.4c882405b8f6": "注入 provider 密钥 · 按工具 ACL",
+  "m.6f395dd33da1": "提示词与响应处理代码保持不变",
+  "m.b5a9561f9f6b": "已在运行的 MCP 服务器也置于同一 OAuth · ACL 边界之后",
+  "m.d001e323156d": "无权限的工具不会出现在列表中，直接调用会被 Kong 以 403 拦截",
+  "m.3b2801a27f79": "应用只持有 Kong Consumer 密钥，真实 provider 密钥由 Kong 保管",
+  "m.3daa4a769458": "将各团队的 REST API 转换为 MCP 工具，由 listener 聚合为一个 MCP 服务器",
+  "m.075fc167f3fc": "客户端通过 OAuth 2.1 + PKCE 登录，依据 IdP groups 声明按工具应用 ACL",
+  "m.2ee95225c41f": "应用和 AI 工具继续使用现有的 SDK、CLI、聊天工具和 MCP 客户端。只需将调用地址改为 Kong AI Gateway，认证、护栏、路由、成本控制和日志即可应用于每个请求。客户端只持有 Kong 签发的密钥或 OAuth 令牌，真实 provider 密钥由 Kong 保管。选择条目即可查看接入配置和界面示意。",
+  "m.2e8e8434482e": "基于 AI Gateway 2.2+（Konnect）。Kong Key Auth 接受 apikey、x-api-key、x-goog-api-key 请求头，全局 Pre-Function 策略将 Authorization: Bearer 的值复制到 apikey。MCP 通过 AI MCP Server 与 AI Auth Strategy（OAuth 2.1）配置。示意中的地址、密钥和模型名称仅为示例，实际路径与请求头以 Kong 配置为准。根据 Anthropic 条款，Claude.ai 团队席位与会话令牌不经 Gateway 中转。来源：Kong AI Cookbook · AI Tool Integration · Secure Internal MCP Gateway 配方。",
+  "m.d1a2b7f9f77d": "MCP 服务器"
 }

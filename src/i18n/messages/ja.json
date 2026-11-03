@@ -4877,5 +4877,20 @@
   "m.0db136d84a3f": "Help → Troubleshooting → Enable Developer Mode の後に設定メニューが表示",
   "m.a6e653aeadae": "Base URLに/coding-agentsパスを含め、Cursorが/chat/completionsを付与",
   "m.4553f4474759": "コーディングエージェントやチャットツールもSDKと同じ方式です。ツールにはKongが発行したConsumerキーだけを入れ、実際のproviderキーはKongがAI Model Providerから注入します。ツールごとに異なるリクエスト形式はKong AI Modelのパスで分けます。",
-  "m.56fd81a1dde2": "AI Gateway 2.2+(Konnect)基準です。Kong Key Authはapikey · x-api-key · x-goog-api-keyヘッダーを受け付け、グローバルPre-FunctionポリシーがAuthorization: Bearerの値をapikeyに移します。モックアップのアドレス · キー · モデル名は例で、実際のパスとヘッダーはKong AI Modelの構成に従います。Anthropicの規約によりClaude.aiのチームシート · セッショントークンはGatewayで中継しません。出典: Kong AI Cookbook · AI Tool Integrationレシピ(Claude Code · Codex CLI · Gemini CLI · Claude Desktop · Cursor · LibreChat · Open WebUI)。"
+  "m.56fd81a1dde2": "AI Gateway 2.2+(Konnect)基準です。Kong Key Authはapikey · x-api-key · x-goog-api-keyヘッダーを受け付け、グローバルPre-FunctionポリシーがAuthorization: Bearerの値をapikeyに移します。モックアップのアドレス · キー · モデル名は例で、実際のパスとヘッダーはKong AI Modelの構成に従います。Anthropicの規約によりClaude.aiのチームシート · セッショントークンはGatewayで中継しません。出典: Kong AI Cookbook · AI Tool Integrationレシピ(Claude Code · Codex CLI · Gemini CLI · Claude Desktop · Cursor · LibreChat · Open WebUI)。",
+  "m.a1af236d6e2e": "認証 · ポリシー · ログ",
+  "m.6393180995a3": "Kong キー · OAuth トークン",
+  "m.6fea717a1f0d": "アプリ · AI ツール · MCP クライアント",
+  "m.bc9b35e2ed4a": "LLM プロバイダー · API · MCP サーバー",
+  "m.cc7e53e1a8e4": "MCP サーバー · AI MCP Server",
+  "m.4c882405b8f6": "プロバイダーキー注入 · ツール単位 ACL",
+  "m.6f395dd33da1": "プロンプト · レスポンス処理のコードはそのまま",
+  "m.b5a9561f9f6b": "運用中の MCP サーバーも同じ OAuth · ACL の境界の内側に配置",
+  "m.d001e323156d": "権限のないツールは一覧から除外され、直接呼び出すと Kong が 403 で遮断",
+  "m.3b2801a27f79": "アプリには Kong Consumer キーのみ、実際のプロバイダーキーは Kong が保管",
+  "m.3daa4a769458": "チームごとの REST API を MCP ツールに変換し、listener が 1 つの MCP サーバーに集約",
+  "m.075fc167f3fc": "クライアントは OAuth 2.1 + PKCE でログインし、IdP の groups クレームでツール単位の ACL を適用",
+  "m.2ee95225c41f": "アプリと AI ツールは、今使っている SDK · CLI · チャットツール · MCP クライアントをそのまま使います。呼び出し先を Kong AI Gateway に変えるだけで、認証、ガードレール、ルーティング、コスト管理、ロギングがすべてのリクエストに適用されます。クライアントには Kong が発行したキーか OAuth トークンだけを置き、実際のプロバイダーキーは Kong が保管します。項目を選ぶと連携設定と画面モックアップを確認できます。",
+  "m.2e8e8434482e": "AI Gateway 2.2+(Konnect)基準です。Kong Key Auth は apikey · x-api-key · x-goog-api-key ヘッダーを受け付け、グローバル Pre-Function ポリシーが Authorization: Bearer の値を apikey に移します。MCP は AI MCP Server と AI Auth Strategy(OAuth 2.1)で構成します。モックアップのアドレス · キー · モデル名は例であり、実際のパスとヘッダーは Kong の構成に従います。Claude.ai のチーム席 · セッショントークンは Anthropic の規約上 Gateway で中継しません。出典: Kong AI Cookbook · AI Tool Integration · Secure Internal MCP Gateway レシピ。",
+  "m.d1a2b7f9f77d": "MCP サーバー"
 }
