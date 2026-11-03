@@ -20,6 +20,7 @@
 - AI Gateway > 동작 원리 : 전환 방식 · 대표 기능 섹션으로 분리
 - Kong 기업 소개 > 증명된 신뢰성 : 카드 순서를 처리량·지연 / 고객 수·경량성으로 재배치
 - 화면 배율 표시 : 브라우저 확대·축소 반영(실효 배율)
+- AI Gateway > 전환 방식 : 예시 호스트를 ai-gw.kong.ai로 통일 · Cursor 목업 Use OpenAI API Key off
 
 ### 삭제
 
