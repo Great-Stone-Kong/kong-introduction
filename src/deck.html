@@ -4047,15 +4047,10 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
   <h3 style="margin-top:28px">선택 기준</h3>
   <div class="a2pick">
     <div class="card yes rv"><h4>1.0 선택 기준</h4><p>이미 쓰는 Kong Gateway 위에 AI 경로를 올립니다. API와 LLM 트래픽을 한 DP에서 묶을 때 유리합니다.</p><ul><li>REST · gRPC 등 API와 AI를 같은 게이트웨이에서</li><li>기존 Gateway EE · Konnect Gateway 운영을 유지</li><li>플러그인 파이프라인 · 관측 스택을 그대로 재사용</li></ul></div>
-    <div class="card yes rv"><h4>2.0 선택 기준</h4><p>AI 자산을 1급 리소스로 관리하고, 바이너리·릴리스를 API Gateway와 나눕니다.</p><ul><li>Model · MCP · Agent를 엔티티로 선언 · GitOps</li><li>AI 전용 이미지와 릴리스 트레인 분리</li><li>Konnect AI Control Plane · Policy 중심 운영</li></ul></div>
+    <div class="card yes rv"><h4>2.0 선택 기준</h4><p>AI 자산을 1급 리소스로 관리하고, 바이너리·릴리스를 API Gateway와 나눕니다.</p><ul><li>Model · MCP · Agent를 엔티티로 선언 · GitOps</li><li>AI 전용 이미지와 릴리스 트레인 분리</li><li>Konnect AI Control Plane · Policy 중심 운영</li></ul>
+      <button type="button" class="btn s" style="margin-top:14px" onclick="go('ai2')">AI Gateway 2.0 확인</button></div>
   </div>
   <p class="note">둘은 우열이 아니라 운영 단위의 선택입니다. API Gateway(또는 1.0 플러그인 경로)와 AI Gateway 2.0 Data Plane을 역할별로 나란히 두는 구성도 일반적입니다.</p>
-  <div class="grid g2" style="margin-top:18px">
-    <div class="card hl"><span class="tag">AI Gateway 1.0</span><h3>통합 게이트웨이 경로</h3><p>이 페이지의 동작 원리 · 데모 · 사례가 1.0 기준 흐름입니다.</p>
-      <button type="button" class="btn s" onclick="go('ai','i-how')">동작 원리</button></div>
-    <div class="card hl"><span class="tag">AI Gateway 2.0</span><h3>전용 런타임 · 엔티티</h3><p>바이너리, 엔티티 모델, 배포, 비용 산정, 신규 기능을 다룹니다.</p>
-      <button type="button" class="btn s" onclick="go('ai2')">AI Gateway 2.0</button></div>
-  </div>
 </section>
 
 <section class="sec" id="i-how" data-title="동작 원리">
