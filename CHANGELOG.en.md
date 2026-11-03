@@ -5,7 +5,7 @@
 
 ---
 
-## Unreleased
+## 2026.11.03.6ae9ed14
 
 ### Added
 
@@ -18,8 +18,6 @@
 - AI Gateway > Core features: retitle copy from plugins to policies and request flow
 - AI Gateway > Competitive comparison: summary bars for supported-item counts per tab
 - Infrastructure > Recommended sizing: required resources by sizing choice
-- AI Gateway > How it works: split into switching approach · key features
-- AI Gateway > Switching approach: unify paths to /coding-agents · syntax highlight for integration configs
 
 ### Removed
 
