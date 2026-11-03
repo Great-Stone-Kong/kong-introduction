@@ -2890,6 +2890,79 @@ html[data-theme="light"] .vr-donut .s-dn{fill:#fff}html[data-theme="light"] .vr-
 #i-cmp #cmp-panes{margin-top:14px}
 #i2-cost .grid.g2>*{min-width:0}#i2-cost pre.code{overflow-x:auto}
 @media print{details.vr-more>summary{display:none}details.vr-more{border:0}#cmp-tabs{position:static}.nctl{display:none}}
+
+/* AI 도구 연동 (#i-how) */
+.ait-flow{display:grid;grid-template-columns:1fr 40px 1.2fr 40px 1fr;align-items:center;margin:14px 0 12px}
+.ait-flow .n{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-weight:800;color:var(--heading);text-align:center;font-size:14px}
+.ait-flow .n small{display:block;font-size:11.5px;font-weight:600;color:var(--g400);margin-top:3px}
+.ait-flow .n.k{border-color:var(--mark);box-shadow:0 0 16px var(--accent-glow)}
+.ait-flow i{height:0;border-top:2px dashed var(--mark);position:relative}
+.ait-flow i:after{content:"";position:absolute;right:-1px;top:-6px;border:5px solid transparent;border-left:7px solid var(--mark)}
+.ait-paths{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0 0 16px}
+.ait-paths div{padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);display:flex;flex-direction:column;gap:3px}
+.ait-paths code{font-family:var(--mono);font-size:12px;color:var(--accent);word-break:break-all}
+.ait-paths b{font-size:12.5px;color:var(--heading)}.ait-paths span{font-size:12px;color:var(--g400)}
+.ait{display:grid;grid-template-columns:200px minmax(0,1fr);gap:16px;margin:6px 0 14px}
+.ait-pick{display:flex;flex-direction:column;gap:12px}
+.ait-g{display:flex;flex-direction:column;gap:4px}
+.ait-g>span{font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--g400);margin-bottom:2px}
+.ait-g button{font-family:var(--font);text-align:left;padding:9px 12px 9px 30px;position:relative;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--heading);font-size:13.5px;font-weight:700;cursor:pointer;transition:border-color .15s,background .15s}
+.ait-g button:before{content:"";position:absolute;left:11px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;border:2px solid var(--g500)}
+.ait-g button:hover{border-color:var(--mark)}
+.ait-g button.on{background:var(--lime);border-color:var(--lime);color:var(--on-lime)}
+.ait-g button.on:before{border-color:var(--on-lime);background:var(--on-lime)}
+.ait-pane{display:none;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:16px}
+.ait-pane.on{display:grid;animation:aitIn .26s cubic-bezier(.2,.8,.2,1)}
+@keyframes aitIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.ait-l h4{margin:0 0 8px;font-size:20px;color:var(--heading)}
+.ait-meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.ait-meta span{display:flex;flex-direction:column;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+.ait-meta em{font-style:normal;font-size:10.5px;font-weight:800;color:var(--g400)}.ait-meta b{font-size:12px;color:var(--accent);font-family:var(--mono)}
+.ait-lb{font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--accent);margin:2px 0 6px}
+.ait .ait-cfg{margin:0;font-size:12px;white-space:pre-wrap;word-break:break-all}
+.ait-notes{margin:10px 0 0;padding-left:18px;font-size:13px;color:var(--g300)}
+.ait-notes li{margin:3px 0}
+.ait-win{border:1px solid var(--line2);border-radius:10px;overflow:hidden;background:#0d0f0e}
+.ait-tb{display:flex;align-items:center;gap:6px;padding:8px 10px;background:#1b1e1c;border-bottom:1px solid #2a2e2b}
+.ait-tb i{width:10px;height:10px;border-radius:50%;background:#3a3f3b}.ait-tb i:nth-child(1){background:#ff5f57}.ait-tb i:nth-child(2){background:#febc2e}.ait-tb i:nth-child(3){background:#28c840}
+.ait-tb span{margin-left:8px;font-size:11.5px;color:#9aa19b;font-family:var(--mono)}
+.ait-term{margin:0;padding:14px;font-family:var(--mono);font-size:12px;line-height:1.7;color:#d7ddd6;white-space:pre-wrap;word-break:break-all;background:#0d0f0e}
+.ait-term .p{color:#d7ddd6}.ait-term .o{color:#CCFF00;font-weight:700}.ait-term .m{color:#7d857e}
+.ait-win.dlg .ait-wb,.ait-win.app .ait-wb{background:#151716;color:#e6e9e5}
+.ait-form{padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.ait-tabs{display:flex;gap:14px;font-size:12px;border-bottom:1px solid #2a2e2b;padding-bottom:6px}.ait-tabs b{color:#fff;border-bottom:2px solid #CCFF00;padding-bottom:4px}.ait-tabs span{color:#8b928c}
+.ait-sec{font-size:11px;font-weight:800;color:#8b928c;letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
+.ait-f{display:grid;grid-template-columns:150px minmax(0,1fr);align-items:center;gap:10px;font-size:12px}
+.ait-f label{color:#b9bfb8}
+.ait-in{display:flex;justify-content:space-between;align-items:center;gap:6px;padding:6px 8px;border:1px solid #33383a;border-radius:6px;background:#0d0f0e;color:#f2f4f1;font-family:var(--mono);font-size:11.5px;word-break:break-all}
+.ait-in.sel b{color:#8b928c;font-weight:400}
+.ait-tg{justify-self:start;width:30px;height:17px;border-radius:999px;background:#3a3f3b;position:relative}
+.ait-tg i{position:absolute;top:2px;left:2px;width:13px;height:13px;border-radius:50%;background:#fff}
+.ait-tg.on{background:#CCFF00}.ait-tg.on i{left:15px;background:#001408}
+.ait-mod{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px}.ait-mod em{font-style:normal;font-family:var(--font);font-size:10px;color:#8b928c;border:1px solid #33383a;border-radius:999px;padding:1px 6px}
+.ait-add{font-size:12px;color:#CCFF00;font-weight:700}
+.ait-btns{display:flex;justify-content:flex-end;gap:8px;margin-top:4px;font-size:12px}.ait-btns span{padding:5px 12px;border:1px solid #33383a;border-radius:6px;color:#b9bfb8}.ait-btns b{padding:5px 12px;border-radius:6px;background:#CCFF00;color:#001408}
+.ait-chat{display:grid;grid-template-columns:96px minmax(0,1fr);min-height:220px}
+.ait-side{background:#101211;border-right:1px solid #2a2e2b;padding:10px 8px;display:flex;flex-direction:column;gap:8px}
+.ait-side .nc{font-size:11px;font-weight:700;color:#e6e9e5;border:1px solid #33383a;border-radius:6px;padding:5px 6px;text-align:center}
+.ait-side .h{height:6px;border-radius:3px;background:#2a2e2b}.ait-side .h.s{width:60%}
+.ait-main{display:flex;flex-direction:column;gap:10px;padding:10px 12px}
+.ait-top .ait-in{display:inline-flex;font-family:var(--font);font-weight:700;font-size:12px}
+.ait-msg{max-width:85%;font-size:12.5px;padding:8px 11px;border-radius:12px}
+.ait-msg.u{align-self:flex-end;background:#262a27;color:#f2f4f1}
+.ait-msg.a{align-self:flex-start;display:flex;align-items:center;gap:8px;color:#CCFF00;font-weight:700;font-family:var(--mono)}
+.ait-msg.a i{width:18px;height:18px;border-radius:50%;background:#2a2e2b;flex:none}
+.ait-input{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border:1px solid #33383a;border-radius:12px;font-size:12px;color:#7d857e}
+.ait-input b{width:22px;height:22px;border-radius:50%;background:#CCFF00;color:#001408;display:grid;place-items:center;font-size:12px}
+.ait-reply{display:flex;flex-direction:column;gap:6px;margin-top:8px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-size:12.5px}
+.ait-reply .u{align-self:flex-end;color:var(--g200)}.ait-reply .a{color:var(--accent);font-weight:800;font-family:var(--mono)}
+.ait-log{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-top:8px;padding:8px 10px;border:1px dashed var(--line2);border-radius:8px;font-family:var(--mono);font-size:11.5px;color:var(--g300)}
+.ait-log .k{font-family:var(--font);font-weight:800;color:var(--on-lime);background:var(--lime);border-radius:4px;padding:1px 6px}
+.ait-log .ok{color:var(--accent);font-weight:700}
+.ait-all{margin-top:6px}.ait-all code{font-family:var(--mono);font-size:12px}.ait-all td.ok{color:var(--accent);font-weight:700}
+@media (max-width:980px){.ait{grid-template-columns:1fr}.ait-pick{flex-direction:row;flex-wrap:wrap}.ait-g{flex:1 1 180px}.ait-pane{grid-template-columns:1fr}.ait-paths{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.ait-flow{grid-template-columns:1fr;gap:8px}.ait-flow i{display:none}.ait-paths{grid-template-columns:1fr}.ait-f{grid-template-columns:1fr}}
+@media print{.ait-pane{display:grid!important;break-inside:avoid;margin-bottom:12px}.ait-pick{display:none}}
 </style>
 <style id="i18n-css">
 /* audience: data-show-lang / data-show-edition (space-separated tokens; omit = all) */
@@ -4085,12 +4158,62 @@ export ANTHROPIC_API_KEY=<span class="k">"sk-ant-…(개인 키)"</span>
 claude</div>
 <div class="code"><span class="c"># After · Kong AI Gateway 경유</span>
 export ANTHROPIC_BASE_URL=<span class="k">"https://address.kong.ai.gateway/anthropic"</span>
-export ANTHROPIC_AUTH_TOKEN=<span class="k">"&lt;Kong 발급 가상 키&gt;"</span>
+export ANTHROPIC_API_KEY=<span class="k">"&lt;Kong 발급 Consumer 키&gt;"</span>
+unset ANTHROPIC_AUTH_TOKEN
 claude
 
 <span class="c"># 또는 ~/.claude/settings.json (조직 배포용)</span>
 { <span class="k">"env"</span>: { <span class="k">"ANTHROPIC_BASE_URL"</span>: <span class="k">"https://address.kong.ai.gateway/anthropic"</span> } }</div>
   </div><p class="note">코딩 에이전트의 모든 모델 호출이 Kong을 지나므로 개발자별 토큰 한도 · 비용 집계 · PII 마스킹 · 감사 로그가 그대로 적용됩니다. 실제 경로와 인증 헤더는 Kong Route 구성에 따라 달라집니다.</p></div>
+  <h3 id="i-how-tools" style="margin-top:40px">AI 도구 연동 · CLI · 데스크톱 · 브라우저 채팅</h3>
+  <p class="sub" style="margin-top:0">코딩 에이전트와 채팅 도구도 SDK와 같은 방식입니다. 도구에는 Kong이 발급한 Consumer 키만 넣고, 실제 provider 키는 Kong이 AI Model Provider에서 주입합니다. 도구마다 다른 요청 형식은 Kong AI Model의 경로로 나눕니다.</p>
+  <div class="ait-flow"><div class="n">AI 도구<small>Kong Consumer 키</small></div><i></i><div class="n k">Kong AI Gateway<small>키 인증 · 정책 · 로그</small></div><i></i><div class="n">LLM 제공자<small>조직 provider 키 주입</small></div></div>
+  <div class="ait-paths"><div><code>/coding-agents</code><b>OpenAI Chat Completions</b><span>Cursor · LibreChat · Open WebUI</span></div><div><code>/coding-agents-responses</code><b>OpenAI Responses</b><span>Codex CLI</span></div><div><code>/coding-agents-anthropic</code><b>Anthropic Messages</b><span>Claude Code · Claude Desktop</span></div><div><code>/coding-agents-gemini</code><b>Gemini generateContent</b><span>Gemini CLI</span></div></div>
+  <div class="ait" id="ait">
+    <div class="ait-pick" role="tablist"><div class="ait-g"><span>터미널 CLI</span><button type="button" class="on" data-i="0">Claude Code</button><button type="button" class="" data-i="1">Codex CLI</button><button type="button" class="" data-i="2">Gemini CLI</button></div><div class="ait-g"><span>데스크톱 · 에디터</span><button type="button" class="" data-i="3">Claude Desktop</button><button type="button" class="" data-i="4">Cursor</button></div><div class="ait-g"><span>브라우저 채팅</span><button type="button" class="" data-i="5">LibreChat</button><button type="button" class="" data-i="6">Open WebUI</button></div></div>
+    <div class="ait-panes"><div class="ait-pane on" data-i="0"><div class="ait-l"><h4>Claude Code</h4><div class="ait-meta"><span><em>경로</em><b>/coding-agents-anthropic</b></span><span><em>요청 형식</em><b>Anthropic Messages</b></span><span><em>인증 헤더</em><b>x-api-key</b></span></div><div class="ait-lb">연동 설정</div><pre class="code ait-cfg"><span class="c"># Shell environment</span>
+export ANTHROPIC_BASE_URL=&#x27;https://ai-gw.example.com/coding-agents-anthropic&#x27;
+export ANTHROPIC_API_KEY=&quot;$KONG_CONSUMER_KEY&quot;
+unset ANTHROPIC_AUTH_TOKEN</pre><ul class="ait-notes"><li>기존 좌석 · SSO 토큰보다 Kong 키가 쓰이도록 ANTHROPIC_AUTH_TOKEN 해제</li><li>Kong은 x-api-key 헤더로 Consumer 인증</li></ul></div><div class="ait-r"><div class="ait-lb">화면 · 결과 목업</div><div class="ait-win term"><div class="ait-tb"><i></i><i></i><i></i><span>Terminal — claude</span></div><div class="ait-wb"><pre class="ait-term"><span class="p">$ claude -p &quot;Reply with exactly: claude-ok&quot; --max-turns 1</span>
+<span class="o">claude-ok</span>
+<span class="p">$ claude</span>
+<span class="m">&gt; /status   model: claude-haiku-4-5 · base URL: ai-gw.example.com</span></pre></div></div><div class="ait-log"><span class="k">Kong</span><span>POST /coding-agents-anthropic/v1/messages</span><span class="ok">200</span><span>consumer=ai-tools</span><span>claude-cli</span></div></div></div><div class="ait-pane" data-i="1"><div class="ait-l"><h4>Codex CLI</h4><div class="ait-meta"><span><em>경로</em><b>/coding-agents-responses</b></span><span><em>요청 형식</em><b>OpenAI Responses</b></span><span><em>인증 헤더</em><b>Authorization → apikey</b></span></div><div class="ait-lb">연동 설정</div><pre class="code ait-cfg"><span class="c"># ~/.codex/config.toml</span>
+model = &quot;gpt-4o-mini&quot;
+model_provider = &quot;kong&quot;
+
+[model_providers.kong]
+name = &quot;Kong AI Gateway&quot;
+base_url = &quot;https://ai-gw.example.com/coding-agents-responses/v1&quot;
+env_key = &quot;CODEX_API_KEY&quot;
+wire_api = &quot;responses&quot;</pre><ul class="ait-notes"><li>base_url은 /v1까지 포함, Codex가 /responses를 붙임</li><li>wire_api = responses로 Responses API 사용</li></ul></div><div class="ait-r"><div class="ait-lb">화면 · 결과 목업</div><div class="ait-win term"><div class="ait-tb"><i></i><i></i><i></i><span>Terminal — codex</span></div><div class="ait-wb"><pre class="ait-term"><span class="p">$ export CODEX_API_KEY=&quot;$KONG_CONSUMER_KEY&quot;</span>
+<span class="p">$ codex exec &quot;Reply with exactly: codex-ok&quot;</span>
+<span class="m">provider: kong · model: gpt-4o-mini · wire_api: responses</span>
+<span class="o">codex-ok</span></pre></div></div><div class="ait-log"><span class="k">Kong</span><span>POST /coding-agents-responses/v1/responses</span><span class="ok">200</span><span>consumer=ai-tools</span><span>codex_exec</span></div></div></div><div class="ait-pane" data-i="2"><div class="ait-l"><h4>Gemini CLI</h4><div class="ait-meta"><span><em>경로</em><b>/coding-agents-gemini</b></span><span><em>요청 형식</em><b>Gemini generateContent</b></span><span><em>인증 헤더</em><b>x-goog-api-key</b></span></div><div class="ait-lb">연동 설정</div><pre class="code ait-cfg"><span class="c"># Shell environment</span>
+export GOOGLE_GEMINI_BASE_URL=&#x27;https://ai-gw.example.com/coding-agents-gemini&#x27;
+export GEMINI_API_KEY=&quot;$KONG_CONSUMER_KEY&quot;</pre><ul class="ait-notes"><li>GEMINI_API_KEY에는 Google AI Studio 키가 아니라 Kong Consumer 키</li><li>Kong은 x-goog-api-key 헤더로 Consumer 인증</li></ul></div><div class="ait-r"><div class="ait-lb">화면 · 결과 목업</div><div class="ait-win term"><div class="ait-tb"><i></i><i></i><i></i><span>Terminal — gemini</span></div><div class="ait-wb"><pre class="ait-term"><span class="p">$ gemini -p &quot;Reply with exactly: gemini-ok&quot; -m gemini-2.5-flash</span>
+<span class="o">gemini-ok</span></pre></div></div><div class="ait-log"><span class="k">Kong</span><span>POST /coding-agents-gemini/v1beta/models/gemini-2.5-flash:generateContent</span><span class="ok">200</span><span>consumer=ai-tools</span><span>GeminiCLI</span></div></div></div><div class="ait-pane" data-i="3"><div class="ait-l"><h4>Claude Desktop</h4><div class="ait-meta"><span><em>경로</em><b>/coding-agents-anthropic</b></span><span><em>요청 형식</em><b>Anthropic Messages</b></span><span><em>인증 헤더</em><b>x-api-key</b></span></div><div class="ait-lb">연동 설정</div><pre class="code ait-cfg"><span class="c"># Developer → Configure Third-Party Inference… → Connection</span>
+Inference provider : Gateway
+Credential kind    : Static API key
+Gateway base URL   : https://ai-gw.example.com/coding-agents-anthropic
+Gateway API key    : &lt;KONG_CONSUMER_KEY&gt;
+Gateway auth scheme: x-api-key
+Model discovery    : Off
+Model list         : claude-haiku-4-5-20251001</pre><ul class="ait-notes"><li>Help → Troubleshooting → Enable Developer Mode 후 설정 메뉴 노출</li><li>base URL에 /v1을 붙이지 않음, 로컬 외 주소는 HTTPS 필요</li><li>Model discovery Off, 모델 ID를 직접 입력</li><li>Claude.ai 좌석 · 세션 토큰은 Gateway에 넣지 않음</li></ul></div><div class="ait-r"><div class="ait-lb">화면 · 결과 목업</div><div class="ait-win dlg"><div class="ait-tb"><i></i><i></i><i></i><span>Configure Third-Party Inference</span></div><div class="ait-wb"><div class="ait-form"><div class="ait-tabs"><b>Connection</b><span>Models</span></div><div class="ait-f"><label>Inference provider</label><span class="ait-in sel">Gateway<b>▾</b></span></div><div class="ait-f"><label>Credential kind</label><span class="ait-in sel">Static API key<b>▾</b></span></div><div class="ait-f"><label>Gateway base URL</label><span class="ait-in">https://ai-gw.example.com/coding-agents-anthropic</span></div><div class="ait-f"><label>Gateway API key</label><span class="ait-in">••••••••••••ai-tools</span></div><div class="ait-f"><label>Gateway auth scheme</label><span class="ait-in sel">x-api-key<b>▾</b></span></div><div class="ait-f"><label>Model list</label><span class="ait-in">claude-haiku-4-5-20251001</span></div><div class="ait-btns"><span>Cancel</span><b>Apply Changes</b></div></div></div></div><div class="ait-reply"><span class="u">Reply with exactly: desktop-ok</span><span class="a">desktop-ok</span></div><div class="ait-log"><span class="k">Kong</span><span>POST /coding-agents-anthropic/v1/messages</span><span class="ok">200</span><span>consumer=ai-tools</span><span>Claude Desktop</span></div></div></div><div class="ait-pane" data-i="4"><div class="ait-l"><h4>Cursor</h4><div class="ait-meta"><span><em>경로</em><b>/coding-agents</b></span><span><em>요청 형식</em><b>OpenAI Chat Completions</b></span><span><em>인증 헤더</em><b>Authorization → apikey</b></span></div><div class="ait-lb">연동 설정</div><pre class="code ait-cfg"><span class="c"># Cursor Settings → Models</span>
+OpenAI API Key          : &lt;KONG_CONSUMER_KEY&gt;  [on]
+Override OpenAI Base URL: [on]
+Base URL                : https://ai-gw.example.com/coding-agents
++ Add Custom Model      : gpt-4o-mini</pre><ul class="ait-notes"><li>요청이 Cursor 클라우드를 거쳐 나가므로 Base URL은 공개 주소여야 함(사설 IP는 403)</li><li>Base URL에 /coding-agents 경로 포함, Cursor가 /chat/completions를 붙임</li><li>Override는 OpenAI 계열 모델 전체에 적용</li></ul></div><div class="ait-r"><div class="ait-lb">화면 · 결과 목업</div><div class="ait-win dlg"><div class="ait-tb"><i></i><i></i><i></i><span>Cursor Settings · Models</span></div><div class="ait-wb"><div class="ait-form"><div class="ait-sec">API Keys</div><div class="ait-f"><label>OpenAI API Key</label><span class="ait-in">••••••••••••ai-tools</span></div><div class="ait-f"><label>Use OpenAI API Key</label><span class="ait-tg on"><i></i></span></div><div class="ait-f"><label>Override OpenAI Base URL</label><span class="ait-tg on"><i></i></span></div><div class="ait-f"><label>Base URL</label><span class="ait-in">https://ai-gw.example.com/coding-agents</span></div><div class="ait-sec">Models</div><div class="ait-mod"><span class="ait-tg on"><i></i></span>gpt-4o-mini<em>custom</em></div><div class="ait-add">+ Add Custom Model</div></div></div></div><div class="ait-reply"><span class="u">Reply with exactly: cursor-ok</span><span class="a">cursor-ok</span></div><div class="ait-log"><span class="k">Kong</span><span>POST /coding-agents/chat/completions</span><span class="ok">200</span><span>consumer=ai-tools</span><span>Cursor</span></div></div></div><div class="ait-pane" data-i="5"><div class="ait-l"><h4>LibreChat</h4><div class="ait-meta"><span><em>경로</em><b>/coding-agents</b></span><span><em>요청 형식</em><b>OpenAI Chat Completions</b></span><span><em>인증 헤더</em><b>Authorization → apikey</b></span></div><div class="ait-lb">연동 설정</div><pre class="code ait-cfg"><span class="c"># docker-compose.yaml · librechat.environment</span>
+OPENAI_API_KEY: &quot;${KONG_CONSUMER_KEY}&quot;
+OPENAI_REVERSE_PROXY: &quot;https://ai-gw.example.com/coding-agents&quot;
+OPENAI_MODELS: &quot;gpt-4o-mini&quot;</pre><ul class="ait-notes"><li>OPENAI_REVERSE_PROXY로 OpenAI 엔드포인트를 Kong으로 교체</li><li>브라우저 채팅 사용자도 CLI와 같은 정책 · 로그 적용</li></ul></div><div class="ait-r"><div class="ait-lb">화면 · 결과 목업</div><div class="ait-win app"><div class="ait-tb"><i></i><i></i><i></i><span>LibreChat</span></div><div class="ait-wb"><div class="ait-chat"><div class="ait-side"><span class="nc">+ New chat</span><span class="h"></span><span class="h s"></span><span class="h"></span></div><div class="ait-main"><div class="ait-top"><span class="ait-in sel">OpenAI · gpt-4o-mini<b>▾</b></span></div><div class="ait-msg u">Reply with exactly: librechat-ok</div><div class="ait-msg a"><i></i>librechat-ok</div><div class="ait-input">Send a message<b>↑</b></div></div></div></div></div><div class="ait-log"><span class="k">Kong</span><span>POST /coding-agents/chat/completions</span><span class="ok">200</span><span>consumer=ai-tools</span><span>langchainjs-openai</span></div></div></div><div class="ait-pane" data-i="6"><div class="ait-l"><h4>Open WebUI</h4><div class="ait-meta"><span><em>경로</em><b>/coding-agents</b></span><span><em>요청 형식</em><b>OpenAI Chat Completions</b></span><span><em>인증 헤더</em><b>Authorization → apikey</b></span></div><div class="ait-lb">연동 설정</div><pre class="code ait-cfg"><span class="c"># docker-compose.yaml · open-webui.environment</span>
+ENABLE_OPENAI_API: &quot;True&quot;
+OPENAI_API_BASE_URLS: &quot;https://ai-gw.example.com/coding-agents&quot;
+OPENAI_API_KEYS: &quot;${KONG_CONSUMER_KEY}&quot;
+OPENAI_API_CONFIGS: &#x27;{&quot;0&quot;:{&quot;enable&quot;:true,&quot;model_ids&quot;:[&quot;gpt-4o-mini&quot;]}}&#x27;</pre><ul class="ait-notes"><li>모델 목록 자동 조회가 없으므로 model_ids를 명시</li><li>환경 변수는 첫 기동 때 저장됨, 바꾸면 볼륨 초기화 후 재기동</li></ul></div><div class="ait-r"><div class="ait-lb">화면 · 결과 목업</div><div class="ait-win app"><div class="ait-tb"><i></i><i></i><i></i><span>Open WebUI</span></div><div class="ait-wb"><div class="ait-chat"><div class="ait-side"><span class="nc">+ New chat</span><span class="h"></span><span class="h s"></span><span class="h"></span></div><div class="ait-main"><div class="ait-top"><span class="ait-in sel">gpt-4o-mini<b>▾</b></span></div><div class="ait-msg u">Reply with exactly: open-webui-ok</div><div class="ait-msg a"><i></i>open-webui-ok</div><div class="ait-input">Send a message<b>↑</b></div></div></div></div></div><div class="ait-log"><span class="k">Kong</span><span>POST /coding-agents/chat/completions</span><span class="ok">200</span><span>consumer=ai-tools</span><span>Open WebUI</span></div></div></div></div>
+  </div>
+  <div class="ait-all"><div class="ait-lb">Kong에서 보이는 결과 · 한 화면의 호출 로그</div><div class="tw"><table><thead><tr><th>클라이언트</th><th>경로</th><th>모델</th><th>Consumer</th><th>상태</th></tr></thead><tbody><tr><td>Claude Code</td><td><code>/coding-agents-anthropic/v1/messages</code></td><td>claude-haiku-4-5</td><td>ai-tools</td><td class="ok">200</td></tr><tr><td>Claude Desktop</td><td><code>/coding-agents-anthropic/v1/messages</code></td><td>claude-haiku-4-5</td><td>ai-tools</td><td class="ok">200</td></tr><tr><td>Codex CLI</td><td><code>/coding-agents-responses/v1/responses</code></td><td>gpt-4o-mini</td><td>ai-tools</td><td class="ok">200</td></tr><tr><td>Gemini CLI</td><td><code>/coding-agents-gemini/…:generateContent</code></td><td>gemini-2.5-flash</td><td>ai-tools</td><td class="ok">200</td></tr><tr><td>Cursor</td><td><code>/coding-agents/chat/completions</code></td><td>gpt-4o-mini</td><td>ai-tools</td><td class="ok">200</td></tr><tr><td>LibreChat</td><td><code>/coding-agents/chat/completions</code></td><td>gpt-4o-mini</td><td>ai-tools</td><td class="ok">200</td></tr><tr><td>Open WebUI</td><td><code>/coding-agents/chat/completions</code></td><td>gpt-4o-mini</td><td>ai-tools</td><td class="ok">200</td></tr></tbody></table></div></div>
+  <p class="note">AI Gateway 2.2+(Konnect) 기준입니다. Kong Key Auth는 apikey · x-api-key · x-goog-api-key 헤더를 받고, 전역 Pre-Function 정책이 Authorization: Bearer 값을 apikey로 옮깁니다. 목업의 주소 · 키 · 모델명은 예시이며, 실제 경로와 헤더는 Kong AI Model 구성에 따릅니다. Claude.ai 팀 좌석 · 세션 토큰은 Anthropic 약관상 Gateway로 중계하지 않습니다. 출처: Kong AI Cookbook · AI Tool Integration 레시피(Claude Code · Codex CLI · Gemini CLI · Claude Desktop · Cursor · LibreChat · Open WebUI).</p>
+
 </section>
 
 <section class="sec" id="i-rep" data-title="대표 기능">
@@ -9022,6 +9145,15 @@ const VR_TIERS={
   const sec=document.getElementById('i-cmp'); if(!sec) return; const h2=sec.querySelector(':scope > h2'); if(!h2) return;
   const fit=()=>sec.style.setProperty('--cmp-h2',h2.offsetHeight+'px');
   fit(); window.addEventListener('resize',fit); if(window.ResizeObserver) new ResizeObserver(fit).observe(h2);
+})();
+
+/* ---------- AI 도구 연동 선택 ---------- */
+(function(){
+  const r=document.getElementById('ait'); if(!r) return;
+  const bs=[...r.querySelectorAll('.ait-pick button')], ps=[...r.querySelectorAll('.ait-pane')];
+  r.addEventListener('click',e=>{ const b=e.target.closest('.ait-pick button'); if(!b) return; const i=b.dataset.i;
+    bs.forEach(x=>{ x.classList.toggle('on',x===b); x.setAttribute('aria-selected',x===b?'true':'false'); });
+    ps.forEach(p=>p.classList.toggle('on',p.dataset.i===i)); });
 })();
 </script>
 <!-- I18N_BUNDLE -->
