@@ -4806,7 +4806,7 @@
   "m.c45bd7ac6a12": "Over half of enterprise APIs are unmanaged",
   "m.8c160d0eb927": "Reported in 2025 · APIs running outside any governance",
   "m.ec3fa913fc8e": "Different implementations per protocol and environment",
-  "m.84d5ce9b8c28": "Auth and policy run separately for REST, GraphQL, gRPC, and events",
+  "m.84d5ce9b8c28": "Auth and policy run separately for REST, GraphQL, gRPC, events, WebSocket, and SSE",
   "m.7656667a74cf": "Half of companies had an API security incident in the past year",
   "m.2e24cbc4feb6": "Projected growth in API attacks by 2030",
   "m.ea4068cd9f37": "81% of companies lose ₩380M+ per hour of downtime",
