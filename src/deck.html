@@ -4033,7 +4033,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
   <div class="eyebrow">Version Path</div>
   <h2>AI Gateway 1.0과 2.0 선택</h2>
   <p class="sub">앞 구간의 정책·요청 흐름은 두 버전에서 같습니다. 차이는 그 흐름을 Service · Route · 플러그인으로 둘지, Model · MCP · Agent · Policy 엔티티로 둘지입니다.</p>
-  <div class="callout"><b>2.0 배경</b> AI를 Kong Gateway 플러그인으로 얹는 방식(1.0)은 동작하지만, 모델·MCP·에이전트 개념이 Service · Route · 플러그인에 흩어집니다. 2.0은 전용 바이너리와 AI Control Plane 엔티티로 그 경계를 제품 단위로 분리합니다.</div>
+  <div class="callout"><b>2.0 배경</b> AI Gateway 1.0은 Kong Gateway에 AI 플러그인을 적용해 LLM · MCP · 에이전트 경로를 제공합니다. 모델·MCP·에이전트 정의는 Service · Route · 플러그인 단위로 관리됩니다. 2.0은 전용 바이너리와 AI Control Plane의 Model · MCP · Agent · Policy 엔티티로 AI 경로를 독립 제품으로 운영합니다.</div>
   <div class="tw rv" style="margin-top:18px"><table class="cmp">
     <thead><tr><th>항목</th><th class="c k">AI Gateway 1.0</th><th class="c">AI Gateway 2.0</th></tr></thead>
     <tbody>

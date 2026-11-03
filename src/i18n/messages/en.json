@@ -4840,5 +4840,5 @@
   "m.59dc86f41281": "Add an AI path on the Kong Gateway you already run. Best when API and LLM traffic share one DP.",
   "m.f633ea7dfb55": "This is an ops-unit choice, not a ranking. Running API Gateway (or the 1.0 plugin path) beside an AI Gateway 2.0 data plane by role is common.",
   "m.e9b2fab2c1fd": "The policy and request flow in the previous section is the same in both versions. The difference is whether you place that flow on Service · Route · plugins or on Model · MCP · Agent · Policy entities.",
-  "m.ab5986458c09": "Running AI as Kong Gateway plugins (1.0) works, but model · MCP · agent concepts scatter across Service · Route · plugins. 2.0 splits that boundary into a product unit with a dedicated binary and AI Control Plane entities."
+  "m.ab5986458c09": "AI Gateway 1.0 delivers LLM · MCP · agent paths by applying AI plugins on Kong Gateway. Model · MCP · agent definitions are managed as Service · Route · plugin units. 2.0 operates the AI path as a dedicated product with a dedicated binary and Model · MCP · Agent · Policy entities on the AI Control Plane."
 }
