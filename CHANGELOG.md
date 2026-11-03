@@ -15,13 +15,11 @@
 
 ### 변경
 
+- 중국어(zh-Hans/zh-Hant): 11월 2일 이후 MT 깨짐·스테이크 문구·고위험 오역 수정
+
 - AI Gateway > 핵심 기능 : 플러그인 표현을 정책·요청 흐름으로 정리
 - AI Gateway > 경쟁 제품 비교 : 탭별 지원 항목 수 요약 막대 추가
 - 인프라 구성 > 권장 사이징 : 사이징 선택에 따른 필요 자원 표기
-- AI Gateway > 동작 원리 : 전환 방식 · 대표 기능 섹션으로 분리
-- AI Gateway > 전환 방식 : 경로를 /coding-agents로 통일 · 연동 설정 구문 강조
-- AI Gateway > 전환 방식 : Claude Desktop·Cursor 목업 하단 요청 로그 박스 제거
-- 11월 2일 이후 외국어 번역 검수 반영(EN/JA/ZH · CHANGELOG Unreleased 동기화)
 
 ### 삭제
 
