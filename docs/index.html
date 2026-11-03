@@ -474,7 +474,7 @@ svg.mq{display:block;width:100%;height:auto}
 .growth.in .ghl{animation:fadeup .9s 4.3s forwards}
 .growth{position:relative;overflow:hidden}
 .growth #growsvg{display:block}
-.ghud{position:absolute;right:28px;top:26px;display:flex;flex-direction:column;align-items:flex-end;gap:2px;pointer-events:none;opacity:0;transition:opacity .4s var(--ease,cubic-bezier(.2,.8,.2,1))}
+.ghud{position:absolute;right:28px;top:26px;display:flex;flex-direction:column;align-items:flex-end;gap:2px;pointer-events:none;opacity:0;transition:opacity .4s var(--ease,cubic-bezier(.2,.8,.2,1));will-change:transform}
 .growth.in .ghud{opacity:1}
 .ghud b{font:800 clamp(28px,4vw,46px)/1 var(--mono,'Roboto Mono',monospace);color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 .ghud span{font:700 12px/1.2 var(--mono,'Roboto Mono',monospace);letter-spacing:.08em;text-transform:uppercase;color:var(--g300)}
@@ -7357,14 +7357,26 @@ function drawGrowth(){
   const ln=document.getElementById('growln'), rev=document.getElementById('growrev');
   const len=ln.getTotalLength(); ln.style.setProperty('--len',Math.ceil(len));
   const xAt=p=>len>10?ln.getPointAtLength(len*p).x:XA+p*(XB-XA);
+  let V={x:0,y:0,w:VW,h:VH}, hx=0;
   function cam(e){
     const w=CAM0.w*Math.pow(VW/CAM0.w,e), h=w*VH/VW, x=CAM0.x*(1-e), bottom=(CAM0.y+CAM0.h)+(VH-(CAM0.y+CAM0.h))*e;
-    svg.setAttribute('viewBox',x.toFixed(1)+' '+(bottom-h).toFixed(1)+' '+w.toFixed(1)+' '+h.toFixed(1));
+    V={x,y:bottom-h,w,h};
+    svg.setAttribute('viewBox',x.toFixed(1)+' '+V.y.toFixed(1)+' '+w.toFixed(1)+' '+h.toFixed(1));
+  }
+  // 연도 HUD는 선의 진행점(상단)과 겹치지 않도록 연도가 커질수록 왼쪽으로 비켜난다.
+  function hudAt(p,snap){
+    if(!hud||!host) return;
+    const pt=len>10?ln.getPointAtLength(len*p):{x:XA+p*(XB-XA),y:BASE};
+    const sr=svg.getBoundingClientRect(), hr=host.getBoundingClientRect();
+    const tipX=sr.left-hr.left+(pt.x-V.x)/V.w*sr.width;
+    const right=hr.width-28, target=Math.max(0,right-(tipX-36));
+    hx=snap?target:hx+(target-hx)*.18;
+    hud.style.transform='translateX('+(-hx).toFixed(1)+'px)';
   }
   function setYear(p){ if(!yr) return; const y=Math.round(1960+70*p); yr.textContent=y; let n=ERAS[0][0]; for(const e of ERAS) if(y>=e[3]) n=e[0]; er.textContent=n; }
   let raf=0;
   function finish(){ svg.setAttribute('viewBox','0 0 '+VW+' '+VH); rev.setAttribute('width',VW); setYear(1); if(hud) hud.classList.add('end'); }
-  function reset(){ cancelAnimationFrame(raf); raf=0; cam(0); rev.setAttribute('width',0); setYear(0); if(hud) hud.classList.remove('end'); }
+  function reset(){ cancelAnimationFrame(raf); raf=0; cam(0); rev.setAttribute('width',0); setYear(0); hx=0; if(hud){ hud.classList.remove('end'); hud.style.transform=''; } }
   function play(){
     reset();
     if(matchMedia('(prefers-reduced-motion: reduce)').matches){ finish(); return; }
@@ -7373,7 +7385,7 @@ function drawGrowth(){
       const t=(now-t0)/1000, p=Math.max(0,Math.min(1,(t-DELAY)/DUR));
       cam(inout(Math.min(1,p*1.12)));
       rev.setAttribute('width',(xAt(p)+(p>=1?VW:24)).toFixed(1));
-      setYear(p);
+      setYear(p); hudAt(p,false);
       if(p<1) raf=requestAnimationFrame(step); else finish();
     };
     raf=requestAnimationFrame(step);
