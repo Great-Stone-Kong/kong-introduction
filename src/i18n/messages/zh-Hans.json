@@ -4841,5 +4841,8 @@
   "m.f633ea7dfb55": "这是运营单位的选择，不是优劣排序。按角色并放 API Gateway（或 1.0 插件路径）与 AI Gateway 2.0 Data Plane 也很常见。",
   "m.e9b2fab2c1fd": "前一段的策略 · 请求流程在两个版本相同。差别在于把该流程放在 Service · Route · 插件，还是 Model · MCP · Agent · Policy 实体。",
   "m.ab5986458c09": "AI Gateway 1.0 通过在 Kong Gateway 上应用 AI 插件提供 LLM · MCP · 代理路径。模型 · MCP · 代理定义按 Service · Route · 插件单元管理。2.0 以专用二进制和 AI Control Plane 上的 Model · MCP · Agent · Policy 实体，将 AI 路径作为独立产品运营。",
-  "m.b56b4e690215": "查看 AI Gateway 2.0"
+  "m.b56b4e690215": "查看 AI Gateway 2.0",
+  "m.34120700f995": "切换方式",
+  "m.aaab9f71e6d4": "代表功能",
+  "m.d67ea6cec94c": "仅通过配置套用语义缓存 · 护栏 · 路由、PII 掩码、令牌压缩、熔断开关与虚拟密钥。"
 }

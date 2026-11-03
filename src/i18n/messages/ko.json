@@ -4841,5 +4841,8 @@
   "m.f633ea7dfb55": "둘은 우열이 아니라 운영 단위의 선택입니다. API Gateway(또는 1.0 플러그인 경로)와 AI Gateway 2.0 Data Plane을 역할별로 나란히 두는 구성도 일반적입니다.",
   "m.e9b2fab2c1fd": "앞 구간의 정책·요청 흐름은 두 버전에서 같습니다. 차이는 그 흐름을 Service · Route · 플러그인으로 둘지, Model · MCP · Agent · Policy 엔티티로 둘지입니다.",
   "m.ab5986458c09": "AI Gateway 1.0은 Kong Gateway에 AI 플러그인을 적용해 LLM · MCP · 에이전트 경로를 제공합니다. 모델·MCP·에이전트 정의는 Service · Route · 플러그인 단위로 관리됩니다. 2.0은 전용 바이너리와 AI Control Plane의 Model · MCP · Agent · Policy 엔티티로 AI 경로를 독립 제품으로 운영합니다.",
-  "m.b56b4e690215": "AI Gateway 2.0 확인"
+  "m.b56b4e690215": "AI Gateway 2.0 확인",
+  "m.34120700f995": "전환 방식",
+  "m.aaab9f71e6d4": "대표 기능",
+  "m.d67ea6cec94c": "시맨틱 캐시 · 가드 · 라우팅, PII 마스킹, 토큰 압축, 킬 스위치, 가상 키를 설정만으로 적용합니다."
 }

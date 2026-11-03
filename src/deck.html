@@ -1410,7 +1410,7 @@ html[data-lang="zh-Hant"] .want .case{font-size:12.5px;line-height:1.7}
 .g3fix{grid-template-columns:repeat(3,minmax(0,1fr))!important}
 @media (max-width:1000px){.g3fix{grid-template-columns:1fr!important}}
 .tabs.bat{margin-top:18px}
-#i-how .pane .code{white-space:pre-wrap;word-break:break-all}
+#i-how .pane .code,#i-rep .pane .code{white-space:pre-wrap;word-break:break-all}
 .dlp-g{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .dlp-c{border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px}
 .dlp-c.bad{background:rgba(255,107,107,.04);border:1.5px solid rgba(255,107,107,.45)}.dlp-c.good{background:rgba(204,255,0,.04);border:1.5px solid var(--lime)}
@@ -4053,7 +4053,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
   <p class="note">둘은 우열이 아니라 운영 단위의 선택입니다. API Gateway(또는 1.0 플러그인 경로)와 AI Gateway 2.0 Data Plane을 역할별로 나란히 두는 구성도 일반적입니다.</p>
 </section>
 
-<section class="sec" id="i-how" data-title="동작 원리">
+<section class="sec" id="i-how" data-title="전환 방식">
   <div class="eyebrow">How it works</div>
   <h2>AI 트래픽의 Kong 전환 방식</h2>
   <p class="sub">앱과 에이전트는 지금 쓰는 LLM SDK를 그대로 씁니다. 호출 주소만 Kong AI Gateway로 바꾸면 인증, 가드레일, 라우팅, 비용 통제, 로깅이 모든 요청에 자동으로 적용되고, Kong이 알맞은 모델로 전달합니다. 실제 provider 키는 Kong이 보관하므로 앱에는 키가 필요 없습니다.</p>
@@ -4084,7 +4084,12 @@ claude
 <span class="c"># 또는 ~/.claude/settings.json (조직 배포용)</span>
 { <span class="k">"env"</span>: { <span class="k">"ANTHROPIC_BASE_URL"</span>: <span class="k">"https://address.kong.ai.gateway/anthropic"</span> } }</div>
   </div><p class="note">코딩 에이전트의 모든 모델 호출이 Kong을 지나므로 개발자별 토큰 한도 · 비용 집계 · PII 마스킹 · 감사 로그가 그대로 적용됩니다. 실제 경로와 인증 헤더는 Kong Route 구성에 따라 달라집니다.</p></div>
-  <h3 style="margin-top:36px">대표 기능 개요</h3>
+</section>
+
+<section class="sec" id="i-rep" data-title="대표 기능">
+  <div class="eyebrow">Key Features</div>
+  <h2>대표 기능</h2>
+  <p class="sub">시맨틱 캐시 · 가드 · 라우팅, PII 마스킹, 토큰 압축, 킬 스위치, 가상 키를 설정만으로 적용합니다.</p>
   <div class="tabs" data-tabs style="margin-top:28px">
     <button class="on">시맨틱 캐시</button><button>시맨틱 가드</button><button>PII Sanitizer</button><button>시맨틱 라우팅</button><button>토큰 압축</button><button>킬 스위치</button><button>가상 키 · 크리덴셜</button>
   </div>

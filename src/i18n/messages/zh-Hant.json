@@ -4841,5 +4841,8 @@
   "m.f633ea7dfb55": "這是營運單位的選擇，不是優劣排序。依角色並放 API Gateway（或 1.0 外掛路徑）與 AI Gateway 2.0 Data Plane 也很常見。",
   "m.e9b2fab2c1fd": "前一段的策略 · 請求流程在兩個版本相同。差別在於把該流程放在 Service · Route · 外掛，還是 Model · MCP · Agent · Policy 實體。",
   "m.ab5986458c09": "AI Gateway 1.0 透過在 Kong Gateway 上套用 AI 外掛提供 LLM · MCP · 代理路徑。模型 · MCP · 代理定義依 Service · Route · 外掛單位管理。2.0 以專用二進位與 AI Control Plane 上的 Model · MCP · Agent · Policy 實體，將 AI 路徑作為獨立產品營運。",
-  "m.b56b4e690215": "查看 AI Gateway 2.0"
+  "m.b56b4e690215": "查看 AI Gateway 2.0",
+  "m.34120700f995": "切換方式",
+  "m.aaab9f71e6d4": "代表功能",
+  "m.d67ea6cec94c": "僅透過設定套用語義快取 · 護欄 · 路由、PII 遮罩、權杖壓縮、熔斷開關與虛擬金鑰。"
 }

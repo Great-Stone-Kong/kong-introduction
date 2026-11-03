@@ -4841,5 +4841,8 @@
   "m.f633ea7dfb55": "優劣ではなく運用単位の選択です。API Gateway（または1.0プラグイン経路）とAI Gateway 2.0 Data Planeを役割ごとに並置する構成も一般的です。",
   "m.e9b2fab2c1fd": "前セクションのポリシー · リクエストフローは両バージョンで同じです。違いは、その流れをService · Route · プラグインに置くか、Model · MCP · Agent · Policyエンティティに置くかです。",
   "m.ab5986458c09": "AI Gateway 1.0はKong GatewayにAIプラグインを適用し、LLM · MCP · エージェント経路を提供します。モデル · MCP · エージェント定義はService · Route · プラグイン単位で管理します。2.0は専用バイナリとAI Control PlaneのModel · MCP · Agent · Policyエンティティで、AI経路を独立製品として運用します。",
-  "m.b56b4e690215": "AI Gateway 2.0を確認"
+  "m.b56b4e690215": "AI Gateway 2.0を確認",
+  "m.34120700f995": "切り替え方式",
+  "m.aaab9f71e6d4": "代表機能",
+  "m.d67ea6cec94c": "セマンティックキャッシュ · ガード · ルーティング、PIIマスキング、トークン圧縮、キルスイッチ、仮想キーを設定だけで適用します。"
 }
