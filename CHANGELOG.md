@@ -20,6 +20,7 @@
 - 인프라 구성 > 권장 사이징 : 사이징 선택에 따른 필요 자원 표기
 - AI Gateway > 동작 원리 : 전환 방식 · 대표 기능 섹션으로 분리
 - AI Gateway > 전환 방식 : 경로를 /coding-agents로 통일 · 연동 설정 구문 강조
+- AI Gateway > 전환 방식 : Claude Desktop·Cursor 목업 하단 요청 로그 박스 제거
 - 11월 2일 이후 외국어 번역 검수 반영(EN/JA/ZH · CHANGELOG Unreleased 동기화)
 
 ### 삭제
