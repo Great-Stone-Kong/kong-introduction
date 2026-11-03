@@ -4892,5 +4892,9 @@
   "m.075fc167f3fc": "クライアントは OAuth 2.1 + PKCE でログインし、IdP の groups クレームでツール単位の ACL を適用",
   "m.2ee95225c41f": "アプリと AI ツールは、今使っている SDK · CLI · チャットツール · MCP クライアントをそのまま使います。呼び出し先を Kong AI Gateway に変えるだけで、認証、ガードレール、ルーティング、コスト管理、ロギングがすべてのリクエストに適用されます。クライアントには Kong が発行したキーか OAuth トークンだけを置き、実際のプロバイダーキーは Kong が保管します。項目を選ぶと連携設定と画面モックアップを確認できます。",
   "m.2e8e8434482e": "AI Gateway 2.2+(Konnect)基準です。Kong Key Auth は apikey · x-api-key · x-goog-api-key ヘッダーを受け付け、グローバル Pre-Function ポリシーが Authorization: Bearer の値を apikey に移します。MCP は AI MCP Server と AI Auth Strategy(OAuth 2.1)で構成します。モックアップのアドレス · キー · モデル名は例であり、実際のパスとヘッダーは Kong の構成に従います。Claude.ai のチーム席 · セッショントークンは Anthropic の規約上 Gateway で中継しません。出典: Kong AI Cookbook · AI Tool Integration · Secure Internal MCP Gateway レシピ。",
-  "m.d1a2b7f9f77d": "MCP サーバー"
+  "m.d1a2b7f9f77d": "MCP サーバー",
+  "m.01eef22d7f40": "モデル選択画面",
+  "m.9512a61425ed": "接続に必要な値",
+  "m.1e1bffd26bfd": "MCP クライアント",
+  "m.f70af64af394": "Kong が提供するモデルが選択リストに追加されます。"
 }

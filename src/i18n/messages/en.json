@@ -4892,5 +4892,9 @@
   "m.075fc167f3fc": "Clients sign in with OAuth 2.1 + PKCE; the IdP groups claim drives per-tool ACLs",
   "m.2ee95225c41f": "Apps and AI tools keep the SDKs, CLIs, chat tools and MCP clients they already use. Point the endpoint at Kong AI Gateway and authentication, guardrails, routing, cost control and logging apply to every request. Clients hold only a Kong-issued key or OAuth token; Kong keeps the real provider keys. Pick an item to see its setup and a screen mockup.",
   "m.2e8e8434482e": "Based on AI Gateway 2.2+ (Konnect). Kong Key Auth accepts the apikey, x-api-key and x-goog-api-key headers, and a global Pre-Function policy copies the Authorization: Bearer value into apikey. MCP is configured with an AI MCP Server and an AI Auth Strategy (OAuth 2.1). Addresses, keys and model names in the mockups are examples; actual paths and headers follow your Kong configuration. Claude.ai team seat and session tokens are not relayed through the Gateway, per Anthropic's terms. Source: Kong AI Cookbook · AI Tool Integration · Secure Internal MCP Gateway recipes.",
-  "m.d1a2b7f9f77d": "MCP server"
+  "m.d1a2b7f9f77d": "MCP server",
+  "m.01eef22d7f40": "Model picker",
+  "m.9512a61425ed": "Connection values",
+  "m.1e1bffd26bfd": "MCP client",
+  "m.f70af64af394": "Models served by Kong appear in the picker."
 }

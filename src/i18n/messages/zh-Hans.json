@@ -4892,5 +4892,9 @@
   "m.075fc167f3fc": "客户端通过 OAuth 2.1 + PKCE 登录，依据 IdP groups 声明按工具应用 ACL",
   "m.2ee95225c41f": "应用和 AI 工具继续使用现有的 SDK、CLI、聊天工具和 MCP 客户端。只需将调用地址改为 Kong AI Gateway，认证、护栏、路由、成本控制和日志即可应用于每个请求。客户端只持有 Kong 签发的密钥或 OAuth 令牌，真实 provider 密钥由 Kong 保管。选择条目即可查看接入配置和界面示意。",
   "m.2e8e8434482e": "基于 AI Gateway 2.2+（Konnect）。Kong Key Auth 接受 apikey、x-api-key、x-goog-api-key 请求头，全局 Pre-Function 策略将 Authorization: Bearer 的值复制到 apikey。MCP 通过 AI MCP Server 与 AI Auth Strategy（OAuth 2.1）配置。示意中的地址、密钥和模型名称仅为示例，实际路径与请求头以 Kong 配置为准。根据 Anthropic 条款，Claude.ai 团队席位与会话令牌不经 Gateway 中转。来源：Kong AI Cookbook · AI Tool Integration · Secure Internal MCP Gateway 配方。",
-  "m.d1a2b7f9f77d": "MCP 服务器"
+  "m.d1a2b7f9f77d": "MCP 服务器",
+  "m.01eef22d7f40": "模型选择界面",
+  "m.9512a61425ed": "连接所需的值",
+  "m.1e1bffd26bfd": "MCP 客户端",
+  "m.f70af64af394": "Kong 提供的模型会出现在选择列表中。"
 }

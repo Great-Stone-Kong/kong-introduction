@@ -4892,5 +4892,9 @@
   "m.075fc167f3fc": "클라이언트는 OAuth 2.1 + PKCE로 로그인, IdP groups 클레임으로 도구별 ACL 적용",
   "m.2ee95225c41f": "앱과 AI 도구는 지금 쓰는 SDK · CLI · 채팅 도구 · MCP 클라이언트를 그대로 씁니다. 호출 주소만 Kong AI Gateway로 바꾸면 인증, 가드레일, 라우팅, 비용 통제, 로깅이 모든 요청에 적용됩니다. 클라이언트에는 Kong이 발급한 키나 OAuth 토큰만 두고, 실제 provider 키는 Kong이 보관합니다. 항목을 고르면 연동 설정과 화면 목업을 볼 수 있습니다.",
   "m.2e8e8434482e": "AI Gateway 2.2+(Konnect) 기준입니다. Kong Key Auth는 apikey · x-api-key · x-goog-api-key 헤더를 받고, 전역 Pre-Function 정책이 Authorization: Bearer 값을 apikey로 옮깁니다. MCP는 AI MCP Server와 AI Auth Strategy(OAuth 2.1)로 구성합니다. 목업의 주소 · 키 · 모델명은 예시이며, 실제 경로와 헤더는 Kong 구성에 따릅니다. Claude.ai 팀 좌석 · 세션 토큰은 Anthropic 약관상 Gateway로 중계하지 않습니다. 출처: Kong AI Cookbook · AI Tool Integration · Secure Internal MCP Gateway 레시피.",
-  "m.d1a2b7f9f77d": "MCP 서버"
+  "m.d1a2b7f9f77d": "MCP 서버",
+  "m.01eef22d7f40": "모델 선택 화면",
+  "m.9512a61425ed": "연결에 필요한 값",
+  "m.1e1bffd26bfd": "MCP 클라이언트",
+  "m.f70af64af394": "Kong이 제공하는 모델이 선택 목록에 추가됩니다."
 }
