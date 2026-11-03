@@ -132,7 +132,8 @@ npm run build        # kong-introduction.html + docs/index.html 생성 (VERSION 
 `YYYY.MM.DD.<unix_ts_hex>` (예: `2026.11.02.c92f0e46`). 날짜는 Release 시점 로컬 날짜, 접미는 Release 준비 시각 Unix epoch **초**의 소문자 hex. 순번처럼 올리지 않는다. `VERSION` · Changelog `##` · Release 태그를 같은 문자열로 맞춘다(선행 `v` 없음).
 
 ```bash
-python3 -c "import time; print(hex(int(time.time()))[2:])"
+npm run bump-version   # VERSION에 YYYY.MM.DD.<unix_hex> 기록 · 표준출력으로 출력
+# 또는: bash scripts/bump-version.sh
 ```
 
 ### Changelog 기록 범위(콘텐츠만)
