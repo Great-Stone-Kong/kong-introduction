@@ -11,6 +11,7 @@
 
 - AI Gateway 2.0 > 신규 기능 > MCP 번들링과 1.x listener 모드 비교
 - AI Gateway > AI GW 1.0 & 2.0: 배경 · 대칭 비교 · 선택 기준 · 2.0 링크
+- AI Gateway > 전환 방식: 개별 도구 항목 추가
 
 ### 변경
 
@@ -18,9 +19,7 @@
 - AI Gateway > 경쟁 제품 비교 : 탭별 지원 항목 수 요약 막대 추가
 - 인프라 구성 > 권장 사이징 : 사이징 선택에 따른 필요 자원 표기
 - AI Gateway > 동작 원리 : 전환 방식 · 대표 기능 섹션으로 분리
-- Kong 기업 소개 > 증명된 신뢰성 : 카드 순서를 처리량·지연 / 고객 수·경량성으로 재배치
-- 화면 배율 표시 : 브라우저 확대·축소 반영(실효 배율)
-- AI Gateway > 전환 방식 : 예시 호스트를 ai-gw.kong.ai로 통일 · Cursor 목업 Use OpenAI API Key off
+- AI Gateway > 전환 방식 : 경로를 /coding-agents로 통일 · 연동 설정 구문 강조
 
 ### 삭제
 
