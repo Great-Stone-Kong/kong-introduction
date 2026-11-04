@@ -452,8 +452,9 @@ html[data-theme="light"] .geo{--gw-sea:#DCE3D8;--gw-sea2:#EEF2EA;--gw-land:#A3AB
 .gw-rt button{font-family:var(--font);text-align:left;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--heading);cursor:pointer;position:relative;overflow:hidden;transition:background .18s cubic-bezier(.2,.8,.2,1),border-color .18s cubic-bezier(.2,.8,.2,1)}
 .gw-rt button:hover{border-color:var(--mark)}
 .gw-rt b{display:block;font-size:14px;margin-bottom:2px}.gw-rt small{display:block;font-size:11.5px;line-height:1.35;color:var(--g400)}
-.gw-rt button.on{background:var(--lime);border-color:var(--lime);color:var(--on-lime)}.gw-rt button.on small{color:var(--on-lime)}
-.gw-rt i{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--on-lime);opacity:.45}
+.gw-rt button.on{background:var(--lime);border-color:var(--lime);color:var(--on-lime)}
+.gw-rt button.on b,.gw-rt button.on small{color:var(--on-lime)}
+.gw-rt i{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--on-lime);opacity:.55}
 .gw-rp{min-height:300px;margin-bottom:16px}
 .gw-kl{margin-top:14px}.gw-kl h4{margin:0 0 8px;font-size:12px;letter-spacing:.04em;color:var(--g400);font-weight:800}
 .gw-chips{display:flex;flex-wrap:wrap;gap:5px}
@@ -465,8 +466,9 @@ html[data-theme="light"] .geo{--gw-sea:#DCE3D8;--gw-sea2:#EEF2EA;--gw-land:#A3AB
 .gw-team{margin-top:auto;display:flex;align-items:center;gap:14px;padding-top:14px;border-top:1px solid var(--line)}
 .gw-tic{flex:none;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;color:var(--mark);border:1.5px solid var(--mark);background:color-mix(in srgb,var(--lime) 8%,transparent)}
 .gw-tic svg{width:26px;height:26px}
-.gw-tn{font-size:38px;line-height:1;font-weight:800;color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:-.01em}.gw-tn i{font-style:normal}
-.gw-tl{display:flex;flex-direction:column;gap:2px}.gw-tl strong{font-size:15px;color:var(--heading)}.gw-tl small{font-size:12.5px;color:var(--g400)}
+/* 최종 표기(1,000+) 너비로 고정 → 자릿수·콤마 증가 시 Kongers 라벨 위치 유지 */
+.gw-tn{flex:none;display:inline-block;width:5.1em;text-align:right;font-size:38px;line-height:1;font-weight:800;color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:-.01em}.gw-tn i{font-style:normal}
+.gw-tl{display:flex;flex-direction:column;gap:2px;min-width:0}.gw-tl strong{font-size:15px;color:var(--heading)}.gw-tl small{font-size:12.5px;color:var(--g400)}
 .gw-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 8px}
 .gw-list li{display:grid;grid-template-columns:22px minmax(0,1fr);align-items:center;column-gap:9px;margin:0;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);transition:border-color .18s cubic-bezier(.2,.8,.2,1),background .18s cubic-bezier(.2,.8,.2,1)}
 .gw-list li:before{display:none}
