@@ -1589,11 +1589,11 @@
     "zh-Hant": "AI的先決條件, <em>APIs 影象</em>"
   },
   "u.c8ebad396ef8": {
-    "match": "서버 수가 아닌 비즈니스 가치 기준",
-    "en": "Priced on <em>business value</em>, not server count",
-    "ja": "サーバー数ではなく<em>ビジネス価値</em>基準",
-    "zh-Hans": "定价 <em>商业价值</em>,而不是服务器数",
-    "zh-Hant": "定價 <em>商業價值</em>,而不是伺服器數"
+    "match": "비즈니스 가치 = 사용량 기준",
+    "en": "Business value = <em>usage</em>-based",
+    "ja": "ビジネス価値 = <em>使用量</em>基準",
+    "zh-Hans": "商业价值 = <em>用量</em>基准",
+    "zh-Hant": "商業價值 = <em>用量</em>基準"
   },
   "u.ade950722757": {
     "match": "규제 요건과 Kong 통제 항목 매핑",

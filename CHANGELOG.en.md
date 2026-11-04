@@ -5,6 +5,14 @@
 
 ---
 
+## Unreleased
+
+### Changed
+
+- License model > Pricing structure:
+  - Move the sizing example into Pricing structure
+  - Show per-factor minimums as top-right pills on each card
+
 ## 2026.11.03.6ae9ed14
 
 ### Added
