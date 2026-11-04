@@ -458,7 +458,8 @@ html[data-theme="light"] .geo{--gw-sea:#DCE3D8;--gw-sea2:#EEF2EA;--gw-land:#A3AB
 .gw-chips{display:flex;flex-wrap:wrap;gap:5px}
 .gw-chips span{font-size:11.5px;font-weight:700;color:var(--g200);border:1px solid var(--line);border-radius:999px;padding:3px 9px;transition:border-color .18s,color .18s,background .18s}
 .gw-chips span.on{border-color:var(--mark);color:var(--accent);background:color-mix(in srgb,var(--lime) 8%,transparent)}
-.gw{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:28px;align-items:center;margin-top:10px}
+.gw{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:28px;align-items:start;margin-top:10px}
+.gw-r{margin-top:-14px}
 .gw-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 8px}
 .gw-list li{display:grid;grid-template-columns:22px minmax(0,1fr);align-items:center;column-gap:9px;margin:0;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);transition:border-color .18s cubic-bezier(.2,.8,.2,1),background .18s cubic-bezier(.2,.8,.2,1)}
 .gw-list li:before{display:none}
@@ -3186,7 +3187,7 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
     <div class="geohead">
       <div><span class="lbl">글로벌 거점 · 13개 오피스 · 24개 국가</span><h3 style="margin:0;font-size:22px">글로벌 고객 거점과 한국 지원 체계</h3></div>
     </div>
-    <div class="gw"><div class="gw-l"><div class="gw-rt" id="gwTabs" role="tablist"></div><div class="gw-rp" id="gwPane"><ul class="gw-list" id="gwList"></ul><div class="gw-kl"><h4>Kong 구성원이 있는 국가</h4><div class="gw-chips" id="gwChips"></div></div></div></div><div class="gw-r"><svg id="geomap" viewBox="0 20 600 562" role="img" aria-label="Kong 글로벌 오피스 세계지도, 대한민국 강조"></svg></div></div>
+    <div class="gw"><div class="gw-l"><div class="gw-rt" id="gwTabs" role="tablist"></div><div class="gw-rp" id="gwPane"><ul class="gw-list" id="gwList"></ul><div class="gw-kl"><h4>Kong 구성원이 있는 국가</h4><div class="gw-chips" id="gwChips"></div></div></div></div><div class="gw-r"><svg id="geomap" viewBox="0 22 600 568" role="img" aria-label="Kong 글로벌 오피스 세계지도, 대한민국 강조"></svg></div></div>
   </div>
 
   <p class="note">출처: <a href="https://konghq.com/company" target="_blank" rel="noopener noreferrer">konghq.com/company</a></p>
@@ -7517,7 +7518,7 @@ const GW=(function(){
     GR=p('gw-grat'); L2=p('gw-f1'); L3=p('gw-f2'); K1=p('gw-k1'); KR=p('gw-kr'); dotF=g(); arcF=g(); rings=g(); labs=g(); hlg=g();
     el('circle',{class:'gw-rim',cx:CX,cy:CY,r:R},svg);
     el('ellipse',{class:'gw-fade',cx:CX,cy:CY+R+24,rx:R+60,ry:110},svg);
-    el('use',{class:'gw-logo',href:'#kong-logo',x:CX-82,y:CY+R+1,width:164,height:52.4},svg);
+    el('use',{class:'gw-logo',href:'#kong-logo',x:CX-112,y:CY+R-6,width:212,height:67.7},svg);
     ORDER.forEach(r=>{const b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.dataset.r=r;
       b.innerHTML='<b>'+RG[r][0]+'</b><small>'+OFF.filter(x=>x[4]===r).length+' offices</small><small>'+KC.filter(c=>c[1]===r).length+' countries</small><i></i>';tabs.appendChild(b);tabEls[r]=b;});
     tabs.addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b)return;auto=false;Object.values(tabEls).forEach(x=>x.querySelector('i').style.width='0');go(b.dataset.r);});
