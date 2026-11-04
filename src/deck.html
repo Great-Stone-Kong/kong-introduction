@@ -443,18 +443,43 @@ svg.mq{display:block;width:100%;height:auto}
 .geohead{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:8px}
 .gleg{display:flex;gap:18px;font-size:13px;color:var(--g300)}
 .gleg span{display:flex;align-items:center;gap:8px}
-.lg{display:inline-block;width:10px;height:10px;border-radius:50%}
-.lg.o{background:var(--lime)}.lg.k{background:#fff;box-shadow:0 0 0 3px rgba(204,255,0,.5)}
-#geomap{display:block;width:100%;height:auto}
-#geomap .band{opacity:0}
-.geo.in #geomap .band{animation:fadein .7s forwards;animation-delay:var(--d)}
-#geomap .mk{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.2)}
-.geo.in #geomap .mk{animation:pop .5s cubic-bezier(.2,.9,.3,1.4) forwards;animation-delay:var(--d)}
-#geomap .rg{fill:none;stroke:var(--mark);stroke-width:1.5;opacity:0;transform-box:fill-box;transform-origin:center}
-.geo.in #geomap .rg{animation:ripple 2.6s ease-out 4;animation-delay:var(--d)}
-#geomap .krg{stroke:var(--heading);stroke-width:2}
-.geo.in #geomap .klbl{animation:fadeup .8s 2.6s both}
-#geomap .klbl{opacity:0}
+/* 지구본 · 거점 목록 · 연결 아크 */
+.geo{--gw-sea:#04170A;--gw-sea2:#0C2A16;--gw-land:var(--mark)}
+html[data-theme="light"] .geo{--gw-sea:#DCE3D8;--gw-sea2:#EEF2EA;--gw-land:#676B66}
+.gw{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:28px;align-items:center;margin-top:10px}
+.gw-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 8px}
+.gw-list li{display:grid;grid-template-columns:22px minmax(0,1fr);align-items:center;column-gap:9px;margin:0;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);transition:border-color .18s cubic-bezier(.2,.8,.2,1),background .18s cubic-bezier(.2,.8,.2,1)}
+.gw-list li:before{display:none}
+.gw-list li svg{grid-row:1/3;width:22px;height:22px}
+.gw-list li svg circle{fill:none;stroke:var(--mark);stroke-width:1.4}.gw-list li svg use{fill:var(--mark)}
+.gw-list b{font-size:13px;color:var(--heading);line-height:1.25}.gw-list small{font-size:11px;color:var(--g400);line-height:1.25}
+.gw-list li.hq svg circle{fill:var(--lime);stroke:var(--lime)}.gw-list li.hq svg use{fill:var(--on-lime)}
+html[data-theme="light"] .gw-list li.hq svg circle{stroke:var(--mark)}
+.gw-list li.hl{border-color:var(--mark);box-shadow:inset 0 0 0 1px var(--mark)}.gw-list li.hl b{color:var(--accent)}
+.gw-list li.on{border-color:var(--mark);background:color-mix(in srgb,var(--lime) 10%,var(--card))}
+.gw-list em{font-style:normal;font-size:9.5px;font-weight:800;color:var(--on-lime);background:var(--lime);border-radius:3px;padding:0 4px;margin-left:5px;vertical-align:1px}
+#geomap{display:block;width:100%;height:auto;overflow:visible}
+#geomap .gw-atm{fill:url(#gwAtm)}#geomap .gw-sph{fill:url(#gwSea);fill-opacity:.82}#geomap .gw-rim{fill:none;stroke:var(--mark);stroke-opacity:.45;stroke-width:1.2}
+#geomap .gw-grat{fill:none;stroke:var(--mark);stroke-opacity:.12;stroke-width:.8}
+#geomap .gw-bk{fill:none;stroke:var(--gw-land);stroke-opacity:.16;stroke-width:1.6;stroke-linecap:round}
+#geomap .gw-f1,#geomap .gw-f2{fill:none;stroke:var(--gw-land);stroke-linecap:round}#geomap .gw-f1{stroke-opacity:.35;stroke-width:1.8}#geomap .gw-f2{stroke-opacity:.8;stroke-width:2.4}
+html[data-theme="light"] #geomap .gw-f1{stroke-opacity:.5}html[data-theme="light"] #geomap .gw-bk{stroke-opacity:.24}
+#geomap .gw-dot{fill:var(--mark)}#geomap .gw-dot.hq{fill:var(--lime);stroke:var(--mark);stroke-width:1}
+#geomap .gw-arc{fill:none;stroke:var(--mark);stroke-width:1.6;stroke-linecap:round}#geomap .gw-arc.h{stroke-width:2.4}
+#geomap .gw-head{fill:var(--heading)}html[data-theme="light"] #geomap .gw-head{fill:var(--mark)}
+#geomap .gw-ring{fill:none;stroke:var(--mark);stroke-width:1.4}
+#geomap .gw-lab{font-size:12px;font-weight:700;fill:var(--heading);paint-order:stroke;stroke:var(--navy-2);stroke-width:3.5px;stroke-linejoin:round}
+#geomap .gw-core{fill:var(--lime);stroke:var(--heading);stroke-width:2.2}html[data-theme="light"] #geomap .gw-core{stroke:var(--mark)}
+#geomap .gw-core+use{fill:var(--on-lime)}
+#geomap .gw-hp{fill:none;stroke:var(--heading);stroke-width:1.6;transform-box:fill-box;transform-origin:center;animation:gwP 2.4s cubic-bezier(.2,.8,.2,1) infinite}
+html[data-theme="light"] #geomap .gw-hp{stroke:var(--mark)}#geomap .gw-hp.d2{animation-delay:1.2s}
+@keyframes gwP{0%{opacity:.85;transform:scale(.6)}100%{opacity:0;transform:scale(2.6)}}
+#geomap .gw-pill{fill:var(--card);fill-opacity:.96;stroke:var(--mark);stroke-width:1.2}
+#geomap .gw-tx{font-size:13px;font-weight:800;fill:var(--heading)}
+#geomap .gw-fade{fill:url(#gwFade)}#geomap .gw-logo{fill:var(--brand)}
+@media (max-width:820px){.gw{grid-template-columns:1fr}.gw-r{order:-1;max-width:520px;margin:0 auto;width:100%}}
+@media (prefers-reduced-motion:reduce){#geomap .gw-hp{animation:none;opacity:0}}
+@media print{#geomap .gw-hp{animation:none;opacity:0}}
 .cities span.kr{background:none;border:1px solid var(--mark);color:var(--accent)}
 .geo.in .cities span{animation:pop .45s cubic-bezier(.2,.9,.3,1.4) forwards}
 @media (max-width:820px){.namebox,.geo{padding:20px}.eqi b{font-size:20px}}
@@ -3077,6 +3102,7 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
 <symbol id="ic-gcp" viewBox="0 0 16 16"><path fill="#8AB4F8" d="M10.313 5.376l1.887-1.5-.332-.414a5.935 5.935 0 00-5.586-1.217 5.89 5.89 0 00-3.978 4.084c-.03.113.312-.098.463-.056l2.608-.428s.127-.124.201-.205c1.16-1.266 3.126-1.432 4.465-.354l.272.09z"/><path fill="#8AB4F8" d="M13.637 6.3a5.835 5.835 0 00-1.77-2.838l-1.83 1.82a3.226 3.226 0 011.193 2.564v.323c.9 0 1.63.725 1.63 1.62 0 .893-.73 1.619-1.63 1.619l-3.257-.003-.325.035v2.507l.325.053h3.257a4.234 4.234 0 004.08-2.962A4.199 4.199 0 0013.636 6.3z"/><path fill="#8AB4F8" d="M4.711 13.999H7.97v-2.594H4.71c-.232 0-.461-.066-.672-.161l-.458.14-1.313 1.297-.114.447a4.254 4.254 0 002.557.87z"/><path fill="#8AB4F8" d="M4.711 5.572A4.234 4.234 0 00.721 8.44a4.206 4.206 0 001.433 4.688l1.89-1.884a1.617 1.617 0 01.44-3.079 1.63 1.63 0 011.714.936l1.89-1.878A4.24 4.24 0 004.71 5.572z"/></symbol>
 <symbol id="ic-onprem" viewBox="0 0 24 24"><path fill="#B8F000" fill-rule="evenodd" clip-rule="evenodd" d="M11.2754.169929c.2763-.226043.6729-.226043.9492 0L23.2246 9.16993C23.3987 9.31238 23.5 9.52506 23.5 9.75001V20.75C23.5 22.2692 22.2692 23.5 20.75 23.5H2.75C1.23079 23.5 0 22.2692 0 20.75V9.75001c0-.22495.101289-.43763.275391-.58008L11.2754.169929ZM1.5 10.1055V20.75c0 .6908.55921 1.25 1.25 1.25H20.75c.6908 0 1.25-.5592 1.25-1.25V10.1055L11.75 1.71876 1.5 10.1055ZM19.25 12.75c.8284 0 1.5.6716 1.5 1.5V19.25c0 .7767-.5903 1.4154-1.3467 1.4922L19.25 20.75H4.25l-.15332-.0078C3.34028 20.6654 2.75 20.0267 2.75 19.25V14.25c0-.8284.67157-1.5 1.5-1.5H19.25ZM4.25 19.25H19.25V14.25H4.25V19.25ZM6.75 16c.41421 0 .75.3358.75.75v.0098c0 .4142-.33579.75-.75.75s-.75-.3358-.75-.75V16.75c0-.4142.33579-.75.75-.75ZM9.75 16c.4142 0 .75.3358.75.75v.0098c0 .4142-.3358.75-.75.75s-.75-.3358-.75-.75V16.75c0-.4142.3358-.75.75-.75Z"/></symbol>
 <symbol id="ic-databricks" viewBox="0 0 24 24"><path fill="#FF3621" d="M.95 14.184 12 20.403l9.919-5.55v2.21L12 22.662l-10.484-5.96-.565.308v.77L12 24l11.05-6.218v-4.317l-.515-.309L12 19.118l-9.867-5.653v-2.21L12 16.805l11.05-6.218V6.32l-.515-.308L12 11.974 2.647 6.681 12 1.388l7.76 4.368.668-.411v-.566L12 0 .95 6.27v.72L12 13.207l9.919-5.55v2.26L12 15.52 1.516 9.56l-.565.308z"/></symbol>
+<symbol id="kong-logo" viewBox="0 0 429 137"><path d="M49.6,113l-3.7,4.7,8.4,13.2-.9,6.1h35.6l2.5-6.1-14.3-17.9h-27.6Z"/><path d="M69.1,32.7l-12.9,22.7,62.9,74.8-1.8,6.9h28.8l5.2-24.3L84.1,32.7h-15Z"/><path d="M77.7,15.6l-6.1,11.3h15.2l26.1,31.2,15.5-12.8v-8.1l-5.4-7.6,4-4.2L95.8.7l-18.2,14.9Z"/><path d="M30.9,78.8h-8.5L0,107.4v29.6h24l4.2-5.5,18.5-24.1h26.8l8.2-12.7-29.1-34.7-21.9,18.9Z"/><path fill-rule="evenodd" d="M260.4,94h20.9v-32.2h-20.9v32.2ZM261.1,106.9c-5.8,0-8.8-1-11.3-3.6-3.7-3.8-5.2-9-5.2-25.3s1.5-21.5,5.2-25.4c2.4-2.5,5.5-3.5,11.3-3.5h19.4c5.8,0,8.8,1,11.3,3.5,3.7,3.9,5.2,9,5.2,25.4s-1.5,21.5-5.2,25.3c-2.5,2.6-5.5,3.6-11.3,3.6h-19.4Z"/><path fill-rule="evenodd" d="M344.3,67.3v39.6h15.9v-40.8c0-8.5-.9-11.5-3.3-13.8-2.2-2.2-5.3-3.2-10.2-3.2h-14s-8,7.3-8,7.3v-7.3h-15.8v57.8h15.9v-45.1h19.5v5.6h0Z"/><path fill-rule="evenodd" d="M219.7,33.2h18.9l-27.2,34.6,28.3,39.1h-20.1l-21.6-30.7h-5.1s0,30.7,0,30.7h-17V33.2h17v28.6h5.1l21.6-28.6Z"/><path fill-rule="evenodd" d="M409,49.1v7.3l-8-7.3h-11.9c-5.7,0-9.1,1-11.7,3.5-3.4,3.6-5.1,11.3-5.1,25.6s1.4,21.7,4.7,25.1c2.6,2.5,5.7,3.6,11.8,3.6h20.2v8.3s-28,0-28,0v3.4s7.3,8.1,7.3,8.1h21.9c5.8,0,9.1-1,11.2-3.2,2.6-2.7,3.6-4.4,3.6-14.3v-60h-16,0ZM409.1,94h-20.9v-32.2h20.9v32.2h0Z"/></symbol>
 <symbol id="kong-mark" viewBox="0 0 153 137"><path d="M50.5,112.9l-3.7,4.7,8.4,13.2-.9,6.1h35.6l2.5-6.1-14.3-17.9s-27.6,0-27.6,0Z"/><path d="M69.9,32.6l-12.9,22.7,62.9,74.8-1.8,6.9h28.8l5.2-24.3L84.9,32.5h-15Z"/><path d="M78.5,15.5l-6.1,11.3h15.2l26.1,31.2,15.5-12.8v-8.1l-5.4-7.6,4-4.2L96.7.6l-18.2,14.9Z"/><path d="M31.7,78.7h-8.5L.8,107.3v29.6h24l4.2-5.5,18.5-24.1h26.8l8.3-12.7-29.1-34.7-21.9,18.9h0Z"/></symbol>
 <symbol id="kafka-mark" viewBox="0 0 128 128"><path fill="currentColor" d="M86.758 70.89c-4.992 0-9.465 2.208-12.528 5.68l-7.851-5.547a21.275 21.275 0 001.312-7.32c0-2.531-.46-4.95-1.27-7.203l7.837-5.488c3.062 3.457 7.523 5.652 12.5 5.652 9.207 0 16.703-7.48 16.703-16.672 0-9.195-7.496-16.672-16.703-16.672-9.211 0-16.707 7.477-16.707 16.672 0 1.645.25 3.23.699 4.735l-7.84 5.488a21.578 21.578 0 00-13.36-7.746v-9.43c7.567-1.586 13.27-8.293 13.27-16.312C62.82 7.53 55.324.055 46.117.055c-9.21 0-16.707 7.476-16.707 16.672 0 7.91 5.555 14.539 12.969 16.238v9.547c-10.117 1.773-17.84 10.59-17.84 21.191 0 10.652 7.797 19.5 17.992 21.211V95c-7.492 1.64-13.12 8.309-13.12 16.273 0 9.196 7.495 16.672 16.706 16.672 9.207 0 16.703-7.476 16.703-16.672 0-7.964-5.629-14.632-13.117-16.273V84.914a21.592 21.592 0 0013.133-7.625l7.902 5.586a16.45 16.45 0 00-.687 4.688c0 9.195 7.496 16.671 16.707 16.671 9.207 0 16.703-7.476 16.703-16.671 0-9.196-7.496-16.672-16.703-16.672zm0-38.984c4.465 0 8.097 3.63 8.097 8.086 0 4.453-3.632 8.082-8.097 8.082-4.469 0-8.102-3.629-8.102-8.082 0-4.457 3.633-8.086 8.102-8.086zm-48.742-15.18c0-4.456 3.632-8.081 8.101-8.081 4.465 0 8.098 3.625 8.098 8.082 0 4.457-3.633 8.082-8.098 8.082-4.469 0-8.101-3.625-8.101-8.082zm16.199 94.547c0 4.457-3.633 8.082-8.098 8.082-4.469 0-8.101-3.625-8.101-8.082 0-4.457 3.632-8.082 8.101-8.082 4.465 0 8.098 3.625 8.098 8.082zm-8.102-36.296c-6.226 0-11.293-5.059-11.293-11.274 0-6.219 5.067-11.277 11.293-11.277 6.23 0 11.297 5.058 11.297 11.277 0 6.215-5.066 11.274-11.297 11.274zm40.645 20.668c-4.469 0-8.102-3.625-8.102-8.082 0-4.458 3.633-8.083 8.102-8.083 4.465 0 8.097 3.625 8.097 8.082 0 4.458-3.632 8.083-8.097 8.083zm0 0"/></symbol>
 <symbol id="phone-mark" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.28-.28.67-.36 1.02-.25 1.12.37 2.32.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></symbol>
@@ -3143,13 +3169,8 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
   <div class="geo" id="geo">
     <div class="geohead">
       <div><span class="lbl">글로벌 거점 · 13개 오피스</span><h3 style="margin:0;font-size:22px">글로벌 고객 거점과 한국 지원 체계</h3></div>
-      <div class="gleg"><span><i class="lg o"></i> Kong 오피스</span><span><i class="lg k"></i> 대한민국</span></div>
     </div>
-    <svg id="geomap" viewBox="0 0 1000 370" role="img" aria-label="Kong 글로벌 오피스 세계지도, 대한민국 강조"></svg>
-    <div class="cities">
-      <span class="hq">San Francisco (HQ)</span><span>Chicago</span><span>London</span><span>Paris</span><span>Milan</span><span>Budapest</span><span>Bangalore</span><span>Pune</span><span>Singapore</span><span>Beijing</span><span>Shanghai</span><span>Tokyo</span><span>Sydney</span><span class="kr" data-show-lang="ko">대한민국</span>
-    </div>
-    
+    <div class="gw"><ul class="gw-list" id="gwList"></ul><div class="gw-r"><svg id="geomap" viewBox="0 0 600 640" role="img" aria-label="Kong 글로벌 오피스 세계지도, 대한민국 강조"></svg></div></div>
   </div>
 
   <p class="note">출처: <a href="https://konghq.com/company" target="_blank" rel="noopener noreferrer">konghq.com/company</a></p>
@@ -7392,9 +7413,10 @@ function drawMQ(){
 }
 drawMQ();
 
-/* ---------- 세계지도 (단순화 도트맵) ---------- */
-function drawGeo(){
-  const svg=document.getElementById('geomap'); if(!svg) return;
+/* ---------- 글로벌 거점 지구본 (거점 목록 · 연결 아크) ---------- */
+// 반투명 정사영 지구가 회전하고 거점 사이에 떠오르는 아크가 그려진다. 아크가 닿는 도시는 왼쪽 목록에서도 강조.
+// 언어별 강조 거점(window.KONG_GEO_HL, 배열)은 허브가 되어 펄스 · 라벨을 계속 표시한다.
+const GW=(function(){
   const L={
    na:[[-168,66],[-162,70],[-156,71],[-140,70],[-128,70],[-115,68],[-95,72],[-85,69],[-82,63],[-93,58],[-90,53],[-80,52],[-78,57],[-70,60],[-62,58],[-56,52],[-60,47],[-67,44],[-70,42],[-74,39],[-76,35],[-81,31],[-80,26],[-83,29],[-90,30],[-97,27],[-97,21],[-91,19],[-87,21],[-88,16],[-84,15],[-83,10],[-78,8],[-80,7],[-86,11],[-92,15],[-97,16],[-105,20],[-110,24],[-112,29],[-115,30],[-110,23],[-117,32],[-121,35],[-124,40],[-124,47],[-130,54],[-137,58],[-146,61],[-152,59],[-158,57],[-165,55],[-160,59],[-166,62]],
    baffin:[[-80,63],[-62,66],[-68,72],[-85,73]],
@@ -7413,28 +7435,107 @@ function drawGeo(){
    uk:[[-5,50],[1,51],[2,53],[-2,56],[-2,58],[-5,58.5],[-6,56],[-3,54],[-5,52]], ire:[[-10,52],[-6,52],[-6,55],[-10,54]], ice:[[-24,64],[-14,64],[-14,66],[-22,66.5]],
    mad:[[44,-25],[48,-25],[50,-15],[49,-12],[44,-17]], phil:[[120,18],[122,18],[124,12],[126,7],[122,7],[120,14]]
   };
-  const PX=1000/375, X=lon=>(lon+25)*PX, Y=lat=>(80-lat)*PX, SH=lon=>lon<-26?lon+360:lon;
+  const D2R=Math.PI/180, CX=300, CY=292, R=232, TILT=20, s0=Math.sin(TILT*D2R), c0=Math.cos(TILT*D2R), NS='http://www.w3.org/2000/svg';
+  const OFF=[['San Francisco',-122.4,37.8,'United States',1],['Chicago',-87.6,41.9,'United States'],['London',-0.1,51.5,'United Kingdom'],['Paris',2.3,48.9,'France'],['Milan',9.2,45.5,'Italy'],['Budapest',19,47.5,'Hungary'],
+    ['Bangalore',77.6,13,'India'],['Pune',73.9,18.5,'India'],['Singapore',103.8,1.35,'Singapore'],['Beijing',116.4,39.9,'China'],['Shanghai',121.5,31.2,'China'],['Tokyo',139.7,35.7,'Japan'],['Sydney',151.2,-33.9,'Australia']];
+  const DEF=[{n:'Seoul',sub:'대한민국 · 한국 지원',t:'대한민국 · Seoul',lon:126.98,lat:37.57}];
   const inside=(x,y,poly)=>{let c=false;for(let i=0,j=poly.length-1;i<poly.length;j=i++){const a=poly[i],b=poly[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])c=!c;}return c;};
-  const polys=Object.values(L).map(p=>{const m=p.reduce((a,q)=>a+q[0],0)/p.length;return m<-26?p.map(q=>[q[0]+360,q[1]]):p;}), step=2.1, bands=14, bw=375/bands, ds=Array.from({length:bands},()=>[]);
-  for(let lat=78;lat>-56;lat-=step){ for(let lon=-24;lon<350;lon+=step){
-    if(polys.some(p=>inside(lon,lat,p))){ const b=Math.min(bands-1,Math.floor((lon+25)/bw)); ds[b].push('M'+X(lon).toFixed(1)+' '+Y(lat).toFixed(1)+'h.01'); } } }
-  const land=(document.documentElement.dataset.theme||'dark')==='light'?'#676B66':'var(--mark)';
-  let s='<g stroke="'+land+'" stroke-width="3.1" stroke-linecap="round" fill="none">'+ds.map((d,i)=>'<path class="band" style="--d:'+(i*.12)+'s" d="'+d.join('')+'"/>').join('')+'</g>';
-  const O=[['San Francisco',-122.4,37.8,1],['Chicago',-87.6,41.9],['London',-0.1,51.5],['Paris',2.3,48.9],['Milan',9.2,45.5],['Budapest',19,47.5],['Bangalore',77.6,13],['Pune',73.9,18.5],['Singapore',103.8,1.35],['Beijing',116.4,39.9],['Shanghai',121.5,31.2],['Tokyo',139.7,35.7],['Sydney',151.2,-33.9]];
-  O.forEach((o,i)=>{const x=X(SH(o[1])),y=Y(o[2]),d=(1.6+i*.08)+'s';
-    s+='<g><circle class="rg" style="--d:'+(2+i*.15)+'s" cx="'+x+'" cy="'+y+'" r="5"/><circle class="mk" style="--d:'+d+'" cx="'+x+'" cy="'+y+'" r="'+(o[3]?5:3.6)+'" fill="var(--mark)"/></g>';
-    if(o[3]) s+='<text x="'+(x-9)+'" y="'+(y-8)+'" text-anchor="end" font-size="11" font-weight="700" fill="var(--mark)">San Francisco · HQ</text>';
-  });
-  const HL=window.KONG_GEO_HL===undefined
-    ? {lon:126.98,lat:37.57,t:'대한민국 · Seoul',w:146}
-    : window.KONG_GEO_HL;
-  if(HL&&HL.lon!=null){
-    const kx=X(HL.lon), ky=Y(HL.lat);
-    s+='<g><circle class="rg krg" style="--d:2.4s" cx="'+kx+'" cy="'+ky+'" r="7"/><circle class="rg krg" style="--d:3.4s" cx="'+kx+'" cy="'+ky+'" r="7"/><circle class="mk" style="--d:2.4s" cx="'+kx+'" cy="'+ky+'" r="7" fill="var(--heading)" stroke="var(--mark)" stroke-width="3"/></g>';
-    s+='<g class="klbl"><path d="M'+kx+' '+(ky-9)+'V'+(ky-34)+'H'+(kx-24)+'" stroke="var(--mark)" stroke-width="1" fill="none"/><rect x="'+(kx-24-HL.w)+'" y="'+(ky-56)+'" width="'+HL.w+'" height="26" rx="13" fill="var(--card)" fill-opacity=".96" stroke="var(--mark)" stroke-width="1.2"/><text x="'+(kx-37)+'" y="'+(ky-38)+'" text-anchor="end" font-size="15" font-weight="800" fill="var(--heading)">'+HL.t+'</text></g>';
+  const polys=Object.values(L).map(p=>{const m=p.reduce((a,q)=>a+q[0],0)/p.length;return m<-26?p.map(q=>[q[0]+360,q[1]]):p;});
+  const LAND=[]; for(let lat=82;lat>-58;lat-=2){const n=Math.max(1,Math.round(360*Math.cos(lat*D2R)/2));for(let i=0;i<n;i++){const lon=-26+(i+(Math.abs(Math.round(lat/2))%2)*.5)*360/n;
+    if(polys.some(p=>inside(lon,lat,p))) LAND.push({l:lon*D2R,s:Math.sin(lat*D2R),c:Math.cos(lat*D2R)});}}
+  const RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const el=(tag,at,par)=>{const x=document.createElementNS(NS,tag);for(const k in at)x.setAttribute(k,at[k]);if(par)par.appendChild(x);return x;};
+  const proj=(lon,lat,l0,r)=>{r=r||1;const d=lon*D2R-l0,cp=Math.cos(lat*D2R),sp=Math.sin(lat*D2R),cd=Math.cos(d);
+    const x=cp*Math.sin(d),y=c0*sp-s0*cp*cd,z=s0*sp+c0*cp*cd;return {X:CX+R*r*x,Y:CY-R*r*y,z,hid:z<0&&Math.hypot(x*r,y*r)<1};};
+  const vec=(lon,lat)=>[Math.cos(lat*D2R)*Math.cos(lon*D2R),Math.cos(lat*D2R)*Math.sin(lon*D2R),Math.sin(lat*D2R)];
+  let svg,list,L1,L2,L3,GR,dotB,dotF,arcB,arcF,rings,labs,hlg,nodes=[],hubs=[],items={},arcs=[],pulses=[],lastSpawn=-9,tt=0,last=0,vis=false,raf=0;
+  function init(){
+    svg=document.getElementById('geomap'); list=document.getElementById('gwList'); if(!svg||!list) return false;
+    svg.innerHTML='<defs><radialGradient id="gwSea" cx="38%" cy="30%" r="80%"><stop offset="0" style="stop-color:var(--gw-sea2)"/><stop offset="1" style="stop-color:var(--gw-sea)"/></radialGradient>'
+      +'<radialGradient id="gwAtm" r="50%"><stop offset=".86" style="stop-color:var(--lime);stop-opacity:0"/><stop offset=".9" style="stop-color:var(--lime);stop-opacity:.16"/><stop offset="1" style="stop-color:var(--lime);stop-opacity:0"/></radialGradient>'
+      +'<radialGradient id="gwFade"><stop offset="0" style="stop-color:var(--navy-2);stop-opacity:1"/><stop offset=".45" style="stop-color:var(--navy-2);stop-opacity:.92"/><stop offset="1" style="stop-color:var(--navy-2);stop-opacity:0"/></radialGradient></defs>';
+    const g=()=>el('g',{},svg), p=c=>el('path',{class:c},svg);
+    el('circle',{class:'gw-atm',cx:CX,cy:CY,r:R*1.16},svg);
+    L1=p('gw-bk'); arcB=g(); dotB=g();
+    el('circle',{class:'gw-sph',cx:CX,cy:CY,r:R},svg);
+    GR=p('gw-grat'); L2=p('gw-f1'); L3=p('gw-f2'); dotF=g(); arcF=g(); rings=g(); labs=g(); hlg=g();
+    el('circle',{class:'gw-rim',cx:CX,cy:CY,r:R},svg);
+    el('ellipse',{class:'gw-fade',cx:CX,cy:CY+R+24,rx:R+60,ry:110},svg);
+    el('use',{class:'gw-logo',href:'#kong-logo',x:CX-82,y:CY+R+1,width:164,height:52.4},svg);
+    if(!RM){last=performance.now();raf=requestAnimationFrame(loop);}
+    return true;
   }
-  svg.innerHTML=s;
-}
+  function build(){
+    if(!svg&&!init()) return;
+    const H=window.KONG_GEO_HL===undefined?DEF:(window.KONG_GEO_HL||[]);
+    nodes=OFF.map(o=>({n:o[0],lon:o[1],lat:o[2],ct:o[3],hq:!!o[4]}));
+    hubs=H.map(h=>{let x=nodes.find(o=>o.n===h.n);if(!x){x={n:h.n,lon:h.lon,lat:h.lat,ct:h.sub||'',extra:1};nodes.push(x);}x.t=h.t;x.side=h.side||-1;return x;});
+    list.innerHTML='';items={};
+    const ex=hubs.filter(x=>x.extra);
+    ex.concat(nodes.filter(x=>!ex.includes(x))).forEach(x=>{const li=document.createElement('li');li.className=(x.hq?'hq ':'')+(hubs.includes(x)?'hl':'');
+      li.innerHTML='<svg viewBox="-11 -11 22 22" aria-hidden="true"><circle r="10"/><use href="#kong-mark" x="-6.5" y="-5.8" width="13" height="11.7"/></svg><b>'+x.n+(x.hq?'<em>HQ</em>':'')+'</b><small>'+x.ct+'</small>';
+      list.appendChild(li);items[x.n]=li;});
+    [dotB,dotF,arcB,arcF,rings,labs,hlg].forEach(q=>q.innerHTML='');arcs=[];pulses=[];
+    nodes.forEach(x=>{x.d=el('circle',{class:'gw-dot'+(x.hq?' hq':''),r:x.hq?4.6:3.4},dotF);x.v=vec(x.lon,x.lat);});
+    hubs.forEach(h=>{const gg=el('g',{},hlg),core=el('g',{},gg);el('circle',{class:'gw-hp',r:11},core);el('circle',{class:'gw-hp d2',r:11},core);el('circle',{class:'gw-core',r:11},core);
+      el('use',{href:'#kong-mark',x:-6.5,y:-5.8,width:13,height:11.7},core);const rc=el('rect',{class:'gw-pill',rx:13,height:26},gg),tx=el('text',{class:'gw-tx'},gg);tx.textContent=h.t;h.ui={gg,core,rc,tx,w:0};});
+    if(RM&&!arcs.length){ for(let i=0;i<4;i++) spawn(-10); arcs.forEach(A=>A.t0=-10-A.dur); }
+    frame(tt);
+  }
+  const ang=(u,v)=>Math.acos(Math.max(-1,Math.min(1,u.v[0]*v.v[0]+u.v[1]*v.v[1]+u.v[2]*v.v[2])));
+  function spawn(t){
+    if(arcs.length>=6) return;
+    const pick=()=>nodes[Math.floor(Math.random()*nodes.length)];
+    let a=(hubs.length&&Math.random()<.55)?hubs[Math.floor(Math.random()*hubs.length)]:pick(), b=pick(), k=0;
+    while((b===a||ang(a,b)<.35)&&k++<20) b=pick(); if(b===a) return;
+    if(Math.random()<.5&&!hubs.includes(a)){const c=a;a=b;b=c;}
+    const th=ang(a,b), N=48, pts=[];
+    for(let i=0;i<=N;i++){const u=i/N,s1=Math.sin((1-u)*th)/Math.sin(th),s2=Math.sin(u*th)/Math.sin(th),v=[s1*a.v[0]+s2*b.v[0],s1*a.v[1]+s2*b.v[1],s1*a.v[2]+s2*b.v[2]];
+      pts.push({lon:Math.atan2(v[1],v[0])/D2R,lat:Math.asin(Math.max(-1,Math.min(1,v[2])))/D2R,h:1+Math.sin(Math.PI*u)*(.06+.22*th/Math.PI)});}
+    const hc=(hubs.includes(a)||hubs.includes(b))?' h':'';
+    arcs.push({a,b,pts,t0:t,dur:1.3+th*.5,hold:.5,out:.9,pf:el('path',{class:'gw-arc'+hc},arcF),pb:el('path',{class:'gw-arc'+hc,opacity:.25},arcB),hd:el('circle',{class:'gw-head',r:2.6},arcF),landed:false});
+    if(t>=0) [a,b].forEach(x=>{const li=items[x.n];if(li){li.classList.add('on');clearTimeout(li._t);li._t=setTimeout(()=>li.classList.remove('on'),1800);}});
+  }
+  function frame(t){
+    if(!svg) return;
+    const l0=((hubs.length?hubs.reduce((q,h)=>q+h.lon,0)/hubs.length:127)+35-(RM?0:t*7.2))*D2R;
+    let a='',b='',c='';
+    for(const p of LAND){const d=p.l-l0,cd=Math.cos(d),x=p.c*Math.sin(d),y=c0*p.s-s0*p.c*cd,z=s0*p.s+c0*p.c*cd,q='M'+(CX+R*x).toFixed(1)+' '+(CY-R*y).toFixed(1)+'h.01';
+      if(z<=0)a+=q;else if(z<.5)b+=q;else c+=q;}
+    L1.setAttribute('d',a);L2.setAttribute('d',b);L3.setAttribute('d',c);
+    let gd='';const line=arr=>{let pen=false;for(const q of arr){const r=proj(q[0],q[1],l0);if(r.z>0){gd+=(pen?'L':'M')+r.X.toFixed(1)+' '+r.Y.toFixed(1);pen=true;}else pen=false;}};
+    for(const la of [-30,0,30,60]){const arr=[];for(let lo=-180;lo<=180;lo+=5)arr.push([lo,la]);line(arr);}
+    for(let lo=-180;lo<180;lo+=30){const arr=[];for(let la=-80;la<=80;la+=5)arr.push([lo,la]);line(arr);}
+    GR.setAttribute('d',gd);
+    for(const x of nodes){const r=proj(x.lon,x.lat,l0);x.r=r;const par=r.z<0?dotB:dotF;if(x.d.parentNode!==par)par.appendChild(x.d);
+      x.d.setAttribute('cx',r.X.toFixed(1));x.d.setAttribute('cy',r.Y.toFixed(1));x.d.setAttribute('opacity',r.z<0?.35:1);}
+    if(!RM&&t-lastSpawn>.75){spawn(t);lastSpawn=t;}
+    arcs=arcs.filter(A=>{const e=RM?A.dur+.1:t-A.t0, tot=A.dur+A.hold+A.out;
+      if(!RM&&e>tot){A.pf.remove();A.pb.remove();A.hd.remove();return false;}
+      const head=Math.min(1,e/A.dur), tail=e<A.dur+A.hold?0:Math.min(1,(e-A.dur-A.hold)/A.out), i0=Math.floor(tail*48), i1=Math.ceil(head*48);
+      let df='',db='',pf=false,pb=false,hx=0,hy=0,hh=false;
+      for(let i=i0;i<=i1;i++){const q=A.pts[i],r=proj(q.lon,q.lat,l0,q.h),xy=r.X.toFixed(1)+' '+r.Y.toFixed(1);
+        if(r.hid){db+=(pb?'L':'M')+xy;pb=true;pf=false;}else{df+=(pf?'L':'M')+xy;pf=true;pb=false;}
+        if(i===i1){hx=r.X;hy=r.Y;hh=r.hid;}}
+      A.pf.setAttribute('d',df);A.pb.setAttribute('d',db);
+      A.hd.setAttribute('cx',hx.toFixed(1));A.hd.setAttribute('cy',hy.toFixed(1));A.hd.setAttribute('opacity',head<1&&!hh?1:0);
+      if(!RM&&head>=1&&!A.landed){A.landed=true;const lab=el('text',{class:'gw-lab',opacity:0},labs);lab.textContent=A.b.n;pulses.push({n:A.b,t0:t,ring:el('circle',{class:'gw-ring'},rings),lab});}
+      return true;});
+    pulses=pulses.filter(Q=>{const e=t-Q.t0;if(e>1.6){Q.ring.remove();Q.lab.remove();return false;}
+      const r=Q.n.r,k=e/1.6;Q.ring.setAttribute('cx',r.X.toFixed(1));Q.ring.setAttribute('cy',r.Y.toFixed(1));Q.ring.setAttribute('r',(4+16*k).toFixed(1));Q.ring.setAttribute('opacity',((r.z<0?.3:1)*(1-k)).toFixed(2));
+      const lo=(!hubs.includes(Q.n)&&r.z>.15)?Math.min(1,(1-k)*2):0;Q.lab.setAttribute('x',(r.X+9).toFixed(1));Q.lab.setAttribute('y',(r.Y-8).toFixed(1));Q.lab.setAttribute('opacity',lo.toFixed(2));
+      return true;});
+    for(const h of hubs){const r=h.r,U=h.ui;if(!U)continue;if(U.w<30){const w=U.tx.getComputedTextLength();if(w)U.w=w+26;}
+      U.core.setAttribute('transform','translate('+r.X.toFixed(1)+' '+r.Y.toFixed(1)+') scale('+(r.z<0?.75:1)+')');
+      const left=h.side<0&&r.X-U.w-18>10, px=left?r.X-U.w-16:r.X+16, py=r.Y-38;
+      U.rc.setAttribute('x',px.toFixed(1));U.rc.setAttribute('y',py.toFixed(1));U.rc.setAttribute('width',U.w);U.tx.setAttribute('x',(px+13).toFixed(1));U.tx.setAttribute('y',(py+17.5).toFixed(1));
+      U.gg.setAttribute('opacity',r.z<0?.45:1);}
+  }
+  function loop(now){const dt=Math.max(0,Math.min(.1,(now-last)/1000));last=now;raf=requestAnimationFrame(loop);
+    const b=svg.getBoundingClientRect(); vis=b.height>0&&b.bottom>-60&&b.top<innerHeight+60; if(!vis) return; tt+=dt; frame(tt);}
+  return {build};
+})();
+function drawGeo(){ GW.build(); }
 drawGeo(); window.drawGeo=drawGeo;
 
 /* ---------- 시대별 API 증가 개념도 ---------- */
