@@ -160,8 +160,8 @@ function setLang(l){
   fitNav(); if(l!=='ko') reobserve(); geoLocal(); if(typeof window.rebuildAudience==='function') window.rebuildAudience(); else if(typeof setupSpy==='function') setupSpy();
 }
 /* 지구본 허브(언어별 강조 거점). en은 강조 없음 */
-const GEO={ko:[{n:'Seoul',sub:'대한민국 · 한국 지원',t:'대한민국 · Seoul',lon:126.98,lat:37.57}],ja:[{n:'Tokyo',t:'日本 · Tokyo'}],
-  'zh-Hant':[{n:'Hong Kong',sub:'香港',t:'香港 · Hong Kong',lon:114.17,lat:22.32,side:-1},{n:'Taipei',sub:'台灣',t:'台灣 · Taipei',lon:121.57,lat:25.04,side:1}],'zh-Hans':[{n:'Beijing',t:'中国 · 北京'},{n:'Shanghai',t:'中国 · 上海',side:1}],en:[]};
+const GEO={ko:[{n:'Seoul',sub:'대한민국 · 한국 지원',t:'대한민국 · Seoul',lon:126.98,lat:37.57,r:'AP'}],ja:[{n:'Tokyo',t:'日本 · Tokyo'}],
+  'zh-Hant':[{n:'Hong Kong',sub:'香港',t:'香港 · Hong Kong',lon:114.17,lat:22.32,side:-1,r:'AP'},{n:'Taipei',sub:'台灣',t:'台灣 · Taipei',lon:121.57,lat:25.04,side:1,r:'AP'}],'zh-Hans':[{n:'Beijing',t:'中国 · 北京'},{n:'Shanghai',t:'中国 · 上海',side:1}],en:[]};
 function geoLocal(){
   window.KONG_GEO_HL=GEO[L]||[]; muted=true;
   if(window.drawGeo) window.drawGeo();

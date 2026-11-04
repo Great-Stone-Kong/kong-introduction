@@ -444,8 +444,20 @@ svg.mq{display:block;width:100%;height:auto}
 .gleg{display:flex;gap:18px;font-size:13px;color:var(--g300)}
 .gleg span{display:flex;align-items:center;gap:8px}
 /* 지구본 · 거점 목록 · 연결 아크 */
-.geo{--gw-sea:#04170A;--gw-sea2:#0C2A16;--gw-land:var(--mark)}
-html[data-theme="light"] .geo{--gw-sea:#DCE3D8;--gw-sea2:#EEF2EA;--gw-land:#676B66}
+.geo{--gw-sea:#04170A;--gw-sea2:#0C2A16;--gw-land:#5d6b55;--gw-k:var(--mark)}
+html[data-theme="light"] .geo{--gw-sea:#DCE3D8;--gw-sea2:#EEF2EA;--gw-land:#A3AB9F;--gw-k:#2F4A00}
+.gw-l{min-width:0;overflow:hidden;padding:2px}
+.gw-rt{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:12px}
+.gw-rt button{font-family:var(--font);text-align:left;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--heading);cursor:pointer;position:relative;overflow:hidden;transition:background .18s cubic-bezier(.2,.8,.2,1),border-color .18s cubic-bezier(.2,.8,.2,1)}
+.gw-rt button:hover{border-color:var(--mark)}
+.gw-rt b{display:block;font-size:14px;margin-bottom:2px}.gw-rt small{display:block;font-size:11.5px;line-height:1.35;color:var(--g400)}
+.gw-rt button.on{background:var(--lime);border-color:var(--lime);color:var(--on-lime)}.gw-rt button.on small{color:var(--on-lime)}
+.gw-rt i{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--on-lime);opacity:.45}
+.gw-rp{min-height:350px}
+.gw-kl{margin-top:14px}.gw-kl h4{margin:0 0 8px;font-size:12px;letter-spacing:.04em;color:var(--g400);font-weight:800}
+.gw-chips{display:flex;flex-wrap:wrap;gap:5px}
+.gw-chips span{font-size:11.5px;font-weight:700;color:var(--g200);border:1px solid var(--line);border-radius:999px;padding:3px 9px;transition:border-color .18s,color .18s,background .18s}
+.gw-chips span.on{border-color:var(--mark);color:var(--accent);background:color-mix(in srgb,var(--lime) 8%,transparent)}
 .gw{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:28px;align-items:center;margin-top:10px}
 .gw-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 8px}
 .gw-list li{display:grid;grid-template-columns:22px minmax(0,1fr);align-items:center;column-gap:9px;margin:0;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);transition:border-color .18s cubic-bezier(.2,.8,.2,1),background .18s cubic-bezier(.2,.8,.2,1)}
@@ -464,6 +476,9 @@ html[data-theme="light"] .gw-list li.hq svg circle{stroke:var(--mark)}
 #geomap .gw-bk{fill:none;stroke:var(--gw-land);stroke-opacity:.16;stroke-width:1.6;stroke-linecap:round}
 #geomap .gw-f1,#geomap .gw-f2{fill:none;stroke:var(--gw-land);stroke-linecap:round}#geomap .gw-f1{stroke-opacity:.35;stroke-width:1.8}#geomap .gw-f2{stroke-opacity:.8;stroke-width:2.4}
 html[data-theme="light"] #geomap .gw-f1{stroke-opacity:.5}html[data-theme="light"] #geomap .gw-bk{stroke-opacity:.24}
+#geomap .gw-kb{fill:none;stroke:var(--gw-k);stroke-opacity:.2;stroke-width:1.5;stroke-linecap:round}
+#geomap .gw-k1{fill:none;stroke:var(--gw-k);stroke-opacity:.3;stroke-width:2;stroke-linecap:round}
+#geomap .gw-kr{fill:none;stroke:var(--gw-k);stroke-opacity:1;stroke-width:2.8;stroke-linecap:round}
 #geomap .gw-dot{fill:var(--mark)}#geomap .gw-dot.hq{fill:var(--lime);stroke:var(--mark);stroke-width:1}
 #geomap .gw-arc{fill:none;stroke:var(--mark);stroke-width:1.6;stroke-linecap:round}#geomap .gw-arc.h{stroke-width:2.4}
 #geomap .gw-head{fill:var(--heading)}html[data-theme="light"] #geomap .gw-head{fill:var(--mark)}
@@ -477,7 +492,8 @@ html[data-theme="light"] #geomap .gw-hp{stroke:var(--mark)}#geomap .gw-hp.d2{ani
 #geomap .gw-pill{fill:var(--card);fill-opacity:.96;stroke:var(--mark);stroke-width:1.2}
 #geomap .gw-tx{font-size:13px;font-weight:800;fill:var(--heading)}
 #geomap .gw-fade{fill:url(#gwFade)}#geomap .gw-logo{fill:var(--brand)}
-@media (max-width:820px){.gw{grid-template-columns:1fr}.gw-r{order:-1;max-width:520px;margin:0 auto;width:100%}}
+@media (max-width:820px){.gw{grid-template-columns:1fr}.gw-r{order:-1;max-width:520px;margin:0 auto;width:100%}.gw-rp{min-height:0}}
+@media (max-width:520px){.gw-list{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){#geomap .gw-hp{animation:none;opacity:0}}
 @media print{#geomap .gw-hp{animation:none;opacity:0}}
 .cities span.kr{background:none;border:1px solid var(--mark);color:var(--accent)}
@@ -3168,9 +3184,9 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
   </div>
   <div class="geo" id="geo">
     <div class="geohead">
-      <div><span class="lbl">글로벌 거점 · 13개 오피스</span><h3 style="margin:0;font-size:22px">글로벌 고객 거점과 한국 지원 체계</h3></div>
+      <div><span class="lbl">글로벌 거점 · 13개 오피스 · 24개 국가</span><h3 style="margin:0;font-size:22px">글로벌 고객 거점과 한국 지원 체계</h3></div>
     </div>
-    <div class="gw"><ul class="gw-list" id="gwList"></ul><div class="gw-r"><svg id="geomap" viewBox="0 20 600 562" role="img" aria-label="Kong 글로벌 오피스 세계지도, 대한민국 강조"></svg></div></div>
+    <div class="gw"><div class="gw-l"><div class="gw-rt" id="gwTabs" role="tablist"></div><div class="gw-rp" id="gwPane"><ul class="gw-list" id="gwList"></ul><div class="gw-kl"><h4>Kong 구성원이 있는 국가</h4><div class="gw-chips" id="gwChips"></div></div></div></div><div class="gw-r"><svg id="geomap" viewBox="0 20 600 562" role="img" aria-label="Kong 글로벌 오피스 세계지도, 대한민국 강조"></svg></div></div>
   </div>
 
   <p class="note">출처: <a href="https://konghq.com/company" target="_blank" rel="noopener noreferrer">konghq.com/company</a></p>
@@ -7413,9 +7429,10 @@ function drawMQ(){
 }
 drawMQ();
 
-/* ---------- 글로벌 거점 지구본 (거점 목록 · 연결 아크) ---------- */
-// 반투명 정사영 지구가 회전하고 거점 사이에 떠오르는 아크가 그려진다. 아크가 닿는 도시는 왼쪽 목록에서도 강조.
-// 언어별 강조 거점(window.KONG_GEO_HL, 배열)은 허브가 되어 펄스 · 라벨을 계속 표시한다.
+/* ---------- 글로벌 거점 지구본 (지역 포커스 · 거점 목록 · Kong 구성원 국가 · 연결 아크) ---------- */
+// 지역 탭(APAC → EMEA → Americas)이 7초마다 넘어가며 반투명 지구가 해당 지역으로 돈다.
+// 목록은 지구가 도는 방향으로 밀려나며 바뀐다. 구성원 국가(konghq.com/company 지도 기준)는 밝은 도트,
+// 언어별 강조 거점(window.KONG_GEO_HL)은 허브가 되어 펄스 · 라벨을 계속 표시한다.
 const GW=(function(){
   const L={
    na:[[-168,66],[-162,70],[-156,71],[-140,70],[-128,70],[-115,68],[-95,72],[-85,69],[-82,63],[-93,58],[-90,53],[-80,52],[-78,57],[-70,60],[-62,58],[-56,52],[-60,47],[-67,44],[-70,42],[-74,39],[-76,35],[-81,31],[-80,26],[-83,29],[-90,30],[-97,27],[-97,21],[-91,19],[-87,21],[-88,16],[-84,15],[-83,10],[-78,8],[-80,7],[-86,11],[-92,15],[-97,16],[-105,20],[-110,24],[-112,29],[-115,30],[-110,23],[-117,32],[-121,35],[-124,40],[-124,47],[-130,54],[-137,58],[-146,61],[-152,59],[-158,57],[-165,55],[-160,59],[-166,62]],
@@ -7435,80 +7452,147 @@ const GW=(function(){
    uk:[[-5,50],[1,51],[2,53],[-2,56],[-2,58],[-5,58.5],[-6,56],[-3,54],[-5,52]], ire:[[-10,52],[-6,52],[-6,55],[-10,54]], ice:[[-24,64],[-14,64],[-14,66],[-22,66.5]],
    mad:[[44,-25],[48,-25],[50,-15],[49,-12],[44,-17]], phil:[[120,18],[122,18],[124,12],[126,7],[122,7],[120,14]]
   };
-  const D2R=Math.PI/180, CX=300, CY=292, R=232, TILT=20, s0=Math.sin(TILT*D2R), c0=Math.cos(TILT*D2R), NS='http://www.w3.org/2000/svg';
-  const OFF=[['San Francisco',-122.4,37.8,'United States',1],['Chicago',-87.6,41.9,'United States'],['London',-0.1,51.5,'United Kingdom'],['Paris',2.3,48.9,'France'],['Milan',9.2,45.5,'Italy'],['Budapest',19,47.5,'Hungary'],
-    ['Bangalore',77.6,13,'India'],['Pune',73.9,18.5,'India'],['Singapore',103.8,1.35,'Singapore'],['Beijing',116.4,39.9,'China'],['Shanghai',121.5,31.2,'China'],['Tokyo',139.7,35.7,'Japan'],['Sydney',151.2,-33.9,'Australia']];
-  const DEF=[{n:'Seoul',sub:'대한민국 · 한국 지원',t:'대한민국 · Seoul',lon:126.98,lat:37.57}];
+  const D2R=Math.PI/180, CX=300, CY=292, R=232, NS='http://www.w3.org/2000/svg', CYCLE=7;
+  let tilt=18*D2R, s0=Math.sin(tilt), c0=Math.cos(tilt);
+  const OFF=[['San Francisco',-122.4,37.8,'United States','AM',1],['Chicago',-87.6,41.9,'United States','AM'],['London',-0.1,51.5,'United Kingdom','EM'],['Paris',2.3,48.9,'France','EM'],['Milan',9.2,45.5,'Italy','EM'],['Budapest',19,47.5,'Hungary','EM'],
+    ['Bangalore',77.6,13,'India','AP'],['Pune',73.9,18.5,'India','AP'],['Singapore',103.8,1.35,'Singapore','AP'],['Beijing',116.4,39.9,'China','AP'],['Shanghai',121.5,31.2,'China','AP'],['Tokyo',139.7,35.7,'Japan','AP'],['Sydney',151.2,-33.9,'Australia','AP']];
+  // Countries w/ Kongers (konghq.com/company 지도 음영 국가) [이름, 지역, 중심 lon, lat, 폴리곤들]
+  const KC=[
+   ['United States','AM',-98,39,[[[-124,48.5],[-123.5,42],[-120.5,34.5],[-117,32.5],[-111,31.3],[-106,31.8],[-103,29],[-97,26],[-97,28],[-94,29.5],[-89,29.2],[-84,30],[-81,25.5],[-80,27],[-81,31],[-76,35],[-74,40],[-70,41.5],[-67,45],[-70,47],[-75,45],[-83,46],[-89,48],[-95,49]]]],
+   ['Canada','AM',-100,57,[[[-141,60],[-141,69.6],[-128,70],[-115,68.5],[-95,71.5],[-82,70],[-80,63],[-93,58.5],[-90,55],[-80,52],[-78,58],[-70,60],[-64,60],[-55,52],[-60,47],[-64,45],[-67,45],[-70,47],[-75,45],[-83,46],[-89,48],[-95,49],[-123,49],[-130,55],[-138,59]]]],
+   ['Mexico','AM',-102,23.5,[[[-117,32.5],[-111,31.3],[-106,31.8],[-103,29],[-97,26],[-97.5,22],[-96,19],[-94,18.5],[-91,18.5],[-87,21.5],[-88.5,18],[-91,17],[-92,14.5],[-96,15.7],[-101,17.5],[-105.5,20],[-105,22.5],[-109,24],[-112.5,29],[-114.8,31.8]]]],
+   ['United Kingdom','EM',-2,54,[[[-5,50],[1,51],[1.7,52.7],[0,53.5],[-2,56],[-2,58],[-5,58.5],[-6,56],[-3,54],[-4.5,53.2],[-5,52]],[[-8,54.1],[-5.5,54.2],[-6,55.3],[-7.5,55.2]]]],
+   ['Ireland','EM',-8,53.2,[[[-10,51.5],[-6,52],[-6,54],[-8,54.2],[-8,55.2],[-10,54]]]],
+   ['Netherlands','EM',5.3,52.2,[[[3.4,51.4],[6,51.8],[7.2,53.2],[6,53.5],[4.7,53],[3.6,51.6]]]],
+   ['Germany','EM',10.4,51,[[[6,51],[6.2,53.5],[8.6,54.9],[11,54],[14.2,53.9],[14.8,51],[12.2,50.3],[13.8,48.8],[13,47.5],[10,47.3],[7.6,47.6],[8.2,49],[6.4,49.5]]]],
+   ['France','EM',2.4,46.6,[[[-4.8,48.5],[-1.6,49.6],[1.6,50.9],[4.2,49.9],[8.2,49],[7.6,47.6],[6,46.2],[7.6,44],[3.2,43.2],[3,42.4],[-1.8,43.4],[-1.2,46],[-2.2,47.1]]]],
+   ['Spain','EM',-3.7,40.3,[[[-9.3,43],[-1.8,43.4],[3.2,42],[0.5,40.5],[-0.3,39],[-2,36.8],[-5.6,36],[-7.4,37.2],[-7,39],[-6.9,42],[-8.8,42]]]],
+   ['Switzerland','EM',8.2,46.8,[[[6,46.2],[7,47.5],[9.6,47.6],[10.4,46.6],[9,45.9],[7,45.9]]]],
+   ['Italy','EM',12.5,42.8,[[[7,44],[6.8,45.8],[9,46],[12,47],[13.7,46.5],[12.4,44.5],[14,42],[16.2,41.4],[18.5,40.2],[16.5,38.5],[15.6,38],[16.2,39.3],[15.6,40.2],[12.4,41.7],[10.5,43],[8.7,44.4]],[[12.4,38],[15.6,38.2],[15.1,36.7]],[[8.2,41],[9.8,41],[9.5,39],[8.4,39]]]],
+   ['Hungary','EM',19.4,47.2,[[[16.1,46.9],[17.2,48],[18.8,47.8],[22.2,48.4],[22.9,47.9],[21,46.2],[18.8,45.9],[16.6,46.4]]]],
+   ['Poland','EM',19.4,52,[[[14.2,53.9],[18,54.8],[23.4,54.2],[24,52.5],[23.6,51],[24.1,50.4],[22.7,49.1],[19,49.4],[15,50.9],[14.6,52.6]]]],
+   ['Sweden','EM',16,62,[[[11.1,58.9],[12.6,56.2],[14.2,55.4],[16.4,56.6],[16.7,58.7],[19,60],[17.5,62.5],[21.5,65.7],[23.9,66],[22,68.5],[20.2,69.1],[15.5,66],[12.2,63.5],[12.6,61],[11.5,59.5]]]],
+   ['Finland','EM',26,64,[[[21,60.4],[25.5,60.2],[28,60.5],[30,61.8],[29.6,64],[30,67.3],[28.8,69.1],[25.8,69.9],[21,69],[24,65.8],[21.5,63.7],[21.3,61.5]]]],
+   ['United Arab Emirates','EM',54.3,24,[[[51.6,24.2],[54,24.1],[56.4,26.4],[56.3,24.9],[55.6,22.7],[52.6,22.9]]]],
+   ['India','AP',79,22,[[[68.2,23.7],[71,21],[72.8,19],[74,15.5],[76.3,10],[77.5,8.1],[79.3,10.3],[80.3,13.5],[80.3,15.9],[82.3,17],[86.5,20],[87,21.7],[89,21.8],[89,26],[92,26.7],[95,27.5],[97,28],[94.6,29.3],[91.5,27.8],[88.2,27.8],[84,28.5],[81,30],[78.9,32.4],[77.8,35.5],[74,34.5],[74.6,31],[70.3,27.7],[69.5,26.2],[71,24.3]]]],
+   ['China','AP',104,35,[[[73,39],[80,42],[83,47],[87,49],[90,47],[96,43],[105,42],[111,43],[116,46],[120,47],[123,53],[127,50],[131,48],[134,48],[131,43],[125,40],[121,39],[122,37],[119,35],[121,32],[122,30],[120,26],[117,23],[110,21],[108,22],[106,22],[101,21],[98,24],[98,28],[92,28],[88,28],[81,30],[79,33],[75,36]]]],
+   ['Hong Kong','AP',114.17,22.3,[[[113.8,22.15],[114.45,22.15],[114.45,22.6],[113.8,22.6]]]],
+   ['South Korea','AP',127.8,36.4,[[[126.1,37.8],[126.3,34.5],[127.5,34.4],[129.3,35.2],[129.5,37.1],[128.4,38.6],[127.2,38.3]]]],
+   ['Japan','AP',138,36.5,[[[130,31],[132,34],[136,34],[140,35],[142,39],[142,43],[145,44],[141,45],[140,41],[137,37],[132,36],[130,33]]]],
+   ['Thailand','AP',101,15,[[[97.5,18],[98.5,20],[100.1,20.4],[101,19.5],[102.1,18],[104.7,17.4],[105.5,15.5],[102.5,12],[100.5,13.5],[99.2,10],[99.8,9.2],[100.4,7.4],[101.1,6.8],[100.1,6.5],[98.3,8.2],[98.6,10.6],[99.2,14],[98.2,15.3]]]],
+   ['Malaysia','AP',102,4,[[[100.1,6.5],[101.1,6.8],[102.2,6.2],[103.4,4.5],[103.5,2.7],[104.2,1.4],[103.5,1.3],[101.3,2.8],[100.4,4.5]],[[109.6,1.9],[111,1.5],[113,3.2],[115.5,4.8],[117.2,7],[119.2,5.3],[117.6,4.2],[115.7,4.2],[114.5,1.5],[111.5,1],[109.6,1]]]],
+   ['Australia','AP',134,-25,[[[114,-22],[122,-18],[129,-14],[136,-12],[137,-16],[141,-12],[143,-14],[146,-19],[153,-26],[151,-34],[146,-39],[139,-36],[134,-33],[129,-31],[116,-35],[115,-30]]]]
+  ];
+  const RG={AP:['APAC',118,18],EM:['EMEA',14,34],AM:['Americas',-95,28]}, ORDER=['AP','EM','AM'];
+  const DEF=[{n:'Seoul',sub:'대한민국 · 한국 지원',t:'대한민국 · Seoul',lon:126.98,lat:37.57,r:'AP'}];
   const inside=(x,y,poly)=>{let c=false;for(let i=0,j=poly.length-1;i<poly.length;j=i++){const a=poly[i],b=poly[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])c=!c;}return c;};
-  const polys=Object.values(L).map(p=>{const m=p.reduce((a,q)=>a+q[0],0)/p.length;return m<-26?p.map(q=>[q[0]+360,q[1]]):p;});
-  const LAND=[]; for(let lat=82;lat>-58;lat-=2){const n=Math.max(1,Math.round(360*Math.cos(lat*D2R)/2));for(let i=0;i<n;i++){const lon=-26+(i+(Math.abs(Math.round(lat/2))%2)*.5)*360/n;
-    if(polys.some(p=>inside(lon,lat,p))) LAND.push({l:lon*D2R,s:Math.sin(lat*D2R),c:Math.cos(lat*D2R)});}}
+  const shp=p=>{const m=p.reduce((a,q)=>a+q[0],0)/p.length;return m<-26?p.map(q=>[q[0]+360,q[1]]):p;};
+  const polys=Object.values(L).map(shp), KP=KC.map(c=>c[4].map(shp));
+  const pt=(lon,lat)=>({l:lon*D2R,s:Math.sin(lat*D2R),c:Math.cos(lat*D2R)});
+  const kOf=(lon,lat)=>{for(let i=0;i<KP.length;i++) if(KP[i].some(p=>inside(lon,lat,p))) return i; return -1;};
+  const LAND=[], KD=[];
+  for(let lat=82;lat>-58;lat-=2){const n=Math.max(1,Math.round(360*Math.cos(lat*D2R)/2));for(let i=0;i<n;i++){const lon=-26+(i+(Math.abs(Math.round(lat/2))%2)*.5)*360/n;
+    if(kOf(lon,lat)<0&&polys.some(p=>inside(lon,lat,p))) LAND.push(pt(lon,lat));}}
+  for(let lat=72;lat>-45;lat-=1.4){const n=Math.max(1,Math.round(360*Math.cos(lat*D2R)/1.4));for(let i=0;i<n;i++){const lon=-26+(i+(Math.abs(Math.round(lat/1.4))%2)*.5)*360/n;
+    const k=kOf(lon,lat); if(k>=0){const q=pt(lon,lat);q.r=KC[k][1];q.k=k;KD.push(q);}}}
+  KC.forEach((c,i)=>{ if(KD.filter(q=>q.k===i).length<3) [[0,0],[.5,.3],[-.5,-.3]].forEach(d=>{const q=pt(c[2]+d[0],c[3]+d[1]);q.r=c[1];q.k=i;KD.push(q);}); });
   const RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   const el=(tag,at,par)=>{const x=document.createElementNS(NS,tag);for(const k in at)x.setAttribute(k,at[k]);if(par)par.appendChild(x);return x;};
   const proj=(lon,lat,l0,r)=>{r=r||1;const d=lon*D2R-l0,cp=Math.cos(lat*D2R),sp=Math.sin(lat*D2R),cd=Math.cos(d);
     const x=cp*Math.sin(d),y=c0*sp-s0*cp*cd,z=s0*sp+c0*cp*cd;return {X:CX+R*r*x,Y:CY-R*r*y,z,hid:z<0&&Math.hypot(x*r,y*r)<1};};
   const vec=(lon,lat)=>[Math.cos(lat*D2R)*Math.cos(lon*D2R),Math.cos(lat*D2R)*Math.sin(lon*D2R),Math.sin(lat*D2R)];
-  let svg,list,L1,L2,L3,GR,dotB,dotF,arcB,arcF,rings,labs,hlg,nodes=[],hubs=[],items={},arcs=[],pulses=[],lastSpawn=-9,tt=0,last=0,vis=false,raf=0;
+  const ang=(u,v)=>Math.acos(Math.max(-1,Math.min(1,u.v[0]*v.v[0]+u.v[1]*v.v[1]+u.v[2]*v.v[2])));
+  let svg,list,chips,tabs,pane,L1,L2,L3,KB,K1,KR,GR,dotB,dotF,arcB,arcF,rings,labs,hlg,nodes=[],cnodes=[],hubs=[],items={},citems={},arcs=[],pulses=[];
+  let lastSpawn=-9,tt=0,last=0,raf=0,region='AP',rStart=0,auto=true,l0=118*D2R,tabEls={};
   function init(){
-    svg=document.getElementById('geomap'); list=document.getElementById('gwList'); if(!svg||!list) return false;
+    svg=document.getElementById('geomap'); list=document.getElementById('gwList'); chips=document.getElementById('gwChips'); tabs=document.getElementById('gwTabs'); pane=document.getElementById('gwPane');
+    if(!svg||!list||!tabs) return false;
     svg.innerHTML='<defs><radialGradient id="gwSea" cx="38%" cy="30%" r="80%"><stop offset="0" style="stop-color:var(--gw-sea2)"/><stop offset="1" style="stop-color:var(--gw-sea)"/></radialGradient>'
       +'<radialGradient id="gwAtm" r="50%"><stop offset=".86" style="stop-color:var(--lime);stop-opacity:0"/><stop offset=".9" style="stop-color:var(--lime);stop-opacity:.16"/><stop offset="1" style="stop-color:var(--lime);stop-opacity:0"/></radialGradient>'
       +'<radialGradient id="gwFade"><stop offset="0" style="stop-color:var(--navy-2);stop-opacity:1"/><stop offset=".45" style="stop-color:var(--navy-2);stop-opacity:.92"/><stop offset="1" style="stop-color:var(--navy-2);stop-opacity:0"/></radialGradient></defs>';
     const g=()=>el('g',{},svg), p=c=>el('path',{class:c},svg);
     el('circle',{class:'gw-atm',cx:CX,cy:CY,r:R*1.16},svg);
-    L1=p('gw-bk'); arcB=g(); dotB=g();
+    L1=p('gw-bk'); KB=p('gw-kb'); arcB=g(); dotB=g();
     el('circle',{class:'gw-sph',cx:CX,cy:CY,r:R},svg);
-    GR=p('gw-grat'); L2=p('gw-f1'); L3=p('gw-f2'); dotF=g(); arcF=g(); rings=g(); labs=g(); hlg=g();
+    GR=p('gw-grat'); L2=p('gw-f1'); L3=p('gw-f2'); K1=p('gw-k1'); KR=p('gw-kr'); dotF=g(); arcF=g(); rings=g(); labs=g(); hlg=g();
     el('circle',{class:'gw-rim',cx:CX,cy:CY,r:R},svg);
     el('ellipse',{class:'gw-fade',cx:CX,cy:CY+R+24,rx:R+60,ry:110},svg);
     el('use',{class:'gw-logo',href:'#kong-logo',x:CX-82,y:CY+R+1,width:164,height:52.4},svg);
+    ORDER.forEach(r=>{const b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.dataset.r=r;
+      b.innerHTML='<b>'+RG[r][0]+'</b><small>'+OFF.filter(x=>x[4]===r).length+' offices</small><small>'+KC.filter(c=>c[1]===r).length+' countries</small><i></i>';tabs.appendChild(b);tabEls[r]=b;});
+    tabs.addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b)return;auto=false;Object.values(tabEls).forEach(x=>x.querySelector('i').style.width='0');go(b.dataset.r);});
     if(!RM){last=performance.now();raf=requestAnimationFrame(loop);}
     return true;
   }
   function build(){
     if(!svg&&!init()) return;
     const H=window.KONG_GEO_HL===undefined?DEF:(window.KONG_GEO_HL||[]);
-    nodes=OFF.map(o=>({n:o[0],lon:o[1],lat:o[2],ct:o[3],hq:!!o[4]}));
-    hubs=H.map(h=>{let x=nodes.find(o=>o.n===h.n);if(!x){x={n:h.n,lon:h.lon,lat:h.lat,ct:h.sub||'',extra:1};nodes.push(x);}x.t=h.t;x.side=h.side||-1;return x;});
-    list.innerHTML='';items={};
-    const ex=hubs.filter(x=>x.extra);
-    ex.concat(nodes.filter(x=>!ex.includes(x))).forEach(x=>{const li=document.createElement('li');li.className=(x.hq?'hq ':'')+(hubs.includes(x)?'hl':'');
-      li.innerHTML='<svg viewBox="-11 -11 22 22" aria-hidden="true"><circle r="10"/><use href="#kong-mark" x="-6.5" y="-5.8" width="13" height="11.7"/></svg><b>'+x.n+(x.hq?'<em>HQ</em>':'')+'</b><small>'+x.ct+'</small>';
-      list.appendChild(li);items[x.n]=li;});
+    nodes=OFF.map(o=>({n:o[0],lon:o[1],lat:o[2],ct:o[3],rg:o[4],hq:!!o[5]}));
+    hubs=H.map(h=>{let x=nodes.find(o=>o.n===h.n);if(!x){x={n:h.n,lon:h.lon,lat:h.lat,ct:h.sub||'',rg:h.r||'AP',extra:1};nodes.push(x);}x.t=h.t;x.side=h.side||-1;return x;});
+    cnodes=KC.map(c=>({n:c[0],rg:c[1],lon:c[2],lat:c[3],country:1}));
+    nodes.concat(cnodes).forEach(x=>x.v=vec(x.lon,x.lat));
     [dotB,dotF,arcB,arcF,rings,labs,hlg].forEach(q=>q.innerHTML='');arcs=[];pulses=[];
-    nodes.forEach(x=>{x.d=el('circle',{class:'gw-dot'+(x.hq?' hq':''),r:x.hq?4.6:3.4},dotF);x.v=vec(x.lon,x.lat);});
+    nodes.forEach(x=>{x.d=el('circle',{class:'gw-dot'+(x.hq?' hq':''),r:x.hq?4.6:3.4},dotF);});
     hubs.forEach(h=>{const gg=el('g',{},hlg),core=el('g',{},gg);el('circle',{class:'gw-hp',r:11},core);el('circle',{class:'gw-hp d2',r:11},core);el('circle',{class:'gw-core',r:11},core);
       el('use',{href:'#kong-mark',x:-6.5,y:-5.8,width:13,height:11.7},core);const rc=el('rect',{class:'gw-pill',rx:13,height:26},gg),tx=el('text',{class:'gw-tx'},gg);tx.textContent=h.t;h.ui={gg,core,rc,tx,w:0};});
-    if(RM&&!arcs.length){ for(let i=0;i<4;i++) spawn(-10); arcs.forEach(A=>A.t0=-10-A.dur); }
-    frame(tt);
+    renderList(); setTabs();
+    if(RM){ l0=RG[region][1]*D2R; for(let i=0;i<4;i++) spawn(-10); }
+    frame(tt,0);
   }
-  const ang=(u,v)=>Math.acos(Math.max(-1,Math.min(1,u.v[0]*v.v[0]+u.v[1]*v.v[1]+u.v[2]*v.v[2])));
+  function setTabs(){ORDER.forEach(r=>{const b=tabEls[r];b.classList.toggle('on',r===region);b.setAttribute('aria-selected',r===region?'true':'false');});}
+  function renderList(){
+    const ex=hubs.filter(x=>x.extra);
+    list.innerHTML='';items={};
+    ex.concat(nodes.filter(x=>!ex.includes(x))).filter(x=>x.rg===region).forEach(x=>{const li=document.createElement('li');li.className=(x.hq?'hq ':'')+(hubs.includes(x)?'hl':'');
+      li.innerHTML='<svg viewBox="-11 -11 22 22" aria-hidden="true"><circle r="10"/><use href="#kong-mark" x="-6.5" y="-5.8" width="13" height="11.7"/></svg><b>'+x.n+(x.hq?'<em>HQ</em>':'')+'</b><small>'+x.ct+'</small>';
+      list.appendChild(li);items[x.n]=li;});
+    chips.innerHTML='';citems={};
+    KC.forEach(c=>{if(c[1]!==region)return;const sp=document.createElement('span');sp.textContent=c[0];chips.appendChild(sp);citems[c[0]]=sp;});
+  }
+  // 지역 전환: 지구가 도는 방향(경도 감소 → 표면이 오른쪽으로 이동)으로 목록도 밀려난다
+  function go(r){
+    if(r===region) return;
+    let d=RG[r][1]*D2R-l0; d=Math.atan2(Math.sin(d),Math.cos(d)); const dir=d<0?1:-1;
+    region=r; rStart=tt; setTabs();
+    arcs.forEach(A=>{A.t0=Math.min(A.t0,tt-A.dur-A.hold);});
+    if(RM||!pane.animate){renderList();l0=RG[r][1]*D2R;frame(tt,0);return;}
+    pane.getAnimations().forEach(a=>a.cancel());
+    pane.animate([{transform:'none',opacity:1},{transform:'translateX('+(dir*40)+'px)',opacity:0}],{duration:200,easing:'cubic-bezier(.4,0,1,1)'}).onfinish=()=>{
+      renderList();
+      pane.animate([{transform:'translateX('+(-dir*40)+'px)',opacity:0},{transform:'none',opacity:1}],{duration:340,easing:'cubic-bezier(.2,.8,.2,1)'});
+    };
+  }
+  function flash(n){const e=items[n]||citems[n];if(e){e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('on'),1800);}}
   function spawn(t){
     if(arcs.length>=6) return;
-    const pick=()=>nodes[Math.floor(Math.random()*nodes.length)];
-    let a=(hubs.length&&Math.random()<.55)?hubs[Math.floor(Math.random()*hubs.length)]:pick(), b=pick(), k=0;
-    while((b===a||ang(a,b)<.35)&&k++<20) b=pick(); if(b===a) return;
-    if(Math.random()<.5&&!hubs.includes(a)){const c=a;a=b;b=c;}
+    const pick=a=>a[Math.floor(Math.random()*a.length)], pool=nodes.filter(x=>x.rg===region), cpool=cnodes.filter(x=>x.rg===region);
+    let a=(hubs.length&&Math.random()<.5)?pick(hubs):pick(pool), b, k=0; const toC=Math.random()<.4;
+    do{ b=toC?pick(cpool):pick(pool); }while(b&&(b===a||b.n===a.ct||ang(a,b)<.18)&&k++<30);
+    if(!b||b===a||ang(a,b)<.18) return;
+    if(Math.random()<.5&&!hubs.includes(a)&&!b.country){const c=a;a=b;b=c;}
     const th=ang(a,b), N=48, pts=[];
     for(let i=0;i<=N;i++){const u=i/N,s1=Math.sin((1-u)*th)/Math.sin(th),s2=Math.sin(u*th)/Math.sin(th),v=[s1*a.v[0]+s2*b.v[0],s1*a.v[1]+s2*b.v[1],s1*a.v[2]+s2*b.v[2]];
-      pts.push({lon:Math.atan2(v[1],v[0])/D2R,lat:Math.asin(Math.max(-1,Math.min(1,v[2])))/D2R,h:1+Math.sin(Math.PI*u)*(.06+.22*th/Math.PI)});}
+      pts.push({lon:Math.atan2(v[1],v[0])/D2R,lat:Math.asin(Math.max(-1,Math.min(1,v[2])))/D2R,h:1+Math.sin(Math.PI*u)*(.05+.22*th/Math.PI)});}
     const hc=(hubs.includes(a)||hubs.includes(b))?' h':'';
-    arcs.push({a,b,pts,t0:t,dur:1.3+th*.5,hold:.5,out:.9,pf:el('path',{class:'gw-arc'+hc},arcF),pb:el('path',{class:'gw-arc'+hc,opacity:.25},arcB),hd:el('circle',{class:'gw-head',r:2.6},arcF),landed:false});
-    if(t>=0) [a,b].forEach(x=>{const li=items[x.n];if(li){li.classList.add('on');clearTimeout(li._t);li._t=setTimeout(()=>li.classList.remove('on'),1800);}});
+    arcs.push({a,b,pts,t0:t,dur:1.2+th*.5,hold:.5,out:.9,pf:el('path',{class:'gw-arc'+hc},arcF),pb:el('path',{class:'gw-arc'+hc,opacity:.25},arcB),hd:el('circle',{class:'gw-head',r:2.6},arcF),landed:false});
+    if(t>=0){flash(a.n);flash(b.n);}
   }
-  function frame(t){
+  function frame(t,dt){
     if(!svg) return;
-    const l0=((hubs.length?hubs.reduce((q,h)=>q+h.lon,0)/hubs.length:127)+35-(RM?0:t*7.2))*D2R;
-    let a='',b='',c='';
-    for(const p of LAND){const d=p.l-l0,cd=Math.cos(d),x=p.c*Math.sin(d),y=c0*p.s-s0*p.c*cd,z=s0*p.s+c0*p.c*cd,q='M'+(CX+R*x).toFixed(1)+' '+(CY-R*y).toFixed(1)+'h.01';
-      if(z<=0)a+=q;else if(z<.5)b+=q;else c+=q;}
-    L1.setAttribute('d',a);L2.setAttribute('d',b);L3.setAttribute('d',c);
+    if(!RM){const f=1-Math.exp(-dt*2.4);let d=RG[region][1]*D2R-l0;d=Math.atan2(Math.sin(d),Math.cos(d));l0+=d*f;tilt+=(RG[region][2]*D2R-tilt)*f;}
+    else tilt=RG[region][2]*D2R;
+    s0=Math.sin(tilt);c0=Math.cos(tilt);
+    let a='',b='',c='',kb='',k1='',kr='';
+    for(const p of LAND){const d=p.l-l0,cd=Math.cos(d),x=p.c*Math.sin(d),y=c0*p.s-s0*p.c*cd,z=s0*p.s+c0*p.c*cd,q='M'+(CX+R*x).toFixed(1)+' '+(CY-R*y).toFixed(1)+'h.01';if(z<=0)a+=q;else if(z<.5)b+=q;else c+=q;}
+    for(const p of KD){const d=p.l-l0,cd=Math.cos(d),x=p.c*Math.sin(d),y=c0*p.s-s0*p.c*cd,z=s0*p.s+c0*p.c*cd,q='M'+(CX+R*x).toFixed(1)+' '+(CY-R*y).toFixed(1)+'h.01';if(z<=0)kb+=q;else if(p.r===region)kr+=q;else k1+=q;}
+    L1.setAttribute('d',a);L2.setAttribute('d',b);L3.setAttribute('d',c);KB.setAttribute('d',kb);K1.setAttribute('d',k1);KR.setAttribute('d',kr);
     let gd='';const line=arr=>{let pen=false;for(const q of arr){const r=proj(q[0],q[1],l0);if(r.z>0){gd+=(pen?'L':'M')+r.X.toFixed(1)+' '+r.Y.toFixed(1);pen=true;}else pen=false;}};
     for(const la of [-30,0,30,60]){const arr=[];for(let lo=-180;lo<=180;lo+=5)arr.push([lo,la]);line(arr);}
     for(let lo=-180;lo<180;lo+=30){const arr=[];for(let la=-80;la<=80;la+=5)arr.push([lo,la]);line(arr);}
     GR.setAttribute('d',gd);
     for(const x of nodes){const r=proj(x.lon,x.lat,l0);x.r=r;const par=r.z<0?dotB:dotF;if(x.d.parentNode!==par)par.appendChild(x.d);
-      x.d.setAttribute('cx',r.X.toFixed(1));x.d.setAttribute('cy',r.Y.toFixed(1));x.d.setAttribute('opacity',r.z<0?.35:1);}
+      x.d.setAttribute('cx',r.X.toFixed(1));x.d.setAttribute('cy',r.Y.toFixed(1));x.d.setAttribute('opacity',((r.z<0?.35:1)*(x.rg===region?1:.4)).toFixed(2));}
+    for(const x of cnodes) x.r=proj(x.lon,x.lat,l0);
     if(!RM&&t-lastSpawn>.75){spawn(t);lastSpawn=t;}
     arcs=arcs.filter(A=>{const e=RM?A.dur+.1:t-A.t0, tot=A.dur+A.hold+A.out;
       if(!RM&&e>tot){A.pf.remove();A.pb.remove();A.hd.remove();return false;}
@@ -7529,10 +7613,13 @@ const GW=(function(){
       U.core.setAttribute('transform','translate('+r.X.toFixed(1)+' '+r.Y.toFixed(1)+') scale('+(r.z<0?.75:1)+')');
       const left=h.side<0&&r.X-U.w-18>10, px=left?r.X-U.w-16:r.X+16, py=r.Y-38;
       U.rc.setAttribute('x',px.toFixed(1));U.rc.setAttribute('y',py.toFixed(1));U.rc.setAttribute('width',U.w);U.tx.setAttribute('x',(px+13).toFixed(1));U.tx.setAttribute('y',(py+17.5).toFixed(1));
-      U.gg.setAttribute('opacity',r.z<0?.45:1);}
+      U.gg.setAttribute('opacity',((r.z<0?.45:1)*(h.rg===region?1:.4)).toFixed(2));}
+    // 지역 자동 전환 · 진행 막대
+    if(auto&&!RM){const k=Math.min(1,(t-rStart)/CYCLE);const bar=tabEls[region]&&tabEls[region].querySelector('i');if(bar)bar.style.width=(k*100).toFixed(1)+'%';
+      if(k>=1){if(bar)bar.style.width='0';go(ORDER[(ORDER.indexOf(region)+1)%ORDER.length]);}}
   }
   function loop(now){const dt=Math.max(0,Math.min(.1,(now-last)/1000));last=now;raf=requestAnimationFrame(loop);
-    const b=svg.getBoundingClientRect(); vis=b.height>0&&b.bottom>-60&&b.top<innerHeight+60; if(!vis) return; tt+=dt; frame(tt);}
+    const b=svg.getBoundingClientRect(); if(!(b.height>0&&b.bottom>-60&&b.top<innerHeight+60)) return; tt+=dt; frame(tt,dt);}
   return {build};
 })();
 function drawGeo(){ GW.build(); }
