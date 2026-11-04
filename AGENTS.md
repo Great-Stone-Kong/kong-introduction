@@ -115,7 +115,12 @@ npm run build        # kong-introduction.html + docs/index.html 생성 (VERSION 
 - 기존 소개 HTML의 CSS 변수 · 클래스와 충돌하면 **기존 패턴을 우선**하고, 새 UI는 디자인 시스템에 가깝게 맞춘다.
 - 글이 많은 섹션 · 문장 속 수치를 시각화할 때는 `Korean Docs of Kong Design System [v1.3]/guides/visual-elements.md`(시각 요소 카탈로그 E1–E16)를 먼저 읽는다. 섹션당 시각 앵커 1개, 라벨 대신 요지 한 문장, 원문은 `details.vr-more` 펼침, 덱에 이미 있는 `.vr-*` 패턴 재사용, 문서의 도식 점검 목록(행 정렬 · HA 수렴 · 왕복 경로 분리 · 선택 UX · 카운트업)을 따른다.
 - 애니메이션 · 전환 · 영상 연출을 넣을 때는 `Korean Docs of Kong Design System [v1.3]/guides/motion.md`(모션 용어 M1–M20)의 용어별 상태를 따른다. 기본은 이즈 아웃 · 스태거 · 카운트업 · 디졸브 · 와이프 · 매치 컷, 오버슈트 · 스쿼시 앤 스트레치 · 3D 오빗은 쓰지 않고, 글리치는 장애 · 공격 상태에만 쓴다. UI 120–420ms, 데이터 연출만 1.2–1.8s, `prefers-reduced-motion` · 인쇄는 최종 상태.
-- 아이콘은 그리기 전에 먼저 찾는다: `achive/kong-iconography/`(`svg/{name}.svg`, `icons.json`, [카탈로그](https://chuca.github.io/kong-iconography/)) → 디자인 시스템 `assets/icons/` → Kong 플러그인 문서 아이콘. `-1` 접미사는 변형본이며 기본은 접미사 없는 파일.
+- **아이콘은 회사 권고 세트(Kong Iconography)를 반드시 먼저 쓴다. 직접 그린 아이콘 · 임의 SVG · Lucide 등 외부 세트로 대체하지 않는다.**
+  - 찾는 순서: `achive/kong-iconography/`(`svg/{name}.svg`, `icons.json`, [카탈로그](https://chuca.github.io/kong-iconography/)) → 디자인 시스템 `assets/icons/` → Kong 플러그인 문서 아이콘. `-1` 접미사는 변형본이며 기본은 접미사 없는 파일.
+  - 세 곳 모두에 없을 때만 직접 그리고, 작업 보고에 "권고 세트에 없어 직접 그림 · 대상 개념"을 밝힌다.
+  - 인라인 방법: 원본 `path`를 그대로 옮기고 `fill="#CCFF00"`만 `fill="currentColor"`로 바꿔 테마 색을 CSS로 준다. `viewBox="0 0 24 24"` 유지, 바로 앞에 `<!-- Kong Iconography: {name} -->` 주석을 남긴다.
+  - 예외: Kong 로고 · 마크(`#kong-logo` · `#kong-mark`), 클라우드 · 파트너 로고(`ic-aws` 등), 화살표 · 체크 · 셰브론 같은 UI 기호, 도식용 도형.
+  - 커밋 전 점검: 이번 변경에 새로 들어간 `<svg>`가 위 출처 중 하나인지 확인한다.
 - 새 클래스는 기존과 겹치지 않게 고유 접두사를 쓴다.
 
 ## 7. 버전 · Changelog · Release

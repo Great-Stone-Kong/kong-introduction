@@ -12,5 +12,6 @@
 - 검증 · 빌드: `npm run check-i18n && npm run build`
 - 글이 많은 섹션 시각화: `Korean Docs of Kong Design System [v1.3]/guides/visual-elements.md`(E1–E16 카탈로그 · 도식 점검 목록)
 - 애니메이션 · 연출: `Korean Docs of Kong Design System [v1.3]/guides/motion.md`(M1–M20 용어별 권장 · 조건부 · 비권장)
+- 아이콘: `achive/kong-iconography/svg/{name}.svg`(회사 권고 세트)를 먼저 쓴다. 직접 그리기 · 외부 세트 금지(없을 때만 직접 그리고 보고에 명시)
 - 제목 · 목차는 명사형(구어체 · 대화체 금지)
 - 작업 단위 종료 시 자동 commit(영어 한 문장). push · Release · Drive · `VERSION` · Changelog는 요청 시에만
