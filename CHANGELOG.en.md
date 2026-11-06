@@ -7,6 +7,10 @@
 
 ## Unreleased
 
+### Added
+
+- Security and compliance mapping > Agentic AI zero trust: add Kong coverage for the guide's 53 security functions
+
 ### Changed
 
 - License model > Pricing structure:
