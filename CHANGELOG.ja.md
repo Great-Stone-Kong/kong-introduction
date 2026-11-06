@@ -5,7 +5,7 @@
 
 ---
 
-## Unreleased
+## 2026.11.06.6aedbacb
 
 ### 追加
 
