@@ -9,7 +9,7 @@
 
 ### Added
 
-- Security and compliance mapping > MSIT Agentic AI zero trust: add Kong coverage for the guide's 53 security functions, with a notes column for controls required outside the gateway path
+- Security and compliance mapping > MSIT Agentic AI zero trust: add Kong coverage for the guide's 53 security functions. Mark covered items as Covered, and list remaining controls under Additional elements required
 
 ### Changed
 
