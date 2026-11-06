@@ -1150,37 +1150,8 @@ html[data-theme="light"] .egt-list li.on{box-shadow:0 0 0 1px var(--accent)}
 .ega.flash{outline:1px solid var(--lime);box-shadow:0 0 0 4px rgba(204,255,0,.12)}
 @media (max-width:900px){.ega-grid{grid-template-columns:1fr}}
 
-/* Event Gateway interactive demo (EG vs Direct) */
-.egd{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:0 0 14px}
-.egd-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:12px}
-.egd-meta>div{background:var(--navy-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
-.egd-meta span{display:block;font-size:11px;font-weight:700;color:var(--g500);margin-bottom:4px}
-.egd-meta code{font-size:12px;color:var(--accent);word-break:break-all}
-.egd-feats{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
-.egd-feat{font-size:12px;font-weight:700;border-radius:999px;padding:5px 10px;border:1px solid var(--line);color:var(--g300)}
-.egd-feat.on{border-color:rgba(204,255,0,.45);background:var(--accent-soft);color:var(--accent)}
-.egd-feat.off{border-color:rgba(255,107,107,.4);background:color-mix(in srgb,var(--danger) 8%,transparent);color:var(--danger-soft)}
-.egd-feat code{font-size:11px}
-.egd-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.egd-card{background:var(--navy-2);border:1px solid var(--line);border-radius:12px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;min-width:0}
-.egd-card.eg{border-color:rgba(204,255,0,.35)}
-.egd-card.direct{border-color:rgba(255,107,107,.28)}
-.egd-h{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap}
-.egd-h b{font-size:16px;color:var(--heading)}
-.egd-h em{font-style:normal;font-size:11px;font-weight:700;color:var(--g500);font-family:var(--mono)}
-.egd-d{margin:0;font-size:13px;color:var(--g300);line-height:1.5}
-.egd-d code{color:var(--accent);font-size:12px}
-.egd-card label{font-size:11px;font-weight:700;color:var(--g500);letter-spacing:.04em}
-.egd-card textarea{width:100%;box-sizing:border-box;resize:vertical;min-height:64px;border-radius:8px;border:1px solid var(--line);background:var(--svg-panel);color:var(--svg-label);padding:10px 12px;font:13px/1.45 var(--mono)}
-.egd-actions{display:flex;flex-wrap:wrap;gap:8px}
-.egd-out{margin:0;flex:1;min-height:140px;max-height:220px;overflow:auto;border-radius:8px;border:1px solid var(--line);background:#040D08;color:#C8D0C4;padding:10px 12px;font:12px/1.45 var(--mono);white-space:pre-wrap;word-break:break-word}
-.egd-out.ok{border-color:rgba(204,255,0,.35)}
-.egd-out.no{border-color:rgba(255,107,107,.45);color:#ffb0b0}
-.egd-out.skip{border-color:color-mix(in srgb,var(--diag-amber) 40%,transparent);color:var(--diag-amber)}
-@media (max-width:900px){
-  .egd-meta{grid-template-columns:1fr 1fr}
-  .egd-grid{grid-template-columns:1fr}
-}
+.egp svg{width:100%;height:auto;display:block}
+.egp-cap{margin:12px 0 0;font-size:14.5px;color:var(--g300);line-height:1.6}
 
 .pf-st li span{min-width:0;overflow-wrap:anywhere}
 .pf-st .pf-h span,.pf-st .pf-h em{overflow-wrap:anywhere}
@@ -5801,6 +5772,117 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
   <p class="note">Kafka UI 형태의 소개용 목업입니다. 장면은 SE Tools Event Gateway 데모(VC · 필드 암복호)를 재구성한 것이며, 실습은 해당 데모 환경에서 이어갑니다.</p>
 </section>
 
+<section class="sec" id="eg-policy" data-title="정책 동작">
+  <div class="eyebrow">Policy</div>
+  <h2>요청 · 레코드 정책</h2>
+  <p class="sub">ACL은 요청 가능 여부를 정하고, 정책은 요청 내용과 레코드 형태를 정합니다.</p>
+  <div class="tabs" data-tabs>
+    <button type="button" class="on">요청 규칙</button>
+    <button type="button">레코드 변환</button>
+    <button type="button">필드 마스킹</button>
+    <button type="button">Backend 인증</button>
+  </div>
+  <div class="pane on"><div class="egp rv"><svg viewBox="0 0 960 250" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="CreateTopics 요청 규칙: 허용 토픽은 통과하고 파티션 초과 토픽은 거부">
+    <text x="110" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">CLIENT</text>
+    <text x="470" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">EVENT GATEWAY</text>
+    <text x="820" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">BACKEND</text>
+    <rect x="30" y="78" width="160" height="120" rx="12" fill="var(--svg-panel)" stroke="var(--g700)"/>
+    <text x="110" y="108" text-anchor="middle" font-size="13" font-weight="800" fill="var(--svg-fg)">CreateTopics</text>
+    <text x="110" y="132" text-anchor="middle" font-size="12" fill="var(--svg-muted)">orders · 6 partitions</text>
+    <text x="110" y="156" text-anchor="middle" font-size="12" fill="var(--danger-soft)">raw-dump · 200</text>
+    <text x="110" y="178" text-anchor="middle" font-size="11" fill="var(--svg-muted)">한 요청 · 두 토픽</text>
+    <rect x="330" y="58" width="280" height="160" rx="14" fill="var(--svg-panel)" stroke="var(--mark)" stroke-width="2"/>
+    <text x="470" y="88" text-anchor="middle" font-size="14" font-weight="800" fill="var(--mark)">Request Rule</text>
+    <rect x="352" y="104" width="236" height="28" rx="8" fill="var(--svg-chip)" stroke="var(--line2)"/>
+    <text x="470" y="123" text-anchor="middle" font-size="12" font-weight="700" fill="var(--svg-label)">partitions ≤ 12 · 이름 접두사</text>
+    <rect x="352" y="142" width="236" height="28" rx="8" fill="rgba(204,255,0,.08)" stroke="var(--mark)"/>
+    <text x="470" y="161" text-anchor="middle" font-size="12" font-weight="700" fill="var(--mark)">orders 통과</text>
+    <rect x="352" y="178" width="236" height="28" rx="8" fill="var(--danger-bg)" stroke="var(--danger)"/>
+    <text x="470" y="197" text-anchor="middle" font-size="12" font-weight="700" fill="var(--danger-soft)">raw-dump 거부</text>
+    <rect x="740" y="88" width="180" height="72" rx="12" fill="var(--svg-panel)" stroke="var(--g700)"/>
+    <text x="830" y="118" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">Kafka</text>
+    <text x="830" y="140" text-anchor="middle" font-size="12" fill="var(--svg-muted)">orders만 생성</text>
+    <path d="M190 118H330" fill="none" stroke="var(--mark)" stroke-width="2"/>
+    <path d="M610 132H740" fill="none" stroke="var(--mark)" stroke-width="2"/>
+    <path d="M330 188H190" fill="none" stroke="var(--danger)" stroke-width="2" stroke-dasharray="6 5"/>
+    <circle r="5" fill="var(--lime)" opacity="0"><animateMotion dur="3.6s" begin="0s" repeatCount="indefinite" path="M190 118H330"/><animate attributeName="opacity" dur="3.6s" begin="0s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.08;.4;1"/></circle>
+    <circle r="5" fill="var(--lime)" opacity="0"><animateMotion dur="3.6s" begin="0.7s" repeatCount="indefinite" path="M610 132H740"/><animate attributeName="opacity" dur="3.6s" begin="0.7s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.08;.4;1"/></circle>
+    <circle r="5" fill="var(--danger)" opacity="0"><animateMotion dur="3.6s" begin="1.5s" repeatCount="indefinite" path="M330 188H190"/><animate attributeName="opacity" dur="3.6s" begin="1.5s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.08;.45;1"/></circle>
+  </svg>
+  <p class="egp-cap">CreateTopics에서 규칙을 어긴 토픽만 거부하고 나머지는 통과합니다. ACL은 요청 가능 여부를, 규칙은 요청 내용을 봅니다.</p></div></div>
+  <div class="pane"><div class="egp"><svg viewBox="0 0 960 250" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="JSON과 Avro를 Gateway에서 변환하고 Backend에는 Avro로 저장">
+    <text x="100" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">PRODUCE</text>
+    <text x="480" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">GATEWAY · BACKEND</text>
+    <text x="840" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">CONSUME</text>
+    <rect x="24" y="70" width="150" height="56" rx="12" fill="var(--svg-panel)" stroke="var(--g700)"/>
+    <text x="99" y="94" text-anchor="middle" font-size="13" font-weight="800" fill="var(--svg-fg)">Producer</text>
+    <text x="99" y="112" text-anchor="middle" font-size="12" fill="var(--svg-muted)">JSON</text>
+    <rect x="300" y="58" width="200" height="80" rx="12" fill="var(--svg-panel)" stroke="var(--mark)" stroke-width="1.6"/>
+    <text x="400" y="90" text-anchor="middle" font-size="13" font-weight="800" fill="var(--mark)">JSON → Avro</text>
+    <text x="400" y="112" text-anchor="middle" font-size="12" fill="var(--svg-muted)">스키마 기준 변환</text>
+    <rect x="560" y="58" width="160" height="80" rx="12" fill="var(--svg-panel)" stroke="var(--g700)"/>
+    <text x="640" y="90" text-anchor="middle" font-size="13" font-weight="800" fill="var(--svg-fg)">Topic</text>
+    <text x="640" y="112" text-anchor="middle" font-size="12" fill="var(--svg-muted)">저장 = Avro</text>
+    <rect x="560" y="156" width="160" height="64" rx="12" fill="var(--svg-panel)" stroke="var(--mark)" stroke-width="1.6"/>
+    <text x="640" y="184" text-anchor="middle" font-size="13" font-weight="800" fill="var(--mark)">Avro → JSON</text>
+    <text x="640" y="204" text-anchor="middle" font-size="12" fill="var(--svg-muted)">Consume 변환</text>
+    <rect x="786" y="160" width="150" height="56" rx="12" fill="var(--svg-panel)" stroke="var(--g700)"/>
+    <text x="861" y="184" text-anchor="middle" font-size="13" font-weight="800" fill="var(--svg-fg)">Consumer</text>
+    <text x="861" y="202" text-anchor="middle" font-size="12" fill="var(--svg-muted)">JSON</text>
+    <path d="M174 98H300" fill="none" stroke="var(--mark)" stroke-width="2"/>
+    <path d="M500 98H560" fill="none" stroke="var(--mark)" stroke-width="2"/>
+    <path d="M640 138V156" fill="none" stroke="var(--mark)" stroke-width="2"/>
+    <path d="M720 188H786" fill="none" stroke="var(--mark)" stroke-width="2"/>
+    <circle r="5" fill="var(--lime)" opacity="0"><animateMotion dur="4s" begin="0s" repeatCount="indefinite" path="M174 98H560"/><animate attributeName="opacity" dur="4s" begin="0s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.7;1"/></circle>
+    <circle r="5" fill="var(--lime)" opacity="0"><animateMotion dur="3.2s" begin="1.6s" repeatCount="indefinite" path="M640 138V156H786"/><animate attributeName="opacity" dur="3.2s" begin="1.6s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.08;.7;1"/></circle>
+  </svg>
+  <p class="egp-cap">Produce는 JSON을 Avro로 바꿔 저장하고, Consume은 저장된 Avro를 JSON으로 돌려줍니다. Backend 레코드는 Avro입니다.</p></div></div>
+  <div class="pane"><div class="egp"><svg viewBox="0 0 960 250" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Consume 시 문자열 필드만 마스킹하고 저장 레코드는 유지">
+    <text x="180" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">STORED RECORD</text>
+    <text x="700" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">CONSUMER VIEW</text>
+    <rect x="40" y="64" width="280" height="140" rx="14" fill="var(--svg-panel)" stroke="var(--g700)"/>
+    <text x="180" y="96" text-anchor="middle" font-size="13" font-weight="800" fill="var(--svg-fg)">Backend 원본</text>
+    <text x="180" y="128" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="13" fill="var(--svg-fg)">lee@example.com</text>
+    <text x="180" y="156" text-anchor="middle" font-size="12" fill="var(--svg-muted)">문자열 필드 · 저장값 유지</text>
+    <text x="180" y="180" text-anchor="middle" font-size="12" fill="var(--svg-muted)">인가된 소비자는 원본</text>
+    <rect x="400" y="88" width="160" height="92" rx="12" fill="var(--svg-panel)" stroke="var(--mark)" stroke-width="2"/>
+    <text x="480" y="124" text-anchor="middle" font-size="13" font-weight="800" fill="var(--mark)">Mask Fields</text>
+    <text x="480" y="148" text-anchor="middle" font-size="12" fill="var(--svg-muted)">Consume 경로</text>
+    <rect x="640" y="64" width="280" height="140" rx="14" fill="var(--svg-panel)" stroke="var(--mark)" stroke-width="1.6"/>
+    <text x="780" y="96" text-anchor="middle" font-size="13" font-weight="800" fill="var(--svg-fg)">가려진 값</text>
+    <text x="780" y="128" text-anchor="middle" font-family="Roboto Mono, monospace" font-size="13" fill="var(--mark)">l••@example.com</text>
+    <text x="780" y="156" text-anchor="middle" font-size="12" fill="var(--svg-muted)">도메인은 유지 · 로컬은 가림</text>
+    <text x="780" y="180" text-anchor="middle" font-size="12" fill="var(--svg-muted)">숫자 · 불리언은 대상 아님</text>
+    <path d="M320 134H400" fill="none" stroke="var(--mark)" stroke-width="2"/>
+    <path d="M560 134H640" fill="none" stroke="var(--mark)" stroke-width="2"/>
+    <circle r="5" fill="var(--lime)" opacity="0"><animateMotion dur="3.4s" begin="0s" repeatCount="indefinite" path="M320 134H640"/><animate attributeName="opacity" dur="3.4s" begin="0s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.08;.75;1"/></circle>
+  </svg>
+  <p class="egp-cap">Consume 경로에서 문자열 필드만 가립니다. 클러스터에 저장된 원본은 유지됩니다. Produce 시점 마스킹은 원본이 클러스터에 남지 않아 되돌릴 수 없습니다.</p></div></div>
+  <div class="pane"><div class="egp"><svg viewBox="0 0 960 250" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="클라이언트 인증과 Gateway의 Backend IAM 인증이 분리된 구조">
+    <text x="120" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">CLIENT AUTH</text>
+    <text x="470" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">EVENT GATEWAY</text>
+    <text x="820" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">BACKEND AUTH</text>
+    <rect x="30" y="78" width="180" height="100" rx="12" fill="var(--svg-panel)" stroke="var(--g700)"/>
+    <text x="120" y="116" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">Kafka client</text>
+    <text x="120" y="140" text-anchor="middle" font-size="12" fill="var(--svg-muted)">OAuth · mTLS · SASL</text>
+    <text x="120" y="160" text-anchor="middle" font-size="12" fill="var(--svg-muted)">Gateway에만 제시</text>
+    <rect x="330" y="64" width="280" height="128" rx="14" fill="var(--svg-panel)" stroke="var(--mark)" stroke-width="2"/>
+    <text x="470" y="100" text-anchor="middle" font-size="14" font-weight="800" fill="var(--mark)">Data Plane</text>
+    <text x="470" y="126" text-anchor="middle" font-size="12" fill="var(--svg-fg)">인스턴스 역할 · AssumeRole</text>
+    <text x="470" y="150" text-anchor="middle" font-size="12" fill="var(--svg-muted)">자격 증명 체인</text>
+    <text x="470" y="172" text-anchor="middle" font-size="12" fill="var(--svg-muted)">클라이언트 자격과 분리</text>
+    <rect x="730" y="78" width="190" height="100" rx="12" fill="var(--svg-panel)" stroke="var(--g700)"/>
+    <text x="825" y="112" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">MSK</text>
+    <text x="825" y="136" text-anchor="middle" font-size="12" fill="var(--svg-muted)">IAM · 9098</text>
+    <text x="825" y="156" text-anchor="middle" font-size="12" fill="var(--svg-muted)">Gateway만 접속</text>
+    <path d="M210 128H330" fill="none" stroke="var(--mark)" stroke-width="2"/>
+    <path d="M610 128H730" fill="none" stroke="var(--mark)" stroke-width="2"/>
+    <circle r="5" fill="var(--lime)" opacity="0"><animateMotion dur="3.2s" begin="0s" repeatCount="indefinite" path="M210 128H330"/><animate attributeName="opacity" dur="3.2s" begin="0s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.08;.4;1"/></circle>
+    <circle r="5" fill="var(--lime)" opacity="0"><animateMotion dur="3.2s" begin="0.8s" repeatCount="indefinite" path="M610 128H730"/><animate attributeName="opacity" dur="3.2s" begin="0.8s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.08;.4;1"/></circle>
+  </svg>
+  <p class="egp-cap">클라이언트가 Gateway에 인증하는 방식과, Gateway가 Backend에 인증하는 방식은 분리됩니다. MSK IAM은 Gateway와 클러스터 사이 홉에만 적용됩니다.</p></div></div>
+</section>
+
 <section class="sec" id="e-failover" data-title="Failover">
   <div class="eyebrow">Disaster Recovery</div>
   <h2>Failover 모델 · 절차</h2>
@@ -5960,61 +6042,16 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
   <p class="note">Control Plane은 Konnect 전용입니다. Data Plane은 self-managed이며 라이선스는 Konnect가 처리합니다. Event Management 과금은 Virtual Cluster 수 기준이며, Enterprise에 기본 포함 VC가 있고 추가 VC는 계약 단가에 따릅니다. 이벤트 건수는 무제한입니다. 참고: <a href="https://developer.konghq.com/event-gateway/" target="_blank" rel="noopener">Kong Event Gateway</a> · <a href="https://konghq.com/pricing" target="_blank" rel="noopener">Konnect Pricing</a> · <a href="https://developer.konghq.com/event-gateway/architecture/" target="_blank" rel="noopener">Architecture</a></p>
 </section>
 
-<section class="sec" id="eg-demo" data-title="데모">
-  <div class="eyebrow">Interactive Demo</div>
-  <h2>Event Gateway vs Direct</h2>
-  <p class="sub">왼쪽은 Virtual Cluster(<code>localhost:19092</code>)를 경유하고, 오른쪽은 브로커 직결 또는 EG ACL 거부를 확인합니다. Consume 헤더 주입 · Gateway ACL은 Event Gateway 경로에서만 적용됩니다.</p>
-  <div class="egd rv" id="egd">
-    <div class="egd-meta">
-      <div><span>Virtual cluster</span><code>localhost:19092</code></div>
-      <div><span>Direct Kafka</span><code>kafka1:9092 · kafka2:9092 · kafka3:9092</code></div>
-      <div><span>Demo topic</span><code>my-test-topic</code></div>
-      <div><span>Blocked topic</span><code>blocked-topic</code></div>
-    </div>
-    <div class="egd-feats">
-      <span class="egd-feat on">EG only · Virtual Cluster bootstrap</span>
-      <span class="egd-feat on">EG only · Consume header <code>My-New-Header</code></span>
-      <span class="egd-feat on">EG only · ACL <code>enforce_on_gateway</code></span>
-      <span class="egd-feat off">Direct · 브로커 주소 노출 · Policy 없음</span>
-    </div>
-    <div class="egd-grid">
-      <article class="egd-card eg">
-        <div class="egd-h"><b>Through Event Gateway</b><em>Virtual Cluster · Policy</em></div>
-        <p class="egd-d">produce / consume via <code>localhost:19092</code> · consume 시 <code>My-New-Header</code> 확인</p>
-        <label for="egd-eg-val">Message</label>
-        <textarea id="egd-eg-val" rows="3">hello via Event Gateway</textarea>
-        <div class="egd-actions">
-          <button type="button" class="btn" id="egd-eg-produce">Produce</button>
-          <button type="button" class="btn s" id="egd-eg-consume">Consume</button>
-        </div>
-        <pre class="egd-out" id="egd-eg-out">Ready.</pre>
-      </article>
-      <article class="egd-card direct">
-        <div class="egd-h"><b>Direct / ACL</b><em>bypass 또는 EG deny</em></div>
-        <p class="egd-d">브로커 직접 produce, 또는 EG로 <code>blocked-topic</code> write 거부 확인</p>
-        <label for="egd-dir-val">Message</label>
-        <textarea id="egd-dir-val" rows="3">hello direct</textarea>
-        <div class="egd-actions">
-          <button type="button" class="btn" id="egd-dir-produce">Direct produce</button>
-          <button type="button" class="btn s" id="egd-blocked">Blocked write (expect deny)</button>
-        </div>
-        <pre class="egd-out" id="egd-dir-out">Ready.</pre>
-      </article>
-    </div>
-  </div>
-  <p class="note">kong-demo/event-gateway-demo UI와 동일한 시나리오 시뮬레이션입니다. Through EG 요청만 아래 Analytics에 집계됩니다. Direct produce는 EG를 우회하므로 Analytics에 반영되지 않습니다.</p>
-</section>
-
 <section class="sec" id="eg-analytics" data-title="Analytics">
   <div class="eyebrow">Konnect Portal</div>
   <h2>Event Gateway Analytics</h2>
-  <p class="sub">운영 규모 베이스라인 위에, 위 데모의 Through Event Gateway 요청이 가산됩니다. Direct produce는 집계되지 않습니다.</p>
+  <p class="sub">Virtual Cluster · 토픽 · principal 단위로 produce · consume 바이트와 오류를 봅니다.</p>
   <div class="mock ega rv" id="ega">
     <div class="mk-top">
       <span class="mk-dot"></span>
       <b>Analytics</b>
       <span class="mk-pill">Last 7 days · GMT+9</span>
-      <span class="mk-pill" id="ega-scope">+ demo delta</span>
+      <span class="mk-pill">Last 7 days</span>
     </div>
     <div class="mk-kpis">
       <div class="mk-kpi"><span>Total bytes produced</span><b id="ega-prod">84.2 GB</b><em class="up" id="ega-prod-em">+12.4% vs prev</em></div>
@@ -6024,44 +6061,44 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
     </div>
     <div class="ega-grid">
       <div class="mk-card">
-        <div class="mk-h"><b>Top topics produced to</b><span class="ega-sum">Last 7 day + demo</span></div>
+        <div class="mk-h"><b>Top topics produced to</b><span class="ega-sum">Last 7 days</span></div>
         <table class="ega-tbl"><thead><tr><th>Topic name</th><th>Virtual cluster</th><th>Backend cluster</th><th>Record size</th></tr></thead>
-          <tbody id="ega-tbl-prod"></tbody>
+          <tbody id="ega-tbl-prod"><tr><td>orders.events</td><td>vc-team-a</td><td>kafka-prod</td><td class="num">48.6 GB</td></tr><tr><td>payments.notify</td><td>vc-team-b</td><td>kafka-prod</td><td class="num">22.1 GB</td></tr><tr><td>partner.ingest</td><td>vc-partner</td><td>kafka-prod</td><td class="num">8.4 GB</td></tr><tr><td>audit.trail</td><td>vc-team-a</td><td>kafka-prod</td><td class="num">3.2 GB</td></tr></tbody>
         </table>
       </div>
       <div class="mk-card">
-        <div class="mk-h"><b>Top topics consumed from</b><span class="ega-sum">Last 7 day + demo</span></div>
+        <div class="mk-h"><b>Top topics consumed from</b><span class="ega-sum">Last 7 days</span></div>
         <table class="ega-tbl"><thead><tr><th>Topic name</th><th>Virtual cluster</th><th>Backend cluster</th><th>Record size</th></tr></thead>
-          <tbody id="ega-tbl-cons"></tbody>
+          <tbody id="ega-tbl-cons"><tr><td>orders.events</td><td>vc-team-a</td><td>kafka-prod</td><td class="num">126 GB</td></tr><tr><td>payments.notify</td><td>vc-team-b</td><td>kafka-prod</td><td class="num">58.2 GB</td></tr><tr><td>partner.ingest</td><td>vc-partner</td><td>kafka-prod</td><td class="num">21.4 GB</td></tr><tr><td>audit.trail</td><td>vc-team-a</td><td>kafka-prod</td><td class="num">8.1 GB</td></tr></tbody>
         </table>
       </div>
       <div class="mk-card">
-        <div class="mk-h"><b>Producers</b><span class="ega-sum">Last 7 day + demo</span></div>
+        <div class="mk-h"><b>Producers</b><span class="ega-sum">Last 7 days</span></div>
         <table class="ega-tbl"><thead><tr><th>Name</th><th>Record size</th></tr></thead>
-          <tbody id="ega-tbl-producers"></tbody>
+          <tbody id="ega-tbl-producers"><tr><td>orders-svc</td><td class="num">41.2 GB</td></tr><tr><td>payment-worker</td><td class="num">18.7 GB</td></tr></tbody>
         </table>
       </div>
       <div class="mk-card">
-        <div class="mk-h"><b>Consumers</b><span class="ega-sum">Last 7 day + demo</span></div>
+        <div class="mk-h"><b>Consumers</b><span class="ega-sum">Last 7 days</span></div>
         <table class="ega-tbl"><thead><tr><th>Name</th><th>Record size</th></tr></thead>
-          <tbody id="ega-tbl-consumers"></tbody>
+          <tbody id="ega-tbl-consumers"><tr><td>analytics-consumer</td><td class="num">98.4 GB</td></tr><tr><td>billing-reconcile</td><td class="num">52.1 GB</td></tr></tbody>
         </table>
       </div>
       <div class="mk-card">
-        <div class="mk-h"><b>Error codes</b><span class="ega-sum">Last 7 day + demo</span></div>
+        <div class="mk-h"><b>Error codes</b><span class="ega-sum">Last 7 days</span></div>
         <table class="ega-tbl"><thead><tr><th>Name</th><th>Request count</th></tr></thead>
-          <tbody id="ega-tbl-err"></tbody>
+          <tbody id="ega-tbl-err"><tr><td>TOPIC_AUTHORIZATION_FAILED</td><td class="num">842</td></tr><tr><td>GROUP_AUTHORIZATION_FAILED</td><td class="num">214</td></tr><tr><td>COORDINATOR_NOT_AVAILABLE</td><td class="num">96</td></tr><tr><td>UNKNOWN_TOPIC_OR_PARTITION</td><td class="num">58</td></tr><tr><td>REQUEST_TIMED_OUT</td><td class="num">31</td></tr></tbody>
         </table>
       </div>
       <div class="mk-card">
-        <div class="mk-h"><b>Management commands</b><span class="ega-sum">Last 7 day + demo</span></div>
+        <div class="mk-h"><b>Management commands</b><span class="ega-sum">Last 7 days</span></div>
         <table class="ega-tbl"><thead><tr><th>Name</th><th>Request count</th></tr></thead>
-          <tbody id="ega-tbl-cmd"></tbody>
+          <tbody id="ega-tbl-cmd"><tr><td>FindCoordinator</td><td class="num">1280K</td></tr><tr><td>Fetch</td><td class="num">920K</td></tr><tr><td>Produce</td><td class="num">380K</td></tr><tr><td>Metadata</td><td class="num">412K</td></tr><tr><td>ListOffsets</td><td class="num">186K</td></tr><tr><td>ApiVersions</td><td class="num">94K</td></tr><tr><td>Heartbeat</td><td class="num">71K</td></tr></tbody>
         </table>
       </div>
     </div>
   </div>
-  <p class="note">Konnect Portal Analytics 목업입니다. GB 단위 베이스라인에 Through EG 데모 요청이 가산됩니다.</p>
+  <p class="note">Konnect Portal Analytics 목업입니다. 수치는 운영 규모 예시이며 실시간 집계가 아닙니다.</p>
 </section>
 
 <section class="sec" id="eg-vs" data-title="vs Confluent Gateway">
@@ -8500,125 +8537,6 @@ const SC_KP=(function(){
   ];
 })();
 KDemo(document.getElementById('kdemo-kp'),SC_KP,{client:'HTTP Client',kong:'Kong Gateway · Kafka Plugins',host:'localhost:8000'});
-
-/* Event Gateway demo UI · Analytics baseline + demo delta */
-(function(){
-  const root=document.getElementById('egd');
-  const ega=document.getElementById('ega');
-  if(!root||!ega) return;
-  const TOPIC='my-test-topic', VC='vcluster-1', BK='kafka-prod', PRINCIPAL='eg-demo-ui';
-  const EG_BOOT=['localhost:19092'], DIR_BOOT=['kafka1:9092','kafka2:9092','kafka3:9092'];
-  const GB=1073741824, MB=1048576;
-  // ponytail: 1 message-byte → 1 MB so GB KPIs visibly tick on demo clicks
-  const scale=n=>Math.max(1,n)*MB;
-  const tk=(t,vc,bk)=>t+'\t'+vc+'\t'+bk;
-  const store={msgs:[], off:40, prodB:84.2*GB, consB:218*GB, err:1240, prin:48, demoProd:0, demoCons:0, demoErr:0, cmds:{}};
-  const topicProd={
-    [tk('orders.events','vc-team-a',BK)]:48.6*GB,
-    [tk('payments.notify','vc-team-b',BK)]:22.1*GB,
-    [tk('partner.ingest','vc-partner',BK)]:8.4*GB,
-    [tk('audit.trail','vc-team-a',BK)]:3.2*GB,
-    [tk(TOPIC,VC,BK)]:0
-  };
-  const topicCons={
-    [tk('orders.events','vc-team-a',BK)]:126*GB,
-    [tk('payments.notify','vc-team-b',BK)]:58.2*GB,
-    [tk('partner.ingest','vc-partner',BK)]:21.4*GB,
-    [tk('audit.trail','vc-team-a',BK)]:8.1*GB,
-    [tk(TOPIC,VC,BK)]:0
-  };
-  const producers={'orders-svc':41.2*GB,'payment-worker':18.7*GB,[PRINCIPAL]:0};
-  const consumers={'analytics-consumer':98.4*GB,'billing-reconcile':52.1*GB,[PRINCIPAL]:0};
-  const errors={'TOPIC_AUTHORIZATION_FAILED':842,'GROUP_AUTHORIZATION_FAILED':214,'COORDINATOR_NOT_AVAILABLE':96,'UNKNOWN_TOPIC_OR_PARTITION':58,'REQUEST_TIMED_OUT':31};
-  store.cmds={FindCoordinator:1280000,Metadata:412000,ListOffsets:186000,ApiVersions:94000,Heartbeat:71000,Produce:380000,Fetch:920000};
-  const $=id=>document.getElementById(id);
-  const pretty=o=>JSON.stringify(o,null,2);
-  const bytes=s=>new TextEncoder().encode(String(s)).length;
-  const fmt=n=>{
-    if(n<1024) return Math.round(n)+' B';
-    if(n<MB) return (n/1024).toFixed(n<10240?2:1)+' kB';
-    if(n<GB) return (n/MB).toFixed(n<10*MB?2:1)+' MB';
-    const g=n/GB; return (Math.abs(g-Math.round(g*10)/10)<0.001?(Math.round(g*10)/10).toFixed(1):g.toFixed(2))+' GB';
-  };
-  const fmtN=n=>n>=1000?(n/1000).toFixed(n%100===0?1:2).replace(/\.0$/,'')+'K':String(n);
-  const bumpCmd=(n,c)=>{store.cmds[n]=(store.cmds[n]||0)+c;};
-  const show=(el,obj,cls)=>{el.textContent=pretty(obj); el.className='egd-out'+(cls?' '+cls:'');};
-  const flash=()=>{ega.classList.remove('flash'); void ega.offsetWidth; ega.classList.add('flash'); setTimeout(()=>ega.classList.remove('flash'),700);};
-  function rows4(map){
-    return Object.entries(map).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]).slice(0,5)
-      .map(([k,v])=>{const [t,vc,bk]=k.split('\t'); return '<tr><td>'+t+'</td><td>'+vc+'</td><td>'+bk+'</td><td class="num">'+fmt(v)+'</td></tr>';}).join('');
-  }
-  function rows2(map, asBytes){
-    return Object.entries(map).sort((a,b)=>b[1]-a[1]).slice(0,5)
-      .map(([k,v])=>'<tr><td>'+k+'</td><td class="num">'+(asBytes?fmt(v):fmtN(v))+'</td></tr>').join('');
-  }
-  function paint(doFlash){
-    $('ega-prod').textContent=fmt(store.prodB);
-    $('ega-cons').textContent=fmt(store.consB);
-    $('ega-prin').textContent=String(store.prin);
-    $('ega-err').textContent=fmtN(store.err);
-    $('ega-prod-em').textContent=store.demoProd?'demo +'+fmt(store.demoProd):'+12.4% vs prev';
-    $('ega-cons-em').textContent=store.demoCons?'demo +'+fmt(store.demoCons):'+9.1% vs prev';
-    $('ega-prin-em').textContent=store.demoProd||store.demoCons||store.demoErr?'incl. eg-demo-ui':'+6 vs prev';
-    $('ega-err-em').textContent=store.demoErr?'demo +'+store.demoErr:'Request count (sum)';
-    $('ega-prod-em').className=store.demoProd?'up':'up';
-    $('ega-tbl-prod').innerHTML=rows4(topicProd);
-    $('ega-tbl-cons').innerHTML=rows4(topicCons);
-    $('ega-tbl-producers').innerHTML=rows2(producers,true);
-    $('ega-tbl-consumers').innerHTML=rows2(consumers,true);
-    $('ega-tbl-err').innerHTML=rows2(errors,false);
-    $('ega-tbl-cmd').innerHTML=rows2(store.cmds,false);
-    if(doFlash) flash();
-  }
-  function egMeta(){ bumpCmd('ApiVersions',1); bumpCmd('Metadata',1); }
-  function onEgProduce(){
-    const val=$('egd-eg-val').value||'hello via Event Gateway';
-    const raw=bytes(val), n=scale(raw); store.off+=1; const off=store.off;
-    store.msgs.push({partition:0,offset:off,value:val,via:'eg'});
-    store.prodB+=n; store.demoProd+=n;
-    const key=tk(TOPIC,VC,BK); topicProd[key]=(topicProd[key]||0)+n;
-    producers[PRINCIPAL]=(producers[PRINCIPAL]||0)+n;
-    egMeta(); bumpCmd('Produce',1);
-    show($('egd-eg-out'),{ok:true,topic:TOPIC,partition:0,offset:off,bootstrap:EG_BOOT,path:'Listener → VC → Backend',eg_only:['Virtual Cluster bootstrap','ACL allow']},'ok');
-    paint(true);
-  }
-  function onEgConsume(){
-    egMeta(); bumpCmd('FindCoordinator',1); bumpCmd('ListOffsets',1); bumpCmd('Fetch',1);
-    const src=store.msgs.slice(-5).reverse();
-    if(!src.length){
-      show($('egd-eg-out'),{ok:true,topic:TOPIC,messages:[],bootstrap:EG_BOOT,note:'토픽이 비어 있습니다. 먼저 Produce 하세요.'},'skip');
-      return;
-    }
-    let consN=0;
-    const messages=src.map(m=>{
-      consN+=scale(bytes(m.value));
-      return {partition:m.partition,offset:m.offset,value:m.value,headers:{'My-New-Header':'header_value'},via:m.via};
-    });
-    store.consB+=consN; store.demoCons+=consN;
-    const key=tk(TOPIC,VC,BK); topicCons[key]=(topicCons[key]||0)+consN;
-    consumers[PRINCIPAL]=(consumers[PRINCIPAL]||0)+consN;
-    show($('egd-eg-out'),{ok:true,topic:TOPIC,messages:messages,bootstrap:EG_BOOT,eg_only:['Consume Policy · My-New-Header']},'ok');
-    paint(true);
-  }
-  function onDirProduce(){
-    const val=$('egd-dir-val').value||'hello direct';
-    store.off+=1;
-    store.msgs.push({partition:0,offset:store.off,value:val,via:'direct'});
-    show($('egd-dir-out'),{ok:true,topic:TOPIC,partition:0,offset:store.off,bootstrap:DIR_BOOT,path:'Client → Brokers (EG bypass)',analytics:'not counted · EG Analytics는 Through EG만 집계'},'skip');
-  }
-  function onBlocked(){
-    egMeta(); bumpCmd('Produce',1);
-    store.err+=1; store.demoErr+=1;
-    errors['TOPIC_AUTHORIZATION_FAILED']=(errors['TOPIC_AUTHORIZATION_FAILED']||0)+1;
-    show($('egd-dir-out'),{ok:true,blocked:true,error:'[Error 29] TopicAuthorizationFailedError: blocked-topic',bootstrap:EG_BOOT,eg_only:['ACL enforce_on_gateway · Backend 미도달']},'no');
-    paint(true);
-  }
-  $('egd-eg-produce').onclick=onEgProduce;
-  $('egd-eg-consume').onclick=onEgConsume;
-  $('egd-dir-produce').onclick=onDirProduce;
-  $('egd-blocked').onclick=onBlocked;
-  paint(false);
-})();
 
 const SC_AGENT=(function(){
   const rpc=(id,name,args)=>({jsonrpc:'2.0',id:id,method:'tools/call',params:{name:name,arguments:args}});
