@@ -3264,20 +3264,7 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
   <h1>API 연결 시대 이후,<br><em>AI 에이전트</em> 연결의 시대</h1>
   <p class="lead">Kong은 API, LLM, MCP, 에이전트 트래픽을 하나의 게이트웨이에서 통제하는 플랫폼입니다. 앱을 고치지 않고, 트래픽이 지나가는 길목에서 인증·정책·마스킹·로깅·라우팅을 한 번에 적용합니다.</p>
 
-  <div class="story">
-    <div class="tlwrap">
-      <h3 class="tltitle"><span class="lbl">기업 변화</span>차고에서 AI 연결 플랫폼까지</h3>
-      <div class="tl" id="tl">
-        <div class="tli"><span class="yr">2009</span><h4>밀라노의 차고</h4><p>학교 친구 Augusto Marietti와 Marco Palladino가 코드 없이 앱을 만드는 도구를 시작합니다. 회사 이름은 Mashape. Mashup과 Ape(유인원)를 합친, “API 매시업을 하는 영리한 원숭이들”이라는 뜻입니다.</p></div>
-        <div class="tli"><span class="yr">2010–2011</span><h4>샌프란시스코 이전</h4><p>TechCrunch 피칭 대회를 계기로 미국에 건너가 첫 엔젤 투자 $101,000, 이어 시드 $1.5M을 유치합니다.</p></div>
-        <div class="tli"><span class="yr">2015–2017</span><h4>모놀리스에서 마이크로서비스로의 전환</h4><p>세계 최대 API 마켓플레이스가 모놀리스가 되자 분해하면서 API Gateway를 직접 만듭니다. 고객도 같은 문제를 겪고 있었습니다.</p></div>
-        <div class="tli"><span class="yr">2017–2019</span><h4>Kong 오픈소스 공개</h4><p>게이트웨이를 오픈소스로 공개하고 Kong이라 이름 붙입니다. 큰 성공을 거두자 Mashape를 매각하고, 회사 이름도 Kong Inc.로 바꿔 팀을 100명 이상으로 키웁니다.</p></div>
-        <div class="tli"><span class="yr">2019–2020</span><h4>가장 많이 쓰이는 API Gateway</h4><p>Kuma 인수로 서비스 메시를, Insomnia 인수로 개발 워크플로우를 품습니다. 2020년 Kuma를 CNCF에 기증하고 Kong Mesh를 선보입니다.</p></div>
-        <div class="tli"><span class="yr">2021</span><h4>Konnect 출시와 유니콘 등극</h4><p>API 전 주기를 어떤 클라우드에서든 관리하는 Kong Konnect 출시. $100M 시리즈 D, 기업가치 $1.4B.</p></div>
-        <div class="tli"><span class="yr">2023–2025</span><h4>AI Gateway 출시</h4><p>연 반복 매출 $100M 돌파, 직원 500명 이상. Kong AI Gateway를 출시하고 $175M 시리즈 E(기업가치 $2B), 2025년 OpenMeter를 인수해 사용량 기반 과금까지 확장합니다.</p></div>
-        <div class="tli now"><span class="yr">2026</span><h4>No AI without APIs</h4><p>세상은 클라우드 서비스를 잇는 단계에서 지능을 잇는 단계로 옮겨 가고 있습니다. 에이전트, 모델, 프롬프트가 만드는 모든 트래픽을 누군가 관리해야 합니다. 그 누군가가 Kong입니다.</p></div>
-      </div>
-    </div>
+  <div class="story" style="grid-template-columns:1fr">
     <aside class="vision">
       <div class="vcard">
         <span class="lbl">지향하는 것</span>
@@ -3288,14 +3275,68 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
       </div>
     </aside>
   </div>
-  <div class="geo" id="geo">
-    <div class="geohead">
-      <div><span class="lbl">글로벌 거점 · 13개 오피스 · 25개 국가</span><h3 style="margin:0;font-size:22px">글로벌 고객 거점과 한국 지원 체계</h3></div>
-    </div>
-    <div class="gw"><div class="gw-l"><div class="gw-rt" id="gwTabs" role="tablist"></div><div class="gw-rp" id="gwPane"><ul class="gw-list" id="gwList"></ul><div class="gw-kl"><h4>Kong 구성원이 있는 국가</h4><div class="gw-chips" id="gwChips"></div></div></div><div class="gw-team"><span class="gw-tic"><svg viewBox="0 0 24 24" aria-hidden="true"><!-- Kong Iconography: team --><path fill="currentColor" d="M12 14.25C14.0818 14.25 15.9955 14.9018 17.4043 15.9854C18.8134 17.0693 19.75 18.6178 19.75 20.3799V22C19.75 22.4142 19.4142 22.75 19 22.75C18.5858 22.75 18.25 22.4142 18.25 22V20.3799C18.25 19.1822 17.616 18.0408 16.4902 17.1748C15.3641 16.3086 13.778 15.75 12 15.75C10.2214 15.75 8.63551 16.3062 7.50977 17.1709C6.3847 18.0352 5.75004 19.1766 5.75 20.3799V22C5.75 22.4142 5.41421 22.75 5 22.75C4.58579 22.75 4.25 22.4142 4.25 22V20.3799C4.25004 18.6132 5.18584 17.0646 6.5957 15.9814C8.00494 14.8988 9.91882 14.25 12 14.25ZM1.4082 15.1494C1.66253 14.8226 2.13402 14.7633 2.46094 15.0176C2.78776 15.2719 2.84606 15.7434 2.5918 16.0703C2.04866 16.7687 1.75 17.5504 1.75 18.3799V21C1.74995 21.4142 1.41418 21.75 1 21.75C0.58582 21.75 0.250055 21.4142 0.25 21V18.3799C0.250004 17.1694 0.691391 16.071 1.4082 15.1494ZM21.54 15.0176C21.8669 14.7637 22.3376 14.8227 22.5918 15.1494C23.3086 16.071 23.75 17.1694 23.75 18.3799V21C23.7499 21.4142 23.4142 21.75 23 21.75C22.5858 21.75 22.2501 21.4142 22.25 21V18.3799C22.25 17.5504 21.9514 16.7687 21.4082 16.0703C21.1539 15.7434 21.2131 15.2719 21.54 15.0176ZM12 1.25C14.8995 1.25 17.25 3.6005 17.25 6.5C17.25 9.3995 14.8995 11.75 12 11.75C9.1005 11.75 6.75 9.3995 6.75 6.5C6.75 3.6005 9.1005 1.25 12 1.25ZM3.21973 4.71289C3.5829 4.51377 4.03815 4.6466 4.2373 5.00977C4.43634 5.37293 4.30356 5.82821 3.94043 6.02734C3.23115 6.41632 2.75001 7.15532 2.75 8C2.75 9.18778 3.66703 10.1485 4.84277 10.2314C5.25596 10.2606 5.56722 10.62 5.53809 11.0332C5.50873 11.4461 5.15031 11.7576 4.7373 11.7285C2.79305 11.5914 1.25 9.99222 1.25 8C1.25001 6.5647 2.06903 5.34392 3.21973 4.71289ZM19.7627 5.00977C19.9619 4.6466 20.4171 4.51377 20.7803 4.71289C21.931 5.34392 22.75 6.5647 22.75 8C22.75 9.99222 21.207 11.5914 19.2627 11.7285C18.8497 11.7576 18.4913 11.4461 18.4619 11.0332C18.4328 10.62 18.744 10.2606 19.1572 10.2314C20.333 10.1485 21.25 9.18778 21.25 8C21.25 7.15532 20.7688 6.41632 20.0596 6.02734C19.6964 5.82821 19.5637 5.37293 19.7627 5.00977ZM12 2.75C9.92893 2.75 8.25 4.42893 8.25 6.5C8.25 8.57107 9.92893 10.25 12 10.25C14.0711 10.25 15.75 8.57107 15.75 6.5C15.75 4.42893 14.0711 2.75 12 2.75Z"/></svg></span><span class="gw-tn"><i data-from="980" data-to="1000" data-suffix="+" data-dur="3200">1,000+</i></span><span class="gw-tl"><strong>Kongers</strong><small>전 세계 Kong 구성원</small></span></div></div><div class="gw-r"><svg id="geomap" viewBox="0 22 600 568" role="img" aria-label="Kong 글로벌 오피스 세계지도, 대한민국 강조"></svg></div></div>
-  </div>
+</section>
 
-  <p class="note">출처: <a href="https://konghq.com/company" target="_blank" rel="noopener noreferrer">konghq.com/company</a></p>
+<section class="sec" id="market" data-title="시장의 변화">
+  <div class="eyebrow">Market</div>
+  <h2>API 증가에 이은 토큰 증가</h2>
+  <p class="sub">모바일, 클라우드, 마이크로서비스를 거쳐 Agentic AI까지. 연결의 단위는 계속 바뀌었지만, 연결을 통제해야 한다는 숙제는 그대로입니다.</p>
+  <div class="dia growth" id="growth">
+    <svg id="growsvg" viewBox="0 0 2000 1070" role="img" aria-label="시대별 API 증가 개념도"></svg>
+    <p class="cap">도형의 크기는 기존 인프라·서비스 한 단위의 크기입니다. 메인프레임 한 대가 차지하던 자리를 PC, 웹 서버, 클라우드 인스턴스, 마이크로서비스, 그리고 AI 에이전트가 채우면서 단위는 작아지고, 그 사이를 잇는 API는 폭증합니다.</p>
+  </div>
+  <div class="vr-kpis rv"><div class="vr-kpi" style="--k:0"><span class="tag">보이지 않는 API</span><div class="vr-rw"><svg class="vr-ring" viewBox="0 0 132 132" aria-hidden="true"><circle cx="66" cy="66" r="58" class="trk" stroke-width="12"/><circle cx="66" cy="66" r="58" class="val" stroke-width="12" style="--v:182.2;--c:364.4" transform="rotate(-90 66 66)"/></svg><span class="vr-rn"><i data-from="0" data-to="50" data-suffix="%+" data-dur="1500">50%+</i></span></div><h4>엔터프라이즈 API 절반 이상이 관리 밖</h4><p>2025년 보고 기준 · 관리 체계 밖에서 운영되는 API</p></div><div class="vr-kpi" style="--k:1"><span class="tag">제각각의 구현</span><div class="protos"><span>REST</span><span>GraphQL</span><span>gRPC</span><span>Event</span><span>WS</span><span>SSE</span></div><h4>프로토콜 · 환경마다 다른 구현</h4><p>REST · GraphQL · gRPC · 이벤트 · WebSocket · SSE마다 인증 · 정책이 따로 운영됨</p></div><div class="vr-kpi" style="--k:2"><span class="tag">새로운 공격 벡터</span><div class="vr-rw"><svg class="vr-ring dg" viewBox="0 0 132 132" aria-hidden="true"><circle cx="66" cy="66" r="58" class="trk" stroke-width="12"/><circle cx="66" cy="66" r="58" class="val" stroke-width="12" style="--v:182.2;--c:364.4" transform="rotate(-90 66 66)"/></svg><span class="vr-rn"><i data-from="0" data-to="50" data-suffix="%" data-dur="1500">50%</i></span></div><h4>기업 절반이 최근 1년 내 API 보안 사고</h4><div class="up"><i data-from="0" data-to="548" data-suffix="%" data-dur="1800">548%</i></div><p class="dg">2030년까지 API 공격 증가 예측</p></div><div class="vr-kpi" style="--k:3"><span class="tag">모든 거래가 중요</span><div class="vr-rw"><svg class="vr-ring" viewBox="0 0 132 132" aria-hidden="true"><circle cx="66" cy="66" r="58" class="trk" stroke-width="12"/><circle cx="66" cy="66" r="58" class="val" stroke-width="12" style="--v:295.2;--c:364.4" transform="rotate(-90 66 66)"/></svg><span class="vr-rn"><i data-from="0" data-to="81" data-suffix="%" data-dur="1500">81%</i></span></div><h4>기업 81%가 다운 1시간에 3.8억원+ 손실</h4><p>응답 기업 기준 · 장애 1시간이 곧 매출 손실</p></div></div>
+  <div class="callout" data-show-lang="ko"><b>한국 기업이 마주한 두 개의 벽.</b> 속도(개발자와 현업은 이미 여러 LLM과 코딩 에이전트를 쓰고 있습니다)와 통제(개인정보보호법, 금융권 망분리, 감사 요건). 둘 중 하나를 고르는 문제가 아닙니다. Kong은 트래픽 계층에서 둘을 동시에 해결합니다.</div>
+</section>
+
+<section class="sec" id="platform" data-title="Kong 플랫폼">
+  <div class="eyebrow">Platform</div>
+  <h2>하나의 플랫폼, 모든 연결</h2>
+  <p class="sub">Control Plane에서 정책과 설정을 관리하고, Data Plane이 실제 트래픽을 처리합니다. Control Plane은 직접 설치하는 Kong Enterprise나 Kong이 운영하는 KONNECT(SaaS) 중에서 고를 수 있고, Data Plane은 온프레미스, 멀티클라우드, 쿠버네티스, 폐쇄망 어디에나 둘 수 있습니다.</p>
+  <div class="dia plat">
+    <svg viewBox="0 0 900 550" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Kong 아키텍처: Control Plane, Data Plane, 인프라">
+      <rect x="20" y="12" width="860" height="352" rx="10" fill="var(--svg-panel)" stroke="var(--line2)" stroke-width="1.5"/>
+      <g transform="translate(40 24) scale(.25)" fill="var(--brand)"><use href="#kong-mark" width="153" height="137"/></g>
+      <text x="86" y="48" fill="var(--mark)" font-size="20" font-weight="800">Kong</text>
+      <text x="140" y="47" fill="var(--svg-muted)" font-size="11" font-weight="700" letter-spacing="1.2">API + AI CONNECTIVITY PLATFORM</text>
+      <text x="40" y="92" fill="var(--mark)" font-size="11" font-weight="700" letter-spacing="1.4">CONTROL PLANE · 정책과 설정을 관리</text>
+      <rect x="40" y="102" width="400" height="98" rx="8" fill="var(--svg-well)" stroke="var(--mark)"/>
+      <text x="58" y="128" fill="var(--mark)" font-size="17" font-weight="800">Kong Enterprise</text>
+      <text x="58" y="147" fill="var(--svg-muted)" font-size="12">Self-managed · 고객 환경에 직접 설치</text>
+      <g fill="var(--svg-label)" font-weight="700" text-anchor="middle"><rect x="58" y="160" width="92" height="24" rx="12" fill="var(--svg-chip)"/><text x="104.0" y="176" font-size="11">Kong Manager</text><rect x="158" y="160" width="76" height="24" rx="12" fill="var(--svg-chip)"/><text x="196.0" y="176" font-size="11">Admin API</text><rect x="242" y="160" width="52" height="24" rx="12" fill="var(--svg-chip)"/><text x="268.0" y="176" font-size="11">RBAC</text><rect x="302" y="160" width="124" height="24" rx="12" fill="var(--svg-chip)"/><text x="364.0" y="176" font-size="11">Developer Portal</text></g>
+      <rect x="460" y="102" width="400" height="98" rx="8" fill="var(--svg-well)" stroke="var(--mark)"/>
+      <text x="478" y="128" fill="var(--mark)" font-size="17" font-weight="800">KONNECT <tspan fill="var(--svg-fg)" font-size="12" font-weight="700">(SaaS)</tspan></text>
+      <text x="478" y="147" fill="var(--svg-muted)" font-size="12">Kong이 운영하는 관리형 Control Plane</text>
+      <g fill="var(--svg-label)" font-weight="700" text-anchor="middle"><rect x="478" y="160" width="86" height="24" rx="12" fill="var(--svg-chip)"/><text x="521.0" y="176" font-size="10.5">Gateway Mgr</text><rect x="570" y="160" width="76" height="24" rx="12" fill="var(--svg-chip)"/><text x="608.0" y="176" font-size="10.5">Mesh Mgr</text><rect x="652" y="160" width="58" height="24" rx="12" fill="var(--svg-chip)"/><text x="681.0" y="176" font-size="10.5">Catalog</text><rect x="716" y="160" width="62" height="24" rx="12" fill="var(--svg-chip)"/><text x="747.0" y="176" font-size="10.5">Metering</text><rect x="784" y="160" width="66" height="24" rx="12" fill="var(--svg-chip)"/><text x="817.0" y="176" font-size="10.5">Analytics</text></g>
+      <g stroke="var(--mark)" stroke-opacity=".7" stroke-width="2" stroke-dasharray="6 5" fill="none"><path class="flow-line" d="M240 200V234"/><path class="flow-line" d="M660 200V234"/></g>
+      <text x="254" y="222" fill="var(--svg-muted)" font-size="11">mTLS · 설정 푸시</text><text x="674" y="222" fill="var(--svg-muted)" font-size="11">mTLS · 텔레메트리</text>
+      <text x="40" y="258" fill="var(--mark)" font-size="11" font-weight="700" letter-spacing="1.4">DATA PLANE · 실제 트래픽을 처리</text>
+      <rect x="30" y="268" width="840" height="84" rx="8" fill="var(--svg-well)" stroke="var(--mark)" stroke-opacity=".6"/>
+      <g font-size="13" font-weight="700" text-anchor="middle">
+        <rect x="40" y="282" width="152" height="58" rx="6" fill="var(--lime)"/><text x="116" y="316" fill="var(--on-lime)">AI · MCP Gateway</text>
+        <rect x="204" y="282" width="152" height="58" rx="6" fill="var(--lime)"/><text x="280" y="316" fill="var(--on-lime)">API Gateway</text>
+        <rect x="368" y="282" width="152" height="58" rx="6" fill="var(--lime)"/><text x="444" y="316" fill="var(--on-lime)">Event Gateway</text>
+        <rect x="532" y="282" width="152" height="58" rx="6" fill="var(--lime)"/><text x="608" y="316" fill="var(--on-lime)">Ingress Controller</text>
+        <rect x="696" y="282" width="164" height="58" rx="6" fill="var(--lime)"/><text x="778" y="316" fill="var(--on-lime)">Kong Mesh</text>
+      </g>
+      <text x="40" y="394" fill="var(--mark)" font-size="11" font-weight="700" letter-spacing="1.4">INFRASTRUCTURE · 어디에나 배포</text>
+      <g stroke="var(--mark)" stroke-opacity=".6" stroke-width="2" stroke-dasharray="6 5" fill="none">
+        <path class="flow-line" d="M450 364V404"/><path class="flow-line" d="M81 404H818"/><path class="flow-line" d="M81 404V418"/><path class="flow-line" d="M204 404V418"/><path class="flow-line" d="M327 404V418"/><path class="flow-line" d="M450 404V418"/><path class="flow-line" d="M572 404V418"/><path class="flow-line" d="M695 404V418"/><path class="flow-line" d="M818 404V418"/>
+      </g>
+      <g class="ic" style="--d:0.30s"><g fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-linejoin="miter"><rect x="61" y="430" width="40" height="13"/><path d="M89 436.5h6M67 436.5h2" stroke-width="3"/><rect x="61" y="446" width="40" height="13"/><path d="M89 452.5h6M67 452.5h2" stroke-width="3"/><rect x="61" y="462" width="40" height="13"/><path d="M89 468.5h6M67 468.5h2" stroke-width="3"/></g><text x="81" y="508" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">온프레미스</text><text x="81" y="526" text-anchor="middle" font-size="11" fill="var(--svg-muted)">베어메탈 · 데이터센터</text></g><g class="ic" style="--d:0.45s"><g fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-linejoin="miter"><path d="M188 466H218A9 9 0 0 0 219 448A13 13 0 0 0 194 446A10 10 0 0 0 188 466Z"/></g><text x="204" y="508" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">퍼블릭 클라우드</text><text x="204" y="526" text-anchor="middle" font-size="11" fill="var(--svg-muted)">AWS · Azure · GCP</text></g><g class="ic" style="--d:0.60s"><g fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-linejoin="miter"><polygon points="327.0,430.0 344.2,438.3 348.4,456.9 336.5,471.8 317.5,471.8 305.6,456.9 309.8,438.3"/><circle cx="327" cy="452" r="7"/><path d="M327 452L327.0 435.0"/><path d="M327 452L340.3 441.4"/><path d="M327 452L343.6 455.8"/><path d="M327 452L334.4 467.3"/><path d="M327 452L319.6 467.3"/><path d="M327 452L310.4 455.8"/><path d="M327 452L313.7 441.4"/></g><text x="327" y="508" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">Kubernetes</text><text x="327" y="526" text-anchor="middle" font-size="11" fill="var(--svg-muted)">EKS · AKS · GKE</text></g><g class="ic" style="--d:0.75s"><g fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-linejoin="miter"><path d="M450 430L470 441V463L450 474L430 463V441Z"/><path d="M430 441L450 452L470 441M450 452V474"/></g><text x="450" y="508" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">VM · 컨테이너</text><text x="450" y="526" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Docker · VM</text></g><g class="ic" style="--d:0.90s"><g fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-linejoin="miter"><path d="M564 434h-7v36h7M580 434h7v36h-7"/><path d="M564 442L580 462M580 442L564 462"/></g><text x="572" y="508" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">서버리스</text><text x="572" y="526" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Serverless</text></g><g class="ic" style="--d:1.05s"><g fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-linejoin="miter"><path d="M695 476C673 456 675 430 695 430C715 430 717 456 695 476Z"/><circle cx="695" cy="446" r="6"/></g><text x="695" y="508" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">엣지</text><text x="695" y="526" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Edge</text></g><g class="ic" style="--d:1.20s"><g fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-linejoin="miter"><rect x="802" y="450" width="32" height="22"/><path d="M808 450v-8a10 10 0 0 1 20 0v8"/><path d="M818 456v8" stroke-width="3"/></g><text x="818" y="508" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">폐쇄망</text><text x="818" y="526" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Air-gapped</text></g>
+    </svg>
+  </div>
+  <div class="grid g2">
+    <div class="card hl"><span class="tag">Kong Gateway</span><h3>API Gateway</h3><p>REST, gRPC, GraphQL, WebSocket까지 단일 게이트웨이에서 처리. 100+ 플러그인으로 보안·변환·관측을 확장합니다.</p><button class="btn s" onclick="go('apigw')">자세히</button></div>
+    <div class="card hl"><span class="tag">Kong Event Gateway</span><h3>Kafka · Event Gateway</h3><p>HTTP Event API 플러그인과 네이티브 Kafka 프록시로 스트림을 API 플랫폼 거버넌스 아래로.</p><button class="btn s" onclick="go('event')">자세히</button></div>
+    <div class="card hl"><span class="tag">Kong AI Gateway</span><h3>AI · MCP · A2A Gateway</h3><p>LLM 라우팅, 토큰 거버넌스, PII 마스킹, MCP 도구 통제, 에이전트 간 호출 관리까지 하나로.</p><button class="btn s" onclick="go('ai')">자세히</button></div>
+    <div class="card hl"><span class="tag">Kong Insomnia</span><h3>API 개발 플랫폼</h3><p>설계, 디버깅, 테스트, 모킹을 협업으로. Git과 CI/CD, Kong 설정 생성까지 이어집니다.</p><button class="btn s" onclick="go('insomnia')">자세히</button></div>
+  </div>
+  <div class="grid g3" style="margin-top:24px">
+    <div class="card"><h3>성능</h3><p>동일 조건에서 노드당 5만 TPS 이상. 20MB 런타임으로 수평·수직 확장합니다.</p></div>
+    <div class="card"><h3>자동화</h3><p>100% 선언적 구성과 CI/CD 배포. decK, Terraform, Kubernetes CRD를 지원합니다.</p></div>
+    <div class="card"><h3>배포 유연성</h3><p>온프레미스, 멀티클라우드, 쿠버네티스, 서버리스. 단일 바이너리로 어디든 설치합니다.</p></div>
+  </div>
 </section>
 
 <section class="sec" id="trust" data-title="증명된 신뢰성">
@@ -3380,68 +3421,6 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
   </div>
 </section>
 
-<section class="sec" id="market" data-title="시장의 변화">
-  <div class="eyebrow">Market</div>
-  <h2>API 증가에 이은 토큰 증가</h2>
-  <p class="sub">모바일, 클라우드, 마이크로서비스를 거쳐 Agentic AI까지. 연결의 단위는 계속 바뀌었지만, 연결을 통제해야 한다는 숙제는 그대로입니다.</p>
-  <div class="dia growth" id="growth">
-    <svg id="growsvg" viewBox="0 0 2000 1070" role="img" aria-label="시대별 API 증가 개념도"></svg>
-    <p class="cap">도형의 크기는 기존 인프라·서비스 한 단위의 크기입니다. 메인프레임 한 대가 차지하던 자리를 PC, 웹 서버, 클라우드 인스턴스, 마이크로서비스, 그리고 AI 에이전트가 채우면서 단위는 작아지고, 그 사이를 잇는 API는 폭증합니다.</p>
-  </div>
-  <div class="vr-kpis rv"><div class="vr-kpi" style="--k:0"><span class="tag">보이지 않는 API</span><div class="vr-rw"><svg class="vr-ring" viewBox="0 0 132 132" aria-hidden="true"><circle cx="66" cy="66" r="58" class="trk" stroke-width="12"/><circle cx="66" cy="66" r="58" class="val" stroke-width="12" style="--v:182.2;--c:364.4" transform="rotate(-90 66 66)"/></svg><span class="vr-rn"><i data-from="0" data-to="50" data-suffix="%+" data-dur="1500">50%+</i></span></div><h4>엔터프라이즈 API 절반 이상이 관리 밖</h4><p>2025년 보고 기준 · 관리 체계 밖에서 운영되는 API</p></div><div class="vr-kpi" style="--k:1"><span class="tag">제각각의 구현</span><div class="protos"><span>REST</span><span>GraphQL</span><span>gRPC</span><span>Event</span><span>WS</span><span>SSE</span></div><h4>프로토콜 · 환경마다 다른 구현</h4><p>REST · GraphQL · gRPC · 이벤트 · WebSocket · SSE마다 인증 · 정책이 따로 운영됨</p></div><div class="vr-kpi" style="--k:2"><span class="tag">새로운 공격 벡터</span><div class="vr-rw"><svg class="vr-ring dg" viewBox="0 0 132 132" aria-hidden="true"><circle cx="66" cy="66" r="58" class="trk" stroke-width="12"/><circle cx="66" cy="66" r="58" class="val" stroke-width="12" style="--v:182.2;--c:364.4" transform="rotate(-90 66 66)"/></svg><span class="vr-rn"><i data-from="0" data-to="50" data-suffix="%" data-dur="1500">50%</i></span></div><h4>기업 절반이 최근 1년 내 API 보안 사고</h4><div class="up"><i data-from="0" data-to="548" data-suffix="%" data-dur="1800">548%</i></div><p class="dg">2030년까지 API 공격 증가 예측</p></div><div class="vr-kpi" style="--k:3"><span class="tag">모든 거래가 중요</span><div class="vr-rw"><svg class="vr-ring" viewBox="0 0 132 132" aria-hidden="true"><circle cx="66" cy="66" r="58" class="trk" stroke-width="12"/><circle cx="66" cy="66" r="58" class="val" stroke-width="12" style="--v:295.2;--c:364.4" transform="rotate(-90 66 66)"/></svg><span class="vr-rn"><i data-from="0" data-to="81" data-suffix="%" data-dur="1500">81%</i></span></div><h4>기업 81%가 다운 1시간에 3.8억원+ 손실</h4><p>응답 기업 기준 · 장애 1시간이 곧 매출 손실</p></div></div>
-  <div class="callout" data-show-lang="ko"><b>한국 기업이 마주한 두 개의 벽.</b> 속도(개발자와 현업은 이미 여러 LLM과 코딩 에이전트를 쓰고 있습니다)와 통제(개인정보보호법, 금융권 망분리, 감사 요건). 둘 중 하나를 고르는 문제가 아닙니다. Kong은 트래픽 계층에서 둘을 동시에 해결합니다.</div>
-</section>
-
-<section class="sec" id="platform" data-title="Kong 플랫폼">
-  <div class="eyebrow">Platform</div>
-  <h2>하나의 플랫폼, 모든 연결</h2>
-  <p class="sub">Control Plane에서 정책과 설정을 관리하고, Data Plane이 실제 트래픽을 처리합니다. Control Plane은 직접 설치하는 Kong Enterprise나 Kong이 운영하는 KONNECT(SaaS) 중에서 고를 수 있고, Data Plane은 온프레미스, 멀티클라우드, 쿠버네티스, 폐쇄망 어디에나 둘 수 있습니다.</p>
-  <div class="dia plat">
-    <svg viewBox="0 0 900 550" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Kong 아키텍처: Control Plane, Data Plane, 인프라">
-      <rect x="20" y="12" width="860" height="352" rx="10" fill="var(--svg-panel)" stroke="var(--line2)" stroke-width="1.5"/>
-      <g transform="translate(40 24) scale(.25)" fill="var(--brand)"><use href="#kong-mark" width="153" height="137"/></g>
-      <text x="86" y="48" fill="var(--mark)" font-size="20" font-weight="800">Kong</text>
-      <text x="140" y="47" fill="var(--svg-muted)" font-size="11" font-weight="700" letter-spacing="1.2">API + AI CONNECTIVITY PLATFORM</text>
-      <text x="40" y="92" fill="var(--mark)" font-size="11" font-weight="700" letter-spacing="1.4">CONTROL PLANE · 정책과 설정을 관리</text>
-      <rect x="40" y="102" width="400" height="98" rx="8" fill="var(--svg-well)" stroke="var(--mark)"/>
-      <text x="58" y="128" fill="var(--mark)" font-size="17" font-weight="800">Kong Enterprise</text>
-      <text x="58" y="147" fill="var(--svg-muted)" font-size="12">Self-managed · 고객 환경에 직접 설치</text>
-      <g fill="var(--svg-label)" font-weight="700" text-anchor="middle"><rect x="58" y="160" width="92" height="24" rx="12" fill="var(--svg-chip)"/><text x="104.0" y="176" font-size="11">Kong Manager</text><rect x="158" y="160" width="76" height="24" rx="12" fill="var(--svg-chip)"/><text x="196.0" y="176" font-size="11">Admin API</text><rect x="242" y="160" width="52" height="24" rx="12" fill="var(--svg-chip)"/><text x="268.0" y="176" font-size="11">RBAC</text><rect x="302" y="160" width="124" height="24" rx="12" fill="var(--svg-chip)"/><text x="364.0" y="176" font-size="11">Developer Portal</text></g>
-      <rect x="460" y="102" width="400" height="98" rx="8" fill="var(--svg-well)" stroke="var(--mark)"/>
-      <text x="478" y="128" fill="var(--mark)" font-size="17" font-weight="800">KONNECT <tspan fill="var(--svg-fg)" font-size="12" font-weight="700">(SaaS)</tspan></text>
-      <text x="478" y="147" fill="var(--svg-muted)" font-size="12">Kong이 운영하는 관리형 Control Plane</text>
-      <g fill="var(--svg-label)" font-weight="700" text-anchor="middle"><rect x="478" y="160" width="86" height="24" rx="12" fill="var(--svg-chip)"/><text x="521.0" y="176" font-size="10.5">Gateway Mgr</text><rect x="570" y="160" width="76" height="24" rx="12" fill="var(--svg-chip)"/><text x="608.0" y="176" font-size="10.5">Mesh Mgr</text><rect x="652" y="160" width="58" height="24" rx="12" fill="var(--svg-chip)"/><text x="681.0" y="176" font-size="10.5">Catalog</text><rect x="716" y="160" width="62" height="24" rx="12" fill="var(--svg-chip)"/><text x="747.0" y="176" font-size="10.5">Metering</text><rect x="784" y="160" width="66" height="24" rx="12" fill="var(--svg-chip)"/><text x="817.0" y="176" font-size="10.5">Analytics</text></g>
-      <g stroke="var(--mark)" stroke-opacity=".7" stroke-width="2" stroke-dasharray="6 5" fill="none"><path class="flow-line" d="M240 200V234"/><path class="flow-line" d="M660 200V234"/></g>
-      <text x="254" y="222" fill="var(--svg-muted)" font-size="11">mTLS · 설정 푸시</text><text x="674" y="222" fill="var(--svg-muted)" font-size="11">mTLS · 텔레메트리</text>
-      <text x="40" y="258" fill="var(--mark)" font-size="11" font-weight="700" letter-spacing="1.4">DATA PLANE · 실제 트래픽을 처리</text>
-      <rect x="30" y="268" width="840" height="84" rx="8" fill="var(--svg-well)" stroke="var(--mark)" stroke-opacity=".6"/>
-      <g font-size="13" font-weight="700" text-anchor="middle">
-        <rect x="40" y="282" width="152" height="58" rx="6" fill="var(--lime)"/><text x="116" y="316" fill="var(--on-lime)">AI · MCP Gateway</text>
-        <rect x="204" y="282" width="152" height="58" rx="6" fill="var(--lime)"/><text x="280" y="316" fill="var(--on-lime)">API Gateway</text>
-        <rect x="368" y="282" width="152" height="58" rx="6" fill="var(--lime)"/><text x="444" y="316" fill="var(--on-lime)">Event Gateway</text>
-        <rect x="532" y="282" width="152" height="58" rx="6" fill="var(--lime)"/><text x="608" y="316" fill="var(--on-lime)">Ingress Controller</text>
-        <rect x="696" y="282" width="164" height="58" rx="6" fill="var(--lime)"/><text x="778" y="316" fill="var(--on-lime)">Kong Mesh</text>
-      </g>
-      <text x="40" y="394" fill="var(--mark)" font-size="11" font-weight="700" letter-spacing="1.4">INFRASTRUCTURE · 어디에나 배포</text>
-      <g stroke="var(--mark)" stroke-opacity=".6" stroke-width="2" stroke-dasharray="6 5" fill="none">
-        <path class="flow-line" d="M450 364V404"/><path class="flow-line" d="M81 404H818"/><path class="flow-line" d="M81 404V418"/><path class="flow-line" d="M204 404V418"/><path class="flow-line" d="M327 404V418"/><path class="flow-line" d="M450 404V418"/><path class="flow-line" d="M572 404V418"/><path class="flow-line" d="M695 404V418"/><path class="flow-line" d="M818 404V418"/>
-      </g>
-      <g class="ic" style="--d:0.30s"><g fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-linejoin="miter"><rect x="61" y="430" width="40" height="13"/><path d="M89 436.5h6M67 436.5h2" stroke-width="3"/><rect x="61" y="446" width="40" height="13"/><path d="M89 452.5h6M67 452.5h2" stroke-width="3"/><rect x="61" y="462" width="40" height="13"/><path d="M89 468.5h6M67 468.5h2" stroke-width="3"/></g><text x="81" y="508" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">온프레미스</text><text x="81" y="526" text-anchor="middle" font-size="11" fill="var(--svg-muted)">베어메탈 · 데이터센터</text></g><g class="ic" style="--d:0.45s"><g fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-linejoin="miter"><path d="M188 466H218A9 9 0 0 0 219 448A13 13 0 0 0 194 446A10 10 0 0 0 188 466Z"/></g><text x="204" y="508" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">퍼블릭 클라우드</text><text x="204" y="526" text-anchor="middle" font-size="11" fill="var(--svg-muted)">AWS · Azure · GCP</text></g><g class="ic" style="--d:0.60s"><g fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-linejoin="miter"><polygon points="327.0,430.0 344.2,438.3 348.4,456.9 336.5,471.8 317.5,471.8 305.6,456.9 309.8,438.3"/><circle cx="327" cy="452" r="7"/><path d="M327 452L327.0 435.0"/><path d="M327 452L340.3 441.4"/><path d="M327 452L343.6 455.8"/><path d="M327 452L334.4 467.3"/><path d="M327 452L319.6 467.3"/><path d="M327 452L310.4 455.8"/><path d="M327 452L313.7 441.4"/></g><text x="327" y="508" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">Kubernetes</text><text x="327" y="526" text-anchor="middle" font-size="11" fill="var(--svg-muted)">EKS · AKS · GKE</text></g><g class="ic" style="--d:0.75s"><g fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-linejoin="miter"><path d="M450 430L470 441V463L450 474L430 463V441Z"/><path d="M430 441L450 452L470 441M450 452V474"/></g><text x="450" y="508" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">VM · 컨테이너</text><text x="450" y="526" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Docker · VM</text></g><g class="ic" style="--d:0.90s"><g fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-linejoin="miter"><path d="M564 434h-7v36h7M580 434h7v36h-7"/><path d="M564 442L580 462M580 442L564 462"/></g><text x="572" y="508" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">서버리스</text><text x="572" y="526" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Serverless</text></g><g class="ic" style="--d:1.05s"><g fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-linejoin="miter"><path d="M695 476C673 456 675 430 695 430C715 430 717 456 695 476Z"/><circle cx="695" cy="446" r="6"/></g><text x="695" y="508" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">엣지</text><text x="695" y="526" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Edge</text></g><g class="ic" style="--d:1.20s"><g fill="none" stroke="var(--mark)" stroke-width="2.2" stroke-linejoin="miter"><rect x="802" y="450" width="32" height="22"/><path d="M808 450v-8a10 10 0 0 1 20 0v8"/><path d="M818 456v8" stroke-width="3"/></g><text x="818" y="508" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">폐쇄망</text><text x="818" y="526" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Air-gapped</text></g>
-    </svg>
-  </div>
-  <div class="grid g2">
-    <div class="card hl"><span class="tag">Kong Gateway</span><h3>API Gateway</h3><p>REST, gRPC, GraphQL, WebSocket까지 단일 게이트웨이에서 처리. 100+ 플러그인으로 보안·변환·관측을 확장합니다.</p><button class="btn s" onclick="go('apigw')">자세히</button></div>
-    <div class="card hl"><span class="tag">Kong Event Gateway</span><h3>Kafka · Event Gateway</h3><p>HTTP Event API 플러그인과 네이티브 Kafka 프록시로 스트림을 API 플랫폼 거버넌스 아래로.</p><button class="btn s" onclick="go('event')">자세히</button></div>
-    <div class="card hl"><span class="tag">Kong AI Gateway</span><h3>AI · MCP · A2A Gateway</h3><p>LLM 라우팅, 토큰 거버넌스, PII 마스킹, MCP 도구 통제, 에이전트 간 호출 관리까지 하나로.</p><button class="btn s" onclick="go('ai')">자세히</button></div>
-    <div class="card hl"><span class="tag">Kong Insomnia</span><h3>API 개발 플랫폼</h3><p>설계, 디버깅, 테스트, 모킹을 협업으로. Git과 CI/CD, Kong 설정 생성까지 이어집니다.</p><button class="btn s" onclick="go('insomnia')">자세히</button></div>
-  </div>
-  <div class="grid g3" style="margin-top:24px">
-    <div class="card"><h3>성능</h3><p>동일 조건에서 노드당 5만 TPS 이상. 20MB 런타임으로 수평·수직 확장합니다.</p></div>
-    <div class="card"><h3>자동화</h3><p>100% 선언적 구성과 CI/CD 배포. decK, Terraform, Kubernetes CRD를 지원합니다.</p></div>
-    <div class="card"><h3>배포 유연성</h3><p>온프레미스, 멀티클라우드, 쿠버네티스, 서버리스. 단일 바이너리로 어디든 설치합니다.</p></div>
-  </div>
-</section>
-
 <section class="sec" id="customers" data-title="고객 사례">
   <div class="eyebrow">Customers</div>
   <h2>API부터 AI까지 동일한 방식의 적용</h2>
@@ -3458,7 +3437,35 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
 </section>
 
 
+<section class="sec" id="history" data-title="연혁">
+  <div class="eyebrow">Company History</div>
+  <h2>차고에서 AI 연결 플랫폼까지</h2>
+  <p class="sub">Mashape에서 Kong Inc.까지. API Gateway를 거쳐 AI Gateway로 이어진 제품의 축입니다.</p>
+  <div class="tlwrap">
+      <div class="tl" id="tl">
+        <div class="tli"><span class="yr">2009</span><h4>밀라노의 차고</h4><p>학교 친구 Augusto Marietti와 Marco Palladino가 코드 없이 앱을 만드는 도구를 시작합니다. 회사 이름은 Mashape. Mashup과 Ape(유인원)를 합친, “API 매시업을 하는 영리한 원숭이들”이라는 뜻입니다.</p></div>
+        <div class="tli"><span class="yr">2010–2011</span><h4>샌프란시스코 이전</h4><p>TechCrunch 피칭 대회를 계기로 미국에 건너가 첫 엔젤 투자 $101,000, 이어 시드 $1.5M을 유치합니다.</p></div>
+        <div class="tli"><span class="yr">2015–2017</span><h4>모놀리스에서 마이크로서비스로의 전환</h4><p>세계 최대 API 마켓플레이스가 모놀리스가 되자 분해하면서 API Gateway를 직접 만듭니다. 고객도 같은 문제를 겪고 있었습니다.</p></div>
+        <div class="tli"><span class="yr">2017–2019</span><h4>Kong 오픈소스 공개</h4><p>게이트웨이를 오픈소스로 공개하고 Kong이라 이름 붙입니다. 큰 성공을 거두자 Mashape를 매각하고, 회사 이름도 Kong Inc.로 바꿔 팀을 100명 이상으로 키웁니다.</p></div>
+        <div class="tli"><span class="yr">2019–2020</span><h4>가장 많이 쓰이는 API Gateway</h4><p>Kuma 인수로 서비스 메시를, Insomnia 인수로 개발 워크플로우를 품습니다. 2020년 Kuma를 CNCF에 기증하고 Kong Mesh를 선보입니다.</p></div>
+        <div class="tli"><span class="yr">2021</span><h4>Konnect 출시와 유니콘 등극</h4><p>API 전 주기를 어떤 클라우드에서든 관리하는 Kong Konnect 출시. $100M 시리즈 D, 기업가치 $1.4B.</p></div>
+        <div class="tli"><span class="yr">2023–2025</span><h4>AI Gateway 출시</h4><p>연 반복 매출 $100M 돌파, 직원 500명 이상. Kong AI Gateway를 출시하고 $175M 시리즈 E(기업가치 $2B), 2025년 OpenMeter를 인수해 사용량 기반 과금까지 확장합니다.</p></div>
+        <div class="tli now"><span class="yr">2026</span><h4>No AI without APIs</h4><p>세상은 클라우드 서비스를 잇는 단계에서 지능을 잇는 단계로 옮겨 가고 있습니다. 에이전트, 모델, 프롬프트가 만드는 모든 트래픽을 누군가 관리해야 합니다. 그 누군가가 Kong입니다.</p></div>
+      </div>
+    </div>
+    
+  <div class="geo" id="geo">
+    <div class="geohead">
+      <div><span class="lbl">글로벌 거점 · 13개 오피스 · 25개 국가</span><h3 style="margin:0;font-size:22px">글로벌 고객 거점과 한국 지원 체계</h3></div>
+    </div>
+    <div class="gw"><div class="gw-l"><div class="gw-rt" id="gwTabs" role="tablist"></div><div class="gw-rp" id="gwPane"><ul class="gw-list" id="gwList"></ul><div class="gw-kl"><h4>Kong 구성원이 있는 국가</h4><div class="gw-chips" id="gwChips"></div></div></div><div class="gw-team"><span class="gw-tic"><svg viewBox="0 0 24 24" aria-hidden="true"><!-- Kong Iconography: team --><path fill="currentColor" d="M12 14.25C14.0818 14.25 15.9955 14.9018 17.4043 15.9854C18.8134 17.0693 19.75 18.6178 19.75 20.3799V22C19.75 22.4142 19.4142 22.75 19 22.75C18.5858 22.75 18.25 22.4142 18.25 22V20.3799C18.25 19.1822 17.616 18.0408 16.4902 17.1748C15.3641 16.3086 13.778 15.75 12 15.75C10.2214 15.75 8.63551 16.3062 7.50977 17.1709C6.3847 18.0352 5.75004 19.1766 5.75 20.3799V22C5.75 22.4142 5.41421 22.75 5 22.75C4.58579 22.75 4.25 22.4142 4.25 22V20.3799C4.25004 18.6132 5.18584 17.0646 6.5957 15.9814C8.00494 14.8988 9.91882 14.25 12 14.25ZM1.4082 15.1494C1.66253 14.8226 2.13402 14.7633 2.46094 15.0176C2.78776 15.2719 2.84606 15.7434 2.5918 16.0703C2.04866 16.7687 1.75 17.5504 1.75 18.3799V21C1.74995 21.4142 1.41418 21.75 1 21.75C0.58582 21.75 0.250055 21.4142 0.25 21V18.3799C0.250004 17.1694 0.691391 16.071 1.4082 15.1494ZM21.54 15.0176C21.8669 14.7637 22.3376 14.8227 22.5918 15.1494C23.3086 16.071 23.75 17.1694 23.75 18.3799V21C23.7499 21.4142 23.4142 21.75 23 21.75C22.5858 21.75 22.2501 21.4142 22.25 21V18.3799C22.25 17.5504 21.9514 16.7687 21.4082 16.0703C21.1539 15.7434 21.2131 15.2719 21.54 15.0176ZM12 1.25C14.8995 1.25 17.25 3.6005 17.25 6.5C17.25 9.3995 14.8995 11.75 12 11.75C9.1005 11.75 6.75 9.3995 6.75 6.5C6.75 3.6005 9.1005 1.25 12 1.25ZM3.21973 4.71289C3.5829 4.51377 4.03815 4.6466 4.2373 5.00977C4.43634 5.37293 4.30356 5.82821 3.94043 6.02734C3.23115 6.41632 2.75001 7.15532 2.75 8C2.75 9.18778 3.66703 10.1485 4.84277 10.2314C5.25596 10.2606 5.56722 10.62 5.53809 11.0332C5.50873 11.4461 5.15031 11.7576 4.7373 11.7285C2.79305 11.5914 1.25 9.99222 1.25 8C1.25001 6.5647 2.06903 5.34392 3.21973 4.71289ZM19.7627 5.00977C19.9619 4.6466 20.4171 4.51377 20.7803 4.71289C21.931 5.34392 22.75 6.5647 22.75 8C22.75 9.99222 21.207 11.5914 19.2627 11.7285C18.8497 11.7576 18.4913 11.4461 18.4619 11.0332C18.4328 10.62 18.744 10.2606 19.1572 10.2314C20.333 10.1485 21.25 9.18778 21.25 8C21.25 7.15532 20.7688 6.41632 20.0596 6.02734C19.6964 5.82821 19.5637 5.37293 19.7627 5.00977ZM12 2.75C9.92893 2.75 8.25 4.42893 8.25 6.5C8.25 8.57107 9.92893 10.25 12 10.25C14.0711 10.25 15.75 8.57107 15.75 6.5C15.75 4.42893 14.0711 2.75 12 2.75Z"/></svg></span><span class="gw-tn"><i data-from="980" data-to="1000" data-suffix="+" data-dur="3200">1,000+</i></span><span class="gw-tl"><strong>Kongers</strong><small>전 세계 Kong 구성원</small></span></div></div><div class="gw-r"><svg id="geomap" viewBox="0 22 600 568" role="img" aria-label="Kong 글로벌 오피스 세계지도, 대한민국 강조"></svg></div></div>
+  </div>
+
+  <p class="note">출처: <a href="https://konghq.com/company" target="_blank" rel="noopener noreferrer">konghq.com/company</a></p>
+</section>
+
 </div>
+
 
 <!-- ============ 2. GATEWAY란? ============ -->
 <div class="page" id="p-gateway" data-label="Gateway 개요">

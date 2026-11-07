@@ -4998,5 +4998,7 @@
   "m.fac6201f5abb": "다른 AWS 계정의 MSK도 접근",
   "m.1b21499f52d4": "Consume 시 문자열 필드만 마스킹하고 저장 레코드는 유지, Produce 시 마스킹은 되돌릴 수 없음",
   "m.d43a776c5e28": "재생",
-  "m.dec330ec318c": "일시 정지"
+  "m.dec330ec318c": "일시 정지",
+  "m.61d3572bdf9a": "연혁",
+  "m.3738a162acd2": "Mashape에서 Kong Inc.까지. API Gateway를 거쳐 AI Gateway로 이어진 제품의 축입니다."
 }

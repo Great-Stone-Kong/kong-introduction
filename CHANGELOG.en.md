@@ -5,6 +5,12 @@
 
 ---
 
+## Unreleased
+
+### Changed
+
+- Kong company intro: reorder sections to Overview → Market → Kong platform → Proven trust → Customers → History. Split history and global presence into their own section
+
 ## 2026.11.06.6aedbacb
 
 ### Added

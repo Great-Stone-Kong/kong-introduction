@@ -4998,5 +4998,7 @@
   "m.fac6201f5abb": "也可存取其他 AWS 帳號中的 MSK",
   "m.1b21499f52d4": "Consume 時僅遮蔽字串欄位並保留儲存記錄，Produce 時的遮蔽不可逆",
   "m.d43a776c5e28": "播放",
-  "m.dec330ec318c": "暫停"
+  "m.dec330ec318c": "暫停",
+  "m.61d3572bdf9a": "沿革",
+  "m.3738a162acd2": "從 Mashape 到 Kong Inc.。產品主線從 API Gateway 延伸到 AI Gateway。"
 }

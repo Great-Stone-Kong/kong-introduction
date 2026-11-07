@@ -4998,5 +4998,7 @@
   "m.fac6201f5abb": "別のAWSアカウントのMSKにもアクセス",
   "m.1b21499f52d4": "Consume時は文字列フィールドだけをマスクし保存レコードは保持、Produce時のマスクは元に戻せない",
   "m.d43a776c5e28": "再生",
-  "m.dec330ec318c": "一時停止"
+  "m.dec330ec318c": "一時停止",
+  "m.61d3572bdf9a": "沿革",
+  "m.3738a162acd2": "Mashape から Kong Inc. まで。API Gateway から AI Gateway へと続く製品の軸です。"
 }

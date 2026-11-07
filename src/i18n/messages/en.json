@@ -4998,5 +4998,7 @@
   "m.fac6201f5abb": "reach MSK in another AWS account",
   "m.1b21499f52d4": "Consume masks only string fields and keeps the stored record; produce-time masking is not reversible",
   "m.d43a776c5e28": "Play",
-  "m.dec330ec318c": "Pause"
+  "m.dec330ec318c": "Pause",
+  "m.61d3572bdf9a": "History",
+  "m.3738a162acd2": "From Mashape to Kong Inc. The product line runs from API Gateway to AI Gateway."
 }
