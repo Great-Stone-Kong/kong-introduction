@@ -10,6 +10,7 @@
 ### Changed
 
 - Kong company intro: reorder sections to Overview → Market → Kong platform → Proven trust → Customers → History. Split history and global presence into their own section
+- Kong company intro > Global presence: include Alaska in the United States highlight so it matches the contiguous US
 
 ## 2026.11.06.6aedbacb
 
