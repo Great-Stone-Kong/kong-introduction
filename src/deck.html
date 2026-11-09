@@ -3129,7 +3129,10 @@ html[data-theme="light"] .vr-donut .s-dn{fill:#fff}html[data-theme="light"] .vr-
 @media (prefers-reduced-motion:reduce){.vr-kpis .vr-ring .val{transition:none}.vr-kpis .protos span{transition:none}}
 @media print{.vr-kpis .vr-ring .val{stroke-dasharray:var(--v) var(--c)}.vr-kpis .protos span{opacity:1;transform:none}}
 .btn.btn-inl{padding:2px 10px;font-size:12.5px;line-height:1.55;vertical-align:baseline}
-#cmp-tabs{position:sticky;top:calc(var(--top) + var(--cmp-h2,70px));z-index:19;background:var(--navy);margin:0;padding:10px 0 12px;border-bottom:1px solid var(--line)}
+#cmp-stick{position:sticky;top:calc(var(--top) + var(--cmp-h2,70px));z-index:19;background:var(--navy);margin:0;padding:10px 0 12px;border-bottom:1px solid var(--line)}
+#cmp-tabs{margin:0;padding:0;border:0;background:transparent}
+#i-cmp .cmp-tech{margin:-2px 0 14px;font-size:15px;font-weight:700;color:var(--mark);letter-spacing:.01em}
+#i-cmp .cmp-tabhint{margin:0 0 10px;font-size:13.5px;color:var(--g300);line-height:1.55}
 #i-cmp #cmp-panes{margin-top:14px}
 /* i-cmp 4축 */
 .cpx{--cc:var(--mark);--cw:var(--accent-wash,rgba(204,255,0,.08));display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:14px;row-gap:0;margin:6px 0 22px;position:relative}
@@ -3227,7 +3230,7 @@ html[data-theme="light"] .ctr-c{background:rgba(255,255,255,.35)}
 @media print{.ctr.rv .ctr-c{opacity:1!important;transform:none!important}.cpx .off{opacity:.5}}
 /* /i-cmp 4축 */
 #i2-cost .grid.g2>*{min-width:0}#i2-cost pre.code{overflow-x:auto}
-@media print{details.vr-more>summary{display:none}details.vr-more{border:0}#cmp-tabs{position:static}.nctl{display:none}}
+@media print{details.vr-more>summary{display:none}details.vr-more{border:0}#cmp-stick{position:static}.nctl{display:none}}
 
 /* AI 도구 연동 (#i-how) */
 .ait-flow{display:grid;grid-template-columns:1fr 40px 1.2fr 40px 1fr;align-items:center;margin:14px 0 12px}
@@ -4815,9 +4818,13 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 </template>
 <section class="sec" id="i-cmp" data-title="경쟁 제품 비교">
   <div class="eyebrow">Comparison</div>
-  <h2>제품별 차이와 선택 기준</h2>
-  <p class="sub">경쟁자이지 적이 아닙니다. 탭을 고르면 각 범주가 다루는 영역이 4가지 축에서 강조됩니다. 아래 비교는 기능 유무 기준이며 품질 우열을 뜻하지 않습니다.</p>
-  <div class="tabs" data-tabs id="cmp-tabs"></div>
+  <h2>Competitors, Not Enemies.</h2>
+  <p class="sub">We Set the Pace. Others Keep Up.</p>
+  <p class="cmp-tech">Built to Lead. Engineered to Evolve.</p>
+  <div class="cmp-stick" id="cmp-stick">
+    <p class="cmp-tabhint">탭을 고르면 각 범주가 다루는 영역이 4가지 축에서 강조됩니다.<br>아래 비교는 기능 유무 기준이며 품질 우열을 뜻하지 않습니다.</p>
+    <div class="tabs" data-tabs id="cmp-tabs"></div>
+  </div>
   <div class="cpx" id="cpx" data-k="kong"><div class="cpx-bar" id="cpx-bar"><span></span></div><div class="cpx-card" data-p="asset"><div class="cpx-hd"><b class="cpx-n">01</b><em>Govern every asset</em></div><h4>모든 자산</h4><p>일부가 아닌 컨텍스트와 인텔리전스 전체</p><dl class="cpx-dl"><div><dt>Intelligence</dt><dd>모델 · 에이전트</dd></div><div><dt>Context</dt><dd>API · 비즈니스 프로세스<br/>MCP · 이벤트 · 데이터 레이크</dd></div></dl></div><div class="cpx-card" data-p="angle"><div class="cpx-hd"><b class="cpx-n">02</b><em>Govern every angle</em></div><h4>모든 통제 각도</h4><p>부분 체크리스트가 아닌 전체 통제면</p><div class="cpx-ch"><span>Security</span><span>Cost</span><span>Discovery</span><span>Identity</span><span>Visibility</span><span>Resilience</span></div></div><div class="cpx-card" data-p="scale"><div class="cpx-hd"><b class="cpx-n">03</b><em>Govern every scale</em></div><h4>모든 규모</h4><p>수요가 몰려도 무너지지 않는 거버넌스</p><div class="cpx-ch"><span>Performance</span><span>High availability</span><span>Battle-tested infra</span></div></div><i class="cpx-ln" style="grid-column:1"></i><i class="cpx-ln" style="grid-column:2"></i><i class="cpx-ln" style="grid-column:3"></i><div class="cpx-wl" data-p="workload"><div class="cpx-wl-l"><div class="cpx-hd"><b class="cpx-n">04</b><em>Govern every workload</em></div><h4>모든 워크로드</h4><p>자산 · 각도 · 규모를 에이전트가 실행되는 모든 곳에</p></div><div class="cpx-wl-r"><span class="cpx-lb">모든 환경에서 실행</span><div class="cpx-ch k"><span>Cloud</span><span>Multi-cloud</span><span>On-prem</span><span>Edge</span><span>Air-gapped</span></div></div></div><div class="cpx-bar2" id="cpx-bar2"><span></span><em>일부 환경</em></div></div>
   <div id="cmp-panes"></div>
   <p class="note">출처: Kong 경쟁 비교 자료 (2026.09), 각 벤더 공개 자료 기준. 제품은 계속 바뀌므로 도입 전 최신 문서를 확인하세요.</p>

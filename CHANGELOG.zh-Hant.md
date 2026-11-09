@@ -10,6 +10,7 @@
 ### 變更
 
 - Kong 企業介紹：章節順序調整為概要 → 市場變化 → Kong 平台 → 已驗證可信度 → 客戶案例 → 沿革。將沿革與全球布局拆成獨立章節
+- AI Gateway > 競品比較：標題與副文案改為 Competitors, Not Enemies. / We Set the Pace. Others Keep Up. / Built to Lead. Engineered to Evolve.。分頁說明移到分頁上方
 
 ## 2026.11.06.6aedbacb
 
