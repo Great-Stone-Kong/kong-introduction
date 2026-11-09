@@ -5084,7 +5084,7 @@
   "m.c3c3555b5580": "The cloud hosts them; Kong protects them and connects them to users · other agents.",
   "m.cdac39ff094c": "Gateways · registries — AgentCore Gateway · Azure API Management AI gateway · Apigee",
   "m.da6b3cf206a0": "Head-to-head on MCP tool exposure · discovery · auth · observability. Inside one cloud vs everywhere.",
-  "m.4f5753b98a1b": "Even if you are single-cloud today",
+  "m.4f5753b98a1b": "The multi-cloud and hybrid governance problem",
   "m.6b9c0daa5141": "Today · single cloud",
   "m.8dedb8ce0997": "M&A · another cloud joins",
   "m.44cd77f25224": "Model · pricing shifts",
@@ -5142,5 +5142,14 @@
   "m.10c79876b5d2": "Bolted-on AI features vs a platform designed for APIs · AI · events from the start",
   "m.1a6aac7c3ea0": "Built to Lead. Engineered to Evolve.",
   "m.da3f987f207e": "Pick a tab to highlight what each category covers across the four dimensions.",
-  "m.3fb20d94b436": "The comparison below is based on feature availability, not quality."
+  "m.3fb20d94b436": "The comparison below is based on feature availability, not quality.",
+  "m.8a7bc293185e": "As stages advance, the initial cloud governance footprint shrinks and the tool gap grows",
+  "m.9c74284ab000": "Initial cloud governance footprint",
+  "m.8005d0053745": "01 · Now",
+  "m.cd9e3261bea7": "02 · Acquisition",
+  "m.5b25070df8c7": "03 · Model · price",
+  "m.4ecc492b170f": "04 · Edge",
+  "m.d1a6dde61ec1": "+ Azure Foundry console",
+  "m.b0efe206c9e1": "+ GCP · LiteLLM proxy",
+  "m.a160e999444f": "+ DIY proxies · scripts"
 }

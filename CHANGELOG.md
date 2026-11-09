@@ -11,6 +11,7 @@
 
 - Kong 기업 소개: 섹션 순서를 개요 → 시장의 변화 → Kong 플랫폼 → 증명된 신뢰성 → 고객 사례 → 연혁으로 조정. 연혁·글로벌 거점을 별도 섹션으로 분리
 - AI Gateway > 경쟁 제품 비교: 제목·서브·기술 메시지를 Competitors, Not Enemies. / We Set the Pace. Others Keep Up. / Built to Lead. Engineered to Evolve.로 정리. 탭 안내를 탭 위로 이동
+- AI Gateway > 경쟁 제품 비교 > Public Cloud: 제목을 멀티 · 하이브리드 거버넌스의 문제점으로 바꾸고, 거버넌스 범위 하락 그래프 추가
 
 ## 2026.11.06.6aedbacb
 
