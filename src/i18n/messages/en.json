@@ -5024,5 +5024,16 @@
   "m.aa2c104daa93": "Concept: adding nodes leaves the Kong license flat while infrastructure-based pricing climbs in steps",
   "m.2401c97d4358": "API, AI, Event and MCP gateways plus the developer portal and Insomnia on one platform",
   "m.a1c549dc2202": "This is a concept diagram, not a price comparison. The separately bought items are examples; quotes are provided separately based on deployment size.",
-  "m.808ad0d6e1cb": "Instead of buying and stitching together separate tools for API, AI and event traffic and for development, you run them on one control plane under one subscription. Pricing follows the value you connect, not the size of your infrastructure."
+  "m.808ad0d6e1cb": "Instead of buying and stitching together separate tools for API, AI and event traffic and for development, you run them on one control plane under one subscription. Pricing follows the value you connect, not the size of your infrastructure.",
+  "m.d76f60468b6e": "DR · environments",
+  "m.2581e813fa59": "Infrastructure-based pricing",
+  "m.07cec8d3fab8": "Kong · usage-based",
+  "m.6ce3f3084c25": "Business usage · unchanged",
+  "m.f4bb110770ec": "Total cost · tracks usage",
+  "m.45dde53928fd": "Unit cost · volume discount",
+  "m.581163224372": "Per core · node · environment",
+  "m.d58414bb7520": "Usage flat, cost still climbs",
+  "m.2ed682d05391": "Based on services and calls · adding nodes does not change cost",
+  "m.879a372dcbc6": "tracks usage, not infrastructure; unit cost falls as you scale",
+  "m.64d468eced61": "Concept: infrastructure-based pricing rises with added nodes even when usage is flat, while Kong rises with usage and its unit cost falls as you scale"
 }
