@@ -7,12 +7,18 @@
 
 ## Unreleased
 
+## 2026.11.09.6af12729
+
+### Added
+
+- AI Gateway > Competitive comparison
+  - Add Public Cloud
+  - Diagram category coverage areas
+- License model > Pricing basis: add explanation
+
 ### Changed
 
 - Kong company intro: reorder sections to Overview → Market → Kong platform → Proven trust → Customers → History. Split history and global presence into their own section
-- AI Gateway > Competitive comparison: retitle to Fair competition and continuous innovation, with Compete with technology. Lead with innovation. Move tab guidance above the tabs
-- AI Gateway > Competitive comparison > Public Cloud: retitle to the multi-cloud and hybrid governance problem, and add a declining governance-footprint chart
-- AI Gateway > Competitive comparison: remove Kong and Public Cloud intro callouts. Keep four-pillar diagram bottom spacing consistent across tabs
 
 ## 2026.11.06.6aedbacb
 
