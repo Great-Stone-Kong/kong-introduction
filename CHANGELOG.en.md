@@ -10,7 +10,7 @@
 ### Changed
 
 - Kong company intro: reorder sections to Overview → Market → Kong platform → Proven trust → Customers → History. Split history and global presence into their own section
-- AI Gateway > Competitive comparison: retitle to Competitors, Not Enemies. with We Set the Pace. Others Keep Up. and Built to Lead. Engineered to Evolve. Move tab guidance above the tabs
+- AI Gateway > Competitive comparison: retitle to Fair competition and continuous innovation, with Compete with technology. Lead with innovation. Move tab guidance above the tabs
 - AI Gateway > Competitive comparison > Public Cloud: retitle to the multi-cloud and hybrid governance problem, and add a declining governance-footprint chart
 
 ## 2026.11.06.6aedbacb

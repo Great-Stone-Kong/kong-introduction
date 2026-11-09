@@ -10,7 +10,7 @@
 ### 変更
 
 - Kong 企業紹介: セクション順を概要 → 市場の変化 → Kong プラットフォーム → 証明された信頼性 → 顧客事例 → 沿革に変更。沿革・グローバル拠点を独立セクションへ分離
-- AI Gateway > 競合比較: 見出し・サブ・技術メッセージを Competitors, Not Enemies. / We Set the Pace. Others Keep Up. / Built to Lead. Engineered to Evolve. に整理。タブ案内をタブ上へ移動
+- AI Gateway > 競合比較: 見出しを健全な競争と絶え間ない革新に、サブを競争は技術で、リーダーシップは革新で証明するに整理。タブ案内をタブ上へ移動
 - AI Gateway > 競合比較 > Public Cloud: 見出しをマルチ · ハイブリッド・ガバナンスの課題に変更し、ガバナンス範囲低下グラフを追加
 
 ## 2026.11.06.6aedbacb
