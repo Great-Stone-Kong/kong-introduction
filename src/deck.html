@@ -3131,6 +3131,101 @@ html[data-theme="light"] .vr-donut .s-dn{fill:#fff}html[data-theme="light"] .vr-
 .btn.btn-inl{padding:2px 10px;font-size:12.5px;line-height:1.55;vertical-align:baseline}
 #cmp-tabs{position:sticky;top:calc(var(--top) + var(--cmp-h2,70px));z-index:19;background:var(--navy);margin:0;padding:10px 0 12px;border-bottom:1px solid var(--line)}
 #i-cmp #cmp-panes{margin-top:14px}
+/* i-cmp 4축 */
+.cpx{--cc:var(--mark);--cw:var(--accent-wash,rgba(204,255,0,.08));display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:14px;row-gap:0;margin:6px 0 22px;position:relative}
+.cpx:not([data-k="kong"]){--cc:var(--g300);--cw:rgba(183,189,181,.08)}
+html[data-theme="light"] .cpx:not([data-k="kong"]){--cw:rgba(74,77,73,.07)}
+.cpx-bar,.cpx-bar2{grid-row:1;height:30px;border-radius:6px;background:var(--cc);color:var(--navy);font-size:12.5px;font-weight:800;letter-spacing:.02em;display:flex;align-items:center;justify-content:center;margin-bottom:10px;transition:grid-column 0s,background .3s;white-space:nowrap;overflow:hidden}
+.cpx[data-k="kong"] .cpx-bar{color:var(--on-lime);background:var(--lime)}
+html[data-theme="light"] .cpx[data-k="kong"] .cpx-bar{background:var(--mark);color:#fff}
+.cpx-bar span,.cpx-bar2 span{padding:0 10px;overflow:hidden;text-overflow:ellipsis}
+.cpx.sw .cpx-bar,.cpx.sw .cpx-bar2{animation:cpxIn .42s cubic-bezier(.2,.8,.2,1)}
+@keyframes cpxIn{from{opacity:0;transform:scaleX(.6)}to{opacity:1;transform:none}}
+.cpx-card{grid-row:2;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 16px 18px;transition:opacity .32s cubic-bezier(.2,.8,.2,1),border-color .32s,background .32s,filter .32s;display:flex;flex-direction:column;gap:6px}
+.cpx-hd{display:flex;align-items:baseline;gap:8px}
+.cpx-n{font-family:var(--mono);font-size:12px;color:var(--cc);font-weight:700}
+.cpx-hd em{font-style:normal;font-size:11.5px;color:var(--g400);letter-spacing:.02em}
+.cpx-card h4,.cpx-wl h4{margin:0;font-size:17px;color:var(--heading)}
+.cpx-card p,.cpx-wl p{margin:0;font-size:13px;color:var(--g300);line-height:1.5}
+.cpx-dl{margin:6px 0 0;display:grid;gap:6px}
+.cpx-dl div{display:grid;grid-template-columns:86px 1fr;gap:8px;align-items:start;border-top:1px dashed var(--line);padding-top:6px}
+.cpx-dl dt{font-size:11.5px;font-weight:800;color:var(--cc)}
+.cpx-dl dd{margin:0;font-size:12.5px;color:var(--g200);line-height:1.45}
+.cpx-ch{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.cpx-ch span{font-size:12px;font-weight:700;color:var(--g200);border:1px solid var(--line2);border-radius:999px;padding:4px 10px;background:rgba(0,0,0,.12)}
+html[data-theme="light"] .cpx-ch span{background:rgba(255,255,255,.35)}
+.cpx-ln{grid-row:3;justify-self:center;width:2px;height:22px;background:var(--line);transition:background .32s}
+.cpx .cpx-ln.on{background:var(--cc)}
+.cpx-wl{grid-row:4;grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:18px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;transition:opacity .32s,border-color .32s,background .32s,filter .32s}
+.cpx-wl-l{display:flex;flex-direction:column;gap:6px}
+.cpx-lb{font-size:11.5px;font-weight:800;color:var(--g400);letter-spacing:.04em}
+.cpx-bar2{grid-row:5;grid-column:1 / 2;margin:10px 0 0;height:24px;font-size:11.5px;opacity:.85}
+.cpx-bar2[hidden]{display:none}
+.cpx-bar2 em{font-style:normal;font-weight:600;opacity:.75;padding-right:10px}
+.cpx .on{border-color:var(--cc);background:linear-gradient(var(--cw),var(--cw)),var(--card)}
+.cpx .off{opacity:.36;filter:saturate(.2)}
+.cpx .cpx-wl.part{border-color:var(--cc);border-style:dashed;opacity:.8}
+.cpx .on .cpx-ch span{border-color:color-mix(in srgb,var(--cc) 55%,transparent)}
+.cpx-after{margin-top:34px;padding-top:24px;border-top:1px solid var(--line)}
+.crel{margin:4px 0 22px;display:grid;gap:8px}
+.crel-t{margin:0 0 4px;font-size:15px;color:var(--heading)}
+.crel{--bw:62px}
+html[data-lang="en"] .crel{--bw:118px}
+html[data-lang="ja"] .crel{--bw:70px}
+.crel-r{display:grid;grid-template-columns:var(--bw) minmax(0,1.05fr) minmax(0,1.2fr);gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 16px}
+.crel-b{justify-self:start;white-space:nowrap;font-size:12px;font-weight:800;border-radius:999px;padding:4px 10px;border:1px solid var(--line2);color:var(--g200)}
+.crel-r.co .crel-b{color:var(--g200)}
+.crel-r.cp .crel-b{color:var(--mark);border-color:var(--mark)}
+.crel-r.cm .crel-b{color:var(--on-lime);background:var(--lime);border-color:var(--lime)}
+html[data-theme="light"] .crel-r.cm .crel-b{background:var(--mark);color:#fff;border-color:var(--mark)}
+.crel-a{font-size:14px;font-weight:700;color:var(--heading);line-height:1.45}
+.crel-k{font-size:13px;color:var(--g300);line-height:1.5}
+.cmat th.co,.cmat th.cp,.cmat th.cm{width:26%}
+.cmat th.cm{color:var(--mark)}
+.cmat td{font-size:13.5px;vertical-align:top}
+.ckong{margin-top:18px}
+.ckong .card{padding:18px}
+.ckong p{margin:8px 0 0;font-size:13.5px}
+.ctr{margin:26px 0 8px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px}
+.ctr h4{margin:0 0 14px;font-size:16px;color:var(--heading)}
+.ctr-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ctr-s{display:flex;flex-direction:column;gap:8px;border-top:2px solid var(--line2);padding-top:10px}
+.ctr-n{font-family:var(--mono);font-size:11.5px;color:var(--g400)}
+.ctr-s b{font-size:13.5px;color:var(--heading)}
+.ctr-st{display:flex;flex-direction:column;gap:5px}
+.ctr-c{font-size:12px;font-weight:700;color:var(--g200);border:1px solid var(--line2);border-radius:6px;padding:6px 8px;background:rgba(0,0,0,.12)}
+html[data-theme="light"] .ctr-c{background:rgba(255,255,255,.35)}
+.ctr-c.new{border-style:dashed;border-color:var(--g400)}
+.ctr.rv .ctr-c{opacity:0;transform:translateY(6px);transition:opacity .42s cubic-bezier(.2,.8,.2,1),transform .42s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i)*.35s + var(--k)*.08s)}
+.ctr.rv.in .ctr-c{opacity:1;transform:none}
+.ctr-cap{margin:14px 0 0;font-size:13px;color:var(--g400)}
+.ctr-k{margin-top:12px;display:flex;align-items:center;gap:12px;border:1px solid var(--mark);border-radius:8px;padding:12px 16px;background:var(--accent-wash,rgba(204,255,0,.08))}
+.ctr-k svg{width:26px;height:24px;fill:var(--mark);flex:none}
+.ctr-k b{color:var(--heading);font-size:14.5px;white-space:nowrap}
+.ctr-k span{font-size:13px;color:var(--g200)}
+.ccl{margin-top:12px;gap:14px}
+.ccl-c{padding:18px}
+.ccl-h{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.ccl-h svg{width:22px;height:22px}
+.ccl-h b{font-size:15px;color:var(--heading)}
+.ccl dl{margin:0;display:grid;gap:8px}
+.ccl dl div{border-top:1px dashed var(--line);padding-top:7px}
+.ccl dt{font-size:11.5px;font-weight:800;color:var(--g400);letter-spacing:.03em}
+.ccl dd{margin:2px 0 0;font-size:13px;color:var(--g200);line-height:1.5}
+@media (max-width:900px){
+  .cpx{grid-template-columns:1fr;row-gap:8px}
+  .cpx-bar{grid-column:1!important;grid-row:auto}
+  .cpx-card,.cpx-wl{grid-row:auto}
+  .cpx-ln{display:none}
+  .cpx .off p,.cpx .off .cpx-ch,.cpx .off .cpx-dl,.cpx .off .cpx-wl-r{display:none}
+  .cpx-wl{grid-template-columns:1fr;grid-column:1}
+  .cpx-bar2{grid-row:auto;grid-column:1}
+  .crel-r{grid-template-columns:1fr;gap:6px}
+  .ctr-g{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){.cpx.sw .cpx-bar,.cpx.sw .cpx-bar2{animation:none}.ctr.rv .ctr-c{opacity:1;transform:none;transition:none}}
+@media print{.ctr.rv .ctr-c{opacity:1!important;transform:none!important}.cpx .off{opacity:.5}}
+/* /i-cmp 4축 */
 #i2-cost .grid.g2>*{min-width:0}#i2-cost pre.code{overflow-x:auto}
 @media print{details.vr-more>summary{display:none}details.vr-more{border:0}#cmp-tabs{position:static}.nctl{display:none}}
 
@@ -4706,6 +4801,8 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
   <div class="vr-grow rv"><div class="vr-gb s1"><i>DAY 1</i><b>통제 지점 세우기</b><span>Kong AI Gateway로 모든 LLM · MCP · 에이전트 호출을 한 경로로. 가시성 확보와 기본 정책(인증 · PII · 한도) 적용</span></div><div class="vr-gb s2"><i>DAY 30</i><b>정책 고도화</b><span>사내 데이터 분류 기준과 업무별 가드레일 연동, 부서별 예산 · 모델 허용 목록 운영</span></div><div class="vr-gb s3"><i>DAY 90</i><b>검증 · 거버넌스 연결</b><span>레드팀 결과를 규칙으로 반영하고, Gateway 로그를 규제 대응 · 감사 보고에 활용</span></div></div>
 </section>
 
+<template id="tpl-cmp-kong"><div class="callout"><b>경쟁자이지 적이 아닙니다.</b> 퍼블릭 클라우드 · 데이터 플랫폼 · 보안 플랫폼은 Kong이 실행되고 연결되는 기반입니다. 각자 잘하는 영역은 함께 쓰고, 거버넌스 계층이 겹치는 곳에서만 경쟁합니다.</div><div class="tw"><table class="cmp cmat"><thead><tr><th>범주</th><th class="co">공존</th><th class="cp">보완</th><th class="cm">경쟁</th></tr></thead><tbody><tr><td><b>Public Cloud</b></td><td>클라우드 인프라 위에 Kong 배포</td><td>모델 · 에이전트 런타임 앞단 보호 · 연결</td><td>클라우드 내장 AI · MCP 게이트웨이 · 레지스트리</td></tr><tr><td><b>Data Platform</b></td><td>데이터 레이크 · 웨어하우스</td><td>플랫폼 안 모델 서빙 · 에이전트를 외부와 연결</td><td>플랫폼 내장 AI Gateway</td></tr><tr><td><b>Pure AI Gateway</b></td><td>개발 · 실험 단계의 팀 단위 프록시</td><td>기존 프록시의 단계적 통합</td><td>LLM 프록시 · 라우팅 기능</td></tr><tr><td><b>Security Platform</b></td><td>SSE · DLP · 엔드포인트 보안</td><td>AI 런타임 검사 · 가드레일과 함께 배치</td><td>AI 트래픽 게이트웨이 기능 일부</td></tr><tr><td><b>Legacy APIM</b></td><td>운영 중인 API 자산 · 포털</td><td>서비스 단위 점진 이전</td><td>API 게이트웨이 · AI 애드온</td></tr></tbody></table></div><div class="grid g4 ckong"><div class="card"><span class="tag">01 · Asset</span><p>모델 · 에이전트 · API · MCP · 이벤트를 하나의 플랫폼에서 연결합니다.</p></div><div class="card"><span class="tag">02 · Angle</span><p>보안 · 비용 · 탐색 · 아이덴티티 · 가시성 · 복원력을 한 번 정의해 어디서나 적용합니다.</p></div><div class="card"><span class="tag">03 · Scale</span><p>대규모 운영 환경에서 검증된 고성능 · 고가용성 게이트웨이입니다.</p></div><div class="card"><span class="tag">04 · Workload</span><p>클라우드 · 멀티 클라우드 · 온프레미스 · 엣지 · 에어갭까지 같은 정책으로 운영합니다.</p></div></div></template>
+<template id="tpl-cmp-cloud"><div class="callout"><b>범주 · Public Cloud.</b> AWS · Azure · Google Cloud는 모델, 에이전트 런타임, 도구 연결, 레지스트리, 거버넌스를 한 플랫폼으로 묶어 제공합니다. 단일 클라우드 조직에는 일관된 선택지입니다. 차이는 거버넌스가 그 클라우드 밖까지 이어지는가에 있습니다.</div><div class="crel"><h4 class="crel-t">Kong vs Public Cloud · 계층별 관계</h4><div class="crel-r co"><span class="crel-b">공존</span><div class="crel-a">클라우드 인프라 — EKS · AKS · GKE 등 컨테이너 · 컴퓨트</div><div class="crel-k">Kong은 클라우드 위에서 실행됩니다. 인프라는 배포 대상이지 대체 대상이 아닙니다.</div></div><div class="crel-r cp"><span class="crel-b">보완</span><div class="crel-a">파운데이션 모델 — Bedrock · Microsoft Foundry · Gemini Enterprise Agent Platform</div><div class="crel-k">Kong AI Gateway가 모델 앞단에서 가드레일 · 토큰 계량 · 다른 공급자로의 페일오버를 맡습니다.</div></div><div class="crel-r cp"><span class="crel-b">보완</span><div class="crel-a">에이전트 · MCP 런타임 — AgentCore Runtime · Foundry Agent Service · Agent Runtime</div><div class="crel-k">클라우드가 호스팅하고, Kong이 보호하고 사용자 · 다른 에이전트와 연결합니다.</div></div><div class="crel-r cm"><span class="crel-b">경쟁</span><div class="crel-a">게이트웨이 · 레지스트리 — AgentCore Gateway · Azure API Management AI gateway · Apigee</div><div class="crel-k">MCP 도구 제공 · 탐색 · 인증 · 관측에서 정면 경쟁합니다. 한 클라우드 안 vs 모든 환경.</div></div></div><div class="ctr rv"><h4>지금은 단일 클라우드여도</h4><div class="ctr-g"><div class="ctr-s" style="--i:0"><span class="ctr-n">01</span><b>지금 · 단일 클라우드</b><div class="ctr-st"><span class="ctr-c" style="--k:0">AWS AgentCore</span></div></div><div class="ctr-s" style="--i:1"><span class="ctr-n">02</span><b>인수합병 · 다른 클라우드 합류</b><div class="ctr-st"><span class="ctr-c" style="--k:0">AWS AgentCore</span><span class="ctr-c new" style="--k:1">Azure API Management · Foundry</span></div></div><div class="ctr-s" style="--i:2"><span class="ctr-n">03</span><b>모델 · 가격 변화</b><div class="ctr-st"><span class="ctr-c" style="--k:0">AWS AgentCore</span><span class="ctr-c" style="--k:1">Azure API Management · Foundry</span><span class="ctr-c new" style="--k:2">Apigee · LiteLLM 프록시</span></div></div><div class="ctr-s" style="--i:3"><span class="ctr-n">04</span><b>엣지 · 온프레미스</b><div class="ctr-st"><span class="ctr-c" style="--k:0">AWS AgentCore</span><span class="ctr-c" style="--k:1">Azure API Management · Foundry</span><span class="ctr-c" style="--k:2">Apigee · LiteLLM 프록시</span><span class="ctr-c new" style="--k:3">자체 프록시 · 스크립트</span></div></div></div><p class="ctr-cap">공백을 도구로 메우면, 도구마다 자기 섬만 다스립니다.</p><div class="ctr-k"><svg viewBox="0 0 153 137" aria-hidden="true"><use href="#kong-mark" width="153" height="137"/></svg><b>Kong Konnect</b><span>모든 단계를 하나의 제어면 · 하나의 정책 · 하나의 감사 로그로</span></div></div><h3 style="margin-top:22px">클라우드별 AI 거버넌스 구성</h3><div class="grid g3 ccl"><div class="card ccl-c"><div class="ccl-h"><svg aria-hidden="true"><use href="#ic-aws"/></svg><b>AWS</b></div><dl><div><dt>모델</dt><dd>Amazon Bedrock</dd></div><div><dt>에이전트 런타임</dt><dd>AgentCore Runtime</dd></div><div><dt>게이트웨이</dt><dd>AgentCore Gateway — API · Lambda를 MCP 도구로 변환, Cedar 정책 · AgentCore Identity</dd></div><div><dt>레지스트리</dt><dd>AWS Agent Registry (2026-04 프리뷰)</dd></div><div><dt>배포 범위</dt><dd>AWS 관리형 서비스</dd></div></dl></div><div class="card ccl-c"><div class="ccl-h"><svg aria-hidden="true"><use href="#ic-azure"/></svg><b>Microsoft Azure</b></div><dl><div><dt>모델</dt><dd>Microsoft Foundry (Azure OpenAI 등)</dd></div><div><dt>에이전트 런타임</dt><dd>Foundry Agent Service · hosted agents</dd></div><div><dt>게이트웨이</dt><dd>API Management AI gateway — 토큰 한도 · 시맨틱 캐시 · REST → MCP · A2A</dd></div><div><dt>배포 범위</dt><dd>self-hosted gateway로 외부 실행 가능, 단 관리면은 Azure · 미지원 정책은 건너뜀 · Developer/Premium 티어</dd></div></dl></div><div class="card ccl-c"><div class="ccl-h"><svg aria-hidden="true"><use href="#ic-gcp"/></svg><b>Google Cloud</b></div><dl><div><dt>모델</dt><dd>Gemini Enterprise Agent Platform (구 Vertex AI)</dd></div><div><dt>에이전트 런타임</dt><dd>Agent Runtime (구 Agent Engine)</dd></div><div><dt>게이트웨이</dt><dd>Apigee AI gateway — PromptTokenLimit · LLMTokenQuota · 시맨틱 캐시 · MCP 엔드포인트</dd></div><div><dt>배포 범위</dt><dd>Apigee hybrid로 런타임을 자체 Kubernetes에, 관리면은 Google Cloud</dd></div></dl></div></div><div class="grid g3" style="margin-top:14px"><div class="card"><span class="tag">멀티 클라우드</span><p>인수합병 · 데이터 주권 · 고객 지정 클라우드 · 자체 호스팅 모델로 워크로드는 결국 한 클라우드 밖으로 나갑니다. 처음 도입한 거버넌스가 다루는 트래픽 비중은 점점 줄어듭니다.</p></div><div class="card"><span class="tag">운영 부담</span><p>게이트웨이 인프라를 클라우드가 운영해도 정책 · 관측 · 아이덴티티 · 감사는 클라우드마다 따로 관리해야 합니다.</p></div><div class="card"><span class="tag">연결 영역 전체</span><p>AI Gateway 하나가 아니라 API · AI · MCP · 이벤트 트래픽을 하나의 관리면으로 다루는 것이 Kong의 차별점입니다.</p></div></div><p class="note">2026-11 공개 문서 기준(AWS Bedrock AgentCore, Azure API Management, Apigee · Gemini Enterprise Agent Platform). 클라우드 서비스는 빠르게 바뀌므로 도입 전 최신 공식 문서를 확인하세요.</p></template>
 <template id="tpl-cmp-endpoint-ai">
 <h3>엔드포인트 AI 보안과 AI Gateway의 구조적 차이</h3>
 <p class="sub">엔드포인트 AI 보안은 사용자 단말이나 브라우저에 에이전트를 설치해 사람이 입력하는 내용을 검사합니다. AI Gateway는 앱 · 에이전트 · 서버가 모델을 호출하는 경로 자체에 위치해, 사람이 아닌 워크로드의 AI 트래픽까지 같은 정책으로 통제합니다.</p>
@@ -4719,8 +4816,9 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 <section class="sec" id="i-cmp" data-title="경쟁 제품 비교">
   <div class="eyebrow">Comparison</div>
   <h2>제품별 차이와 선택 기준</h2>
-  <p class="sub">기능 유무 기준 비교이며 품질 우열을 뜻하지 않습니다. 보안 제품과는 경쟁이 아니라 보완 배치가 가능합니다.</p>
+  <p class="sub">경쟁자이지 적이 아닙니다. 탭을 고르면 각 범주가 다루는 영역이 4가지 축에서 강조됩니다. 아래 비교는 기능 유무 기준이며 품질 우열을 뜻하지 않습니다.</p>
   <div class="tabs" data-tabs id="cmp-tabs"></div>
+  <div class="cpx" id="cpx" data-k="kong"><div class="cpx-bar" id="cpx-bar"><span></span></div><div class="cpx-card" data-p="asset"><div class="cpx-hd"><b class="cpx-n">01</b><em>Govern every asset</em></div><h4>모든 자산</h4><p>일부가 아닌 컨텍스트와 인텔리전스 전체</p><dl class="cpx-dl"><div><dt>Intelligence</dt><dd>모델 · 에이전트</dd></div><div><dt>Context</dt><dd>API · 비즈니스 프로세스<br/>MCP · 이벤트 · 데이터 레이크</dd></div></dl></div><div class="cpx-card" data-p="angle"><div class="cpx-hd"><b class="cpx-n">02</b><em>Govern every angle</em></div><h4>모든 통제 각도</h4><p>부분 체크리스트가 아닌 전체 통제면</p><div class="cpx-ch"><span>Security</span><span>Cost</span><span>Discovery</span><span>Identity</span><span>Visibility</span><span>Resilience</span></div></div><div class="cpx-card" data-p="scale"><div class="cpx-hd"><b class="cpx-n">03</b><em>Govern every scale</em></div><h4>모든 규모</h4><p>수요가 몰려도 무너지지 않는 거버넌스</p><div class="cpx-ch"><span>Performance</span><span>High availability</span><span>Battle-tested infra</span></div></div><i class="cpx-ln" style="grid-column:1"></i><i class="cpx-ln" style="grid-column:2"></i><i class="cpx-ln" style="grid-column:3"></i><div class="cpx-wl" data-p="workload"><div class="cpx-wl-l"><div class="cpx-hd"><b class="cpx-n">04</b><em>Govern every workload</em></div><h4>모든 워크로드</h4><p>자산 · 각도 · 규모를 에이전트가 실행되는 모든 곳에</p></div><div class="cpx-wl-r"><span class="cpx-lb">모든 환경에서 실행</span><div class="cpx-ch k"><span>Cloud</span><span>Multi-cloud</span><span>On-prem</span><span>Edge</span><span>Air-gapped</span></div></div></div><div class="cpx-bar2" id="cpx-bar2"><span></span><em>일부 환경</em></div></div>
   <div id="cmp-panes"></div>
   <p class="note">출처: Kong 경쟁 비교 자료 (2026.09), 각 벤더 공개 자료 기준. 제품은 계속 바뀌므로 도입 전 최신 문서를 확인하세요.</p>
 </section>
@@ -7442,11 +7540,30 @@ const CMP = [
 ];
 const VR_CMP = ['지원 항목 수 요약', '개 기능 축 · 기능 유무 집계이며 품질 우열을 뜻하지 않습니다'];
 const SYM = {1:'<i class="dot f" title="네이티브 지원"></i>',2:'<i class="dot h" title="부분/조건부"></i>',0:'<i class="dot e" title="미지원/해당없음"></i>'};
+/* i-cmp 개편: 탭 순서 · 범주별 공존/보완/경쟁 · 4축 도식 커버 영역 */
+const CMPX={"kong": {"tab": "Kong", "cov": [1, 4, "full"]}, "cloud": {"tab": "Public Cloud", "cov": [1, 3, "none"]}, "data-platform": {"tab": "Data Platform", "cov": [2, 4, "none"], "rel": "<div class=\"crel\"><h4 class=\"crel-t\">Kong vs Data Platform · 공존 · 보완 · 경쟁</h4><div class=\"crel-r co\"><span class=\"crel-b\">공존</span><div class=\"crel-a\">데이터 레이크 · 웨어하우스 — 데이터가 사는 곳</div><div class=\"crel-k\">Kong은 데이터 플랫폼을 대체하지 않습니다.</div></div><div class=\"crel-r cp\"><span class=\"crel-b\">보완</span><div class=\"crel-a\">플랫폼 안의 모델 서빙 · 에이전트</div><div class=\"crel-k\">외부 앱 · 에이전트 · 다른 모델과의 연결과 정책은 Kong이 맡습니다.</div></div><div class=\"crel-r cm\"><span class=\"crel-b\">경쟁</span><div class=\"crel-a\">플랫폼 내장 AI Gateway</div><div class=\"crel-k\">플랫폼 안의 트래픽 vs 모든 데이터 · 모델 · API를 가로지르는 거버넌스</div></div></div>"}, "litellm": {"tab": "Pure AI Gateway", "cov": [2, 3, "part"], "rel": "<div class=\"crel\"><h4 class=\"crel-t\">Kong vs Pure AI Gateway · 공존 · 보완 · 경쟁</h4><div class=\"crel-r co\"><span class=\"crel-b\">공존</span><div class=\"crel-a\">개발 · 실험 단계의 팀 단위 프록시</div><div class=\"crel-k\">팀이 이미 쓰는 프록시는 운영과 함께 단계적으로 통합합니다.</div></div><div class=\"crel-r cp\"><span class=\"crel-b\">보완</span><div class=\"crel-a\">LLM SDK · 프롬프트 도구 생태계</div><div class=\"crel-k\">SDK는 그대로 두고 base_url만 Kong으로 바꿉니다.</div></div><div class=\"crel-r cm\"><span class=\"crel-b\">경쟁</span><div class=\"crel-a\">LLM 프록시 · 라우팅 · 비용 제어</div><div class=\"crel-k\">LLM 경로만 vs API · MCP · 에이전트 · 이벤트까지 하나의 제어면</div></div></div>"}, "ai-runtime": {"tab": "Security Platform", "cov": [3, 4, "part"], "rel": "<div class=\"crel\"><h4 class=\"crel-t\">Kong vs Security Platform · 공존 · 보완 · 경쟁</h4><div class=\"crel-r co\"><span class=\"crel-b\">공존</span><div class=\"crel-a\">SSE · DLP · 엔드포인트 보안 — 사용자 · 기기 경계</div><div class=\"crel-k\">사람이 쓰는 AI는 보안 플랫폼이, 워크로드 간 AI 트래픽은 Kong이 지킵니다.</div></div><div class=\"crel-r cp\"><span class=\"crel-b\">보완</span><div class=\"crel-a\">AI 런타임 검사 · 가드레일 엔진</div><div class=\"crel-k\">Kong 정책 단계와 함께 배치해 검사 결과를 라우팅 · 차단에 반영합니다.</div></div><div class=\"crel-r cm\"><span class=\"crel-b\">경쟁</span><div class=\"crel-a\">보안 벤더의 AI Gateway 기능 일부</div><div class=\"crel-k\">보안 검사 중심 vs 연결 · 운영 · 개발자 경험까지 포함한 연결 인프라</div></div></div>", "after": "tpl-cmp-endpoint-ai"}, "legacy-apim": {"tab": "Legacy APIM", "cov": [1, 2, "part"], "rel": "<div class=\"crel\"><h4 class=\"crel-t\">Kong vs Legacy APIM · 공존 · 보완 · 경쟁</h4><div class=\"crel-r co\"><span class=\"crel-b\">공존</span><div class=\"crel-a\">운영 중인 API 자산 · 개발자 포털</div><div class=\"crel-k\">기존 API는 그대로 두고 신규 · AI 트래픽부터 Kong으로 시작할 수 있습니다.</div></div><div class=\"crel-r cp\"><span class=\"crel-b\">보완</span><div class=\"crel-a\">레거시 게이트웨이 뒤의 백엔드 시스템</div><div class=\"crel-k\">Kong을 앞단에 두고 서비스 단위로 점진 이전합니다.</div></div><div class=\"crel-r cm\"><span class=\"crel-b\">경쟁</span><div class=\"crel-a\">API 게이트웨이 · AI 애드온</div><div class=\"crel-k\">덧붙인 AI 기능 vs 처음부터 API · AI · 이벤트를 위해 설계된 플랫폼</div></div></div>"}};
+CMP.push({id:'kong',name:'Kong',tpl:'tpl-cmp-kong'},{id:'cloud',name:'Kong vs Public Cloud',tpl:'tpl-cmp-cloud'});
+(function(){ const ord=['kong','cloud','data-platform','litellm','ai-runtime','legacy-apim']; const keep=CMP.filter(c=>ord.includes(c.id)).sort((a,b)=>ord.indexOf(a.id)-ord.indexOf(b.id)); CMP.length=0; keep.forEach(c=>CMP.push(c)); })();
+
+function cpxBind(){
+  const d=document.getElementById('cpx'), tabs=document.getElementById('cmp-tabs'); if(!d||!tabs||d._b) return; d._b=1;
+  const bar=document.getElementById('cpx-bar'), bar2=document.getElementById('cpx-bar2');
+  const P=['asset','angle','scale'];
+  function set(i){ const c=CMP[i]; if(!c) return; const X=CMPX[c.id]||{}, cov=X.cov||[1,4,'full'], btn=tabs.children[i];
+    d.dataset.k=c.id; d.classList.remove('sw'); void d.offsetWidth; d.classList.add('sw');
+    bar.style.gridColumn=cov[0]+' / '+cov[1]; bar.firstChild.textContent=btn?btn.textContent:'';
+    d.querySelectorAll('.cpx-card').forEach((el,k)=>{ const on=k+1>=cov[0]&&k+1<cov[1]; el.classList.toggle('on',on); el.classList.toggle('off',!on); });
+    const wl=d.querySelector('.cpx-wl'); wl.classList.toggle('on',cov[2]==='full'); wl.classList.toggle('part',cov[2]==='part'); wl.classList.toggle('off',cov[2]==='none');
+    d.querySelectorAll('.cpx-ln').forEach((el,k)=>el.classList.toggle('on',cov[2]==='full'));
+    bar2.hidden=cov[2]!=='part'; bar2.firstChild.textContent=btn?btn.textContent:''; }
+  tabs.addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; set([...tabs.children].indexOf(b)); });
+  set(0);
+}
 function buildCmp(){
   const tabs=document.getElementById('cmp-tabs'), box=document.getElementById('cmp-panes');
   if(!tabs||!box) return;
   CMP.forEach((c,i)=>{
-    const b=document.createElement('button'); b.textContent=c.name; if(!i) b.className='on'; tabs.appendChild(b);
+    const X=CMPX[c.id]||{}; const b=document.createElement('button'); b.textContent=X.tab||c.name; if(!i) b.className='on'; tabs.appendChild(b);
     if(c.tpl){
       const pane=document.createElement('div');
       pane.className='pane'+(i?'':' on');
@@ -7458,6 +7575,7 @@ function buildCmp(){
     const n=c.cols.length;
     // order: lead → extra → intro(범주·지원) → legend → table → guide
     let h='<div class="pane'+(i?'':' on')+'">';
+    if(X.rel) h+=X.rel;
     if(c.lead) h+=c.lead;
     if(c.extra) h+=c.extra;
     if(c.intro) h+='<div class="callout">'+c.intro+'</div>';
@@ -7475,7 +7593,9 @@ function buildCmp(){
     h+='</tbody></table></div>';
     h+='<h3 style="margin-top:20px">선정 가이드</h3><div class="grid g'+(c.guide.length>2?3:2)+'">'+c.guide.map(g=>'<div class="card"><span class="tag">'+g[0]+'</span><p>'+g[1]+'</p></div>').join('')+'</div><p class="note">'+c.foot+'</p></div>';
     box.insertAdjacentHTML('beforeend',h);
+    if(X.after){ const t=document.getElementById(X.after); if(t){ const w=document.createElement('div'); w.className='cpx-after'; w.appendChild(t.content.cloneNode(true)); box.lastElementChild.appendChild(w); } }
   });
+  cpxBind();
 }
 buildCmp();
 

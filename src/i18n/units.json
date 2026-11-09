@@ -2056,5 +2056,19 @@
     "ja": "6つのツールを<em>1つのプラットフォーム</em>に",
     "zh-Hans": "六种工具，汇成<em>一个平台</em>",
     "zh-Hant": "六種工具，匯成<em>一個平台</em>"
+  },
+  "u.a09535842951": {
+    "match": "경쟁자이지 적이 아닙니다. 퍼블릭 클라우드 · 데이터 플랫폼 · 보안 플랫폼은 Kong이 실행되고 연결되는 기반입니다. 각자 잘하는 영역은 함께 쓰고, 거버넌스 계층이 겹치는 곳에서만 경쟁합니다.",
+    "en": "<b>Competitors, not enemies.</b> Public clouds · data platforms · security platforms are where Kong runs and what it connects. Use each for what it does best; we compete only where the governance layer overlaps.",
+    "ja": "<b>競合であって敵ではありません。</b>パブリッククラウド · データプラットフォーム · セキュリティプラットフォームは、Kongが稼働し接続する基盤です。それぞれの得意領域は併用し、ガバナンス層が重なる部分でのみ競合します。",
+    "zh-Hans": "<b>是竞争者,而不是敌人。</b>公有云 · 数据平台 · 安全平台是 Kong 运行与连接的基础。各自擅长的领域可以一起使用,只有在治理层重叠的地方才会竞争。",
+    "zh-Hant": "<b>是競爭者,而不是敵人。</b>公有雲 · 資料平台 · 安全平台是 Kong 執行與連接的基礎。各自擅長的領域可以一起使用,只有在治理層重疊的地方才會競爭。"
+  },
+  "u.a7b15dcc55cb": {
+    "match": "범주 · Public Cloud. AWS · Azure · Google Cloud는 모델, 에이전트 런타임, 도구 연결, 레지스트리, 거버넌스를 한 플랫폼으로 묶어 제공합니다. 단일 클라우드 조직에는 일관된 선택지입니다. 차이는 거버넌스가 그 클라우드 밖까지 이어지는가에 있습니다.",
+    "en": "<b>Category · Public Cloud.</b> AWS · Azure · Google Cloud bundle models, agent runtimes, tool connectivity, registries and governance into one platform. For a single-cloud organization that is a coherent choice. The difference is whether governance extends beyond that cloud.",
+    "ja": "<b>カテゴリー · Public Cloud。</b>AWS · Azure · Google Cloudは、モデル、エージェントランタイム、ツール接続、レジストリ、ガバナンスを1つのプラットフォームにまとめて提供します。単一クラウドの組織には一貫した選択肢です。違いは、ガバナンスがそのクラウドの外まで続くかどうかにあります。",
+    "zh-Hans": "<b>类别 · Public Cloud。</b>AWS · Azure · Google Cloud 将模型、智能体运行时、工具连接、注册中心和治理打包成一个平台。对单一云组织而言是一致的选择。区别在于治理能否延伸到该云之外。",
+    "zh-Hant": "<b>類別 · Public Cloud。</b>AWS · Azure · Google Cloud 將模型、代理執行環境、工具連接、註冊中心和治理整合成一個平台。對單一雲端組織而言是一致的選擇。差別在於治理能否延伸到該雲端之外。"
   }
 }
