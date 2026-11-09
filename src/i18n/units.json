@@ -2049,5 +2049,12 @@
     "ja": "<b>カテゴリ・Data Platform AI Gateway。</b> Databricks Unity GatewayとSnowflake Cortex AI Gatewayは、データプラットフォームが自社のAIワークロード向けに提供するガバナンスレイヤーです。Kongはデータプラットフォームを含む組織全体のAI・APIトラフィックを一つのポリシーで扱う中立的な接続レイヤーです。機能の有無の比較であり、品質の優劣を意味しません。",
     "zh-Hans": "<b>类别 · 数据平台 AI Gateway。</b> Databricks Unity Gateway 与 Snowflake Cortex AI Gateway 是数据平台为自身 AI 工作负载提供的治理层。Kong 是中立的连接层，以统一策略治理包括数据平台在内的全组织 AI 与 API 流量。此处比较功能有无，不代表质量优劣。",
     "zh-Hant": "<b>類別 · 資料平臺 AI Gateway。</b> Databricks Unity Gateway 與 Snowflake Cortex AI Gateway 是資料平臺為自身 AI 工作負載提供的治理層。Kong 是中立的連線層，以統一策略治理包括資料平臺在內的全組織 AI 與 API 流量。此處比較功能有無，不代表品質優劣。"
+  },
+  "u.c4056c854d89": {
+    "match": "여섯 가지 도구를 하나의 플랫폼으로",
+    "en": "Six tools as <em>one platform</em>",
+    "ja": "6つのツールを<em>1つのプラットフォーム</em>に",
+    "zh-Hans": "六种工具，汇成<em>一个平台</em>",
+    "zh-Hant": "六種工具，匯成<em>一個平台</em>"
   }
 }
