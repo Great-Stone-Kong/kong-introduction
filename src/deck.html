@@ -3131,8 +3131,17 @@ html[data-theme="light"] .vr-donut .s-dn{fill:#fff}html[data-theme="light"] .vr-
 .btn.btn-inl{padding:2px 10px;font-size:12.5px;line-height:1.55;vertical-align:baseline}
 #cmp-stick{position:sticky;top:calc(var(--top) + var(--cmp-h2,70px));z-index:19;background:var(--navy);margin:0;padding:10px 0 12px;border-bottom:1px solid var(--line)}
 #cmp-tabs{margin:0;padding:0;border:0;background:transparent}
-#i-cmp .cmp-tech{margin:-2px 0 14px;font-size:15px;font-weight:700;color:var(--mark);letter-spacing:.01em}
-#i-cmp .cmp-tabhint{margin:0 0 10px;font-size:13.5px;color:var(--g300);line-height:1.55}
+#i-cmp .cmp-slogan{margin:4px 0 22px;padding:2px 0 2px 16px;border-left:3px solid var(--mark)}
+#i-cmp .cmp-pace{margin:0;font-size:clamp(19px,2.1vw,24px);font-weight:700;line-height:1.35;color:var(--heading);letter-spacing:-.01em;word-break:keep-all}
+#i-cmp .cmp-tech{margin:6px 0 0;font-size:13.5px;font-weight:700;color:var(--mark);letter-spacing:.02em;word-break:keep-all}
+html[data-lang="en"] #i-cmp .cmp-tech{font-family:var(--mono);font-size:12.5px;text-transform:uppercase;letter-spacing:.08em}
+#i-cmp .cmp-tabhint{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:0 0 10px;line-height:1.5;max-height:80px;overflow:hidden;transition:max-height .32s cubic-bezier(.2,.8,.2,1),opacity .24s,margin .32s cubic-bezier(.2,.8,.2,1)}
+#i-cmp .cmp-hint{font-size:13.5px;color:var(--g200)}
+#i-cmp .cmp-fine{font-size:12.5px;color:var(--g400);padding-left:12px;border-left:1px solid var(--line2)}
+#cmp-stick.is-stuck .cmp-tabhint{max-height:0;opacity:0;margin:0}
+@media (max-width:900px){#i-cmp .cmp-fine{padding-left:0;border-left:0;flex-basis:100%}}
+@media (prefers-reduced-motion:reduce){#i-cmp .cmp-tabhint{transition:none}}
+@media print{#cmp-stick .cmp-tabhint{max-height:none!important;opacity:1!important}}
 #i-cmp #cmp-panes{margin-top:14px}
 /* i-cmp 4축 */
 .cpx{--cc:var(--mark);--cw:var(--accent-wash,rgba(204,255,0,.08));display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:14px;row-gap:0;margin:6px 0 22px;position:relative}
@@ -4828,11 +4837,10 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 </template>
 <section class="sec" id="i-cmp" data-title="경쟁 제품 비교">
   <div class="eyebrow">Comparison</div>
-  <h2>Competitors, Not Enemies.</h2>
-  <p class="sub">We Set the Pace. Others Keep Up.</p>
-  <p class="cmp-tech">Built to Lead. Engineered to Evolve.</p>
+  <h2>적이 아닌 경쟁자</h2>
+  <div class="cmp-slogan"><p class="cmp-pace">Kong이 속도를 정하면, 시장이 따라옵니다.</p><p class="cmp-tech">앞서도록 만들고, 진화하도록 설계했습니다.</p></div>
   <div class="cmp-stick" id="cmp-stick">
-    <p class="cmp-tabhint">탭을 고르면 각 범주가 다루는 영역이 4가지 축에서 강조됩니다.<br>아래 비교는 기능 유무 기준이며 품질 우열을 뜻하지 않습니다.</p>
+    <p class="cmp-tabhint"><span class="cmp-hint">탭을 선택하면 범주별 커버 영역이 4개 축에서 강조됩니다.</span><span class="cmp-fine">기능 유무 기준 비교이며, 품질 우열과는 무관합니다.</span></p>
     <div class="tabs" data-tabs id="cmp-tabs"></div>
   </div>
   <div class="cpx" id="cpx" data-k="kong"><div class="cpx-bar" id="cpx-bar"><span></span></div><div class="cpx-card" data-p="asset"><div class="cpx-hd"><b class="cpx-n">01</b><em>Govern every asset</em></div><h4>모든 자산</h4><p>일부가 아닌 컨텍스트와 인텔리전스 전체</p><dl class="cpx-dl"><div><dt>Intelligence</dt><dd>모델 · 에이전트</dd></div><div><dt>Context</dt><dd>API · 비즈니스 프로세스<br/>MCP · 이벤트 · 데이터 레이크</dd></div></dl></div><div class="cpx-card" data-p="angle"><div class="cpx-hd"><b class="cpx-n">02</b><em>Govern every angle</em></div><h4>모든 통제 각도</h4><p>부분 체크리스트가 아닌 전체 통제면</p><div class="cpx-ch"><span>Security</span><span>Cost</span><span>Discovery</span><span>Identity</span><span>Visibility</span><span>Resilience</span></div></div><div class="cpx-card" data-p="scale"><div class="cpx-hd"><b class="cpx-n">03</b><em>Govern every scale</em></div><h4>모든 규모</h4><p>수요가 몰려도 무너지지 않는 거버넌스</p><div class="cpx-ch"><span>Performance</span><span>High availability</span><span>Battle-tested infra</span></div></div><i class="cpx-ln" style="grid-column:1"></i><i class="cpx-ln" style="grid-column:2"></i><i class="cpx-ln" style="grid-column:3"></i><div class="cpx-wl" data-p="workload"><div class="cpx-wl-l"><div class="cpx-hd"><b class="cpx-n">04</b><em>Govern every workload</em></div><h4>모든 워크로드</h4><p>자산 · 각도 · 규모를 에이전트가 실행되는 모든 곳에</p></div><div class="cpx-wl-r"><span class="cpx-lb">모든 환경에서 실행</span><div class="cpx-ch k"><span>Cloud</span><span>Multi-cloud</span><span>On-prem</span><span>Edge</span><span>Air-gapped</span></div></div></div><div class="cpx-bar2" id="cpx-bar2"><span></span><em>일부 환경</em></div></div>
@@ -9735,6 +9743,10 @@ const VR_TIERS={
   const sec=document.getElementById('i-cmp'); if(!sec) return; const h2=sec.querySelector(':scope > h2'); if(!h2) return;
   const fit=()=>sec.style.setProperty('--cmp-h2',h2.offsetHeight+'px');
   fit(); window.addEventListener('resize',fit); if(window.ResizeObserver) new ResizeObserver(fit).observe(h2);
+  const st=document.getElementById('cmp-stick');
+  if(st){ let raf=0; const chk=()=>{ raf=0; const top=parseFloat(getComputedStyle(st).top)||0, r=st.getBoundingClientRect(), sr=sec.getBoundingClientRect();
+      st.classList.toggle('is-stuck', r.top<=top+1 && sr.top<r.top-4 && sr.bottom>r.bottom); };
+    document.addEventListener('scroll',()=>{ if(!raf) raf=requestAnimationFrame(chk); },{capture:true,passive:true}); chk(); }
 })();
 
 /* ---------- AI 도구 연동 선택 ---------- */
