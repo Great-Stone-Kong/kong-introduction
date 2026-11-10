@@ -14,6 +14,7 @@
 - AI Management: EEでは左メニューの概要のみ活性、他は非活性。AI Cost Management · Catalog · AI Registry にのみ「EE 予定」を表示。Konnectではバッジなしで全セクション活性
 - AI Management > 活用事例: 6つの図を元のアーキテクチャ（Gateway · Context Mesh · Management plane）に合わせて再構成
 - AI Management > 活用事例: 閉じタグ誤りでソフトウェアファクトリーだけ表示されていた問題を修正。6つの図がタブ切替で表示されるよう復元
+- AI Management > 活用事例: 共通グリッド · 矢印 · 下部 Konnect バンドで図を整え、EN など多言語ラベルをボックス幅に合わせて短縮
 
 ## 2026.11.09.6af12729
 

@@ -6071,5 +6071,20 @@
   "m.abb7f29dad4f": "모든 요청 · 프롬프트가 모델 · MCP · 에이전트에 도달하기 전 동일 파이프라인",
   "m.85d3f53ad5cc": "모든 단계의 모델 · MCP · API 호출. 비용 · 보안 · 관측 · 복원력 정책 집행",
   "m.5975e126f8e8": "코딩 하네스와 에이전트 스웜 관리부터 에이전트 수익화, MCP 기반 엔터프라이즈 연결까지 여섯 가지 사례로 정리합니다. 도식은 Kong AI Gateway · Context Mesh · Konnect Management plane의 역할을 사례별로 보여 줍니다.",
-  "m.1022d100a69c": "감사인은 Linford &amp; Co LLP입니다. 자체 호스팅 Gateway의 감사 범위는 Kong 자체 통제(보안 개발, 소스코드 무결성, 취약점 관리 등)이며, 고객의 런타임 인프라·네트워크·물리 보안은 고객 책임입니다(리포트의 CUEC, Complementary User Entity Controls). 즉 제품과 개발 프로세스를 다루고, 고객 설치 환경은 범위 밖입니다."
+  "m.1022d100a69c": "감사인은 Linford &amp; Co LLP입니다. 자체 호스팅 Gateway의 감사 범위는 Kong 자체 통제(보안 개발, 소스코드 무결성, 취약점 관리 등)이며, 고객의 런타임 인프라·네트워크·물리 보안은 고객 책임입니다(리포트의 CUEC, Complementary User Entity Controls). 즉 제품과 개발 프로세스를 다루고, 고객 설치 환경은 범위 밖입니다.",
+  "m.44917079c55a": "하네스마다 하나의 엔드포인트",
+  "m.dac7e59f33a2": "개발자 · 팀별 아이덴티티",
+  "m.1b705cb50130": "팀별 모델 허용 목록",
+  "m.59eab67d57da": "토큰 예산 · 레이트 리밋",
+  "m.25da9b06890c": "시크릿 · PII 가드레일",
+  "m.6df05652feaa": "제공사 간 폴백",
+  "m.78e9c9be012d": "단일 MCP 진입점",
+  "m.bf2b202db8a7": "클라이언트별 OAuth",
+  "m.3da48bdf3921": "레이트 리밋 · 쿼터",
+  "m.fa67aaee1e1e": "도구 호출 로그",
+  "m.30a915f41ef4": "토큰 교환 · OBO",
+  "m.3934a82a59ba": "API → MCP 생성",
+  "m.f22acccec635": "API+MCP 합성",
+  "m.c819a46d57fe": "Code Mode 서빙",
+  "m.5e62caf6af77": "기존 IdP"
 }
