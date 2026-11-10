@@ -44,7 +44,7 @@
   --diag-wash-sky:rgba(63,142,252,.06); --diag-wash-sky2:rgba(63,142,252,.07); --diag-wash-amber:rgba(255,184,107,.04); --diag-wash-amber2:rgba(255,184,107,.05); --diag-wash-amber3:rgba(255,184,107,.08); --diag-wash-olive:rgba(122,161,22,.08); --diag-wash-lime:rgba(204,255,0,.03); --diag-wash-lime2:rgba(204,255,0,.045); --diag-wash-redis:rgba(220,56,45,.06); --diag-wash-violet:rgba(155,92,255,.05); --diag-shade:rgba(0,0,0,.18);
   --font:'Funnel Sans','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
   --mono:'Roboto Mono',ui-monospace,Menlo,Consolas,monospace;
-  --top:64px; --side:264px;
+  --top:64px; --side:264px; --rail:76px;
 }
 /* Light: konghq.com tokens — bg #CDD4CB, nav #BCC2BA, gray-50 #E7EDE5, lime fills only */
 html[data-theme="light"]{
@@ -93,7 +93,7 @@ a:hover{text-decoration:underline}
 b,strong{color:var(--strong);font-weight:700}
 
 /* top bar */
-.topbar{position:fixed;top:0;left:0;right:0;height:var(--top);z-index:50;background:var(--topbar-bg);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:32px;padding:0 32px}
+.topbar{position:fixed;top:0;left:var(--rail);right:0;height:var(--top);z-index:50;background:var(--topbar-bg);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:32px;padding:0 32px}
 .brand{display:flex;align-items:center;gap:12px;cursor:pointer;flex:none}
 .brand svg{height:26px;width:auto;display:block}
 .brand span{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g400);border-left:1px solid var(--line2);padding-left:12px;white-space:nowrap}
@@ -105,14 +105,26 @@ b,strong{color:var(--strong);font-weight:700}
 .menu-btn{display:none;font-family:var(--font);font-weight:700;font-size:13px;color:var(--accent);background:none;border:1px solid var(--line2);border-radius:999px;padding:6px 14px;cursor:pointer;flex:none}
 
 /* layout */
+
+/* 좌측 레일 (Home · AI · API) — achive/plans/nav-rail-ia.md */
+.nr{position:fixed;top:0;bottom:0;left:0;width:var(--rail);z-index:55;background:var(--nr-bg,#000A04);border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 0}
+html[data-theme="light"] .nr{--nr-bg:#101110;border-right-color:#101110}
+.nr-b{width:60px;border:0;background:none;color:#B7BDB5;display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 0;border-radius:10px;cursor:pointer;font:800 11px var(--font);letter-spacing:.06em;transition:background .18s cubic-bezier(.2,.8,.2,1),color .18s cubic-bezier(.2,.8,.2,1)}
+.nr-b svg{width:24px;height:24px;display:block;fill:currentColor}
+.nr-b:hover{color:#fff;background:rgba(255,255,255,.06)}
+.nr-b.on{color:#CCFF00;background:rgba(204,255,0,.12)}
+.nr-b:focus-visible{outline:2px solid #CCFF00;outline-offset:2px}
+.nr-home{margin-bottom:6px}
+.nr-home svg{width:30px;height:27px;color:#CCFF00}
+.nr-gap{flex:1}
 .shell{position:relative;z-index:1;display:flex;padding-top:var(--top);min-height:100vh}
-.side{position:fixed;top:var(--top);bottom:0;left:0;width:var(--side);padding:32px 16px 32px 32px;overflow-y:auto;border-right:1px solid var(--line);background:var(--side-bg)}
+.side{position:fixed;top:var(--top);bottom:0;left:var(--rail);width:var(--side);padding:32px 16px 32px 32px;overflow-y:auto;border-right:1px solid var(--line);background:var(--side-bg)}
 .side h6{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:8px}
 .side h6::before{content:"";width:6px;height:6px;background:var(--mark)}
 .side a{display:block;font-size:14px;font-weight:400;line-height:1.4;color:var(--g400);padding:8px 12px;margin-left:-12px;border-left:2px solid transparent;cursor:pointer}
 .side a:hover{color:var(--heading);text-decoration:none}
 .side a.on{color:var(--accent);border-left-color:var(--accent);font-weight:700;background:linear-gradient(90deg,var(--accent-soft),transparent)}
-.main{margin-left:var(--side);width:calc(100% - var(--side));padding:48px 56px 80px;max-width:1240px}
+.main{margin-left:calc(var(--rail) + var(--side));width:calc(100% - var(--rail) - var(--side));padding:48px 56px 80px;max-width:1240px}
 .page{display:none}
 .page.on{display:block;animation:fade .3s ease}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
@@ -227,7 +239,12 @@ tr.k td{background:rgba(204,255,0,.06)}
   .topbar{padding:0 16px;gap:12px}
   .brand span{display:none}
   .menu-btn{display:block}
-  .side{transform:translateX(-100%);transition:.25s;width:280px;z-index:60;background:var(--navy);padding-left:24px}
+  :root{--rail:0px}
+  .nr{top:auto;right:0;width:auto;height:60px;flex-direction:row;justify-content:space-around;padding:4px 8px;border-right:0;border-top:1px solid var(--line)}
+  html[data-theme="light"] .nr{border-top-color:#101110}
+  .nr-b{flex:1;width:auto;padding:4px 0}.nr-home{margin:0}.nr-home svg{width:24px;height:22px}.nr-gap{display:none}
+  .side{transform:translateX(-100%);transition:.25s;width:280px;z-index:60;background:var(--navy);padding-left:24px;bottom:60px}
+  .main{padding-bottom:116px!important}
   .side.open{transform:none}
   .main{margin-left:0;width:100%;padding:32px 16px 56px}
   .g2,.g3,.g4{grid-template-columns:1fr}
@@ -2778,7 +2795,7 @@ html[data-printing] [data-print="omit"]{display:none!important}
   @page{size:A4;margin:12mm}
   .only-print{display:block!important}
   .no-print,
-  .topbar,.side,.navdd,.top-tools,.menu-btn,.orb,
+  .topbar,.side,.nr,.navdd,.top-tools,.menu-btn,.orb,
   body::before,
   .modal,.lsw,.vbox,
   .tabs,.dm-tabs,.dm-cases,.egt-nav,.egt-nav-label,
@@ -3437,6 +3454,7 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
 <symbol id="ic-onprem" viewBox="0 0 24 24"><path fill="#B8F000" fill-rule="evenodd" clip-rule="evenodd" d="M11.2754.169929c.2763-.226043.6729-.226043.9492 0L23.2246 9.16993C23.3987 9.31238 23.5 9.52506 23.5 9.75001V20.75C23.5 22.2692 22.2692 23.5 20.75 23.5H2.75C1.23079 23.5 0 22.2692 0 20.75V9.75001c0-.22495.101289-.43763.275391-.58008L11.2754.169929ZM1.5 10.1055V20.75c0 .6908.55921 1.25 1.25 1.25H20.75c.6908 0 1.25-.5592 1.25-1.25V10.1055L11.75 1.71876 1.5 10.1055ZM19.25 12.75c.8284 0 1.5.6716 1.5 1.5V19.25c0 .7767-.5903 1.4154-1.3467 1.4922L19.25 20.75H4.25l-.15332-.0078C3.34028 20.6654 2.75 20.0267 2.75 19.25V14.25c0-.8284.67157-1.5 1.5-1.5H19.25ZM4.25 19.25H19.25V14.25H4.25V19.25ZM6.75 16c.41421 0 .75.3358.75.75v.0098c0 .4142-.33579.75-.75.75s-.75-.3358-.75-.75V16.75c0-.4142.33579-.75.75-.75ZM9.75 16c.4142 0 .75.3358.75.75v.0098c0 .4142-.3358.75-.75.75s-.75-.3358-.75-.75V16.75c0-.4142.3358-.75.75-.75Z"/></symbol>
 <symbol id="ic-databricks" viewBox="0 0 24 24"><path fill="#FF3621" d="M.95 14.184 12 20.403l9.919-5.55v2.21L12 22.662l-10.484-5.96-.565.308v.77L12 24l11.05-6.218v-4.317l-.515-.309L12 19.118l-9.867-5.653v-2.21L12 16.805l11.05-6.218V6.32l-.515-.308L12 11.974 2.647 6.681 12 1.388l7.76 4.368.668-.411v-.566L12 0 .95 6.27v.72L12 13.207l9.919-5.55v2.26L12 15.52 1.516 9.56l-.565.308z"/></symbol>
 <!-- Kong Iconography: gateway --><symbol id="ki-gateway" viewBox="0 0 24 24"><path d="M5 2.75C3.75736 2.75 2.75 3.75736 2.75 5V14.9412C2.75 15.3554 2.41421 15.6912 2 15.6912C1.58579 15.6912 1.25 15.3554 1.25 14.9412V5C1.25 2.92894 2.92893 1.25 5 1.25H14.9412C15.3554 1.25 15.6912 1.58579 15.6912 2C15.6912 2.41421 15.3554 2.75 14.9412 2.75H5Z" fill="currentColor"/> <path d="M7.5293 6.27942C6.83894 6.27942 6.2793 6.83906 6.2793 7.52942V18.4706C6.2793 18.8848 5.94351 19.2206 5.5293 19.2206C5.11508 19.2206 4.7793 18.8848 4.7793 18.4706V7.52942C4.7793 6.01064 6.01051 4.77942 7.5293 4.77942H18.4705C18.8847 4.77942 19.2205 5.11521 19.2205 5.52942C19.2205 5.94363 18.8847 6.27942 18.4705 6.27942H7.5293Z" fill="currentColor"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0591 8.30881C9.09258 8.30881 8.30908 9.09231 8.30908 10.0588V21C8.30908 21.9665 9.09259 22.75 10.0591 22.75H21.0003C21.9668 22.75 22.7503 21.9665 22.7503 21V10.0588C22.7503 9.09231 21.9668 8.30881 21.0003 8.30881H10.0591ZM9.80908 10.0588C9.80908 9.92074 9.92101 9.80881 10.0591 9.80881H21.0003C21.1383 9.80881 21.2503 9.92074 21.2503 10.0588V21C21.2503 21.1381 21.1383 21.25 21.0003 21.25H10.0591C9.92101 21.25 9.80908 21.1381 9.80908 21V10.0588Z" fill="currentColor"/></symbol><!-- Kong Iconography: event-gateway --><symbol id="ki-event-gateway" viewBox="0 0 24 24"><g> <path d="M4 23.75C1.92893 23.75 0.25 22.0711 0.25 20C0.250001 17.9289 1.92893 16.25 4 16.25C5.13175 16.25 6.14543 16.7522 6.83301 17.5449L16.4307 12.1494C16.3141 11.7871 16.25 11.4011 16.25 11C16.25 10.7317 16.2794 10.4702 16.333 10.2178L7.06738 6.15723C6.38867 7.12053 5.26796 7.75 4 7.75C1.92893 7.75 0.250002 6.07107 0.250002 4C0.250002 1.92893 1.92893 0.249998 4 0.249998C6.07107 0.25 7.75 1.92893 7.75 4C7.75 4.26861 7.72165 4.53059 7.66797 4.7832L16.9336 8.84375C17.6123 7.88034 18.732 7.25 20 7.25C22.0711 7.25 23.75 8.92893 23.75 11C23.75 13.0711 22.0711 14.75 20 14.75C18.8687 14.75 17.8555 14.2482 17.168 13.4561L7.57031 18.8506C7.68684 19.2128 7.75 19.599 7.75 20C7.75 22.0711 6.07107 23.75 4 23.75ZM4 6.25C5.24264 6.25 6.25 5.24264 6.25 4C6.25 2.75736 5.24264 1.75 4 1.75C2.75736 1.75 1.75 2.75736 1.75 4C1.75 5.24264 2.75736 6.25 4 6.25ZM20 13.25C21.2426 13.25 22.25 12.2426 22.25 11C22.25 9.75736 21.2426 8.75 20 8.75C18.7574 8.75 17.75 9.75736 17.75 11C17.75 11.3817 17.8459 11.7407 18.0137 12.0557C18.0238 12.0709 18.0339 12.0863 18.043 12.1025C18.0486 12.1125 18.0535 12.1227 18.0586 12.1328C18.4489 12.8003 19.171 13.25 20 13.25ZM4 22.25C5.24264 22.25 6.25 21.2426 6.25 20C6.25 19.6214 6.15541 19.2652 5.99023 18.9521C5.97824 18.9345 5.9667 18.9164 5.95606 18.8975C5.94889 18.8847 5.94287 18.8714 5.93652 18.8584C5.54502 18.1957 4.82544 17.75 4 17.75C2.75736 17.75 1.75 18.7574 1.75 20C1.75 21.2426 2.75736 22.25 4 22.25Z" fill="currentColor"/> </g></symbol><!-- Kong Iconography: mcp-client --><symbol id="ki-mcp-client" viewBox="0 0 24 24"><path d="M19 2.25C20.4877 2.25 21.7029 3.44303 21.7451 4.9209C21.7478 4.94692 21.75 4.97326 21.75 5V11C21.75 11.4142 21.4142 11.75 21 11.75C20.5858 11.75 20.25 11.4142 20.25 11V5C20.25 4.31421 19.6858 3.75 19 3.75H5C4.31421 3.75 3.75 4.31421 3.75 5V16.25H10C10.4142 16.25 10.75 16.5858 10.75 17C10.75 17.4142 10.4142 17.75 10 17.75H1.75V19C1.75 19.6858 2.31421 20.25 3 20.25H12C12.4142 20.25 12.75 20.5858 12.75 21C12.75 21.4142 12.4142 21.75 12 21.75H3C1.48579 21.75 0.25 20.5142 0.25 19V17C0.25 16.5858 0.585786 16.25 1 16.25H2.25V5C2.25 3.48579 3.48579 2.25 5 2.25H19ZM14.4072 16.4697C14.7001 16.1768 15.1749 16.1768 15.4678 16.4697C15.7606 16.7626 15.7606 17.2374 15.4678 17.5303L14.998 18H19.75C20.1642 18 20.5 18.3358 20.5 18.75C20.4999 19.1641 20.1641 19.5 19.75 19.5H14.998L15.4678 19.9697C15.7606 20.2626 15.7607 20.7374 15.4678 21.0303C15.1749 21.323 14.7001 21.3231 14.4072 21.0303L12.6572 19.2803C12.6252 19.2483 12.5973 19.2136 12.5723 19.1777C12.5416 19.1337 12.5149 19.0864 12.4941 19.0361C12.4734 18.9859 12.4586 18.9337 12.4492 18.8809C12.4417 18.8384 12.4375 18.7946 12.4375 18.75C12.4375 18.7048 12.4415 18.6602 12.4492 18.6172C12.4583 18.5664 12.4726 18.5162 12.4922 18.4678L12.4961 18.458C12.5169 18.4089 12.543 18.3625 12.5732 18.3193C12.5978 18.2843 12.6259 18.251 12.6572 18.2197L14.4072 16.4697ZM20.5322 12.9697C20.8251 12.6768 21.2999 12.6768 21.5928 12.9697L23.3428 14.7197C23.3739 14.7509 23.4013 14.7845 23.4258 14.8193C23.4571 14.8639 23.4837 14.9119 23.5049 14.9629C23.5256 15.0129 23.5404 15.0646 23.5498 15.1172C23.5575 15.1603 23.5625 15.2047 23.5625 15.25C23.5625 15.2947 23.5573 15.3383 23.5498 15.3809C23.5404 15.4338 23.5257 15.4858 23.5049 15.5361C23.484 15.5865 23.4575 15.6336 23.4268 15.6777C23.4018 15.7134 23.3746 15.7484 23.3428 15.7803L21.5928 17.5303C21.2999 17.8231 20.8251 17.823 20.5322 17.5303C20.2393 17.2374 20.2394 16.7626 20.5322 16.4697L21.002 16H16.25C15.8359 16 15.5001 15.6641 15.5 15.25C15.5 14.8358 15.8358 14.5 16.25 14.5H21.002L20.5322 14.0303C20.2393 13.7374 20.2394 13.2626 20.5322 12.9697ZM12.25 6.375C12.4867 6.375 12.7027 6.50896 12.8086 6.7207L13.7988 8.7002L15.7793 9.69141C15.991 9.79728 16.125 10.0133 16.125 10.25C16.125 10.4867 15.991 10.7027 15.7793 10.8086L13.7988 11.7988L12.8086 13.7793C12.7027 13.991 12.4867 14.125 12.25 14.125C12.0133 14.125 11.7973 13.991 11.6914 13.7793L10.7002 11.7988L8.7207 10.8086C8.50896 10.7027 8.375 10.4867 8.375 10.25C8.375 10.0133 8.50896 9.79728 8.7207 9.69141L10.7002 8.7002L11.6914 6.7207L11.7354 6.64453C11.8509 6.47712 12.0429 6.375 12.25 6.375ZM11.7256 9.44629C11.6651 9.56714 11.5671 9.66512 11.4463 9.72559L10.3965 10.25L11.4463 10.7744L11.5322 10.8262C11.6137 10.8849 11.6802 10.963 11.7256 11.0537L12.25 12.1025L12.7744 11.0537L12.8262 10.9678C12.8849 10.8863 12.963 10.8198 13.0537 10.7744L14.1025 10.25L13.0537 9.72559C12.9329 9.66512 12.8349 9.56714 12.7744 9.44629L12.25 8.39648L11.7256 9.44629Z" fill="currentColor"/></symbol><!-- Kong Iconography: dev-portal --><symbol id="ki-dev-portal" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 8.25C9.92893 8.25 8.25 9.92893 8.25 12C8.25 14.0711 9.92893 15.75 12 15.75C14.0711 15.75 15.75 14.0711 15.75 12C15.75 9.92893 14.0711 8.25 12 8.25ZM9.75 12C9.75 10.7574 10.7574 9.75 12 9.75C13.2426 9.75 14.25 10.7574 14.25 12C14.25 13.2426 13.2426 14.25 12 14.25C10.7574 14.25 9.75 13.2426 9.75 12Z" fill="currentColor"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M6 2.25C3.92893 2.25 2.25 3.92893 2.25 6V18C2.25 20.0711 3.92893 21.75 6 21.75H18C20.0711 21.75 21.75 20.0711 21.75 18V6C21.75 3.92893 20.0711 2.25 18 2.25H6ZM3.75 6C3.75 4.75736 4.75736 3.75 6 3.75H18C19.2426 3.75 20.25 4.75736 20.25 6V18C20.25 19.2426 19.2426 20.25 18 20.25H6C4.75736 20.25 3.75 19.2426 3.75 18V6Z" fill="currentColor"/></symbol><!-- Kong Iconography: insomnia --><symbol id="ki-insomnia" viewBox="0 0 24 24"><path d="M12 0C5.37258 0 0 5.37258 0 12C0 18.6275 5.37258 24 12 24C18.6275 24 24 18.6275 24 12C24 5.37258 18.6275 0 12 0ZM12 1.22034C17.9534 1.22034 22.7797 6.04656 22.7797 12C22.7797 17.9534 17.9534 22.7797 12 22.7797C6.04656 22.7797 1.22034 17.9534 1.22034 12C1.22034 6.04656 6.04656 1.22034 12 1.22034Z" fill="currentColor"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M12.1341 3.45776C16.852 3.45776 20.6766 7.28229 20.6766 12.0002C20.6766 16.718 16.852 20.5425 12.1341 20.5425C7.41635 20.5425 3.5918 16.718 3.5918 12.0002C3.5918 10.8471 3.82022 9.74747 4.23431 8.74397C4.83892 9.56732 5.81396 10.1018 6.91382 10.1018C8.74856 10.1018 10.2359 8.61452 10.2359 6.77979C10.2359 5.67992 9.70136 4.70489 8.87793 4.10029C9.88151 3.6862 10.9812 3.45776 12.1341 3.45776Z" fill="currentColor"/></symbol>
+<!-- Kong Iconography: build-anywhere --><symbol id="ki-build-anywhere" viewBox="0 0 24 24"><path d="M4.929 6.929C5.441 6.929 5.953 6.734 6.343 6.343C7.124 5.562 7.124 4.296 6.343 3.515C5.953 3.124 5.441 2.929 4.929 2.929C4.417 2.929 3.905 3.124 3.515 3.515C2.734 4.296 2.734 5.562 3.515 6.343C3.905 6.734 4.417 6.929 4.929 6.929ZM4 12C4 10.895 3.105 10 2 10C0.895 10 0 10.895 0 12C0 13.105 0.895 14 2 14C3.105 14 4 13.105 4 12ZM22 10C20.895 10 20 10.895 20 12C20 13.105 20.895 14 22 14C23.105 14 24 13.105 24 12C24 10.895 23.105 10 22 10ZM12 4C13.105 4 14 3.105 14 2C14 0.895 13.105 0 12 0C10.895 0 10 0.895 10 2C10 3.105 10.895 4 12 4ZM19.071 6.929C19.583 6.929 20.095 6.734 20.485 6.343C21.266 5.562 21.266 4.296 20.485 3.515C20.094 3.124 19.583 2.929 19.071 2.929C18.559 2.929 18.047 3.124 17.657 3.515C16.876 4.296 16.876 5.562 17.657 6.343C18.047 6.734 18.559 6.929 19.071 6.929ZM19.071 17.071C18.559 17.071 18.047 17.266 17.657 17.657C16.876 18.438 16.876 19.704 17.657 20.485C18.048 20.876 18.559 21.071 19.071 21.071C19.583 21.071 20.095 20.876 20.485 20.485C21.266 19.704 21.266 18.438 20.485 17.657C20.095 17.266 19.583 17.071 19.071 17.071ZM4.929 17.071C4.417 17.071 3.905 17.266 3.515 17.657C2.734 18.438 2.734 19.704 3.515 20.485C3.906 20.876 4.417 21.071 4.929 21.071C5.441 21.071 5.953 20.876 6.343 20.485C7.124 19.704 7.124 18.438 6.343 17.657C5.953 17.266 5.441 17.071 4.929 17.071ZM12 20C10.895 20 10 20.895 10 22C10 23.105 10.895 24 12 24C13.105 24 14 23.105 14 22C14 20.895 13.105 20 12 20Z" fill="currentColor"/><path d="M10 10H14V14H10V10Z" fill="currentColor"/></symbol>
 <!-- Kong Iconography: professional --><symbol id="ki-professional" viewBox="0 0 24 24"><g> <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0286 3.80352C11.4132 3.95726 11.6004 4.39368 11.4466 4.77831L8.87663 11.2083C8.8004 11.399 8.64928 11.5502 8.45856 11.6264L2.02856 14.1964C1.64393 14.3501 1.2075 14.1629 1.05377 13.7783C0.900035 13.3937 1.08721 12.9573 1.47184 12.8035L7.60315 10.3529L10.0538 4.2216C10.2075 3.83697 10.6439 3.64979 11.0286 3.80352Z" fill="currentColor"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M10.4718 3.80352C10.8565 3.64979 11.2929 3.83697 11.4466 4.2216L13.8972 10.3529L20.0286 12.8035C20.4132 12.9573 20.6004 13.3937 20.4466 13.7783C20.2929 14.1629 19.8565 14.3501 19.4718 14.1964L13.0418 11.6264C12.8511 11.5502 12.7 11.399 12.6238 11.2083L10.0538 4.77831C9.90003 4.39368 10.0872 3.95726 10.4718 3.80352Z" fill="currentColor"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M20.4466 13.2216C20.6004 13.6062 20.4132 14.0427 20.0286 14.1964L13.8972 16.647L11.4466 22.7783C11.2929 23.1629 10.8565 23.3501 10.4718 23.1964C10.0872 23.0427 9.90003 22.6062 10.0538 22.2216L12.6238 15.7916C12.7 15.6009 12.8511 15.4498 13.0418 15.3735L19.4718 12.8035C19.8565 12.6498 20.2929 12.837 20.4466 13.2216Z" fill="currentColor"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M1.05377 13.2216C1.2075 12.837 1.64393 12.6498 2.02856 12.8035L8.45856 15.3735C8.64928 15.4498 8.8004 15.6009 8.87663 15.7916L11.4466 22.2216C11.6004 22.6062 11.4132 23.0427 11.0286 23.1964C10.6439 23.3501 10.2075 23.1629 10.0538 22.7783L7.60315 16.647L1.47184 14.1964C1.08721 14.0427 0.900035 13.6062 1.05377 13.2216Z" fill="currentColor"/> <path d="M20.5 1C20.5 0.585786 20.1642 0.25 19.75 0.25C19.3358 0.25 19 0.585786 19 1V3.75H16.25C15.8358 3.75 15.5 4.08579 15.5 4.5C15.5 4.91421 15.8358 5.25 16.25 5.25H19V8C19 8.41421 19.3358 8.75 19.75 8.75C20.1642 8.75 20.5 8.41421 20.5 8V5.25H23.25C23.6642 5.25 24 4.91421 24 4.5C24 4.08579 23.6642 3.75 23.25 3.75H20.5V1Z" fill="currentColor"/> </g></symbol>
 <symbol id="kong-logo" viewBox="0 0 429 137"><path d="M49.6,113l-3.7,4.7,8.4,13.2-.9,6.1h35.6l2.5-6.1-14.3-17.9h-27.6Z"/><path d="M69.1,32.7l-12.9,22.7,62.9,74.8-1.8,6.9h28.8l5.2-24.3L84.1,32.7h-15Z"/><path d="M77.7,15.6l-6.1,11.3h15.2l26.1,31.2,15.5-12.8v-8.1l-5.4-7.6,4-4.2L95.8.7l-18.2,14.9Z"/><path d="M30.9,78.8h-8.5L0,107.4v29.6h24l4.2-5.5,18.5-24.1h26.8l8.2-12.7-29.1-34.7-21.9,18.9Z"/><path fill-rule="evenodd" d="M260.4,94h20.9v-32.2h-20.9v32.2ZM261.1,106.9c-5.8,0-8.8-1-11.3-3.6-3.7-3.8-5.2-9-5.2-25.3s1.5-21.5,5.2-25.4c2.4-2.5,5.5-3.5,11.3-3.5h19.4c5.8,0,8.8,1,11.3,3.5,3.7,3.9,5.2,9,5.2,25.4s-1.5,21.5-5.2,25.3c-2.5,2.6-5.5,3.6-11.3,3.6h-19.4Z"/><path fill-rule="evenodd" d="M344.3,67.3v39.6h15.9v-40.8c0-8.5-.9-11.5-3.3-13.8-2.2-2.2-5.3-3.2-10.2-3.2h-14s-8,7.3-8,7.3v-7.3h-15.8v57.8h15.9v-45.1h19.5v5.6h0Z"/><path fill-rule="evenodd" d="M219.7,33.2h18.9l-27.2,34.6,28.3,39.1h-20.1l-21.6-30.7h-5.1s0,30.7,0,30.7h-17V33.2h17v28.6h5.1l21.6-28.6Z"/><path fill-rule="evenodd" d="M409,49.1v7.3l-8-7.3h-11.9c-5.7,0-9.1,1-11.7,3.5-3.4,3.6-5.1,11.3-5.1,25.6s1.4,21.7,4.7,25.1c2.6,2.5,5.7,3.6,11.8,3.6h20.2v8.3s-28,0-28,0v3.4s7.3,8.1,7.3,8.1h21.9c5.8,0,9.1-1,11.2-3.2,2.6-2.7,3.6-4.4,3.6-14.3v-60h-16,0ZM409.1,94h-20.9v-32.2h20.9v32.2h0Z"/></symbol>
 <symbol id="kong-mark" viewBox="0 0 153 137"><path d="M50.5,112.9l-3.7,4.7,8.4,13.2-.9,6.1h35.6l2.5-6.1-14.3-17.9s-27.6,0-27.6,0Z"/><path d="M69.9,32.6l-12.9,22.7,62.9,74.8-1.8,6.9h28.8l5.2-24.3L84.9,32.5h-15Z"/><path d="M78.5,15.5l-6.1,11.3h15.2l26.1,31.2,15.5-12.8v-8.1l-5.4-7.6,4-4.2L96.7.6l-18.2,14.9Z"/><path d="M31.7,78.7h-8.5L.8,107.3v29.6h24l4.2-5.5,18.5-24.1h26.8l8.3-12.7-29.1-34.7-21.9,18.9h0Z"/></symbol>
@@ -3451,11 +3469,13 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
 </defs>
 </svg>
 
+<nav class="nr" id="nr" aria-label="Products">
+  <button type="button" class="nr-b nr-home" data-rail="kong" title="Home"><svg viewBox="0 0 153 137" aria-hidden="true"><use href="#kong-mark" width="153" height="137"/></svg><span>Home</span></button>
+  <button type="button" class="nr-b" data-rail="ai" title="AI"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ki-professional"/></svg><span>AI</span></button>
+  <button type="button" class="nr-b" data-rail="api" title="API"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ki-build-anywhere"/></svg><span>API</span></button>
+  <span class="nr-gap"></span>
+</nav>
 <header class="topbar">
-  <div class="brand" onclick="go('company')" title="Kong">
-    <svg viewBox="0 0 429 137" aria-label="Kong"><g fill="var(--brand)"><path d="M49.6,113l-3.7,4.7,8.4,13.2-.9,6.1h35.6l2.5-6.1-14.3-17.9h-27.6Z"/><path d="M69.1,32.7l-12.9,22.7,62.9,74.8-1.8,6.9h28.8l5.2-24.3L84.1,32.7h-15Z"/><path d="M77.7,15.6l-6.1,11.3h15.2l26.1,31.2,15.5-12.8v-8.1l-5.4-7.6,4-4.2L95.8.7l-18.2,14.9Z"/><path d="M30.9,78.8h-8.5L0,107.4v29.6h24l4.2-5.5,18.5-24.1h26.8l8.2-12.7-29.1-34.7-21.9,18.9Z"/><path fill-rule="evenodd" d="M260.4,94h20.9v-32.2h-20.9v32.2ZM261.1,106.9c-5.8,0-8.8-1-11.3-3.6-3.7-3.8-5.2-9-5.2-25.3s1.5-21.5,5.2-25.4c2.4-2.5,5.5-3.5,11.3-3.5h19.4c5.8,0,8.8,1,11.3,3.5,3.7,3.9,5.2,9,5.2,25.4s-1.5,21.5-5.2,25.3c-2.5,2.6-5.5,3.6-11.3,3.6h-19.4Z"/><path fill-rule="evenodd" d="M344.3,67.3v39.6h15.9v-40.8c0-8.5-.9-11.5-3.3-13.8-2.2-2.2-5.3-3.2-10.2-3.2h-14s-8,7.3-8,7.3v-7.3h-15.8v57.8h15.9v-45.1h19.5v5.6h0Z"/><path fill-rule="evenodd" d="M219.7,33.2h18.9l-27.2,34.6,28.3,39.1h-20.1l-21.6-30.7h-5.1s0,30.7,0,30.7h-17V33.2h17v28.6h5.1l21.6-28.6Z"/><path fill-rule="evenodd" d="M409,49.1v7.3l-8-7.3h-11.9c-5.7,0-9.1,1-11.7,3.5-3.4,3.6-5.1,11.3-5.1,25.6s1.4,21.7,4.7,25.1c2.6,2.5,5.7,3.6,11.8,3.6h20.2v8.3s-28,0-28,0v3.4s7.3,8.1,7.3,8.1h21.9c5.8,0,9.1-1,11.2-3.2,2.6-2.7,3.6-4.4,3.6-14.3v-60h-16,0ZM409.1,94h-20.9v-32.2h20.9v32.2h0Z"/></g></svg>
-    <span>The AI Connectivity Company</span>
-  </div>
   <nav class="topnav" id="topnav"></nav>
   <div class="top-tools">
     <div class="zm" id="zm" role="group" aria-label="화면 배율"><button type="button" data-z="-1" title="축소" aria-label="축소"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 12h12"/></svg></button><button type="button" class="zv" data-z="0" title="100%로 초기화">100%</button><button type="button" data-z="1" title="확대" aria-label="확대"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 12h12M12 6v12"/></svg></button></div>
@@ -3470,7 +3490,7 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
   <main class="main" id="main">
 
 <!-- ============ 1. KONG 기업 소개 ============ -->
-<div class="page" id="p-company" data-label="Kong 기업 소개">
+<div class="page" id="p-company" data-rail="kong" data-label="Kong 기업 소개">
 
 <section class="sec hero" id="overview" data-title="개요">
   <div class="orb"></div>
@@ -3682,7 +3702,7 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
 
 
 <!-- ============ 2. GATEWAY란? ============ -->
-<div class="page" id="p-gateway" data-label="Gateway 개요">
+<div class="page" id="p-gateway" data-rail="kong" data-label="Gateway 개요">
 
 <section class="sec hero" id="concept" data-title="Gateway 개념">
   <div class="eyebrow">Gateway 101</div>
@@ -3794,7 +3814,7 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
 </div>
 
 <!-- ============ 3. API GATEWAY ============ -->
-<div class="page" id="p-apigw" data-label="API Gateway" data-group="API Gateway" data-desc="API 트래픽 거버넌스">
+<div class="page" id="p-apigw" data-rail="api" data-label="API Gateway" data-group="API Gateway" data-desc="API 트래픽 거버넌스">
 
 <section class="sec hero" id="a-intro" data-title="개요">
   <div class="eyebrow">Kong API Gateway</div>
@@ -4018,7 +4038,7 @@ trace.parent       orders-service · POST /checkout</pre></div>
 
 
 <!-- ============ 4. KAFKA PLUGINS ============ -->
-<div class="page" id="p-kplugin" data-label="Kafka Plugins" data-group="API Gateway" data-desc="HTTP Event API · 프로토콜 중재">
+<div class="page" id="p-kplugin" data-rail="api" data-label="Kafka Plugins" data-group="API Gateway" data-desc="HTTP Event API · 프로토콜 중재">
 
 <section class="sec hero" id="kp-intro" data-title="개요">
   <div class="eyebrow">Kafka Plugins</div>
@@ -4347,7 +4367,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 
 <!-- ============ 4b. EVENT GATEWAY ============ -->
 <!-- ============ 5. AI GATEWAY ============ -->
-<div class="page" id="p-ai" data-label="AI Gateway" data-group="AI Gateway" data-desc="LLM 트래픽 거버넌스 · 개요">
+<div class="page" id="p-ai" data-rail="ai" data-label="AI Gateway" data-group="AI Gateway" data-desc="LLM 트래픽 거버넌스 · 개요">
 
 <section class="sec hero" id="i-intro" data-title="개요">
   <div class="eyebrow">Kong AI Gateway</div>
@@ -4850,7 +4870,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 
 
 <!-- ============ AI GATEWAY 2.0 ============ -->
-<div class="page" id="p-ai2" data-label="AI Gateway 2.0" data-group="AI Gateway" data-desc="2.0 바이너리 · 엔티티 · LLM 비용 산정">
+<div class="page" id="p-ai2" data-rail="ai" data-label="AI Gateway 2.0" data-group="AI Gateway" data-desc="2.0 바이너리 · 엔티티 · LLM 비용 산정">
 
 <section class="sec hero" id="i2-intro" data-title="개요">
   <div class="eyebrow">AI Gateway 2.0</div>
@@ -5123,7 +5143,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 </div>
 
 <!-- ============ MCP GATEWAY ============ -->
-<div class="page" id="p-mcp" data-label="MCP Gateway" data-group="AI Gateway" data-desc="MCP 도구 호출 거버넌스">
+<div class="page" id="p-mcp" data-rail="ai" data-label="MCP Gateway" data-group="AI Gateway" data-desc="MCP 도구 호출 거버넌스">
 <section class="sec hero" id="m-intro" data-title="개요">
   <div class="eyebrow">Kong MCP Gateway</div>
   <h1>기업을 위한 <em>안전한 MCP</em></h1>
@@ -5249,7 +5269,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 </div>
 
 <!-- ============ AGENT GATEWAY ============ -->
-<div class="page" id="p-agent" data-label="Agent Gateway" data-group="AI Gateway" data-desc="에이전트 간(A2A) 통신 거버넌스">
+<div class="page" id="p-agent" data-rail="ai" data-label="Agent Gateway" data-group="AI Gateway" data-desc="에이전트 간(A2A) 통신 거버넌스">
 <section class="sec hero" id="g-intro" data-title="개요">
   <div class="eyebrow">Kong Agent Gateway</div>
   <h1>통제된 <em>에이전트 협업</em></h1>
@@ -5469,7 +5489,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 
 
 <!-- ============ EVENT GATEWAY ============ -->
-<div class="page" id="p-event" data-label="Event Gateway" data-desc="Kafka · 이벤트 스트림 거버넌스">
+<div class="page" id="p-event" data-rail="api" data-label="Event Gateway" data-desc="Kafka · 이벤트 스트림 거버넌스">
 
 <section class="sec hero" id="e-intro" data-title="개요">
   <div class="eyebrow">Kong Event Gateway</div>
@@ -6392,7 +6412,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 </div>
 
 <!-- ============ 6. INSOMNIA ============ -->
-<div class="page" id="p-insomnia" data-label="Insomnia">
+<div class="page" id="p-insomnia" data-rail="ai api" data-label="Insomnia">
 <script>function insImgErr(e){var f=e.getAttribute('data-fb');if(f){e.removeAttribute('data-fb');e.src=f;return;}e.onerror=null;var m=e.getAttribute('data-mk'),t=m&&document.getElementById('imk-'+m);if(t){var w=document.createElement('div');w.className='imk';w.innerHTML=t.innerHTML;e.replaceWith(w);return;}var d=document.createElement('div');d.className='iph';d.innerHTML='<b>'+(e.alt||'Insomnia')+'</b><span>온라인 연결 시 insomnia.rest 공식 화면이 표시됩니다</span>';e.replaceWith(d);}</script>
 <template id="imk-mcp"><div class="imk-mcp"><div class="imk-url"><span class="ok">● Connected</span><code>https://mcp.company.com/mcp</code><b>Disconnect</b></div><div class="imk-2"><div class="imk-side"><em>TOOLS (6)</em><i class="on">search_runbook</i><i>get_customer</i><i>get_incident_status</i><i>create_ticket</i><em>RESOURCES (2)</em><i>runbooks://index</i><em>PROMPTS (1)</em><i>triage</i></div><div class="imk-main"><div class="imk-h"><b>search_runbook</b><span class="btn">Call Tool</span></div><div class="imk-f"><label>query</label><code>INC-1007 동기화 지연</code><label>limit</label><code>3</code></div><div class="imk-r"><em>RESPONSE · 200 · 412 ms</em><pre>{
   "content": [{
@@ -6967,7 +6987,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 </div>
 
 <!-- ============ 7. 인프라 구성 ============ -->
-<div class="page" id="p-infra" data-label="인프라 구성">
+<div class="page" id="p-infra" data-rail="ai api" data-label="인프라 구성">
 <section class="sec hero" id="inf-intro" data-title="개요">
   <div class="eyebrow">Infrastructure</div>
   <h1>Kong <em>인프라 구성</em></h1>
@@ -7060,7 +7080,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 </div>
 
 <!-- ============ 8. 보안 및 규제 매핑 ============ -->
-<div class="page" id="p-sec" data-label="보안 및 규제 매핑">
+<div class="page" id="p-sec" data-rail="ai api" data-label="보안 및 규제 매핑">
 
 <section class="sec hero" id="x-intro" data-title="개요" data-show-lang="ko">
   <div class="orb"></div>
@@ -7140,7 +7160,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 </div>
 
 <!-- ============ 9. 라이선스 모델 ============ -->
-<div class="page" id="p-license" data-label="라이선스 모델">
+<div class="page" id="p-license" data-rail="ai api" data-label="라이선스 모델">
 
 <section class="sec hero" id="l-why" data-title="가격 기준">
   <div class="eyebrow">Why it adds up</div>
@@ -9034,10 +9054,33 @@ function audienceOk(el){
   return true;
 }
 function visiblePages(){ return PAGES.filter(audienceOk); }
+/* ---------- rail (Home · AI · API) ---------- */
+const RAILS=['kong','ai','api'];
+function pageRails(p){ return ((p&&p.dataset.rail)||'api').split(/\s+/); }
+function curRail(){ return document.documentElement.dataset.rail||'kong'; }
+function railPages(r){ r=r||curRail(); return visiblePages().filter(p=>pageRails(p).includes(r)); }
+function railFirst(r){ const p=railPages(r)[0]; return p?p.id.slice(2):'company'; }
+function hashFor(id,sec){ const p=document.getElementById('p-'+id); const pre=(p&&pageRails(p)[0]!==curRail())?curRail()+':':''; return '#'+pre+id+(sec?'/'+sec:''); }
 function visibleSecs(page){ return [...(page||document).querySelectorAll('.sec')].filter(s=>audienceOk(s)); }
 
 const PAGES=[...document.querySelectorAll('.page')];
 
+(function(){
+  let r=null;
+  try{ r=new URLSearchParams(location.search).get('rail')||localStorage.getItem('kong-rail'); }catch(e){}
+  document.documentElement.dataset.rail=(['kong','ai','api'].indexOf(r)>=0)?r:'kong';
+  window.KONG_RAIL={
+    get rail(){ return document.documentElement.dataset.rail||'kong'; },
+    setRail(x,opt){
+      if(['kong','ai','api'].indexOf(x)<0) return;
+      const ch=document.documentElement.dataset.rail!==x;
+      document.documentElement.dataset.rail=x;
+      try{ localStorage.setItem('kong-rail',x); }catch(_){}
+      if(typeof window.syncRail==='function') window.syncRail(ch);
+      if(!(opt&&opt.stay)&&typeof go==='function') go(railFirst(x));
+    }
+  };
+})();
 (function(){
   let ed='enterprise';
   try{ const q=new URLSearchParams(location.search).get('edition'); ed=q||localStorage.getItem('kong-edition')||'enterprise'; }catch(e){}
@@ -9280,7 +9323,7 @@ if(window.visualViewport){ visualViewport.addEventListener('resize',closeDD); vi
 function rebuildNav(){
   topnav.innerHTML='';
   for(const k of Object.keys(GROUPS)) delete GROUPS[k];
-  visiblePages().forEach(p=>{
+  railPages().forEach(p=>{
     const g=p.dataset.group;
     if(g){
       if(!GROUPS[g]){ const b=document.createElement('button'); b.className='ddb'; b.dataset.group=g; b.setAttribute('aria-haspopup','menu'); b.innerHTML=g+'<i>▾</i>'; b.onclick=e=>{e.stopPropagation(); openDD(g);}; topnav.appendChild(b); GROUPS[g]={btn:b,items:[]}; }
@@ -9292,39 +9335,48 @@ function rebuildNav(){
   [...topnav.querySelectorAll('button.ddb')].forEach(b=>{ const g=GROUPS[b.dataset.group]; if(!g||!g.items.length) b.remove(); });
 }
 let cur=null, spy=null;
-rebuildNav();
+const nr=document.getElementById('nr');
+function navFit(){ if(window.KONG_I18N&&typeof window.KONG_I18N.fitNav==='function') requestAnimationFrame(()=>window.KONG_I18N.fitNav()); }
+window.syncRail=function(changed){
+  const r=curRail();
+  if(nr) nr.querySelectorAll('.nr-b').forEach(b=>{ const on=b.dataset.rail===r; b.classList.toggle('on',on); if(on) b.setAttribute('aria-current','true'); else b.removeAttribute('aria-current'); });
+  if(changed){ closeDD(); rebuildNav(); navFit(); }
+};
+if(nr) nr.addEventListener('click',e=>{ const b=e.target.closest('.nr-b'); if(!b) return; window.KONG_RAIL.setRail(b.dataset.rail); });
+rebuildNav(); window.syncRail(false);
 window.rebuildAudience=function(){
   const keep=cur;
   rebuildNav();
   const pg=document.getElementById('p-'+keep);
   /* Same page (lang/edition refresh): keep scroll. Forced fallback to company: top. */
   if(pg&&audienceOk(pg)) go(keep, null, false, true);
-  else go('company', null, false);
-  if(typeof fitNav==='function') fitNav();
+  else go(railFirst(), null, false);
+  navFit();
   if(typeof syncClChrome==='function') syncClChrome();
   if(typeof vrender==='function') vrender();
   if(typeof prefetchChangelog==='function') prefetchChangelog(currentLang());
   if(typeof fitAllStatBig==='function') requestAnimationFrame(fitAllStatBig);
 };
 function go(id,sec,push,keepScroll){
-  let page=document.getElementById('p-'+id); if(!page||!audienceOk(page)) { id='company'; page=document.getElementById('p-company'); }
+  let page=document.getElementById('p-'+id); if(!page||!audienceOk(page)) { id=railFirst(); page=document.getElementById('p-'+id); }
+  if(!pageRails(page).includes(curRail())) window.KONG_RAIL.setRail(pageRails(page)[0],{stay:true});
   cur=id;
   const nextPg=document.getElementById('p-'+id); if(nextPg&&!nextPg.classList.contains('on')) resetMotion(nextPg);
   PAGES.forEach(p=>p.classList.toggle('on',p.id==='p-'+id));
   const grp=(document.getElementById('p-'+id)||{}).dataset; [...topnav.children].forEach(b=>b.classList.toggle('on',b.dataset.id===id||(!!b.dataset.group&&grp&&grp.group===b.dataset.group)));
   const pg=document.getElementById('p-'+id);
-  side.innerHTML='<h6>'+pg.dataset.label+'</h6>'+visibleSecs(pg).map(s=>'<a data-s="'+s.id+'" href="#'+id+'/'+s.id+'">'+s.dataset.title+'</a>').join('')+vbox();
+  side.innerHTML='<h6>'+pg.dataset.label+'</h6>'+visibleSecs(pg).map(s=>'<a data-s="'+s.id+'" href="'+hashFor(id,s.id)+'">'+s.dataset.title+'</a>').join('')+vbox();
   side.classList.remove('open');
   document.title=pg.dataset.label+' | Kong 소개';
   if(sec&&document.getElementById(sec)){ setTimeout(()=>document.getElementById(sec).scrollIntoView(),30); }
   else if(!keepScroll) window.scrollTo(0,0);
-  if(push!==false){ try{ history.replaceState(null,'','#'+id+(sec?'/'+sec:'')); }catch(e){ location.hash=id+(sec?'/'+sec:''); } }
+  if(push!==false){ const hh=hashFor(id,sec); try{ history.replaceState(null,'',hh); }catch(e){ location.hash=hh.slice(1); } }
   setupSpy();
 }
 side.addEventListener('click',e=>{
   const a=e.target.closest('a'); if(!a||a.classList.contains('vb-btn')) return; e.preventDefault();
   const s=a.dataset.s; document.getElementById(s).scrollIntoView({behavior:'smooth'});
-  try{ history.replaceState(null,'','#'+cur+'/'+s); }catch(_){}
+  try{ history.replaceState(null,'',hashFor(cur,s)); }catch(_){}
   side.classList.remove('open');
 });
 function printTargets(){
@@ -9493,8 +9545,11 @@ function setupSpy(){
   window.onscroll=mark; mark();
 }
 function fromHash(){
-  const h=location.hash.replace('#',''); const [p,s]=h.split('/');
-  go(p&&document.getElementById('p-'+p)?p:'company',s,false);
+  let h=decodeURIComponent(location.hash.replace('#',''));
+  const m=h.match(/^(kong|ai|api):(.*)$/); if(m) h=m[2];
+  const [p,s]=h.split('/'); const pg=p&&document.getElementById('p-'+p);
+  if(m&&pg&&pageRails(pg).includes(m[1])) window.KONG_RAIL.setRail(m[1],{stay:true});
+  go(pg?p:railFirst(),s,false);
 }
 window.addEventListener('hashchange',fromHash);
 fromHash();
@@ -9614,7 +9669,7 @@ document.addEventListener('keydown',e=>{
   if(n===0) window.scrollTo({top:0,behavior:'smooth'}); else secs[n].scrollIntoView({behavior:'smooth'});
   links.forEach((l,j)=>l.classList.toggle('on',j===n));
   window.__kb={i:n,t:Date.now(),p:cur};
-  try{ history.replaceState(null,'','#'+cur+'/'+secs[n].id); }catch(_){}
+  try{ history.replaceState(null,'',hashFor(cur,secs[n].id)); }catch(_){}
 });
 
 /* ---------- 화면 배율 ---------- */
@@ -9933,7 +9988,7 @@ function tKey(idOrKo, vars){
   return String(s==null?idOrKo:s).replace(/\$\{(\w+)\}/g,(_,k)=>vars&&vars[k]!=null?String(vars[k]):'');
 }
 function tTpl(koTpl, vars){ return tKey(koTpl, vars); }
-window.KONG_I18N={setLang,get lang(){return L;},tpl:tTpl,t:tKey,id:toKoKey};
+window.KONG_I18N={setLang,get lang(){return L;},tpl:tTpl,t:tKey,id:toKoKey,fitNav};
 const sideMo=new MutationObserver(ensureSw);
 function init(){
   const side=document.getElementById('side'); if(side) sideMo.observe(side,{childList:true});

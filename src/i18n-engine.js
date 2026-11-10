@@ -172,7 +172,7 @@ function tKey(idOrKo, vars){
   return String(s==null?idOrKo:s).replace(/\$\{(\w+)\}/g,(_,k)=>vars&&vars[k]!=null?String(vars[k]):'');
 }
 function tTpl(koTpl, vars){ return tKey(koTpl, vars); }
-window.KONG_I18N={setLang,get lang(){return L;},tpl:tTpl,t:tKey,id:toKoKey};
+window.KONG_I18N={setLang,get lang(){return L;},tpl:tTpl,t:tKey,id:toKoKey,fitNav};
 const sideMo=new MutationObserver(ensureSw);
 function init(){
   const side=document.getElementById('side'); if(side) sideMo.observe(side,{childList:true});
