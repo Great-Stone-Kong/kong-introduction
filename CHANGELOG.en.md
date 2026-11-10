@@ -11,6 +11,7 @@
 
 - AI Gateway 2.0: Branch overview, architecture diagrams, and deploy accent colors by Enterprise · Konnect. Fold LLM cost estimation into the feature-changes section as a short summary. Retitle the section to “AI 2.0 feature changes and improvements”
 - AI Gateway 2.0 > Feature changes · improvements > LLM cost estimation: add a chart comparing v1 vs v2 estimates against the provider invoice
+- AI Management: On EE, only Overview is active in the side nav; other items are disabled. Show “EE soon” only on AI Cost Management and Catalog · AI Registry. On Konnect, all sections stay active with no badges
 
 ## 2026.11.09.6af12729
 

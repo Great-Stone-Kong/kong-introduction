@@ -11,6 +11,7 @@
 
 - AI Gateway 2.0：依 Enterprise · Konnect 分支概要、架構圖與部署強調色。將 LLM 成本估算摘要併入功能變更章節。章節標題改為「AI 2.0 功能變更與改進事項」
 - AI Gateway 2.0 > 功能變更 · 改進 > LLM 成本估算：新增 v1·v2 估算與供應商實帳對比圖
+- AI Management：EE 側欄僅概要可點，其餘停用；僅 AI Cost Management · Catalog · AI Registry 顯示「EE 預定」。Konnect 無徽章且全部可用
 
 ## 2026.11.09.6af12729
 

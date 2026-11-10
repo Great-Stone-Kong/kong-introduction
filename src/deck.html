@@ -474,6 +474,10 @@ code.h{background:var(--accent-soft)!important;color:var(--mark)!important}
 .navdd button.ne-lock{cursor:not-allowed;opacity:.5}
 .side a .ne-sb{font-style:normal;font:800 9px var(--font);padding:1px 5px;border-radius:4px;border:1px solid var(--line2);color:var(--g400);margin-left:6px;vertical-align:1px}
 .side a .ne-sb.soon{border-style:dashed;border-color:var(--diag-amber);color:var(--diag-amber)}
+.side .nt-subs a.dis{opacity:.45;cursor:not-allowed;pointer-events:auto;color:var(--g400)}
+.side .nt-subs a.dis:hover{background:none;color:var(--g400)}
+/* AI Management: EE에서는 개요만 본문 노출(좌측은 비활성+EE 예정 배지로 로드맵 표시) */
+html[data-edition="enterprise"] #p-aimgmt > .sec[data-avail]{display:none!important}
 .ne-hid{margin:12px 0 0;padding-top:10px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--g500)}
 .ne-toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,12px);z-index:95;max-width:min(560px,92vw);background:var(--svg-panel,#0A1F10);color:var(--g200);border:1px solid var(--mark);border-radius:10px;padding:10px 16px;font-size:13px;box-shadow:0 12px 30px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .24s cubic-bezier(.2,.8,.2,1),transform .24s cubic-bezier(.2,.8,.2,1)}
 .ne-toast.on{opacity:1;transform:translate(-50%,0)}
@@ -6334,7 +6338,7 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
   <p class="note">MCP 레지스트리는 Tech preview입니다. 화면의 항목과 값은 예시입니다.</p>
   <p class="note">출처: <a href="https://konghq.com/products/ai-registry" target="_blank" rel="noopener noreferrer">AI Registry ↗</a> · <a href="https://developer.konghq.com/catalog/" target="_blank" rel="noopener noreferrer">Catalog ↗</a> · <a href="https://konghq.com/blog/product-releases/ai-management-kong-konnect" target="_blank" rel="noopener noreferrer">Introducing AI Management in Kong Konnect ↗</a></p>
 </section>
-<section class="sec" id="am-uc" data-title="활용 사례">
+<section class="sec" id="am-uc" data-title="활용 사례" data-avail="konnect">
   <div class="eyebrow">Use cases</div>
   <h2>AI Management 활용 사례</h2>
   <p class="sub">코딩 하네스와 에이전트 스웜 관리부터 에이전트 수익화, MCP 기반 엔터프라이즈 연결까지 여섯 가지 사례로 정리합니다. 번호는 호출 순서이고, 가운데 레인은 각 호출에서 Kong이 하는 일입니다.</p>
@@ -10032,11 +10036,21 @@ function curRail(){ return document.documentElement.dataset.rail||'kong'; }
 function railPages(r){ r=r||curRail(); return visiblePages().filter(p=>pageRails(p).includes(r)); }
 function navPages(r){ r=r||curRail(); return PAGES.filter(p=>pageRails(p).includes(r)&&(audienceOk(p)||(langOk(p)&&lockedFor(p)))); }
 const NE_LOCK='Konnect 전용 · 레일 하단에서 Konnect로 전환하면 볼 수 있습니다';
+const NE_SOON='Enterprise 제공 예정 · Konnect에서는 지금 사용할 수 있습니다';
 function neLockT(){ return (window.KONG_I18N&&typeof window.KONG_I18N.t==='function')?window.KONG_I18N.t(NE_LOCK):NE_LOCK; }
+function neSoonT(){ return (window.KONG_I18N&&typeof window.KONG_I18N.t==='function')?window.KONG_I18N.t(NE_SOON):NE_SOON; }
 function edBadge(el){ const se=el&&el.getAttribute('data-show-edition'), lk=el&&el.getAttribute('data-edition-lock'); const v=lk||(se&&se.trim().indexOf(' ')<0?se.trim():''); return v?'<em class="ne-bd'+(v==='enterprise'?' ee':'')+'">'+(v==='enterprise'?'EE':'Konnect')+'</em>':''; }
 function railFirst(r){ const p=railPages(r)[0]; return p?p.id.slice(2):'company'; }
 function hashFor(id,sec){ const p=document.getElementById('p-'+id); const pre=(p&&pageRails(p)[0]!==curRail())?curRail()+':':''; return '#'+pre+id+(sec?'/'+sec:''); }
 function visibleSecs(page){ return [...(page||document).querySelectorAll('.sec')].filter(s=>audienceOk(s)); }
+/* EE에서 data-avail 섹션은 좌측만 비활성(본문은 CSS로 숨김). Konnect에서는 전부 활성·배지 없음 */
+function secAvailLocked(s){
+  if(!s||(document.documentElement.dataset.edition||'enterprise')!=='enterprise') return false;
+  return !!s.getAttribute('data-avail');
+}
+function secAvailToast(s){
+  return (s&&s.getAttribute('data-avail')==='ee-soon')?neSoonT():neLockT();
+}
 
 const PAGES=[...document.querySelectorAll('.page')];
 
@@ -10322,7 +10336,11 @@ function treeHTML(id){
     if(lockedFor(p)){ h+='<button type="button" class="nt-it dis" aria-disabled="true" title="'+neLockT()+'">'+ntIcon(p)+'<span class="nt-lb">'+p.dataset.label+'</span>'+edBadge(p)+'</button>'; return; }
     const on=pid===id;
     h+='<button type="button" class="nt-it'+(on?' on':'')+'" data-p="'+pid+'"'+(on?' aria-current="page"':'')+'>'+ntIcon(p)+'<span class="nt-lb">'+p.dataset.label+'</span>'+(p.dataset.editionLock?'':edBadge(p))+NT_CV+'</button>';
-    if(on) h+='<div class="nt-subs">'+visibleSecs(p).map(x=>'<a data-s="'+x.id+'" href="'+hashFor(pid,x.id)+'">'+x.dataset.title+secBadge(x)+'</a>').join('')+'</div>';
+    if(on) h+='<div class="nt-subs">'+visibleSecs(p).map(x=>{
+      const bd=secBadge(x);
+      if(secAvailLocked(x)) return '<a class="dis" aria-disabled="true" tabindex="-1" data-s="'+x.id+'" title="'+secAvailToast(x)+'">'+x.dataset.title+bd+'</a>';
+      return '<a data-s="'+x.id+'" href="'+hashFor(pid,x.id)+'">'+x.dataset.title+bd+'</a>';
+    }).join('')+'</div>';
   });
   return h;
 }
@@ -10341,7 +10359,15 @@ function setCrumb(secEl){
   const tr=x=>(window.KONG_I18N&&window.KONG_I18N.lang!=='ko'&&typeof window.KONG_I18N.t==='function')?window.KONG_I18N.t(x):x;
   nb.innerHTML='<span>'+RAIL_LAB[curRail()]+'</span><i aria-hidden="true">›</i><span>'+tr(pg.dataset.label)+'</span>'+(secEl?'<i aria-hidden="true">›</i><b aria-current="location">'+tr(secEl.dataset.title)+'</b>':'');
 }
-function secBadge(s){ const av=s.getAttribute('data-avail'); if(av) return '<em class="ne-sb'+(av==='ee-soon'?' soon':'')+'">'+(av==='ee-soon'?'EE 예정':'Konnect')+'</em>'; const se=s.getAttribute('data-show-edition'); if(!se||se.trim().indexOf(' ')>=0) return ''; return '<em class="ne-sb">'+(se.trim()==='enterprise'?'EE':'Konnect')+'</em>'; }
+function secBadge(s){
+  const ed=document.documentElement.dataset.edition||'enterprise';
+  const av=s.getAttribute('data-avail');
+  if(av==='ee-soon') return ed==='enterprise'?'<em class="ne-sb soon">EE 예정</em>':'';
+  if(av) return ''; /* avail=konnect etc: no badge; edition toggle already scopes UX */
+  const se=s.getAttribute('data-show-edition');
+  if(!se||se.trim().indexOf(' ')>=0) return '';
+  return '<em class="ne-sb">'+(se.trim()==='enterprise'?'EE':'Konnect')+'</em>';
+}
 function hidNote(pg){
   const n=[...pg.querySelectorAll('.sec')].filter(x=>langOk(x)&&!audienceOk(x)).length; if(!n) return '';
   const e=(document.documentElement.dataset.edition==='konnect')?'Konnect':'EE';
@@ -10409,6 +10435,8 @@ function go(id,sec,push,keepScroll){
   let page=document.getElementById('p-'+id);
   if(page&&lockedFor(page)){ neToast(neLockT()); const cp=cur&&document.getElementById('p-'+cur); if(cp&&audienceOk(cp)&&cp.classList.contains('on')) return; }
   if(!page||!audienceOk(page)) { id=railFirst(); page=document.getElementById('p-'+id); }
+  let secEl=sec?document.getElementById(sec):null;
+  if(secEl&&secAvailLocked(secEl)){ neToast(secAvailToast(secEl)); sec=null; secEl=null; }
   if(!pageRails(page).includes(curRail())) window.KONG_RAIL.setRail(pageRails(page)[0],{stay:true});
   cur=id;
   const nextPg=document.getElementById('p-'+id); if(nextPg&&!nextPg.classList.contains('on')) resetMotion(nextPg);
@@ -10419,7 +10447,7 @@ function go(id,sec,push,keepScroll){
   npNav(pg);
   side.classList.remove('open');
   document.title=pg.dataset.label+' | Kong 소개';
-  if(sec&&document.getElementById(sec)){ setTimeout(()=>document.getElementById(sec).scrollIntoView(),30); }
+  if(secEl){ setTimeout(()=>secEl.scrollIntoView(),30); }
   else if(!keepScroll) window.scrollTo(0,0);
   if(push!==false){ const hh=hashFor(id,sec); try{ history.replaceState(null,'',hh); }catch(e){ location.hash=hh.slice(1); } }
   setupSpy();
@@ -10428,6 +10456,11 @@ side.addEventListener('click',e=>{
   const it=e.target.closest('.nt-it[data-p]'); if(it){ e.preventDefault(); go(it.dataset.p); return; }
   if(e.target.closest('.nt-it.dis')){ e.preventDefault(); neToast(neLockT()); return; }
   const a=e.target.closest('a'); if(!a||a.classList.contains('vb-btn')) return; e.preventDefault();
+  if(a.classList.contains('dis')||a.getAttribute('aria-disabled')==='true'){
+    const s=a.dataset.s, el=s&&document.getElementById(s);
+    neToast(el?secAvailToast(el):neLockT());
+    return;
+  }
   const s=a.dataset.s; document.getElementById(s).scrollIntoView({behavior:'smooth'});
   try{ history.replaceState(null,'',hashFor(cur,s)); }catch(_){}
   side.classList.remove('open');
@@ -10743,7 +10776,7 @@ document.addEventListener('keydown',e=>{
       if(seen.has(p.id)) return; seen.add(p.id);
       const pid=p.id.slice(2), pl=tr(p.dataset.label||''), ic=p.dataset.icon;
       out.push({r:r,p:pid,s:null,t:pl,sub:RAIL_LAB[r],ic:ic});
-      visibleSecs(p).forEach(x=>out.push({r:r,p:pid,s:x.id,t:tr(x.dataset.title||''),sub:RAIL_LAB[r]+' › '+pl,ic:ic}));
+      visibleSecs(p).forEach(x=>{ if(secAvailLocked(x)) return; out.push({r:r,p:pid,s:x.id,t:tr(x.dataset.title||''),sub:RAIL_LAB[r]+' › '+pl,ic:ic}); });
     }));
     return out;
   }
