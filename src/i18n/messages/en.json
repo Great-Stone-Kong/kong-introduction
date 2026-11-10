@@ -5960,5 +5960,19 @@
   "m.6ca52ad2e5ed": "Agent swarm flow",
   "m.78e329560512": "Smart chatbot flow",
   "m.d0f89b0d3d0b": "AI monetization flow",
-  "m.6104cd5c314d": "Enterprise MCP connectivity flow"
+  "m.6104cd5c314d": "Enterprise MCP connectivity flow",
+  "m.1bf033edb6ce": "Missing",
+  "m.e4cded7f0310": "v1 estimate",
+  "m.2d23641ae8ef": "v2 estimate",
+  "m.dd2a24f77bcd": "v1 gap",
+  "m.8be7f5ad5cd8": "Provider invoice",
+  "m.ba43bf3ef57d": "Aligned to invoice",
+  "m.5b343bed25f8": "Input · output only",
+  "m.b07038262b14": "Cache read · write",
+  "m.e92cc3d75bfb": "Same request: compare v1 estimate with v2 estimate and provider invoice",
+  "m.fbdc141ad579": "Puts cache, context, and tier into one formula so limit policies match the invoice.",
+  "m.64573d8aa3c6": "Estimates input and output only, so budgets run low on requests with cache or tiers.",
+  "m.897be0a206c1": "Example: Priority tier · long context · cache-write request (conceptual · relative share)",
+  "m.ef3df63185e9": "Estimated amounts feed team, app, and model budgets and cost-based rate limits. See provider docs and AI Proxy Advanced settings for rate details.",
+  "m.dab41aa5bec5": "The same request differs under v1 and v2 estimates. v1 looks at input and output only and under-reads the invoice; v2 adds cache, context, and service tier to match the provider bill. Budget and cost-limit allow/deny use this estimate."
 }

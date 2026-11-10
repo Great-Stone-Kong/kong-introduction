@@ -3661,6 +3661,30 @@ html[data-theme="light"] .ctr-c{background:rgba(255,255,255,.35)}
 @media print{.ctr.rv .ctr-c{opacity:1!important;transform:none!important}.cpx .off{opacity:.5}}
 /* /i-cmp 4축 */
 #i2-feat .i2-cost-sum .grid.g2>*{min-width:0}#i2-feat .i2-cost-sum pre.code{overflow-x:auto}
+#i2-feat .i2-cost-chart{display:block;width:100%;max-width:720px;height:auto;margin:6px auto 4px}
+#i2-feat .i2-cost-chart .ax{stroke:var(--line2);stroke-width:1}
+#i2-feat .i2-cost-chart .ref{stroke:var(--mark);stroke-width:1.6;stroke-dasharray:5 4}
+#i2-feat .i2-cost-chart .miss{fill:url(#i2cHatch);stroke:var(--danger-soft);stroke-width:1.2;stroke-dasharray:4 3}
+#i2-feat .i2-cost-chart .s-in{fill:color-mix(in srgb,var(--lime) 55%,var(--svg-panel))}
+#i2-feat .i2-cost-chart .s-out{fill:color-mix(in srgb,var(--lime) 28%,var(--svg-panel));stroke:var(--line2);stroke-width:1}
+#i2-feat .i2-cost-chart .s-cache{fill:#5CC8FF}
+#i2-feat .i2-cost-chart .s-ctx{fill:#B98CFF}
+#i2-feat .i2-cost-chart .s-tier{fill:#FFD166}
+html[data-theme="light"] #i2-feat .i2-cost-chart .s-in{fill:color-mix(in srgb,var(--mark) 42%,#fff)}
+html[data-theme="light"] #i2-feat .i2-cost-chart .s-out{fill:color-mix(in srgb,var(--mark) 22%,#fff)}
+#i2-feat .i2-cost-chart .lbl{font-size:12px;font-weight:800;fill:var(--svg-fg)}
+#i2-feat .i2-cost-chart .mut{font-size:11px;font-weight:700;fill:var(--svg-muted)}
+#i2-feat .i2-cost-chart .amt{font-family:var(--mono);font-size:12px;font-weight:800;fill:var(--svg-fg)}
+#i2-feat .i2-cost-chart .warn{font-size:11px;font-weight:800;fill:var(--danger-soft)}
+#i2-feat .i2-cost-chart .ok{font-size:11px;font-weight:800;fill:var(--mark)}
+#i2-feat .i2-cost-leg{display:flex;flex-wrap:wrap;gap:8px 14px;justify-content:center;margin:4px 0 10px;font-size:12px;color:var(--g300)}
+#i2-feat .i2-cost-leg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+#i2-feat .i2-cost-leg .c-in{background:color-mix(in srgb,var(--lime) 55%,var(--card))}
+#i2-feat .i2-cost-leg .c-out{background:color-mix(in srgb,var(--lime) 28%,var(--card));box-shadow:inset 0 0 0 1px var(--line2)}
+#i2-feat .i2-cost-leg .c-cache{background:#5CC8FF}
+#i2-feat .i2-cost-leg .c-ctx{background:#B98CFF}
+#i2-feat .i2-cost-leg .c-tier{background:#FFD166}
+#i2-feat .i2-cost-leg .c-miss{background:repeating-linear-gradient(135deg,transparent 0 3px,var(--danger-soft) 3px 5px)}
 /* i2-deploy: 선택 에디션 열을 라임으로 강조 */
 #i2-dep .edep-kn .edep-hd{fill:var(--lime);stroke:none}#i2-dep .edep-kn .edep-hd-t{fill:var(--on-lime)}
 #i2-dep .edep-ee .edep-hd{fill:var(--svg-chip);stroke:var(--g600);stroke-width:1.2}#i2-dep .edep-ee .edep-hd-t{fill:var(--svg-fg)}
@@ -5618,16 +5642,68 @@ lowest-usage · semantic · priority</pre></div>
 
   <div class="i2-cost-sum" id="i2-cost">
     <h3 style="margin-top:8px">LLM 비용 산정</h3>
-    <p class="sub" style="margin-top:0">LLM 제공사 청구(토큰·캐시·티어)를 요청 단위로 추정합니다. Kong 라이선스·최종 사용자 과금은 범위가 아닙니다. v2는 캐시·컨텍스트·서비스 티어를 반영해 예산·비용 한도 정책이 실청구에 가깝게 맞습니다.</p>
+    <p class="sub" style="margin-top:0">동일 요청을 v1·v2로 추정하면 차이가 납니다. v1은 입력·출력만 보아 실청구보다 낮게 잡고, v2는 캐시·컨텍스트·서비스 티어까지 넣어 제공사 청구에 맞춥니다. 예산·비용 한도의 허용·거부가 이 추정치를 씁니다.</p>
+    <div class="dia rv">
+      <svg class="i2-cost-chart" viewBox="0 0 720 300" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="동일 요청의 v1 추정과 v2 추정·제공사 청구 비교">
+        <defs>
+          <pattern id="i2cHatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(42)"><path d="M0 0V7" stroke="var(--danger-soft)" stroke-width="1.5" stroke-opacity=".55"/></pattern>
+        </defs>
+        <!-- axis -->
+        <line class="ax" x1="70" y1="36" x2="70" y2="230"/>
+        <line class="ax" x1="70" y1="230" x2="660" y2="230"/>
+        <text class="mut" x="58" y="42" text-anchor="end">높음</text>
+        <text class="mut" x="58" y="228" text-anchor="end">0</text>
+        <!-- provider invoice reference -->
+        <line class="ref" x1="90" y1="54" x2="640" y2="54"/>
+        <text class="ok" x="640" y="48" text-anchor="end">제공사 실청구</text>
+
+        <!-- v1 bar: in 56 + out 44 = 100 height units mapped to half of actual -->
+        <!-- chart scale: actual top y=54, baseline y=230 → H=176. v1 = 50% → 88px -->
+        <g transform="translate(160 0)">
+          <text class="lbl" x="55" y="252" text-anchor="middle">v1 추정</text>
+          <text class="mut" x="55" y="270" text-anchor="middle">입력 · 출력만</text>
+          <!-- out 44% of v1 stack → 39px, in 56% → 49px; total 88 from y=142 -->
+          <rect class="s-in" x="20" y="181" width="70" height="49" rx="4"/>
+          <rect class="s-out" x="20" y="142" width="70" height="39" rx="4"/>
+          <rect class="miss" x="20" y="54" width="70" height="88" rx="4"/>
+          <text class="amt" x="55" y="136" text-anchor="middle">~50%</text>
+          <text class="warn" x="55" y="100" text-anchor="middle">누락</text>
+        </g>
+
+        <!-- v2 bar: full 176px stacked -->
+        <g transform="translate(430 0)">
+          <text class="lbl" x="55" y="252" text-anchor="middle">v2 추정</text>
+          <text class="mut" x="55" y="270" text-anchor="middle">실청구에 맞춤</text>
+          <!-- segments bottom→top: in 28%, out 22%, cache 18%, ctx 12%, tier 20% of 176 -->
+          <rect class="s-in" x="20" y="181" width="70" height="49" rx="4"/>
+          <rect class="s-out" x="20" y="142" width="70" height="39" rx="4"/>
+          <rect class="s-cache" x="20" y="110" width="70" height="32" rx="3"/>
+          <rect class="s-ctx" x="20" y="89" width="70" height="21" rx="3"/>
+          <rect class="s-tier" x="20" y="54" width="70" height="35" rx="4"/>
+          <text class="amt" x="55" y="48" text-anchor="middle">~100%</text>
+          <text class="ok" x="55" y="78" text-anchor="middle">일치</text>
+        </g>
+
+        <text class="mut" x="360" y="292" text-anchor="middle">예시: Priority 티어 · 긴 컨텍스트 · 캐시 쓰기 포함 요청(개념도 · 상대 비중)</text>
+      </svg>
+      <div class="i2-cost-leg" aria-hidden="true">
+        <span><i class="c-in"></i>입력</span>
+        <span><i class="c-out"></i>출력</span>
+        <span><i class="c-cache"></i>캐시 읽기·쓰기</span>
+        <span><i class="c-ctx"></i>컨텍스트 배율</span>
+        <span><i class="c-tier"></i>서비스 티어</span>
+        <span><i class="c-miss"></i>v1 누락분</span>
+      </div>
+    </div>
     <div class="grid g2">
-      <div class="card rv"><span class="tag">v1</span><h3>두 요율</h3><p>입력·출력 단가만으로 추정합니다.</p>
+      <div class="card rv"><span class="tag">v1</span><h3>두 요율</h3><p>입력·출력만 추정해 캐시·티어가 있는 요청에서 예산을 낮게 잡습니다.</p>
         <pre class="code" style="margin-top:10px">cost = (input × input_cost + output × output_cost) / 1M</pre>
       </div>
-      <div class="card rv k"><span class="tag">v2</span><h3>조합 가격</h3><p>캐시 읽기·쓰기(TTL), 컨텍스트 배율, 서비스 티어를 한 식에 넣습니다.</p>
+      <div class="card rv k"><span class="tag">v2</span><h3>조합 가격</h3><p>캐시·컨텍스트·티어를 한 식에 넣어 한도 정책이 실청구와 맞습니다.</p>
         <pre class="code" style="margin-top:10px">cost = tier × (ctx_in×(in+cache) + ctx_out×out)</pre>
       </div>
     </div>
-    <p class="note" style="margin-top:10px">추정 금액은 팀·앱·모델 예산과 비용 기반 rate limit 입력입니다. 상세 요율 구성은 제공사 문서와 AI Proxy Advanced 설정을 참고합니다.</p>
+    <p class="note" style="margin-top:10px">추정 금액은 팀·앱·모델 예산과 비용 기반 rate limit 입력입니다. 상세 요율은 제공사 문서와 AI Proxy Advanced 설정을 참고합니다.</p>
   </div>
 
   <h3 style="margin-top:28px">AI Proxy와 AI Proxy Advanced</h3>
