@@ -2084,5 +2084,12 @@
     "ja": "<b>AI Gateway 2.0との関係</b> AI Gateway 2.0はモデル · MCPサーバー · エージェントを扱うランタイムとエンティティで、AI Managementはそのエンティティを誰が · どれだけ · どう使うかを統制する運用領域です。",
     "zh-Hans": "<b>与 AI Gateway 2.0 的关系</b> AI Gateway 2.0 是处理模型 · MCP 服务器 · 智能体的运行时与实体,AI Management 则是治理这些实体由谁 · 用多少 · 如何使用的运营层。",
     "zh-Hant": "<b>與 AI Gateway 2.0 的關係</b> AI Gateway 2.0 是處理模型 · MCP 伺服器 · 代理的執行環境與實體,AI Management 則是治理這些實體由誰 · 用多少 · 如何使用的營運層。"
+  },
+  "u.a66cf072094c": {
+    "match": "모든 AI 호출을 하나의 플랫폼에서",
+    "en": "Every AI call on <em>one platform</em>",
+    "ja": "すべての AI 呼び出しを<em>ひとつのプラットフォーム</em>で",
+    "zh-Hans": "所有 AI 调用尽在<em>同一平台</em>",
+    "zh-Hant": "所有 AI 呼叫盡在<em>同一平台</em>"
   }
 }
