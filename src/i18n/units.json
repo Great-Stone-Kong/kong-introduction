@@ -2070,5 +2070,12 @@
     "ja": "<b>カテゴリー · Public Cloud。</b>AWS · Azure · Google Cloudは、モデル、エージェントランタイム、ツール接続、レジストリ、ガバナンスを1つのプラットフォームにまとめて提供します。単一クラウドの組織には一貫した選択肢です。違いは、ガバナンスがそのクラウドの外まで続くかどうかにあります。",
     "zh-Hans": "<b>类别 · Public Cloud。</b>AWS · Azure · Google Cloud 将模型、智能体运行时、工具连接、注册中心和治理打包成一个平台。对单一云组织而言是一致的选择。区别在于治理能否延伸到该云之外。",
     "zh-Hant": "<b>類別 · Public Cloud。</b>AWS · Azure · Google Cloud 將模型、代理執行環境、工具連接、註冊中心和治理整合成一個平台。對單一雲端組織而言是一致的選擇。差別在於治理能否延伸到該雲端之外。"
+  },
+  "u.451e25c90923": {
+    "match": "Konnect 인프라 구성",
+    "en": "Konnect <em>infrastructure</em>",
+    "ja": "Konnect の<em>インフラ構成</em>",
+    "zh-Hans": "Konnect <em>基础设施</em>",
+    "zh-Hant": "Konnect <em>基礎設施</em>"
   }
 }
