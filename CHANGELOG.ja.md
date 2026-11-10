@@ -15,6 +15,7 @@
 - AI Management > 活用事例: 6つの図を元のアーキテクチャ（Gateway · Context Mesh · Management plane）に合わせて再構成
 - AI Management > 活用事例: 閉じタグ誤りでソフトウェアファクトリーだけ表示されていた問題を修正。6つの図がタブ切替で表示されるよう復元
 - AI Management > 活用事例: 共通グリッド · 矢印 · 下部 Konnect バンドで図を整え、EN など多言語ラベルをボックス幅に合わせて短縮
+- 左レールのラベル Home → Kong。Kong 企業紹介 > 概要: AI Connectivity スローガンと API · AI ショートカットのたたき台を配置
 
 ## 2026.11.09.6af12729
 

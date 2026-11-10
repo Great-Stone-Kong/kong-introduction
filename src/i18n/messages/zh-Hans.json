@@ -6086,5 +6086,10 @@
   "m.3934a82a59ba": "API → MCP 生成",
   "m.f22acccec635": "API+MCP 组合",
   "m.c819a46d57fe": "Code Mode 服务",
-  "m.5e62caf6af77": "现有 IdP"
+  "m.5e62caf6af77": "现有 IdP",
+  "m.910d9d5ada6c": "快捷入口",
+  "m.79d8847da140": "Kong 将 API call economy 与 Token economy 连成一层连接层",
+  "m.11a16b1c0b2d": "Token economy。在同一运行时治理智能体 · 模型 · MCP · 上下文。",
+  "m.61e394c34b18": "API call economy。在同一网关管控 REST · gRPC · Event。",
+  "m.29f34040cca0": "对每个 LLM · MCP · Event · API 请求进行安全 · 管理 · 加速 · 变现 · 成本控制。无需改应用，在流量经过处一次落地策略。"
 }

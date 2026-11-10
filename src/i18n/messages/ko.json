@@ -6086,5 +6086,10 @@
   "m.3934a82a59ba": "API → MCP 생성",
   "m.f22acccec635": "API+MCP 합성",
   "m.c819a46d57fe": "Code Mode 서빙",
-  "m.5e62caf6af77": "기존 IdP"
+  "m.5e62caf6af77": "기존 IdP",
+  "m.910d9d5ada6c": "바로가기",
+  "m.79d8847da140": "API call economy와 Token economy를 하나의 연결 계층으로 잇는 Kong",
+  "m.11a16b1c0b2d": "Token economy. 에이전트 · 모델 · MCP · 컨텍스트를 한 런타임에서 거버넌스합니다.",
+  "m.61e394c34b18": "API call economy. REST · gRPC · Event를 하나의 게이트웨이에서 통제합니다.",
+  "m.29f34040cca0": "모든 LLM · MCP · Event · API 요청을 보안 · 관리 · 가속 · 수익화 · 비용 통제합니다. 앱을 고치지 않고, 트래픽이 지나가는 길목에서 정책을 한 번에 적용합니다."
 }

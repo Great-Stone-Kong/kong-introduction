@@ -15,6 +15,7 @@
 - AI Management > Use cases: redraw the six diagrams to match the source architecture (Gateway · Context Mesh · Management plane)
 - AI Management > Use cases: fix a broken closing tag that left only the software-factory pane visible; restore all six diagrams under the tabs
 - AI Management > Use cases: tidy the six diagrams onto a shared grid with arrows and a bottom Konnect band; shorten EN and other locale labels to fit the boxes
+- Left rail label Home → Kong. Kong company intro > Overview: draft layout with the AI Connectivity slogan and API · AI shortcuts
 
 ## 2026.11.09.6af12729
 

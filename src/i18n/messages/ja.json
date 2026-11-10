@@ -6086,5 +6086,10 @@
   "m.3934a82a59ba": "API → MCP 生成",
   "m.f22acccec635": "API+MCP 合成",
   "m.c819a46d57fe": "Code Mode で提供",
-  "m.5e62caf6af77": "既存の IdP"
+  "m.5e62caf6af77": "既存の IdP",
+  "m.910d9d5ada6c": "ショートカット",
+  "m.79d8847da140": "API call economy と Token economy をひとつの接続レイヤーでつなぐ Kong",
+  "m.11a16b1c0b2d": "Token economy。エージェント · モデル · MCP · コンテキストをひとつのランタイムでガバナンスします。",
+  "m.61e394c34b18": "API call economy。REST · gRPC · Event をひとつのゲートウェイで統制します。",
+  "m.29f34040cca0": "すべての LLM · MCP · Event · API リクエストをセキュリティ · 管理 · 加速 · 収益化 · コスト統制します。アプリを変えず、トラフィックの通り道でポリシーを一度に適用します。"
 }

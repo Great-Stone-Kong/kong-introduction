@@ -15,6 +15,7 @@
 - AI Management > 활용 사례: 여섯 사례 도식을 원본 아키텍처(게이트웨이 · Context Mesh · Management plane)에 맞게 재구성
 - AI Management > 활용 사례: 탭 pane 닫는 태그 오류로 소프트웨어 팩토리만 보이던 문제 수정. 여섯 사례 도식이 탭 전환으로 표시되도록 복구
 - AI Management > 활용 사례: 공통 격자 · 화살표 · 하단 Konnect 밴드로 도식을 정돈하고, EN 등 다국어 라벨을 박스 폭에 맞게 축약
+- 좌측 레일 라벨 Home → Kong. Kong 기업 소개 > 개요: AI Connectivity 슬로건과 API · AI 바로가기 가안 배치
 
 ## 2026.11.09.6af12729
 

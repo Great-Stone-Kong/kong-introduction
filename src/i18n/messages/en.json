@@ -6086,5 +6086,10 @@
   "m.3934a82a59ba": "API → MCP",
   "m.f22acccec635": "API + MCP compose",
   "m.c819a46d57fe": "Code Mode serving",
-  "m.5e62caf6af77": "Existing IdP"
+  "m.5e62caf6af77": "Existing IdP",
+  "m.910d9d5ada6c": "Shortcuts",
+  "m.79d8847da140": "Kong bridging the API call economy and the token economy in one connectivity layer",
+  "m.11a16b1c0b2d": "Token economy. Govern agents, models, MCP, and context in one runtime.",
+  "m.61e394c34b18": "API call economy. Govern REST, gRPC, and events in one gateway.",
+  "m.29f34040cca0": "Secure, manage, speed up, monetize, and cost-control every LLM, MCP, event, and API request. Apply policy once at the traffic edge without changing apps."
 }

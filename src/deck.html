@@ -107,7 +107,7 @@ b,strong{color:var(--strong);font-weight:700}
 /* layout */
 
 /* Konnect 인프라 CSS는 아래 kx- 블록 */
-/* 좌측 레일 (Home · AI · API) — achive/plans/nav-rail-ia.md */
+/* 좌측 레일 (Kong · AI · API) — achive/plans/nav-rail-ia.md */
 .nr{position:fixed;top:0;bottom:0;left:0;width:var(--rail);z-index:55;background:var(--nr-bg,#000A04);border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 0}
 html[data-theme="light"] .nr{--nr-bg:#101110;border-right-color:#101110}
 .nr-b{width:60px;border:0;background:none;color:#B7BDB5;display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 0;border-radius:10px;cursor:pointer;font:800 11px var(--font);letter-spacing:.06em;transition:background .18s cubic-bezier(.2,.8,.2,1),color .18s cubic-bezier(.2,.8,.2,1)}
@@ -118,6 +118,34 @@ html[data-theme="light"] .nr{--nr-bg:#101110;border-right-color:#101110}
 .nr-home{margin-bottom:6px}
 .nr-home svg{width:30px;height:27px;color:#CCFF00}
 .nr-gap{flex:1}
+/* company overview draft */
+.ov-brand{display:block;font-size:clamp(40px,6vw,64px);font-weight:900;letter-spacing:-.03em;line-height:1.05;color:var(--mark);margin:0 0 8px}
+.ov-for{display:flex;align-items:baseline;gap:10px;margin:0 0 18px;flex-wrap:wrap}
+.ov-for em{font-style:italic;font-weight:500;font-size:28px;color:var(--heading)}
+.ov-for b{font-size:22px;font-weight:800;color:var(--heading)}
+.ov-lead{max-width:52ch;font-size:16px;line-height:1.55;color:var(--g300);margin:0 0 28px}
+.ov-jump{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 28px}
+.ov-jump button{text-align:left;font-family:var(--font);border:1px solid var(--line2);border-radius:14px;background:var(--card);padding:18px 18px 16px;cursor:pointer;color:inherit;transition:border-color .15s,background .15s,transform .15s}
+.ov-jump button:hover{border-color:var(--lime);background:var(--accent-wash);transform:translateY(-1px)}
+.ov-jump button:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+.ov-jump .ov-k{display:inline-block;font:800 11px var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--mark);margin-bottom:8px}
+.ov-jump h3{margin:0 0 6px;font-size:22px;font-weight:900;color:var(--heading)}
+.ov-jump p{margin:0 0 12px;font-size:13.5px;line-height:1.45;color:var(--g300)}
+.ov-jump .ov-chips{display:flex;flex-wrap:wrap;gap:6px}
+.ov-jump .ov-chips span{font:700 11px var(--font);letter-spacing:.04em;border:1px solid var(--line);border-radius:999px;padding:4px 9px;color:var(--g200)}
+.ov-jump .ov-go{display:inline-flex;align-items:center;gap:6px;font:800 13px var(--font);color:var(--mark)}
+.ov-duo{margin:8px 0 0;padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.ov-duo svg{display:block;width:100%;height:auto;min-width:560px}
+.ovd .cap{font-size:11px;font-weight:700;letter-spacing:1.4px;fill:var(--mark)}
+.ovd .t{font-size:15px;font-weight:900;fill:var(--svg-fg)}
+.ovd .s{font-size:12px;fill:var(--svg-muted)}
+.ovd .pill{fill:var(--lime)}
+.ovd .pillt{font-size:13px;font-weight:900;fill:var(--on-lime)}
+.ovd .ring{fill:none;stroke:var(--lime);stroke-width:2;opacity:.55}
+.ovd .plus{fill:var(--lime);font-size:28px;font-weight:900}
+.ovd .chip{fill:var(--svg-chip);stroke:var(--g600)}
+.ovd .chipt{font-size:10.5px;font-weight:700;fill:var(--svg-label)}
+@media (max-width:900px){.ov-jump{grid-template-columns:1fr}.ov-duo svg{min-width:0}}
 /* AI Management (P4) */
 .am-i{width:16px;height:16px;color:var(--mark);flex:none}
 .am-say{border-left:3px solid var(--mark);padding:8px 14px;margin:12px 0 8px;font-size:14.5px;color:var(--heading);background:var(--accent-wash);border-radius:0 8px 8px 0}
@@ -4038,7 +4066,7 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
 </svg>
 
 <nav class="nr" id="nr" aria-label="Products">
-  <button type="button" class="nr-b nr-home" data-rail="kong" title="Home"><svg viewBox="0 0 153 137" aria-hidden="true"><use href="#kong-mark" width="153" height="137"/></svg><span>Home</span></button>
+  <button type="button" class="nr-b nr-home" data-rail="kong" title="Kong"><svg viewBox="0 0 153 137" aria-hidden="true"><use href="#kong-mark" width="153" height="137"/></svg><span>Kong</span></button>
   <button type="button" class="nr-b" data-rail="ai" title="AI"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ki-professional"/></svg><span>AI</span></button>
   <button type="button" class="nr-b" data-rail="api" title="API"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ki-build-anywhere"/></svg><span>API</span></button>
   <span class="nr-gap"></span>
@@ -4078,20 +4106,55 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
 <section class="sec hero" id="overview" data-title="개요">
   <div class="orb"></div>
   <div class="eyebrow">Kong Inc. · The AI Connectivity Company</div>
-  <h1>API 연결 시대 이후,<br><em>AI 에이전트</em> 연결의 시대</h1>
-  <p class="lead">Kong은 API, LLM, MCP, 에이전트 트래픽을 하나의 게이트웨이에서 통제하는 플랫폼입니다. 앱을 고치지 않고, 트래픽이 지나가는 길목에서 인증·정책·마스킹·로깅·라우팅을 한 번에 적용합니다.</p>
+  <span class="ov-brand">AI Connectivity</span>
+  <div class="ov-for"><em>for</em><b>API · AI · Agents</b></div>
+  <p class="ov-lead">모든 LLM · MCP · Event · API 요청을 보안 · 관리 · 가속 · 수익화 · 비용 통제합니다. 앱을 고치지 않고, 트래픽이 지나가는 길목에서 정책을 한 번에 적용합니다.</p>
 
-  <div class="story" style="grid-template-columns:1fr">
-    <aside class="vision">
-      <div class="vcard">
-        <span class="lbl">지향하는 것</span>
-        <h3>Building the AI connectivity layer</h3>
-        <div class="words" aria-label="Fast. Resilient. Secure."><span>Fast.</span><span>Resilient.</span><span>Secure.</span></div>
-        <p>에이전트 시대의 연결 계층. 어떤 모델, 어떤 클라우드든 API와 AI 토큰을 안전하게 연결하고, 통제하고, 수익화합니다.</p>
-        <div class="chain" style="margin-top:20px"><span class="n">API Gateway</span><span class="ar"></span><span class="n">Service Mesh</span><span class="ar"></span><span class="n k">AI Gateway</span></div>
-      </div>
-    </aside>
+  <div class="ov-jump" role="group" aria-label="바로가기">
+    <button type="button" onclick="go('apigw')">
+      <span class="ov-k">Cloud Native</span>
+      <h3>API 연결</h3>
+      <p>API call economy. REST · gRPC · Event를 하나의 게이트웨이에서 통제합니다.</p>
+      <div class="ov-chips"><span>API Gateway</span><span>Payloads</span><span>Rate limiting</span><span>Caching</span></div>
+      <span class="ov-go">API Gateway →</span>
+    </button>
+    <button type="button" onclick="go('ai')">
+      <span class="ov-k">Agentic AI</span>
+      <h3>AI 연결</h3>
+      <p>Token economy. 에이전트 · 모델 · MCP · 컨텍스트를 한 런타임에서 거버넌스합니다.</p>
+      <div class="ov-chips"><span>AI Gateway</span><span>Tokens</span><span>Budgets</span><span>Semantic cache</span></div>
+      <span class="ov-go">AI Gateway →</span>
+    </button>
   </div>
+
+  <div class="dia ov-duo">
+    <svg class="ovd" viewBox="0 0 1000 280" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="API call economy와 Token economy를 하나의 연결 계층으로 잇는 Kong">
+      <text class="cap" x="160" y="28">CLOUD NATIVE</text>
+      <text class="cap" x="690" y="28">AGENTIC AI</text>
+      <circle class="ring" cx="220" cy="150" r="108"/>
+      <circle class="ring" cx="780" cy="150" r="108"/>
+      <text class="t" x="220" y="88" text-anchor="middle">Applications</text>
+      <rect class="pill" x="160" y="118" width="120" height="36" rx="18"/><text class="pillt" x="220" y="141" text-anchor="middle">API CALLS</text>
+      <text class="s" x="220" y="172" text-anchor="middle">REST · gRPC</text>
+      <text class="t" x="220" y="206" text-anchor="middle">Microservices</text>
+      <text class="s" x="220" y="226" text-anchor="middle">APIs &amp; Events</text>
+      <text class="t" x="780" y="88" text-anchor="middle">Agents</text>
+      <rect class="pill" x="720" y="118" width="120" height="36" rx="18"/><text class="pillt" x="780" y="141" text-anchor="middle">TOKENS</text>
+      <text class="s" x="780" y="172" text-anchor="middle">MCP</text>
+      <text class="t" x="780" y="206" text-anchor="middle">LLMs</text>
+      <text class="s" x="780" y="226" text-anchor="middle">Context</text>
+      <text class="plus" x="500" y="160" text-anchor="middle">+</text>
+      <line x1="340" y1="150" x2="460" y2="150" stroke="var(--g600)" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <line x1="540" y1="150" x2="660" y2="150" stroke="var(--g600)" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <rect class="chip" x="70" y="248" width="92" height="22" rx="11"/><text class="chipt" x="116" y="263" text-anchor="middle">API Gateway</text>
+      <rect class="chip" x="170" y="248" width="72" height="22" rx="11"/><text class="chipt" x="206" y="263" text-anchor="middle">Payloads</text>
+      <rect class="chip" x="250" y="248" width="78" height="22" rx="11"/><text class="chipt" x="289" y="263" text-anchor="middle">Endpoints</text>
+      <rect class="chip" x="650" y="248" width="84" height="22" rx="11"/><text class="chipt" x="692" y="263" text-anchor="middle">AI Gateway</text>
+      <rect class="chip" x="742" y="248" width="62" height="22" rx="11"/><text class="chipt" x="773" y="263" text-anchor="middle">Tokens</text>
+      <rect class="chip" x="812" y="248" width="108" height="22" rx="11"/><text class="chipt" x="866" y="263" text-anchor="middle">Token budgets</text>
+    </svg>
+  </div>
+  <div class="chain" style="margin-top:22px"><span class="n">API Gateway</span><span class="ar"></span><span class="n">Service Mesh</span><span class="ar"></span><span class="n k">AI Gateway</span></div>
 </section>
 
 <section class="sec" id="market" data-title="시장의 변화">
@@ -10053,7 +10116,7 @@ function audienceOk(el){
   return true;
 }
 function visiblePages(){ return PAGES.filter(audienceOk); }
-/* ---------- rail (Home · AI · API) ---------- */
+/* ---------- rail (Kong · AI · API) ---------- */
 const RAILS=['kong','ai','api'];
 function pageRails(p){ return ((p&&p.dataset.rail)||'api').split(/\s+/); }
 function curRail(){ return document.documentElement.dataset.rail||'kong'; }
@@ -10368,7 +10431,7 @@ function treeHTML(id){
   });
   return h;
 }
-const RAIL_LAB={kong:'Home',ai:'AI',api:'API'};
+const RAIL_LAB={kong:'Kong',ai:'AI',api:'API'};
 function npNav(pg){
   PAGES.forEach(p=>{ const o=p.querySelector(':scope > .np-nav'); if(o) o.remove(); });
   const list=railPages(), i=list.indexOf(pg); if(i<0) return;

@@ -10,6 +10,7 @@
 ### 變更
 - AI Management > 用例: 修復多餘閉合標籤導致僅顯示軟體工廠頁籤的問題，恢復六個用例圖在標籤頁間切換顯示
 - AI Management > 用例: 以統一網格 · 箭頭 · 底部 Konnect 條帶整理六個圖示，並縮短 EN 等語言標籤以配合框寬
+- 左側欄標籤 Home → Kong。Kong 企業介紹 > 概覽：放置 AI Connectivity 口號與 API · AI 快捷入口草案
 
 - AI Gateway 2.0：依 Enterprise · Konnect 分支概要、架構圖與部署強調色。將 LLM 成本估算摘要併入功能變更章節。章節標題改為「AI 2.0 功能變更與改進事項」
 - AI Gateway 2.0 > 功能變更 · 改進 > LLM 成本估算：新增 v1·v2 估算與供應商實帳對比圖
