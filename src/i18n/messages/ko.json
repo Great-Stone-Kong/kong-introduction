@@ -5234,5 +5234,9 @@
   "m.6f8330c4d774": "API Request는 AI 트래픽 여부와 관계없이 산정되고, 다른 제품과 합산됩니다.",
   "m.e90fb0b7d9bf": "(2026-05-05) · 가격 · 최소 수량은 계약 시 확정됩니다.",
   "m.f367e880b814": "Konnect에서는 Control Plane과 설정 저장소를 Kong이 운영하므로 Data Plane과 Redis만 산정합니다. Dedicated Cloud Gateways는 Kong이 자동 확장합니다.",
-  "m.50581e54882b": "고객 준비 · Hybrid · Self-managed"
+  "m.50581e54882b": "고객 준비 · Hybrid · Self-managed",
+  "m.3e87fc31ae40": "AI 연결",
+  "m.0647f401764b": "API 연결",
+  "m.adaf2978f36f": "개발 도구",
+  "m.a804d32c3c39": "플랫폼 공통"
 }

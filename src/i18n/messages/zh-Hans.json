@@ -5234,5 +5234,9 @@
   "m.6f8330c4d774": "API Request 无论是否为 AI 流量都计费,并与其他产品合并计算。",
   "m.e90fb0b7d9bf": "(2026-05-05) · 价格 · 最低数量在签约时确定。",
   "m.f367e880b814": "在 Konnect 中,Control Plane 和配置存储由 Kong 运营,因此只需估算 Data Plane 和 Redis。Dedicated Cloud Gateways 由 Kong 自动扩缩。",
-  "m.50581e54882b": "客户准备 · Hybrid · Self-managed"
+  "m.50581e54882b": "客户准备 · Hybrid · Self-managed",
+  "m.3e87fc31ae40": "AI 连接",
+  "m.0647f401764b": "API 连接",
+  "m.adaf2978f36f": "开发工具",
+  "m.a804d32c3c39": "平台通用"
 }

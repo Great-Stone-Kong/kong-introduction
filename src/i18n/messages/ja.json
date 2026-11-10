@@ -5234,5 +5234,9 @@
   "m.6f8330c4d774": "API RequestはAIトラフィックかどうかに関係なく算定され、他の製品と合算されます。",
   "m.e90fb0b7d9bf": "(2026-05-05) · 価格 · 最低数量は契約時に確定します。",
   "m.f367e880b814": "KonnectではControl Planeと設定ストアをKongが運用するため、Data PlaneとRedisだけを見積もります。Dedicated Cloud GatewaysはKongが自動スケールします。",
-  "m.50581e54882b": "お客様準備 · Hybrid · Self-managed"
+  "m.50581e54882b": "お客様準備 · Hybrid · Self-managed",
+  "m.3e87fc31ae40": "AI接続",
+  "m.0647f401764b": "API接続",
+  "m.adaf2978f36f": "開発ツール",
+  "m.a804d32c3c39": "プラットフォーム共通"
 }

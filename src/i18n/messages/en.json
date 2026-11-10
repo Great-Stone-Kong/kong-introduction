@@ -5153,7 +5153,7 @@
   "m.b0efe206c9e1": "+ GCP · LiteLLM proxy",
   "m.a160e999444f": "+ DIY proxies · scripts",
   "m.73b400311ea4": "Konnect only · Switch to Konnect at the bottom of the rail to view",
-  "m.b0629c01ce90": "${n} sections hidden for ${e}",
+  "m.b0629c01ce90": "Hidden in ${e}: ${n}",
   "m.ea3252281bc3": "Korean",
   "m.3fd727dead9d": "Kong Enterprise · Self-managed (on-prem)",
   "m.44c94ac4c0d4": "Kong runs the Control Plane in Konnect, and Data Planes live in your environment or on Kong-run Dedicated Cloud Gateways.",
@@ -5234,5 +5234,9 @@
   "m.6f8330c4d774": "API Requests count whether or not they are AI traffic, and are aggregated with other products.",
   "m.e90fb0b7d9bf": "(2026-05-05) · Pricing · minimum quantities are set in the contract.",
   "m.f367e880b814": "In Konnect, Kong runs the Control Plane and config store, so size only Data Planes and Redis. Kong autoscales Dedicated Cloud Gateways.",
-  "m.50581e54882b": "Provided by you · Hybrid · Self-managed"
+  "m.50581e54882b": "Provided by you · Hybrid · Self-managed",
+  "m.3e87fc31ae40": "AI connectivity",
+  "m.0647f401764b": "API connectivity",
+  "m.adaf2978f36f": "Developer tools",
+  "m.a804d32c3c39": "Platform-wide"
 }
