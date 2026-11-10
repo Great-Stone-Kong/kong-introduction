@@ -118,6 +118,50 @@ html[data-theme="light"] .nr{--nr-bg:#101110;border-right-color:#101110}
 .nr-home{margin-bottom:6px}
 .nr-home svg{width:30px;height:27px;color:#CCFF00}
 .nr-gap{flex:1}
+/* AI Management (P4) */
+.am-flow{display:grid;grid-template-columns:1fr 34px 1fr 34px 1fr;align-items:stretch;margin:26px 0 18px}
+.am-st{position:relative;border:1px solid var(--line);border-radius:10px;background:var(--card);padding:16px 16px 14px}
+.am-st .am-n{position:absolute;top:12px;right:14px;font:700 11px var(--mono);color:var(--g500)}
+.am-st b{display:block;color:var(--heading);font-size:15px;margin:8px 0 4px}.am-st p{margin:0;font-size:13px;color:var(--g300);line-height:1.5}
+.am-ic{width:22px;height:22px;color:var(--mark);display:block}
+.am-ar{align-self:center;justify-self:center;width:18px;height:2px;background:var(--mark);position:relative}
+.am-ar::after{content:"";position:absolute;right:-2px;top:-5px;border:6px solid transparent;border-left:8px solid var(--mark);border-right:0}
+.am-g{margin-top:18px}.am-g .card p{font-size:14px}.am-g .card .am-ic{margin-bottom:8px}
+.am-kpi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:18px 0 6px}
+.am-kpi div{border:1px solid var(--line2);border-radius:10px;padding:14px;background:var(--card)}
+.am-kpi b{display:block;color:var(--mark);font-size:15px}.am-kpi span{font-size:12.5px;color:var(--g300)}
+@media (max-width:900px){.am-flow{grid-template-columns:1fr;gap:10px}.am-ar{display:none}.am-kpi{grid-template-columns:1fr 1fr}}
+/* 섹션 검색 (P5) */
+.ns-btn{flex:none;display:flex;align-items:center;gap:6px;height:34px;padding:0 12px;border:1px solid var(--line2);border-radius:999px;background:none;color:var(--g200);font:700 12px var(--font);cursor:pointer;transition:border-color .15s,color .15s}
+.ns-btn:hover{border-color:var(--accent);color:var(--heading)}
+.ns-btn kbd{font:600 10.5px var(--mono);color:var(--g500)}
+.ns-pal{position:fixed;inset:0;z-index:120;background:rgba(0,6,2,.55);display:flex;align-items:flex-start;justify-content:center;padding-top:12vh}
+.ns-pal[hidden]{display:none}
+.ns-box{width:min(640px,92vw);background:var(--svg-panel,#0A1F10);border:1px solid var(--line2);border-radius:12px;box-shadow:0 24px 60px rgba(0,0,0,.45);overflow:hidden}
+.ns-in{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line);color:var(--g400)}
+.ns-in input{flex:1;border:0;outline:0;background:none;color:var(--heading);font:600 15px var(--font)}
+.ns-in input::-webkit-search-cancel-button{display:none}
+.ns-in kbd,.ns-ft kbd{font:600 10.5px var(--mono);color:var(--g500);border:1px solid var(--line);border-radius:5px;padding:1px 6px}
+.ns-res{max-height:52vh;overflow:auto;padding:6px}
+.ns-g{font:800 10.5px var(--font);letter-spacing:.08em;color:var(--g500);padding:10px 10px 4px;text-transform:uppercase}
+.ns-x{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;cursor:pointer;color:var(--g200)}
+.ns-x svg{width:16px;height:16px;color:var(--g400);flex:none}
+.ns-x .t{flex:1;min-width:0}.ns-x .t b{display:block;font-size:13.5px;color:var(--heading)}
+.ns-x .t span{display:block;font-size:11.5px;color:var(--g400);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ns-x mark{background:none;color:var(--mark);font-weight:800}
+.ns-x.on{background:var(--accent-wash)}.ns-x.on svg{color:var(--mark)}
+.ns-e{padding:22px;text-align:center;color:var(--g400);font-size:13px}
+.ns-ft{display:flex;gap:14px;padding:8px 14px;border-top:1px solid var(--line);font-size:11px;color:var(--g500)}
+.ns-ft .ns-ed{margin-left:auto}
+/* 이전 · 다음 페이지 (P5) */
+.np-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:56px 0 0}
+.np-nav button{display:flex;flex-direction:column;gap:4px;text-align:left;border:1px solid var(--line);border-radius:10px;background:var(--card);padding:14px 16px;cursor:pointer;color:var(--g200);font-family:var(--font);transition:border-color .15s}
+.np-nav button:hover{border-color:var(--mark)}
+.np-nav button.nx{text-align:right;grid-column:2}
+.np-nav em{font-style:normal;font-size:11.5px;color:var(--g500);letter-spacing:.04em}
+.np-nav b{font-size:15px;color:var(--heading)}
+@media (max-width:820px){.ns-btn span,.ns-btn kbd{display:none}.ns-btn{padding:0 10px}}
+@media print{.ns-btn,.ns-pal,.np-nav{display:none!important}}
 /* 좌측 트리 · 브레드크럼 · 유휴 톤다운 */
 .topnav{display:none!important}
 .nb{flex:1;min-width:0;display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--g400);white-space:nowrap;overflow:hidden}
@@ -3566,6 +3610,10 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
 <!-- Kong Iconography: infrastructure --><symbol id="ki-infrastructure" viewBox="0 0 24 24"><g clip-path="url(#kiinfrastructure_clip0_8040_327001)"> <path d="M7 14.25C8.51878 14.25 9.75 15.4812 9.75 17V21C9.75 22.5188 8.51878 23.75 7 23.75H3C1.48122 23.75 0.25 22.5188 0.25 21V17C0.25 15.4812 1.48122 14.25 3 14.25H7ZM19 14.25C20.5188 14.25 21.75 15.4812 21.75 17V21C21.75 22.5188 20.5188 23.75 19 23.75H15C13.4812 23.75 12.25 22.5188 12.25 21V17C12.25 15.4812 13.4812 14.25 15 14.25H19ZM3 15.75C2.30964 15.75 1.75 16.3096 1.75 17V21C1.75 21.6904 2.30964 22.25 3 22.25H7C7.69036 22.25 8.25 21.6904 8.25 21V17C8.25 16.3096 7.69036 15.75 7 15.75H3ZM15 15.75C14.3096 15.75 13.75 16.3096 13.75 17V21C13.75 21.6904 14.3096 22.25 15 22.25H19C19.6904 22.25 20.25 21.6904 20.25 21V17C20.25 16.3096 19.6904 15.75 19 15.75H15ZM7 2.25C8.51878 2.25 9.75 3.48122 9.75 5V9C9.75 10.5188 8.51878 11.75 7 11.75H3C1.48122 11.75 0.25 10.5188 0.25 9V5C0.25 3.48122 1.48122 2.25 3 2.25H7ZM3 3.75C2.30964 3.75 1.75 4.30964 1.75 5V9C1.75 9.69036 2.30964 10.25 3 10.25H7C7.69036 10.25 8.25 9.69036 8.25 9V5C8.25 4.30964 7.69036 3.75 7 3.75H3ZM21 0.25C22.5188 0.25 23.75 1.48122 23.75 3V7C23.75 8.51878 22.5188 9.75 21 9.75H17C15.4812 9.75 14.25 8.51878 14.25 7V3C14.25 1.48122 15.4812 0.25 17 0.25H21ZM17 1.75C16.3096 1.75 15.75 2.30964 15.75 3V7C15.75 7.69036 16.3096 8.25 17 8.25H21C21.6904 8.25 22.25 7.69036 22.25 7V3C22.25 2.30964 21.6904 1.75 21 1.75H17Z" fill="currentColor"/> </g> <defs> <clipPath id="kiinfrastructure_clip0_8040_327001"> <rect width="24" height="24" fill="white"/> </clipPath> </defs></symbol>
 <!-- Kong Iconography: shield-check --><symbol id="ki-shield-check" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.3857 0.344733C11.6123 0.21889 11.8877 0.21889 12.1143 0.344733L21.1143 5.34473C21.3523 5.47704 21.5 5.72769 21.5 6.00001V12.0205C21.438 14.2847 21.0202 16.5943 19.5938 18.6611C18.1644 20.7323 15.7865 22.4675 11.9834 23.7129C11.8318 23.7625 11.6682 23.7625 11.5166 23.7129C7.71348 22.4675 5.33565 20.7323 3.90625 18.6611C2.47984 16.5943 2.06203 14.2847 2 12.0205V6.00001C2 5.72769 2.14774 5.47704 2.38574 5.34473L11.3857 0.344733ZM3.5 6.44141V11.9893C3.55892 14.101 3.94671 16.0784 5.14062 17.8086C6.3076 19.4995 8.30664 21.0441 11.75 22.21C15.1934 21.0441 17.1924 19.4995 18.3594 17.8086C19.5533 16.0784 19.9411 14.1011 20 11.9893V6.44141L11.75 1.8584L3.5 6.44141ZM14.626 8.58399C14.8557 8.23936 15.3214 8.14625 15.666 8.37598C16.0107 8.60575 16.1038 9.07138 15.874 9.41602L11.874 15.416C11.6442 15.7606 11.1786 15.8538 10.834 15.624L7.83398 13.624C7.48939 13.3943 7.39628 12.9286 7.62598 12.584C7.85573 12.2394 8.32137 12.1462 8.66602 12.376L11.042 13.96L14.626 8.58399Z" fill="currentColor"/></symbol>
 <!-- Kong Iconography: premium --><symbol id="ki-premium" viewBox="0 0 24 25"><mask id="kipremium_mask0_8040_326228" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="11" y="11" width="12" height="13"> <path d="M22.9998 11.7034H11.1904V23.5128H22.9998V11.7034Z" fill="white"/> </mask> <g mask="url(#kipremium_mask0_8040_326228)"> <path d="M14.4846 23.4185C14.1893 23.4185 13.8941 23.324 13.6461 23.1468C13.1619 22.8044 12.9139 22.2257 13.0084 21.6234L13.3863 19.3088L11.7094 17.5846C11.3196 17.1831 11.1897 16.6044 11.3669 16.073C11.544 15.5534 11.981 15.1873 12.5124 15.1046L14.7798 14.7504L15.7364 12.6837C15.9844 12.1405 16.504 11.8098 17.0944 11.8098C17.6731 11.8098 18.1927 12.1405 18.4525 12.6837L19.4209 14.7504L21.6883 15.1046C22.2197 15.1873 22.6567 15.5534 22.8338 16.073C23.011 16.6044 22.881 17.1831 22.5031 17.5846L20.8262 19.3206L21.2041 21.6352C21.2986 22.2257 21.0624 22.8162 20.5782 23.1586C20.1058 23.4893 19.5036 23.5129 19.0076 23.2413L17.1181 22.1903L15.2286 23.2531C15.0042 23.383 14.7562 23.4421 14.5082 23.4421L14.4846 23.4185ZM13.3745 16.758L14.9569 18.3877C15.1223 18.553 15.2167 18.7892 15.2167 19.0254C15.2167 19.0726 15.2167 19.1198 15.2167 19.1671L14.8507 21.399L16.6693 20.3834C16.9173 20.2417 17.2598 20.2299 17.5196 20.3598L19.3737 21.399L19.0076 19.1671C18.9603 18.8482 19.0784 18.5176 19.3382 18.3168L20.8262 16.758L18.6887 16.4273C18.358 16.3801 18.0746 16.1321 17.9683 15.825L17.0944 13.9709L16.1851 15.9195C16.0552 16.1911 15.7954 16.3919 15.5002 16.4391L13.3745 16.7698V16.758Z" fill="currentColor"/> </g> <path d="M11.1904 11.8096C11.6037 11.8096 12.0288 11.8443 12.4893 11.9033C12.9734 11.9624 13.3157 12.4114 13.2568 12.8955C13.1978 13.3796 12.7497 13.7219 12.2656 13.6631C11.9232 13.6158 11.5682 13.5928 11.2021 13.5928C7.89577 13.5928 5.20341 15.5646 5.20312 17.9971V22.5439C5.20312 23.0281 4.80157 23.4297 4.31738 23.4297L4.30566 23.418C3.82148 23.418 3.41992 23.0164 3.41992 22.5322V17.9854C3.42012 14.5844 6.90377 11.8096 11.1904 11.8096ZM11.1904 0C14.1191 0.000121077 16.5049 2.3858 16.5049 5.31445C16.5048 8.24301 14.119 10.6288 11.1904 10.6289C8.26177 10.6289 5.8761 8.24308 5.87598 5.31445C5.87598 2.38572 8.2617 0 11.1904 0ZM11.1904 1.77148C9.24188 1.77148 7.64746 3.3659 7.64746 5.31445C7.64758 7.2629 9.24195 8.85742 11.1904 8.85742C13.1388 8.8573 14.7333 7.26283 14.7334 5.31445C14.7334 3.36598 13.1389 1.77161 11.1904 1.77148Z" fill="currentColor"/></symbol>
+<!-- Kong Iconography: management --><symbol id="ki-management" viewBox="0 0 24 24"><path d="M11.75 0.25C13.2688 0.25 14.5 1.48122 14.5 3C14.5 3.5635 14.3289 4.08632 14.0381 4.52246C18.3186 5.55217 21.5 9.40345 21.5 14C21.5 19.3848 17.1348 23.75 11.75 23.75C6.36522 23.75 2 19.3848 2 14C2 9.40378 5.18084 5.5525 9.46094 4.52246C9.17034 4.08641 9 3.56331 9 3C9 1.48122 10.2312 0.25 11.75 0.25ZM11.75 5.75C7.19365 5.75 3.5 9.44365 3.5 14C3.5 18.5564 7.19365 22.25 11.75 22.25C16.3063 22.25 20 18.5564 20 14C20 9.44365 16.3063 5.75 11.75 5.75ZM11.75 1.75C11.0596 1.75 10.5 2.30964 10.5 3C10.5 3.69036 11.0596 4.25 11.75 4.25C12.4404 4.25 13 3.69036 13 3C13 2.30964 12.4404 1.75 11.75 1.75Z" fill="currentColor"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M15.8222 9.25423C15.8622 9.25819 15.9024 9.26502 15.9423 9.27571C15.9472 9.27702 15.9521 9.27821 15.957 9.27962C15.9667 9.28244 15.9765 9.28517 15.9863 9.28841C16.0171 9.2987 16.0466 9.31175 16.0751 9.32552C16.0817 9.32869 16.0882 9.33192 16.0947 9.33528C16.1188 9.34781 16.1407 9.36342 16.163 9.37825C16.184 9.39223 16.205 9.40612 16.2245 9.4222C16.2432 9.43754 16.2603 9.45409 16.2773 9.47103C16.2942 9.48794 16.3107 9.50515 16.3261 9.52376C16.3422 9.54332 16.356 9.56427 16.37 9.58528C16.3849 9.60758 16.4005 9.62949 16.413 9.65364C16.4164 9.66011 16.4196 9.66661 16.4228 9.67317C16.4368 9.70206 16.4505 9.73177 16.4609 9.76302C16.464 9.77235 16.466 9.78198 16.4687 9.79134C16.4701 9.7962 16.4713 9.8011 16.4726 9.80599C16.4833 9.84597 16.4901 9.88605 16.4941 9.9261C16.4965 9.95039 16.495 9.97472 16.495 9.99935C16.4951 10.024 16.4965 10.0483 16.4941 10.0726C16.4901 10.113 16.4834 10.1534 16.4726 10.1937C16.4713 10.1986 16.4701 10.2035 16.4687 10.2083C16.4659 10.2179 16.464 10.2281 16.4609 10.2376L14.4609 16.2376C14.3861 16.4614 14.2101 16.6366 13.9863 16.7113L7.98626 18.7113C7.97958 18.7135 7.97244 18.7141 7.96575 18.7161C7.95439 18.7196 7.9431 18.723 7.93157 18.7259C7.89673 18.7347 7.86196 18.7408 7.82708 18.7445C7.80119 18.7472 7.77523 18.7464 7.74895 18.7464C7.72235 18.7464 7.69605 18.7473 7.66985 18.7445C7.63499 18.7407 7.60018 18.7348 7.56536 18.7259C7.55384 18.723 7.54252 18.7196 7.53118 18.7161C7.52491 18.7142 7.5179 18.7133 7.51165 18.7113C7.47946 18.7005 7.44855 18.6877 7.41888 18.6732C7.41521 18.6714 7.41177 18.6692 7.40813 18.6673C7.37936 18.6527 7.35324 18.6344 7.32708 18.6165C7.30877 18.604 7.29055 18.5916 7.27337 18.5775C7.25528 18.5626 7.23907 18.546 7.22259 18.5296C7.20445 18.5116 7.18617 18.4939 7.16985 18.474C7.15412 18.4547 7.14059 18.4341 7.12688 18.4134C7.11168 18.3905 7.0957 18.368 7.08294 18.3431C7.08027 18.3379 7.07767 18.3327 7.07513 18.3275C7.06116 18.2986 7.04844 18.2688 7.03802 18.2376C7.03582 18.231 7.03416 18.2237 7.03216 18.2171C7.0288 18.2061 7.02524 18.1951 7.02239 18.1839C7.01297 18.1469 7.0065 18.1097 7.00286 18.0726C7.00049 18.0483 7.00186 18.0239 7.00188 17.9993C7.0019 17.9748 7.00045 17.9503 7.00286 17.9261C7.0065 17.8896 7.01316 17.8532 7.02239 17.8167C7.0253 17.8052 7.02871 17.7939 7.03216 17.7825C7.03413 17.7761 7.03586 17.7695 7.03802 17.763L9.03802 11.763C9.11264 11.5392 9.28783 11.3631 9.51165 11.2884L15.5116 9.28841C15.521 9.2853 15.5306 9.28234 15.54 9.27962C15.5448 9.27821 15.5497 9.27703 15.5546 9.27571C15.5945 9.26495 15.6347 9.25826 15.6747 9.25423C15.6993 9.25176 15.724 9.25326 15.749 9.25325C15.7736 9.25324 15.7979 9.25184 15.8222 9.25423ZM10.3417 12.5931L8.9345 16.8138L13.1562 15.4075L14.5634 11.1849L10.3417 12.5931Z" fill="currentColor"/></symbol>
+<!-- Kong Iconography: identity --><symbol id="ki-identity" viewBox="0 0 24 24"><g clip-path="url(#kiidentity_clip0_8040_327096)"> <path d="M12 11.25C12.4142 11.25 12.75 11.5858 12.75 12C12.75 15.3122 12.2695 18.6147 11.3184 21.7852L10.8887 23.2158C10.7694 23.6125 10.3508 23.8371 9.9541 23.7178C9.55756 23.5984 9.33293 23.1808 9.45215 22.7842L9.88184 21.3545C10.7907 18.3251 11.25 15.1677 11.25 12C11.25 11.5858 11.5858 11.2501 12 11.25ZM11.9902 7.58008C14.4358 7.58008 16.4102 9.56712 16.4102 12C16.4102 14.9471 16.0737 17.8757 15.3896 20.7344C15.2933 21.1371 14.8891 21.3853 14.4863 21.2891C14.0836 21.1927 13.8345 20.7885 13.9307 20.3857C14.5866 17.6445 14.9102 14.8328 14.9102 12C14.9102 10.3929 13.6047 9.08008 11.9902 9.08008C10.3746 9.08023 9.07031 10.3843 9.07031 12C9.07031 14.9631 8.63995 17.8957 7.78906 20.7354C7.67017 21.132 7.25218 21.357 6.85547 21.2383C6.45868 21.1194 6.23365 20.7015 6.35254 20.3047C7.16162 17.6044 7.57031 14.8169 7.57031 12C7.57031 9.55588 9.54615 7.58023 11.9902 7.58008ZM12 3.91992C16.454 3.92013 20.0801 7.54592 20.0801 12C20.0801 14.0866 19.9273 16.1646 19.6113 18.2236C19.5485 18.633 19.1653 18.9144 18.7559 18.8516C18.3464 18.7887 18.0651 18.4055 18.1279 17.9961C18.4319 16.0152 18.5801 14.0133 18.5801 12C18.5801 8.37434 15.6256 5.42013 12 5.41992C8.37422 5.41992 5.41993 8.37422 5.41992 12C5.41992 14.1207 5.16229 16.2296 4.66895 18.2852C4.57224 18.6879 4.16739 18.9355 3.76465 18.8389C3.3619 18.7422 3.1133 18.3373 3.20996 17.9346C3.67657 15.9903 3.91992 13.9992 3.91992 12C3.91993 7.54579 7.54579 3.91992 12 3.91992ZM12 0.25C18.4942 0.25 23.75 5.50579 23.75 12V14C23.75 14.4142 23.4142 14.75 23 14.75C22.5858 14.75 22.25 14.4142 22.25 14V12C22.25 6.33421 17.6658 1.75 12 1.75C6.33421 1.75 1.75 6.33421 1.75 12V14C1.75 14.4142 1.41421 14.75 1 14.75C0.585786 14.75 0.25 14.4142 0.25 14V12C0.25 5.50579 5.50579 0.25 12 0.25Z" fill="currentColor"/> </g> <defs> <clipPath id="kiidentity_clip0_8040_327096"> <rect width="24" height="24" fill="white"/> </clipPath> </defs></symbol>
+<!-- Kong Iconography: saving --><symbol id="ki-saving" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M6 18.25C6.41421 18.25 6.75 18.5858 6.75 19V22C6.75 22.4142 6.41421 22.75 6 22.75C5.58579 22.75 5.25 22.4142 5.25 22V19C5.25 18.5858 5.58579 18.25 6 18.25Z" fill="currentColor"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M16 18.25C16.4142 18.25 16.75 18.5858 16.75 19V22C16.75 22.4142 16.4142 22.75 16 22.75C15.5858 22.75 15.25 22.4142 15.25 22V19C15.25 18.5858 15.5858 18.25 16 18.25Z" fill="currentColor"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M6.25 7.97998C6.25 7.56577 6.58579 7.22998 7 7.22998H13C13.4142 7.22998 13.75 7.56577 13.75 7.97998C13.75 8.39419 13.4142 8.72998 13 8.72998H7C6.58579 8.72998 6.25 8.39419 6.25 7.97998Z" fill="currentColor"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M16.3539 0.338745C16.5978 0.46926 16.75 0.723405 16.75 1V3.53156C18.5174 4.09537 19.9122 5.48136 20.4782 7.25H23C23.4142 7.25 23.75 7.58579 23.75 8V16C23.75 16.4142 23.4142 16.75 23 16.75H20.4014C19.704 18.4987 18.0074 19.75 16 19.75H6C2.82579 19.75 0.25 17.1742 0.25 14V9C0.25 5.82579 2.82579 3.25 6 3.25H11.2729L15.584 0.375963C15.8141 0.222535 16.11 0.208231 16.3539 0.338745ZM15.25 2.40139L11.916 4.62404C11.7928 4.70617 11.6481 4.75 11.5 4.75H6C3.65421 4.75 1.75 6.65421 1.75 9V14C1.75 16.3458 3.65421 18.25 6 18.25H16C17.504 18.25 18.7669 17.2148 19.1344 15.8102C19.2208 15.4802 19.5189 15.25 19.86 15.25H22.25V8.75H19.9C19.5436 8.75 19.2364 8.49918 19.1651 8.14997C18.8257 6.4867 17.5176 5.18518 15.85 4.84485C15.5008 4.77359 15.25 4.46641 15.25 4.11V2.40139Z" fill="currentColor"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M16 10.22C16.4142 10.22 16.75 10.5558 16.75 10.97V10.98C16.75 11.3942 16.4142 11.73 16 11.73C15.5858 11.73 15.25 11.3942 15.25 10.98V10.97C15.25 10.5558 15.5858 10.22 16 10.22Z" fill="currentColor"/></symbol>
+<!-- Kong Iconography: analytics --><symbol id="ki-analytics" viewBox="0 0 24 24"><g clip-path="url(#kianalytics_clip0_8040_326415)"> <path d="M1 0.25C1.41421 0.25 1.75 0.585786 1.75 1V22.25H23C23.4142 22.25 23.75 22.5858 23.75 23C23.75 23.4142 23.4142 23.75 23 23.75H1C0.585786 23.75 0.25 23.4142 0.25 23V1C0.25 0.585786 0.585786 0.25 1 0.25ZM22.3877 4.56738C22.6266 4.2292 23.0943 4.14889 23.4326 4.3877C23.7708 4.62662 23.8511 5.0943 23.6123 5.43262L17.6123 13.9326C17.3986 14.2351 16.9964 14.3363 16.665 14.1709L12.1963 11.9365L7.57617 17.4805C7.31097 17.7985 6.83767 17.8413 6.51953 17.5762C6.20151 17.311 6.15871 16.8377 6.42383 16.5195L11.4238 10.5195C11.6466 10.2524 12.0238 10.1738 12.335 10.3291L16.7588 12.541L22.3877 4.56738Z" fill="currentColor"/> </g> <defs> <clipPath id="kianalytics_clip0_8040_326415"> <rect width="24" height="24" fill="white"/> </clipPath> </defs></symbol>
 <!-- Kong Iconography: build-anywhere --><symbol id="ki-build-anywhere" viewBox="0 0 24 24"><path d="M4.929 6.929C5.441 6.929 5.953 6.734 6.343 6.343C7.124 5.562 7.124 4.296 6.343 3.515C5.953 3.124 5.441 2.929 4.929 2.929C4.417 2.929 3.905 3.124 3.515 3.515C2.734 4.296 2.734 5.562 3.515 6.343C3.905 6.734 4.417 6.929 4.929 6.929ZM4 12C4 10.895 3.105 10 2 10C0.895 10 0 10.895 0 12C0 13.105 0.895 14 2 14C3.105 14 4 13.105 4 12ZM22 10C20.895 10 20 10.895 20 12C20 13.105 20.895 14 22 14C23.105 14 24 13.105 24 12C24 10.895 23.105 10 22 10ZM12 4C13.105 4 14 3.105 14 2C14 0.895 13.105 0 12 0C10.895 0 10 0.895 10 2C10 3.105 10.895 4 12 4ZM19.071 6.929C19.583 6.929 20.095 6.734 20.485 6.343C21.266 5.562 21.266 4.296 20.485 3.515C20.094 3.124 19.583 2.929 19.071 2.929C18.559 2.929 18.047 3.124 17.657 3.515C16.876 4.296 16.876 5.562 17.657 6.343C18.047 6.734 18.559 6.929 19.071 6.929ZM19.071 17.071C18.559 17.071 18.047 17.266 17.657 17.657C16.876 18.438 16.876 19.704 17.657 20.485C18.048 20.876 18.559 21.071 19.071 21.071C19.583 21.071 20.095 20.876 20.485 20.485C21.266 19.704 21.266 18.438 20.485 17.657C20.095 17.266 19.583 17.071 19.071 17.071ZM4.929 17.071C4.417 17.071 3.905 17.266 3.515 17.657C2.734 18.438 2.734 19.704 3.515 20.485C3.906 20.876 4.417 21.071 4.929 21.071C5.441 21.071 5.953 20.876 6.343 20.485C7.124 19.704 7.124 18.438 6.343 17.657C5.953 17.266 5.441 17.071 4.929 17.071ZM12 20C10.895 20 10 20.895 10 22C10 23.105 10.895 24 12 24C13.105 24 14 23.105 14 22C14 20.895 13.105 20 12 20Z" fill="currentColor"/><path d="M10 10H14V14H10V10Z" fill="currentColor"/></symbol>
 <!-- Kong Iconography: professional --><symbol id="ki-professional" viewBox="0 0 24 24"><g> <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0286 3.80352C11.4132 3.95726 11.6004 4.39368 11.4466 4.77831L8.87663 11.2083C8.8004 11.399 8.64928 11.5502 8.45856 11.6264L2.02856 14.1964C1.64393 14.3501 1.2075 14.1629 1.05377 13.7783C0.900035 13.3937 1.08721 12.9573 1.47184 12.8035L7.60315 10.3529L10.0538 4.2216C10.2075 3.83697 10.6439 3.64979 11.0286 3.80352Z" fill="currentColor"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M10.4718 3.80352C10.8565 3.64979 11.2929 3.83697 11.4466 4.2216L13.8972 10.3529L20.0286 12.8035C20.4132 12.9573 20.6004 13.3937 20.4466 13.7783C20.2929 14.1629 19.8565 14.3501 19.4718 14.1964L13.0418 11.6264C12.8511 11.5502 12.7 11.399 12.6238 11.2083L10.0538 4.77831C9.90003 4.39368 10.0872 3.95726 10.4718 3.80352Z" fill="currentColor"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M20.4466 13.2216C20.6004 13.6062 20.4132 14.0427 20.0286 14.1964L13.8972 16.647L11.4466 22.7783C11.2929 23.1629 10.8565 23.3501 10.4718 23.1964C10.0872 23.0427 9.90003 22.6062 10.0538 22.2216L12.6238 15.7916C12.7 15.6009 12.8511 15.4498 13.0418 15.3735L19.4718 12.8035C19.8565 12.6498 20.2929 12.837 20.4466 13.2216Z" fill="currentColor"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M1.05377 13.2216C1.2075 12.837 1.64393 12.6498 2.02856 12.8035L8.45856 15.3735C8.64928 15.4498 8.8004 15.6009 8.87663 15.7916L11.4466 22.2216C11.6004 22.6062 11.4132 23.0427 11.0286 23.1964C10.6439 23.3501 10.2075 23.1629 10.0538 22.7783L7.60315 16.647L1.47184 14.1964C1.08721 14.0427 0.900035 13.6062 1.05377 13.2216Z" fill="currentColor"/> <path d="M20.5 1C20.5 0.585786 20.1642 0.25 19.75 0.25C19.3358 0.25 19 0.585786 19 1V3.75H16.25C15.8358 3.75 15.5 4.08579 15.5 4.5C15.5 4.91421 15.8358 5.25 16.25 5.25H19V8C19 8.41421 19.3358 8.75 19.75 8.75C20.1642 8.75 20.5 8.41421 20.5 8V5.25H23.25C23.6642 5.25 24 4.91421 24 4.5C24 4.08579 23.6642 3.75 23.25 3.75H20.5V1Z" fill="currentColor"/> </g></symbol>
 <symbol id="kong-logo" viewBox="0 0 429 137"><path d="M49.6,113l-3.7,4.7,8.4,13.2-.9,6.1h35.6l2.5-6.1-14.3-17.9h-27.6Z"/><path d="M69.1,32.7l-12.9,22.7,62.9,74.8-1.8,6.9h28.8l5.2-24.3L84.1,32.7h-15Z"/><path d="M77.7,15.6l-6.1,11.3h15.2l26.1,31.2,15.5-12.8v-8.1l-5.4-7.6,4-4.2L95.8.7l-18.2,14.9Z"/><path d="M30.9,78.8h-8.5L0,107.4v29.6h24l4.2-5.5,18.5-24.1h26.8l8.2-12.7-29.1-34.7-21.9,18.9Z"/><path fill-rule="evenodd" d="M260.4,94h20.9v-32.2h-20.9v32.2ZM261.1,106.9c-5.8,0-8.8-1-11.3-3.6-3.7-3.8-5.2-9-5.2-25.3s1.5-21.5,5.2-25.4c2.4-2.5,5.5-3.5,11.3-3.5h19.4c5.8,0,8.8,1,11.3,3.5,3.7,3.9,5.2,9,5.2,25.4s-1.5,21.5-5.2,25.3c-2.5,2.6-5.5,3.6-11.3,3.6h-19.4Z"/><path fill-rule="evenodd" d="M344.3,67.3v39.6h15.9v-40.8c0-8.5-.9-11.5-3.3-13.8-2.2-2.2-5.3-3.2-10.2-3.2h-14s-8,7.3-8,7.3v-7.3h-15.8v57.8h15.9v-45.1h19.5v5.6h0Z"/><path fill-rule="evenodd" d="M219.7,33.2h18.9l-27.2,34.6,28.3,39.1h-20.1l-21.6-30.7h-5.1s0,30.7,0,30.7h-17V33.2h17v28.6h5.1l21.6-28.6Z"/><path fill-rule="evenodd" d="M409,49.1v7.3l-8-7.3h-11.9c-5.7,0-9.1,1-11.7,3.5-3.4,3.6-5.1,11.3-5.1,25.6s1.4,21.7,4.7,25.1c2.6,2.5,5.7,3.6,11.8,3.6h20.2v8.3s-28,0-28,0v3.4s7.3,8.1,7.3,8.1h21.9c5.8,0,9.1-1,11.2-3.2,2.6-2.7,3.6-4.4,3.6-14.3v-60h-16,0ZM409.1,94h-20.9v-32.2h20.9v32.2h0Z"/></symbol>
@@ -3692,10 +3740,16 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
 </nav>
 <div class="nl-menu i18n-no" id="nl-menu" role="menu" aria-label="Language"></div>
 <div class="ne-toast" id="ne-toast" role="status" aria-live="polite"></div>
+<div class="ns-pal" id="ns-pal" role="dialog" aria-modal="true" aria-label="검색" hidden><div class="ns-box">
+  <div class="ns-in"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="ns-q" type="search" autocomplete="off" spellcheck="false" placeholder="페이지 · 섹션 검색"><kbd>Esc</kbd></div>
+  <div class="ns-res i18n-no" id="ns-res" role="listbox"></div>
+  <div class="ns-ft"><span><kbd>↑↓</kbd> 이동</span><span><kbd>Enter</kbd> 열기</span><span class="ns-ed i18n-no" id="ns-ed"></span></div>
+</div></div>
 <header class="topbar">
   <nav class="topnav" id="topnav"></nav>
   <div class="nb i18n-no" id="nb" aria-label="Breadcrumb"></div>
   <div class="top-tools">
+    <button type="button" class="ns-btn" id="ns-btn" aria-haspopup="dialog" title="검색"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span>검색</span><kbd>⌘K</kbd></button>
     <div class="zm" id="zm" role="group" aria-label="화면 배율"><button type="button" data-z="-1" title="축소" aria-label="축소"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 12h12"/></svg></button><button type="button" class="zv" data-z="0" title="100%로 초기화">100%</button><button type="button" data-z="1" title="확대" aria-label="확대"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 12h12M12 6v12"/></svg></button></div>
     <button class="th-btn" id="th-btn" type="button" title="라이트 모드" aria-label="라이트 모드"><svg class="i-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="i-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"/></svg></button>
     <button class="fs-btn" id="fs-btn" type="button" title="전체화면" aria-label="전체화면"><svg class="i-on" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><svg class="i-off" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg></button>
@@ -5702,6 +5756,65 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
     <div class="dm-log" data-r="dm-log"></div>
   </div>
   <p class="note">Kong AI Gateway 3.14 기준 플러그인(Key Auth, OpenID Connect, ACL, AI MCP Proxy 도구 ACL, AI A2A Proxy, AI Semantic Prompt Guard, AI PII Sanitizer, AI Rate Limiting Advanced, Rate Limiting Advanced)으로 구성할 수 있는 동작을 재현한 시뮬레이션입니다. 경로, 응답 내용, 수치는 예시입니다. 외부 경로 차단은 Agent 런타임의 네트워크를 기본 차단으로 두고 Kong만 허용했을 때 성립합니다.</p>
+</section>
+</div>
+
+
+<!-- ============ AI MANAGEMENT (Konnect) ============ -->
+<div class="page" id="p-aimgmt" data-rgroup="AI 거버넌스" data-icon="management" data-rail="ai" data-edition-lock="konnect" data-label="AI Management" data-desc="AI 리소스 등록 · 접근 · 비용 거버넌스">
+<section class="sec hero" id="am-intro" data-title="개요">
+  <div class="eyebrow">AI Management · Konnect</div>
+  <h1>AI Management</h1>
+  <p class="lead">Konnect에서 조직의 AI 리소스를 관리하는 영역입니다. 관리자가 AI Model · Model Provider · MCP Server · Agent를 등록하고, 다른 사용자는 접근을 요청합니다.</p>
+  <div class="am-flow rv">
+    <div class="am-st"><span class="am-n">01</span><svg class="am-ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#ki-management"/></svg><b>등록</b><p>Org Admin이 모델 · 공급자 · MCP 서버 · 에이전트를 AI Gateway 엔티티로 등록</p></div>
+    <i class="am-ar" aria-hidden="true"></i>
+    <div class="am-st"><span class="am-n">02</span><svg class="am-ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#ki-identity"/></svg><b>접근 요청 · 부여</b><p>사용자 · 그룹 · IdP 기준으로 접근을 요청하고, Virtual key로 호출</p></div>
+    <i class="am-ar" aria-hidden="true"></i>
+    <div class="am-st"><span class="am-n">03</span><svg class="am-ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#ki-analytics"/></svg><b>관측 · 비용 통제</b><p>트래픽 · 지연 · 오류 · 비용을 보고, 예산 한도와 알림으로 지출 관리</p></div>
+  </div>
+  <div class="callout"><b>AI Gateway 2.0과의 관계</b> AI Gateway 2.0은 모델 · MCP 서버 · 에이전트를 다루는 런타임과 엔티티이고, AI Management는 그 엔티티를 누가 · 얼마나 · 어떻게 쓰는지 다스리는 운영 영역입니다.</div>
+</section>
+<section class="sec" id="am-res" data-title="AI 리소스">
+  <div class="eyebrow">Resources</div>
+  <h2>관리 대상 AI 리소스</h2>
+  <p class="sub">네 가지 리소스는 모두 AI Gateway 엔티티이며, 호출하는 사람 · 에이전트는 Kong Identity principal입니다.</p>
+  <div class="grid g4 am-g">
+    <div class="card"><span class="tag">Models</span><h3>AI Model</h3><p>하나 이상의 upstream LLM을 하나의 엔드포인트로 제공합니다.</p></div>
+    <div class="card"><span class="tag">Providers</span><h3>AI Model Provider</h3><p>upstream LLM 서비스 연결 자격 증명을 안전하게 저장 · 관리합니다.</p></div>
+    <div class="card"><span class="tag">MCP Servers</span><h3>AI MCP Server</h3><p>MCP 호환 클라이언트를 백엔드 시스템에 연결합니다.</p></div>
+    <div class="card"><span class="tag">Agents</span><h3>AI Agent</h3><p>A2A · HTTP 에이전트를 AI Gateway로 프록시합니다.</p></div>
+  </div>
+</section>
+<section class="sec" id="am-access" data-title="Access Management">
+  <div class="eyebrow">Access Management</div>
+  <h2>접근 관리</h2>
+  <p class="sub">누가 어떤 모델 · MCP 서버를 쓸 수 있는지 정하고, 공급자 키는 앱 밖에 둡니다.</p>
+  <div class="grid g3 am-g">
+    <div class="card"><span class="tag">Users</span><p>관리자 등록 · 조직도 가져오기 · 첫 로그인 시 자동 생성(JIT)으로 추가합니다.</p></div>
+    <div class="card"><span class="tag">Groups</span><p>여러 사용자 · 에이전트에 규칙과 지출 한도를 한 번에 적용합니다.</p></div>
+    <div class="card"><span class="tag">Identity providers</span><p>Okta · Auth0 같은 외부 IdP로 로그인합니다.</p></div>
+    <div class="card"><span class="tag">Virtual keys</span><p>AI Gateway 호출용 API 키입니다. 공급자 키는 앱에 두지 않습니다.</p></div>
+    <div class="card"><span class="tag">Token Vault</span><p>호출자 대신 외부 서비스를 부를 때 쓰는 자격 증명을 보관합니다.</p></div>
+    <div class="card"><span class="tag">Roles · AI Auth Strategy</span><p>리소스 · Virtual key 관리와 비용 조회 권한을 역할로 나누고, 게이트웨이 수준 인바운드 인증을 리소스에 연결합니다.</p></div>
+  </div>
+</section>
+<section class="sec" id="am-cost" data-title="Cost Management">
+  <div class="eyebrow">Cost Management</div>
+  <h2>비용 관리</h2>
+  <p class="sub">사용자 · 그룹 · 모델 · 팀별로 AI 지출을 추적합니다.</p>
+  <div class="grid g3 am-g">
+    <div class="card"><svg class="am-ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#ki-saving"/></svg><span class="tag">Budgets</span><p>한도 대비 지출을 추적하고, 한도에 가까워지면 알림을 보냅니다.</p></div>
+    <div class="card"><svg class="am-ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#ki-analytics"/></svg><span class="tag">Model cost</span><p>요청마다 LLM 공급자 청구 기준과 같은 방식으로 비용을 계산합니다.</p></div>
+    <div class="card"><svg class="am-ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#ki-identity"/></svg><span class="tag">Group limits</span><p>그룹 단위 지출 한도로 팀 · 부서 예산을 나눕니다.</p></div>
+  </div>
+</section>
+<section class="sec" id="am-obs" data-title="Observability">
+  <div class="eyebrow">Observability</div>
+  <h2>AI 리소스 관측</h2>
+  <p class="sub">AI Model · MCP Server · Agent별 트래픽 · 지연 · 오류 · 비용을 한곳에서 봅니다.</p>
+  <div class="am-kpi"><div><b>트래픽</b><span>요청 수 · 호출 주체</span></div><div><b>지연</b><span>모델 · 서버별 응답 시간</span></div><div><b>오류</b><span>실패율 · 원인</span></div><div><b>비용</b><span>모델 · 사용자 · 그룹별</span></div></div>
+  <p class="note">출처: <a href="https://developer.konghq.com/ai-management/" target="_blank" rel="noopener noreferrer">AI Management ↗</a> · <a href="https://developer.konghq.com/ai-access-management/" target="_blank" rel="noopener noreferrer">AI Gateway access management ↗</a></p>
 </section>
 </div>
 
@@ -9664,12 +9777,21 @@ function treeHTML(id){
     const pid=p.id.slice(2);
     if(lockedFor(p)){ h+='<button type="button" class="nt-it dis" disabled aria-disabled="true" title="'+neLockT()+'">'+ntIcon(p)+'<span class="nt-lb">'+p.dataset.label+'</span>'+edBadge(p)+'</button>'; return; }
     const on=pid===id;
-    h+='<button type="button" class="nt-it'+(on?' on':'')+'" data-p="'+pid+'"'+(on?' aria-current="page"':'')+'>'+ntIcon(p)+'<span class="nt-lb">'+p.dataset.label+'</span>'+edBadge(p)+NT_CV+'</button>';
+    h+='<button type="button" class="nt-it'+(on?' on':'')+'" data-p="'+pid+'"'+(on?' aria-current="page"':'')+'>'+ntIcon(p)+'<span class="nt-lb">'+p.dataset.label+'</span>'+(p.dataset.editionLock?'':edBadge(p))+NT_CV+'</button>';
     if(on) h+='<div class="nt-subs">'+visibleSecs(p).map(x=>'<a data-s="'+x.id+'" href="'+hashFor(pid,x.id)+'">'+x.dataset.title+secBadge(x)+'</a>').join('')+'</div>';
   });
   return h;
 }
 const RAIL_LAB={kong:'Home',ai:'AI',api:'API'};
+function npNav(pg){
+  PAGES.forEach(p=>{ const o=p.querySelector(':scope > .np-nav'); if(o) o.remove(); });
+  const list=railPages(), i=list.indexOf(pg); if(i<0) return;
+  const pv=list[i-1], nx=list[i+1]; if(!pv&&!nx) return;
+  const n=document.createElement('nav'); n.className='np-nav'; n.setAttribute('aria-label','Pages');
+  n.innerHTML=(pv?'<button type="button" class="pv" data-p="'+pv.id.slice(2)+'"><em>← 이전</em><b>'+pv.dataset.label+'</b></button>':'')+(nx?'<button type="button" class="nx" data-p="'+nx.id.slice(2)+'"><em>다음 →</em><b>'+nx.dataset.label+'</b></button>':'');
+  n.addEventListener('click',e=>{ const b=e.target.closest('button[data-p]'); if(b) go(b.dataset.p); });
+  const foot=pg.querySelector(':scope > footer.foot'); if(foot) pg.insertBefore(n,foot); else pg.appendChild(n);
+}
 function setCrumb(secEl){
   if(!nb) return; const pg=document.getElementById('p-'+cur); if(!pg) return;
   nb.innerHTML='<span>'+RAIL_LAB[curRail()]+'</span><i>›</i><span>'+pg.dataset.label+'</span>'+(secEl?'<i>›</i><b>'+secEl.dataset.title+'</b>':'');
@@ -9741,6 +9863,7 @@ function go(id,sec,push,keepScroll){
   const grp=(document.getElementById('p-'+id)||{}).dataset; [...topnav.children].forEach(b=>b.classList.toggle('on',b.dataset.id===id||(!!b.dataset.group&&grp&&grp.group===b.dataset.group)));
   const pg=document.getElementById('p-'+id);
   side.innerHTML=treeHTML(id)+hidNote(pg)+vbox();
+  npNav(pg);
   side.classList.remove('open');
   document.title=pg.dataset.label+' | Kong 소개';
   if(sec&&document.getElementById(sec)){ setTimeout(()=>document.getElementById(sec).scrollIntoView(),30); }
@@ -9757,13 +9880,13 @@ side.addEventListener('click',e=>{
 });
 function printTargets(){
   const pg=document.getElementById('p-'+cur); if(!pg||!audienceOk(pg)) return [];
-  const g=pg.dataset.group;
-  if(g&&GROUPS[g]) return GROUPS[g].items.filter(audienceOk);
+  const g=pg.dataset.rgroup;
+  if(g) return railPages().filter(p=>p.dataset.rgroup===g);
   return [pg];
 }
 function printMenuTitle(targets){
   const pg=targets[0]; if(!pg) return '';
-  return pg.dataset.group||pg.dataset.label||'';
+  return targets.length>1?(pg.dataset.rgroup||pg.dataset.label||''):(pg.dataset.label||'');
 }
 function labelPanesForPrint(root){
   root.querySelectorAll('.print-pane-label').forEach(el=>el.remove());
@@ -10049,6 +10172,56 @@ document.addEventListener('keydown',e=>{
   window.__kb={i:n,t:Date.now(),p:cur};
   try{ history.replaceState(null,'',hashFor(cur,secs[n].id)); }catch(_){}
 });
+
+/* ---------- 섹션 검색 (⌘K · Ctrl+K · /) ---------- */
+(function(){
+  const pal=document.getElementById('ns-pal'), q=document.getElementById('ns-q'), res=document.getElementById('ns-res'), btn=document.getElementById('ns-btn'), edl=document.getElementById('ns-ed');
+  if(!pal||!q||!res) return;
+  let hits=[], sel=0, back=null;
+  const tr=x=>(window.KONG_I18N&&window.KONG_I18N.lang!=='ko'&&typeof window.KONG_I18N.t==='function')?window.KONG_I18N.t(x):x;
+  const norm=x=>String(x||'').toLowerCase().replace(/[\s·()\-&,./]/g,'');
+  const esc=x=>String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  function index(){
+    const out=[], seen=new Set(), cr=curRail(), order=[cr].concat(RAILS.filter(r=>r!==cr));
+    order.forEach(r=>railPages(r).forEach(p=>{
+      if(seen.has(p.id)) return; seen.add(p.id);
+      const pid=p.id.slice(2), pl=tr(p.dataset.label||''), ic=p.dataset.icon;
+      out.push({r:r,p:pid,s:null,t:pl,sub:RAIL_LAB[r],ic:ic});
+      visibleSecs(p).forEach(x=>out.push({r:r,p:pid,s:x.id,t:tr(x.dataset.title||''),sub:RAIL_LAB[r]+' › '+pl,ic:ic}));
+    }));
+    return out;
+  }
+  function hl(t,k){ if(!k) return esc(t); const i=t.toLowerCase().indexOf(k.toLowerCase()); return i<0?esc(t):esc(t.slice(0,i))+'<mark>'+esc(t.slice(i,i+k.length))+'</mark>'+esc(t.slice(i+k.length)); }
+  function run(){
+    const k=q.value.trim(), nk=norm(k), all=index();
+    if(!nk) hits=all.filter(x=>x.p===cur&&x.s);
+    else hits=all.filter(x=>norm(x.t).indexOf(nk)>=0||norm(x.sub).indexOf(nk)>=0)
+      .sort((a,b)=>((norm(b.t).indexOf(nk)===0)-(norm(a.t).indexOf(nk)===0))||((a.s?1:0)-(b.s?1:0))).slice(0,40);
+    sel=0; let h='', last='';
+    if(!hits.length) h='<div class="ns-e">'+esc(k)+' · 0</div>';
+    hits.forEach((x,i)=>{ const g=nk?x.sub.split(' › ')[0]:(tr(document.getElementById('p-'+cur).dataset.label||''));
+      if(g!==last){ h+='<div class="ns-g">'+esc(g)+'</div>'; last=g; }
+      h+='<div class="ns-x'+(i===0?' on':'')+'" role="option" data-i="'+i+'">'+(x.ic?'<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ki-'+x.ic+'"/></svg>':'')+'<div class="t"><b>'+hl(x.t,k)+'</b><span>'+esc(x.s?x.sub:x.sub+' · Page')+'</span></div></div>'; });
+    res.innerHTML=h;
+    if(edl) edl.textContent=(document.documentElement.dataset.edition==='konnect'?'Konnect':'EE');
+  }
+  function open(){ back=document.activeElement; pal.hidden=false; q.value=''; run(); setTimeout(()=>q.focus(),0); }
+  function close(){ pal.hidden=true; if(back&&back.focus) try{ back.focus(); }catch(_){} }
+  function pick(i){ const x=hits[i]; if(!x) return; close(); if(x.r!==curRail()&&!pageRails(document.getElementById('p-'+x.p)).includes(curRail())) window.KONG_RAIL.setRail(x.r,{stay:true}); go(x.p,x.s||null); }
+  function move(d){ if(!hits.length) return; sel=(sel+d+hits.length)%hits.length; res.querySelectorAll('.ns-x').forEach((el,i)=>el.classList.toggle('on',i===sel)); const on=res.querySelector('.ns-x.on'); if(on) on.scrollIntoView({block:'nearest'}); }
+  q.addEventListener('input',run);
+  q.addEventListener('keydown',e=>{ if(e.key==='ArrowDown'){ e.preventDefault(); move(1); } else if(e.key==='ArrowUp'){ e.preventDefault(); move(-1); } else if(e.key==='Enter'){ e.preventDefault(); pick(sel); } else if(e.key==='Escape'){ e.preventDefault(); close(); } });
+  res.addEventListener('click',e=>{ const x=e.target.closest('.ns-x'); if(x) pick(+x.dataset.i); });
+  pal.addEventListener('click',e=>{ if(e.target===pal) close(); });
+  if(btn) btn.addEventListener('click',open);
+  document.addEventListener('keydown',e=>{
+    if((e.metaKey||e.ctrlKey)&&!e.altKey&&e.key&&e.key.toLowerCase()==='k'){ e.preventDefault(); pal.hidden?open():close(); return; }
+    if(!pal.hidden) return;
+    const t=e.target; if(t&&(t.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+    if(e.key==='/'&&!e.metaKey&&!e.ctrlKey&&!e.altKey){ e.preventDefault(); open(); }
+  });
+  window.KONG_SEARCH={open:open,close:close};
+})();
 
 /* ---------- 화면 배율 ---------- */
 /* CSS zoom(페이지)과 브라우저 zoom은 API로 합칠 수 없음. 표시만 devicePixelRatio·visualViewport로 실효 배율을 맞춤. */

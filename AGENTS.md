@@ -12,7 +12,7 @@
 
 Kong(The AI Connectivity Company) 소개 자료를 **단일 HTML 파일**로 만든다. 오프라인에서도 열리도록 CSS·JS·이미지는 HTML 안에 둔다.
 
-- 좌측 레일(Home · AI · API) → 좌측 트리(현재 레일의 페이지 · 현재 페이지만 펼쳐 섹션) 구조, 상단 바는 브레드크럼(레일 › 페이지 › 섹션). 트리는 `.page[data-rail][data-rgroup][data-icon]`과 `.sec[data-title]`에서 자동 생성된다. 사이드에서 마우스가 나가면 현재 위치만 남기고 톤다운한다(`localStorage('kong-nav-dim')='0'`이면 끔). 레일 하단에 에디션(EE / Konnect) · 언어(국기) 선택이 있다. 상세: `achive/plans/nav-rail-ia.md`
+- 좌측 레일(Home · AI · API) → 좌측 트리(현재 레일의 페이지 · 현재 페이지만 펼쳐 섹션) 구조, 상단 바는 브레드크럼(레일 › 페이지 › 섹션). 트리는 `.page[data-rail][data-rgroup][data-icon]`과 `.sec[data-title]`에서 자동 생성된다. 사이드에서 마우스가 나가면 현재 위치만 남기고 톤다운한다(`localStorage('kong-nav-dim')='0'`이면 끔). 상단 바 배율 왼쪽 `검색 ⌘K`(⌘K · Ctrl+K · `/`)로 현재 에디션 · 언어에서 보이는 페이지 · 섹션을 찾고, 페이지 끝에는 같은 레일 순서의 이전 · 다음 버튼이 자동으로 붙는다. 인쇄 범위는 현재 레일의 같은 트리 그룹(`data-rgroup`). 레일 하단에 에디션(EE / Konnect) · 언어(국기) 선택이 있다. 상세: `achive/plans/nav-rail-ia.md`
 - 언어: 한국어(원문) · 영어 · 일본어 · 번체 중국어 · 간체 중국어(`ko` / `en` / `ja` / `zh-Hant` / `zh-Hans`). 드롭다운은 번체가 간체 위. `?lang=zh`는 `zh-Hans`로 매핑
 - 테마: 다크(기본) · 라이트(`html[data-theme]`)
 - 에디션 가시성: Enterprise / Konnect(`html[data-edition]`)

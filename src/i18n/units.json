@@ -2077,5 +2077,12 @@
     "ja": "Konnect の<em>インフラ構成</em>",
     "zh-Hans": "Konnect <em>基础设施</em>",
     "zh-Hant": "Konnect <em>基礎設施</em>"
+  },
+  "u.bb4d31107827": {
+    "match": "AI Gateway 2.0과의 관계 AI Gateway 2.0은 모델 · MCP 서버 · 에이전트를 다루는 런타임과 엔티티이고, AI Management는 그 엔티티를 누가 · 얼마나 · 어떻게 쓰는지 다스리는 운영 영역입니다.",
+    "en": "<b>How it relates to AI Gateway 2.0</b> AI Gateway 2.0 is the runtime and entities for models · MCP servers · agents; AI Management is the operating layer that governs who uses those entities, how much, and how.",
+    "ja": "<b>AI Gateway 2.0との関係</b> AI Gateway 2.0はモデル · MCPサーバー · エージェントを扱うランタイムとエンティティで、AI Managementはそのエンティティを誰が · どれだけ · どう使うかを統制する運用領域です。",
+    "zh-Hans": "<b>与 AI Gateway 2.0 的关系</b> AI Gateway 2.0 是处理模型 · MCP 服务器 · 智能体的运行时与实体,AI Management 则是治理这些实体由谁 · 用多少 · 如何使用的运营层。",
+    "zh-Hant": "<b>與 AI Gateway 2.0 的關係</b> AI Gateway 2.0 是處理模型 · MCP 伺服器 · 代理的執行環境與實體,AI Management 則是治理這些實體由誰 · 用多少 · 如何使用的營運層。"
   }
 }
