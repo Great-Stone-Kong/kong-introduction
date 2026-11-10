@@ -16,6 +16,7 @@
 - AI Management > Use cases: fix a broken closing tag that left only the software-factory pane visible; restore all six diagrams under the tabs
 - AI Management > Use cases: tidy the six diagrams onto a shared grid with arrows and a bottom Konnect band; shorten EN and other locale labels to fit the boxes
 - Left rail label Home → Kong. Kong company intro > Overview: draft layout with the AI Connectivity slogan and API · AI shortcuts
+- Kong company intro > Overview: center the slogan, add left/right hand SVGs, move shortcuts into the description panel, and drop the API→Mesh→AI chain
 
 ## 2026.11.09.6af12729
 
