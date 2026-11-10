@@ -121,7 +121,7 @@ npm run build        # kong-introduction.html + docs/index.html 생성 (VERSION 
   - 찾는 순서: `achive/kong-iconography/`(`svg/{name}.svg`, `icons.json`, [카탈로그](https://chuca.github.io/kong-iconography/)) → 디자인 시스템 `assets/icons/` → Kong 플러그인 문서 아이콘. `-1` 접미사는 변형본이며 기본은 접미사 없는 파일.
   - 세 곳 모두에 없을 때만 직접 그리고, 작업 보고에 "권고 세트에 없어 직접 그림 · 대상 개념"을 밝힌다.
   - 인라인 방법: 원본 `path`를 그대로 옮기고 `fill="#CCFF00"`만 `fill="currentColor"`로 바꿔 테마 색을 CSS로 준다. `viewBox="0 0 24 24"` 유지, 바로 앞에 `<!-- Kong Iconography: {name} -->` 주석을 남긴다.
-  - 예외: Kong 로고 · 마크(`#kong-logo` · `#kong-mark`), 클라우드 · 파트너 로고(`ic-aws` 등), 언어 선택 국기(`#f-*`, 사용자 제공 SVG · EN = 미국/영국 · 繁 = 대만/홍콩 대각선 합성), 화살표 · 체크 · 셰브론 같은 UI 기호, 도식용 도형.
+  - 예외: Kong 로고 · 마크(`#kong-logo` · `#kong-mark`), 클라우드 · 파트너 로고(`ic-aws` 등), 언어 선택 국기(`#f-*`, 사용자 제공 SVG · EN = 미국/영국 · 繁 = 대만/홍콩 대각선 합성), 화살표 · 체크 · 셰브론 · 검색 돋보기 같은 UI 기호(권고 세트에 없음), 도식용 도형.
   - 커밋 전 점검: 이번 변경에 새로 들어간 `<svg>`가 위 출처 중 하나인지 확인한다.
 - 새 클래스는 기존과 겹치지 않게 고유 접두사를 쓴다.
 

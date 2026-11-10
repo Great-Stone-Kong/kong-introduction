@@ -166,7 +166,7 @@ html[data-theme="light"] .nr{--nr-bg:#101110;border-right-color:#101110}
 .topnav{display:none!important}
 .nb{flex:1;min-width:0;display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--g400);white-space:nowrap;overflow:hidden}
 .nb span{flex:none}.nb b{color:var(--heading);font-weight:700;overflow:hidden;text-overflow:ellipsis}.nb i{font-style:normal;color:var(--g600);flex:none}
-.side{padding:20px 12px 24px 16px}
+#side.side{padding:20px 12px 24px 16px}
 .nt-g{margin:18px 8px 6px;font:800 10.5px var(--font);letter-spacing:.08em;color:var(--g500);text-transform:uppercase;transition:opacity .24s cubic-bezier(.2,.8,.2,1)}
 .nt-g:first-child{margin-top:2px}
 .nt-it{width:100%;display:flex;align-items:center;gap:10px;border:0;background:none;color:var(--g200);font:600 14px var(--font);padding:9px 8px 9px 10px;border-radius:8px;cursor:pointer;text-align:left;transition:background .15s,opacity .24s cubic-bezier(.2,.8,.2,1)}
@@ -223,9 +223,6 @@ html[data-theme="light"] .nr{--nr-bg:#101110;border-right-color:#101110}
 .kx-np{display:flex;gap:6px;margin-top:8px}
 .kx-np span{flex:1;text-align:center;font:700 11.5px var(--mono);padding:7px 0;border:1px solid var(--line2);border-radius:6px;background:var(--navy-2);color:var(--g200)}
 .kx-note{border-left:3px solid var(--mark);padding-left:10px}
-.kx-tn{margin:10px 0 0;font-size:13px;font-weight:700;color:var(--mark);text-align:right}
-.kx-tn{margin:10px 0 0;font-size:13px;font-weight:700;color:var(--mark);text-align:right}
-.kx-tn{margin:10px 0 0;font-size:13px;font-weight:700;color:var(--mark);text-align:right}
 .kx-tn{margin:10px 0 0;font-size:13px;font-weight:700;color:var(--mark);text-align:right}
 .kx-chips{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:18px 0 12px}
 .kx-chips span{font-size:12px;color:var(--g400);margin-right:4px}
@@ -378,6 +375,7 @@ tr.k td{background:rgba(204,255,0,.06)}
 }
 @media (max-width:820px){
   :root{--side:0px}
+  #side.side{padding-left:24px}
   .topbar{padding:0 16px;gap:12px}
   .brand span{display:none}
   .menu-btn{display:block}
@@ -3741,13 +3739,13 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
 <div class="nl-menu i18n-no" id="nl-menu" role="menu" aria-label="Language"></div>
 <div class="ne-toast" id="ne-toast" role="status" aria-live="polite"></div>
 <div class="ns-pal" id="ns-pal" role="dialog" aria-modal="true" aria-label="검색" hidden><div class="ns-box">
-  <div class="ns-in"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="ns-q" type="search" autocomplete="off" spellcheck="false" placeholder="페이지 · 섹션 검색"><kbd>Esc</kbd></div>
+  <div class="ns-in"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="ns-q" type="search" autocomplete="off" spellcheck="false" placeholder="페이지 · 섹션 검색" role="combobox" aria-expanded="true" aria-controls="ns-res" aria-autocomplete="list"><kbd>Esc</kbd></div>
   <div class="ns-res i18n-no" id="ns-res" role="listbox"></div>
   <div class="ns-ft"><span><kbd>↑↓</kbd> 이동</span><span><kbd>Enter</kbd> 열기</span><span class="ns-ed i18n-no" id="ns-ed"></span></div>
 </div></div>
 <header class="topbar">
   <nav class="topnav" id="topnav"></nav>
-  <div class="nb i18n-no" id="nb" aria-label="Breadcrumb"></div>
+  <nav class="nb i18n-no" id="nb" aria-label="Breadcrumb"></nav>
   <div class="top-tools">
     <button type="button" class="ns-btn" id="ns-btn" aria-haspopup="dialog" title="검색"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span>검색</span><kbd>⌘K</kbd></button>
     <div class="zm" id="zm" role="group" aria-label="화면 배율"><button type="button" data-z="-1" title="축소" aria-label="축소"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 12h12"/></svg></button><button type="button" class="zv" data-z="0" title="100%로 초기화">100%</button><button type="button" data-z="1" title="확대" aria-label="확대"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 12h12M12 6v12"/></svg></button></div>
@@ -7348,6 +7346,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
     <div class="brh cust"><b>고객 준비</b><span>Hybrid · Self-managed 기준 · Dedicated Cloud Gateways를 쓰면 2 · 4 · 6을 Kong이 운영합니다</span></div>
     <div class="brg g4c"><div class="brc cust" data-k="1"><span class="bn">1</span><div class="bb"><h4>클라이언트<em>사람 · 앱 · 외부 기업</em></h4><p>API를 호출하는 주체입니다. 사용자, 앱, AI 에이전트, 파트너사가 모두 Kong을 단일 진입점으로 씁니다.</p><dl><dt>Kong 연계</dt><dd>OIDC · API Key · mTLS 인증 · Consumer 식별</dd></dl></div></div><div class="brc cust" data-k="2"><span class="bn">2</span><div class="bb"><h4>로드밸런서<em>진입점 · L4/L7</em></h4><p>외부 요청을 받아 정상 상태의 Data Plane 노드로 분산합니다.</p><dl><dt>Kong 연계</dt><dd>DP 헬스체크 엔드포인트 · 클라이언트 IP 전달</dd></dl></div></div><div class="brc cust" data-k="4"><span class="bn">4</span><div class="bb"><h4>Data Plane<em>Hybrid · Self-managed</em></h4><p>고객 환경(온프레미스 · 고객 클라우드 · Kubernetes · VM)에서 Data Plane을 운영합니다. Data Plane이 Konnect로 먼저 연결(443)하므로, Control Plane 연결을 위해 고객 환경에 인바운드 포트를 열지 않습니다.</p><dl><dt>Kong 연계</dt><dd>설정 캐시 · 텔레메트리 전송</dd></dl></div></div><div class="brc cust" data-k="6"><span class="bn">6</span><div class="bb"><h4>Redis<em>공유 상태 저장소</em></h4><p>여러 Data Plane 노드가 함께 써야 하는 Rate limit 카운터, 응답 캐시, 세션을 저장합니다.</p><dl><dt>Kong 연계</dt><dd>Rate Limiting Advanced · Proxy Cache Advanced · AI Rate Limiting</dd></dl></div></div><div class="brc cust" data-k="7"><span class="bn">7</span><div class="bb"><h4>Vector DB<em>의미 검색 저장소</em></h4><p>임베딩 벡터를 저장하고 유사도로 검색합니다. 응답 재사용과 RAG 문서 검색에 씁니다.</p><dl><dt>Kong 연계</dt><dd>AI Semantic Cache · AI RAG Injector</dd></dl></div></div><div class="brc cust" data-k="8"><span class="bn">8</span><div class="bb"><h4>Upstream 서비스<em>기존 업무 API</em></h4><p>Kong 뒤에서 실제 업무를 처리하는 REST, gRPC, GraphQL, 이벤트 서비스입니다.</p><dl><dt>Kong 연계</dt><dd>라우팅 · 로드밸런싱 · 헬스체크</dd></dl></div></div><div class="brc cust" data-k="9"><span class="bn">9</span><div class="bb"><h4>LLM<em>생성형 AI 모델</em></h4><p>앱과 에이전트가 호출하는 언어 모델입니다. Kong이 공급자별 API 차이를 흡수하고 사용량을 통제합니다.</p><dl><dt>Kong 연계</dt><dd>AI Proxy · 토큰 한도 · 프롬프트 가드</dd></dl></div></div><div class="brc cust" data-k="10"><span class="bn">10</span><div class="bb"><h4>Embedding 모델<em>텍스트 → 벡터 변환</em></h4><p>프롬프트와 문서를 벡터로 바꿉니다. Kong이 이 벡터로 Vector DB를 검색합니다.</p><dl><dt>Kong 연계</dt><dd>Semantic Cache · RAG Injector · Semantic Prompt Guard</dd></dl></div></div></div>
   </div>
+  <p class="note">출처: <a href="https://developer.konghq.com/dedicated-cloud-gateways/" target="_blank" rel="noopener noreferrer">Dedicated Cloud Gateways ↗</a> · <a href="https://developer.konghq.com/dedicated-cloud-gateways/managed-cache/" target="_blank" rel="noopener noreferrer">Managed cache for Redis ↗</a> · <a href="https://developer.konghq.com/how-to/configure-the-konnect-config-store/" target="_blank" rel="noopener noreferrer">Konnect Config Store ↗</a></p>
   <script>(function(){var r=document.currentScript.previousElementSibling;var g=r.querySelectorAll('.bk');r.querySelectorAll('.brc').forEach(function(c){c.addEventListener('mouseenter',function(){r.classList.add('on');g.forEach(function(x){x.classList.toggle('act',x.getAttribute('data-k')===c.getAttribute('data-k'))})});c.addEventListener('mouseleave',function(){r.classList.remove('on')})})})();</script>
 </section>
 <section class="sec" id="inf-deploy" data-title="배포 패턴" data-show-edition="enterprise">
@@ -7372,7 +7371,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
   <h3 class="kx-h">제품별 배포 모델</h3>
   <div class="tw kx-mx"><table><thead><tr><th>제품</th><th>Hybrid</th><th>Self-managed</th><th>Fully managed</th></tr></thead><tbody>
     <tr><td>API Gateway</td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-y" aria-label="yes">✓</i><small>Dedicated Cloud Gateways</small></td></tr>
-    <tr><td>AI Gateway</td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-n" aria-label="no">—</i></td></tr>
+    <tr><td>AI Gateway</td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-y" aria-label="yes">✓</i><small>AI Gateway 2.0 · Dedicated Cloud Gateways</small></td></tr>
     <tr><td>Event Gateway</td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-n" aria-label="no">—</i></td><td><i class="kx-n" aria-label="no">—</i></td></tr>
     <tr><td>Service Mesh</td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-n" aria-label="no">—</i></td></tr>
   </tbody></table></div>
@@ -9775,7 +9774,7 @@ function treeHTML(id){
   navPages().forEach(p=>{
     const g=p.dataset.rgroup||''; if(g!==lastG){ h+='<div class="nt-g">'+g+'</div>'; lastG=g; }
     const pid=p.id.slice(2);
-    if(lockedFor(p)){ h+='<button type="button" class="nt-it dis" disabled aria-disabled="true" title="'+neLockT()+'">'+ntIcon(p)+'<span class="nt-lb">'+p.dataset.label+'</span>'+edBadge(p)+'</button>'; return; }
+    if(lockedFor(p)){ h+='<button type="button" class="nt-it dis" aria-disabled="true" title="'+neLockT()+'">'+ntIcon(p)+'<span class="nt-lb">'+p.dataset.label+'</span>'+edBadge(p)+'</button>'; return; }
     const on=pid===id;
     h+='<button type="button" class="nt-it'+(on?' on':'')+'" data-p="'+pid+'"'+(on?' aria-current="page"':'')+'>'+ntIcon(p)+'<span class="nt-lb">'+p.dataset.label+'</span>'+(p.dataset.editionLock?'':edBadge(p))+NT_CV+'</button>';
     if(on) h+='<div class="nt-subs">'+visibleSecs(p).map(x=>'<a data-s="'+x.id+'" href="'+hashFor(pid,x.id)+'">'+x.dataset.title+secBadge(x)+'</a>').join('')+'</div>';
@@ -9787,14 +9786,15 @@ function npNav(pg){
   PAGES.forEach(p=>{ const o=p.querySelector(':scope > .np-nav'); if(o) o.remove(); });
   const list=railPages(), i=list.indexOf(pg); if(i<0) return;
   const pv=list[i-1], nx=list[i+1]; if(!pv&&!nx) return;
-  const n=document.createElement('nav'); n.className='np-nav'; n.setAttribute('aria-label','Pages');
+  const n=document.createElement('nav'); n.className='np-nav'; 
   n.innerHTML=(pv?'<button type="button" class="pv" data-p="'+pv.id.slice(2)+'"><em>← 이전</em><b>'+pv.dataset.label+'</b></button>':'')+(nx?'<button type="button" class="nx" data-p="'+nx.id.slice(2)+'"><em>다음 →</em><b>'+nx.dataset.label+'</b></button>':'');
   n.addEventListener('click',e=>{ const b=e.target.closest('button[data-p]'); if(b) go(b.dataset.p); });
   const foot=pg.querySelector(':scope > footer.foot'); if(foot) pg.insertBefore(n,foot); else pg.appendChild(n);
 }
 function setCrumb(secEl){
   if(!nb) return; const pg=document.getElementById('p-'+cur); if(!pg) return;
-  nb.innerHTML='<span>'+RAIL_LAB[curRail()]+'</span><i>›</i><span>'+pg.dataset.label+'</span>'+(secEl?'<i>›</i><b>'+secEl.dataset.title+'</b>':'');
+  const tr=x=>(window.KONG_I18N&&window.KONG_I18N.lang!=='ko'&&typeof window.KONG_I18N.t==='function')?window.KONG_I18N.t(x):x;
+  nb.innerHTML='<span>'+RAIL_LAB[curRail()]+'</span><i aria-hidden="true">›</i><span>'+tr(pg.dataset.label)+'</span>'+(secEl?'<i aria-hidden="true">›</i><b aria-current="location">'+tr(secEl.dataset.title)+'</b>':'');
 }
 function secBadge(s){ const se=s.getAttribute('data-show-edition'); if(!se||se.trim().indexOf(' ')>=0) return ''; return '<em class="ne-sb">'+(se.trim()==='enterprise'?'EE':'Konnect')+'</em>'; }
 function hidNote(pg){
@@ -9816,10 +9816,16 @@ function syncEdLang(){
 }
 function nlClose(){ if(nlMenu) nlMenu.classList.remove('open'); if(nlBtn){ nlBtn.classList.remove('open'); nlBtn.setAttribute('aria-expanded','false'); } }
 if(neSeg) neSeg.addEventListener('click',e=>{ const b=e.target.closest('[data-ed]'); if(!b) return; window.KONG_EDITION.setEdition(b.dataset.ed); });
-if(nlBtn) nlBtn.addEventListener('click',e=>{ e.stopPropagation(); const on=!nlMenu.classList.contains('open'); nlMenu.classList.toggle('open',on); nlBtn.classList.toggle('open',on); nlBtn.setAttribute('aria-expanded',on?'true':'false'); });
+if(nlBtn) nlBtn.addEventListener('click',e=>{ e.stopPropagation(); const on=!nlMenu.classList.contains('open'); nlMenu.classList.toggle('open',on); nlBtn.classList.toggle('open',on); nlBtn.setAttribute('aria-expanded',on?'true':'false'); if(on){ const f=nlMenu.querySelector('.on')||nlMenu.querySelector('button'); if(f) f.focus(); } });
+if(nlMenu) nlMenu.addEventListener('keydown',e=>{ const bs=[...nlMenu.querySelectorAll('button')], i=bs.indexOf(document.activeElement);
+  if(e.key==='ArrowDown'||e.key==='ArrowUp'){ e.preventDefault(); const n=bs[(i+(e.key==='ArrowDown'?1:-1)+bs.length)%bs.length]; if(n) n.focus(); }
+  else if(e.key==='Escape'||e.key==='Tab'){ e.preventDefault(); nlClose(); if(nlBtn) nlBtn.focus(); } });
+if(neSeg) neSeg.addEventListener('keydown',e=>{ if(['ArrowDown','ArrowUp','ArrowLeft','ArrowRight'].indexOf(e.key)<0) return; e.preventDefault(); e.stopPropagation();
+  const cur=document.documentElement.dataset.edition==='konnect'?'konnect':'enterprise', nx=cur==='konnect'?'enterprise':'konnect';
+  window.KONG_EDITION.setEdition(nx); const b=neSeg.querySelector('[data-ed="'+nx+'"]'); if(b) b.focus(); });
 if(nlMenu) nlMenu.addEventListener('click',e=>{ const b=e.target.closest('[data-l]'); if(!b) return; e.stopPropagation(); nlClose(); if(window.KONG_I18N) window.KONG_I18N.setLang(b.dataset.l); });
 document.addEventListener('click',e=>{ if(nlMenu&&nlMenu.classList.contains('open')&&!nlMenu.contains(e.target)) nlClose(); });
-document.addEventListener('keydown',e=>{ if(e.key==='Escape') nlClose(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&nlMenu&&nlMenu.classList.contains('open')){ nlClose(); if(nlBtn) nlBtn.focus(); } });
 /* fitNav는 엔진 MutationObserver 기록을 takeRecords()로 비우므로, 새 메뉴 노드 번역이 끝난 뒤(마이크로태스크) 실행 */
 function navFit(){ if(!(window.KONG_I18N&&typeof window.KONG_I18N.fitNav==='function')) return; const f=()=>window.KONG_I18N.fitNav(); if(typeof queueMicrotask==='function') queueMicrotask(f); else Promise.resolve().then(f); }
 window.syncRail=function(changed){
@@ -9844,7 +9850,9 @@ window.rebuildAudience=function(){
   /* Same page (lang/edition refresh): keep scroll. Forced fallback to company: top. */
   if(pg&&lockedFor(pg)) neToast(neLockT());
   if(pg&&audienceOk(pg)) go(keep, null, false, true);
-  else go(railFirst(), null, false);
+  else go(railFirst(), null);
+  const eg=document.querySelector('#lpicks [data-prod="event"][aria-pressed="true"]');
+  if(eg&&!audienceOk(eg)) eg.click();
   syncEdLang();
   navFit();
   if(typeof syncClChrome==='function') syncClChrome();
@@ -9854,7 +9862,7 @@ window.rebuildAudience=function(){
 };
 function go(id,sec,push,keepScroll){
   let page=document.getElementById('p-'+id);
-  if(page&&lockedFor(page)) neToast(neLockT());
+  if(page&&lockedFor(page)){ neToast(neLockT()); const cp=cur&&document.getElementById('p-'+cur); if(cp&&audienceOk(cp)&&cp.classList.contains('on')) return; }
   if(!page||!audienceOk(page)) { id=railFirst(); page=document.getElementById('p-'+id); }
   if(!pageRails(page).includes(curRail())) window.KONG_RAIL.setRail(pageRails(page)[0],{stay:true});
   cur=id;
@@ -9873,6 +9881,7 @@ function go(id,sec,push,keepScroll){
 }
 side.addEventListener('click',e=>{
   const it=e.target.closest('.nt-it[data-p]'); if(it){ e.preventDefault(); go(it.dataset.p); return; }
+  if(e.target.closest('.nt-it.dis')){ e.preventDefault(); neToast(neLockT()); return; }
   const a=e.target.closest('a'); if(!a||a.classList.contains('vb-btn')) return; e.preventDefault();
   const s=a.dataset.s; document.getElementById(s).scrollIntoView({behavior:'smooth'});
   try{ history.replaceState(null,'',hashFor(cur,s)); }catch(_){}
@@ -10046,7 +10055,7 @@ function setupSpy(){
   window.onscroll=mark; mark();
 }
 function fromHash(){
-  let h=decodeURIComponent(location.hash.replace('#',''));
+  let h=location.hash.replace('#',''); try{ h=decodeURIComponent(h); }catch(_){}
   const m=h.match(/^(kong|ai|api):(.*)$/); if(m) h=m[2];
   const [p,s]=h.split('/'); const pg=p&&document.getElementById('p-'+p);
   if(m&&pg&&pageRails(pg).includes(m[1])) window.KONG_RAIL.setRail(m[1],{stay:true});
@@ -10160,6 +10169,8 @@ document.addEventListener('keydown',e=>{
   const t=e.target; if(t&&(t.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
   if(document.getElementById('mq-modal')&&document.getElementById('mq-modal').classList.contains('open')) return;
   if(document.getElementById('cl-modal')&&document.getElementById('cl-modal').classList.contains('open')) return;
+  if(document.getElementById('ns-pal')&&!document.getElementById('ns-pal').hidden) return;
+  if(document.getElementById('nl-menu')&&document.getElementById('nl-menu').classList.contains('open')) return;
   const secs=visibleSecs(document.getElementById('p-'+cur)); if(!secs.length) return;
   e.preventDefault();
   const links=[...side.querySelectorAll('a[data-s]')];
@@ -10201,22 +10212,24 @@ document.addEventListener('keydown',e=>{
     if(!hits.length) h='<div class="ns-e">'+esc(k)+' · 0</div>';
     hits.forEach((x,i)=>{ const g=nk?x.sub.split(' › ')[0]:(tr(document.getElementById('p-'+cur).dataset.label||''));
       if(g!==last){ h+='<div class="ns-g">'+esc(g)+'</div>'; last=g; }
-      h+='<div class="ns-x'+(i===0?' on':'')+'" role="option" data-i="'+i+'">'+(x.ic?'<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ki-'+x.ic+'"/></svg>':'')+'<div class="t"><b>'+hl(x.t,k)+'</b><span>'+esc(x.s?x.sub:x.sub+' · Page')+'</span></div></div>'; });
-    res.innerHTML=h;
+      h+='<div class="ns-x'+(i===0?' on':'')+'" role="option" id="ns-o'+i+'" aria-selected="'+(i===0)+'" data-i="'+i+'">'+(x.ic?'<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ki-'+x.ic+'"/></svg>':'')+'<div class="t"><b>'+hl(x.t,k)+'</b><span>'+esc(x.sub)+'</span></div></div>'; });
+    res.innerHTML=h; q.setAttribute('aria-activedescendant',hits.length?'ns-o0':'');
     if(edl) edl.textContent=(document.documentElement.dataset.edition==='konnect'?'Konnect':'EE');
   }
   function open(){ back=document.activeElement; pal.hidden=false; q.value=''; run(); setTimeout(()=>q.focus(),0); }
   function close(){ pal.hidden=true; if(back&&back.focus) try{ back.focus(); }catch(_){} }
   function pick(i){ const x=hits[i]; if(!x) return; close(); if(x.r!==curRail()&&!pageRails(document.getElementById('p-'+x.p)).includes(curRail())) window.KONG_RAIL.setRail(x.r,{stay:true}); go(x.p,x.s||null); }
-  function move(d){ if(!hits.length) return; sel=(sel+d+hits.length)%hits.length; res.querySelectorAll('.ns-x').forEach((el,i)=>el.classList.toggle('on',i===sel)); const on=res.querySelector('.ns-x.on'); if(on) on.scrollIntoView({block:'nearest'}); }
+  function move(d){ if(!hits.length) return; sel=(sel+d+hits.length)%hits.length; res.querySelectorAll('.ns-x').forEach((el,i)=>{ el.classList.toggle('on',i===sel); el.setAttribute('aria-selected',i===sel?'true':'false'); }); q.setAttribute('aria-activedescendant','ns-o'+sel); const on=res.querySelector('.ns-x.on'); if(on) on.scrollIntoView({block:'nearest'}); }
   q.addEventListener('input',run);
-  q.addEventListener('keydown',e=>{ if(e.key==='ArrowDown'){ e.preventDefault(); move(1); } else if(e.key==='ArrowUp'){ e.preventDefault(); move(-1); } else if(e.key==='Enter'){ e.preventDefault(); pick(sel); } else if(e.key==='Escape'){ e.preventDefault(); close(); } });
+  q.addEventListener('keydown',e=>{ if(e.key==='ArrowDown'){ e.preventDefault(); move(1); } else if(e.key==='ArrowUp'){ e.preventDefault(); move(-1); } else if(e.key==='Enter'){ e.preventDefault(); pick(sel); } else if(e.key==='Escape'){ e.preventDefault(); close(); } else if(e.key==='Tab'){ e.preventDefault(); } });
   res.addEventListener('click',e=>{ const x=e.target.closest('.ns-x'); if(x) pick(+x.dataset.i); });
   pal.addEventListener('click',e=>{ if(e.target===pal) close(); });
   if(btn) btn.addEventListener('click',open);
   document.addEventListener('keydown',e=>{
-    if((e.metaKey||e.ctrlKey)&&!e.altKey&&e.key&&e.key.toLowerCase()==='k'){ e.preventDefault(); pal.hidden?open():close(); return; }
-    if(!pal.hidden) return;
+    const modal=document.querySelector('#mq-modal.open,#cl-modal.open');
+    if((e.metaKey||e.ctrlKey)&&!e.altKey&&e.key&&e.key.toLowerCase()==='k'){ if(modal&&pal.hidden) return; e.preventDefault(); pal.hidden?open():close(); return; }
+    if(!pal.hidden){ if(e.key==='Escape'){ e.preventDefault(); close(); } return; }
+    if(modal) return;
     const t=e.target; if(t&&(t.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
     if(e.key==='/'&&!e.metaKey&&!e.ctrlKey&&!e.altKey){ e.preventDefault(); open(); }
   });
