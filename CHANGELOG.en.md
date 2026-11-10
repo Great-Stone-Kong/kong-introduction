@@ -5,6 +5,12 @@
 
 ---
 
+## Unreleased
+
+### Changed
+
+- AI Gateway 2.0: Branch overview, architecture diagrams, and deploy accent colors by Enterprise · Konnect. Fold LLM cost estimation into the feature-changes section as a short summary. Retitle the section to “AI 2.0 feature changes and improvements”
+
 ## 2026.11.09.6af12729
 
 ### Added

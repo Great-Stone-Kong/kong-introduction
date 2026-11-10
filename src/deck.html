@@ -3438,7 +3438,17 @@ html[data-theme="light"] .ctr-c{background:rgba(255,255,255,.35)}
 @media (prefers-reduced-motion:reduce){.cpx.sw .cpx-bar,.cpx.sw .cpx-bar2{animation:none}.ctr.rv .ctr-c{opacity:1;transform:none;transition:none}}
 @media print{.ctr.rv .ctr-c{opacity:1!important;transform:none!important}.cpx .off{opacity:.5}}
 /* /i-cmp 4축 */
-#i2-cost .grid.g2>*{min-width:0}#i2-cost pre.code{overflow-x:auto}
+#i2-feat .i2-cost-sum .grid.g2>*{min-width:0}#i2-feat .i2-cost-sum pre.code{overflow-x:auto}
+/* i2-deploy: 선택 에디션 열을 라임으로 강조 */
+#i2-dep .edep-kn .edep-hd{fill:var(--lime);stroke:none}#i2-dep .edep-kn .edep-hd-t{fill:var(--on-lime)}
+#i2-dep .edep-ee .edep-hd{fill:var(--svg-chip);stroke:var(--g600);stroke-width:1.2}#i2-dep .edep-ee .edep-hd-t{fill:var(--svg-fg)}
+html[data-edition="enterprise"] #i2-dep .edep-ee .edep-hd{fill:var(--lime);stroke:none}
+html[data-edition="enterprise"] #i2-dep .edep-ee .edep-hd-t{fill:var(--on-lime)}
+html[data-edition="enterprise"] #i2-dep .edep-kn .edep-hd{fill:var(--svg-chip);stroke:var(--g600);stroke-width:1.2}
+html[data-edition="enterprise"] #i2-dep .edep-kn .edep-hd-t{fill:var(--svg-fg)}
+html[data-edition="konnect"] #i2-dep .edep-ee{opacity:.4;filter:saturate(.35)}
+html[data-edition="enterprise"] #i2-dep .edep-kn{opacity:.4;filter:saturate(.35)}
+@media (prefers-reduced-motion:reduce){html[data-edition="konnect"] #i2-dep .edep-ee,html[data-edition="enterprise"] #i2-dep .edep-kn{filter:none}}
 @media print{details.vr-more>summary{display:none}details.vr-more{border:0}#cmp-stick{position:static}.nctl{display:none}}
 
 /* AI 도구 연동 (#i-how) */
@@ -5175,13 +5185,16 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 <section class="sec hero" id="i2-intro" data-title="개요">
   <div class="eyebrow">AI Gateway 2.0</div>
   <h1>AI 전용 Gateway 런타임</h1>
-  <p class="lead">AI Gateway 2.0은 전용 바이너리, Models · MCP Servers · Agents 엔티티, 선언형 GitOps 구성을 한 제품 단위로 제공합니다. API Gateway의 보안·프록시 기반은 유지하고, LLM · MCP · 에이전트 트래픽에 맞는 Control Plane 엔티티와 비용 모델을 추가합니다.</p>
+  <p class="lead" data-show-edition="konnect">AI Gateway 2.0은 Konnect가 운영하는 AI Control Plane과 고객 환경(또는 Dedicated Cloud) Data Plane으로 나뉩니다. Models · MCP Servers · Agents를 1급 엔티티로 두고, kongctl · Terraform으로 선언형 배포합니다.</p>
+  <p class="lead" data-show-edition="enterprise">AI Gateway 2.0은 전용 바이너리로 Control Plane과 Data Plane을 고객 환경에 둡니다. Models · MCP Servers · Agents 엔티티를 작성하면 deck ai sync가 Kong Gateway 3.x 구성으로 변환해 적용합니다. 에어갭 · 폐쇄망에도 같은 이미지를 씁니다.</p>
   <div class="grid g3" style="margin-top:28px">
     <div class="card rv"><span class="tag">01</span><h3>전용 바이너리</h3><p>Data Plane 이미지는 kong/kong-ai-gateway입니다(예: 2.3.0). Kong Gateway와 별도 버전 · 릴리스 주기로 배포됩니다.</p></div>
-    <div class="card rv"><span class="tag">02</span><h3>네이티브 엔티티</h3><p>Konnect UI · Admin API · 선언형 설정에서 Model · MCP Server · Agent를 1급 리소스로 관리합니다. 정책은 가드레일, 접근 제어, 비용, 트래픽, 관측으로 구성합니다.</p></div>
-    <div class="card rv"><span class="tag">03</span><h3>선언형 GitOps</h3><p>decK AI · Terraform · kongctl로 동일 상태를 재현합니다. 환경 간 설정 차이를 줄이고, 변경 검토와 롤백이 가능합니다.</p></div>
+    <div class="card rv" data-show-edition="konnect"><span class="tag">02</span><h3>Konnect AI 엔티티</h3><p>Konnect UI · AI Gateway API · kongctl에서 Model · MCP Server · Agent를 관리합니다. 접근·비용 운영은 AI Management와 이어집니다.</p></div>
+    <div class="card rv" data-show-edition="enterprise"><span class="tag">02</span><h3>온프레미스 엔티티</h3><p>Admin API · 선언형 설정에서 Model · MCP Server · Agent를 관리합니다. deck ai sync가 Service · Route · Plugin 구성으로 변환합니다.</p></div>
+    <div class="card rv" data-show-edition="konnect"><span class="tag">03</span><h3>선언형 GitOps</h3><p>kongctl · Terraform으로 동일 상태를 재현합니다. Control Plane은 Kong이 운영하고 Data Plane만 고객 환경에 둡니다.</p></div>
+    <div class="card rv" data-show-edition="enterprise"><span class="tag">03</span><h3>선언형 GitOps</h3><p>deck ai sync · 자체 Control Plane으로 동일 상태를 재현합니다. 라이선스·DB·고가용성은 고객이 운영합니다.</p></div>
   </div>
-  <div class="callout" style="margin-top:22px"><b>기존 AI Gateway 소개</b> LLM 거버넌스 개념·데모·사례는 AI Gateway 페이지에 있습니다. 이 페이지는 2.0 바이너리·엔티티·비용 모델 변경만 다룹니다. <button type="button" class="btn s" onclick="go('ai')">AI Gateway</button></div>
+  <div class="callout" style="margin-top:22px"><b>기존 AI Gateway 소개</b> LLM 거버넌스 개념·데모·사례는 AI Gateway 페이지에 있습니다. 이 페이지는 2.0 바이너리·엔티티·배포 변경만 다룹니다. <button type="button" class="btn s" onclick="go('ai')">AI Gateway</button></div>
 </section>
 
 <section class="sec" id="i2-v1v2" data-title="1.x · 2.x 비교">
@@ -5232,9 +5245,11 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 
 <section class="sec" id="i2-arch" data-title="아키텍처 · 격리">
   <div class="eyebrow">Architecture</div>
-  <h2>Control Plane과 Data Plane 분리</h2>
-  <p class="sub">Konnect의 AI Gateway Control Plane이 엔티티 구성과 인증서를 배포하고, 고객 환경의 Data Plane이 LLM · MCP · A2A 트래픽을 처리합니다. Control Plane은 데이터 경로에 들어가지 않습니다.</p>
-  <div class="dia rv"><svg viewBox="0 0 980 380" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="AI Gateway Control Plane과 Data Plane 구조">
+  <h2 data-show-edition="konnect">Control Plane · Isolation · Data Plane</h2>
+  <h2 data-show-edition="enterprise">Control Plane · Data Plane · 선언형 변환</h2>
+  <p class="sub" data-show-edition="konnect">Konnect의 AI Gateway Control Plane이 엔티티 구성과 인증서를 배포하고, 고객 환경의 Data Plane이 LLM · MCP · A2A 트래픽을 처리합니다. Control Plane은 데이터 경로에 들어가지 않습니다.</p>
+  <p class="sub" data-show-edition="enterprise">AI Gateway Control Plane과 Data Plane을 모두 고객 환경에 둡니다. Models · MCP · Agents 엔티티는 deck ai sync가 Kong Gateway 3.x Service · Route · Plugin으로 변환해 적용합니다. Control Plane은 데이터 경로에 들어가지 않습니다.</p>
+  <div class="dia rv" data-show-edition="konnect"><svg viewBox="0 0 980 380" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Konnect AI Gateway Control Plane과 Data Plane 구조">
       <text x="125" y="128" text-anchor="middle" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">CLIENTS</text>
       <text x="855" y="128" text-anchor="middle" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">UPSTREAM</text>
       <rect x="330" y="14" width="320" height="86" rx="14" fill="var(--svg-panel)" stroke="var(--mark)" stroke-width="2"/>
@@ -5258,16 +5273,43 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
       <rect x="30" y="322" width="920" height="44" rx="10" fill="var(--svg-chip)" stroke="var(--line2)"/>
       <text x="490" y="349" text-anchor="middle" font-size="13" fill="var(--svg-fg)">기본 텔레메트리는 사용량 · 비용 · 지연 메타데이터입니다. 요청 · 응답 본문은 opt-in 설정을 켤 때만 전달됩니다.</text>
     </svg></div>
+  <div class="dia rv" data-show-edition="enterprise"><svg viewBox="0 0 980 380" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Enterprise AI Gateway Control Plane과 Data Plane 구조">
+      <text x="125" y="128" text-anchor="middle" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">CLIENTS</text>
+      <text x="855" y="128" text-anchor="middle" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">UPSTREAM</text>
+      <rect x="330" y="14" width="320" height="86" rx="14" fill="var(--svg-panel)" stroke="var(--mark)" stroke-width="2"/>
+      <text x="350" y="38" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">CUSTOMER ENV</text>
+      <text x="490" y="62" text-anchor="middle" font-size="16" font-weight="800" fill="var(--svg-fg)">AI Gateway Control Plane</text>
+      <text x="490" y="86" text-anchor="middle" font-size="12.5" fill="var(--svg-muted)">엔티티 · deck ai sync · Admin API</text>
+      <path d="M445 100V176" stroke="var(--mark)" stroke-width="2" stroke-dasharray="6 5" fill="none"/>
+      <path d="M535 176V100" stroke="var(--g600)" stroke-width="2" stroke-dasharray="6 5" fill="none"/>
+      <path d="M439 168l6 8 6-8M529 108l6-8 6 8" stroke="var(--svg-muted)" stroke-width="1.6" fill="none"/>
+      <text x="437" y="142" text-anchor="end" font-size="12" font-weight="700" fill="var(--svg-label)">구성 · 인증서</text>
+      <text x="543" y="142" font-size="12" font-weight="700" fill="var(--svg-label)">텔레메트리</text>
+      <rect x="330" y="176" width="320" height="110" rx="14" fill="var(--svg-panel)" stroke="var(--lime)" stroke-width="2"/>
+      <text x="350" y="200" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">CUSTOMER ENV</text>
+      <text x="490" y="232" text-anchor="middle" font-size="16" font-weight="800" fill="var(--svg-fg)">AI Gateway Data Plane</text>
+      <text x="490" y="258" text-anchor="middle" font-size="12.5" fill="var(--svg-muted)">kong-ai-gateway · 정책 · 라우팅</text>
+      <rect x="30" y="142" width="190" height="44" rx="10" fill="var(--svg-panel)" stroke="var(--g700)"/><text x="125" y="169" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">LLM client</text><rect x="30" y="200" width="190" height="44" rx="10" fill="var(--svg-panel)" stroke="var(--g700)"/><text x="125" y="227" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">MCP client</text><rect x="30" y="258" width="190" height="44" rx="10" fill="var(--svg-panel)" stroke="var(--g700)"/><text x="125" y="285" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">A2A agent</text><rect x="760" y="142" width="190" height="44" rx="10" fill="var(--svg-panel)" stroke="var(--g700)"/><text x="855" y="169" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">LLM provider</text><rect x="760" y="200" width="190" height="44" rx="10" fill="var(--svg-panel)" stroke="var(--g700)"/><text x="855" y="227" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">MCP server</text><rect x="760" y="258" width="190" height="44" rx="10" fill="var(--svg-panel)" stroke="var(--g700)"/><text x="855" y="285" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">AI agent</text>
+      <g fill="none" stroke="var(--mark)" stroke-width="2" stroke-opacity=".8">
+        <path d="M220 164C280 164 280 206 330 206"/><path d="M220 222H330"/><path d="M220 280C280 280 280 256 330 256"/>
+        <path d="M650 206C710 206 710 164 760 164"/><path d="M650 222H760"/><path d="M650 256C710 256 710 280 760 280"/>
+      </g>
+      <rect x="30" y="322" width="920" height="44" rx="10" fill="var(--svg-chip)" stroke="var(--line2)"/>
+      <text x="490" y="349" text-anchor="middle" font-size="13" fill="var(--svg-fg)">CP·DP를 고객이 운영합니다. deck ai sync가 2.x 엔티티를 Gateway 구성으로 변환합니다.</text>
+    </svg></div>
   <div class="grid g3">
     <div class="card rv"><span class="tag">Data path</span><h3>데이터 경로 분리</h3><p>Control Plane은 기본적으로 LLM · MCP · A2A 페이로드를 보지 않습니다. 본문 로깅은 log_payloads를 켤 때만 동작합니다.</p></div>
     <div class="card rv"><span class="tag">Resilience</span><h3>Control Plane 연결 끊김</h3><p>Data Plane은 마지막으로 받은 구성으로 트래픽을 계속 처리합니다. 연결이 복구될 때까지 구성 변경만 멈춥니다.</p></div>
-    <div class="card rv"><span class="tag">Isolation</span><h3>Kong Gateway와 분리</h3><p>AI Gateway 인스턴스는 Konnect의 별도 최상위 리소스입니다. Kong Gateway Control Plane과 엔티티 · Data Plane · 자격 증명 · Consumer · 플러그인을 공유하지 않으며, 같은 조직에서 함께 운영할 수 있습니다.</p></div>
-    <div class="card rv"><span class="tag">Multi-tenancy</span><h3>인스턴스 단위 격리</h3><p>조직 안에 AI Gateway 인스턴스를 여러 개 만들어 팀 · 환경 · 리전별로 나눕니다. 엔티티와 Data Plane 풀은 인스턴스 간에 보이지 않습니다.</p></div>
+    <div class="card rv" data-show-edition="konnect"><span class="tag">Isolation</span><h3>Kong Gateway와 분리</h3><p>AI Gateway 인스턴스는 Konnect의 별도 최상위 리소스입니다. Kong Gateway Control Plane과 엔티티 · Data Plane · 자격 증명 · Consumer · 플러그인을 공유하지 않으며, 같은 조직에서 함께 운영할 수 있습니다.</p></div>
+    <div class="card rv" data-show-edition="enterprise"><span class="tag">Isolation</span><h3>API Gateway와 분리</h3><p>AI Gateway는 전용 바이너리와 Control Plane으로 운영합니다. API Gateway 노드와 이미지를 섞지 않으며, Admin API · 선언형 설정으로 엔티티를 관리합니다.</p></div>
+    <div class="card rv" data-show-edition="konnect"><span class="tag">Multi-tenancy</span><h3>인스턴스 단위 격리</h3><p>조직 안에 AI Gateway 인스턴스를 여러 개 만들어 팀 · 환경 · 리전별로 나눕니다. 엔티티와 Data Plane 풀은 인스턴스 간에 보이지 않습니다.</p></div>
+    <div class="card rv" data-show-edition="enterprise"><span class="tag">Multi-tenancy</span><h3>환경 단위 격리</h3><p>환경·팀마다 AI Gateway 배포를 나눕니다. Workspace · 별도 CP/DP 풀로 설정을 분리하고, deck ai sync 상태를 환경별로 둡니다.</p></div>
     <div class="card rv"><span class="tag">Routing</span><h3>로드밸런싱 · 장애 조치</h3><p>모델마다 분산 알고리즘을 고릅니다. 업스트림 오류나 타임아웃이 나면 기본 5회 재시도 후 다른 대상으로 넘깁니다. 패시브 서킷 브레이커는 선택 사항입니다.</p>
       <pre class="code" style="margin-top:10px">round-robin · consistent-hashing
 least-connections · lowest-latency
 lowest-usage · semantic · priority</pre></div>
-    <div class="card rv"><span class="tag">Node auth</span><h3>mTLS 노드 등록</h3><p>Data Plane 노드는 AI Data Plane Certificate로 mTLS 인증을 거쳐 구성을 받습니다. 구성이 바뀌면 Control Plane이 알리고 노드가 즉시 가져갑니다.</p></div>
+    <div class="card rv" data-show-edition="konnect"><span class="tag">Node auth</span><h3>mTLS 노드 등록</h3><p>Data Plane 노드는 AI Data Plane Certificate로 mTLS 인증을 거쳐 구성을 받습니다. 인증서 발급·로테이션은 Konnect 노드 등록 절차를 따릅니다.</p></div>
+    <div class="card rv" data-show-edition="enterprise"><span class="tag">Node auth</span><h3>mTLS 노드 등록</h3><p>Data Plane 노드는 mTLS로 자체 Control Plane에 등록됩니다. 인증서와 라이선스는 고객이 발급·보관합니다.</p></div>
   </div>
   <p class="note">출처: <a href="https://developer.konghq.com/ai-gateway/architecture/" target="_blank" rel="noopener noreferrer">AI Gateway architecture ↗</a></p>
 </section>
@@ -5275,7 +5317,8 @@ lowest-usage · semantic · priority</pre></div>
 <section class="sec" id="i2-deploy" data-title="배포">
   <div class="eyebrow">Deployment</div>
   <h2>Konnect · on-prem · Air-gap</h2>
-  <p class="sub">Konnect에서는 Konnect가 Control Plane을 운영하고 Data Plane은 고객 환경에서 실행합니다. Dedicated Cloud Gateways를 쓰면 Data Plane까지 Kong이 운영합니다. on-prem은 kong/kong-ai-gateway 이미지로 직접 구축하고, deck ai sync가 2.x 엔티티 구성을 Kong Gateway 3.x 구성으로 변환해 적용합니다.</p>
+  <p class="sub" data-show-edition="konnect">Konnect가 Control Plane을 운영하고 Data Plane은 고객 환경에서 실행합니다. Dedicated Cloud Gateways를 쓰면 Data Plane까지 Kong이 운영합니다. kongctl · Terraform으로 2.x 엔티티를 선언형으로 배포합니다.</p>
+  <p class="sub" data-show-edition="enterprise">on-prem은 kong/kong-ai-gateway 이미지로 CP·DP를 직접 구축합니다. deck ai sync가 2.x 엔티티 구성을 Kong Gateway 3.x 구성으로 변환해 적용하며, 에어갭·폐쇄망에도 같은 흐름을 씁니다.</p>
   <div class="edep rv" id="i2-dep">
     <svg viewBox="0 0 980 470" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Konnect와 on-prem AI Gateway 2.0 배포 구조">
       <text x="40" y="28" font-size="11" font-weight="700" fill="var(--mark)" letter-spacing="1.2">LAYER</text>
@@ -5283,10 +5326,10 @@ lowest-usage · semantic · priority</pre></div>
       <text x="70" y="248" text-anchor="middle" font-size="13" font-weight="800" fill="var(--svg-muted)">CP</text>
       <text x="70" y="388" text-anchor="middle" font-size="13" font-weight="800" fill="var(--svg-muted)">DP</text>
 
-      <!-- Konnect column -->
+      <g class="edep-kn">
       <g class="n" style="--i:0">
-        <rect x="130" y="12" width="380" height="36" rx="18" fill="var(--lime)"/>
-        <text x="320" y="36" text-anchor="middle" font-size="16" font-weight="900" fill="var(--on-lime)">Konnect</text>
+        <rect class="edep-hd" x="130" y="12" width="380" height="36" rx="18"/>
+        <text class="edep-hd-t" x="320" y="36" text-anchor="middle" font-size="16" font-weight="900">Konnect</text>
       </g>
       <g class="n" style="--i:1">
         <rect x="130" y="64" width="380" height="100" rx="12" fill="var(--svg-panel)" stroke="var(--g700)"/>
@@ -5310,11 +5353,12 @@ lowest-usage · semantic · priority</pre></div>
         <text x="320" y="398" text-anchor="middle" font-size="15" font-weight="800" fill="var(--svg-fg)">Data plane</text>
         <text x="320" y="424" text-anchor="middle" font-size="14" font-weight="800" fill="var(--lime)">kong/kong-ai-gateway:2.x</text>
       </g>
+      </g>
 
-      <!-- Kong EE column -->
+      <g class="edep-ee">
       <g class="n" style="--i:0">
-        <rect x="540" y="12" width="400" height="36" rx="18" fill="var(--svg-chip)" stroke="var(--g600)"/>
-        <text x="740" y="36" text-anchor="middle" font-size="16" font-weight="900" fill="var(--svg-fg)">Kong EE (on-prem)</text>
+        <rect class="edep-hd" x="540" y="12" width="400" height="36" rx="18"/>
+        <text class="edep-hd-t" x="740" y="36" text-anchor="middle" font-size="16" font-weight="900">Kong EE (on-prem)</text>
       </g>
       <g class="n" style="--i:1">
         <rect x="540" y="64" width="400" height="100" rx="12" fill="var(--svg-panel)" stroke="var(--g700)"/>
@@ -5337,57 +5381,34 @@ lowest-usage · semantic · priority</pre></div>
         <text x="740" y="398" text-anchor="middle" font-size="15" font-weight="800" fill="var(--svg-fg)">Data plane</text>
         <text x="740" y="424" text-anchor="middle" font-size="14" font-weight="800" fill="var(--lime)">kong/kong-ai-gateway:2.x</text>
       </g>
+      </g>
     </svg>
-    <p class="edep-cap">양쪽 모두 같은 2.x 엔티티 모델로 구성을 작성합니다. Konnect는 managed Control Plane이 구성을 Data Plane에 배포하고, on-prem은 deck ai sync가 Kong Gateway 3.x 구성으로 변환합니다. on-prem 설치 예시는 PostgreSQL과 Enterprise 라이선스를 사용합니다.</p>
+    <p class="edep-cap" data-show-edition="konnect">Konnect는 managed Control Plane이 구성을 Data Plane에 배포합니다. 같은 2.x 엔티티 모델을 쓰며, Dedicated Cloud를 선택하면 DP까지 Kong이 운영합니다.</p>
+    <p class="edep-cap" data-show-edition="enterprise">on-prem은 deck ai sync가 2.x 엔티티를 Kong Gateway 3.x 구성으로 변환합니다. 설치 예시는 PostgreSQL과 Enterprise 라이선스를 사용합니다.</p>
     <p class="note" style="margin:8px 0 0">출처: <a href="https://developer.konghq.com/ai-gateway/architecture/" target="_blank" rel="noopener noreferrer">AI Gateway architecture ↗</a> · <a href="https://developer.konghq.com/ai-gateway/install/docker/" target="_blank" rel="noopener noreferrer">Install AI Gateway 2.x on-prem ↗</a> · <a href="https://developer.konghq.com/dedicated-cloud-gateways/reference/#ai-gateway-2-0-on-dedicated-cloud-gateways" target="_blank" rel="noopener noreferrer">AI Gateway 2.0 on Dedicated Cloud Gateways ↗</a></p>
   </div>
 </section>
 
-<section class="sec" id="i2-cost" data-title="LLM 비용 산정">
-  <div class="eyebrow">LLM usage cost</div>
-  <h2>LLM 제공사 사용 요금 산정</h2>
-  <p class="sub">여기서 말하는 비용은 Kong 라이선스나 최종 사용자 과금이 아닙니다. OpenAI · Anthropic 등 <b>LLM 제공사가 기업에 청구하는 토큰·캐시·티어 요금</b>을 게이트웨이가 요청 단위로 추정하는 방식입니다. 이 추정치를 기준으로 팀·앱·모델별 예산과 비용 기반 rate limit의 허용·거부를 결정합니다.</p>
-  <div class="grid g3" style="margin-top:18px">
-    <div class="card"><span class="tag">산정 대상</span><h3>LLM 제공사 청구</h3><p>업스트림 모델 API 호출에 대해 제공사 요금표를 적용한 사용 요금 추정입니다.</p></div>
-    <div class="card"><span class="tag">관리 단위</span><h3>팀 · 앱 · 모델</h3><p>Consumer · 라우트 · 모델별로 예산·한도를 걸고, 추정 비용이 한도를 넘으면 요청을 거부합니다.</p></div>
-    <div class="card"><span class="tag">제외</span><h3>Kong · 최종 과금</h3><p>Kong 제품 요금과, 기업이 자사 고객에게 매기는 과금 모델은 이 섹션 범위가 아닙니다.</p></div>
-  </div>
-  <h3 style="margin-top:28px">산정 식 변경 · v1 → v2</h3>
-  <p class="sub" style="margin-top:0">제공사 요금표가 입력·출력 두 요율을 넘어갔습니다. 캐시 읽기·쓰기(TTL), 컨텍스트 구간, 서비스 티어, 추론 토큰이 단가에 포함됩니다. 게이트웨이 산정식이 이를 반영해야 예산·한도 정책이 실제 청구와 맞습니다.</p>
-  <div class="vr-chain rv"><div class="lk"><div><b>서비스 티어</b><span>Priority · Flex 배율</span></div></div><div class="op">×</div><div class="lk"><div><b>컨텍스트 배율</b><span>긴 컨텍스트 구간 재산정</span></div></div><div class="op">×</div><div class="lk k"><div><b>입력 + 캐시</b><span>캐시 읽기 · TTL별 쓰기</span></div></div><div class="op">+</div><div class="lk"><div><b>출력</b><span>추론 토큰 포함</span></div></div></div>
-  <div class="grid g2">
-    <div class="card rv"><span class="tag">AI Gateway v1</span><h3>두 요율</h3><p>요청마다 입력·출력 두 요율만으로 사용 요금을 추정합니다.</p><ul class="list"><li>캐시 읽기는 집계만 하고 추정 금액에 거의 반영되지 않습니다.</li><li>TTL · 컨텍스트 구간 · 서비스 티어가 산정식에 없습니다.</li></ul>
-      <pre class="code" style="margin-top:12px">cost = (input × input_cost + output × output_cost) / 1M</pre>
-    </div>
-    <div class="card rv k"><span class="tag">AI Gateway v2</span><h3>조합 가격</h3><p>캐시 · 컨텍스트 · 서비스 티어를 한 식에 넣어 제공사 청구에 가깝게 추정합니다.</p><ul class="list"><li>캐시 읽기와 TTL별 쓰기 단가를 반영합니다.</li><li>컨텍스트 배율을 요청 전체에 적용합니다.</li><li>서비스 티어가 전체 추정 비용을 곱합니다.</li></ul>
-      <pre class="code" style="margin-top:12px">cost = service_tier_factor × (
-  ctx_in × (input + cache_read + cache_write@TTL)
-  + ctx_out × output
-)</pre>
-    </div>
-  </div>
-  <p class="note" style="margin-top:12px">기존 input_cost · output_cost · cache_read_cost · cache_write_cost 필드는 유지됩니다. 목록이 없으면 스칼라 값이 적용됩니다. managed 모델 단가는 Control Plane이 갱신하고, self-managed·수동 오버라이드는 라우트 설정으로 둡니다.</p>
-  <h3 style="margin-top:28px">제공사 단가 구성 요소</h3>
-  <div class="grid g3">
-    <div class="card"><span class="tag">Cache</span><h3>읽기 · 쓰기</h3><p>캐시 히트는 입력 대비 할인(예: 약 0.1×)이 일반적입니다. 캐시 쓰기는 일반 입력보다 비쌀 수 있으며, TTL(5분·1시간 등)에 따라 쓰기 단가가 달라집니다.</p></div>
-    <div class="card"><span class="tag">Context</span><h3>컨텍스트 구간</h3><p>긴 컨텍스트 구간에서는 요청 전체 단가가 다시 산정됩니다. 임계값은 모델·제공사마다 다릅니다.</p></div>
-    <div class="card"><span class="tag">Tier · Reasoning</span><h3>티어 · 추론 토큰</h3><p>Priority · Flex 같은 서비스 티어는 입·출력 전체에 배율을 적용합니다. reasoning 토큰은 응답에 표시되지 않아도 출력 요율로 청구되는 경우가 많습니다.</p></div>
-  </div>
-  <div class="callout" style="margin-top:18px"><b>거버넌스에 쓰는 이유</b> 추정 금액은 대시보드 표시용만이 아닙니다. 팀·앱·모델 예산과 비용 기반 rate limit의 입력입니다. 제공사 실청구와 어긋나면 한도 허용·거부가 틀립니다.</div>
-  <details class="vr-more"><summary>v2 산정식 포함 · 후속 · 제외 범위</summary><div class="vr-mb"><div class="grid g3" style="margin-top:18px">
-    <div class="card"><span class="tag">Committed</span><h3>포함 범위</h3><p>TTL별 캐시 쓰기 단가, 컨텍스트 구간, 서비스 티어 배율을 산정식에 포함합니다.</p></div>
-    <div class="card"><span class="tag">Follow-on</span><h3>후속 범위</h3><p>멀티모달 요율은 멀티모달 캐시 메트릭 수집이 준비된 뒤에 추가합니다.</p></div>
-    <div class="card"><span class="tag">Out of scope</span><h3>제외 범위</h3><p>시간대·리전별 동적 가격은 산정식에 넣지 않습니다. 리전 단가는 라우트별로 수동 설정합니다.</p></div>
-  </div>
-</div></details>
-</section>
-
-<section class="sec" id="i2-feat" data-title="신규 기능">
+<section class="sec" id="i2-feat" data-title="기능 변경 · 개선">
   <div class="eyebrow">New in 2.0</div>
-  <h2>Forward proxy · 캘린더 한도 · Kimi · MCP · NeMo</h2>
-  <p class="sub">포워드 프록시, 캘린더형 rate-limit 창, MoonshotAI Kimi, 내부 MCP 번들링, NVIDIA NeMo Guardrails 플러그인을 추가합니다. AI Gateway 2.0 바이너리에서는 ai-proxy가 제거되고 ai-proxy-advanced만 사용합니다.</p>
+  <h2>AI 2.0 기능 변경 및 개선 사항</h2>
+  <p class="sub">포워드 프록시, 캘린더형 rate-limit 창, MoonshotAI Kimi, 내부 MCP 번들링, NVIDIA NeMo Guardrails, LLM 비용 산정 개선을 포함합니다. AI Gateway 2.0 바이너리에서는 ai-proxy가 제거되고 ai-proxy-advanced만 사용합니다.</p>
 
-  <h3 style="margin-top:8px">AI Proxy와 AI Proxy Advanced</h3>
+  <div class="i2-cost-sum" id="i2-cost">
+    <h3 style="margin-top:8px">LLM 비용 산정</h3>
+    <p class="sub" style="margin-top:0">LLM 제공사 청구(토큰·캐시·티어)를 요청 단위로 추정합니다. Kong 라이선스·최종 사용자 과금은 범위가 아닙니다. v2는 캐시·컨텍스트·서비스 티어를 반영해 예산·비용 한도 정책이 실청구에 가깝게 맞습니다.</p>
+    <div class="grid g2">
+      <div class="card rv"><span class="tag">v1</span><h3>두 요율</h3><p>입력·출력 단가만으로 추정합니다.</p>
+        <pre class="code" style="margin-top:10px">cost = (input × input_cost + output × output_cost) / 1M</pre>
+      </div>
+      <div class="card rv k"><span class="tag">v2</span><h3>조합 가격</h3><p>캐시 읽기·쓰기(TTL), 컨텍스트 배율, 서비스 티어를 한 식에 넣습니다.</p>
+        <pre class="code" style="margin-top:10px">cost = tier × (ctx_in×(in+cache) + ctx_out×out)</pre>
+      </div>
+    </div>
+    <p class="note" style="margin-top:10px">추정 금액은 팀·앱·모델 예산과 비용 기반 rate limit 입력입니다. 상세 요율 구성은 제공사 문서와 AI Proxy Advanced 설정을 참고합니다.</p>
+  </div>
+
+  <h3 style="margin-top:28px">AI Proxy와 AI Proxy Advanced</h3>
   <div class="tw rv"><table>
     <thead><tr><th>구분</th><th>AI Proxy (1.x · 레거시)</th><th>AI Proxy Advanced (2.0)</th></tr></thead>
     <tbody>
