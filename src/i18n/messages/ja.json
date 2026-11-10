@@ -5312,5 +5312,7 @@
   "m.83b651b85e13": "移動",
   "m.fc21be907f65": "← 前へ",
   "m.1a3067051d6c": "次へ →",
-  "m.7cedd63edd16": "エンティティモデル"
+  "m.7cedd63edd16": "エンティティモデル",
+  "m.a3c121a45fec": "KonnectではHybridとSelf-managedは同じ構成です。Control PlaneはKonnect、Data Planeはお客様環境で運用します。",
+  "m.52aa5056c6b1": "Data Planeはお客様環境"
 }

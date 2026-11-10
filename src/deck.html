@@ -211,7 +211,7 @@ html[data-theme="light"] .nr{--nr-bg:#101110;border-right-color:#101110}
 .kx-two,.kx-three{margin-top:18px}
 .kx-h{margin:26px 0 10px}
 .kx-mx td:not(:first-child),.kx-mx th:not(:first-child){text-align:center}
-.kx-mx small{display:block;font-size:11px;color:var(--g400);margin-top:2px}
+.kx-mx small{display:block;font-size:11px;color:var(--g400);margin-top:2px;font-weight:500}
 .kx-y{font-style:normal;color:var(--mark);font-weight:800}.kx-n{font-style:normal;color:var(--g500)}
 .kx-cmp{margin-top:18px}
 .kx-ha{display:grid;grid-template-columns:minmax(0,.8fr) 90px minmax(0,1.6fr);gap:14px;align-items:center;margin:24px 0 6px}
@@ -7369,13 +7369,13 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
     <div class="card"><span class="tag">Fully managed</span><h3>Dedicated Cloud Gateways</h3><p>Data Plane까지 Kong이 운영합니다. AWS · Azure · GCP의 단일 테넌트 환경에서 실행되고, Autopilot 자동 확장과 업그레이드를 Konnect가 처리합니다. 공개 · 사설 네트워크 중 선택합니다.</p></div>
   </div>
   <h3 class="kx-h">제품별 배포 모델</h3>
-  <div class="tw kx-mx"><table><thead><tr><th>제품</th><th>Hybrid</th><th>Self-managed</th><th>Fully managed</th></tr></thead><tbody>
-    <tr><td>API Gateway</td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-y" aria-label="yes">✓</i><small>Dedicated Cloud Gateways</small></td></tr>
-    <tr><td>AI Gateway</td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-y" aria-label="yes">✓</i><small>AI Gateway 2.0 · Dedicated Cloud Gateways</small></td></tr>
-    <tr><td>Event Gateway</td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-n" aria-label="no">—</i></td><td><i class="kx-n" aria-label="no">—</i></td></tr>
-    <tr><td>Service Mesh</td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-n" aria-label="no">—</i></td></tr>
+  <div class="tw kx-mx"><table><thead><tr><th>제품</th><th>Hybrid · Self-managed<small>Data Plane 고객 환경</small></th><th>Fully managed<small>Dedicated Cloud Gateways</small></th></tr></thead><tbody>
+    <tr><td>API Gateway</td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-y" aria-label="yes">✓</i></td></tr>
+    <tr><td>AI Gateway</td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-y" aria-label="yes">✓</i><small>AI Gateway 2.0</small></td></tr>
+    <tr><td>Event Gateway</td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-n" aria-label="no">—</i></td></tr>
+    <tr><td>Service Mesh</td><td><i class="kx-y" aria-label="yes">✓</i></td><td><i class="kx-n" aria-label="no">—</i></td></tr>
   </tbody></table></div>
-  <p class="note">Hybrid · Self-managed 구분은 Kong 산정 기준표를 따릅니다. 두 방식 모두 Control Plane은 Konnect, Data Plane은 고객 환경입니다.</p>
+  <p class="note">Konnect에서 Hybrid와 Self-managed는 같은 구성입니다. Control Plane은 Konnect, Data Plane은 고객 환경에서 운영합니다.</p>
   <p class="note">출처: <a href="https://developer.konghq.com/gateway/topology-hosting-options/" target="_blank" rel="noopener noreferrer">Data Plane hosting options ↗</a> · <a href="https://developer.konghq.com/dedicated-cloud-gateways/" target="_blank" rel="noopener noreferrer">Dedicated Cloud Gateways ↗</a></p>
 </section>
 <section class="sec" id="inf-iso" data-title="환경 격리" data-show-edition="enterprise">

@@ -5312,5 +5312,7 @@
   "m.83b651b85e13": "Move",
   "m.fc21be907f65": "← Previous",
   "m.1a3067051d6c": "Next →",
-  "m.7cedd63edd16": "Entity model"
+  "m.7cedd63edd16": "Entity model",
+  "m.a3c121a45fec": "In Konnect, Hybrid and Self-managed are the same setup: the Control Plane is in Konnect and the Data Plane runs in your environment.",
+  "m.52aa5056c6b1": "Data Plane in your environment"
 }

@@ -5312,5 +5312,7 @@
   "m.83b651b85e13": "移動",
   "m.fc21be907f65": "← 上一頁",
   "m.1a3067051d6c": "下一頁 →",
-  "m.7cedd63edd16": "實體模型"
+  "m.7cedd63edd16": "實體模型",
+  "m.a3c121a45fec": "在 Konnect 中,Hybrid 與 Self-managed 是同一種架構:Control Plane 在 Konnect,Data Plane 在客戶環境中營運。",
+  "m.52aa5056c6b1": "Data Plane 位於客戶環境"
 }
