@@ -12,7 +12,7 @@
 
 Kong(The AI Connectivity Company) 소개 자료를 **단일 HTML 파일**로 만든다. 오프라인에서도 열리도록 CSS·JS·이미지는 HTML 안에 둔다.
 
-- 상단 메뉴(페이지) → 좌측 메뉴(섹션) 구조. 좌측 메뉴는 `.sec[data-title]`에서 자동 생성된다.
+- 좌측 레일(Home · AI · API) → 상단 메뉴(현재 레일의 페이지) → 좌측 메뉴(섹션) 구조. 상단 메뉴는 `.page[data-rail]`로, 좌측 메뉴는 `.sec[data-title]`에서 자동 생성된다. 레일 하단에 에디션(EE / Konnect) · 언어(국기) 선택이 있다. 상세: `achive/plans/nav-rail-ia.md`
 - 언어: 한국어(원문) · 영어 · 일본어 · 번체 중국어 · 간체 중국어(`ko` / `en` / `ja` / `zh-Hant` / `zh-Hans`). 드롭다운은 번체가 간체 위. `?lang=zh`는 `zh-Hans`로 매핑
 - 테마: 다크(기본) · 라이트(`html[data-theme]`)
 - 에디션 가시성: Enterprise / Konnect(`html[data-edition]`)
@@ -78,7 +78,9 @@ npm run build        # kong-introduction.html + docs/index.html 생성 (VERSION 
 - `data-show-lang="en ja"`: 지정 언어에서만 표시.
 - `data-show-edition="enterprise"` / `"konnect"` / `"enterprise konnect"`: 생략하면 전 에디션.
 - 런타임: `html[data-lang]` · `html[data-edition]` (`?lang=` · `?edition=` · localStorage).
-- 상단·좌측 메뉴는 숨김 대상 page/sec를 넣지 않는다(`audienceOk`). 에디션 토글 UI는 후속 과제이며 `KONG_EDITION.setEdition` 계약만 유지한다.
+- `data-rail="kong|ai|api"`(공백 구분 다중 가능): 페이지가 속한 레일. 모든 `.page`에 필수. 런타임 `html[data-rail]` · `KONG_RAIL.setRail()` · `?rail=` · 해시 `#<rail>:<page>/<sec>`(공유 페이지).
+- `data-edition-lock="konnect"`: 해당 에디션이 아니면 숨기지 않고 메뉴에 비활성 + `Konnect` 배지로 남긴다(진입은 차단).
+- 상단·좌측 메뉴는 숨김 대상 page/sec를 넣지 않는다(`audienceOk`). 에디션 토글은 레일 하단 세그먼트가 `KONG_EDITION.setEdition`을 호출한다.
 
 ### 테마
 
@@ -119,7 +121,7 @@ npm run build        # kong-introduction.html + docs/index.html 생성 (VERSION 
   - 찾는 순서: `achive/kong-iconography/`(`svg/{name}.svg`, `icons.json`, [카탈로그](https://chuca.github.io/kong-iconography/)) → 디자인 시스템 `assets/icons/` → Kong 플러그인 문서 아이콘. `-1` 접미사는 변형본이며 기본은 접미사 없는 파일.
   - 세 곳 모두에 없을 때만 직접 그리고, 작업 보고에 "권고 세트에 없어 직접 그림 · 대상 개념"을 밝힌다.
   - 인라인 방법: 원본 `path`를 그대로 옮기고 `fill="#CCFF00"`만 `fill="currentColor"`로 바꿔 테마 색을 CSS로 준다. `viewBox="0 0 24 24"` 유지, 바로 앞에 `<!-- Kong Iconography: {name} -->` 주석을 남긴다.
-  - 예외: Kong 로고 · 마크(`#kong-logo` · `#kong-mark`), 클라우드 · 파트너 로고(`ic-aws` 등), 화살표 · 체크 · 셰브론 같은 UI 기호, 도식용 도형.
+  - 예외: Kong 로고 · 마크(`#kong-logo` · `#kong-mark`), 클라우드 · 파트너 로고(`ic-aws` 등), 언어 선택 국기(`#f-*`, 사용자 제공 SVG · EN = 미국/영국 · 繁 = 대만/홍콩 대각선 합성), 화살표 · 체크 · 셰브론 같은 UI 기호, 도식용 도형.
   - 커밋 전 점검: 이번 변경에 새로 들어간 `<svg>`가 위 출처 중 하나인지 확인한다.
 - 새 클래스는 기존과 겹치지 않게 고유 접두사를 쓴다.
 

@@ -5151,5 +5151,9 @@
   "m.4ecc492b170f": "04 · 边缘",
   "m.d1a6dde61ec1": "+ Azure Foundry 控制台",
   "m.b0efe206c9e1": "+ GCP · LiteLLM 代理",
-  "m.a160e999444f": "+ 自建代理 · 脚本"
+  "m.a160e999444f": "+ 自建代理 · 脚本",
+  "m.73b400311ea4": "仅限 Konnect · 在侧栏底部切换到 Konnect 即可查看",
+  "m.b0629c01ce90": "在 ${e} 下隐藏了 ${n} 个章节",
+  "m.ea3252281bc3": "韩语",
+  "m.3fd727dead9d": "Kong Enterprise · 自行运维(本地部署)"
 }

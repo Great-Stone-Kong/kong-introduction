@@ -5151,5 +5151,9 @@
   "m.4ecc492b170f": "04 · Edge",
   "m.d1a6dde61ec1": "+ Azure Foundry console",
   "m.b0efe206c9e1": "+ GCP · LiteLLM proxy",
-  "m.a160e999444f": "+ DIY proxies · scripts"
+  "m.a160e999444f": "+ DIY proxies · scripts",
+  "m.73b400311ea4": "Konnect only · Switch to Konnect at the bottom of the rail to view",
+  "m.b0629c01ce90": "${n} sections hidden for ${e}",
+  "m.ea3252281bc3": "Korean",
+  "m.3fd727dead9d": "Kong Enterprise · Self-managed (on-prem)"
 }

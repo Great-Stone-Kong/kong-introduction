@@ -143,6 +143,7 @@ function sw(){
 }
 function ensureSw(){
   const side=document.getElementById('side'); if(!side) return;
+  if(document.getElementById('nl-btn')) return;
   if(side.querySelector('.lsw')) return;
   const s=sw();
   const vb=side.querySelector('.vbox');

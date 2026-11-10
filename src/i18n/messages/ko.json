@@ -5151,5 +5151,9 @@
   "m.4ecc492b170f": "04 · 엣지",
   "m.d1a6dde61ec1": "+ Azure Foundry 콘솔",
   "m.b0efe206c9e1": "+ GCP · LiteLLM 프록시",
-  "m.a160e999444f": "+ 자체 프록시 · 스크립트"
+  "m.a160e999444f": "+ 자체 프록시 · 스크립트",
+  "m.73b400311ea4": "Konnect 전용 · 레일 하단에서 Konnect로 전환하면 볼 수 있습니다",
+  "m.b0629c01ce90": "${e} 기준으로 숨긴 섹션 ${n}개",
+  "m.ea3252281bc3": "한국어",
+  "m.3fd727dead9d": "Kong Enterprise · 자체 운영(On-prem)"
 }
