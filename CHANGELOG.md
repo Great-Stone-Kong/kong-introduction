@@ -13,6 +13,7 @@
 - AI Gateway 2.0 > 기능 변경 · 개선 > LLM 비용 산정: v1·v2 추정과 제공사 실청구를 비교하는 그래프 추가
 - AI Management: EE에서는 좌측 개요만 활성, 나머지 비활성. AI Cost Management · Catalog · AI Registry에만 「EE 예정」표시. Konnect에서는 배지 없이 전 섹션 활성
 - AI Management > 활용 사례: 여섯 사례 도식을 원본 아키텍처(게이트웨이 · Context Mesh · Management plane)에 맞게 재구성
+- AI Management > 활용 사례: 탭 pane 닫는 태그 오류로 소프트웨어 팩토리만 보이던 문제 수정. 여섯 사례 도식이 탭 전환으로 표시되도록 복구
 
 ## 2026.11.09.6af12729
 
