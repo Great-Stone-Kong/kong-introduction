@@ -12,6 +12,7 @@
 - AI Gateway 2.0: Enterprise · Konnect 선택에 따라 개요·아키텍처 구성도·배포 강조색을 분기. LLM 비용 산정을 기능 변경 섹션 하위로 요약 흡수. 섹션 제목을 「AI 2.0 기능 변경 및 개선 사항」으로 정리
 - AI Gateway 2.0 > 기능 변경 · 개선 > LLM 비용 산정: v1·v2 추정과 제공사 실청구를 비교하는 그래프 추가
 - AI Management: EE에서는 좌측 개요만 활성, 나머지 비활성. AI Cost Management · Catalog · AI Registry에만 「EE 예정」표시. Konnect에서는 배지 없이 전 섹션 활성
+- AI Management: Konnect 전용 좌측 항목에 「Konnect」태그 표시. EE 예정 항목은 Konnect 모드에서도 Konnect 태그
 - AI Management > 활용 사례: 여섯 사례 도식을 원본 아키텍처(게이트웨이 · Context Mesh · Management plane)에 맞게 재구성
 - AI Management > 활용 사례: 탭 pane 닫는 태그 오류로 소프트웨어 팩토리만 보이던 문제 수정. 여섯 사례 도식이 탭 전환으로 표시되도록 복구
 - AI Management > 활용 사례: 공통 격자 · 화살표 · 하단 Konnect 밴드로 도식을 정돈하고, EN 등 다국어 라벨을 박스 폭에 맞게 축약

@@ -10202,7 +10202,7 @@ function edBadge(el){ const se=el&&el.getAttribute('data-show-edition'), lk=el&&
 function railFirst(r){ const p=railPages(r)[0]; return p?p.id.slice(2):'company'; }
 function hashFor(id,sec){ const p=document.getElementById('p-'+id); const pre=(p&&pageRails(p)[0]!==curRail())?curRail()+':':''; return '#'+pre+id+(sec?'/'+sec:''); }
 function visibleSecs(page){ return [...(page||document).querySelectorAll('.sec')].filter(s=>audienceOk(s)); }
-/* EE에서 data-avail 섹션은 좌측만 비활성(본문은 CSS로 숨김). Konnect에서는 전부 활성·배지 없음 */
+/* EE에서 data-avail 섹션은 좌측만 비활성(본문은 CSS로 숨김). Konnect-only·ee-soon(Konnect 모드)은 Konnect 태그 */
 function secAvailLocked(s){
   if(!s||(document.documentElement.dataset.edition||'enterprise')!=='enterprise') return false;
   return !!s.getAttribute('data-avail');
@@ -10521,8 +10521,9 @@ function setCrumb(secEl){
 function secBadge(s){
   const ed=document.documentElement.dataset.edition||'enterprise';
   const av=s.getAttribute('data-avail');
-  if(av==='ee-soon') return ed==='enterprise'?'<em class="ne-sb soon">EE 예정</em>':'';
-  if(av) return ''; /* avail=konnect etc: no badge; edition toggle already scopes UX */
+  if(av==='ee-soon') return ed==='enterprise'?'<em class="ne-sb soon">EE 예정</em>':'<em class="ne-sb">Konnect</em>';
+  if(av==='konnect') return '<em class="ne-sb">Konnect</em>';
+  if(av) return '';
   const se=s.getAttribute('data-show-edition');
   if(!se||se.trim().indexOf(' ')>=0) return '';
   return '<em class="ne-sb">'+(se.trim()==='enterprise'?'EE':'Konnect')+'</em>';
