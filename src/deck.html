@@ -585,14 +585,14 @@ html[data-theme="light"] .amr-res{border-color:var(--mark)}
 .nl-menu button em,.vi-menu .vi-dl em{font-style:normal;font:700 10.5px var(--mono);color:var(--g500)}
 .nl-menu button.on{background:var(--accent-wash,rgba(204,255,0,.12));color:var(--heading)}.nl-menu button:hover,.vi-menu .vi-dl:hover{background:rgba(127,140,120,.14);color:var(--heading);text-decoration:none}
 .vi-menu .vi-dl .vi-dl-ico{width:16px;height:16px;flex:none;opacity:.7;margin-left:4px;fill:currentColor}
-.vi-ver{margin:2px 4px 8px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-size:12px;line-height:1.45;color:var(--g300)}
-.vi-ver b{display:block;font:800 12.5px var(--font);color:var(--heading);font-variant-numeric:tabular-nums}
-.vi-ver.new{border-color:color-mix(in srgb,var(--lime) 40%,var(--line));background:var(--accent-soft);color:var(--heading)}
-.vi-ver.new strong{display:block;color:var(--mark);font-weight:800;margin-bottom:2px}
 .vi-h{margin:4px 8px 4px;font:700 10.5px var(--font);letter-spacing:.06em;text-transform:uppercase;color:var(--g500)}
 .vi-cl{width:100%;display:flex;align-items:center;gap:10px;border:0;background:none;color:var(--g200);font:600 13px var(--font);padding:7px 10px;border-radius:8px;cursor:pointer;text-align:left;margin-top:4px}
 .vi-cl:hover{background:rgba(127,140,120,.14);color:var(--heading)}
 .vi-cl svg{width:16px;height:16px;flex:none;fill:currentColor}
+.vi-foot{margin:6px 10px 4px;padding-top:8px;border-top:1px solid var(--line);font-size:11.5px;line-height:1.45;color:var(--g500);font-variant-numeric:tabular-nums}
+.vi-foot .vi-new{display:block;color:var(--mark);font-weight:800;margin-bottom:2px}
+.vi-foot .vi-cur{display:block;color:var(--g400)}
+.vi-menu .vi-dl .lsw-ico{width:24px;height:24px;flex:none}
 .ne-bd{font-style:normal;font:800 9.5px var(--font);letter-spacing:.04em;padding:2px 6px;border-radius:5px;border:1px solid var(--mark);color:var(--mark);margin-left:8px;vertical-align:1px;white-space:nowrap}
 .ne-bd.ee{border-color:var(--line2);color:var(--g400)}
 .topnav button.on .ne-bd{border-color:rgba(0,20,8,.45);color:var(--on-lime)}
@@ -2808,7 +2808,12 @@ html[data-theme="light"] .lt i{background:linear-gradient(90deg,var(--diag-sky),
 .fz-g span i{font-style:normal;font-weight:800;color:var(--g400);margin-right:6px}
 
 .side{display:flex;flex-direction:column}
-.vbox{margin-top:auto;padding:0;min-height:0}
+.vbox{margin-top:auto;padding:16px 0 0;font-size:11px;color:var(--g500,#676B66);letter-spacing:.04em}
+.vb-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.vb-v{font-variant-numeric:tabular-nums;opacity:.7}
+.vb-cl{display:inline-grid;place-items:center;width:22px;height:22px;padding:0;border:1px solid var(--line);border-radius:6px;background:transparent;color:var(--g400);cursor:pointer;flex:none}
+.vb-cl:hover{border-color:var(--accent);color:var(--accent)}
+.vb-cl svg{width:14px;height:14px;display:block}
 .modal.cl-modal .box{max-width:640px;max-height:min(80vh,720px);display:flex;flex-direction:column;padding:18px 20px}
 .cl-body{overflow:auto;flex:1;min-height:0;padding:4px 2px 8px;font-size:13.5px;line-height:1.65;color:var(--g200)}
 .cl-body h1{font-size:18px;color:var(--heading);margin:0 0 12px;font-weight:800}
@@ -10472,7 +10477,7 @@ let VLATEST=null, VSTATE='unknown', CL_OK=false, CL_BY_LANG={};
 const CL_SVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.584 0.875828C18.8141 0.722451 19.1097 0.708344 19.3535 0.838718C19.5973 0.969242 19.75 1.22328 19.75 1.49985V6.74985H20C22.0742 6.74985 23.75 8.42564 23.75 10.4999C23.75 12.5741 22.0742 14.2499 20 14.2499H19.75V19.4999C19.7499 19.7764 19.5973 20.0305 19.3535 20.161C19.1097 20.2913 18.814 20.2772 18.584 20.1239L12.7725 16.2499H8.1377L10.6895 22.204C10.8525 22.5846 10.6765 23.0261 10.2959 23.1893C9.91523 23.3524 9.47375 23.1754 9.31055 22.7948L6.50586 16.2499H3C1.48584 16.2499 0.250081 15.014 0.25 13.4999V7.49985C0.250001 5.98564 1.48579 4.74985 3 4.74985H12.7725L18.584 0.875828ZM13.416 6.12387C13.2928 6.20598 13.148 6.24985 13 6.24985H3C2.31421 6.24985 1.75 6.81407 1.75 7.49985V13.4999C1.75008 14.1856 2.31426 14.7499 3 14.7499H13C13.1481 14.7499 13.2928 14.7937 13.416 14.8758L18.25 18.0985V2.90122L13.416 6.12387ZM19.75 12.7499H20C21.2458 12.7499 22.25 11.7456 22.25 10.4999C22.25 9.25406 21.2458 8.24985 20 8.24985H19.75V12.7499Z" fill="currentColor"/></svg>';
 const DL_ICO='<svg class="vi-dl-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0.25C12.4142 0.25 12.75 0.5858 12.75 1V14.1895L15.4697 11.4697C15.7626 11.1768 16.2374 11.1768 16.5303 11.4697C16.8231 11.7626 16.8231 12.2374 16.5303 12.5303L12.5303 16.5303C12.2374 16.8231 11.7626 16.8231 11.4697 16.5303L7.4697 12.5303C7.1768 12.2374 7.1768 11.7626 7.4697 11.4697C7.7626 11.1768 8.2374 11.1768 8.5303 11.4697L11.25 14.1895V1C11.25 0.5858 11.5858 0.25 12 0.25ZM3 2.25C1.4858 2.25 0.25 3.4858 0.25 5V20C0.25 21.5142 1.4858 22.75 3 22.75H21C22.5142 22.75 23.75 21.5142 23.75 20V8C23.75 6.4858 22.5142 5.25 21 5.25H16C15.5858 5.25 15.25 5.5858 15.25 6C15.25 6.4142 15.5858 6.75 16 6.75H21C21.6858 6.75 22.25 7.3142 22.25 8V20C22.25 20.6858 21.6858 21.25 21 21.25H3C2.3142 21.25 1.75 20.6858 1.75 20V5C1.75 4.3142 2.3142 3.75 3 3.75H8C8.4142 3.75 8.75 3.4142 8.75 3C8.75 2.5858 8.4142 2.25 8 2.25H3Z" fill="currentColor"/></svg>';
 const DL_LANGS=[
-  ['multi','kong-introduction.html','ki-globe','ALL'],
+  ['multi','kong-introduction.html','translate','ALL'],
   ['ko','kong-introduction.ko.html','f-ko','KO'],
   ['en','kong-introduction.en.html','f-en','EN'],
   ['ja','kong-introduction.ja.html','f-ja','JA'],
@@ -10502,10 +10507,12 @@ function vi18n(idOrKo, vars){
 }
 function vcmp(a,b){ const pv=(p,i)=>i>=3?parseInt(p,16):Number(p); const x=String(a).split(/[.\-]/).map(pv), y=String(b).split(/[.\-]/).map(pv); for(let i=0;i<Math.max(x.length,y.length);i++){ const d=(x[i]||0)-(y[i]||0); if(d) return d>0?1:-1; } return 0; }
 function dlLabel(key){ return key==='multi'?vi18n(I18N_IDS.multi):(DL_LAB[key]||key); }
-function dlFlag(ic){ return ic.indexOf('f-')===0
-  ? '<svg viewBox="0 0 32 32" aria-hidden="true"><use href="#'+ic+'"/></svg>'
-  : '<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#'+ic+'"/></svg>'; }
-function vbox(){ return '<div class="vbox" aria-hidden="true"></div>'; }
+function dlFlag(ic){
+  if(ic==='translate') return '<i class="lsw-ico" aria-hidden="true"></i>';
+  return '<svg viewBox="0 0 32 32" aria-hidden="true"><use href="#'+ic+'"/></svg>';
+}
+function vClBtn(){ return CL_OK?'<button type="button" class="vb-cl" title="'+vi18n(I18N_IDS.changelog)+'" aria-label="'+vi18n(I18N_IDS.changelogView)+'">'+CL_SVG+'</button>':''; }
+function vbox(){ return '<div class="vbox"><div class="vb-row"><div class="vb-v">v'+VER.cur+'</div>'+vClBtn()+'</div></div>'; }
 function paintViMenu(){
   const menu=document.getElementById('vi-menu'), btn=document.getElementById('vi-btn');
   if(!menu||!btn) return;
@@ -10513,14 +10520,17 @@ function paintViMenu(){
   btn.classList.toggle('has-new',neu);
   btn.title=vi18n(I18N_IDS.info);
   const lab=btn.querySelector('span'); if(lab) lab.textContent=vi18n(I18N_IDS.info);
-  const ver=neu
-    ? '<div class="vi-ver new"><strong>'+vi18n(I18N_IDS.newVer,{v:VLATEST||''})+'</strong><b>'+vi18n(I18N_IDS.curVer,{v:VER.cur})+'</b></div>'
-    : '<div class="vi-ver"><b>v'+VER.cur+'</b></div>';
   const links=DL_LANGS.map(([k,f,ic,em])=>'<a class="vi-dl" role="menuitem" href="'+VER.dlBase+f+'" target="_blank" rel="noopener">'+dlFlag(ic)+'<span>'+dlLabel(k)+'</span><em>'+em+'</em>'+DL_ICO+'</a>').join('');
   const cl=CL_OK?'<button type="button" class="vi-cl" role="menuitem">'+CL_SVG+'<span>'+vi18n(I18N_IDS.changelog)+'</span></button>':'';
-  menu.innerHTML=ver+'<div class="vi-h">'+vi18n(I18N_IDS.dlLatest)+'</div>'+links+cl;
+  const foot=neu
+    ? '<div class="vi-foot"><span class="vi-new">'+vi18n(I18N_IDS.newVer,{v:VLATEST||''})+'</span><span class="vi-cur">'+vi18n(I18N_IDS.curVer,{v:VER.cur})+'</span></div>'
+    : '<div class="vi-foot"><span class="vi-cur">v'+VER.cur+'</span></div>';
+  menu.innerHTML='<div class="vi-h">'+vi18n(I18N_IDS.dlLatest)+'</div>'+links+cl+foot;
 }
-function vrender(){ paintViMenu(); }
+function vrender(){
+  const o=side&&side.querySelector('.vbox'); if(o) o.outerHTML=vbox();
+  paintViMenu();
+}
 function closeVinfo(){
   const menu=document.getElementById('vi-menu'), btn=document.getElementById('vi-btn');
   if(menu) menu.classList.remove('open');
@@ -10650,6 +10660,8 @@ function prefetchChangelog(lang){
     if(clb){ e.preventDefault(); e.stopPropagation(); closeVinfo(); openClModal(); }
   });
   document.addEventListener('click',e=>{
+    const vb=e.target.closest&&e.target.closest('.vb-cl');
+    if(vb){ e.preventDefault(); e.stopPropagation(); openClModal(); return; }
     if(viMenu&&viMenu.classList.contains('open')&&!viMenu.contains(e.target)&&e.target!==viBtn&&!(viBtn&&viBtn.contains(e.target))) closeVinfo();
   });
   document.addEventListener('keydown',e=>{
