@@ -9,6 +9,7 @@
 
 ### 변경
 
+- AI Management > Catalog · AI Registry: MCP registries Tech preview 태그 제거
 - AI Management > AI Cost Management: konghq.com Cost Management UI를 참고해 탭별 HTML 목업 재구성
 - AI Management > AI Cost Management: Dashboard 탭 목업 세로 길이 축소
 - AI Gateway 2.0: Enterprise · Konnect 선택에 따라 개요·아키텍처 구성도·배포 강조색을 분기. LLM 비용 산정을 기능 변경 섹션 하위로 요약 흡수. 섹션 제목을 「AI 2.0 기능 변경 및 개선 사항」으로 정리

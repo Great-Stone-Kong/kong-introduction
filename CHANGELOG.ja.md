@@ -9,6 +9,7 @@
 
 ### 変更
 
+- AI Management > Catalog · AI Registry: MCP registries の Tech preview タグを削除
 - AI Management > AI Cost Management: konghq.com Cost Management UI を参考にタブ別 HTML モックを再構成
 - AI Management > AI Cost Management: Dashboard タブのモック縦幅を縮小
 - AI Management: Konnect 専用の左ナビ項目に「Konnect」タグを表示。EE 予定項目も Konnect モードでは Konnect タグ
