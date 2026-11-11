@@ -18,6 +18,7 @@
 - 좌측 레일 라벨 Home → Kong. Kong 기업 소개 > 개요: AI Connectivity 슬로건과 API · AI 바로가기 가안 배치
 - Kong 기업 소개 > 개요: 상단 슬로건 가운데 정렬, 좌우 손 SVG, 바로가기를 설명 패널 안으로 이동. API→Mesh→AI 체인 제거
 - Kong 기업 소개 > 개요: konghq.com 원본 손·Cloud Native/Agentic AI 비주얼로 교체. API/AI Connectivity를 카드 없이 필라+플러스로 배치
+- Kong 기업 소개 > 개요: API/AI Connectivity 필라를 큰 원형 흐름 도식으로 키우고 마스코트 제거
 
 ## 2026.11.09.6af12729
 
