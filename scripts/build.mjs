@@ -157,6 +157,20 @@ if (!deck.includes("<!-- I18N_BUNDLE -->")) {
 }
 deck = deck.replace("<!-- I18N_BUNDLE -->", bundle);
 
+const LANGS = ["ko", "en", "ja", "zh-Hant", "zh-Hans"];
+const LANG_INIT_RE =
+  /L=q\|\|localStorage\.getItem\('kong-lang'\)\|\|'ko';/;
+
+function lockLang(html, lang) {
+  if (!LANG_INIT_RE.test(html)) {
+    console.error("build: lang init pattern missing in i18n bundle");
+    process.exit(1);
+  }
+  return html
+    .replace(LANG_INIT_RE, `L=q||'${lang}';`)
+    .replace(/<html\b([^>]*)\blang="[^"]*"/, `<html$1lang="${lang}"`);
+}
+
 const out = join(root, "kong-introduction.html");
 writeFileSync(out, deck, "utf8");
 const docsDir = join(root, "docs");
@@ -164,6 +178,18 @@ mkdirSync(docsDir, { recursive: true });
 writeFileSync(join(docsDir, ".nojekyll"), "");
 const pagesOut = join(docsDir, "index.html");
 writeFileSync(pagesOut, deck, "utf8");
+
+const distDir = join(root, "dist");
+mkdirSync(distDir, { recursive: true });
+const locked = [];
+for (const lang of LANGS) {
+  const path = join(distDir, `kong-introduction.${lang}.html`);
+  const html = lockLang(deck, lang);
+  writeFileSync(path, html, "utf8");
+  locked.push(`${path} (${html.length})`);
+}
+
 console.log(
   `built ${out} + ${pagesOut} (${deck.length} bytes, version=${version}, T=${Object.keys(T).length}, U=${Object.keys(U).length}, F=${F.length}, S=${Object.keys(S).length}, I=${Object.keys(I).length})`
 );
+console.log(`locked ${locked.join(", ")}`);

@@ -91,5 +91,10 @@ jobs:
           fi
           gh release create "$V" \
             kong-introduction.html \
+            dist/kong-introduction.ko.html \
+            dist/kong-introduction.en.html \
+            dist/kong-introduction.ja.html \
+            dist/kong-introduction.zh-Hant.html \
+            dist/kong-introduction.zh-Hans.html \
             --title "$V" \
             --notes-file release-notes.md

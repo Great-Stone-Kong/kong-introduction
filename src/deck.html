@@ -2798,13 +2798,6 @@ html[data-theme="light"] .lt i{background:linear-gradient(90deg,var(--diag-sky),
 .vb-cl{display:inline-grid;place-items:center;width:22px;height:22px;padding:0;border:1px solid var(--line);border-radius:6px;background:transparent;color:var(--g400);cursor:pointer;flex:none}
 .vb-cl:hover{border-color:var(--accent);color:var(--accent)}
 .vb-cl svg{width:14px;height:14px;display:block}
-.vbox.new{padding:12px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.02);letter-spacing:0}
-.vb-s{display:flex;align-items:center;gap:6px;margin:0 0 8px;font-size:11.5px;color:var(--g300);font-variant-numeric:tabular-nums}
-.vb-dot{width:6px;height:6px;border-radius:50%;background:var(--lime);opacity:.8;flex:none}
-.side .vb-btn{display:block;text-align:center;margin:0;padding:6px 10px;border-radius:6px;font-size:11.5px;font-weight:600;border:1px solid var(--line2);color:var(--g200);background:none;text-decoration:none;cursor:pointer}
-.side .vb-btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
-.vbox.new .vb-row{margin-top:8px}
-.vbox.new .vb-v{font-size:10.5px}
 .modal.cl-modal .box{max-width:640px;max-height:min(80vh,720px);display:flex;flex-direction:column;padding:18px 20px}
 .cl-body{overflow:auto;flex:1;min-height:0;padding:4px 2px 8px;font-size:13.5px;line-height:1.65;color:var(--g200)}
 .cl-body h1{font-size:18px;color:var(--heading);margin:0 0 12px;font-weight:800}
@@ -10449,32 +10442,26 @@ const PAGES=[...document.querySelectorAll('.page')];
   if(th) th.addEventListener('click',toggleTheme);
 })();
 
-/* ---------- 버전 · 다운로드 · CHANGELOG ---------- */
+/* ---------- 버전 · CHANGELOG ---------- */
 const KONG_INTRO_VERSION="__KONG_INTRO_VERSION__";
 const VER={
   cur:KONG_INTRO_VERSION,
-  dl:'https://github.com/Great-Stone-Kong/kong-introduction/releases/latest/download/kong-introduction.html',
-  check:'https://api.github.com/repos/Great-Stone-Kong/kong-introduction/releases/latest',
   changelogApi:'https://api.github.com/repos/Great-Stone-Kong/kong-introduction/contents/CHANGELOG.md',
   changelogApiEn:'https://api.github.com/repos/Great-Stone-Kong/kong-introduction/contents/CHANGELOG.en.md',
   changelogApiJa:'https://api.github.com/repos/Great-Stone-Kong/kong-introduction/contents/CHANGELOG.ja.md',
   changelogApiZhHant:'https://api.github.com/repos/Great-Stone-Kong/kong-introduction/contents/CHANGELOG.zh-Hant.md',
   changelogApiZhHans:'https://api.github.com/repos/Great-Stone-Kong/kong-introduction/contents/CHANGELOG.zh-Hans.md'
 };
-let VLATEST=null, VSTATE=VER.check?'checking':'unknown', CL_OK=false, CL_BY_LANG={};
+let CL_OK=false, CL_BY_LANG={};
 const CL_SVG='<svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.584 0.875828C18.8141 0.722451 19.1097 0.708344 19.3535 0.838718C19.5973 0.969242 19.75 1.22328 19.75 1.49985V6.74985H20C22.0742 6.74985 23.75 8.42564 23.75 10.4999C23.75 12.5741 22.0742 14.2499 20 14.2499H19.75V19.4999C19.7499 19.7764 19.5973 20.0305 19.3535 20.161C19.1097 20.2913 18.814 20.2772 18.584 20.1239L12.7725 16.2499H8.1377L10.6895 22.204C10.8525 22.5846 10.6765 23.0261 10.2959 23.1893C9.91523 23.3524 9.47375 23.1754 9.31055 22.7948L6.50586 16.2499H3C1.48584 16.2499 0.250081 15.014 0.25 13.4999V7.49985C0.250001 5.98564 1.48579 4.74985 3 4.74985H12.7725L18.584 0.875828ZM13.416 6.12387C13.2928 6.20598 13.148 6.24985 13 6.24985H3C2.31421 6.24985 1.75 6.81407 1.75 7.49985V13.4999C1.75008 14.1856 2.31426 14.7499 3 14.7499H13C13.1481 14.7499 13.2928 14.7937 13.416 14.8758L18.25 18.0985V2.90122L13.416 6.12387ZM19.75 12.7499H20C21.2458 12.7499 22.25 11.7456 22.25 10.4999C22.25 9.25406 21.2458 8.24985 20 8.24985H19.75V12.7499Z" fill="currentColor"/></svg>';
-function vcmp(a,b){ const pv=(p,i)=>i>=3?parseInt(p,16):Number(p); const x=String(a).split(/[.\-]/).map(pv), y=String(b).split(/[.\-]/).map(pv); for(let i=0;i<Math.max(x.length,y.length);i++){ const d=(x[i]||0)-(y[i]||0); if(d) return d>0?1:-1; } return 0; }
 /* stable-key ids (messages/*); KO text kept as fallback before i18n init */
 const I18N_IDS={
-  download:'m.0a4ca9bc91ee',
   changelog:'m.e78d03ec8597',
   changelogView:'m.c7b31b84e449',
   close:'m.b5fe570a7d09',
   loading:'m.8bf609c884ca',
   changelogErr:'m.9364c67bcdec',
-  empty:'m.009abcbed3e1',
-  newVer:'m.b46e173c2358',
-  curVer:'m.20ae560946c7'
+  empty:'m.009abcbed3e1'
 };
 function vi18n(idOrKo, vars){
   if(window.KONG_I18N&&typeof window.KONG_I18N.t==='function') return window.KONG_I18N.t(idOrKo, vars);
@@ -10482,11 +10469,7 @@ function vi18n(idOrKo, vars){
   return String(idOrKo).replace(/\$\{(\w+)\}/g,(_,k)=>vars&&vars[k]!=null?String(vars[k]):'');
 }
 function vClBtn(){ return CL_OK?'<button type="button" class="vb-cl" title="'+vi18n(I18N_IDS.changelog)+'" aria-label="'+vi18n(I18N_IDS.changelogView)+'">'+CL_SVG+'</button>':''; }
-function vVerRow(label){ return '<div class="vb-row"><div class="vb-v">'+(label||('v'+VER.cur))+'</div>'+vClBtn()+'</div>'; }
-function vbox(){
-  if(VSTATE==='new') return '<div class="vbox new"><div class="vb-s"><i class="vb-dot"></i>'+vi18n(I18N_IDS.newVer,{v:VLATEST})+'</div><a class="vb-btn" href="'+VER.dl+'" target="_blank" rel="noopener">'+vi18n(I18N_IDS.download)+'</a>'+vVerRow(vi18n(I18N_IDS.curVer,{v:VER.cur}))+'</div>';
-  return '<div class="vbox">'+vVerRow()+'</div>';
-}
+function vbox(){ return '<div class="vbox"><div class="vb-row"><div class="vb-v">v'+VER.cur+'</div>'+vClBtn()+'</div></div>'; }
 function vrender(){ const o=side.querySelector('.vbox'); if(o) o.outerHTML=vbox(); }
 function mdEsc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 function mdInline(s){ return mdEsc(s).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/`([^`]+)`/g,'<code>$1</code>'); }
@@ -10541,23 +10524,6 @@ function refreshClModalIfOpen(){
   if(!md||!md.classList.contains('open')||!CL_OK) return;
   openClModal();
 }
-(function(){
-  if(!VER.check||!window.fetch) return;
-  let last=0;
-  function check(n){
-    last=Date.now();
-    fetch(VER.check+(VER.check.indexOf('?')<0?'?':'&')+'t='+Date.now(),{cache:'no-store'}).then(r=>{ if(!r.ok) throw 0; return r.json(); }).then(j=>{
-      const v=j&&(j.version||j.tag_name); if(!v) throw 0;
-      VLATEST=String(v).replace(/^v/,'');
-      VSTATE=vcmp(VLATEST,VER.cur)>0?'new':'latest'; vrender();
-    }).catch(()=>{ if(n<3) setTimeout(()=>check(n+1),1500*(n+1)); else if(VSTATE!=='new'){ VSTATE='unknown'; vrender(); } });
-  }
-  check(0);
-  const due=()=>VSTATE!=='new'&&Date.now()-last>300000;
-  window.addEventListener('focus',()=>{ if(due()) check(0); });
-  document.addEventListener('visibilitychange',()=>{ if(!document.hidden&&due()) check(0); });
-  setInterval(()=>{ if(!document.hidden&&VSTATE!=='new') check(0); },1800000);
-})();
 function b64utf8(b64){ const bin=atob(String(b64).replace(/\s/g,'')); const bytes=new Uint8Array(bin.length); for(let i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i); return new TextDecoder('utf-8').decode(bytes); }
 function changelogUrlFor(lang){
   if(lang==='en'&&VER.changelogApiEn) return VER.changelogApiEn;
@@ -10776,7 +10742,7 @@ function go(id,sec,push,keepScroll){
 side.addEventListener('click',e=>{
   const it=e.target.closest('.nt-it[data-p]'); if(it){ e.preventDefault(); go(it.dataset.p); return; }
   if(e.target.closest('.nt-it.dis')){ e.preventDefault(); neToast(neLockT()); return; }
-  const a=e.target.closest('a'); if(!a||a.classList.contains('vb-btn')) return; e.preventDefault();
+  const a=e.target.closest('a'); if(!a) return; e.preventDefault();
   if(a.classList.contains('dis')||a.getAttribute('aria-disabled')==='true'){
     const s=a.dataset.s, el=s&&document.getElementById(s);
     neToast(el?secAvailToast(el):neLockT());

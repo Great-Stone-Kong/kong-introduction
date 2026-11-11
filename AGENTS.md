@@ -28,12 +28,13 @@ Kong(The AI Connectivity Company) 소개 자료를 **단일 HTML 파일**로 만
 | `src/i18n/fragments.json` | 문장 일부 치환용 message id 목록 | 추적 |
 | `src/i18n/shorts.json` | 상단 메뉴 축약 라벨 | 추적 |
 | `src/i18n/README.md` | i18n 카탈로그 상세 | 추적 |
-| `scripts/build.mjs` | `src/` → `kong-introduction.html` + `docs/index.html` | 추적 |
+| `scripts/build.mjs` | `src/` → 멀티 `kong-introduction.html` + `docs/index.html` + `dist/` 언어 고정 HTML | 추적 |
 | `scripts/check-i18n.mjs` | 한글 키 누락 · 언어 간 키 불일치 검사 | 추적 |
 | `scripts/translate-zh-from-en.py` | EN 기준 ZH 일괄 갱신(`npm run translate-zh`) | 추적 |
 | `scripts/migrate-i18n-keys.mjs` · `verify-i18n-refactor.mjs` | stable-key 마이그레이션 · 검증(일상 작업에서는 사용 안 함) | 추적 |
-| `kong-introduction.html` | **빌드 산출물(배포본).** 직접 수정 금지 | 추적 |
-| `docs/index.html` · `docs/.nojekyll` | GitHub Pages용 사본(빌드가 함께 생성) | 추적 |
+| `kong-introduction.html` | **빌드 산출물(멀티언어).** 직접 수정 금지 | 추적 |
+| `docs/index.html` · `docs/.nojekyll` | GitHub Pages용 멀티 사본(빌드가 함께 생성) | 추적 |
+| `dist/kong-introduction.{ko,en,ja,zh-Hant,zh-Hans}.html` | 언어 고정 빌드 산출물(기본 언어만 고정, i18n blob은 동일). Release 첨부 | 미추적 |
 | `VERSION` | 버전 문자열. 빌드가 읽어 `KONG_INTRO_VERSION`에 주입 | 추적 |
 | `CHANGELOG.md` (+ `.en` `.ja` `.zh-Hant` `.zh-Hans`) | 콘텐츠 변경 이력. KO가 정본 | 추적 |
 | `reference/` | stable-key 이전 기준선(동결). **수정 금지** | 추적 |
@@ -49,14 +50,15 @@ Kong(The AI Connectivity Company) 소개 자료를 **단일 HTML 파일**로 만
 
 ```bash
 npm run check-i18n   # 한글 문구의 키 누락, ko/en/ja/zh-Hant/zh-Hans 키 불일치 검사
-npm run build        # kong-introduction.html + docs/index.html 생성 (VERSION 주입)
+npm run build        # 멀티 HTML + docs/index.html + dist/ 언어 고정 HTML 생성 (VERSION 주입)
 ./build.sh           # 위 두 명령을 순서대로 실행
 ```
 
 - Node 20 이상. 외부 npm 의존성 없음.
-- 빌드는 결정적이다. `src/`가 같으면 산출물도 같다(빌드 후 `git status`로 확인 가능).
+- 빌드는 결정적이다. `src/`가 같으면 산출물도 같다(빌드 후 `git status`로 확인 가능). `dist/`는 allowlist 밖이라 status에 안 뜬다.
 - 빌드는 `VERSION`만 읽는다. 버전을 새로 만들거나 Changelog를 고치지 않는다.
-- 확인: 브라우저에서 `kong-introduction.html` 열기 → `?lang=en` · `?lang=ja` · `?lang=zh-Hant` · `?lang=zh-Hans` · `?edition=konnect` · `?theme=light`
+- 언어 고정 HTML은 localStorage를 무시하고 해당 언어로 연다. `?lang=` · 드롭다운 전환은 그대로다.
+- 확인: 브라우저에서 `kong-introduction.html` 열기 → `?lang=en` · `?lang=ja` · `?lang=zh-Hant` · `?lang=zh-Hans` · `?edition=konnect` · `?theme=light`. 언어별은 `dist/kong-introduction.en.html` 등으로 확인.
 
 ## 4. 편집 워크플로
 
@@ -148,7 +150,7 @@ npm run bump-version   # VERSION에 YYYY.MM.DD.<unix_hex> 기록 · 표준출력
 - **기록한다:** 화면에 보이는 문구 · 제목 · 시나리오 · 데모 스토리 · 다이어그램 · 비교표의 추가 · 변경 · 삭제.
 - 경로 형식: **상위 메뉴 > 하위 메뉴(섹션) > 항목** (예: `API Gateway > 데모 > 시나리오 부서 인가`)
 - `### 추가`는 메뉴 · 섹션 경로만 한 줄로. `### 변경` / `### 삭제`는 짧은 요지를 붙여도 된다. 쓸 내용이 있는 소제목만 둔다.
-- **기록하지 않는다:** HTML/CSS/JS · 리팩터 · 아이콘 교체만의 변경, 버전 · 업데이트 확인 · 다운로드, git · Release · Drive · `.gitignore` · 규칙 파일, 셸 UI(버전 배지 · 변경 이력 모달 · 다운로드 버튼), 화면에 드러나지 않는 플러그인 설정 키.
+- **기록하지 않는다:** HTML/CSS/JS · 리팩터 · 아이콘 교체만의 변경, 버전 표시, git · Release · `.gitignore` · 규칙 파일, 셸 UI(버전 배지 · 변경 이력 모달), 화면에 드러나지 않는 플러그인 설정 키.
 - 프로세스 안내 문구는 Changelog 상단에 넣지 않는다(문의 · 경로 형식 안내만 유지).
 
 ### 언어
@@ -157,34 +159,32 @@ npm run bump-version   # VERSION에 YYYY.MM.DD.<unix_hex> 기록 · 표준출력
 
 ### Release 절차(사용자 요청 시에만)
 
-1. 필요하면 `VERSION` bump → Changelog 4개 언어 정리 → `npm run check-i18n && npm run build` → commit.
+1. 필요하면 `VERSION` bump → Changelog 정리 → `npm run check-i18n && npm run build` → commit.
 2. `main`에 push.
-3. GitHub Actions **Release** 워크플로(`workflow_dispatch`)를 실행한다. 워크플로가 check · build · 산출물 commit · `gh release create "$V" kong-introduction.html`(notes = `CHANGELOG.md`의 `## $V`)을 수행한다.
-4. Drive 브리지: **같은** `kong-introduction.html`을 Drive 기존 파일(ID 유지)에 덮어 올려 구버전 클라이언트가 새 HTML을 받게 한다. 구 복사본이 사라질 때까지 Apps Script(`achive/version-check.gs`) 브리지를 유지한다.
+3. GitHub Actions **Release** 워크플로(`workflow_dispatch`)를 실행한다. 워크플로가 check · build · 추적 산출물 commit · `gh release create`로 멀티 HTML과 `dist/kong-introduction.*.html` 전부 첨부한다(notes = `CHANGELOG.md`의 `## $V`).
 
 ### 배포용 버전 상수
 
 ```js
 const VER={
   cur:KONG_INTRO_VERSION,
-  check:'https://api.github.com/repos/Great-Stone-Kong/kong-introduction/releases/latest',
-  dl:'https://github.com/Great-Stone-Kong/kong-introduction/releases/latest/download/kong-introduction.html',
   changelogApi:'https://api.github.com/repos/Great-Stone-Kong/kong-introduction/contents/CHANGELOG.md',
+  changelogApiEn:'…/CHANGELOG.en.md',
+  changelogApiJa:'…/CHANGELOG.ja.md',
   changelogApiZhHant:'…/CHANGELOG.zh-Hant.md',
   changelogApiZhHans:'…/CHANGELOG.zh-Hans.md'
 };
 ```
 
-- 버전 비교(`vcmp`)는 네 번째 세그먼트를 hex로 비교한다. Release API의 `tag_name`(선행 `v` 제거)과 비교한다.
-- 다운로드 에셋 이름은 `kong-introduction.html`로 고정한다. `releases/latest`는 draft · prerelease를 무시한다.
-- 사이드바 Changelog 아이콘은 GitHub Contents API로 읽을 수 있을 때만 표시된다. macOS에서 파일명 대소문자만 바꿨다면 중간 이름으로 두 번 rename 후 push한다.
+- 사이드바는 현재 버전과 Changelog 아이콘만 표시한다(원격 업데이트 검사 없음).
+- Changelog 아이콘은 GitHub Contents API로 읽을 수 있을 때만 표시된다. macOS에서 파일명 대소문자만 바꿨다면 중간 이름으로 두 번 rename 후 push한다.
 
 ## 8. 금지 사항
 
-- 빌드 산출물(`kong-introduction.html`, `docs/index.html`)만 직접 수정하기
+- 빌드 산출물(`kong-introduction.html`, `docs/index.html`, `dist/*.html`)만 직접 수정하기
 - `reference/` 수정
 - `kong-introduction.YYYY.MM.DD.*.html`처럼 **파일 복사로 버전 관리**하기(이력은 git으로)
-- 요청 없이 push · Release · Drive 업로드 · `VER` 변경
+- 요청 없이 push · Release · `VER` 변경
 - 평소 작업에서 `VERSION` · Changelog 수정
 - Cowork 시절의 Python 파트 파이프라인(`part1~4.html`, `v*.py`, `ins.py`, `hdr.py`) 사용 — 현재 구조로 대체됐다
 
@@ -194,7 +194,7 @@ const VER={
 - 대상: 추적 파일(`src/**`, `scripts/**`, `kong-introduction.html`, `docs/**`, `CHANGELOG*.md`, `VERSION`, `package.json`, 워크플로 · 규칙 · `.gitignore`).
 - 커밋 전 `git status` / `git diff` / 최근 메시지 스타일을 확인한다. 메시지는 **영어 한 문장, 명령형**, 왜 바꿨는지 드러나게 쓴다(예: `Add behavior diagrams under AI feature overview tabs.`).
 - 변경이 없거나 검토용 실험뿐이면 빈 커밋을 만들지 않는다.
-- **push · Release · Drive는 자동화하지 않는다.**
+- **push · Release는 자동화하지 않는다.**
 - 롤백은 파일 사본이 아니라 git으로 한다: 워킹트리는 `git restore`, push 전 직전 AI 커밋은 사용자 확인 후 revert/reset, push된 커밋은 `git revert`. force push 금지. 콘텐츠 롤백이면 Changelog에 한 줄 남긴다.
 
 ## 10. 도구별 참고
