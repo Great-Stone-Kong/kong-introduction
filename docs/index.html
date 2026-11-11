@@ -119,22 +119,23 @@ html[data-theme="light"] .nr{--nr-bg:#101110;border-right-color:#101110}
 .nr-home svg{width:30px;height:27px;color:#CCFF00}
 .nr-gap{flex:1}
 /* company overview */
-.ov-hero{display:grid;grid-template-columns:minmax(100px,.75fr) minmax(0,1.5fr) minmax(100px,.75fr);align-items:end;gap:4px 8px;margin:0 0 10px;overflow:visible}
-.ov-hero-copy{text-align:center;min-width:0;padding:0 6px 8px}
+.ov-hero{display:grid;grid-template-columns:minmax(120px,.9fr) minmax(0,1.3fr) minmax(120px,.9fr);align-items:end;gap:0 4px;margin:0 0 -56px;overflow:visible;position:relative;z-index:2}
+.ov-hero-copy{text-align:center;min-width:0;padding:0 6px 28px;position:relative;z-index:3}
 .ov-hero-copy .eyebrow{justify-content:center}
 .ov-brand{display:block;font-size:clamp(32px,4.6vw,52px);font-weight:900;letter-spacing:-.03em;line-height:1.05;color:var(--mark);margin:0 0 6px}
 .ov-for{display:flex;align-items:baseline;justify-content:center;gap:10px;margin:0 0 10px;flex-wrap:wrap}
 .ov-for em{font-style:italic;font-weight:500;font-size:clamp(18px,2.2vw,26px);color:var(--heading)}
 .ov-for b{font-size:clamp(15px,1.8vw,20px);font-weight:800;color:var(--heading)}
 .ov-lead{max-width:42ch;margin:0 auto;font-size:14.5px;line-height:1.5;color:var(--g300)}
-.ov-hand{min-width:0;overflow:visible;display:flex;align-items:flex-end;justify-content:center;pointer-events:none}
-.ov-hand img{display:block;width:100%;max-width:320px;height:auto;filter:drop-shadow(0 0 28px color-mix(in srgb,var(--lime) 34%,transparent))}
-.ov-hand.robot{justify-content:flex-start}
+.ov-hand{min-width:0;overflow:visible;display:flex;align-items:flex-end;justify-content:center;pointer-events:none;position:relative;z-index:2;margin-bottom:-12px}
+.ov-hand img{display:block;width:100%;max-width:400px;height:auto;opacity:.72;filter:drop-shadow(0 0 28px color-mix(in srgb,var(--lime) 30%,transparent))}
 .ov-hand.kong{justify-content:flex-end}
+.ov-hand.robot{justify-content:flex-start}
+.ov-hand.kong img,.ov-hand.robot img{transform:scaleX(-1)}
 .ov-hand .th-light{display:none}
 html[data-theme="light"] .ov-hand .th-dark{display:none}
 html[data-theme="light"] .ov-hand .th-light{display:block}
-.ov-era{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:4px clamp(8px,2vw,28px);margin:6px 0 0;position:relative}
+.ov-era{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:4px clamp(8px,2vw,28px);margin:6px 0 0;position:relative;z-index:1}
 .ov-era::before{content:"";position:absolute;left:50%;top:12%;bottom:12%;width:1px;background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--lime) 40%,transparent),transparent);transform:translateX(-50%);pointer-events:none;z-index:0}
 .ov-plus{position:relative;z-index:2;align-self:center;width:clamp(56px,7vw,72px);height:clamp(56px,7vw,72px);border-radius:50%;display:grid;place-items:center;font:900 clamp(30px,4vw,40px)/1 var(--font);color:var(--on-lime);background:var(--lime);box-shadow:0 0 0 8px color-mix(in srgb,var(--lime) 18%,transparent),0 0 0 18px color-mix(in srgb,var(--lime) 8%,transparent),0 0 48px color-mix(in srgb,var(--lime) 50%,transparent)}
 .ov-plus::before,.ov-plus::after{content:"";position:absolute;border:1px solid color-mix(in srgb,var(--lime) 28%,transparent);border-radius:12px;pointer-events:none}
@@ -167,11 +168,11 @@ html[data-theme="light"] .ov-hand .th-light{display:block}
 .ov-caps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1px;margin:18px 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--line)}
 .ov-caps span{background:var(--navy);padding:11px 8px;text-align:center;font:700 10.5px/1.25 var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--g200)}
 @media (max-width:900px){
-  .ov-hero{grid-template-columns:1fr 1fr;grid-template-areas:"copy copy" "kong robot";gap:8px}
-  .ov-hero-copy{grid-area:copy;padding-bottom:0}
+  .ov-hero{grid-template-columns:1fr 1fr;grid-template-areas:"copy copy" "kong robot";gap:8px;margin-bottom:-28px}
+  .ov-hero-copy{grid-area:copy;padding-bottom:8px}
   .ov-hand.robot{grid-area:robot;justify-content:center}
   .ov-hand.kong{grid-area:kong;justify-content:center}
-  .ov-hand img{max-width:190px}
+  .ov-hand img{max-width:240px}
   .ov-era{grid-template-columns:1fr;gap:18px}
   .ov-era::before{display:none}
   .ov-plus{margin:0 auto}
