@@ -119,7 +119,7 @@ html[data-theme="light"] .nr{--nr-bg:#101110;border-right-color:#101110}
 .nr-home svg{width:30px;height:27px;color:#CCFF00}
 .nr-gap{flex:1}
 /* company overview */
-.ov-hero{display:grid;grid-template-columns:minmax(120px,.9fr) minmax(0,1.3fr) minmax(120px,.9fr);align-items:end;gap:0 4px;margin:0 0 -56px;overflow:visible;position:relative;z-index:2}
+.ov-hero{display:grid;grid-template-columns:minmax(120px,.9fr) minmax(0,1.3fr) minmax(120px,.9fr);align-items:end;gap:0 4px;margin:0 0 -72px;overflow:visible;position:relative;z-index:2}
 .ov-hero-copy{text-align:center;min-width:0;padding:0 6px 28px;position:relative;z-index:3}
 .ov-hero-copy .eyebrow{justify-content:center}
 .ov-brand{display:block;font-size:clamp(32px,4.6vw,52px);font-weight:900;letter-spacing:-.03em;line-height:1.05;color:var(--mark);margin:0 0 6px}
@@ -128,7 +128,7 @@ html[data-theme="light"] .nr{--nr-bg:#101110;border-right-color:#101110}
 .ov-for b{font-size:clamp(15px,1.8vw,20px);font-weight:800;color:var(--heading)}
 .ov-lead{max-width:42ch;margin:0 auto;font-size:14.5px;line-height:1.5;color:var(--g300)}
 .ov-hand{min-width:0;overflow:visible;display:flex;align-items:flex-end;justify-content:center;pointer-events:none;position:relative;z-index:2;margin-bottom:-12px}
-.ov-hand img{display:block;width:100%;max-width:400px;height:auto;opacity:.72;filter:drop-shadow(0 0 28px color-mix(in srgb,var(--lime) 30%,transparent))}
+.ov-hand img{display:block;width:100%;max-width:520px;height:auto;opacity:.78;transition:opacity .22s ease;filter:drop-shadow(0 0 28px color-mix(in srgb,var(--lime) 30%,transparent))}
 .ov-hand.kong{justify-content:flex-end}
 .ov-hand.robot{justify-content:flex-start}
 .ov-hand.kong img,.ov-hand.robot img{transform:scaleX(-1)}
@@ -144,10 +144,10 @@ html[data-theme="light"] .ov-hand .th-light{display:block}
 .ov-pillar{appearance:none;-webkit-appearance:none;border:0;background:transparent;padding:4px 4px 0;margin:0;text-align:center;font-family:var(--font);color:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0;border-radius:0;transition:transform .18s ease;position:relative;z-index:1}
 .ov-pillar:hover{transform:translateY(-3px)}
 .ov-pillar:focus-visible{outline:2px solid var(--lime);outline-offset:8px;border-radius:12px}
-.ov-pillar .ov-k{font:800 12px var(--font);letter-spacing:.16em;text-transform:uppercase;color:var(--mark)}
-.ov-pillar .ov-title{font:900 clamp(28px,3.6vw,44px)/1.02 var(--font);letter-spacing:-.025em;color:var(--heading);margin:0}
+.ov-pillar .ov-k{font:800 12px var(--font);letter-spacing:.16em;text-transform:uppercase;color:var(--mark);-webkit-text-stroke:.6px color-mix(in srgb,var(--navy) 75%,transparent);paint-order:stroke fill;text-shadow:0 0 10px var(--navy),0 1px 0 var(--navy)}
+.ov-pillar .ov-title{font:900 clamp(28px,3.6vw,44px)/1.02 var(--font);letter-spacing:-.025em;color:var(--heading);margin:0;-webkit-text-stroke:1.1px color-mix(in srgb,var(--navy) 82%,transparent);paint-order:stroke fill;text-shadow:0 0 14px var(--navy),0 0 2px var(--navy),0 1px 0 var(--navy)}
 .ov-pillar:hover .ov-title{color:var(--mark)}
-.ov-pillar .ov-sub{font:500 14px/1.35 var(--font);color:var(--g300);max-width:30ch;margin:0}
+.ov-pillar .ov-sub{font:500 14px/1.35 var(--font);color:var(--g300);max-width:30ch;margin:0;text-shadow:0 0 10px var(--navy),0 0 4px var(--navy)}
 .ov-pillar .ov-body{margin:0;font:400 13.5px/1.5 var(--font);color:var(--g300);max-width:36ch}
 .ov-ring{display:block;width:min(100%,340px);height:auto;margin:4px 0 0;filter:drop-shadow(0 0 18px color-mix(in srgb,var(--lime) 26%,transparent))}
 .ov-ring .halo{fill:none;stroke:var(--lime);stroke-width:2.2;opacity:.85}
@@ -172,7 +172,7 @@ html[data-theme="light"] .ov-hand .th-light{display:block}
   .ov-hero-copy{grid-area:copy;padding-bottom:8px}
   .ov-hand.robot{grid-area:robot;justify-content:center}
   .ov-hand.kong{grid-area:kong;justify-content:center}
-  .ov-hand img{max-width:240px}
+  .ov-hand img{max-width:300px}
   .ov-era{grid-template-columns:1fr;gap:18px}
   .ov-era::before{display:none}
   .ov-plus{margin:0 auto}
