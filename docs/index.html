@@ -3280,7 +3280,7 @@ html[data-printing] [data-print="omit"]{display:none!important}
   @page{size:A4;margin:12mm}
   .only-print{display:block!important}
   .no-print,
-  .topbar,.side,.nr,.nl-menu,.ne-toast,.navdd,.top-tools,.menu-btn,.orb,
+  .topbar,.side,.nr,.nl-menu,.vi-menu,.ne-toast,.navdd,.top-tools,.menu-btn,.orb,
   body::before,
   .modal,.lsw,.vbox,
   .tabs,.dm-tabs,.dm-cases,.egt-nav,.egt-nav-label,
@@ -11133,6 +11133,7 @@ document.addEventListener('keydown',e=>{
   if(document.getElementById('cl-modal')&&document.getElementById('cl-modal').classList.contains('open')) return;
   if(document.getElementById('ns-pal')&&!document.getElementById('ns-pal').hidden) return;
   if(document.getElementById('nl-menu')&&document.getElementById('nl-menu').classList.contains('open')) return;
+  if(document.getElementById('vi-menu')&&document.getElementById('vi-menu').classList.contains('open')) return;
   const secs=visibleSecs(document.getElementById('p-'+cur)); if(!secs.length) return;
   e.preventDefault();
   const links=[...side.querySelectorAll('a[data-s]')];
