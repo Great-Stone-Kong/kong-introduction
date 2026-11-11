@@ -146,8 +146,9 @@ html[data-theme="light"] .ov-hand .th-light{display:block}
 .ov-pillar .ov-k{font:800 12px var(--font);letter-spacing:.16em;text-transform:uppercase;color:var(--mark)}
 .ov-pillar .ov-title{font:900 clamp(28px,3.6vw,44px)/1.02 var(--font);letter-spacing:-.025em;color:var(--heading);margin:0}
 .ov-pillar:hover .ov-title{color:var(--mark)}
-.ov-pillar .ov-sub{font:500 14px/1.35 var(--font);color:var(--g300);max-width:30ch;margin:0 0 4px}
-.ov-ring{display:block;width:min(100%,420px);height:auto;margin:2px 0 0;filter:drop-shadow(0 0 22px color-mix(in srgb,var(--lime) 28%,transparent))}
+.ov-pillar .ov-sub{font:500 14px/1.35 var(--font);color:var(--g300);max-width:30ch;margin:0}
+.ov-pillar .ov-body{margin:0;font:400 13.5px/1.5 var(--font);color:var(--g300);max-width:36ch}
+.ov-ring{display:block;width:min(100%,340px);height:auto;margin:4px 0 0;filter:drop-shadow(0 0 18px color-mix(in srgb,var(--lime) 26%,transparent))}
 .ov-ring .halo{fill:none;stroke:var(--lime);stroke-width:2.2;opacity:.85}
 .ov-ring .halo2{fill:none;stroke:var(--lime);stroke-width:1;opacity:.28}
 .ov-ring .dots{fill:color-mix(in srgb,var(--lime) 35%,transparent)}
@@ -174,7 +175,7 @@ html[data-theme="light"] .ov-hand .th-light{display:block}
   .ov-era{grid-template-columns:1fr;gap:18px}
   .ov-era::before{display:none}
   .ov-plus{margin:0 auto}
-  .ov-ring{width:min(100%,340px)}
+  .ov-ring{width:min(100%,280px)}
   .ov-caps{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 /* AI Management (P4) */
@@ -4152,11 +4153,12 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
     </div>
   </div>
 
-  <div class="ov-era" role="group" aria-label="API Connectivity와 AI Connectivity">
+    <div class="ov-era" role="group" aria-label="API Connectivity와 AI Connectivity">
     <button type="button" class="ov-pillar" onclick="go('apigw')">
       <span class="ov-k">Cloud Native</span>
       <span class="ov-title">API Connectivity</span>
       <span class="ov-sub">API call economy에서…</span>
+      <p class="ov-body">API call이 클라우드 네이티브 시대를 지배했습니다. API-first 기업으로 가는 길을 Kong이 함께했습니다.</p>
       <svg class="ov-ring" viewBox="0 0 360 400" role="img" aria-label="Applications to microservices via API calls" overflow="visible">
       <defs>
         <pattern id="ovdot-API" width="14" height="14" patternUnits="userSpaceOnUse">
@@ -4190,6 +4192,7 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
       <span class="ov-k">Agentic AI</span>
       <span class="ov-title">AI Connectivity</span>
       <span class="ov-sub">…Token economy로</span>
+      <p class="ov-body">이제 연결의 단위는 토큰입니다. 에이전트를 구축·운영·거버넌스해 이 새 지형에서 앞서가도록 돕습니다.</p>
       <svg class="ov-ring" viewBox="0 0 360 400" role="img" aria-label="Agents to LLMs via tokens" overflow="visible">
       <defs>
         <pattern id="ovdot-TOK" width="14" height="14" patternUnits="userSpaceOnUse">

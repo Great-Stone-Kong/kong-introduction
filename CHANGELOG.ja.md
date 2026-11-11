@@ -19,6 +19,7 @@
 - Kong 企業紹介 > 概要: スローガンを中央揃え、左右に手の SVG、ショートカットを説明パネル内へ。API→Mesh→AI チェーンを削除
 - Kong 企業紹介 > 概要: konghq.com 原版の手・Cloud Native/Agentic AI ビジュアルに差し替え。API/AI Connectivity をカードなしのピラー+プラス配置へ
 - Kong 企業紹介 > 概要: API/AI Connectivity ピラーを大きな円形フロー図に拡大し、マスコットを削除
+- Kong 企業紹介 > 概要: Connectivity 図のサイズ調整と説明文を復帰。AI コピーのトーンを整理
 
 ## 2026.11.09.6af12729
 
