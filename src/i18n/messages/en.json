@@ -1607,7 +1607,7 @@
   "m.422f3cbb7145": "151,800",
   "m.422fe4bb24ea": "Developer portal",
   "m.42321ea800e4": "Agent-to-Agent call chains cannot be traced end to end",
-  "m.42418d69d886": "Value",
+  "m.42418d69d886": "Value this feature provides",
   "m.424fa8e5390e": "Some plugins restricted",
   "m.42589fe00969": "No. The Data Plane keeps serving traffic with its last known configuration, and only configuration updates wait until the connection is restored.",
   "m.426c2a66196f": "Consume · throughput",
