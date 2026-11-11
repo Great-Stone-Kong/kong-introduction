@@ -10,6 +10,7 @@
 ### 変更
 
 - AI Management > AI Cost Management: konghq.com Cost Management UI を参考にタブ別 HTML モックを再構成
+- AI Management > AI Cost Management: Dashboard タブのモック縦幅を縮小
 - AI Management: Konnect 専用の左ナビ項目に「Konnect」タグを表示。EE 予定項目も Konnect モードでは Konnect タグ
 - AI Gateway 2.0: Enterprise · Konnect 選択に応じて概要・アーキテクチャ図・デプロイ強調色を分岐。LLM コスト算定を機能変更セクション配下に要約して吸収。セクションタイトルを「AI 2.0の機能変更および改善事項」に整理
 - AI Gateway 2.0 > 機能変更 · 改善 > LLM コスト算定: v1・v2 見積とプロバイダー実請求を比較するグラフを追加
