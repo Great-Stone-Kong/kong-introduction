@@ -9,6 +9,7 @@
 
 ### 変更
 
+- Kong 企業紹介 > 概要: API/AI Gateway 遷移表示に左レール経路アイコン · ホバー効果を追加
 - AI Management > Catalog · AI Registry: MCP registries の Tech preview タグを削除
 - AI Management > AI Cost Management: konghq.com Cost Management UI を参考にタブ別 HTML モックを再構成
 - AI Management > AI Cost Management: Dashboard タブのモック縦幅を縮小
