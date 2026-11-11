@@ -57,7 +57,8 @@ npm run build        # 멀티 HTML + docs/index.html + dist/ 언어 고정 HTML 
 - Node 20 이상. 외부 npm 의존성 없음.
 - 빌드는 결정적이다. `src/`가 같으면 산출물도 같다(빌드 후 `git status`로 확인 가능). `dist/`는 allowlist 밖이라 status에 안 뜬다.
 - 빌드는 `VERSION`만 읽는다. 버전을 새로 만들거나 Changelog를 고치지 않는다.
-- 언어 고정 HTML은 localStorage를 무시하고 해당 언어로 연다. `?lang=` · 드롭다운 전환은 그대로다.
+- 언어 고정 HTML은 localStorage를 무시하고 해당 언어로 연다. 좌측 레일 언어 팝업은 숨긴다(멀티 HTML만 언어 선택).
+- 사이드 하단 정보 아이콘: GitHub `releases/latest`로 신규 버전을 검사하고, 최신 릴리즈의 멀티·언어별 HTML 다운로드 링크를 연다.
 - 확인: 브라우저에서 `kong-introduction.html` 열기 → `?lang=en` · `?lang=ja` · `?lang=zh-Hant` · `?lang=zh-Hans` · `?edition=konnect` · `?theme=light`. 언어별은 `dist/kong-introduction.en.html` 등으로 확인.
 
 ## 4. 편집 워크플로

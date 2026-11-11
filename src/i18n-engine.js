@@ -142,6 +142,7 @@ function sw(){
   syncLsw(d); return d;
 }
 function ensureSw(){
+  if(typeof KONG_LANG_LOCKED!=='undefined'&&KONG_LANG_LOCKED) return;
   const side=document.getElementById('side'); if(!side) return;
   if(document.getElementById('nl-btn')) return;
   if(side.querySelector('.lsw')) return;

@@ -166,9 +166,20 @@ function lockLang(html, lang) {
     console.error("build: lang init pattern missing in i18n bundle");
     process.exit(1);
   }
+  if (!html.includes("const D=")) {
+    console.error("build: i18n D blob marker missing");
+    process.exit(1);
+  }
   return html
     .replace(LANG_INIT_RE, `L=q||'${lang}';`)
-    .replace(/<html\b([^>]*)\blang="[^"]*"/, `<html$1lang="${lang}"`);
+    .replace(
+      /<html\b([^>]*)\blang="[^"]*"/,
+      `<html$1lang="${lang}" data-lang-locked="1"`
+    )
+    .replace(
+      "(function(){\nconst D=",
+      "(function(){\nconst KONG_LANG_LOCKED=true;\nconst D="
+    );
 }
 
 const out = join(root, "kong-introduction.html");
