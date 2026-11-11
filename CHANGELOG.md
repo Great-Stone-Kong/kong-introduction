@@ -17,6 +17,7 @@
 - AI Management > 활용 사례: 공통 격자 · 화살표 · 하단 Konnect 밴드로 도식을 정돈하고, EN 등 다국어 라벨을 박스 폭에 맞게 축약
 - 좌측 레일 라벨 Home → Kong. Kong 기업 소개 > 개요: AI Connectivity 슬로건과 API · AI 바로가기 가안 배치
 - Kong 기업 소개 > 개요: 상단 슬로건 가운데 정렬, 좌우 손 SVG, 바로가기를 설명 패널 안으로 이동. API→Mesh→AI 체인 제거
+- Kong 기업 소개 > 개요: konghq.com 원본 손·Cloud Native/Agentic AI 비주얼로 교체. API/AI Connectivity를 카드 없이 필라+플러스로 배치
 
 ## 2026.11.09.6af12729
 

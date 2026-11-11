@@ -6091,5 +6091,10 @@
   "m.79d8847da140": "API call economy と Token economy をひとつの接続レイヤーでつなぐ Kong",
   "m.11a16b1c0b2d": "Token economy。エージェント · モデル · MCP · コンテキストをひとつのランタイムでガバナンスします。",
   "m.61e394c34b18": "API call economy。REST · gRPC · Event をひとつのゲートウェイで統制します。",
-  "m.29f34040cca0": "すべての LLM · MCP · Event · API リクエストをセキュリティ · 管理 · 加速 · 収益化 · コスト統制します。アプリを変えず、トラフィックの通り道でポリシーを一度に適用します。"
+  "m.29f34040cca0": "すべての LLM · MCP · Event · API リクエストをセキュリティ · 管理 · 加速 · 収益化 · コスト統制します。アプリを変えず、トラフィックの通り道でポリシーを一度に適用します。",
+  "m.1059a7fe6242": "API Connectivity と AI Connectivity",
+  "m.1c00cb12917f": "API call economy から…",
+  "m.31d57d3ed238": "…Token economy へ",
+  "m.7a4aa59c1deb": "API call がクラウドネイティブ時代を支配しました。API-first 企業への道を Kong が一緒に歩みました。",
+  "m.e4905f3795b1": "いまトークンが王です。エージェントを構築・運用・ガバナンスし、この新しい地形で勝つよう支援します。"
 }

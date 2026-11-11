@@ -6091,5 +6091,10 @@
   "m.79d8847da140": "Kong 将 API call economy 与 Token economy 连成一层连接层",
   "m.11a16b1c0b2d": "Token economy。在同一运行时治理智能体 · 模型 · MCP · 上下文。",
   "m.61e394c34b18": "API call economy。在同一网关管控 REST · gRPC · Event。",
-  "m.29f34040cca0": "对每个 LLM · MCP · Event · API 请求进行安全 · 管理 · 加速 · 变现 · 成本控制。无需改应用，在流量经过处一次落地策略。"
+  "m.29f34040cca0": "对每个 LLM · MCP · Event · API 请求进行安全 · 管理 · 加速 · 变现 · 成本控制。无需改应用，在流量经过处一次落地策略。",
+  "m.1059a7fe6242": "API Connectivity 与 AI Connectivity",
+  "m.1c00cb12917f": "从 API call economy…",
+  "m.31d57d3ed238": "…到 Token economy",
+  "m.7a4aa59c1deb": "API call 主导了云原生时代。我们协助你成为 API-first 企业。",
+  "m.e4905f3795b1": "如今 token 为王。我们协助你构建、运行并治理智能体，在这片新局中胜出。"
 }
