@@ -143,42 +143,77 @@ for (const id of usedIds) {
 }
 
 const D = { T, I, U, F, S };
-let blob = JSON.stringify(D);
-blob = blob.replace(/</g, "\\u003c").replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029");
+const LANGS = ["ko", "en", "ja", "zh-Hant", "zh-Hans"];
+const IX_MULTI = { en: 0, ja: 1, "zh-Hant": 2, "zh-Hans": 3 };
+const LANG_INIT_RE =
+  /L=q\|\|localStorage\.getItem\('kong-lang'\)\|\|'ko';/;
+const ENGINE = engine.replace(/^\/\* i18n engine[^\n]*\n/, "");
 
-const bundle =
-  `<script id="i18n-js">\n(function(){\nconst D=${blob}, HG=/[가-힣]/, LANGS=['ko','en','ja','zh-Hant','zh-Hans'], IX={en:0,ja:1,'zh-Hant':2,'zh-Hans':3};\n` +
-  engine.replace(/^\/\* i18n engine[^\n]*\n/, "") +
-  `</script>`;
+function escBlob(obj) {
+  return JSON.stringify(obj)
+    .replace(/</g, "\\u003c")
+    .replace(/\u2028/g, "\\u2028")
+    .replace(/\u2029/g, "\\u2029");
+}
+
+function makeBundle(data, langs, ix, lockedLang) {
+  let eng = ENGINE;
+  if (lockedLang) {
+    if (!LANG_INIT_RE.test(eng)) {
+      console.error("build: lang init pattern missing in i18n engine");
+      process.exit(1);
+    }
+    eng = eng.replace(LANG_INIT_RE, `L=q||'${lockedLang}';`);
+  }
+  const lock = lockedLang ? "const KONG_LANG_LOCKED=true;\n" : "";
+  return (
+    `<script id="i18n-js">\n(function(){\n${lock}const D=${escBlob(data)}, HG=/[가-힣]/, LANGS=${JSON.stringify(langs)}, IX=${JSON.stringify(ix)};\n` +
+    eng +
+    `</script>`
+  );
+}
+
+/* Locked builds keep only the active locale column (KO body needs no T/U/F). */
+function pruneD(lang) {
+  if (lang === "ko") return { T: {}, I, U: {}, F: [], S: {} };
+  const col = IX_MULTI[lang];
+  if (col == null) {
+    console.error(`build: unknown lock lang ${lang}`);
+    process.exit(1);
+  }
+  const Tp = {};
+  for (const [k, row] of Object.entries(T)) Tp[k] = [row[col]];
+  const Up = {};
+  for (const [k, row] of Object.entries(U)) Up[k] = [row[col]];
+  const Sp = {};
+  const sIdx = LANGS.indexOf(lang);
+  for (const [k, row] of Object.entries(S)) Sp[k] = [row[sIdx]];
+  return { T: Tp, I, U: Up, F, S: Sp };
+}
 
 if (!deck.includes("<!-- I18N_BUNDLE -->")) {
   console.error("build: <!-- I18N_BUNDLE --> placeholder missing in src/deck.html");
   process.exit(1);
 }
-deck = deck.replace("<!-- I18N_BUNDLE -->", bundle);
-
-const LANGS = ["ko", "en", "ja", "zh-Hant", "zh-Hans"];
-const LANG_INIT_RE =
-  /L=q\|\|localStorage\.getItem\('kong-lang'\)\|\|'ko';/;
+deck = deck.replace(
+  "<!-- I18N_BUNDLE -->",
+  makeBundle(D, LANGS, IX_MULTI, null)
+);
 
 function lockLang(html, lang) {
-  if (!LANG_INIT_RE.test(html)) {
-    console.error("build: lang init pattern missing in i18n bundle");
-    process.exit(1);
-  }
-  if (!html.includes("const D=")) {
-    console.error("build: i18n D blob marker missing");
+  const pruned = pruneD(lang);
+  const langs = [lang];
+  const ix = lang === "ko" ? {} : { [lang]: 0 };
+  const bundle = makeBundle(pruned, langs, ix, lang);
+  if (!/<script id="i18n-js">[\s\S]*?<\/script>/.test(html)) {
+    console.error("build: i18n script missing for lock");
     process.exit(1);
   }
   return html
-    .replace(LANG_INIT_RE, `L=q||'${lang}';`)
+    .replace(/<script id="i18n-js">[\s\S]*?<\/script>/, bundle)
     .replace(
       /<html\b([^>]*)\blang="[^"]*"/,
       `<html$1lang="${lang}" data-lang-locked="1"`
-    )
-    .replace(
-      "(function(){\nconst D=",
-      "(function(){\nconst KONG_LANG_LOCKED=true;\nconst D="
     );
 }
 

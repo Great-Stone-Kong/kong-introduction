@@ -34,7 +34,7 @@ Kong(The AI Connectivity Company) 소개 자료를 **단일 HTML 파일**로 만
 | `scripts/migrate-i18n-keys.mjs` · `verify-i18n-refactor.mjs` | stable-key 마이그레이션 · 검증(일상 작업에서는 사용 안 함) | 추적 |
 | `kong-introduction.html` | **빌드 산출물(멀티언어).** 직접 수정 금지 | 추적 |
 | `docs/index.html` · `docs/.nojekyll` | GitHub Pages용 멀티 사본(빌드가 함께 생성) | 추적 |
-| `dist/kong-introduction.{ko,en,ja,zh-Hant,zh-Hans}.html` | 언어 고정 빌드 산출물(기본 언어만 고정, i18n blob은 동일). Release 첨부 | 미추적 |
+| `dist/kong-introduction.{ko,en,ja,zh-Hant,zh-Hans}.html` | 언어 고정 빌드 산출물(해당 언어 카탈로그만 남김). Release 첨부 | 미추적 |
 | `VERSION` | 버전 문자열. 빌드가 읽어 `KONG_INTRO_VERSION`에 주입 | 추적 |
 | `CHANGELOG.md` (+ `.en` `.ja` `.zh-Hant` `.zh-Hans`) | 콘텐츠 변경 이력. KO가 정본 | 추적 |
 | `reference/` | stable-key 이전 기준선(동결). **수정 금지** | 추적 |
@@ -57,7 +57,7 @@ npm run build        # 멀티 HTML + docs/index.html + dist/ 언어 고정 HTML 
 - Node 20 이상. 외부 npm 의존성 없음.
 - 빌드는 결정적이다. `src/`가 같으면 산출물도 같다(빌드 후 `git status`로 확인 가능). `dist/`는 allowlist 밖이라 status에 안 뜬다.
 - 빌드는 `VERSION`만 읽는다. 버전을 새로 만들거나 Changelog를 고치지 않는다.
-- 언어 고정 HTML은 localStorage를 무시하고 해당 언어로 연다. 좌측 레일 언어 팝업은 숨긴다(멀티 HTML만 언어 선택).
+- 언어 고정 HTML은 localStorage를 무시하고 해당 언어로 연다. i18n blob은 활성 언어 열만 남긴다(KO는 본문이 한국어라 T/U/F를 비움). 좌측 레일 언어 버튼은 국기만 보이고 비활성(멀티 HTML만 언어 선택).
 - 좌측 레일 언어 버튼 아래 정보 아이콘: 언어 팝업과 같은 클릭 방식. 확장 시 버전 · 깃발 다운로드(멀티·언어별) · 변경 이력을 연다. 신규 버전은 점멸 배지.
 - 확인: 브라우저에서 `kong-introduction.html` 열기 → `?lang=en` · `?lang=ja` · `?lang=zh-Hant` · `?lang=zh-Hans` · `?edition=konnect` · `?theme=light`. 언어별은 `dist/kong-introduction.en.html` 등으로 확인.
 
