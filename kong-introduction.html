@@ -584,6 +584,8 @@ html[data-theme="light"] .amr-res{border-color:var(--mark)}
 .nl-menu button span,.vi-menu .vi-dl span{flex:1}
 .nl-menu button em,.vi-menu .vi-dl em{font-style:normal;font:700 10.5px var(--mono);color:var(--g500)}
 .nl-menu button.on{background:var(--accent-wash,rgba(204,255,0,.12));color:var(--heading)}.nl-menu button:hover,.vi-menu .vi-dl:hover{background:rgba(127,140,120,.14);color:var(--heading);text-decoration:none}
+.vi-menu .vi-dl.dis{opacity:.45;cursor:default;pointer-events:none}
+.vi-menu .vi-dl.dis:hover{background:none;color:var(--g200);text-decoration:none}
 .vi-menu .vi-dl .vi-dl-ico{width:16px;height:16px;flex:none;opacity:.7;margin-left:4px;fill:currentColor}
 .vi-h{margin:4px 8px 4px;font:700 10.5px var(--font);letter-spacing:.06em;text-transform:uppercase;color:var(--g500)}
 .vi-cl{width:100%;display:flex;align-items:center;gap:10px;border:0;background:none;color:var(--g200);font:600 13px var(--font);padding:7px 10px;border-radius:8px;cursor:pointer;text-align:left;margin-top:4px}
@@ -10520,7 +10522,12 @@ function paintViMenu(){
   btn.classList.toggle('has-new',neu);
   btn.title=vi18n(I18N_IDS.info);
   const lab=btn.querySelector('span'); if(lab) lab.textContent=vi18n(I18N_IDS.info);
-  const links=DL_LANGS.map(([k,f,ic,em])=>'<a class="vi-dl" role="menuitem" href="'+VER.dlBase+f+'" target="_blank" rel="noopener">'+dlFlag(ic)+'<span>'+dlLabel(k)+'</span><em>'+em+'</em>'+DL_ICO+'</a>').join('');
+  const locked=document.documentElement.hasAttribute('data-lang-locked');
+  const links=DL_LANGS.map(([k,f,ic,em])=>{
+    const body=dlFlag(ic)+'<span>'+dlLabel(k)+'</span><em>'+em+'</em>'+DL_ICO;
+    if(locked&&k==='multi') return '<span class="vi-dl dis" role="menuitem" aria-disabled="true">'+body+'</span>';
+    return '<a class="vi-dl" role="menuitem" href="'+VER.dlBase+f+'" target="_blank" rel="noopener">'+body+'</a>';
+  }).join('');
   const cl=CL_OK?'<button type="button" class="vi-cl" role="menuitem">'+CL_SVG+'<span>'+vi18n(I18N_IDS.changelog)+'</span></button>':'';
   const foot=neu
     ? '<div class="vi-foot"><span class="vi-new">'+vi18n(I18N_IDS.newVer,{v:VLATEST||''})+'</span><span class="vi-cur">'+vi18n(I18N_IDS.curVer,{v:VER.cur})+'</span></div>'
