@@ -288,7 +288,8 @@ html[data-theme="light"] .amk-btn.pri{background:var(--g900);color:#fff;border-c
 #am-obs .amk-dl{gap:4px 10px;font-size:12px}
 #am-obs .amk-tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 #am-obs .amk-tiles .wide{grid-column:1/-1}
-#am-obs .amk-chart.tok{max-height:118px}
+#am-obs .amk-chart.tok{max-height:118px;width:100%}
+#am-obs .amk-pane.wide .amk-chart.tok{min-height:118px}
 #am-obs .amk-chart .area{fill:var(--mark);opacity:.18;stroke:none}
 #am-obs .amk-chart .area2{fill:var(--diag-amber);opacity:.14;stroke:none}
 #am-obs .amk-chart .dot{fill:var(--mark);stroke:var(--card);stroke-width:1.5}
@@ -6719,15 +6720,15 @@ lowest-usage · semantic · priority</pre></div>
     </div>
     <div class="amk-pane wide">
       <div class="amk-ph"><b>Token usage statistics by provider</b><span class="amk-chip">@timestamp · 30m</span></div>
-      <svg viewBox="0 0 440 110" class="amk-chart tok" aria-hidden="true">
-        <path d="M40 20H430" class="g"/><path d="M40 45H430" class="g"/><path d="M40 70H430" class="g"/><path d="M40 95H430" class="g"/>
-        <text x="36" y="24" text-anchor="end" class="lb">4K</text><text x="36" y="49" text-anchor="end" class="lb">3K</text><text x="36" y="74" text-anchor="end" class="lb">2K</text><text x="36" y="99" text-anchor="end" class="lb">1K</text>
-        <path d="M40 92 L70 88 L100 90 L130 84 L160 86 L190 78 L220 74 L250 76 L280 68 L310 62 L340 58 L370 48 L400 28 L430 22 L430 95 L40 95 Z" class="area"/>
-        <path d="M40 94 L70 93 L100 92 L130 91 L160 90 L190 88 L220 87 L250 86 L280 84 L310 82 L340 80 L370 76 L400 70 L430 66 L430 95 L40 95 Z" class="area2"/>
-        <path d="M40 92 L70 88 L100 90 L130 84 L160 86 L190 78 L220 74 L250 76 L280 68 L310 62 L340 58 L370 48 L400 28 L430 22" class="ln"/>
-        <path d="M40 94 L70 93 L100 92 L130 91 L160 90 L190 88 L220 87 L250 86 L280 84 L310 82 L340 80 L370 76 L400 70 L430 66" class="l2"/>
-        <circle cx="400" cy="28" r="3.5" class="dot"/><circle cx="430" cy="22" r="3.5" class="dot"/>
-        <text x="40" y="108" class="lb">4:00PM</text><text x="190" y="108" class="lb">10:00PM</text><text x="340" y="108" class="lb">4:00AM</text><text x="420" y="108" text-anchor="end" class="lb">8:00AM</text>
+      <svg viewBox="0 0 720 110" preserveAspectRatio="none" class="amk-chart tok" aria-hidden="true">
+        <path d="M48 20H710" class="g"/><path d="M48 45H710" class="g"/><path d="M48 70H710" class="g"/><path d="M48 95H710" class="g"/>
+        <text x="44" y="24" text-anchor="end" class="lb">4K</text><text x="44" y="49" text-anchor="end" class="lb">3K</text><text x="44" y="74" text-anchor="end" class="lb">2K</text><text x="44" y="99" text-anchor="end" class="lb">1K</text>
+        <path d="M48 92 L98 88 L148 90 L198 85 L248 86 L298 80 L348 76 L398 78 L448 70 L498 64 L548 58 L598 50 L648 30 L698 22 L710 20 L710 95 L48 95 Z" class="area"/>
+        <path d="M48 94 L98 93 L148 92 L198 91 L248 90 L298 88 L348 87 L398 86 L448 84 L498 82 L548 80 L598 76 L648 70 L698 66 L710 64 L710 95 L48 95 Z" class="area2"/>
+        <path d="M48 92 L98 88 L148 90 L198 85 L248 86 L298 80 L348 76 L398 78 L448 70 L498 64 L548 58 L598 50 L648 30 L698 22 L710 20" class="ln"/>
+        <path d="M48 94 L98 93 L148 92 L198 91 L248 90 L298 88 L348 87 L398 86 L448 84 L498 82 L548 80 L598 76 L648 70 L698 66 L710 64" class="l2"/>
+        <circle cx="648" cy="30" r="3.5" class="dot"/><circle cx="710" cy="20" r="3.5" class="dot"/>
+        <text x="48" y="108" class="lb">4:00PM</text><text x="298" y="108" class="lb">10:00PM</text><text x="548" y="108" class="lb">4:00AM</text><text x="710" y="108" text-anchor="end" class="lb">8:00AM</text>
       </svg>
       <div class="amk-legend"><span><i></i>openai · 24.8K</span><span><i class="t"></i>azure · 9.1K</span><span><i class="a"></i>spike · batch jobs</span></div>
     </div>
@@ -6741,11 +6742,16 @@ lowest-usage · semantic · priority</pre></div>
       <div class="amk-ph"><b>Trace</b><span class="amk-chip">0 → 8.64s</span></div>
       <div class="amk-tr2 p"><span class="amk-trl">kong · AI Gateway</span><span class="amk-trk"><i style="left:0%;width:100%"></i></span><span class="amk-trt">8.64s</span></div>
       <div class="amk-tr2 p d1"><span class="amk-trl">kong.phase.access</span><span class="amk-trk"><i style="left:0%;width:2%"></i></span><span class="amk-trt">18ms</span></div>
+      <div class="amk-tr2 p d2"><span class="amk-trl">key-auth · ai-prompt-guard</span><span class="amk-trk"><i style="left:0%;width:1%"></i></span><span class="amk-trt">5ms</span></div>
       <div class="amk-tr2 m d1"><span class="amk-trl">plan · model call</span><span class="amk-trk"><i style="left:2%;width:13%"></i></span><span class="amk-trt">1.12s</span></div>
+      <div class="amk-tr2 m d2"><span class="amk-trl">openai · gpt-4o</span><span class="amk-trk"><i style="left:2%;width:13%"></i></span><span class="amk-trt">1.12s</span></div>
       <div class="amk-tr2 t d1 sel"><span class="amk-trl">github.get_pr · MCP</span><span class="amk-trk"><i style="left:15%;width:5%"></i></span><span class="amk-trt">0.31s</span></div>
-      <div class="amk-tr2 m d1"><span class="amk-trl">code analysis · model</span><span class="amk-trk"><i style="left:20%;width:23%"></i></span><span class="amk-trt">1.96s</span></div>
-      <div class="amk-tr2 t d1"><span class="amk-trl">jira.get_issue · MCP</span><span class="amk-trk"><i style="left:43%;width:3%"></i></span><span class="amk-trt">0.22s</span></div>
-      <div class="amk-tr2 a d1"><span class="amk-trl">test-agent · A2A</span><span class="amk-trk"><i style="left:46%;width:30%"></i></span><span class="amk-trt">2.48s</span></div>
+      <div class="amk-tr2 t d2"><span class="amk-trl">upstream · api.github.com</span><span class="amk-trk"><i style="left:16%;width:4%"></i></span><span class="amk-trt">0.19s</span></div>
+      <div class="amk-tr2 t d1"><span class="amk-trl">github.list_files · MCP</span><span class="amk-trk"><i style="left:20%;width:4%"></i></span><span class="amk-trt">0.28s</span></div>
+      <div class="amk-tr2 m d1"><span class="amk-trl">code analysis · model</span><span class="amk-trk"><i style="left:24%;width:22%"></i></span><span class="amk-trt">1.96s</span></div>
+      <div class="amk-tr2 t d1"><span class="amk-trl">jira.get_issue · MCP</span><span class="amk-trk"><i style="left:46%;width:3%"></i></span><span class="amk-trt">0.22s</span></div>
+      <div class="amk-tr2 a d1"><span class="amk-trl">test-agent · A2A</span><span class="amk-trk"><i style="left:49%;width:27%"></i></span><span class="amk-trt">2.48s</span></div>
+      <div class="amk-tr2 t d2"><span class="amk-trl">ci.run_suite · MCP</span><span class="amk-trk"><i style="left:58%;width:18%"></i></span><span class="amk-trt">1.52s</span></div>
       <div class="amk-tr2 a d1 err"><span class="amk-trl">deploy-agent · A2A</span><span class="amk-trk"><i style="left:76%;width:12%"></i></span><span class="amk-trt">0.94s</span></div>
       <div class="amk-tr2 m d1"><span class="amk-trl">review write · model</span><span class="amk-trk"><i style="left:88%;width:10%"></i></span><span class="amk-trt">0.72s</span></div>
       <div class="amk-tr2 p d1"><span class="amk-trl">kong.phase.body_filter</span><span class="amk-trk"><i style="left:98%;width:2%"></i></span><span class="amk-trt">0.5ms</span></div>
