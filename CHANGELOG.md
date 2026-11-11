@@ -20,6 +20,7 @@
 - Kong 기업 소개 > 개요: konghq.com 원본 손·Cloud Native/Agentic AI 비주얼로 교체. API/AI Connectivity를 카드 없이 필라+플러스로 배치
 - Kong 기업 소개 > 개요: API/AI Connectivity 필라를 큰 원형 흐름 도식으로 키우고 마스코트 제거
 - Kong 기업 소개 > 개요: Connectivity 도식 크기 조정, 설명 문구 복구. AI 카피 톤 정리
+- Kong 기업 소개 > 개요: 상단 손 이미지 좌우 교체·크기 확대
 
 ## 2026.11.09.6af12729
 

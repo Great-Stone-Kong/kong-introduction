@@ -20,6 +20,7 @@
 - Kong 企業紹介 > 概要: konghq.com 原版の手・Cloud Native/Agentic AI ビジュアルに差し替え。API/AI Connectivity をカードなしのピラー+プラス配置へ
 - Kong 企業紹介 > 概要: API/AI Connectivity ピラーを大きな円形フロー図に拡大し、マスコットを削除
 - Kong 企業紹介 > 概要: Connectivity 図のサイズ調整と説明文を復帰。AI コピーのトーンを整理
+- Kong 企業紹介 > 概要: 上部の手イメージを左右入替・拡大
 
 ## 2026.11.09.6af12729
 
