@@ -584,8 +584,6 @@ html[data-theme="light"] .amr-res{border-color:var(--mark)}
 .nl-menu button span,.vi-menu .vi-dl span{flex:1}
 .nl-menu button em,.vi-menu .vi-dl em{font-style:normal;font:700 10.5px var(--mono);color:var(--g500)}
 .nl-menu button.on{background:var(--accent-wash,rgba(204,255,0,.12));color:var(--heading)}.nl-menu button:hover,.vi-menu .vi-dl:hover{background:rgba(127,140,120,.14);color:var(--heading);text-decoration:none}
-.vi-menu .vi-dl.dis{opacity:.45;cursor:default;pointer-events:none}
-.vi-menu .vi-dl.dis:hover{background:none;color:var(--g200);text-decoration:none}
 .vi-menu .vi-dl .vi-dl-ico{width:16px;height:16px;flex:none;opacity:.7;margin-left:4px;fill:currentColor}
 .vi-h{margin:4px 8px 4px;font:700 10.5px var(--font);letter-spacing:.06em;text-transform:uppercase;color:var(--g500)}
 .vi-cl{width:100%;display:flex;align-items:center;gap:10px;border:0;background:none;color:var(--g200);font:600 13px var(--font);padding:7px 10px;border-radius:8px;cursor:pointer;text-align:left;margin-top:4px}
@@ -3933,8 +3931,10 @@ html[data-edition="konnect"] [data-show-edition]:not([data-show-edition~="konnec
 .cities span.loc{background:none;border:1px solid var(--mark);color:var(--accent)}
 html:not([data-lang="ko"]) .cities span.kr{display:none}
 html:not([data-lang="ko"]) .card.cert:has(.cst.na){display:none!important}
-html[data-lang-locked] .nl-btn,
 html[data-lang-locked] .nl-menu{display:none!important}
+html[data-lang-locked] .nl-btn{opacity:.45;cursor:default;pointer-events:none}
+html[data-lang-locked] .nl-btn:hover,
+html[data-lang-locked] .nl-btn.open{border-color:#2D2E2C;color:#B7BDB5}
 .lsw{position:relative;width:100%;margin-top:auto;flex:none;z-index:5}
 .lsw-btn{display:flex;align-items:center;gap:8px;width:100%;box-sizing:border-box;font-family:var(--font);font-size:12px;font-weight:700;color:var(--g200);background:var(--navy-2);border:1px solid var(--line);border-radius:8px;padding:0 10px;min-height:36px;cursor:pointer;text-align:left;transition:border-color .15s,color .15s,background .15s}
 .lsw-btn:hover,.lsw.open .lsw-btn{border-color:var(--accent);color:var(--heading)}
@@ -10522,12 +10522,7 @@ function paintViMenu(){
   btn.classList.toggle('has-new',neu);
   btn.title=vi18n(I18N_IDS.info);
   const lab=btn.querySelector('span'); if(lab) lab.textContent=vi18n(I18N_IDS.info);
-  const locked=document.documentElement.hasAttribute('data-lang-locked');
-  const links=DL_LANGS.map(([k,f,ic,em])=>{
-    const body=dlFlag(ic)+'<span>'+dlLabel(k)+'</span><em>'+em+'</em>'+DL_ICO;
-    if(locked&&k==='multi') return '<span class="vi-dl dis" role="menuitem" aria-disabled="true">'+body+'</span>';
-    return '<a class="vi-dl" role="menuitem" href="'+VER.dlBase+f+'" target="_blank" rel="noopener">'+body+'</a>';
-  }).join('');
+  const links=DL_LANGS.map(([k,f,ic,em])=>'<a class="vi-dl" role="menuitem" href="'+VER.dlBase+f+'" target="_blank" rel="noopener">'+dlFlag(ic)+'<span>'+dlLabel(k)+'</span><em>'+em+'</em>'+DL_ICO+'</a>').join('');
   const cl=CL_OK?'<button type="button" class="vi-cl" role="menuitem">'+CL_SVG+'<span>'+vi18n(I18N_IDS.changelog)+'</span></button>':'';
   const foot=neu
     ? '<div class="vi-foot"><span class="vi-new">'+vi18n(I18N_IDS.newVer,{v:VLATEST||''})+'</span><span class="vi-cur">'+vi18n(I18N_IDS.curVer,{v:VER.cur})+'</span></div>'
@@ -10788,7 +10783,14 @@ function syncEdLang(){
 function nlClose(){ if(nlMenu) nlMenu.classList.remove('open'); if(nlBtn){ nlBtn.classList.remove('open'); nlBtn.setAttribute('aria-expanded','false'); } }
 if(neSeg) neSeg.addEventListener('click',e=>{ const b=e.target.closest('[data-ed]'); if(!b) return; window.KONG_EDITION.setEdition(b.dataset.ed); });
 const LANG_LOCKED=document.documentElement.hasAttribute('data-lang-locked');
-if(!LANG_LOCKED){
+if(LANG_LOCKED){
+  if(nlBtn){
+    nlBtn.disabled=true;
+    nlBtn.setAttribute('aria-disabled','true');
+    nlBtn.removeAttribute('aria-haspopup');
+    nlBtn.setAttribute('aria-expanded','false');
+  }
+}else{
   if(nlBtn) nlBtn.addEventListener('click',e=>{ e.stopPropagation(); closeVinfo(); const on=!nlMenu.classList.contains('open'); nlMenu.classList.toggle('open',on); nlBtn.classList.toggle('open',on); nlBtn.setAttribute('aria-expanded',on?'true':'false'); if(on){ const f=nlMenu.querySelector('.on')||nlMenu.querySelector('button'); if(f) f.focus(); } });
   if(nlMenu) nlMenu.addEventListener('keydown',e=>{ const bs=[...nlMenu.querySelectorAll('button')], i=bs.indexOf(document.activeElement);
     if(e.key==='ArrowDown'||e.key==='ArrowUp'){ e.preventDefault(); const n=bs[(i+(e.key==='ArrowDown'?1:-1)+bs.length)%bs.length]; if(n) n.focus(); }
