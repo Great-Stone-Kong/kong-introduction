@@ -163,13 +163,13 @@ html[data-theme="light"] .ov-hand .th-light{display:block}
 .ov-ring .soft{fill:var(--svg-chip);stroke:var(--g600);stroke-width:1}
 .ov-ring .softt{fill:var(--svg-label);font:700 12px var(--font);letter-spacing:.06em}
 .ov-ring .base{fill:var(--heading);font:900 22px var(--font);letter-spacing:.14em}
-.ov-go{display:inline-flex;align-items:center;gap:10px;margin-top:6px;font:800 14px var(--font);color:var(--mark)}
+.ov-go{display:inline-flex;align-items:center;gap:8px;margin-top:6px;font:800 14px var(--font);color:var(--mark)}
 .ov-go > em{font-style:normal}
-.ov-trail{display:inline-flex;align-items:center;gap:5px;padding:4px 8px 4px 6px;border:1px solid color-mix(in srgb,var(--lime) 45%,var(--line2));border-radius:999px;background:var(--accent-soft);color:var(--mark);box-shadow:0 0 0 0 color-mix(in srgb,var(--lime) 0%,transparent);animation:ov-trail-pulse 1.6s ease-in-out infinite}
+.ov-tarr{width:14px;height:2px;flex:0 0 auto;position:relative;background:currentColor;opacity:.85;border-radius:1px;animation:ov-tarr-nudge 1.6s ease-in-out infinite}
+.ov-tarr::after{content:"";position:absolute;right:-1px;top:50%;width:6px;height:6px;border-right:2px solid currentColor;border-top:2px solid currentColor;transform:translateY(-50%) rotate(45deg)}
+.ov-trail{display:inline-flex;align-items:center;padding:4px;border:1px solid color-mix(in srgb,var(--lime) 45%,var(--line2));border-radius:999px;background:var(--accent-soft);color:var(--mark);box-shadow:0 0 0 0 color-mix(in srgb,var(--lime) 0%,transparent);animation:ov-trail-pulse 1.6s ease-in-out infinite}
 .ov-tic{width:22px;height:22px;border-radius:7px;display:grid;place-items:center;background:rgba(204,255,0,.12);color:var(--mark)}
 .ov-tic svg{width:14px;height:14px;display:block;fill:currentColor}
-.ov-tarr{width:14px;height:2px;position:relative;background:currentColor;opacity:.85;border-radius:1px;animation:ov-tarr-nudge 1.6s ease-in-out infinite}
-.ov-tarr::after{content:"";position:absolute;right:-1px;top:50%;width:6px;height:6px;border-right:2px solid currentColor;border-top:2px solid currentColor;transform:translateY(-50%) rotate(45deg)}
 @keyframes ov-trail-pulse{0%,100%{border-color:color-mix(in srgb,var(--lime) 35%,var(--line2));box-shadow:0 0 0 0 color-mix(in srgb,var(--lime) 0%,transparent);background:color-mix(in srgb,var(--accent-soft) 70%,transparent)}50%{border-color:var(--lime);box-shadow:0 0 0 4px color-mix(in srgb,var(--lime) 22%,transparent);background:var(--accent-soft)}}
 @keyframes ov-tarr-nudge{0%,100%{transform:translateX(0);opacity:.7}50%{transform:translateX(3px);opacity:1}}
 @media (prefers-reduced-motion:reduce){.ov-trail,.ov-tarr{animation:none}}
@@ -4215,7 +4215,7 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
       <text class="softt" x="180" y="271" text-anchor="middle">APIS &amp; EVENTS</text>
       <text class="base" x="180" y="372" text-anchor="middle">MICROSERVICES</text>
     </svg>
-      <span class="ov-go"><em>API Gateway</em><span class="ov-trail" aria-hidden="true"><i class="ov-tarr"></i><span class="ov-tic"><svg viewBox="0 0 24 24"><use href="#ki-gateway"/></svg></span></span></span>
+      <span class="ov-go"><em>API Gateway</em><i class="ov-tarr" aria-hidden="true"></i><span class="ov-trail" aria-hidden="true"><span class="ov-tic"><svg viewBox="0 0 24 24"><use href="#ki-build-anywhere"/></svg></span></span></span>
     </button>
     <div class="ov-plus" aria-hidden="true">+</div>
     <button type="button" class="ov-pillar" onclick="go('ai')">
@@ -4249,7 +4249,7 @@ html:not([data-lang="ko"]) .tabs button,html:not([data-lang="ko"]) .btn{white-sp
       <text class="softt" x="180" y="271" text-anchor="middle">CONTEXT</text>
       <text class="base" x="180" y="372" text-anchor="middle">LLMS</text>
     </svg>
-      <span class="ov-go"><em>AI Gateway</em><span class="ov-trail" aria-hidden="true"><i class="ov-tarr"></i><span class="ov-tic"><svg viewBox="0 0 24 24"><use href="#ki-gateway"/></svg></span></span></span>
+      <span class="ov-go"><em>AI Gateway</em><i class="ov-tarr" aria-hidden="true"></i><span class="ov-trail" aria-hidden="true"><span class="ov-tic"><svg viewBox="0 0 24 24"><use href="#ki-professional"/></svg></span></span></span>
     </button>
   </div>
   <div class="ov-caps" aria-hidden="true">
