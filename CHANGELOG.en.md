@@ -5,18 +5,22 @@
 
 ---
 
-## Unreleased
+## 2026.11.11.6af48730
+
+### Added
+
+- Add a toggle for Kong intro, AI Gateway intro, and API Gateway intro: top left
+- Add a toggle to separate Kong Enterprise (EE) and Kong Konnect (SaaS) content: bottom left
+- Add an info icon
+  - Bottom left
+  - New version check and download buttons
+- Kong intro > Overview: add AI Gateway and API Gateway shortcuts into the description panel
+- AI Gateway intro > Add AI Management
 
 ### Changed
 
-- AI Gateway 2.0: Branch overview, architecture diagrams, and deploy accent colors by Enterprise · Konnect. Fold LLM cost estimation into the feature-changes section as a short summary. Retitle the section to “AI 2.0 feature changes and improvements”
+- Change the top menu layout to a left-side menu layout
 - AI Gateway 2.0 > Feature changes · improvements > LLM cost estimation: add a chart comparing v1 vs v2 estimates against the provider invoice
-- AI Management: On EE, only Overview is active in the side nav; other items are disabled. Show “EE soon” only on AI Cost Management and Catalog · AI Registry. On Konnect, all sections stay active with no badges
-- AI Management > Use cases: redraw the six diagrams to match the source architecture (Gateway · Context Mesh · Management plane)
-- AI Management > Use cases: fix a broken closing tag that left only the software-factory pane visible; restore all six diagrams under the tabs
-- AI Management > Use cases: tidy the six diagrams onto a shared grid with arrows and a bottom Konnect band; shorten EN and other locale labels to fit the boxes
-- Left rail label Home → Kong. Kong company intro > Overview: draft layout with the AI Connectivity slogan and API · AI shortcuts
-- Kong company intro > Overview: center the slogan, add left/right hand SVGs, move shortcuts into the description panel, and drop the API→Mesh→AI chain
 
 ## 2026.11.09.6af12729
 

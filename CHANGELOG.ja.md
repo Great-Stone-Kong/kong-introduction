@@ -5,31 +5,22 @@
 
 ---
 
-## Unreleased
+## 2026.11.11.6af48730
+
+### 追加
+
+- Kong 紹介、AI Gateway 紹介、API Gateway 紹介を切り替えるトグルを追加：左上
+- Kong Enterprise(EE)、Kong Konnect(SaaS) 内容区分トグルを追加：左下
+- 情報アイコンを追加
+  - 左下
+  - 新バージョン確認およびダウンロードボタン
+- Kong 紹介 > 概要: AI Gateway、API Gateway ショートカットを説明パネル内に追加
+- AI Gateway 紹介 > AI Management を追加
 
 ### 変更
 
-- Kong 企業紹介 > 概要: API/AI Gateway 遷移表示をレールアイコン · 領域外の左矢印 · 常時点滅に整理
-- AI Management > Catalog · AI Registry: MCP registries の Tech preview タグを削除
-- AI Management > AI Cost Management: konghq.com Cost Management UI を参考にタブ別 HTML モックを再構成
-- AI Management > AI Cost Management: Dashboard タブのモック縦幅を縮小
-- AI Management: Konnect 専用の左ナビ項目に「Konnect」タグを表示。EE 予定項目も Konnect モードでは Konnect タグ
-- AI Gateway 2.0: Enterprise · Konnect 選択に応じて概要・アーキテクチャ図・デプロイ強調色を分岐。LLM コスト算定を機能変更セクション配下に要約して吸収。セクションタイトルを「AI 2.0の機能変更および改善事項」に整理
+- 上部メニュー形式を左側メニュー形式に変更
 - AI Gateway 2.0 > 機能変更 · 改善 > LLM コスト算定: v1・v2 見積とプロバイダー実請求を比較するグラフを追加
-- AI Management: EEでは左メニューの概要のみ活性、他は非活性。AI Cost Management · Catalog · AI Registry にのみ「EE 予定」を表示。Konnectではバッジなしで全セクション活性
-- AI Management > 活用事例: 6つの図を元のアーキテクチャ（Gateway · Context Mesh · Management plane）に合わせて再構成
-- AI Management > 活用事例: 閉じタグ誤りでソフトウェアファクトリーだけ表示されていた問題を修正。6つの図がタブ切替で表示されるよう復元
-- AI Management > 活用事例: 共通グリッド · 矢印 · 下部 Konnect バンドで図を整え、EN など多言語ラベルをボックス幅に合わせて短縮
-- 左レールのラベル Home → Kong。Kong 企業紹介 > 概要: AI Connectivity スローガンと API · AI ショートカットのたたき台を配置
-- Kong 企業紹介 > 概要: スローガンを中央揃え、左右に手の SVG、ショートカットを説明パネル内へ。API→Mesh→AI チェーンを削除
-- Kong 企業紹介 > 概要: konghq.com 原版の手・Cloud Native/Agentic AI ビジュアルに差し替え。API/AI Connectivity をカードなしのピラー+プラス配置へ
-- Kong 企業紹介 > 概要: API/AI Connectivity ピラーを大きな円形フロー図に拡大し、マスコットを削除
-- Kong 企業紹介 > 概要: Connectivity 図のサイズ調整と説明文を復帰。AI コピーのトーンを整理
-- Kong 企業紹介 > 概要: 上部の手イメージを左右入替・拡大
-- Kong 企業紹介 > 概要: 手イメージを中央向き・半透明・下部オーバーラップに調整し拡大
-- Kong 企業紹介 > 概要: 手イメージをさらに拡大、Connectivity ホバーで手の透明度上昇、タイトルに文字縁取り
-- Kong 企業紹介 > 概要: 手レイヤーを文字下へ、位置・サイズを追加調整
-- Kong 企業紹介 > 概要: 上部 AI Connectivity タイトル拡大、下部文言との間隔確保
 
 ## 2026.11.09.6af12729
 

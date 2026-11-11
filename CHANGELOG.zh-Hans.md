@@ -5,18 +5,22 @@
 
 ---
 
-## Unreleased
+## 2026.11.11.6af48730
+
+### 新增
+
+- 新增可切换 Kong 介绍、AI Gateway 介绍、API Gateway 介绍的开关：左上
+- 新增可区分 Kong Enterprise(EE)、Kong Konnect(SaaS) 内容的开关：左下
+- 新增信息图标
+  - 左下
+  - 新版本确认与下载按钮
+- Kong 介绍 > 概览：将 AI Gateway、API Gateway 快捷入口加入说明面板
+- AI Gateway 介绍 > 新增 AI Management
 
 ### 变更
-- AI Management > 用例: 修复多余闭合标签导致仅显示软件工厂页签的问题，恢复六个用例图在标签页间切换显示
-- AI Management > 用例: 用统一网格 · 箭头 · 底部 Konnect 条带整理六个图示，并缩短 EN 等语言标签以适配框宽
-- 左侧栏标签 Home → Kong。Kong 企业介绍 > 概览：放置 AI Connectivity 口号与 API · AI 快捷入口草案
-- Kong 企业介绍 > 概览：口号居中、左右手部 SVG、快捷入口移入说明面板，并去掉 API→Mesh→AI 链条
 
-- AI Gateway 2.0：按 Enterprise · Konnect 分支概要、架构图与部署强调色。将 LLM 成本估算摘要并入功能变更章节。章节标题改为「AI 2.0 功能变更与改进事项」
+- 将上方菜单形式改为左侧菜单形式
 - AI Gateway 2.0 > 功能变更 · 改进 > LLM 成本估算：新增 v1·v2 估算与供应商实账对比图
-- AI Management：EE 侧栏仅概要可点，其余禁用；仅 AI Cost Management · Catalog · AI Registry 显示「EE 预定」。Konnect 无徽章且全部可用
-- AI Management > 用例：六幅图按原架构（Gateway · Context Mesh · Management plane）重绘
 
 ## 2026.11.09.6af12729
 

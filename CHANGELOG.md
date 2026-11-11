@@ -5,31 +5,22 @@
 
 ---
 
-## Unreleased
+## 2026.11.11.6af48730
+
+### 추가
+
+- Kong 소개, AI Gateway 소개, API Gateway 소개를 구분하는 토글 추가 : 좌측 상단
+- Kong Enterprise(EE), Kong Konnect(SaaS) 내용 구분 토글 추가 : 좌측 하단
+- 정보 아이콘 추가
+  - 좌측 하단
+  - 신규 버전 확인 및 다운로드 버튼
+- Kong 소개 > 개요: AI Gateway, API Gateway 바로가기를 설명 패널 안으로 추가
+- AI Gateway 소개 > AI Management 추가
 
 ### 변경
 
-- Kong 기업 소개 > 개요: API/AI Gateway 이동 표기를 레일 아이콘 · 영역 밖 좌측 화살표 · 상시 점멸로 정리
-- AI Management > Catalog · AI Registry: MCP registries Tech preview 태그 제거
-- AI Management > AI Cost Management: konghq.com Cost Management UI를 참고해 탭별 HTML 목업 재구성
-- AI Management > AI Cost Management: Dashboard 탭 목업 세로 길이 축소
-- AI Gateway 2.0: Enterprise · Konnect 선택에 따라 개요·아키텍처 구성도·배포 강조색을 분기. LLM 비용 산정을 기능 변경 섹션 하위로 요약 흡수. 섹션 제목을 「AI 2.0 기능 변경 및 개선 사항」으로 정리
+- 상단 메뉴 형식을 좌측 메뉴 형식으로 변경
 - AI Gateway 2.0 > 기능 변경 · 개선 > LLM 비용 산정: v1·v2 추정과 제공사 실청구를 비교하는 그래프 추가
-- AI Management: EE에서는 좌측 개요만 활성, 나머지 비활성. AI Cost Management · Catalog · AI Registry에만 「EE 예정」표시. Konnect에서는 배지 없이 전 섹션 활성
-- AI Management: Konnect 전용 좌측 항목에 「Konnect」태그 표시. EE 예정 항목은 Konnect 모드에서도 Konnect 태그
-- AI Management > 활용 사례: 여섯 사례 도식을 원본 아키텍처(게이트웨이 · Context Mesh · Management plane)에 맞게 재구성
-- AI Management > 활용 사례: 탭 pane 닫는 태그 오류로 소프트웨어 팩토리만 보이던 문제 수정. 여섯 사례 도식이 탭 전환으로 표시되도록 복구
-- AI Management > 활용 사례: 공통 격자 · 화살표 · 하단 Konnect 밴드로 도식을 정돈하고, EN 등 다국어 라벨을 박스 폭에 맞게 축약
-- 좌측 레일 라벨 Home → Kong. Kong 기업 소개 > 개요: AI Connectivity 슬로건과 API · AI 바로가기 가안 배치
-- Kong 기업 소개 > 개요: 상단 슬로건 가운데 정렬, 좌우 손 SVG, 바로가기를 설명 패널 안으로 이동. API→Mesh→AI 체인 제거
-- Kong 기업 소개 > 개요: konghq.com 원본 손·Cloud Native/Agentic AI 비주얼로 교체. API/AI Connectivity를 카드 없이 필라+플러스로 배치
-- Kong 기업 소개 > 개요: API/AI Connectivity 필라를 큰 원형 흐름 도식으로 키우고 마스코트 제거
-- Kong 기업 소개 > 개요: Connectivity 도식 크기 조정, 설명 문구 복구. AI 카피 톤 정리
-- Kong 기업 소개 > 개요: 상단 손 이미지 좌우 교체·크기 확대
-- Kong 기업 소개 > 개요: 손 이미지를 가운데 방향·반투명·하단 겹침으로 조정하고 크기 확대
-- Kong 기업 소개 > 개요: 손 이미지 추가 확대, Connectivity 호버 시 손 투명도 상승, 제목 글자 테두리
-- Kong 기업 소개 > 개요: 손 레이어를 글자 아래로, 위치·크기 추가 조정
-- Kong 기업 소개 > 개요: 상단 AI Connectivity 타이틀 확대, 하단 문구와 간격 확보
 
 ## 2026.11.09.6af12729
 
