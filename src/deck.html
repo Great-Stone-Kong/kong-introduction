@@ -279,6 +279,8 @@ html[data-theme="light"] .amk-btn.pri{background:var(--g900);color:#fff;border-c
 #am-cost .amk-main>.amk-stack>.amk-p{display:flex;flex-direction:column}
 #am-cost .amk-val{margin-top:auto;padding-top:10px;border-top:1px solid var(--line);font-size:12.5px;line-height:1.55;color:var(--g300)}
 #am-cost .amk-val b{display:block;font:800 11px var(--font);letter-spacing:.06em;color:var(--mark);margin:0 0 4px}
+#am-obs .amk-main>.amk-stack>.amk-p{display:flex;flex-direction:column}
+#am-obs .amk-tiles,#am-obs .amk-grid.tr{flex:1;min-height:0}
 #am-obs .amk-tr2{padding:2px 4px;grid-template-columns:minmax(150px,230px) minmax(0,1fr) 54px;font-size:11.5px;gap:8px}
 #am-obs .amk-tr2.d1 .amk-trl{padding-left:12px}
 #am-obs .amk-tr2.d2 .amk-trl{padding-left:24px}
@@ -286,6 +288,10 @@ html[data-theme="light"] .amk-btn.pri{background:var(--g900);color:#fff;border-c
 #am-obs .amk-dl{gap:4px 10px;font-size:12px}
 #am-obs .amk-tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 #am-obs .amk-tiles .wide{grid-column:1/-1}
+#am-obs .amk-chart.tok{max-height:118px}
+#am-obs .amk-chart .area{fill:var(--mark);opacity:.18;stroke:none}
+#am-obs .amk-chart .area2{fill:var(--diag-amber);opacity:.14;stroke:none}
+#am-obs .amk-chart .dot{fill:var(--mark);stroke:var(--card);stroke-width:1.5}
 #am-obs .amk-hbar{display:grid;grid-template-columns:92px minmax(0,1fr) 40px;gap:6px;align-items:center;font-size:11.5px;margin:0 0 5px}
 #am-obs .amk-hbar b{font-weight:600;color:var(--heading);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #am-obs .amk-hbar span{font:600 11px var(--mono);color:var(--g300);text-align:right}
@@ -6712,9 +6718,18 @@ lowest-usage · semantic · priority</pre></div>
       <div class="amk-vbars"><div><i class="o" style="height:72%"></i><em>azure-chat</em></div><div><i class="p2" style="height:40%"></i><em>openai-gpt</em></div><div><i style="height:18%;background:var(--diag-sky)"></i><em>bedrock-claude</em></div></div>
     </div>
     <div class="amk-pane wide">
-      <div class="amk-ph"><b>Token usage statistics by provider</b><span class="amk-chip">Total tokens</span></div>
-      <svg viewBox="0 0 420 72" class="amk-chart" aria-hidden="true"><path d="M0 60H420" class="g"/><path d="M0 30H420" class="g"/><path d="M0 58 L35 54 L70 52 L105 48 L140 50 L175 42 L210 40 L245 36 L280 38 L315 28 L350 22 L385 12 L420 8" class="ln"/><path d="M0 62 L35 60 L70 58 L105 56 L140 55 L175 52 L210 50 L245 48 L280 46 L315 44 L350 40 L385 36 L420 34" class="l2"/><text x="8" y="14" class="lb">4K</text><text x="8" y="34" class="lb">2K</text></svg>
-      <div class="amk-legend"><span><i></i>openai</span><span><i class="t"></i>azure</span></div>
+      <div class="amk-ph"><b>Token usage statistics by provider</b><span class="amk-chip">@timestamp · 30m</span></div>
+      <svg viewBox="0 0 440 110" class="amk-chart tok" aria-hidden="true">
+        <path d="M40 20H430" class="g"/><path d="M40 45H430" class="g"/><path d="M40 70H430" class="g"/><path d="M40 95H430" class="g"/>
+        <text x="36" y="24" text-anchor="end" class="lb">4K</text><text x="36" y="49" text-anchor="end" class="lb">3K</text><text x="36" y="74" text-anchor="end" class="lb">2K</text><text x="36" y="99" text-anchor="end" class="lb">1K</text>
+        <path d="M40 92 L70 88 L100 90 L130 84 L160 86 L190 78 L220 74 L250 76 L280 68 L310 62 L340 58 L370 48 L400 28 L430 22 L430 95 L40 95 Z" class="area"/>
+        <path d="M40 94 L70 93 L100 92 L130 91 L160 90 L190 88 L220 87 L250 86 L280 84 L310 82 L340 80 L370 76 L400 70 L430 66 L430 95 L40 95 Z" class="area2"/>
+        <path d="M40 92 L70 88 L100 90 L130 84 L160 86 L190 78 L220 74 L250 76 L280 68 L310 62 L340 58 L370 48 L400 28 L430 22" class="ln"/>
+        <path d="M40 94 L70 93 L100 92 L130 91 L160 90 L190 88 L220 87 L250 86 L280 84 L310 82 L340 80 L370 76 L400 70 L430 66" class="l2"/>
+        <circle cx="400" cy="28" r="3.5" class="dot"/><circle cx="430" cy="22" r="3.5" class="dot"/>
+        <text x="40" y="108" class="lb">4:00PM</text><text x="190" y="108" class="lb">10:00PM</text><text x="340" y="108" class="lb">4:00AM</text><text x="420" y="108" text-anchor="end" class="lb">8:00AM</text>
+      </svg>
+      <div class="amk-legend"><span><i></i>openai · 24.8K</span><span><i class="t"></i>azure · 9.1K</span><span><i class="a"></i>spike · batch jobs</span></div>
     </div>
   </div>
 </div>
@@ -6723,34 +6738,18 @@ lowest-usage · semantic · priority</pre></div>
   <div class="amk-hd"><span class="amk-crumb">Debugger · Request</span><h3><span class="amk-st ok">200</span> GET /ai/sessions/pr-review</h3><p class="amk-desc">Latency total 8.64s · session PR review #482 · Summary and Trace together.</p></div>
   <div class="amk-grid tr">
     <div class="amk-pane">
-      <div class="amk-ph"><b>Trace</b><span class="amk-chip">0ms → 8.64s</span></div>
-      <div class="amk-tr2 p"><span class="amk-trl">kong</span><span class="amk-trk"><i style="left:0%;width:100%"></i></span><span class="amk-trt">8.64s</span></div>
-      <div class="amk-tr2 p d1"><span class="amk-trl">kong.phase.certificate</span><span class="amk-trk"><i style="left:0%;width:1%"></i></span><span class="amk-trt">0.4ms</span></div>
-      <div class="amk-tr2 p d1"><span class="amk-trl">kong.phase.rewrite</span><span class="amk-trk"><i style="left:0%;width:1%"></i></span><span class="amk-trt">0.6ms</span></div>
+      <div class="amk-ph"><b>Trace</b><span class="amk-chip">0 → 8.64s</span></div>
+      <div class="amk-tr2 p"><span class="amk-trl">kong · AI Gateway</span><span class="amk-trk"><i style="left:0%;width:100%"></i></span><span class="amk-trt">8.64s</span></div>
       <div class="amk-tr2 p d1"><span class="amk-trl">kong.phase.access</span><span class="amk-trk"><i style="left:0%;width:2%"></i></span><span class="amk-trt">18ms</span></div>
-      <div class="amk-tr2 p d2"><span class="amk-trl">kong.router</span><span class="amk-trk"><i style="left:0%;width:1%"></i></span><span class="amk-trt">0.1ms</span></div>
-      <div class="amk-tr2 p d2"><span class="amk-trl">kong.access.plugin.key-auth</span><span class="amk-trk"><i style="left:0%;width:1%"></i></span><span class="amk-trt">0.6ms</span></div>
-      <div class="amk-tr2 p d2"><span class="amk-trl">kong.access.plugin.ai-prompt-guard</span><span class="amk-trk"><i style="left:1%;width:1%"></i></span><span class="amk-trt">4ms</span></div>
-      <div class="amk-tr2 p d2"><span class="amk-trl">kong.dns</span><span class="amk-trk"><i style="left:1%;width:1%"></i></span><span class="amk-trt">0.3ms</span></div>
-      <div class="amk-tr2 m d1"><span class="amk-trl">plan · model call</span><span class="amk-trk"><i style="left:2%;width:12%"></i></span><span class="amk-trt">1.12s</span></div>
-      <div class="amk-tr2 m d2"><span class="amk-trl">openai · gpt-4o · prompt</span><span class="amk-trk"><i style="left:2%;width:4%"></i></span><span class="amk-trt">0.32s</span></div>
-      <div class="amk-tr2 m d2"><span class="amk-trl">openai · gpt-4o · completion</span><span class="amk-trk"><i style="left:6%;width:8%"></i></span><span class="amk-trt">0.80s</span></div>
-      <div class="amk-tr2 t d1 sel"><span class="amk-trl">github.get_pr · MCP tool</span><span class="amk-trk"><i style="left:14%;width:5%"></i></span><span class="amk-trt">0.31s</span></div>
-      <div class="amk-tr2 t d2"><span class="amk-trl">mcp.server=github-mcp</span><span class="amk-trk"><i style="left:14%;width:2%"></i></span><span class="amk-trt">0.12s</span></div>
-      <div class="amk-tr2 t d2"><span class="amk-trl">upstream · api.github.com</span><span class="amk-trk"><i style="left:16%;width:3%"></i></span><span class="amk-trt">0.19s</span></div>
-      <div class="amk-tr2 t d1"><span class="amk-trl">github.list_files · MCP tool</span><span class="amk-trk"><i style="left:19%;width:4%"></i></span><span class="amk-trt">0.28s</span></div>
-      <div class="amk-tr2 m d1"><span class="amk-trl">code analysis · model call</span><span class="amk-trk"><i style="left:23%;width:22%"></i></span><span class="amk-trt">1.96s</span></div>
-      <div class="amk-tr2 m d2"><span class="amk-trl">anthropic · claude-sonnet</span><span class="amk-trk"><i style="left:23%;width:22%"></i></span><span class="amk-trt">1.96s</span></div>
-      <div class="amk-tr2 t d1"><span class="amk-trl">jira.get_issue · MCP tool</span><span class="amk-trk"><i style="left:45%;width:3%"></i></span><span class="amk-trt">0.22s</span></div>
-      <div class="amk-tr2 a d1"><span class="amk-trl">test-agent · A2A</span><span class="amk-trk"><i style="left:48%;width:28%"></i></span><span class="amk-trt">2.48s</span></div>
-      <div class="amk-tr2 m d2"><span class="amk-trl">test-agent · model call</span><span class="amk-trk"><i style="left:48%;width:10%"></i></span><span class="amk-trt">0.88s</span></div>
-      <div class="amk-tr2 t d2"><span class="amk-trl">ci.run_suite · MCP tool</span><span class="amk-trk"><i style="left:58%;width:18%"></i></span><span class="amk-trt">1.52s</span></div>
+      <div class="amk-tr2 m d1"><span class="amk-trl">plan · model call</span><span class="amk-trk"><i style="left:2%;width:13%"></i></span><span class="amk-trt">1.12s</span></div>
+      <div class="amk-tr2 t d1 sel"><span class="amk-trl">github.get_pr · MCP</span><span class="amk-trk"><i style="left:15%;width:5%"></i></span><span class="amk-trt">0.31s</span></div>
+      <div class="amk-tr2 m d1"><span class="amk-trl">code analysis · model</span><span class="amk-trk"><i style="left:20%;width:23%"></i></span><span class="amk-trt">1.96s</span></div>
+      <div class="amk-tr2 t d1"><span class="amk-trl">jira.get_issue · MCP</span><span class="amk-trk"><i style="left:43%;width:3%"></i></span><span class="amk-trt">0.22s</span></div>
+      <div class="amk-tr2 a d1"><span class="amk-trl">test-agent · A2A</span><span class="amk-trk"><i style="left:46%;width:30%"></i></span><span class="amk-trt">2.48s</span></div>
       <div class="amk-tr2 a d1 err"><span class="amk-trl">deploy-agent · A2A</span><span class="amk-trk"><i style="left:76%;width:12%"></i></span><span class="amk-trt">0.94s</span></div>
-      <div class="amk-tr2 a d2 err"><span class="amk-trl">deploy-agent · upstream timeout</span><span class="amk-trk"><i style="left:82%;width:6%"></i></span><span class="amk-trt">0.52s</span></div>
-      <div class="amk-tr2 m d1"><span class="amk-trl">review write · model call</span><span class="amk-trk"><i style="left:88%;width:10%"></i></span><span class="amk-trt">0.72s</span></div>
-      <div class="amk-tr2 p d1"><span class="amk-trl">kong.phase.header_filter</span><span class="amk-trk"><i style="left:98%;width:1%"></i></span><span class="amk-trt">0.7ms</span></div>
-      <div class="amk-tr2 p d1"><span class="amk-trl">kong.phase.body_filter</span><span class="amk-trk"><i style="left:99%;width:1%"></i></span><span class="amk-trt">0.5ms</span></div>
-      <div class="amk-legend"><span><i style="background:var(--mark)"></i>model</span><span><i class="t"></i>MCP tool</span><span><i class="a"></i>agent</span><span><i class="p"></i>kong phase</span><span><i class="over"></i>error</span></div>
+      <div class="amk-tr2 m d1"><span class="amk-trl">review write · model</span><span class="amk-trk"><i style="left:88%;width:10%"></i></span><span class="amk-trt">0.72s</span></div>
+      <div class="amk-tr2 p d1"><span class="amk-trl">kong.phase.body_filter</span><span class="amk-trk"><i style="left:98%;width:2%"></i></span><span class="amk-trt">0.5ms</span></div>
+      <div class="amk-legend"><span><i style="background:var(--mark)"></i>model</span><span><i class="t"></i>MCP</span><span><i class="a"></i>agent</span><span><i class="p"></i>kong</span><span><i class="over"></i>error</span></div>
     </div>
     <div class="amk-pane">
       <div class="amk-ph"><b>Summary</b><span class="amk-st ok">200</span></div>
@@ -6770,37 +6769,46 @@ lowest-usage · semantic · priority</pre></div>
 
 <div class="amk-p" data-kg="obs" data-kp="cost">
   <div class="amk-hd"><span class="amk-crumb">Analytics · Dashboard</span><h3>AI cost &amp; token visibility</h3><p class="amk-desc">Consumer spend, route share, and model latency from the same AI Gateway stream.</p></div>
-  <div class="amk-tool"><span class="amk-pill on">Last 7 days</span><span class="amk-pill">Group · consumer</span></div>
+  <div class="amk-tool"><span class="amk-pill on">Last 7 days</span><span class="amk-pill">Group · consumer</span><span class="amk-pill">Filter · AI · LLM</span></div>
+  <div class="amk-kpis"><div class="amk-kpi"><span>Total tokens</span><b>30.1K</b><em>+18% vs prev</em></div><div class="amk-kpi"><span>AI cost</span><b>$0.075</b><em>3 consumers</em></div><div class="amk-kpi warn"><span>p95 latency</span><b>2.4s</b><em>o3-mini spike</em></div><div class="amk-kpi"><span>Unattributed</span><b>2.1%</b><em>620 tokens</em></div></div>
   <div class="amk-tiles">
     <div class="amk-pane">
-      <div class="amk-ph"><b>Consumer token usage</b><span class="amk-chip">Total tokens</span></div>
+      <div class="amk-ph"><b>Consumer token usage</b><span class="amk-chip">Stacked · provider</span></div>
       <div class="amk-hbar"><b>greranich</b><div class="bar"><i class="p" style="width:72%"></i><i style="width:18%;background:var(--diag-sky)"></i></div><span>16.2K</span></div>
       <div class="amk-hbar"><b>jmatis</b><div class="bar"><i class="p" style="width:38%"></i><i style="width:28%;background:var(--diag-sky)"></i></div><span>9.8K</span></div>
       <div class="amk-hbar"><b>0aacgcgb</b><div class="bar"><i class="p" style="width:22%"></i><i style="width:8%;background:var(--diag-sky)"></i></div><span>4.1K</span></div>
+      <div class="amk-hbar"><b>coding-agent</b><div class="bar"><i class="p" style="width:12%"></i><i style="width:4%;background:var(--diag-sky)"></i></div><span>2.4K</span></div>
       <div class="amk-legend"><span><i style="background:#8b7cf6"></i>openai</span><span><i style="background:var(--diag-sky)"></i>azure</span></div>
     </div>
     <div class="amk-pane">
-      <div class="amk-ph"><b>Cost per consumer</b></div>
+      <div class="amk-ph"><b>Cost per consumer</b><span class="amk-chip">USD</span></div>
       <div class="amk-hbar"><b>greranich</b><div class="bar"><i class="p" style="width:100%"></i></div><span>$0.042</span></div>
       <div class="amk-hbar"><b>jmatis</b><div class="bar"><i class="p" style="width:58%"></i></div><span>$0.024</span></div>
       <div class="amk-hbar"><b>0aacgcgb</b><div class="bar"><i class="p" style="width:22%"></i></div><span>$0.009</span></div>
+      <div class="amk-hbar"><b>coding-agent</b><div class="bar"><i class="p" style="width:12%"></i></div><span>$0.005</span></div>
+      <p class="amk-foot">Cost follows token mix — openai prompts dominate for greranich.</p>
     </div>
     <div class="amk-pane">
       <div class="amk-ph"><b>Requests per route</b></div>
       <div class="amk-hbar"><b>azure-chat</b><div class="bar"><i class="o" style="width:100%"></i></div><span>18</span></div>
       <div class="amk-hbar"><b>openai-gpt</b><div class="bar"><i style="width:56%;background:#c4b5fd"></i></div><span>10</span></div>
+      <div class="amk-hbar"><b>bedrock-claude</b><div class="bar"><i style="width:34%;background:var(--mark)"></i></div><span>6</span></div>
       <div class="amk-hbar"><b>services</b><div class="bar"><i style="width:28%;background:var(--diag-sky)"></i></div><span>5</span></div>
+      <ul class="amk-alerts" style="margin-top:8px"><li class="warn"><b>azure-chat · 58% of requests</b><span>Highest route share in window</span></li></ul>
     </div>
     <div class="amk-pane">
       <div class="amk-ph"><b>LLM latency (avg)</b><span class="amk-chip">per 30m</span></div>
-      <svg viewBox="0 0 400 72" class="amk-chart" aria-hidden="true">
-        <path d="M0 60H400" class="g"/><path d="M0 30H400" class="g"/>
-        <rect x="18" y="28" width="8" height="32" fill="#93c5fd"/><rect x="28" y="18" width="8" height="42" fill="#8b7cf6"/><rect x="38" y="36" width="8" height="24" fill="var(--mark)"/><rect x="48" y="40" width="8" height="20" fill="var(--diag-sky)"/>
-        <rect x="78" y="24" width="8" height="36" fill="#93c5fd"/><rect x="88" y="12" width="8" height="48" fill="#8b7cf6"/><rect x="98" y="30" width="8" height="30" fill="var(--mark)"/><rect x="108" y="38" width="8" height="22" fill="var(--diag-sky)"/>
-        <rect x="138" y="22" width="8" height="38" fill="#93c5fd"/><rect x="148" y="10" width="8" height="50" fill="#8b7cf6"/><rect x="158" y="28" width="8" height="32" fill="var(--mark)"/><rect x="168" y="36" width="8" height="24" fill="var(--diag-sky)"/>
-        <rect x="198" y="26" width="8" height="34" fill="#93c5fd"/><rect x="208" y="14" width="8" height="46" fill="#8b7cf6"/><rect x="218" y="32" width="8" height="28" fill="var(--mark)"/><rect x="228" y="40" width="8" height="20" fill="var(--diag-sky)"/>
-        <rect x="258" y="20" width="8" height="40" fill="#93c5fd"/><rect x="268" y="8" width="8" height="52" fill="#8b7cf6"/><rect x="278" y="26" width="8" height="34" fill="var(--mark)"/><rect x="288" y="34" width="8" height="26" fill="var(--diag-sky)"/>
-        <rect x="318" y="24" width="8" height="36" fill="#93c5fd"/><rect x="328" y="12" width="8" height="48" fill="#8b7cf6"/><rect x="338" y="30" width="8" height="30" fill="var(--mark)"/><rect x="348" y="38" width="8" height="22" fill="var(--diag-sky)"/>
+      <svg viewBox="0 0 400 88" class="amk-chart tok" aria-hidden="true">
+        <path d="M0 72H400" class="g"/><path d="M0 48H400" class="g"/><path d="M0 24H400" class="g"/>
+        <text x="4" y="22" class="lb">30</text><text x="4" y="52" class="lb">15</text>
+        <rect x="16" y="36" width="7" height="36" fill="#93c5fd"/><rect x="25" y="22" width="7" height="50" fill="#8b7cf6"/><rect x="34" y="44" width="7" height="28" fill="var(--mark)"/><rect x="43" y="52" width="7" height="20" fill="var(--diag-sky)"/>
+        <rect x="70" y="32" width="7" height="40" fill="#93c5fd"/><rect x="79" y="14" width="7" height="58" fill="#8b7cf6"/><rect x="88" y="40" width="7" height="32" fill="var(--mark)"/><rect x="97" y="50" width="7" height="22" fill="var(--diag-sky)"/>
+        <rect x="124" y="28" width="7" height="44" fill="#93c5fd"/><rect x="133" y="10" width="7" height="62" fill="#8b7cf6"/><rect x="142" y="36" width="7" height="36" fill="var(--mark)"/><rect x="151" y="46" width="7" height="26" fill="var(--diag-sky)"/>
+        <rect x="178" y="34" width="7" height="38" fill="#93c5fd"/><rect x="187" y="18" width="7" height="54" fill="#8b7cf6"/><rect x="196" y="42" width="7" height="30" fill="var(--mark)"/><rect x="205" y="52" width="7" height="20" fill="var(--diag-sky)"/>
+        <rect x="232" y="26" width="7" height="46" fill="#93c5fd"/><rect x="241" y="8" width="7" height="64" fill="#8b7cf6"/><rect x="250" y="34" width="7" height="38" fill="var(--mark)"/><rect x="259" y="44" width="7" height="28" fill="var(--diag-sky)"/>
+        <rect x="286" y="30" width="7" height="42" fill="#93c5fd"/><rect x="295" y="12" width="7" height="60" fill="#8b7cf6"/><rect x="304" y="38" width="7" height="34" fill="var(--mark)"/><rect x="313" y="48" width="7" height="24" fill="var(--diag-sky)"/>
+        <rect x="340" y="32" width="7" height="40" fill="#93c5fd"/><rect x="349" y="16" width="7" height="56" fill="#8b7cf6"/><rect x="358" y="40" width="7" height="32" fill="var(--mark)"/><rect x="367" y="50" width="7" height="22" fill="var(--diag-sky)"/>
+        <text x="16" y="84" class="lb">4PM</text><text x="178" y="84" class="lb">10PM</text><text x="340" y="84" class="lb">6AM</text>
       </svg>
       <div class="amk-legend"><span><i style="background:#93c5fd"></i>gpt-4o</span><span><i style="background:#8b7cf6"></i>o3-mini</span><span><i></i>gpt-4</span><span><i style="background:var(--diag-sky)"></i>gpt-3.5</span></div>
     </div>
