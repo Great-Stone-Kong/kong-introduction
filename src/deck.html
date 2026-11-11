@@ -276,6 +276,9 @@ html[data-theme="light"] .amk-btn.pri{background:var(--g900);color:#fff;border-c
 #am-cost .amk-alerts li,#am-obs .amk-alerts li{padding:5px 8px}
 #am-cost .amk-row,#am-obs .amk-row{padding:3px 0}
 #am-cost .amk-rules{margin-top:8px}
+#am-cost .amk-main>.amk-stack>.amk-p{display:flex;flex-direction:column}
+#am-cost .amk-val{margin-top:auto;padding-top:10px;border-top:1px solid var(--line);font-size:12.5px;line-height:1.55;color:var(--g300)}
+#am-cost .amk-val b{display:block;font:800 11px var(--font);letter-spacing:.06em;color:var(--mark);margin:0 0 4px}
 #am-obs .amk-tr2{padding:3px 4px}
 #am-obs .amk-dl{gap:4px 10px;font-size:12px}
 /* 목업 창 */
@@ -6549,6 +6552,7 @@ lowest-usage · semantic · priority</pre></div>
       <p class="amk-foot">Layer negotiated, regional, and self-hosted rates on top of list price.</p>
     </div>
   </div>
+  <div class="amk-val"><b>가치</b> 제공사 · 리전 · 자체 호스팅 단가를 하나의 유효 단가로 맞춰, Gateway 사용량이 바로 재무 이벤트가 됩니다.</div>
 </div>
 
 <div class="amk-p" data-kg="cost" data-kp="attr">
@@ -6564,6 +6568,7 @@ lowest-usage · semantic · priority</pre></div>
     </tbody></table>
     <p class="amk-foot">Drill from aggregate spend down to the individual request, model, tokens, and cost.</p>
   </div>
+  <div class="amk-val"><b>가치</b> 사용자 · 팀 · 앱 단위로 지출을 붙여, 집계에서 요청 한 건까지 추적할 수 있게 합니다.</div>
 </div>
 
 <div class="amk-p" data-kg="cost" data-kp="budget">
@@ -6577,6 +6582,7 @@ lowest-usage · semantic · priority</pre></div>
     <tr><td><b>Organization ceiling</b></td><td><span class="amk-st ok">61%</span> · $18.2K / $30K</td><td>Org</td><td>1 notify</td><td>1 month</td><td>$30,000</td></tr>
     <tr><td><b>Autonomous agents · 24h</b></td><td><span class="amk-st ok">44%</span> · 88M / 200M tok</td><td>Agents</td><td>notify · throttle</td><td>24 hours</td><td>200M tokens</td></tr>
   </tbody></table>
+  <div class="amk-val"><b>가치</b> 주체 · 기간별 한도와 임계 액션으로, 초과 전에 알리고 필요하면 호출을 멈춥니다.</div>
 </div>
 
 <div class="amk-p" data-kg="cost" data-kp="ctrl">
@@ -6624,6 +6630,7 @@ lowest-usage · semantic · priority</pre></div>
       </tbody></table>
     </div>
   </div>
+  <div class="amk-val"><b>가치</b> 캐시 · 라우팅 · 압축처럼 이미 잡은 절감과 아직 못 잡은 기회를 구분해, 어디를 더 줄일지 보여줍니다.</div>
 </div>
 
 <div class="amk-p" data-kg="cost" data-kp="mon">
@@ -6641,6 +6648,7 @@ lowest-usage · semantic · priority</pre></div>
     <tr><td><b>Partner agent X</b></td><td>Per call</td><td class="r">42K calls</td><td class="r">$2,100</td><td class="r">$740</td><td class="r">65%</td><td><span class="amk-tr"><i style="width:44%"></i></span></td></tr>
   </tbody></table>
   <div class="amk-rules"><div><b>Usage-based metering</b><span>Meter model, agent, API, and MCP usage per customer.</span></div><div class="over"><b>Contoso · entitlement 100%</b><span>Plan entitlement reached · further usage limited</span></div></div>
+  <div class="amk-val"><b>가치</b> 고객 · 상품별 사용량 · 매출 · AI 원가를 맞춰, 마진과 엔타이틀먼트를 한눈에 봅니다.</div>
 </div>
 
 </div></div></div></div>
