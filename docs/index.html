@@ -135,13 +135,14 @@ html[data-theme="light"] .nr{--nr-bg:#101110;border-right-color:#101110}
 .ov-hand .th-light{display:none}
 html[data-theme="light"] .ov-hand .th-dark{display:none}
 html[data-theme="light"] .ov-hand .th-light{display:block}
+#overview:has(.ov-pillar:hover) .ov-hand img,#overview:has(.ov-pillar:focus-visible) .ov-hand img{opacity:.28}
 .ov-era{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:4px clamp(8px,2vw,28px);margin:6px 0 0;position:relative;z-index:1}
 .ov-era::before{content:"";position:absolute;left:50%;top:12%;bottom:12%;width:1px;background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--lime) 40%,transparent),transparent);transform:translateX(-50%);pointer-events:none;z-index:0}
 .ov-plus{position:relative;z-index:2;align-self:center;width:clamp(56px,7vw,72px);height:clamp(56px,7vw,72px);border-radius:50%;display:grid;place-items:center;font:900 clamp(30px,4vw,40px)/1 var(--font);color:var(--on-lime);background:var(--lime);box-shadow:0 0 0 8px color-mix(in srgb,var(--lime) 18%,transparent),0 0 0 18px color-mix(in srgb,var(--lime) 8%,transparent),0 0 48px color-mix(in srgb,var(--lime) 50%,transparent)}
 .ov-plus::before,.ov-plus::after{content:"";position:absolute;border:1px solid color-mix(in srgb,var(--lime) 28%,transparent);border-radius:12px;pointer-events:none}
 .ov-plus::before{inset:-18px;transform:rotate(12deg)}
 .ov-plus::after{inset:-34px;transform:rotate(-8deg);opacity:.55}
-.ov-pillar{appearance:none;-webkit-appearance:none;border:0;background:transparent;padding:4px 4px 0;margin:0;text-align:center;font-family:var(--font);color:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0;border-radius:0;transition:transform .18s ease;position:relative;z-index:1}
+.ov-pillar{appearance:none;-webkit-appearance:none;border:0;background:transparent;padding:4px 4px 0;margin:0;text-align:center;font-family:var(--font);color:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0;border-radius:0;transition:transform .18s ease;position:relative;z-index:3}
 .ov-pillar:hover{transform:translateY(-3px)}
 .ov-pillar:focus-visible{outline:2px solid var(--lime);outline-offset:8px;border-radius:12px}
 .ov-pillar .ov-k{font:800 12px var(--font);letter-spacing:.16em;text-transform:uppercase;color:var(--mark);-webkit-text-stroke:.6px color-mix(in srgb,var(--navy) 75%,transparent);paint-order:stroke fill;text-shadow:0 0 10px var(--navy),0 1px 0 var(--navy)}
