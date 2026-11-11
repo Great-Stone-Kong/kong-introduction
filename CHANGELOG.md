@@ -9,7 +9,7 @@
 
 ### 변경
 
-- Kong 기업 소개 > 개요: API/AI Gateway 이동 표기에 좌측 레일 경로 아이콘 · 호버 효과 추가
+- Kong 기업 소개 > 개요: API/AI Gateway 이동 표기를 Gateway 아이콘 · 좌측 화살표 · 상시 점멸로 정리
 - AI Management > Catalog · AI Registry: MCP registries Tech preview 태그 제거
 - AI Management > AI Cost Management: konghq.com Cost Management UI를 참고해 탭별 HTML 목업 재구성
 - AI Management > AI Cost Management: Dashboard 탭 목업 세로 길이 축소
