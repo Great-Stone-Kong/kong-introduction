@@ -259,11 +259,11 @@ html[data-theme="light"] .amk-btn.pri{background:var(--g900);color:#fff;border-c
 #am-cost .amk-stack>[data-kp]:not(.on) .on,
 #am-obs .amk-stack>[data-kp]:not(.on) .on{visibility:hidden}
 #am-cost .amk-main,#am-obs .amk-main{padding:10px 12px}
-#am-cost .amk-hd{margin:0 0 6px}
-#am-cost .amk-hd h3{font-size:17px}
-#am-cost .amk-hd .amk-desc{margin:3px 0 0;font-size:12px}
+#am-cost .amk-hd,#am-obs .amk-hd{margin:0 0 6px}
+#am-cost .amk-hd h3,#am-obs .amk-hd h3{font-size:17px}
+#am-cost .amk-hd .amk-desc,#am-obs .amk-hd .amk-desc{margin:3px 0 0;font-size:12px}
 #am-cost .amk-tool,#am-cost .amk-kpis,#am-cost .amk-info,#am-cost .amk-map,
-#am-obs .amk-tool,#am-obs .amk-kpis,#am-obs .amk-q{margin-bottom:7px}
+#am-obs .amk-tool,#am-obs .amk-kpis,#am-obs .amk-q,#am-obs .amk-tiles{margin-bottom:7px}
 #am-cost .amk-kpi,#am-obs .amk-kpi{padding:6px 9px}
 #am-cost .amk-kpi b,#am-obs .amk-kpi b{font-size:16px}
 #am-cost .amk-tbl td,#am-cost .amk-tbl th,
@@ -279,8 +279,31 @@ html[data-theme="light"] .amk-btn.pri{background:var(--g900);color:#fff;border-c
 #am-cost .amk-main>.amk-stack>.amk-p{display:flex;flex-direction:column}
 #am-cost .amk-val{margin-top:auto;padding-top:10px;border-top:1px solid var(--line);font-size:12.5px;line-height:1.55;color:var(--g300)}
 #am-cost .amk-val b{display:block;font:800 11px var(--font);letter-spacing:.06em;color:var(--mark);margin:0 0 4px}
-#am-obs .amk-tr2{padding:3px 4px}
+#am-obs .amk-tr2{padding:2px 4px;grid-template-columns:minmax(150px,230px) minmax(0,1fr) 54px;font-size:11.5px;gap:8px}
+#am-obs .amk-tr2.d1 .amk-trl{padding-left:12px}
+#am-obs .amk-tr2.d2 .amk-trl{padding-left:24px}
+#am-obs .amk-trk{height:10px}
 #am-obs .amk-dl{gap:4px 10px;font-size:12px}
+#am-obs .amk-tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#am-obs .amk-tiles .wide{grid-column:1/-1}
+#am-obs .amk-hbar{display:grid;grid-template-columns:92px minmax(0,1fr) 40px;gap:6px;align-items:center;font-size:11.5px;margin:0 0 5px}
+#am-obs .amk-hbar b{font-weight:600;color:var(--heading);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#am-obs .amk-hbar span{font:600 11px var(--mono);color:var(--g300);text-align:right}
+#am-obs .amk-hbar .bar{height:14px;border-radius:3px;background:var(--card2);overflow:hidden;display:flex}
+#am-obs .amk-hbar .bar i{display:block;height:100%;background:var(--diag-sky);flex:none}
+#am-obs .amk-hbar .bar i.p{background:#8b7cf6}
+#am-obs .amk-hbar .bar i.o{background:var(--diag-amber)}
+#am-obs .amk-hbar .bar i.g{background:var(--mark)}
+#am-obs .amk-vbars{display:flex;align-items:flex-end;gap:10px;height:72px;padding:0 4px}
+#am-obs .amk-vbars>div{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end}
+#am-obs .amk-vbars i{display:block;width:100%;max-width:36px;border-radius:3px 3px 0 0;background:#8b7cf6}
+#am-obs .amk-vbars i.o{background:var(--diag-amber)}
+#am-obs .amk-vbars i.p2{background:#c4b5fd}
+#am-obs .amk-vbars em{font:600 10px var(--mono);color:var(--g400);font-style:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+#am-obs .amk-donut{display:flex;align-items:center;gap:14px;min-height:72px}
+#am-obs .amk-donut svg{width:64px;height:64px;flex:none}
+#am-obs .amk-stack-bar{display:flex;height:14px;border-radius:3px;overflow:hidden;background:var(--card2)}
+#am-obs .amk-stack-bar i{display:block;height:100%}
 /* 목업 창 */
 .amk-win{border:1px solid var(--line2);border-radius:12px;background:var(--navy-2);overflow:hidden;margin:14px 0 8px;box-shadow:0 18px 40px -26px rgba(0,0,0,.55)}
 .amk-bar{display:flex;align-items:center;gap:7px;padding:9px 14px;border-bottom:1px solid var(--line);background:var(--card);font-size:12px;color:var(--g300)}
@@ -6661,8 +6684,130 @@ lowest-usage · semantic · priority</pre></div>
   <div class="eyebrow">AI Observability</div>
   <h2>세션 · 단계 · 모델 호출 단위 관측</h2>
   <p class="sub">API · AI · 이벤트 트래픽을 한 관측 계층으로 모으고, 요청 하나가 아니라 AI 세션 전체를 추적하며, 모델 · 에이전트별 토큰과 비용을 실시간으로 봅니다.</p>
-  <div class="tabs am-tabs" data-amk-sw="obs" role="group"><button type="button" data-k="multi" class="on" aria-pressed="true">Multi-runtime · Multi-protocol</button><button type="button" data-k="trace" aria-pressed="false">Session tracing</button><button type="button" data-k="cost" aria-pressed="false">AI cost &amp; token visibility</button></div><div class="amk-win rv"><div class="amk-bar"><i></i><i></i><i></i><b>Konnect · Observability</b><span class="amk-tag">예시 화면</span></div><div class="amk-body"><nav class="amk-nav" aria-hidden="true"><span data-kg="obs" data-kh="multi" class="hl">Dashboards</span><span data-kg="obs" data-kh="cost">Explorer</span><span data-kg="obs" data-kh="trace">Debugger</span><span data-kg="obs" data-kh="logs">Logs</span></nav><div class="amk-main"><div class="amk-stack"><div class="amk-p on" data-kg="obs" data-kp="multi"><div class="amk-q"><span class="on">API</span><span class="on">AI · LLM</span><span class="on">MCP</span><span class="on">A2A</span><span class="on">Event · Kafka</span><span class="on">Service Mesh</span></div><div class="amk-kpis five"><div class="amk-kpi"><span>API Gateway</span><b>18.4M</b><em>요청</em></div><div class="amk-kpi"><span>AI Gateway</span><b>842M</b><em>토큰</em></div><div class="amk-kpi"><span>MCP</span><b>1.3M</b><em>도구 호출</em></div><div class="amk-kpi"><span>Event Gateway</span><b>92M</b><em>메시지</em></div><div class="amk-kpi"><span>Service Mesh</span><b>6.1M</b><em>요청</em></div></div><div class="amk-grid"><div class="amk-pane"><div class="amk-ph"><b>통합 대시보드 · 최근 7일</b></div><svg viewBox="0 0 400 88" class="amk-chart" aria-hidden="true"><path d="M0 74H400" class="g"/><path d="M0 46H400" class="g"/><path d="M0 18H400" class="g"/><path d="M0 60 L57 56 L114 58 L171 46 L228 48 L285 40 L342 42 L400 34" class="ln"/><path d="M0 70 L57 66 L114 64 L171 60 L228 54 L285 52 L342 46 L400 42" class="l2"/><path d="M0 78 L57 76 L114 74 L171 74 L228 68 L285 70 L342 64 L400 62" class="l3"/></svg><div class="amk-legend"><span><i></i>API 요청</span><span><i class="t"></i>AI 토큰</span><span><i class="a"></i>이벤트 메시지</span></div></div><div class="amk-pane"><div class="amk-ph"><b>관측 정책</b></div><ul class="amk-alerts"><li><b>전역 관측 정책 적용</b><span>모든 Gateway 트랜잭션을 수집합니다.</span></li><li><b>OTel 내보내기</b><span>Datadog · Grafana · Dynatrace · Prometheus</span></li><li><b>Konnect MCP 서버</b><span>에이전트가 대시보드 · 리포트를 직접 만듭니다.</span></li><li><b>세션 단위 상관</b><span>모델 · 도구 · 에이전트 호출을 한 트레이스로 묶습니다.</span></li></ul></div></div></div><div class="amk-p" data-kg="obs" data-kp="trace"><div class="amk-grid tr"><div class="amk-pane"><div class="amk-ph"><b>세션 · PR 리뷰 #482</b><span class="amk-chip">8.6s · 21.4K 토큰 · $0.14</span></div><div class="amk-tr2 m "><span class="amk-trl">계획 · 모델 호출</span><span class="amk-trk"><i style="left:0%;width:14%"></i></span><span class="amk-trt">1.2s</span></div><div class="amk-tr2 t sel"><span class="amk-trl">github.get_pr · MCP 도구</span><span class="amk-trk"><i style="left:16%;width:5%"></i></span><span class="amk-trt">0.3s</span></div><div class="amk-tr2 m "><span class="amk-trl">코드 분석 · 모델 호출</span><span class="amk-trk"><i style="left:21%;width:25%"></i></span><span class="amk-trt">2.1s</span></div><div class="amk-tr2 a "><span class="amk-trl">test-agent · A2A</span><span class="amk-trk"><i style="left:46%;width:40%"></i></span><span class="amk-trt">3.4s</span></div><div class="amk-tr2 a err"><span class="amk-trl">deploy-agent · A2A</span><span class="amk-trk"><i style="left:86%;width:10%"></i></span><span class="amk-trt">0.9s</span></div><div class="amk-tr2 m "><span class="amk-trl">리뷰 작성 · 모델 호출</span><span class="amk-trk"><i style="left:89%;width:11%"></i></span><span class="amk-trt">0.7s</span></div><div class="amk-legend"><span><i class="m"></i>모델</span><span><i class="t"></i>MCP 도구</span><span><i class="a"></i>에이전트</span><span><i class="over"></i>실패</span></div></div><div class="amk-pane"><div class="amk-ph"><b>선택한 단계</b><span class="amk-st ok">200</span></div><dl class="amk-dl"><dt>단계</dt><dd>github.get_pr · MCP 도구</dd><dt>입력</dt><dd><code>{"repo":"web","pr":482}</code></dd><dt>출력</dt><dd>변경 파일 12개 · diff 요약</dd><dt>속성</dt><dd>mcp.server=github-mcp · consumer=coding-agent</dd><dt>지연</dt><dd>0.3s</dd><dt>실패 지점</dt><dd class="bad">deploy-agent · 504 업스트림 타임아웃</dd></dl></div></div></div><div class="amk-p" data-kg="obs" data-kp="cost"><div class="amk-q"><span><i>지표</i>토큰 · 비용 · 지연</span><span><i>그룹</i>모델</span><span><i>기간</i>최근 7일</span></div><table class="amk-tbl"><thead><tr><th>모델</th><th class="r">토큰</th><th class="r">비용</th><th class="r">p95 지연</th><th>토큰 비중</th></tr></thead><tbody><tr><td>Anthropic · Claude</td><td class="r">345M</td><td class="r">$19.4K</td><td class="r">2.1s</td><td class="w"><span class="amk-tr"><i style="width:100%"></i></span></td></tr><tr><td>OpenAI · GPT</td><td class="r">278M</td><td class="r">$15.2K</td><td class="r">1.7s</td><td class="w"><span class="amk-tr"><i style="width:81%"></i></span></td></tr><tr><td>Google · Gemini</td><td class="r">143M</td><td class="r">$8.1K</td><td class="r">1.4s</td><td class="w"><span class="amk-tr"><i style="width:41%"></i></span></td></tr><tr><td>Amazon Bedrock</td><td class="r">76M</td><td class="r">$5.5K</td><td class="r">1.9s</td><td class="w"><span class="amk-tr"><i style="width:22%"></i></span></td></tr></tbody></table><div class="amk-grid" style="margin-top:8px"><div class="amk-pane"><div class="amk-ph"><b>에이전트별 토큰</b></div><div class="amk-row"><span class="amk-rl">coding-agent</span><span class="amk-tr"><i style="width:100%"></i></span><span class="amk-rv">312M</span></div><div class="amk-row"><span class="amk-rl">support-bot</span><span class="amk-tr"><i style="width:58%"></i></span><span class="amk-rv">181M</span></div><div class="amk-row"><span class="amk-rl">research-agent</span><span class="amk-tr"><i style="width:41%"></i></span><span class="amk-rv">128M</span></div><div class="amk-row"><span class="amk-rl">ops-bot</span><span class="amk-tr"><i style="width:22%"></i></span><span class="amk-rv">68M</span></div></div><div class="amk-pane"><div class="amk-ph"><b>추세 경고</b></div><ul class="amk-alerts"><li class="warn"><b>research-agent · 비용 +62%</b><span>지난주 대비 급증 · 청구 전에 확인</span></li><li class="over"><b>ops-bot · p95 지연 3.8s</b><span>배포 에이전트 타임아웃과 상관</span></li><li><b>OTel 내보내기</b><span>비용 · 사용량 데이터를 원하는 플랫폼으로</span></li></ul></div></div></div></div></div></div></div>
-  <p class="am-say"><b>핵심</b> 누가 작업을 시켰는지, 무슨 일이 있었는지, 비용이 얼마였는지, 어디서 실패했는지를 한 화면에서 답합니다.</p>
+  <div class="tabs am-tabs" data-amk-sw="obs" role="group"><button type="button" data-k="multi" class="on" aria-pressed="true">Multi-runtime · Multi-protocol</button><button type="button" data-k="trace" aria-pressed="false">Session tracing</button><button type="button" data-k="cost" aria-pressed="false">AI cost &amp; token visibility</button></div><div class="amk-win rv"><div class="amk-bar"><i></i><i></i><i></i><b>Konnect · Observability</b><span class="amk-tag">예시 화면</span></div><div class="amk-body"><nav class="amk-nav" aria-hidden="true"><span data-kg="obs" data-kh="multi" class="hl">Dashboards</span><span data-kg="obs" data-kh="cost">Explorer</span><span data-kg="obs" data-kh="trace">Debugger</span><span data-kg="obs" data-kh="logs">Logs</span></nav><div class="amk-main"><div class="amk-stack">
+<div class="amk-p on" data-kg="obs" data-kp="multi">
+  <div class="amk-hd"><span class="amk-crumb">Analytics · Dashboard</span><h3>AI Gateway Dashboard</h3><p class="amk-desc">Model · provider · status · security · token tiles from live AI Gateway traffic.</p></div>
+  <div class="amk-tool"><span class="amk-pill on">Last 7 days</span><span class="amk-btn pri">+ New tile</span></div>
+  <div class="amk-tiles">
+    <div class="amk-pane">
+      <div class="amk-ph"><b>GenAI model usage count</b><span class="amk-chip">Request model</span></div>
+      <div class="amk-hbar"><b>o3-mini</b><div class="bar"><i class="p" style="width:100%"></i></div><span>21</span></div>
+      <div class="amk-hbar"><b>gpt-4o</b><div class="bar"><i class="p" style="width:52%"></i></div><span>11</span></div>
+      <div class="amk-hbar"><b>gpt-4</b><div class="bar"><i class="p" style="width:24%"></i></div><span>5</span></div>
+      <div class="amk-hbar"><b>gpt-3.5-turbo</b><div class="bar"><i class="p" style="width:14%"></i></div><span>3</span></div>
+    </div>
+    <div class="amk-pane">
+      <div class="amk-ph"><b>GenAI provider usage count</b></div>
+      <div class="amk-vbars"><div><i class="p" style="height:78%"></i><em>openai</em></div><div><i class="p2" style="height:42%"></i><em>azure</em></div><div><i style="height:28%;background:var(--mark)"></i><em>bedrock</em></div></div>
+    </div>
+    <div class="amk-pane">
+      <div class="amk-ph"><b>AI status code</b></div>
+      <div class="amk-donut">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22" fill="none" stroke="var(--card2)" stroke-width="10"/><circle cx="32" cy="32" r="22" fill="none" stroke="var(--mark)" stroke-width="10" stroke-dasharray="128 12" stroke-dashoffset="0" transform="rotate(-90 32 32)"/><circle cx="32" cy="32" r="22" fill="none" stroke="var(--diag-amber)" stroke-width="10" stroke-dasharray="8 132" stroke-dashoffset="-128" transform="rotate(-90 32 32)"/></svg>
+        <div class="amk-legend" style="margin:0;flex-direction:column;gap:6px"><span><i style="background:var(--mark)"></i>2xx · 96%</span><span><i class="t"></i>4xx · 3%</span><span><i class="over"></i>5xx · 1%</span></div>
+      </div>
+    </div>
+    <div class="amk-pane">
+      <div class="amk-ph"><b>AI security report</b><span class="amk-chip">By route</span></div>
+      <div class="amk-vbars"><div><i class="o" style="height:72%"></i><em>azure-chat</em></div><div><i class="p2" style="height:40%"></i><em>openai-gpt</em></div><div><i style="height:18%;background:var(--diag-sky)"></i><em>bedrock-claude</em></div></div>
+    </div>
+    <div class="amk-pane wide">
+      <div class="amk-ph"><b>Token usage statistics by provider</b><span class="amk-chip">Total tokens</span></div>
+      <svg viewBox="0 0 420 72" class="amk-chart" aria-hidden="true"><path d="M0 60H420" class="g"/><path d="M0 30H420" class="g"/><path d="M0 58 L35 54 L70 52 L105 48 L140 50 L175 42 L210 40 L245 36 L280 38 L315 28 L350 22 L385 12 L420 8" class="ln"/><path d="M0 62 L35 60 L70 58 L105 56 L140 55 L175 52 L210 50 L245 48 L280 46 L315 44 L350 40 L385 36 L420 34" class="l2"/><text x="8" y="14" class="lb">4K</text><text x="8" y="34" class="lb">2K</text></svg>
+      <div class="amk-legend"><span><i></i>openai</span><span><i class="t"></i>azure</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="amk-p" data-kg="obs" data-kp="trace">
+  <div class="amk-hd"><span class="amk-crumb">Debugger · Request</span><h3><span class="amk-st ok">200</span> GET /ai/sessions/pr-review</h3><p class="amk-desc">Latency total 8.64s · session PR review #482 · Summary and Trace together.</p></div>
+  <div class="amk-grid tr">
+    <div class="amk-pane">
+      <div class="amk-ph"><b>Trace</b><span class="amk-chip">0ms → 8.64s</span></div>
+      <div class="amk-tr2 p"><span class="amk-trl">kong</span><span class="amk-trk"><i style="left:0%;width:100%"></i></span><span class="amk-trt">8.64s</span></div>
+      <div class="amk-tr2 p d1"><span class="amk-trl">kong.phase.certificate</span><span class="amk-trk"><i style="left:0%;width:1%"></i></span><span class="amk-trt">0.4ms</span></div>
+      <div class="amk-tr2 p d1"><span class="amk-trl">kong.phase.rewrite</span><span class="amk-trk"><i style="left:0%;width:1%"></i></span><span class="amk-trt">0.6ms</span></div>
+      <div class="amk-tr2 p d1"><span class="amk-trl">kong.phase.access</span><span class="amk-trk"><i style="left:0%;width:2%"></i></span><span class="amk-trt">18ms</span></div>
+      <div class="amk-tr2 p d2"><span class="amk-trl">kong.router</span><span class="amk-trk"><i style="left:0%;width:1%"></i></span><span class="amk-trt">0.1ms</span></div>
+      <div class="amk-tr2 p d2"><span class="amk-trl">kong.access.plugin.key-auth</span><span class="amk-trk"><i style="left:0%;width:1%"></i></span><span class="amk-trt">0.6ms</span></div>
+      <div class="amk-tr2 p d2"><span class="amk-trl">kong.access.plugin.ai-prompt-guard</span><span class="amk-trk"><i style="left:1%;width:1%"></i></span><span class="amk-trt">4ms</span></div>
+      <div class="amk-tr2 p d2"><span class="amk-trl">kong.dns</span><span class="amk-trk"><i style="left:1%;width:1%"></i></span><span class="amk-trt">0.3ms</span></div>
+      <div class="amk-tr2 m d1"><span class="amk-trl">plan · model call</span><span class="amk-trk"><i style="left:2%;width:12%"></i></span><span class="amk-trt">1.12s</span></div>
+      <div class="amk-tr2 m d2"><span class="amk-trl">openai · gpt-4o · prompt</span><span class="amk-trk"><i style="left:2%;width:4%"></i></span><span class="amk-trt">0.32s</span></div>
+      <div class="amk-tr2 m d2"><span class="amk-trl">openai · gpt-4o · completion</span><span class="amk-trk"><i style="left:6%;width:8%"></i></span><span class="amk-trt">0.80s</span></div>
+      <div class="amk-tr2 t d1 sel"><span class="amk-trl">github.get_pr · MCP tool</span><span class="amk-trk"><i style="left:14%;width:5%"></i></span><span class="amk-trt">0.31s</span></div>
+      <div class="amk-tr2 t d2"><span class="amk-trl">mcp.server=github-mcp</span><span class="amk-trk"><i style="left:14%;width:2%"></i></span><span class="amk-trt">0.12s</span></div>
+      <div class="amk-tr2 t d2"><span class="amk-trl">upstream · api.github.com</span><span class="amk-trk"><i style="left:16%;width:3%"></i></span><span class="amk-trt">0.19s</span></div>
+      <div class="amk-tr2 t d1"><span class="amk-trl">github.list_files · MCP tool</span><span class="amk-trk"><i style="left:19%;width:4%"></i></span><span class="amk-trt">0.28s</span></div>
+      <div class="amk-tr2 m d1"><span class="amk-trl">code analysis · model call</span><span class="amk-trk"><i style="left:23%;width:22%"></i></span><span class="amk-trt">1.96s</span></div>
+      <div class="amk-tr2 m d2"><span class="amk-trl">anthropic · claude-sonnet</span><span class="amk-trk"><i style="left:23%;width:22%"></i></span><span class="amk-trt">1.96s</span></div>
+      <div class="amk-tr2 t d1"><span class="amk-trl">jira.get_issue · MCP tool</span><span class="amk-trk"><i style="left:45%;width:3%"></i></span><span class="amk-trt">0.22s</span></div>
+      <div class="amk-tr2 a d1"><span class="amk-trl">test-agent · A2A</span><span class="amk-trk"><i style="left:48%;width:28%"></i></span><span class="amk-trt">2.48s</span></div>
+      <div class="amk-tr2 m d2"><span class="amk-trl">test-agent · model call</span><span class="amk-trk"><i style="left:48%;width:10%"></i></span><span class="amk-trt">0.88s</span></div>
+      <div class="amk-tr2 t d2"><span class="amk-trl">ci.run_suite · MCP tool</span><span class="amk-trk"><i style="left:58%;width:18%"></i></span><span class="amk-trt">1.52s</span></div>
+      <div class="amk-tr2 a d1 err"><span class="amk-trl">deploy-agent · A2A</span><span class="amk-trk"><i style="left:76%;width:12%"></i></span><span class="amk-trt">0.94s</span></div>
+      <div class="amk-tr2 a d2 err"><span class="amk-trl">deploy-agent · upstream timeout</span><span class="amk-trk"><i style="left:82%;width:6%"></i></span><span class="amk-trt">0.52s</span></div>
+      <div class="amk-tr2 m d1"><span class="amk-trl">review write · model call</span><span class="amk-trk"><i style="left:88%;width:10%"></i></span><span class="amk-trt">0.72s</span></div>
+      <div class="amk-tr2 p d1"><span class="amk-trl">kong.phase.header_filter</span><span class="amk-trk"><i style="left:98%;width:1%"></i></span><span class="amk-trt">0.7ms</span></div>
+      <div class="amk-tr2 p d1"><span class="amk-trl">kong.phase.body_filter</span><span class="amk-trk"><i style="left:99%;width:1%"></i></span><span class="amk-trt">0.5ms</span></div>
+      <div class="amk-legend"><span><i style="background:var(--mark)"></i>model</span><span><i class="t"></i>MCP tool</span><span><i class="a"></i>agent</span><span><i class="p"></i>kong phase</span><span><i class="over"></i>error</span></div>
+    </div>
+    <div class="amk-pane">
+      <div class="amk-ph"><b>Summary</b><span class="amk-st ok">200</span></div>
+      <dl class="amk-dl">
+        <dt>Step</dt><dd>github.get_pr · MCP tool</dd>
+        <dt>URL</dt><dd>https://ai.example.com/mcp/github</dd>
+        <dt>Input</dt><dd><code>{"repo":"web","pr":482}</code></dd>
+        <dt>Output</dt><dd>12 files changed · diff summary</dd>
+        <dt>Attrs</dt><dd>mcp.server=github-mcp · consumer=coding-agent</dd>
+        <dt>Latency</dt><dd>0.31s · session 8.64s</dd>
+        <dt>Tokens</dt><dd>21.4K · $0.14</dd>
+        <dt>Failure</dt><dd class="bad">deploy-agent · 504 upstream timeout</dd>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<div class="amk-p" data-kg="obs" data-kp="cost">
+  <div class="amk-hd"><span class="amk-crumb">Analytics · Dashboard</span><h3>AI cost &amp; token visibility</h3><p class="amk-desc">Consumer spend, route share, and model latency from the same AI Gateway stream.</p></div>
+  <div class="amk-tool"><span class="amk-pill on">Last 7 days</span><span class="amk-pill">Group · consumer</span></div>
+  <div class="amk-tiles">
+    <div class="amk-pane">
+      <div class="amk-ph"><b>Consumer token usage</b><span class="amk-chip">Total tokens</span></div>
+      <div class="amk-hbar"><b>greranich</b><div class="bar"><i class="p" style="width:72%"></i><i style="width:18%;background:var(--diag-sky)"></i></div><span>16.2K</span></div>
+      <div class="amk-hbar"><b>jmatis</b><div class="bar"><i class="p" style="width:38%"></i><i style="width:28%;background:var(--diag-sky)"></i></div><span>9.8K</span></div>
+      <div class="amk-hbar"><b>0aacgcgb</b><div class="bar"><i class="p" style="width:22%"></i><i style="width:8%;background:var(--diag-sky)"></i></div><span>4.1K</span></div>
+      <div class="amk-legend"><span><i style="background:#8b7cf6"></i>openai</span><span><i style="background:var(--diag-sky)"></i>azure</span></div>
+    </div>
+    <div class="amk-pane">
+      <div class="amk-ph"><b>Cost per consumer</b></div>
+      <div class="amk-hbar"><b>greranich</b><div class="bar"><i class="p" style="width:100%"></i></div><span>$0.042</span></div>
+      <div class="amk-hbar"><b>jmatis</b><div class="bar"><i class="p" style="width:58%"></i></div><span>$0.024</span></div>
+      <div class="amk-hbar"><b>0aacgcgb</b><div class="bar"><i class="p" style="width:22%"></i></div><span>$0.009</span></div>
+    </div>
+    <div class="amk-pane">
+      <div class="amk-ph"><b>Requests per route</b></div>
+      <div class="amk-hbar"><b>azure-chat</b><div class="bar"><i class="o" style="width:100%"></i></div><span>18</span></div>
+      <div class="amk-hbar"><b>openai-gpt</b><div class="bar"><i style="width:56%;background:#c4b5fd"></i></div><span>10</span></div>
+      <div class="amk-hbar"><b>services</b><div class="bar"><i style="width:28%;background:var(--diag-sky)"></i></div><span>5</span></div>
+    </div>
+    <div class="amk-pane">
+      <div class="amk-ph"><b>LLM latency (avg)</b><span class="amk-chip">per 30m</span></div>
+      <svg viewBox="0 0 400 72" class="amk-chart" aria-hidden="true">
+        <path d="M0 60H400" class="g"/><path d="M0 30H400" class="g"/>
+        <rect x="18" y="28" width="8" height="32" fill="#93c5fd"/><rect x="28" y="18" width="8" height="42" fill="#8b7cf6"/><rect x="38" y="36" width="8" height="24" fill="var(--mark)"/><rect x="48" y="40" width="8" height="20" fill="var(--diag-sky)"/>
+        <rect x="78" y="24" width="8" height="36" fill="#93c5fd"/><rect x="88" y="12" width="8" height="48" fill="#8b7cf6"/><rect x="98" y="30" width="8" height="30" fill="var(--mark)"/><rect x="108" y="38" width="8" height="22" fill="var(--diag-sky)"/>
+        <rect x="138" y="22" width="8" height="38" fill="#93c5fd"/><rect x="148" y="10" width="8" height="50" fill="#8b7cf6"/><rect x="158" y="28" width="8" height="32" fill="var(--mark)"/><rect x="168" y="36" width="8" height="24" fill="var(--diag-sky)"/>
+        <rect x="198" y="26" width="8" height="34" fill="#93c5fd"/><rect x="208" y="14" width="8" height="46" fill="#8b7cf6"/><rect x="218" y="32" width="8" height="28" fill="var(--mark)"/><rect x="228" y="40" width="8" height="20" fill="var(--diag-sky)"/>
+        <rect x="258" y="20" width="8" height="40" fill="#93c5fd"/><rect x="268" y="8" width="8" height="52" fill="#8b7cf6"/><rect x="278" y="26" width="8" height="34" fill="var(--mark)"/><rect x="288" y="34" width="8" height="26" fill="var(--diag-sky)"/>
+        <rect x="318" y="24" width="8" height="36" fill="#93c5fd"/><rect x="328" y="12" width="8" height="48" fill="#8b7cf6"/><rect x="338" y="30" width="8" height="30" fill="var(--mark)"/><rect x="348" y="38" width="8" height="22" fill="var(--diag-sky)"/>
+      </svg>
+      <div class="amk-legend"><span><i style="background:#93c5fd"></i>gpt-4o</span><span><i style="background:#8b7cf6"></i>o3-mini</span><span><i></i>gpt-4</span><span><i style="background:var(--diag-sky)"></i>gpt-3.5</span></div>
+    </div>
+  </div>
+</div>
+</div></div></div></div>
+<p class="am-say"><b>핵심</b> 누가 작업을 시켰는지, 무슨 일이 있었는지, 비용이 얼마였는지, 어디서 실패했는지를 한 화면에서 답합니다.</p>
   <p class="note">세션 · 턴 단위 트레이스(Advanced AI Observability)는 출시 예정입니다. Konnect Observability는 Konnect의 프리미엄 서비스이며, 기본 AI 관측은 AI Gateway에 포함됩니다. 화면의 값은 예시입니다.</p>
   <p class="note">출처: <a href="https://konghq.com/products/kong-konnect/features/api-observability" target="_blank" rel="noopener noreferrer">API and AI Observability ↗</a> · <a href="https://developer.konghq.com/observability/" target="_blank" rel="noopener noreferrer">Konnect Observability ↗</a> · <a href="https://konghq.com/blog/product-releases/ai-management-kong-konnect" target="_blank" rel="noopener noreferrer">Introducing AI Management in Kong Konnect ↗</a></p>
 </section>
