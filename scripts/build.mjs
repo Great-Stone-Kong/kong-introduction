@@ -103,6 +103,12 @@ function loadLibrary() {
       console.error(`build: library.yaml ${where}.type must be access|download`);
       process.exit(1);
     }
+    if (it.tag && !["Whitepaper", "Guideline", "Introduction"].includes(it.tag)) {
+      console.error(
+        `build: library.yaml ${where}.tag must be Whitepaper|Guideline|Introduction`
+      );
+      process.exit(1);
+    }
     const cover = it.cover || "wave";
     if (!["data", "wave", "mesh", "orb"].includes(cover)) {
       console.error(`build: library.yaml ${where}.cover must be data|wave|mesh|orb`);

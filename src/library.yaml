@@ -1,4 +1,5 @@
 # Library modal catalog (Korean resources). Built into deck as KONG_LIBRARY.
+# tag: Whitepaper | Guideline | Introduction  (optional card pill)
 # cover: data | wave | mesh | orb  (ebook art style; optional, default wave)
 items:
   - id: ai-gateway-korea-whitepaper
