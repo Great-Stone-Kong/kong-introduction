@@ -3881,8 +3881,8 @@ html[data-theme="light"] .ctr-c{background:rgba(255,255,255,.35)}
 @media (prefers-reduced-motion:reduce){.cpx.sw .cpx-bar,.cpx.sw .cpx-bar2{animation:none}.ctr.rv .ctr-c{opacity:1;transform:none;transition:none}}
 @media print{.ctr.rv .ctr-c{opacity:1!important;transform:none!important}.cpx .off{opacity:.5}}
 /* /i-cmp 4축 */
-#i2-feat .i2-ratelimit-win{margin:18px 0 28px}#i2-feat .i2-ratelimit-win .grid.g2>*{min-width:0}
-#i2-feat .i2-win-chart{display:block;width:100%;max-width:980px;height:auto;margin:6px auto 4px}
+#i2-feat .i2-ratelimit-win{margin:18px 0 28px}#i2-feat .i2-ratelimit-win .grid.g1>*{min-width:0}
+#i2-feat .i2-win-compare{margin:6px 0 4px}#i2-feat .i2-win-chart{display:block;width:100%;max-width:980px;height:auto}
 #i2-feat .i2-cost-sum .grid.g2>*{min-width:0}#i2-feat .i2-cost-sum pre.code{overflow-x:auto}
 #i2-feat .i2-cost-chart{display:block;width:100%;max-width:720px;height:auto;margin:6px auto 4px}
 #i2-feat .i2-cost-chart .ax{stroke:var(--line2);stroke-width:1}
@@ -6035,54 +6035,306 @@ lowest-usage · semantic · priority</pre></div>
 
   <div class="i2-ratelimit-win" id="i2-calendar-win">
     <h3 style="margin-top:14px">Rate Limit 윈도우 방식 · 캘린더 vs 롤링 비교</h3>
-    <p class="sub" style="margin-top:0">LLM 제공사의 월간 청구 주기 및 예산 리셋 주기에 한도를 정확히 맞추기 위해 캘린더 윈도우(Calendar Window)를 도입했습니다. 시간 경과에 따라 청구 경계가 밀리는 롤링 윈도우(Rolling Window)의 한계를 극복합니다.</p>
-    <div class="dia rv"><svg viewBox="0 0 980 300" class="i2-win-chart" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Rate Limit 롤링 윈도우와 캘린더 윈도우의 청구 주기 동기화 비교">
-      <!-- Top Section: Rolling Window -->
-      <g transform="translate(30, 20)">
-        <rect x="0" y="0" width="920" height="116" rx="10" fill="var(--svg-panel)" stroke="var(--line2)"/>
-        <text x="24" y="28" font-size="12" font-weight="800" fill="var(--danger-soft)">롤링 윈도우 (Rolling Window · 30일/시간 기준)</text>
-        <text x="24" y="46" font-size="11.5" fill="var(--svg-muted)">요청 시점 기준 직전 N시간/일을 계산하므로 시점에 따라 윈도우가 계속 이동</text>
+    <p class="sub" style="margin-top:0">월간 청구·예산 리셋은 달력 월 경계에 맞춰야 합니다. 롤링 윈도우는 고정 기간(예: 30일)이라 달력과 어긋나고, 캘린더 윈도우는 타임존 기준 월·주·일 경계에 맞춥니다.</p>
+    <div class="dia rv i2-win-compare">
+      <svg viewBox="0 0 980 420" class="i2-win-chart" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="롤링 윈도우는 달력 월에 맞출 수 없고 캘린더 윈도우는 달력 월에 정확히 맞출 수 있음">
+        <g transform="translate(20,16)">
+          <rect x="0" y="0" width="460" height="388" rx="14" fill="var(--svg-panel)" stroke="var(--danger-soft)" stroke-width="1.8"/>
+          <text x="24" y="32" font-size="13" font-weight="800" fill="var(--danger-soft)">롤링 윈도우 (Rolling)</text>
+          <text x="24" y="54" font-size="12" fill="var(--svg-muted)">고정 기간(예: 30일) · 요청 시점 기준 이동</text>
+          <rect x="24" y="68" width="196" height="26" rx="999" fill="var(--danger-bg)" stroke="var(--danger-soft)"/>
+          <text x="122" y="85" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--danger-soft)">달력 월에 맞출 수 없음</text>
+          <text x="24" y="118" font-size="12.5" font-weight="800" fill="var(--svg-fg)">1월 (청구 월)</text>
+          <text x="260" y="118" font-size="12.5" font-weight="800" fill="var(--svg-fg)">2월 (다음 달)</text>
+          <text x="430" y="118" text-anchor="end" font-size="11" fill="var(--svg-muted)">점선 = 청구 월 경계</text>
+          <rect x="20" y="128" width="220" height="168" rx="8" fill="none" stroke="var(--danger-soft)" stroke-width="1.4" stroke-dasharray="5 4"/>
+          <text x="42" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">일</text>
+          <text x="72" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">월</text>
+          <text x="102" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">화</text>
+          <text x="132" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">수</text>
+          <text x="162" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">목</text>
+          <text x="192" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">금</text>
+          <text x="222" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">토</text>
+          <text x="273" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">일</text>
+          <text x="303" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">월</text>
+          <text x="333" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">화</text>
+          <text x="363" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">수</text>
+          <text x="393" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">목</text>
+          <text x="423" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">금</text>
+          <text x="453" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">토</text>
+          <rect x="119" y="156" width="26" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <text x="132.0" y="169.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">1</text>
+          <rect x="149" y="156" width="26" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <text x="162.0" y="169.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">2</text>
+          <rect x="179" y="156" width="26" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <text x="192.0" y="169.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">3</text>
+          <rect x="209" y="156" width="26" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <text x="222.0" y="169.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">4</text>
+          <rect x="29" y="180" width="26" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <text x="42.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">5</text>
+          <rect x="59" y="180" width="26" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <text x="72.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">6</text>
+          <rect x="89" y="180" width="26" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <text x="102.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">7</text>
+          <rect x="119" y="180" width="26" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <text x="132.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">8</text>
+          <rect x="149" y="180" width="26" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <text x="162.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">9</text>
+          <rect x="179" y="180" width="26" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <text x="192.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">10</text>
+          <rect x="209" y="180" width="26" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <text x="222.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">11</text>
+          <rect x="29" y="204" width="26" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <text x="42.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">12</text>
+          <rect x="59" y="204" width="26" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <text x="72.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">13</text>
+          <rect x="89" y="204" width="26" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <text x="102.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">14</text>
+          <rect x="119" y="204" width="26" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <text x="132.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">15</text>
+          <rect x="149" y="204" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="162.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">16</text>
+          <rect x="179" y="204" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="192.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">17</text>
+          <rect x="209" y="204" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="222.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">18</text>
+          <rect x="29" y="228" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="42.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">19</text>
+          <rect x="59" y="228" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="72.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">20</text>
+          <rect x="89" y="228" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="102.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">21</text>
+          <rect x="119" y="228" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="132.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">22</text>
+          <rect x="149" y="228" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="162.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">23</text>
+          <rect x="179" y="228" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="192.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">24</text>
+          <rect x="209" y="228" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="222.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">25</text>
+          <rect x="29" y="252" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="42.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">26</text>
+          <rect x="59" y="252" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="72.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">27</text>
+          <rect x="89" y="252" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="102.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">28</text>
+          <rect x="119" y="252" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="132.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">29</text>
+          <rect x="149" y="252" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="162.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">30</text>
+          <rect x="179" y="252" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="192.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">31</text>
+          <rect x="440" y="156" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="453.0" y="169.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">1</text>
+          <rect x="260" y="180" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="273.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">2</text>
+          <rect x="290" y="180" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="303.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">3</text>
+          <rect x="320" y="180" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="333.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">4</text>
+          <rect x="350" y="180" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="363.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">5</text>
+          <rect x="380" y="180" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="393.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">6</text>
+          <rect x="410" y="180" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="423.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">7</text>
+          <rect x="440" y="180" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="453.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">8</text>
+          <rect x="260" y="204" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="273.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">9</text>
+          <rect x="290" y="204" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="303.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">10</text>
+          <rect x="320" y="204" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="333.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">11</text>
+          <rect x="350" y="204" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="363.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">12</text>
+          <rect x="380" y="204" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="393.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">13</text>
+          <rect x="410" y="204" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="423.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">14</text>
+          <rect x="440" y="204" width="26" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <text x="453.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--danger-soft)">15</text>
+          <rect x="260" y="228" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="273.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">16</text>
+          <rect x="290" y="228" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="303.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">17</text>
+          <rect x="320" y="228" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="333.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">18</text>
+          <rect x="350" y="228" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="363.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">19</text>
+          <rect x="380" y="228" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="393.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">20</text>
+          <rect x="410" y="228" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="423.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">21</text>
+          <rect x="440" y="228" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="453.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">22</text>
+          <rect x="260" y="252" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="273.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">23</text>
+          <rect x="290" y="252" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="303.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">24</text>
+          <rect x="320" y="252" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="333.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">25</text>
+          <rect x="350" y="252" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="363.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">26</text>
+          <rect x="380" y="252" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="393.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">27</text>
+          <rect x="410" y="252" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="423.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">28</text>
+          <text x="24" y="360" font-size="12" fill="var(--svg-muted)">30일 롤링이 1월 16일~2월 15일로 걸쳐 청구 월과 불일치</text>
+          <text x="24" y="378" font-size="11.5" font-weight="700" fill="var(--danger-soft)">청구·예산 리셋일을 달력에 고정할 수 없음</text>
+        </g>
+        <g transform="translate(500,16)">
+          <rect x="0" y="0" width="460" height="388" rx="14" fill="var(--svg-panel)" stroke="var(--lime)" stroke-width="1.8"/>
+          <text x="24" y="32" font-size="13" font-weight="800" fill="var(--mark)">캘린더 윈도우 (Calendar · 2.0)</text>
+          <text x="24" y="54" font-size="12" fill="var(--svg-muted)">타임존 달력의 월 · 주 · 일 경계에 리셋</text>
+          <rect x="24" y="68" width="196" height="26" rx="999" fill="color-mix(in srgb,var(--lime) 22%,transparent)" stroke="var(--lime)"/>
+          <text x="122" y="85" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--mark)">달력 월에 정확히 맞춤</text>
+          <text x="24" y="118" font-size="12.5" font-weight="800" fill="var(--svg-fg)">1월 (청구 월)</text>
+          <text x="260" y="118" font-size="12.5" font-weight="800" fill="var(--svg-fg)">2월 (다음 달)</text>
+          <text x="430" y="118" text-anchor="end" font-size="11" fill="var(--mark)">실선 = 리셋 경계</text>
+          <rect x="20" y="128" width="220" height="168" rx="8" fill="none" stroke="var(--lime)" stroke-width="2"/>
+          <text x="42" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">일</text>
+          <text x="72" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">월</text>
+          <text x="102" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">화</text>
+          <text x="132" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">수</text>
+          <text x="162" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">목</text>
+          <text x="192" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">금</text>
+          <text x="222" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">토</text>
+          <text x="273" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">일</text>
+          <text x="303" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">월</text>
+          <text x="333" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">화</text>
+          <text x="363" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">수</text>
+          <text x="393" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">목</text>
+          <text x="423" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">금</text>
+          <text x="453" y="148" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--svg-muted)">토</text>
+          <rect x="119" y="156" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="132.0" y="169.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">1</text>
+          <rect x="149" y="156" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="162.0" y="169.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">2</text>
+          <rect x="179" y="156" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="192.0" y="169.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">3</text>
+          <rect x="209" y="156" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="222.0" y="169.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">4</text>
+          <rect x="29" y="180" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="42.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">5</text>
+          <rect x="59" y="180" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="72.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">6</text>
+          <rect x="89" y="180" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="102.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">7</text>
+          <rect x="119" y="180" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="132.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">8</text>
+          <rect x="149" y="180" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="162.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">9</text>
+          <rect x="179" y="180" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="192.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">10</text>
+          <rect x="209" y="180" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="222.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">11</text>
+          <rect x="29" y="204" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="42.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">12</text>
+          <rect x="59" y="204" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="72.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">13</text>
+          <rect x="89" y="204" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="102.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">14</text>
+          <rect x="119" y="204" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="132.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">15</text>
+          <rect x="149" y="204" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="162.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">16</text>
+          <rect x="179" y="204" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="192.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">17</text>
+          <rect x="209" y="204" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="222.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">18</text>
+          <rect x="29" y="228" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="42.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">19</text>
+          <rect x="59" y="228" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="72.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">20</text>
+          <rect x="89" y="228" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="102.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">21</text>
+          <rect x="119" y="228" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="132.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">22</text>
+          <rect x="149" y="228" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="162.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">23</text>
+          <rect x="179" y="228" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="192.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">24</text>
+          <rect x="209" y="228" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="222.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">25</text>
+          <rect x="29" y="252" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="42.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">26</text>
+          <rect x="59" y="252" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="72.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">27</text>
+          <rect x="89" y="252" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="102.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">28</text>
+          <rect x="119" y="252" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="132.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">29</text>
+          <rect x="149" y="252" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="162.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">30</text>
+          <rect x="179" y="252" width="26" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <text x="192.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-fg)">31</text>
+          <rect x="440" y="156" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="453.0" y="169.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">1</text>
+          <rect x="260" y="180" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="273.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">2</text>
+          <rect x="290" y="180" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="303.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">3</text>
+          <rect x="320" y="180" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="333.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">4</text>
+          <rect x="350" y="180" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="363.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">5</text>
+          <rect x="380" y="180" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="393.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">6</text>
+          <rect x="410" y="180" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="423.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">7</text>
+          <rect x="440" y="180" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="453.0" y="193.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">8</text>
+          <rect x="260" y="204" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="273.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">9</text>
+          <rect x="290" y="204" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="303.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">10</text>
+          <rect x="320" y="204" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="333.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">11</text>
+          <rect x="350" y="204" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="363.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">12</text>
+          <rect x="380" y="204" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="393.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">13</text>
+          <rect x="410" y="204" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="423.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">14</text>
+          <rect x="440" y="204" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="453.0" y="217.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">15</text>
+          <rect x="260" y="228" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="273.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">16</text>
+          <rect x="290" y="228" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="303.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">17</text>
+          <rect x="320" y="228" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="333.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">18</text>
+          <rect x="350" y="228" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="363.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">19</text>
+          <rect x="380" y="228" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="393.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">20</text>
+          <rect x="410" y="228" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="423.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">21</text>
+          <rect x="440" y="228" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="453.0" y="241.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">22</text>
+          <rect x="260" y="252" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="273.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">23</text>
+          <rect x="290" y="252" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="303.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">24</text>
+          <rect x="320" y="252" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="333.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">25</text>
+          <rect x="350" y="252" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="363.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">26</text>
+          <rect x="380" y="252" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="393.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">27</text>
+          <rect x="410" y="252" width="26" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="423.0" y="265.2" text-anchor="middle" font-size="10" font-weight="700" fill="var(--svg-muted)">28</text>
+          <line x1="248" y1="128" x2="248" y2="296" stroke="var(--mark)" stroke-width="2.5"/>
+          <text x="248" y="314" text-anchor="middle" font-size="11" font-weight="800" fill="var(--mark)">2월 1일 00:00 리셋</text>
+          <text x="24" y="360" font-size="12" fill="var(--svg-muted)">1월 1일 00:00 ~ 1월 31일 23:59가 한 윈도우</text>
+          <text x="24" y="378" font-size="11.5" font-weight="700" fill="var(--mark)">청구·예산 리셋일과 달력 경계를 일치시킴</text>
+        </g>
+      </svg>
+    </div>
 
-        <!-- Time Axis -->
-        <line x1="24" y1="78" x2="896" y2="78" stroke="var(--line2)" stroke-width="2"/>
-        <!-- Month boundary mark (Day 1) -->
-        <line x1="460" y1="58" x2="460" y2="98" stroke="var(--danger-soft)" stroke-width="2" stroke-dasharray="4 3"/>
-        <text x="460" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="var(--danger-soft)">제공사 청구일 (매월 1일)</text>
-
-        <!-- Rolling Window box drifting -->
-        <rect x="260" y="64" width="400" height="28" rx="6" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.5"/>
-        <text x="460" y="82" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--danger-soft)">이동 윈도우 (1월 16일 ~ 2월 15일: 1월 하반기 사용량 지속 누적)</text>
-        <text x="670" y="82" font-size="11" font-weight="800" fill="var(--danger-soft)">← 청구 주기 불일치 (Drift)</text>
-      </g>
-
-      <!-- Bottom Section: Calendar Window -->
-      <g transform="translate(30, 154)">
-        <rect x="0" y="0" width="920" height="116" rx="10" fill="var(--svg-panel)" stroke="var(--lime)" stroke-width="1.8"/>
-        <text x="24" y="28" font-size="12" font-weight="800" fill="var(--mark)">캘린더 윈도우 (Calendar Window · 2.0 신규 지원)</text>
-        <text x="24" y="46" font-size="11.5" fill="var(--svg-muted)">지정 타임존(Timezone)의 실제 달력 월 · 주 · 일 경계(00:00:00)에 정확히 리셋</text>
-
-        <!-- Time Axis -->
-        <line x1="24" y1="78" x2="896" y2="78" stroke="var(--line2)" stroke-width="2"/>
-        <!-- Month 1 box -->
-        <rect x="60" y="64" width="380" height="28" rx="6" fill="var(--svg-chip)" stroke="var(--lime)" stroke-width="1.5"/>
-        <text x="250" y="82" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--svg-fg)">1월 캘린더 윈도우 (1월 1일 00:00 ~ 1월 31일 23:59)</text>
-
-        <!-- Boundary line -->
-        <line x1="460" y1="58" x2="460" y2="98" stroke="var(--mark)" stroke-width="2.5"/>
-        <text x="460" y="52" text-anchor="middle" font-size="11" font-weight="800" fill="var(--mark)">정확한 리셋 경계 (2월 1일 00:00)</text>
-
-        <!-- Month 2 box -->
-        <rect x="480" y="64" width="380" height="28" rx="6" fill="var(--svg-chip)" stroke="var(--lime)" stroke-width="1.5"/>
-        <text x="670" y="82" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--svg-fg)">2월 캘린더 윈도우 (2월 1일 00:00 ~ 2월 28일 23:59)</text>
-        <text x="870" y="82" font-size="11" font-weight="800" fill="var(--mark)">청구 주기와 일치</text>
-      </g>
-    </svg></div>
-
-    <div class="grid g2" style="margin-top:18px">
-      <div class="card rv"><span class="tag">Budget</span><h3>비용 예산 한도 (tokens_count_strategy: cost)</h3><p>요청 수·토큰 수가 아니라 모델별 input_cost · output_cost로 산정한 금액 기준으로 프로젝트·팀 예산을 제어합니다.</p></div>
-      <div class="card rv"><span class="tag">Redis</span><h3>분산 Redis 카운터 (strategy: redis)</h3><p>멀티노드 · Hybrid · Konnect에서는 노드별 local 카운터 불일치를 막기 위해 Redis가 필요합니다. 이 환경에서는 cluster 전략을 쓸 수 없습니다.</p></div>
+    <div class="grid g1" style="margin-top:18px">
       <div class="card rv"><span class="tag">Timing</span><h3>사후 집행 타이밍</h3><p>토큰·비용은 LLM 응답이 끝난 뒤에야 확정됩니다. 한도를 넘는 당회 요청은 완료되고, 그다음 요청부터 429 Too Many Requests로 차단됩니다.</p></div>
-      <div class="card rv"><span class="tag">Partition</span><h3>partition_by: true 집행 요건</h3><p>2.x에서 모델·프로바이더 매칭은 partition_by: true가 있어야 개별 카운터로 집행됩니다. 없으면 정책이 집행되지 않습니다.</p></div>
     </div>
   </div>
 
