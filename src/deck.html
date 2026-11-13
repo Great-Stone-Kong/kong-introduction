@@ -6037,180 +6037,180 @@ lowest-usage · semantic · priority</pre></div>
     <h3 style="margin-top:14px">Rate Limit 윈도우 방식 · 캘린더 vs 롤링 비교</h3>
     <p class="sub" style="margin-top:0">월간 청구·예산 리셋은 달력 월 경계에 맞춰야 합니다. 롤링 윈도우는 고정 기간(예: 30일)이라 달력과 어긋나고, 캘린더 윈도우는 타임존 기준 월·주·일 경계에 맞춥니다.</p>
     <div class="dia rv i2-win-compare">
-      <svg viewBox="0 0 980 400" class="i2-win-chart" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="롤링 윈도우는 달력 월에 맞출 수 없고 캘린더 윈도우는 달력 월에 정확히 맞출 수 있음">
-        <g transform="translate(20,16)">
-          <rect x="0" y="0" width="460" height="368" rx="14" fill="var(--svg-panel)" stroke="var(--danger-soft)" stroke-width="1.8"/>
-          <text x="24" y="32" font-size="13" font-weight="800" fill="var(--danger-soft)">롤링 윈도우 (Rolling)</text>
-          <text x="24" y="54" font-size="12" fill="var(--svg-muted)">고정 기간(예: 30일) · 요청 시점 기준 이동</text>
-          <rect x="24" y="68" width="196" height="26" rx="999" fill="var(--danger-bg)" stroke="var(--danger-soft)"/>
-          <text x="122" y="85" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--danger-soft)">달력 월에 맞출 수 없음</text>
-          <text x="28" y="116" font-size="12.5" font-weight="800" fill="var(--svg-fg)">1월 (청구 월)</text>
-          <text x="218" y="116" font-size="12.5" font-weight="800" fill="var(--svg-fg)">2월 (다음 달)</text>
-          <text x="436" y="116" text-anchor="end" font-size="11" fill="var(--svg-muted)">점선 = 청구 월 경계</text>
-          <rect x="22" y="126" width="184" height="160" rx="8" fill="none" stroke="var(--danger-soft)" stroke-width="1.4" stroke-dasharray="5 4"/>
-          <rect x="28" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="53" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="78" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="103" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="128" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="153" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="178" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="218" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="243" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="268" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="293" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="318" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="343" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="368" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="103" y="152" width="22" height="18" rx="3.5" fill="var(--svg-chip)" stroke="var(--line2)"/>
-          <rect x="128" y="152" width="22" height="18" rx="3.5" fill="var(--svg-chip)" stroke="var(--line2)"/>
-          <rect x="153" y="152" width="22" height="18" rx="3.5" fill="var(--svg-chip)" stroke="var(--line2)"/>
-          <rect x="178" y="152" width="22" height="18" rx="3.5" fill="var(--svg-chip)" stroke="var(--line2)"/>
-          <rect x="28" y="173" width="22" height="18" rx="3.5" fill="var(--svg-chip)" stroke="var(--line2)"/>
-          <rect x="53" y="173" width="22" height="18" rx="3.5" fill="var(--svg-chip)" stroke="var(--line2)"/>
-          <rect x="78" y="173" width="22" height="18" rx="3.5" fill="var(--svg-chip)" stroke="var(--line2)"/>
-          <rect x="103" y="173" width="22" height="18" rx="3.5" fill="var(--svg-chip)" stroke="var(--line2)"/>
-          <rect x="128" y="173" width="22" height="18" rx="3.5" fill="var(--svg-chip)" stroke="var(--line2)"/>
-          <rect x="153" y="173" width="22" height="18" rx="3.5" fill="var(--svg-chip)" stroke="var(--line2)"/>
-          <rect x="178" y="173" width="22" height="18" rx="3.5" fill="var(--svg-chip)" stroke="var(--line2)"/>
-          <rect x="28" y="194" width="22" height="18" rx="3.5" fill="var(--svg-chip)" stroke="var(--line2)"/>
-          <rect x="53" y="194" width="22" height="18" rx="3.5" fill="var(--svg-chip)" stroke="var(--line2)"/>
-          <rect x="78" y="194" width="22" height="18" rx="3.5" fill="var(--svg-chip)" stroke="var(--line2)"/>
-          <rect x="103" y="194" width="22" height="18" rx="3.5" fill="var(--svg-chip)" stroke="var(--line2)"/>
-          <rect x="128" y="194" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="153" y="194" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="178" y="194" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="28" y="215" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="53" y="215" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="78" y="215" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="103" y="215" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="128" y="215" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="153" y="215" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="178" y="215" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="28" y="236" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="53" y="236" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="78" y="236" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="103" y="236" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="128" y="236" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="153" y="236" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="368" y="152" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="218" y="173" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="243" y="173" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="268" y="173" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="293" y="173" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="318" y="173" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="343" y="173" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="368" y="173" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="218" y="194" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="243" y="194" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="268" y="194" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="293" y="194" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="318" y="194" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="343" y="194" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="368" y="194" width="22" height="18" rx="3.5" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
-          <rect x="218" y="215" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="243" y="215" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="268" y="215" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="293" y="215" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="318" y="215" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="343" y="215" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="368" y="215" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="218" y="236" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="243" y="236" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="268" y="236" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="293" y="236" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="318" y="236" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="343" y="236" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <text x="24" y="340" font-size="12" fill="var(--svg-muted)">30일 롤링이 1월 하반기~2월 상반기로 걸쳐 청구 월과 불일치</text>
-          <text x="24" y="358" font-size="11.5" font-weight="700" fill="var(--danger-soft)">청구·예산 리셋일을 달력에 고정할 수 없음</text>
+      <svg viewBox="0 0 980 390" class="i2-win-chart" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="롤링 윈도우는 달력 월에 맞출 수 없고 캘린더 윈도우는 달력 월에 정확히 맞출 수 있음">
+        <g transform="translate(20,14)">
+          <rect x="0" y="0" width="460" height="362" rx="14" fill="var(--svg-panel)" stroke="var(--danger-soft)" stroke-width="1.8"/>
+          <text x="22" y="30" font-size="13" font-weight="800" fill="var(--danger-soft)">롤링 윈도우 (Rolling)</text>
+          <text x="22" y="50" font-size="12" fill="var(--svg-muted)">고정 기간(예: 30일) · 요청 시점 기준 이동</text>
+          <rect x="22" y="62" width="196" height="24" rx="999" fill="var(--danger-bg)" stroke="var(--danger-soft)"/>
+          <text x="120" y="78" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--danger-soft)">달력 월에 맞출 수 없음</text>
+          <text x="22" y="112" font-size="12.5" font-weight="800" fill="var(--svg-fg)">1월 (청구 월)</text>
+          <text x="235" y="112" font-size="12.5" font-weight="800" fill="var(--svg-fg)">2월 (다음 달)</text>
+          <text x="438" y="112" text-anchor="end" font-size="11" fill="var(--svg-muted)">점선 = 청구 월 경계</text>
+          <rect x="16" y="122" width="211" height="168" rx="8" fill="none" stroke="var(--danger-soft)" stroke-width="1.4" stroke-dasharray="5 4"/>
+          <rect x="22" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="51" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="80" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="109" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="138" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="167" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="196" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="235" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="264" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="293" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="322" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="351" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="380" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="409" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="109" y="148" width="25" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <rect x="138" y="148" width="25" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <rect x="167" y="148" width="25" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <rect x="196" y="148" width="25" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <rect x="22" y="172" width="25" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <rect x="51" y="172" width="25" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <rect x="80" y="172" width="25" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <rect x="109" y="172" width="25" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <rect x="138" y="172" width="25" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <rect x="167" y="172" width="25" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <rect x="196" y="172" width="25" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <rect x="22" y="196" width="25" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <rect x="51" y="196" width="25" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <rect x="80" y="196" width="25" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <rect x="109" y="196" width="25" height="20" rx="4" fill="var(--svg-chip)" stroke="var(--line2)"/>
+          <rect x="138" y="196" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="167" y="196" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="196" y="196" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="22" y="220" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="51" y="220" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="80" y="220" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="109" y="220" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="138" y="220" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="167" y="220" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="196" y="220" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="22" y="244" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="51" y="244" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="80" y="244" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="109" y="244" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="138" y="244" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="167" y="244" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="409" y="148" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="235" y="172" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="264" y="172" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="293" y="172" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="322" y="172" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="351" y="172" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="380" y="172" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="409" y="172" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="235" y="196" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="264" y="196" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="293" y="196" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="322" y="196" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="351" y="196" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="380" y="196" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="409" y="196" width="25" height="20" rx="4" fill="var(--danger-bg)" stroke="var(--danger-soft)" stroke-width="1.1"/>
+          <rect x="235" y="220" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="264" y="220" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="293" y="220" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="322" y="220" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="351" y="220" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="380" y="220" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="409" y="220" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="235" y="244" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="264" y="244" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="293" y="244" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="322" y="244" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="351" y="244" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="380" y="244" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <text x="22" y="330" font-size="12" fill="var(--svg-muted)">30일 롤링이 1월 하반기~2월 상반기로 걸쳐 청구 월과 불일치</text>
+          <text x="22" y="348" font-size="11.5" font-weight="700" fill="var(--danger-soft)">청구·예산 리셋일을 달력에 고정할 수 없음</text>
         </g>
-        <g transform="translate(500,16)">
-          <rect x="0" y="0" width="460" height="368" rx="14" fill="var(--svg-panel)" stroke="var(--lime)" stroke-width="1.8"/>
-          <text x="24" y="32" font-size="13" font-weight="800" fill="var(--mark)">캘린더 윈도우 (Calendar · 2.0)</text>
-          <text x="24" y="54" font-size="12" fill="var(--svg-muted)">타임존 달력의 월 · 주 · 일 경계에 리셋</text>
-          <rect x="24" y="68" width="196" height="26" rx="999" fill="color-mix(in srgb,var(--lime) 22%,transparent)" stroke="var(--lime)"/>
-          <text x="122" y="85" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--mark)">달력 월에 정확히 맞춤</text>
-          <text x="28" y="116" font-size="12.5" font-weight="800" fill="var(--svg-fg)">1월 (청구 월)</text>
-          <text x="218" y="116" font-size="12.5" font-weight="800" fill="var(--svg-fg)">2월 (다음 달)</text>
-          <text x="436" y="116" text-anchor="end" font-size="11" fill="var(--mark)">실선 = 리셋 경계</text>
-          <rect x="22" y="126" width="184" height="160" rx="8" fill="none" stroke="var(--lime)" stroke-width="2"/>
-          <rect x="28" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="53" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="78" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="103" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="128" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="153" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="178" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="218" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="243" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="268" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="293" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="318" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="343" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="368" y="134" width="22" height="7" rx="2" fill="var(--svg-muted)" opacity=".35"/>
-          <rect x="103" y="152" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="128" y="152" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="153" y="152" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="178" y="152" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="28" y="173" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="53" y="173" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="78" y="173" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="103" y="173" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="128" y="173" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="153" y="173" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="178" y="173" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="28" y="194" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="53" y="194" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="78" y="194" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="103" y="194" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="128" y="194" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="153" y="194" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="178" y="194" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="28" y="215" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="53" y="215" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="78" y="215" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="103" y="215" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="128" y="215" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="153" y="215" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="178" y="215" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="28" y="236" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="53" y="236" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="78" y="236" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="103" y="236" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="128" y="236" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="153" y="236" width="22" height="18" rx="3.5" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
-          <rect x="368" y="152" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="218" y="173" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="243" y="173" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="268" y="173" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="293" y="173" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="318" y="173" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="343" y="173" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="368" y="173" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="218" y="194" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="243" y="194" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="268" y="194" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="293" y="194" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="318" y="194" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="343" y="194" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="368" y="194" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="218" y="215" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="243" y="215" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="268" y="215" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="293" y="215" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="318" y="215" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="343" y="215" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="368" y="215" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="218" y="236" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="243" y="236" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="268" y="236" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="293" y="236" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="318" y="236" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <rect x="343" y="236" width="22" height="18" rx="3.5" fill="var(--svg-well)" stroke="var(--line2)"/>
-          <line x1="209" y1="126" x2="209" y2="286" stroke="var(--mark)" stroke-width="2.5"/>
-          <text x="209" y="304" text-anchor="middle" font-size="11" font-weight="800" fill="var(--mark)">2월 1일 00:00 리셋</text>
-          <text x="24" y="340" font-size="12" fill="var(--svg-muted)">1월 전체가 한 윈도우</text>
-          <text x="24" y="358" font-size="11.5" font-weight="700" fill="var(--mark)">청구·예산 리셋일과 달력 경계를 일치시킴</text>
+        <g transform="translate(500,14)">
+          <rect x="0" y="0" width="460" height="362" rx="14" fill="var(--svg-panel)" stroke="var(--lime)" stroke-width="1.8"/>
+          <text x="22" y="30" font-size="13" font-weight="800" fill="var(--mark)">캘린더 윈도우 (Calendar · 2.0)</text>
+          <text x="22" y="50" font-size="12" fill="var(--svg-muted)">타임존 달력의 월 · 주 · 일 경계에 리셋</text>
+          <rect x="22" y="62" width="196" height="24" rx="999" fill="color-mix(in srgb,var(--lime) 22%,transparent)" stroke="var(--lime)"/>
+          <text x="120" y="78" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--mark)">달력 월에 정확히 맞춤</text>
+          <text x="22" y="112" font-size="12.5" font-weight="800" fill="var(--svg-fg)">1월 (청구 월)</text>
+          <text x="235" y="112" font-size="12.5" font-weight="800" fill="var(--svg-fg)">2월 (다음 달)</text>
+          <text x="438" y="112" text-anchor="end" font-size="11" fill="var(--mark)">실선 = 리셋 경계</text>
+          <rect x="16" y="122" width="211" height="168" rx="8" fill="none" stroke="var(--lime)" stroke-width="2"/>
+          <rect x="22" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="51" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="80" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="109" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="138" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="167" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="196" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="235" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="264" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="293" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="322" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="351" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="380" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="409" y="130" width="25" height="8" rx="2" fill="var(--svg-muted)" opacity=".35"/>
+          <rect x="109" y="148" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="138" y="148" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="167" y="148" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="196" y="148" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="22" y="172" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="51" y="172" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="80" y="172" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="109" y="172" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="138" y="172" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="167" y="172" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="196" y="172" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="22" y="196" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="51" y="196" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="80" y="196" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="109" y="196" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="138" y="196" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="167" y="196" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="196" y="196" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="22" y="220" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="51" y="220" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="80" y="220" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="109" y="220" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="138" y="220" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="167" y="220" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="196" y="220" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="22" y="244" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="51" y="244" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="80" y="244" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="109" y="244" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="138" y="244" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="167" y="244" width="25" height="20" rx="4" fill="color-mix(in srgb,var(--lime) 28%,var(--svg-panel))" stroke="var(--lime)" stroke-width="1.1"/>
+          <rect x="409" y="148" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="235" y="172" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="264" y="172" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="293" y="172" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="322" y="172" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="351" y="172" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="380" y="172" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="409" y="172" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="235" y="196" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="264" y="196" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="293" y="196" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="322" y="196" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="351" y="196" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="380" y="196" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="409" y="196" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="235" y="220" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="264" y="220" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="293" y="220" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="322" y="220" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="351" y="220" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="380" y="220" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="409" y="220" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="235" y="244" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="264" y="244" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="293" y="244" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="322" y="244" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="351" y="244" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <rect x="380" y="244" width="25" height="20" rx="4" fill="var(--svg-well)" stroke="var(--line2)"/>
+          <line x1="228.0" y1="122" x2="228.0" y2="290" stroke="var(--mark)" stroke-width="2.5"/>
+          <text x="228.0" y="308" text-anchor="middle" font-size="11" font-weight="800" fill="var(--mark)">2월 1일 00:00 리셋</text>
+          <text x="22" y="330" font-size="12" fill="var(--svg-muted)">1월 전체가 한 윈도우</text>
+          <text x="22" y="348" font-size="11.5" font-weight="700" fill="var(--mark)">청구·예산 리셋일과 달력 경계를 일치시킴</text>
         </g>
       </svg>
     </div>
