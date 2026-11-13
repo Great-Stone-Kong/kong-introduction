@@ -1,52 +1,43 @@
 # Library modal catalog (Korean resources). Built into deck as KONG_LIBRARY.
-# tag: Whitepaper | Guideline | Introduction  (optional card pill)
-# cover: data | wave | mesh | orb  (ebook art style; optional, default wave)
+# tag: Whitepaper | Guideline | Introduction  (required; drives cover mockup art)
 items:
   - id: ai-gateway-korea-whitepaper
     name: "Kong AI Gateway 도입 백서: 국내 기업 요구사항과 PoC 적용 사례"
     type: access
     url: https://konghq.com/resources/e-book/kong-ai-gateway-korea-whitepaper
     tag: Whitepaper
-    cover: wave
   - id: llm-token-allocation-guide
     name: LLM 토큰 배분 및 관리 프로세스 가이드라인
     type: download
     url: https://drive.google.com/file/d/1CiZkkXXNe-Kksa1B1hjFzCCRAHN6UxHr/view?usp=sharing
     tag: Guideline
-    cover: mesh
   - id: api-gateway-siem-guide
     name: "Kong API Gateway: SIEM 가이드"
     type: download
     url: https://drive.google.com/file/d/1PW7sX5ShKrGuWJTutc_2cU22KiaARJYY/view?usp=drive_link
     tag: Guideline
-    cover: data
   - id: kong-operation-best-practice
     name: Kong API / AI Ops Best Practice
     type: download
     url: https://drive.google.com/file/d/1BgPVWbt32OsB8q9qoZXbuIWntxFmp7zp/view?usp=drive_link
     tag: Guideline
-    cover: wave
   - id: kong-ai-gateway-introduction
     name: Kong AI Gateway 소개
     type: download
     url: https://drive.google.com/file/d/18jfi_ykgSUjcFBYLYOTQltMSYWb5wWcq/view?usp=drive_link
     tag: Introduction
-    cover: orb
   - id: kong-api-gateway-introduction
     name: Kong API Gateway 소개
     type: download
     url: https://drive.google.com/file/d/1W_BkDGCc8wZ7UY5X1HpmMz5aSnj2yADb/view?usp=drive_link
     tag: Introduction
-    cover: orb
   - id: kong-mcp-gateway-introduction
     name: Kong MCP Gateway 소개
     type: download
     url: https://drive.google.com/file/d/1UD0bREo_tC0dUPmzSHdgkwtXe2YkIjFu/view?usp=drive_link
     tag: Introduction
-    cover: orb
   - id: kong-agent-to-agent-introduction
     name: Kong A2A Gateway 소개
     type: download
     url: https://drive.google.com/file/d/1iTX2DhltgnTbxHQbFSBUFSL8sH70mE0y/view?usp=drive_link
     tag: Introduction
-    cover: orb

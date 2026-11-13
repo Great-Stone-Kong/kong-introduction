@@ -103,18 +103,12 @@ function loadLibrary() {
       console.error(`build: library.yaml ${where}.type must be access|download`);
       process.exit(1);
     }
-    if (it.tag && !["Whitepaper", "Guideline", "Introduction"].includes(it.tag)) {
+    if (!it.tag || !["Whitepaper", "Guideline", "Introduction"].includes(it.tag)) {
       console.error(
-        `build: library.yaml ${where}.tag must be Whitepaper|Guideline|Introduction`
+        `build: library.yaml ${where}.tag required: Whitepaper|Guideline|Introduction`
       );
       process.exit(1);
     }
-    const cover = it.cover || "wave";
-    if (!["data", "wave", "mesh", "orb"].includes(cover)) {
-      console.error(`build: library.yaml ${where}.cover must be data|wave|mesh|orb`);
-      process.exit(1);
-    }
-    it.cover = cover;
     if (ids.has(it.id)) {
       console.error(`build: library.yaml duplicate id ${it.id}`);
       process.exit(1);
@@ -133,8 +127,7 @@ function loadLibrary() {
       name: it.name,
       type: it.type,
       url: it.url,
-      cover: it.cover,
-      ...(it.tag ? { tag: it.tag } : {}),
+      tag: it.tag,
     })),
   };
 }
