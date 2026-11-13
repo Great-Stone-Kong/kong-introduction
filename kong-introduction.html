@@ -994,21 +994,33 @@ svg.mq{display:block;width:100%;height:auto}
 .modal .mf{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:14px;font-size:12px;color:var(--g400)}
 
 /* library modal */
-.modal.lib-modal .box{max-width:960px;max-height:min(86vh,820px);display:flex;flex-direction:column;padding:18px 20px}
-.lib-list{display:flex;flex-direction:column;gap:14px;overflow:auto;padding:2px 2px 6px;margin:0}
-.lib-card{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(180px,.9fr);gap:0;border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:#06140c;min-height:168px}
-.lib-card-body{padding:22px 24px;display:flex;flex-direction:column;justify-content:center;gap:12px}
-.lib-tag{display:inline-flex;align-self:flex-start;font:700 11px var(--font);letter-spacing:.04em;color:#001408;background:var(--lime);border-radius:999px;padding:4px 10px}
-.lib-card h3{margin:0;font:800 18px/1.35 var(--font);color:#F2F7EF;letter-spacing:-.01em}
-.lib-cta{display:inline-flex;align-items:center;gap:6px;margin-top:4px;font:800 13px var(--font);color:var(--lime);text-decoration:none;border:0;background:none;padding:0;cursor:pointer;width:fit-content}
-.lib-cta:hover{text-decoration:underline}
-.lib-cover{position:relative;min-height:168px;background:
-  radial-gradient(120% 80% at 80% 20%,rgba(204,255,0,.18),transparent 55%),
-  linear-gradient(145deg,#03140a 0%,#0a2414 48%,#020a06 100%);
-  overflow:hidden;display:flex;align-items:flex-end;padding:18px}
-.lib-cover svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.lib-cover-title{position:relative;z-index:1;font:800 15px/1.3 var(--font);color:#EAF6D8;max-width:16em;text-shadow:0 1px 10px rgba(0,0,0,.45)}
-@media (max-width:720px){.lib-card{grid-template-columns:1fr}.lib-cover{min-height:120px}}
+.modal.lib-modal .box{max-width:1080px;max-height:min(86vh,860px);display:flex;flex-direction:column;padding:18px 20px}
+.lib-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;overflow:auto;padding:2px 2px 6px;margin:0;align-content:start}
+a.lib-card{display:flex;flex-direction:column;border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:#06140c;text-decoration:none;color:inherit;min-height:100%;transition:border-color .18s,transform .18s,box-shadow .18s}
+a.lib-card:hover{border-color:var(--lime);transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.35)}
+a.lib-card:focus-visible{outline:2px solid #CCFF00;outline-offset:2px}
+.lib-cover{position:relative;aspect-ratio:4/3;background:
+  radial-gradient(90% 70% at 70% 0%,rgba(204,255,0,.14),transparent 55%),
+  linear-gradient(160deg,#04160c 0%,#0a2214 55%,#020a06 100%);
+  display:flex;align-items:center;justify-content:center;padding:18px 20px 14px;overflow:hidden}
+.lib-doc{position:relative;width:min(72%,168px);aspect-ratio:3/4;background:#F4F7F0;border-radius:3px 10px 3px 3px;box-shadow:0 10px 24px rgba(0,0,0,.35),0 1px 0 rgba(255,255,255,.08);overflow:hidden}
+.lib-doc::before{content:"";position:absolute;top:0;right:0;border-style:solid;border-width:0 22px 22px 0;border-color:transparent #c5d6b0 transparent transparent;filter:drop-shadow(-1px 1px 0 rgba(0,0,0,.08))}
+.lib-doc-bar{height:6px;background:var(--lime);margin:14px 14px 10px}
+.lib-doc-lines{display:flex;flex-direction:column;gap:7px;padding:0 14px}
+.lib-doc-lines i{display:block;height:3px;border-radius:2px;background:#C9D4C0}
+.lib-doc-lines i:nth-child(1){width:88%}
+.lib-doc-lines i:nth-child(2){width:72%}
+.lib-doc-lines i:nth-child(3){width:80%}
+.lib-doc-lines i:nth-child(4){width:64%}
+.lib-doc-lines i:nth-child(5){width:76%}
+.lib-doc-title{margin:12px 14px 0;font:800 10px/1.25 var(--font);color:#1a2a16;letter-spacing:-.01em;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.lib-card-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.lib-tag{display:inline-flex;align-self:flex-start;font:700 10px var(--font);letter-spacing:.04em;color:#001408;background:var(--lime);border-radius:999px;padding:3px 9px}
+.lib-card h3{margin:0;font:800 14px/1.4 var(--font);color:#F2F7EF;letter-spacing:-.01em;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.lib-cta{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;margin-top:auto;font:800 12px var(--font);color:#001408;background:var(--lime);border:1px solid transparent;border-radius:999px;padding:8px 14px;pointer-events:none}
+a.lib-card:hover .lib-cta{background:#d8ff33}
+@media (max-width:900px){.lib-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.lib-list{grid-template-columns:1fr}}
 @keyframes fadein{from{opacity:0}to{opacity:1}}
 @keyframes zoom{from{opacity:0;transform:scale(.92) translateY(10px)}to{opacity:1;transform:none}}
 @media (max-width:1100px){.story{grid-template-columns:1fr}.vision{position:static}}
@@ -11732,18 +11744,12 @@ const VR_TIERS={
   function shortTitle(name){
     const s=String(name||'');
     const cut=s.split(/[:：]/)[0].trim();
-    return (cut.length>42?cut.slice(0,40)+'…':cut)||s.slice(0,40);
+    return (cut.length>36?cut.slice(0,34)+'…':cut)||s.slice(0,34);
   }
-  function cover(name, id){
-    const gid='lgw-'+esc(id||'x');
-    return '<div class="lib-cover" aria-hidden="true">'
-      +'<svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice">'
-      +'<defs><linearGradient id="'+gid+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#CCFF00" stop-opacity=".55"/><stop offset="100%" stop-color="#CCFF00" stop-opacity="0"/></linearGradient></defs>'
-      +'<g stroke="rgba(204,255,0,.12)" stroke-width="1">'
-      +'<path d="M0 40H320M0 80H320M0 120H320M0 160H320"/><path d="M40 0V180M80 0V180M120 0V180M160 0V180M200 0V180M240 0V180M280 0V180"/></g>'
-      +'<path fill="url(#'+gid+')" d="M0 130C60 100 110 150 170 120C230 90 270 110 320 85V180H0Z" opacity=".85"/>'
-      +'<path fill="none" stroke="#CCFF00" stroke-width="2" opacity=".55" d="M0 118C70 95 120 140 180 112C240 84 280 98 320 78"/></svg>'
-      +'<div class="lib-cover-title">'+esc(shortTitle(name))+'</div></div>';
+  function cover(name){
+    return '<div class="lib-cover" aria-hidden="true"><div class="lib-doc">'
+      +'<div class="lib-doc-bar"></div><div class="lib-doc-lines"><i></i><i></i><i></i><i></i><i></i></div>'
+      +'<div class="lib-doc-title">'+esc(shortTitle(name))+'</div></div></div>';
   }
   function render(){
     const items=(window.KONG_LIBRARY&&window.KONG_LIBRARY.items)||[];
@@ -11752,10 +11758,10 @@ const VR_TIERS={
     list.innerHTML=items.map(it=>{
       const cta=it.type==='download'?dl:access;
       const tag=it.tag?'<span class="lib-tag">'+esc(it.tag)+'</span>':'';
-      return '<article class="lib-card" data-id="'+esc(it.id)+'">'
+      return '<a class="lib-card" data-id="'+esc(it.id)+'" href="'+esc(it.url)+'" target="_blank" rel="noopener noreferrer">'
+        +cover(it.name)
         +'<div class="lib-card-body">'+tag+'<h3>'+esc(it.name)+'</h3>'
-        +'<a class="lib-cta" href="'+esc(it.url)+'" target="_blank" rel="noopener noreferrer">'+esc(cta)+'</a></div>'
-        +cover(it.name,it.id)+'</article>';
+        +'<span class="lib-cta">'+esc(cta)+'</span></div></a>';
     }).join('')||'<p class="cl-err">'+esc(t(I18N_IDS.empty,''))+'</p>';
   }
   function open(){
