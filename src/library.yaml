@@ -1,12 +1,15 @@
 # Library modal catalog (Korean resources). Built into deck as KONG_LIBRARY.
+# cover: data | wave | mesh | orb  (ebook art style; optional, default wave)
 items:
   - id: ai-gateway-korea-whitepaper
     name: "Kong AI Gateway 도입 백서: 국내 기업 요구사항과 PoC 적용 사례"
     type: access
     url: https://konghq.com/resources/e-book/kong-ai-gateway-korea-whitepaper
     tag: Whitepaper
+    cover: data
   - id: llm-token-allocation-guide
     name: LLM 토큰 배분 및 관리 프로세스 가이드라인
     type: download
     url: https://drive.google.com/file/d/1CiZkkXXNe-Kksa1B1hjFzCCRAHN6UxHr/view?usp=sharing
     tag: Guideline
+    cover: mesh

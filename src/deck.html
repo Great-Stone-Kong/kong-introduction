@@ -993,30 +993,38 @@ svg.mq{display:block;width:100%;height:auto}
 .modal .x:hover{border-color:var(--accent)}
 .modal .mf{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:14px;font-size:12px;color:var(--g400)}
 
-/* library modal */
+/* library modal — ebook-style covers (data|wave|mesh|orb) */
 .modal.lib-modal .box{max-width:1080px;max-height:min(86vh,860px);display:flex;flex-direction:column;padding:18px 20px}
 .lib-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;overflow:auto;padding:2px 2px 6px;margin:0;align-content:start}
-a.lib-card{display:flex;flex-direction:column;border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:#06140c;text-decoration:none;color:inherit;min-height:100%;transition:border-color .18s,transform .18s,box-shadow .18s}
+a.lib-card{display:flex;flex-direction:column;border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:var(--navy-2);text-decoration:none;color:inherit;min-height:100%;transition:border-color .18s,transform .18s,box-shadow .18s}
 a.lib-card:hover{border-color:var(--lime);transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.35)}
 a.lib-card:focus-visible{outline:2px solid #CCFF00;outline-offset:2px}
-.lib-cover{position:relative;aspect-ratio:4/3;background:
-  radial-gradient(90% 70% at 70% 0%,rgba(204,255,0,.14),transparent 55%),
-  linear-gradient(160deg,#04160c 0%,#0a2214 55%,#020a06 100%);
-  display:flex;align-items:center;justify-content:center;padding:18px 20px 14px;overflow:hidden}
-.lib-doc{position:relative;width:min(72%,168px);aspect-ratio:3/4;background:#F4F7F0;border-radius:3px 10px 3px 3px;box-shadow:0 10px 24px rgba(0,0,0,.35),0 1px 0 rgba(255,255,255,.08);overflow:hidden}
-.lib-doc::before{content:"";position:absolute;top:0;right:0;border-style:solid;border-width:0 22px 22px 0;border-color:transparent #c5d6b0 transparent transparent;filter:drop-shadow(-1px 1px 0 rgba(0,0,0,.08))}
-.lib-doc-bar{height:6px;background:var(--lime);margin:14px 14px 10px}
-.lib-doc-lines{display:flex;flex-direction:column;gap:7px;padding:0 14px}
-.lib-doc-lines i{display:block;height:3px;border-radius:2px;background:#C9D4C0}
-.lib-doc-lines i:nth-child(1){width:88%}
-.lib-doc-lines i:nth-child(2){width:72%}
-.lib-doc-lines i:nth-child(3){width:80%}
-.lib-doc-lines i:nth-child(4){width:64%}
-.lib-doc-lines i:nth-child(5){width:76%}
-.lib-doc-title{margin:12px 14px 0;font:800 10px/1.25 var(--font);color:#1a2a16;letter-spacing:-.01em;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.lib-card-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.lib-cover{--lib-ink:#F2F7EF;--lib-muted:#9BB08A;--lib-art:#CCFF00;--lib-panel:rgba(204,255,0,.08);--lib-line:rgba(204,255,0,.22);
+  position:relative;aspect-ratio:3/4;display:flex;flex-direction:column;padding:16px 16px 14px;overflow:hidden;
+  background:radial-gradient(120% 80% at 85% 10%,rgba(204,255,0,.16),transparent 50%),linear-gradient(165deg,#050d08 0%,#0a1a10 48%,#020805 100%);color:var(--lib-ink)}
+.lib-cover-eye{align-self:flex-start;font:800 9px/1 var(--font);letter-spacing:.12em;text-transform:uppercase;color:var(--lib-art);border:1px solid color-mix(in srgb,var(--lib-art) 55%,transparent);border-radius:999px;padding:5px 9px;margin-bottom:10px}
+.lib-cover-title{margin:0;font:800 15px/1.25 var(--font);letter-spacing:-.02em;color:var(--lib-ink);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;max-width:18em}
+.lib-cover-art{flex:1;min-height:0;margin-top:8px;position:relative}
+.lib-cover-art svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.lib-cover-brand{position:absolute;right:12px;bottom:10px;width:22px;height:20px;color:var(--lib-art);opacity:.9}
+.lib-cover-brand svg{width:100%;height:100%;display:block;fill:currentColor}
+/* cover variants — dark defaults via SVG fills using currentColor / hard lime */
+.lib-cover--data{background:radial-gradient(90% 60% at 70% 0%,rgba(204,255,0,.14),transparent 55%),linear-gradient(180deg,#07140c 0%,#030a06 100%)}
+.lib-cover--wave{background:radial-gradient(80% 50% at 20% 90%,rgba(204,255,0,.18),transparent 50%),linear-gradient(155deg,#040c08,#0b1c12 55%,#020604)}
+.lib-cover--mesh{background:radial-gradient(70% 50% at 80% 80%,rgba(204,255,0,.12),transparent 45%),linear-gradient(200deg,#050e09,#081610 60%,#020705)}
+.lib-cover--orb{background:radial-gradient(60% 55% at 55% 70%,rgba(204,255,0,.22),transparent 55%),linear-gradient(170deg,#060f0a,#0a1811 50%,#030806)}
+html[data-theme="light"] .lib-cover{--lib-ink:#101110;--lib-muted:#5A6456;--lib-art:#2F4A00;--lib-panel:rgba(47,74,0,.08);--lib-line:rgba(47,74,0,.2);
+  background:radial-gradient(120% 80% at 85% 10%,rgba(204,255,0,.35),transparent 50%),linear-gradient(165deg,#F3F6EF 0%,#E4EBE0 48%,#D5DED0 100%)}
+html[data-theme="light"] .lib-cover--data{background:radial-gradient(90% 60% at 70% 0%,rgba(204,255,0,.4),transparent 55%),linear-gradient(180deg,#F7FAF3,#E8EFE3)}
+html[data-theme="light"] .lib-cover--wave{background:radial-gradient(80% 50% at 20% 90%,rgba(204,255,0,.42),transparent 50%),linear-gradient(155deg,#F5F8F1,#E2EBDB 55%,#D8E2D2)}
+html[data-theme="light"] .lib-cover--mesh{background:radial-gradient(70% 50% at 80% 80%,rgba(204,255,0,.32),transparent 45%),linear-gradient(200deg,#F4F7F0,#E6EEE1 60%,#DCE5D7)}
+html[data-theme="light"] .lib-cover--orb{background:radial-gradient(60% 55% at 55% 70%,rgba(204,255,0,.48),transparent 55%),linear-gradient(170deg,#F6F9F2,#E7EFE2 50%,#DCE6D6)}
+html[data-theme="light"] a.lib-card{background:var(--navy-3);box-shadow:0 1px 0 rgba(0,0,0,.04)}
+html[data-theme="light"] a.lib-card:hover{box-shadow:0 10px 28px rgba(16,20,16,.12)}
+.lib-card-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px;flex:1;background:var(--navy-2)}
+html[data-theme="light"] .lib-card-body{background:var(--navy-3)}
 .lib-tag{display:inline-flex;align-self:flex-start;font:700 10px var(--font);letter-spacing:.04em;color:#001408;background:var(--lime);border-radius:999px;padding:3px 9px}
-.lib-card h3{margin:0;font:800 14px/1.4 var(--font);color:#F2F7EF;letter-spacing:-.01em;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.lib-card h3{margin:0;font:800 14px/1.4 var(--font);color:var(--heading);letter-spacing:-.01em;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
 .lib-cta{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;margin-top:auto;font:800 12px var(--font);color:#001408;background:var(--lime);border:1px solid transparent;border-radius:999px;padding:8px 14px;pointer-events:none}
 a.lib-card:hover .lib-cta{background:#d8ff33}
 @media (max-width:900px){.lib-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -11744,12 +11752,47 @@ const VR_TIERS={
   function shortTitle(name){
     const s=String(name||'');
     const cut=s.split(/[:：]/)[0].trim();
-    return (cut.length>36?cut.slice(0,34)+'…':cut)||s.slice(0,34);
+    return (cut.length>42?cut.slice(0,40)+'…':cut)||s.slice(0,40);
   }
-  function cover(name){
-    return '<div class="lib-cover" aria-hidden="true"><div class="lib-doc">'
-      +'<div class="lib-doc-bar"></div><div class="lib-doc-lines"><i></i><i></i><i></i><i></i><i></i></div>'
-      +'<div class="lib-doc-title">'+esc(shortTitle(name))+'</div></div></div>';
+  function coverArt(kind, uid){
+    if(kind==='data') return '<svg viewBox="0 0 200 140" preserveAspectRatio="xMidYMid meet" aria-hidden="true">'
+      +'<rect x="8" y="18" width="84" height="52" rx="4" fill="var(--lib-panel)" stroke="var(--lib-line)"/>'
+      +'<path d="M18 58 L32 42 L46 48 L60 30 L74 38" fill="none" stroke="var(--lib-art)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>'
+      +'<rect x="108" y="18" width="84" height="52" rx="4" fill="var(--lib-panel)" stroke="var(--lib-line)"/>'
+      +'<rect x="118" y="48" width="10" height="14" fill="var(--lib-art)" opacity=".85"/><rect x="132" y="40" width="10" height="22" fill="var(--lib-art)" opacity=".7"/><rect x="146" y="34" width="10" height="28" fill="var(--lib-art)"/><rect x="160" y="44" width="10" height="18" fill="var(--lib-art)" opacity=".75"/>'
+      +'<rect x="8" y="82" width="184" height="46" rx="4" fill="var(--lib-panel)" stroke="var(--lib-line)"/>'
+      +'<path d="M20 112 C40 96 55 118 78 104 C98 92 112 110 130 100 C148 90 162 108 180 98" fill="none" stroke="var(--lib-art)" stroke-width="2" opacity=".9"/>'
+      +'<circle cx="20" cy="112" r="2.2" fill="var(--lib-art)"/><circle cx="78" cy="104" r="2.2" fill="var(--lib-art)"/><circle cx="130" cy="100" r="2.2" fill="var(--lib-art)"/><circle cx="180" cy="98" r="2.2" fill="var(--lib-art)"/>'
+      +'</svg>';
+    if(kind==='mesh') return '<svg viewBox="0 0 200 140" preserveAspectRatio="xMidYMid meet" aria-hidden="true">'
+      +'<g fill="none" stroke="var(--lib-line)" stroke-width="1"><path d="M20 30 H180 M20 55 H180 M20 80 H180 M20 105 H180"/><path d="M40 18 V122 M70 18 V122 M100 18 V122 M130 18 V122 M160 18 V122"/></g>'
+      +'<g fill="none" stroke="var(--lib-art)" stroke-width="1.6" opacity=".85"><path d="M40 55 L70 30 L100 55 L130 30 L160 55"/><path d="M40 80 L70 105 L100 80 L130 105 L160 80"/></g>'
+      +'<g fill="var(--lib-art)"><circle cx="40" cy="55" r="3.2"/><circle cx="70" cy="30" r="3.2"/><circle cx="100" cy="55" r="3.2"/><circle cx="130" cy="30" r="3.2"/><circle cx="160" cy="55" r="3.2"/><circle cx="70" cy="105" r="3.2"/><circle cx="100" cy="80" r="3.2"/><circle cx="130" cy="105" r="3.2"/></g>'
+      +'<rect x="86" y="66" width="28" height="28" rx="6" fill="var(--lib-art)" opacity=".95"/><path d="M94 80 H106 M100 74 V86" stroke="#001408" stroke-width="2" stroke-linecap="round"/></svg>';
+    if(kind==='orb'){ const gid='lib-orb-'+(uid||'x'); return '<svg viewBox="0 0 200 140" preserveAspectRatio="xMidYMid meet" aria-hidden="true">'
+      +'<defs><radialGradient id="'+gid+'" cx="40%" cy="35%" r="65%"><stop offset="0%" stop-color="var(--lib-art)" stop-opacity=".55"/><stop offset="100%" stop-color="var(--lib-art)" stop-opacity="0"/></radialGradient></defs>'
+      +'<ellipse cx="110" cy="78" rx="62" ry="42" fill="url(#'+gid+')"/>'
+      +'<ellipse cx="110" cy="78" rx="48" ry="30" fill="none" stroke="var(--lib-art)" stroke-width="1.4" opacity=".7"/>'
+      +'<ellipse cx="110" cy="78" rx="28" ry="16" fill="none" stroke="var(--lib-art)" stroke-width="1.2" opacity=".55"/>'
+      +'<circle cx="78" cy="54" r="18" fill="var(--lib-art)" opacity=".35"/><circle cx="142" cy="96" r="12" fill="var(--lib-art)" opacity=".45"/>'
+      +'<path d="M40 110 C70 70 90 120 120 85 C145 58 165 95 180 78" fill="none" stroke="var(--lib-art)" stroke-width="2.4" stroke-linecap="round" opacity=".9"/>'
+      +'</svg>'; }
+    /* wave default */
+    return '<svg viewBox="0 0 200 140" preserveAspectRatio="xMidYMid meet" aria-hidden="true">'
+      +'<path d="M0 110 C40 90 70 130 110 100 C150 70 175 95 200 78 V140 H0 Z" fill="var(--lib-art)" opacity=".18"/>'
+      +'<path d="M0 95 C45 70 75 115 115 88 C155 60 178 82 200 68" fill="none" stroke="var(--lib-art)" stroke-width="2.6" stroke-linecap="round"/>'
+      +'<path d="M0 78 C50 55 80 100 120 72 C155 50 175 68 200 58" fill="none" stroke="var(--lib-art)" stroke-width="1.6" opacity=".65"/>'
+      +'<path d="M0 60 C55 40 90 85 130 55 C160 38 180 52 200 44" fill="none" stroke="var(--lib-line)" stroke-width="1.2"/>'
+      +'<circle cx="150" cy="40" r="16" fill="var(--lib-art)" opacity=".25"/><circle cx="150" cy="40" r="7" fill="var(--lib-art)" opacity=".7"/>'
+      +'</svg>';
+  }
+  function cover(it){
+    const kind=(it.cover==='data'||it.cover==='mesh'||it.cover==='orb'||it.cover==='wave')?it.cover:'wave';
+    const eye=it.tag?('<span class="lib-cover-eye">'+esc(it.tag)+'</span>'):'';
+    return '<div class="lib-cover lib-cover--'+kind+'" aria-hidden="true">'
+      +eye+'<p class="lib-cover-title">'+esc(shortTitle(it.name))+'</p>'
+      +'<div class="lib-cover-art">'+coverArt(kind,it.id)+'</div>'
+      +'<span class="lib-cover-brand"><svg viewBox="0 0 153 137" aria-hidden="true"><use href="#kong-mark"/></svg></span></div>';
   }
   function render(){
     const items=(window.KONG_LIBRARY&&window.KONG_LIBRARY.items)||[];
@@ -11759,7 +11802,7 @@ const VR_TIERS={
       const cta=it.type==='download'?dl:access;
       const tag=it.tag?'<span class="lib-tag">'+esc(it.tag)+'</span>':'';
       return '<a class="lib-card" data-id="'+esc(it.id)+'" href="'+esc(it.url)+'" target="_blank" rel="noopener noreferrer">'
-        +cover(it.name)
+        +cover(it)
         +'<div class="lib-card-body">'+tag+'<h3>'+esc(it.name)+'</h3>'
         +'<span class="lib-cta">'+esc(cta)+'</span></div></a>';
     }).join('')||'<p class="cl-err">'+esc(t(I18N_IDS.empty,''))+'</p>';
