@@ -5,6 +5,18 @@
 
 ---
 
+## 2026.11.13.6af6f847
+
+### 新增
+
+- 资料库(Library)：（仅韩语）左侧栏。白皮书、指南与介绍资料
+- AI Gateway 2.0 > 功能变更 · 改进：Rate Limit 日历窗口与滚动窗口对比
+- AI Gateway 2.0 > 发布 · 支持策略：次要版本序列（Rolling·Stable）支持/日落期甘特图
+
+### 变更
+
+- AI Gateway 2.0 > 功能变更 · 改进 · 迁移：加强 Rate Limit policies[]·partition_by·绑定说明
+
 ## 2026.11.11.6af48730
 
 ### 新增

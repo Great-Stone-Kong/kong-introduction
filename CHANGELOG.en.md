@@ -5,6 +5,18 @@
 
 ---
 
+## 2026.11.13.6af6f847
+
+### Added
+
+- Library: Korean-only left rail. Whitepapers, guidelines, and introductions
+- AI Gateway 2.0 > Feature changes · improvements: Rate Limit calendar window vs rolling window comparison
+- AI Gateway 2.0 > Release · support policy: minor-release sequence (Rolling · Stable) support/sunset Gantt
+
+### Changed
+
+- AI Gateway 2.0 > Feature changes · improvements · Migration: strengthen Rate Limit policies[] · partition_by · binding guidance
+
 ## 2026.11.11.6af48730
 
 ### Added

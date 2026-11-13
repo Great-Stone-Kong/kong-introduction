@@ -5,6 +5,18 @@
 
 ---
 
+## 2026.11.13.6af6f847
+
+### 新增
+
+- 資料庫(Library)：（僅韓語）左側欄。白皮書、指南與介紹資料
+- AI Gateway 2.0 > 功能變更 · 改進：Rate Limit 日曆視窗與滾動視窗對比
+- AI Gateway 2.0 > 發布 · 支援策略：次要版本序列（Rolling·Stable）支援/日落期甘特圖
+
+### 變更
+
+- AI Gateway 2.0 > 功能變更 · 改進 · 遷移：加強 Rate Limit policies[]·partition_by·繫結說明
+
 ## 2026.11.11.6af48730
 
 ### 新增

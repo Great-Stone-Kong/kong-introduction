@@ -5,13 +5,17 @@
 
 ---
 
-## 2026.11.13.6af6f171
+## 2026.11.13.6af6f847
 
 ### 추가
 
 - 자료실(Library) : (한국어 한정) 좌측 레일. 백서·가이드·소개 자료
 - AI Gateway 2.0 > 기능 변경 · 개선 : Rate Limit 캘린더 윈도우 vs 롤링 윈도우 비교
 - AI Gateway 2.0 > 릴리스 · 지원 정책 : 마이너 시퀀스(Rolling·Stable) 지원·선셋 간트
+
+### 변경
+
+- AI Gateway 2.0 > 기능 변경 · 개선 · 마이그레이션 : Rate Limit policies[]·partition_by·바인딩 안내 보강
 
 ## 2026.11.11.6af48730
 
