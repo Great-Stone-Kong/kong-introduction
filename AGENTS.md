@@ -22,6 +22,7 @@ Kong(The AI Connectivity Company) 소개 자료를 **단일 HTML 파일**로 만
 | 경로 | 역할 | git |
 |---|---|---|
 | `src/deck.html` | **편집 소스.** 한국어 원문 마크업 · CSS · JS · `<!-- I18N_BUNDLE -->` 자리 | 추적 |
+| `src/library.yaml` | Library 모달 카탈로그(`items[]`). 빌드가 `KONG_LIBRARY`로 주입 | 추적 |
 | `src/i18n-engine.js` | 런타임 i18n 엔진(walk / setLang) | 추적 |
 | `src/i18n/messages/{ko,en,ja,zh-Hant,zh-Hans}.json` | stable id(`m.<12hex>`) → 문구 | 추적 |
 | `src/i18n/units.json` | 인라인 태그가 섞인 단위(`u.…`): `match`(KO textContent) → `en`/`ja`/`zh-Hant`/`zh-Hans` innerHTML | 추적 |

@@ -31,6 +31,102 @@ const fragments = JSON.parse(readFileSync(join(i18nDir, "fragments.json"), "utf8
 const shorts = JSON.parse(readFileSync(join(i18nDir, "shorts.json"), "utf8"));
 const engine = readFileSync(join(src, "i18n-engine.js"), "utf8");
 let deck = readFileSync(join(src, "deck.html"), "utf8");
+const libraryPath = join(src, "library.yaml");
+
+/** Minimal YAML for library.yaml: top-level `items:` list of scalar maps. */
+function parseLibraryYaml(text) {
+  const lines = text.replace(/\r\n/g, "\n").split("\n");
+  const items = [];
+  let cur = null;
+  let seenItems = false;
+  for (let i = 0; i < lines.length; i++) {
+    const raw = lines[i];
+    const line = raw.replace(/#.*$/, "").trimEnd();
+    if (!line.trim()) continue;
+    if (/^items:\s*$/.test(line)) {
+      seenItems = true;
+      continue;
+    }
+    if (!seenItems) {
+      console.error(`build: library.yaml unexpected line ${i + 1}: ${raw}`);
+      process.exit(1);
+    }
+    const itemStart = line.match(/^\s*-\s+(\w+):\s*(.*)$/);
+    if (itemStart) {
+      cur = {};
+      items.push(cur);
+      setYamlField(cur, itemStart[1], itemStart[2], i + 1);
+      continue;
+    }
+    const field = line.match(/^\s+(\w+):\s*(.*)$/);
+    if (field && cur) {
+      setYamlField(cur, field[1], field[2], i + 1);
+      continue;
+    }
+    console.error(`build: library.yaml parse error at line ${i + 1}: ${raw}`);
+    process.exit(1);
+  }
+  return { items };
+}
+
+function setYamlField(obj, key, rawVal, lineNo) {
+  let v = rawVal.trim();
+  if (
+    (v.startsWith('"') && v.endsWith('"')) ||
+    (v.startsWith("'") && v.endsWith("'"))
+  ) {
+    v = v.slice(1, -1);
+  }
+  obj[key] = v;
+}
+
+function loadLibrary() {
+  if (!existsSync(libraryPath)) {
+    console.error("build: src/library.yaml missing");
+    process.exit(1);
+  }
+  const data = parseLibraryYaml(readFileSync(libraryPath, "utf8"));
+  if (!Array.isArray(data.items) || data.items.length === 0) {
+    console.error("build: library.yaml items[] empty");
+    process.exit(1);
+  }
+  const ids = new Set();
+  for (const [i, it] of data.items.entries()) {
+    const where = `items[${i}]`;
+    for (const k of ["id", "name", "type", "url"]) {
+      if (!it[k] || typeof it[k] !== "string") {
+        console.error(`build: library.yaml ${where}.${k} required`);
+        process.exit(1);
+      }
+    }
+    if (it.type !== "access" && it.type !== "download") {
+      console.error(`build: library.yaml ${where}.type must be access|download`);
+      process.exit(1);
+    }
+    if (ids.has(it.id)) {
+      console.error(`build: library.yaml duplicate id ${it.id}`);
+      process.exit(1);
+    }
+    ids.add(it.id);
+    try {
+      new URL(it.url);
+    } catch {
+      console.error(`build: library.yaml ${where}.url invalid`);
+      process.exit(1);
+    }
+  }
+  return {
+    items: data.items.map((it) => ({
+      id: it.id,
+      name: it.name,
+      type: it.type,
+      url: it.url,
+      ...(it.tag ? { tag: it.tag } : {}),
+    })),
+  };
+}
+
+const library = loadLibrary();
 
 const versionRe = /^\d{4}\.\d{2}\.\d{2}\.[0-9a-f]+$/;
 const ID_RE = /\b([mus]\.[a-f0-9]{12}(?:_\d+)?)\b/g;
@@ -200,6 +296,15 @@ deck = deck.replace(
   makeBundle(D, LANGS, IX_MULTI, null)
 );
 
+if (!deck.includes("<!-- LIBRARY_BUNDLE -->")) {
+  console.error("build: <!-- LIBRARY_BUNDLE --> placeholder missing in src/deck.html");
+  process.exit(1);
+}
+deck = deck.replace(
+  "<!-- LIBRARY_BUNDLE -->",
+  `<script id="library-js">window.KONG_LIBRARY=${escBlob(library)};</script>`
+);
+
 function lockLang(html, lang) {
   const pruned = pruneD(lang);
   const langs = [lang];
@@ -236,6 +341,6 @@ for (const lang of LANGS) {
 }
 
 console.log(
-  `built ${out} + ${pagesOut} (${deck.length} bytes, version=${version}, T=${Object.keys(T).length}, U=${Object.keys(U).length}, F=${F.length}, S=${Object.keys(S).length}, I=${Object.keys(I).length})`
+  `built ${out} + ${pagesOut} (${deck.length} bytes, version=${version}, T=${Object.keys(T).length}, U=${Object.keys(U).length}, F=${F.length}, S=${Object.keys(S).length}, I=${Object.keys(I).length}, library=${library.items.length})`
 );
 console.log(`locked ${locked.join(", ")}`);
