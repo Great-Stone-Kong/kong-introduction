@@ -5841,6 +5841,7 @@
   "m.f06cfa4e42ad": "产量 吞吐量",
   "m.f074817dc957": "ACL 联动：仅暴露并调用有权限的工具。",
   "m.f0780ca8e0a7": "确定的支持代理",
+  "m.f0d910056b0a": "以 AI Gateway 2.2+(Konnect) 为准。Kong Key Auth 接受 apikey · x-api-key · x-goog-api-key 标头，全局 Pre-Function 策略会将 Authorization: Bearer 映射到 apikey。MCP 由 AI MCP Server 与 AI Auth Strategy（OAuth 2.1）构成。示意中的地址 · 密钥 · 模型名称仅为示例，实际路径与标头以 Kong 配置为准。按 Anthropic 条款，Claude.ai 团队席位 · 会话令牌不得经由 Gateway 转发。来源：",
   "m.f0e6b35d08c4": "Token 占比",
   "m.f107be9e331b": "客户支持代理：订单查询与退款",
   "m.f10df0687a52": "通过 Admin API · CI/CD 切换",

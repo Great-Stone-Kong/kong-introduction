@@ -5841,6 +5841,7 @@
   "m.f06cfa4e42ad": "Produce · throughput",
   "m.f074817dc957": "ACL: only authorized tools are exposed and called.",
   "m.f0780ca8e0a7": "support-agent identified",
+  "m.f0d910056b0a": "Based on AI Gateway 2.2+ (Konnect). Kong Key Auth accepts apikey · x-api-key · x-goog-api-key headers, and a global Pre-Function policy maps Authorization: Bearer to apikey. MCP uses AI MCP Server and AI Auth Strategy (OAuth 2.1). Addresses · keys · model names in the mockups are examples; real paths and headers follow your Kong config. Claude.ai team seats · session tokens must not be relayed through the Gateway under Anthropic terms. Source: ",
   "m.f0e6b35d08c4": "Token share",
   "m.f107be9e331b": "Customer support agent · order lookup and refunds",
   "m.f10df0687a52": "Toggled via Admin API · CI/CD",

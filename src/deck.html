@@ -5402,7 +5402,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
   <p class="sub">앱과 AI 도구는 지금 쓰는 SDK · CLI · 채팅 도구 · MCP 클라이언트를 그대로 씁니다. 호출 주소만 Kong AI Gateway로 바꾸면 인증, 가드레일, 라우팅, 비용 통제, 로깅이 모든 요청에 적용됩니다. 클라이언트에는 Kong이 발급한 키나 OAuth 토큰만 두고, 실제 provider 키는 Kong이 보관합니다. 항목을 고르면 연동 설정과 화면 목업을 볼 수 있습니다.</p>
   <div class="ait-flow"><div class="n">앱 · AI 도구 · MCP 클라이언트<small>Kong 키 · OAuth 토큰</small></div><i></i><div class="n k">Kong AI Gateway<small>인증 · 정책 · 로그</small></div><i></i><div class="n">LLM 제공자 · API · MCP 서버<small>provider 키 주입 · 도구별 ACL</small></div></div>
   <div class="ait" id="ait">
-    <div class="ait-pick" role="tablist"><div class="ait-g"><span>애플리케이션</span><button type="button" class="on" data-i="sdk">LLM SDK</button></div><div class="ait-g"><span>터미널 CLI</span><button type="button" class="" data-i="0">Claude Code</button><button type="button" class="" data-i="1">Codex CLI</button><button type="button" class="" data-i="2">Gemini CLI</button></div><div class="ait-g"><span>데스크톱 · 에디터</span><button type="button" class="" data-i="3">Claude Desktop</button><button type="button" class="" data-i="4">Cursor</button></div><div class="ait-g"><span>브라우저 채팅</span><button type="button" class="" data-i="5">LibreChat</button><button type="button" class="" data-i="6">Open WebUI</button></div><div class="ait-g"><span>MCP</span><button type="button" class="" data-i="mcp">MCP 서버</button></div></div>
+    <div class="ait-pick" role="tablist"><div class="ait-g"><span>애플리케이션</span><button type="button" class="on" data-i="sdk" data-src="https://developer.konghq.com/cookbooks/" data-src-label="Kong AI Cookbook ↗">LLM SDK</button></div><div class="ait-g"><span>터미널 CLI</span><button type="button" class="" data-i="0" data-src="https://developer.konghq.com/cookbooks/coding-agents-claude-code/" data-src-label="AI Tool Integration: Claude Code ↗">Claude Code</button><button type="button" class="" data-i="1" data-src="https://developer.konghq.com/cookbooks/coding-agents-codex/" data-src-label="AI Tool Integration: Codex CLI ↗">Codex CLI</button><button type="button" class="" data-i="2" data-src="https://developer.konghq.com/cookbooks/coding-agents-gemini-cli/" data-src-label="AI Tool Integration: Gemini CLI ↗">Gemini CLI</button></div><div class="ait-g"><span>데스크톱 · 에디터</span><button type="button" class="" data-i="3" data-src="https://developer.konghq.com/cookbooks/coding-agents-claude-desktop/" data-src-label="AI Tool Integration: Claude Desktop ↗">Claude Desktop</button><button type="button" class="" data-i="4" data-src="https://developer.konghq.com/cookbooks/coding-agents-cursor/" data-src-label="AI Tool Integration: Cursor ↗">Cursor</button></div><div class="ait-g"><span>브라우저 채팅</span><button type="button" class="" data-i="5" data-src="https://developer.konghq.com/cookbooks/coding-agents-librechat/" data-src-label="AI Tool Integration: LibreChat ↗">LibreChat</button><button type="button" class="" data-i="6" data-src="https://developer.konghq.com/cookbooks/coding-agents-open-webui/" data-src-label="AI Tool Integration: Open WebUI ↗">Open WebUI</button></div><div class="ait-g"><span>MCP</span><button type="button" class="" data-i="mcp" data-src="https://developer.konghq.com/cookbooks/secure-internal-mcp-gateway/" data-src-label="Secure Internal MCP Gateway ↗">MCP 서버</button></div></div>
     <div class="ait-panes"><div class="ait-pane on" data-i="sdk"><div class="ait-hd"><h4>LLM SDK</h4><i class="ar"></i><span class="kp">Kong AI Gateway</span><em class="gt">애플리케이션</em></div><div class="ait-l"><div class="ait-spec"><div class="ait-lb">연결에 필요한 값</div><dl><div><dt>경로</dt><dd><small>https://ai-gw.kong.ai</small>/llm</dd></div><div><dt>요청 형식</dt><dd>OpenAI · Anthropic · Gemini SDK</dd></div><div><dt>인증 헤더</dt><dd>Authorization → apikey</dd></div></dl></div><div class="ait-lb">연동 설정</div><pre class="code ait-cfg"><span class="c"># Before · call the provider directly</span>
 <span class="f">client</span> = <span class="k">OpenAI</span>(<span class="f">api_key</span>=<span class="s">&quot;sk-…&quot;</span>)   <span class="c"># provider key in every app</span>
 
@@ -5466,7 +5466,7 @@ telemetry          otlp + kafka-log → kong-request-logs</pre></div>
 <span class="p">&gt; Cancel order 1042</span>
 <span class="x">⏺ cancel-order(orderId: &quot;1042&quot;)  → 403 Forbidden</span></pre></div></div><div class="ait-log"><span class="k">Kong</span><span>MCP tools/call check-inventory</span><span class="ok">200</span><span>group=warehouse-ops</span><span>claude-code</span></div><div class="ait-log"><span class="k">Kong</span><span>MCP tools/call cancel-order</span><span class="no">403</span><span>group=warehouse-ops</span><span>ACL deny</span></div></div></div></div>
   </div>
-  <p class="note">AI Gateway 2.2+(Konnect) 기준입니다. Kong Key Auth는 apikey · x-api-key · x-goog-api-key 헤더를 받고, 전역 Pre-Function 정책이 Authorization: Bearer 값을 apikey로 옮깁니다. MCP는 AI MCP Server와 AI Auth Strategy(OAuth 2.1)로 구성합니다. 목업의 주소 · 키 · 모델명은 예시이며, 실제 경로와 헤더는 Kong 구성에 따릅니다. Claude.ai 팀 좌석 · 세션 토큰은 Anthropic 약관상 Gateway로 중계하지 않습니다. 출처: Kong AI Cookbook · AI Tool Integration · Secure Internal MCP Gateway 레시피.</p>
+  <p class="note">AI Gateway 2.2+(Konnect) 기준입니다. Kong Key Auth는 apikey · x-api-key · x-goog-api-key 헤더를 받고, 전역 Pre-Function 정책이 Authorization: Bearer 값을 apikey로 옮깁니다. MCP는 AI MCP Server와 AI Auth Strategy(OAuth 2.1)로 구성합니다. 목업의 주소 · 키 · 모델명은 예시이며, 실제 경로와 헤더는 Kong 구성에 따릅니다. Claude.ai 팀 좌석 · 세션 토큰은 Anthropic 약관상 Gateway로 중계하지 않습니다. 출처: <a id="ait-src" href="https://developer.konghq.com/cookbooks/" target="_blank" rel="noopener noreferrer">Kong AI Cookbook ↗</a></p>
 
 </section>
 
@@ -12005,9 +12005,13 @@ const VR_TIERS={
 (function(){
   const r=document.getElementById('ait'); if(!r) return;
   const bs=[...r.querySelectorAll('.ait-pick button')], ps=[...r.querySelectorAll('.ait-pane')];
+  const src=document.getElementById('ait-src');
+  const setSrc=b=>{ if(!src||!b) return; if(b.dataset.src) src.href=b.dataset.src; if(b.dataset.srcLabel) src.textContent=b.dataset.srcLabel; };
+  setSrc(bs.find(x=>x.classList.contains('on'))||bs[0]);
   r.addEventListener('click',e=>{ const b=e.target.closest('.ait-pick button'); if(!b) return; const i=b.dataset.i;
     bs.forEach(x=>{ x.classList.toggle('on',x===b); x.setAttribute('aria-selected',x===b?'true':'false'); });
-    ps.forEach(p=>p.classList.toggle('on',p.dataset.i===i)); });
+    ps.forEach(p=>p.classList.toggle('on',p.dataset.i===i));
+    setSrc(b); });
 })();
 </script>
 <!-- LIBRARY_BUNDLE -->

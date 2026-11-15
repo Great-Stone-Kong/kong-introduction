@@ -5841,6 +5841,7 @@
   "m.f06cfa4e42ad": "Produce · スループット",
   "m.f074817dc957": "ACL 連携: 権限のあるツールだけ公開・呼び出します。",
   "m.f0780ca8e0a7": "support-agentを識別",
+  "m.f0d910056b0a": "AI Gateway 2.2+(Konnect) 基準です。Kong Key Auth は apikey · x-api-key · x-goog-api-key ヘッダーを受け取り、グローバル Pre-Function ポリシーが Authorization: Bearer を apikey に移します。MCP は AI MCP Server と AI Auth Strategy（OAuth 2.1）で構成します。モックのアドレス · キー · モデル名は例であり、実際のパスとヘッダーは Kong 構成に従います。Claude.ai チーム席 · セッショントークンは Anthropic 約款上 Gateway で中継しません。出典: ",
   "m.f0e6b35d08c4": "トークン比率",
   "m.f107be9e331b": "カスタマーサポートAgent · 注文照会と返金",
   "m.f10df0687a52": "Admin API · CI/CD で切替",
