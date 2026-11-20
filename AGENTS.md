@@ -90,6 +90,20 @@ npm run build        # 멀티 HTML + docs/index.html + dist/ 언어 고정 HTML 
 
 새 UI는 CSS 변수(`--navy`, `--lime`, `--card`, `--line`, `--heading` 등)를 쓰고, `html[data-theme="light"]`에서도 읽히는지 확인한다. SVG 색도 하드코딩보다 변수를 우선한다.
 
+### 반경 · 간격 토큰
+
+`src/deck.html` `:root`의 `--radius-*` · `--space-*`를 공통 UI에 쓴다. 새 `border-radius` · padding · gap에 임의 px를 넣지 않는다.
+
+| 토큰 | 용도 |
+|---|---|
+| `--radius-xs` … `--radius-lg` · `--radius-pill` | 카드 · 패널 · 칩 · pill |
+| `--radius-inset` | 패딩 있는 부모 안쪽 자식 반경(`max(0, outer − pad)`) |
+| `--space-1`…`--space-6` · `--space-8` | 4px 배수 간격 |
+
+- 패딩 있는 셸(`.card` · `.ait-panes` · `.fbox` 등)은 `--radius-outer` · `--pad`를 두고, 안쪽 입력·코드·윈도는 `border-radius: var(--radius-inset)`.
+- Continuous Corner는 `@supports (corner-shape: squircle)` progressive enhancement만. 미지원 브라우저에 강제하지 않는다.
+- 1차 예외(하드코딩 유지 가능): 대형 SVG `rx`/`ry`, Insomnia 목업 `--ins-*`, `border-radius: 50%` 원형.
+
 ## 6. 콘텐츠 원칙
 
 ### 제목 · 헤더 작성 규칙
@@ -118,7 +132,7 @@ npm run build        # 멀티 HTML + docs/index.html + dist/ 언어 고정 HTML 
 ### 디자인 시스템 · 아이콘
 
 - 기준: `Korean Docs of Kong Design System [v1.3]/README.md`(로컬). 다크 그린(`#001408`) + electric lime(`#CCFF00`), Funnel Sans, sentence case, 이모지 · 보라 테마 · 카드 남발 지양.
-- 기존 소개 HTML의 CSS 변수 · 클래스와 충돌하면 **기존 패턴을 우선**하고, 새 UI는 디자인 시스템에 가깝게 맞춘다.
+- 기존 소개 HTML의 CSS 변수 · 클래스와 충돌하면 **기존 패턴을 우선**하고, 새 UI는 디자인 시스템에 가깝게 맞춘다. 공통 셸·버튼·패널의 반경·간격은 위 **반경 · 간격 토큰**을 우선한다.
 - 글이 많은 섹션 · 문장 속 수치를 시각화할 때는 `Korean Docs of Kong Design System [v1.3]/guides/visual-elements.md`(시각 요소 카탈로그 E1–E16)를 먼저 읽는다. 섹션당 시각 앵커 1개, 라벨 대신 요지 한 문장, 원문은 `details.vr-more` 펼침, 덱에 이미 있는 `.vr-*` 패턴 재사용, 문서의 도식 점검 목록(행 정렬 · HA 수렴 · 왕복 경로 분리 · 선택 UX · 카운트업)을 따른다.
 - 애니메이션 · 전환 · 영상 연출을 넣을 때는 `Korean Docs of Kong Design System [v1.3]/guides/motion.md`(모션 용어 M1–M20)의 용어별 상태를 따른다. 기본은 이즈 아웃 · 스태거 · 카운트업 · 디졸브 · 와이프 · 매치 컷, 오버슈트 · 스쿼시 앤 스트레치 · 3D 오빗은 쓰지 않고, 글리치는 장애 · 공격 상태에만 쓴다. UI 120–420ms, 데이터 연출만 1.2–1.8s, `prefers-reduced-motion` · 인쇄는 최종 상태.
 - **아이콘은 회사 권고 세트(Kong Iconography)를 반드시 먼저 쓴다. 직접 그린 아이콘 · 임의 SVG · Lucide 등 외부 세트로 대체하지 않는다.**
