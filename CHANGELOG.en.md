@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.20.6b00172e
+
+### Added
+
+- Infrastructure > Network policy: Konnect network policy requirements
+
 ## 2026.11.13.6af6f847
 
 ### Added
