@@ -8794,6 +8794,63 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
   <p class="note">Konnect에서 Hybrid와 Self-managed는 같은 구성입니다. Control Plane은 Konnect, Data Plane은 고객 환경에서 운영합니다.</p>
   <p class="note">출처: <a href="https://developer.konghq.com/gateway/topology-hosting-options/" target="_blank" rel="noopener noreferrer">Data Plane hosting options ↗</a> · <a href="https://developer.konghq.com/dedicated-cloud-gateways/" target="_blank" rel="noopener noreferrer">Dedicated Cloud Gateways ↗</a></p>
 </section>
+
+<section class="sec" id="inf-k-net" data-title="네트워크 정책" data-show-edition="konnect">
+  <div class="eyebrow">Network Policy</div>
+  <h2>Konnect 연결 네트워크 정책</h2>
+  <p class="sub">Self-managed Data Plane은 고객망에서 Konnect로 outbound TCP 443(HTTPS · mTLS)만 엽니다. Data Plane이 연결을 시작하며, Konnect에서 고객망으로의 inbound는 필요하지 않습니다. 클라이언트용 인바운드는 프록시 포트만 개방합니다.</p>
+  <div class="grid g3">
+    <div class="card"><span class="tag">연결 방향</span><h3>DP → Konnect</h3><p>Data Plane이 Control Plane · 텔레메트리 엔드포인트로 연결합니다. Konnect가 고객 방화벽을 향해 들어오지 않습니다.</p></div>
+    <div class="card"><span class="tag">필수 포트</span><h3>TCP 443</h3><p>설정 동기화와 텔레메트리에 사용합니다. 채널은 mTLS로 보호됩니다.</p></div>
+    <div class="card"><span class="tag">프록시 inbound</span><h3>8000 · 8443</h3><p>기본 HTTP · HTTPS 프록시 포트입니다. 고객 클라이언트와 설정한 리스너만 개방합니다.</p></div>
+  </div>
+  <div class="tw"><table><thead><tr><th>포트</th><th>프로토콜</th><th>방향</th><th>용도</th></tr></thead><tbody>
+    <tr><td>443</td><td>TCP · HTTPS</td><td>outbound (DP → Konnect)</td><td>설정 · 텔레메트리 (mTLS)</td></tr>
+    <tr><td>8000</td><td>HTTP</td><td>inbound (클라이언트 → DP)</td><td>기본 프록시 (proxy_listen)</td></tr>
+    <tr><td>8443</td><td>HTTPS</td><td>inbound (클라이언트 → DP)</td><td>기본 프록시 (proxy_listen)</td></tr>
+  </tbody></table></div>
+  <p class="note">호스티드 Control Plane의 audit logging은 8071(TCP) · 20010(UDP)을 쓰며 커스터마이즈할 수 없습니다. Data Plane 방화벽의 필수 egress는 443입니다.</p>
+  <p class="note">Dedicated Cloud Gateways · PrivateLink 전용 경로는 이 섹션 범위 밖입니다. Self-managed Data Plane · 사용자 접근 기준입니다.</p>
+
+  <details class="vr-more"><summary>Allowlist 호스트명</summary><div class="vr-mb">
+    <p class="sub" style="margin-top:0">REGION은 au · eu · in · us · sg(베타)입니다. 사용하는 제품 행만 allowlist에 넣습니다. cp · tp 호스트는 조직 · Control Plane마다 고유합니다.</p>
+    <div class="tw"><table><thead><tr><th>호스트명</th><th>용도</th></tr></thead><tbody>
+      <tr><td>cloud.konghq.com</td><td>Konnect UI (공유 · 항상)</td></tr>
+      <tr><td>global.api.konghq.com</td><td>인증 · ID · 팀 · 조직 설정 (공유 · 항상)</td></tr>
+      <tr><td>REGION.api.konghq.com</td><td>리전 API · decK</td></tr>
+      <tr><td>&lt;cp-prefix&gt;.REGION.cp.konghq.com</td><td>Gateway 설정 → Data Plane</td></tr>
+      <tr><td>&lt;cp-prefix&gt;.REGION.tp.konghq.com</td><td>Gateway 텔레메트리 · Analytics</td></tr>
+      <tr><td>REGION.control-plane.konghq.com</td><td>Event Gateway 설정</td></tr>
+      <tr><td>REGION.telemetry.konghq.com</td><td>Event Gateway 텔레메트리</td></tr>
+      <tr><td>REGION.mesh.sync.konghq.com</td><td>Mesh 런타임</td></tr>
+      <tr><td>ISSUER_ID.REGION.identity.konghq.com</td><td>Identity 서버</td></tr>
+      <tr><td>REGION.identity.konghq.com</td><td>Identity realm 조회</td></tr>
+      <tr><td>PORTAL_ID.REGION.kongportals.com</td><td>Dev Portal</td></tr>
+    </tbody></table></div>
+    <p class="note">출처: <a href="https://developer.konghq.com/konnect-platform/network/" target="_blank" rel="noopener noreferrer">Networking in Konnect · Hostnames ↗</a></p>
+  </div></details>
+
+  <details class="vr-more"><summary>IP allowlist 대안</summary><div class="vr-mb">
+    <p>호스트명 대신 리전별 ingressIPs를 allowlist하는 방식을 Kong이 권고합니다. DNS · 인프라 변경에 덜 민감합니다. 갱신은 RSS로 구독합니다.</p>
+    <p class="note">출처: <a href="https://ip-addresses.origin.konghq.com/ip-addresses.json" target="_blank" rel="noopener noreferrer">ip-addresses.json ↗</a> · <a href="https://ip-addresses.origin.konghq.com/rss" target="_blank" rel="noopener noreferrer">IP updates RSS ↗</a> · <a href="https://developer.konghq.com/konnect-platform/network/" target="_blank" rel="noopener noreferrer">Networking in Konnect ↗</a></p>
+  </div></details>
+
+  <details class="vr-more"><summary>Forward proxy</summary><div class="vr-mb">
+    <p>outbound 443을 직접 열 수 없으면 기존 네트워크 프록시를 경유할 수 있습니다. Data Plane에서 proxy_server · cluster_use_proxy를 설정합니다. HTTP_PROXY · HTTPS_PROXY 환경 변수만으로는 CP/DP 트래픽에 적용되지 않습니다.</p>
+    <p class="note">출처: <a href="https://developer.konghq.com/gateway/cp-dp-communication/" target="_blank" rel="noopener noreferrer">CP/DP communication · forward proxy ↗</a></p>
+  </div></details>
+
+  <details class="vr-more"><summary>단절 · Org IP allowlist</summary><div class="vr-mb">
+    <ul class="list">
+      <li>Control Plane과 단절되어도 Data Plane은 캐시된 설정으로 프록시를 유지합니다. 라이선스가 만료되거나 캐시가 삭제되면 중단됩니다.</li>
+      <li>Org IP allowlist는 Konnect UI · API · decK · kongctl · Terraform 접근을 제한하는 Konnect 측 통제입니다. 고객 방화벽 egress와는 별개입니다. 허용 IP가 도달 불능이면 Konnect 접근이 막힙니다.</li>
+    </ul>
+    <p class="note">출처: <a href="https://developer.konghq.com/konnect-platform/network/" target="_blank" rel="noopener noreferrer">Networking in Konnect · FAQ · Org IP allowlist ↗</a></p>
+  </div></details>
+
+  <p class="note">출처: <a href="https://developer.konghq.com/konnect-platform/network/" target="_blank" rel="noopener noreferrer">Networking in Konnect ↗</a> · <a href="https://developer.konghq.com/gateway/hybrid-mode/" target="_blank" rel="noopener noreferrer">Hybrid mode ↗</a> · <a href="https://developer.konghq.com/gateway/cp-dp-communication/" target="_blank" rel="noopener noreferrer">CP/DP communication ↗</a></p>
+</section>
+
 <section class="sec" id="inf-iso" data-title="환경 격리" data-show-edition="enterprise">
   <div class="eyebrow">Environment Isolation</div>
   <h2>환경 격리</h2>
