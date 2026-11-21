@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b0166b5
+
+### 変更
+
+- AI Management > AI Cost Management : モック高さ ~600px。Price Catalog の Add override 右パネル、Attribution·Org·Exports·Anomalies·Savings の品質改善
+
 ## 2026.11.21.6b016574
 
 ### 変更

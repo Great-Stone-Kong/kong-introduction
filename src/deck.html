@@ -270,7 +270,13 @@ html[data-theme="light"] .amk-btn.pri{background:var(--g900);color:#fff;border-c
 #am-cost .amk-stack>[data-kp]:not(.on) .on,
 #am-obs .amk-stack>[data-kp]:not(.on) .on{visibility:hidden}
 #am-cost .amk-main,#am-obs .amk-main{padding:10px 12px}
-#am-cost .amk-hd,#am-obs .amk-hd{margin:0 0 6px}
+#am-cost .amc-stage>.amk-win{height:638px;display:flex;flex-direction:column}
+#am-cost .amc-stage>.amk-win .amk-body{flex:1;min-height:0;height:auto}
+#am-cost .amk-main{height:100%;min-height:0;overflow:hidden;display:flex;flex-direction:column;box-sizing:border-box}
+#am-cost .amk-main>.amk-stack{flex:1;min-height:0}
+#am-cost .amk-main>.amk-stack>.amk-p{display:flex;flex-direction:column;min-height:0;overflow:auto}
+#am-cost .amc-stage.budget-on .amc-bud-rail{height:638px;min-height:638px}
+#am-cost .amk-hd,#am-obs .amk-hd{margin:0 0 6px;flex:none}
 #am-cost .amk-hd h3,#am-obs .amk-hd h3{font-size:17px}
 #am-cost .amk-hd .amk-desc,#am-obs .amk-hd .amk-desc{margin:3px 0 0;font-size:12px}
 #am-cost .amk-tool,#am-cost .amk-kpis,#am-cost .amk-info,#am-cost .amk-map,
@@ -281,13 +287,35 @@ html[data-theme="light"] .amk-btn.pri{background:var(--g900);color:#fff;border-c
 #am-obs .amk-tbl td,#am-obs .amk-tbl th{padding:4px 5px}
 #am-cost .amk-pane,#am-obs .amk-pane{padding:8px 10px}
 #am-cost .amk-chart,#am-obs .amk-chart{max-height:72px}
-#am-cost .amk-foot{margin:6px 0 0}
+#am-cost .amk-foot{margin:6px 0 0;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:11.5px;color:var(--g400)}
+#am-cost .amk-foot .amk-pill{font-size:11px}
 #am-cost .amk-grid,#am-obs .amk-grid{gap:8px}
 #am-cost .amk-alerts,#am-obs .amk-alerts{gap:4px}
 #am-cost .amk-alerts li,#am-obs .amk-alerts li{padding:5px 8px}
 #am-cost .amk-row,#am-obs .amk-row{padding:3px 0}
 #am-cost .amk-rules{margin-top:8px}
-#am-cost .amk-main>.amk-stack>.amk-p{display:flex;flex-direction:column}
+#am-cost .amc-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.38fr);gap:0;flex:1;min-height:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
+#am-cost .amc-split-main{min-width:0;overflow:auto;padding:10px;display:flex;flex-direction:column}
+#am-cost .amc-drawer{border-left:1px solid var(--line2);background:var(--navy-2);padding:12px;overflow:auto;min-width:0;display:flex;flex-direction:column;gap:10px}
+#am-cost .amc-drawer-h{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+#am-cost .amc-drawer-h b{font-size:14px;color:var(--heading)}
+#am-cost .amc-drawer-h span{font-size:11.5px;color:var(--g400)}
+#am-cost .amc-drawer-x{font:700 12px var(--font);color:var(--g400);border:0;background:none;padding:2px 6px}
+#am-cost .amc-field{display:flex;flex-direction:column;gap:3px}
+#am-cost .amc-field>span{font:700 10.5px var(--font);letter-spacing:.04em;text-transform:uppercase;color:var(--g400)}
+#am-cost .amc-field>em,#am-cost .amc-field>i{font-style:normal;font:500 12.5px var(--font);color:var(--heading);border:1px solid var(--line2);border-radius:6px;background:var(--card);padding:7px 9px}
+#am-cost .amc-field-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#am-cost .amc-drawer-act{display:flex;gap:8px;margin-top:auto;padding-top:8px}
+#am-cost .amc-drawer-act .amk-btn{flex:1;text-align:center}
+#am-cost .amc-tog{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--heading)}
+#am-cost .amc-tog:last-child{border-bottom:0}
+#am-cost .amc-tog em{font-style:normal;font-size:11px;color:var(--g400);display:block}
+#am-cost .amc-sw{width:34px;height:18px;border-radius:999px;background:var(--g700);position:relative;flex:none}
+#am-cost .amc-sw.on{background:var(--lime)}
+#am-cost .amc-sw i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;transition:left .15s ease}
+#am-cost .amc-sw.on i{left:18px}
+#am-cost .amc-prov{font-size:11px;color:var(--g400)}
+@media (max-width:900px){#am-cost .amc-split{grid-template-columns:1fr}#am-cost .amc-drawer{border-left:0;border-top:1px solid var(--line2)}}
 #am-cost .amc-bul{margin:var(--space-3) 0 var(--space-4)}
 #am-cost .amc-bul li{font-size:14.5px;line-height:1.55}
 #am-cost .amc-why{margin:0 0 var(--space-5)}
@@ -335,23 +363,39 @@ html[data-theme="light"] .amk-btn.pri{background:var(--g900);color:#fff;border-c
 #am-cost .amc-bud-row{margin:0 0 6px}
 #am-cost .amc-bud-track{margin:0 0 8px}
 @keyframes amc-dash{to{stroke-dashoffset:-20}}
-#am-cost .amc-int{display:flex;flex-direction:column;gap:8px}
-#am-cost .amc-int-g>span{display:block;font:800 11px var(--font);color:var(--g400);margin:0 0 4px}
-#am-cost .amc-int-row{display:flex;flex-wrap:wrap;gap:6px}
-#am-cost .amc-int-card{border:1px solid var(--line2);border-radius:8px;padding:8px 10px;font:700 12px var(--font);color:var(--heading);background:var(--card)}
-#am-cost .amc-int-card.on{border-color:var(--lime);background:var(--accent-soft)}
-#am-cost .amc-org{display:flex;flex-direction:column;align-items:center;gap:10px;padding:8px 0}
-#am-cost .amc-org-node{border:1px solid var(--line2);border-radius:8px;padding:8px 12px;background:var(--card);min-width:140px;text-align:left}
+#am-cost .amc-int{display:flex;flex-direction:column;gap:12px}
+#am-cost .amc-int-g>span{display:block;font:800 11px var(--font);color:var(--g400);margin:0 0 6px}
+#am-cost .amc-int-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px}
+#am-cost .amc-int-card{border:1px solid var(--line2);border-radius:10px;padding:12px 10px;background:var(--card);display:flex;flex-direction:column;gap:8px;min-height:72px}
+#am-cost .amc-int-card i{width:28px;height:28px;border-radius:8px;background:var(--card2);display:grid;place-items:center;font:800 11px var(--mono);color:var(--heading)}
+#am-cost .amc-int-card b{font:700 12px var(--font);color:var(--heading);line-height:1.25}
+#am-cost .amc-int-card.on{border-color:var(--lime);background:var(--accent-soft);box-shadow:0 0 0 1px var(--lime)}
+#am-cost .amc-org{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;padding:12px 8px;position:relative;background:radial-gradient(circle at 50% 30%,color-mix(in srgb,var(--mark) 8%,transparent),transparent 55%)}
+#am-cost .amc-org-node{border:1px solid var(--line2);border-radius:10px;padding:10px 12px;background:var(--card);min-width:148px;text-align:left;box-shadow:0 8px 20px -16px rgba(0,0,0,.45)}
 #am-cost .amc-org-node b{display:block;font-size:12.5px;color:var(--heading)}
 #am-cost .amc-org-node span{display:block;font-size:11px;color:var(--g300)}
-#am-cost .amc-org-node em{display:block;font-style:normal;font-size:10.5px;color:var(--g400);margin-top:2px}
+#am-cost .amc-org-node em{display:block;font-style:normal;font-size:10.5px;color:var(--g400);margin-top:4px}
 #am-cost .amc-org-node.root{border-color:var(--mark)}
-#am-cost .amc-org-branch{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-#am-cost .amc-soon-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
-#am-cost .amc-soon-card{border:1px solid var(--line);border-radius:8px;padding:10px;background:var(--card)}
-#am-cost .amc-soon-card b{display:block;font-size:12.5px;color:var(--heading);margin:0 0 4px}
-#am-cost .amc-soon-card span{font-size:11.5px;color:var(--g300);line-height:1.4}
-@media (max-width:900px){#am-cost .amc-soon-grid{grid-template-columns:1fr 1fr}#am-cost .amc-org-branch{flex-direction:column;align-items:stretch}}
+#am-cost .amc-org-stem{width:1px;height:18px;background:var(--line2);margin:0 auto}
+#am-cost .amc-org-bar{width:min(92%,520px);height:1px;background:var(--line2);margin:0 auto}
+#am-cost .amc-org-branch{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding-top:18px;position:relative}
+#am-cost .amc-org-branch>.amc-org-node{position:relative}
+#am-cost .amc-org-branch>.amc-org-node::before{content:"";position:absolute;top:-18px;left:50%;width:1px;height:18px;background:var(--line2)}
+#am-cost .amc-org-zoom{position:absolute;left:10px;bottom:10px;display:flex;gap:4px}
+#am-cost .amc-org-zoom span{width:26px;height:26px;border:1px solid var(--line2);border-radius:6px;display:grid;place-items:center;font:700 12px var(--font);color:var(--g300);background:var(--card)}
+#am-cost .amc-soon-head{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+#am-cost .amc-soon-head .amk-chip{font-size:11px}
+#am-cost .amc-soon-head p{margin:0;font-size:12.5px;color:var(--g300);line-height:1.45}
+#am-cost .amc-soon-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0 0 12px}
+#am-cost .amc-soon-card{border:1px solid var(--line);border-radius:10px;padding:12px;background:var(--card);min-height:96px}
+#am-cost .amc-soon-card b{display:block;font-size:13px;color:var(--heading);margin:0 0 6px}
+#am-cost .amc-soon-card span{font-size:12px;color:var(--g300);line-height:1.45}
+#am-cost .amc-anom{border:1px solid var(--line2);border-radius:10px;padding:12px;background:var(--card)}
+#am-cost .amc-anom-h{display:flex;align-items:center;gap:8px;margin:0 0 8px}
+#am-cost .amc-anom-h b{font-size:13.5px;color:var(--heading)}
+#am-cost .amc-anom p{margin:0;font-size:12px;color:var(--g300);line-height:1.45}
+#am-cost .amc-save-chart{max-height:140px;width:100%}
+@media (max-width:900px){#am-cost .amc-soon-grid{grid-template-columns:1fr 1fr}#am-cost .amc-org-branch{flex-direction:column;align-items:stretch}#am-cost .amc-org-bar,#am-cost .amc-org-branch>.amc-org-node::before{display:none}}
 #am-cost .amc-bud-bar{display:flex;align-items:center;gap:6px;padding:7px 10px;border-bottom:1px solid var(--line);background:var(--navy-2);font-size:11.5px;color:var(--g300)}
 #am-cost .amc-bud-bar i{width:7px;height:7px;border-radius:50%;background:var(--g700)}
 #am-cost .amc-bud-bar b{margin-left:4px;color:var(--heading);font-weight:800}
@@ -7109,42 +7153,81 @@ window_size = 1month</pre>
 </div>
 
 <div class="amk-p" data-kg="cost" data-kp="price">
-  <div class="amk-hd"><span class="amk-crumb">Cost management › Price catalog</span><h3>Price Catalog</h3><p class="amk-desc">Effective rates after overrides. Open a model for list price and history.</p></div>
-  <div class="amk-ph"><div class="amk-sw" data-amk-sw="pricetab" role="group"><button type="button" data-k="eff" class="on" aria-pressed="true">Effective rates</button><button type="button" data-k="ovr" aria-pressed="false">Provider overrides</button></div><span class="amk-btn pri">+ Add override</span></div>
-  <div class="amk-stack">
-    <div class="amk-p on" data-kg="pricetab" data-kp="eff">
-      <div class="amk-tool"><span class="amk-search">Search models</span><span class="amk-pill">Provider · All</span><span class="amk-pill">Last synced · Nov 21</span></div>
-      <table class="amk-tbl"><thead><tr><th>Model</th><th>Override</th><th class="r">Base input</th><th class="r">Cache writes</th><th class="r">Cache reads</th><th class="r">Output</th></tr></thead><tbody>
-        <tr><td><b>claude-sonnet-5</b><br><span style="color:var(--g400);font-size:11px">Anthropic</span></td><td><span class="amk-chip">List price</span></td><td class="r">$3.00</td><td class="r">$3.75</td><td class="r">$0.30</td><td class="r">$15.00</td></tr>
-        <tr><td><b>claude-opus-4.5</b><br><span style="color:var(--g400);font-size:11px">Anthropic</span></td><td><span class="amk-chip">List price</span></td><td class="r">$15.00</td><td class="r">$18.75</td><td class="r">$1.50</td><td class="r">$75.00</td></tr>
-        <tr><td><b>gpt-5.4</b><br><span style="color:var(--g400);font-size:11px">OpenAI</span></td><td><span class="amk-chip dot">Custom rate</span></td><td class="r">$2.20</td><td class="r">—</td><td class="r">$1.10</td><td class="r">$8.80</td></tr>
-        <tr><td><b>gemini-3-pro</b><br><span style="color:var(--g400);font-size:11px">Google</span></td><td><span class="amk-chip dot">Provider discount</span></td><td class="r">$1.10</td><td class="r">—</td><td class="r">—</td><td class="r">$4.40</td></tr>
+  <div class="amk-hd"><span class="amk-crumb">Cost management › Price catalog</span><h3>Price Catalog</h3><p class="amk-desc">Effective rates after overrides · Add override drawer open.</p></div>
+  <div class="amc-split">
+    <div class="amc-split-main">
+      <div class="amk-ph"><div class="amk-sw"><span class="amk-pill on">Effective rates</span><span class="amk-pill">Provider overrides</span></div><span class="amk-btn pri">+ Add override</span></div>
+      <div class="amk-tool"><span class="amk-search">Search models</span><span class="amk-pill">Provider · All providers</span><span class="amk-pill">Last synced · Nov 21, 09:14 UTC</span></div>
+      <table class="amk-tbl"><thead><tr><th>Model</th><th>Override</th><th class="r">Base input</th><th class="r">Cache writes</th><th class="r">Cache reads</th><th class="r">Output</th><th>Rate cards</th></tr></thead><tbody>
+        <tr><td><b>claude-sonnet-5</b><br><span class="amc-prov">Anthropic</span></td><td><span class="amk-chip">List price</span></td><td class="r">$3.00</td><td class="r">$3.75</td><td class="r">$0.30</td><td class="r">$15.00</td><td></td></tr>
+        <tr><td><b>claude-opus-4.5</b><br><span class="amc-prov">Anthropic</span></td><td><span class="amk-chip">List price</span></td><td class="r">$15.00</td><td class="r">$18.75</td><td class="r">$1.50</td><td class="r">$75.00</td><td><span class="amk-chip">Long context</span></td></tr>
+        <tr><td><b>gpt-5.4</b><br><span class="amc-prov">OpenAI</span></td><td><span class="amk-chip dot">Custom rate</span></td><td class="r">$2.20</td><td class="r">—</td><td class="r">$1.10</td><td class="r">$8.80</td><td></td></tr>
+        <tr><td><b>gpt-5</b><br><span class="amc-prov">Azure · westeurope</span></td><td><span class="amk-chip dot">Custom rate</span></td><td class="r">$2.20</td><td class="r">—</td><td class="r">—</td><td class="r">$8.80</td><td></td></tr>
+        <tr><td><b>gemini-3-pro</b><br><span class="amc-prov">Google</span></td><td><span class="amk-chip dot">Provider discount</span></td><td class="r">$1.10</td><td class="r">—</td><td class="r">—</td><td class="r">$4.40</td><td></td></tr>
+        <tr><td><b>llama-70b</b><br><span class="amc-prov">GPU pool</span></td><td><span class="amk-chip dot">Internal transfer</span></td><td class="r">$0.40</td><td class="r">—</td><td class="r">—</td><td class="r">$0.40</td><td></td></tr>
       </tbody></table>
+      <div class="amk-foot"><span>1 to 6 of 9,995</span><span class="amk-pill">10 per page</span></div>
     </div>
-    <div class="amk-p" data-kg="pricetab" data-kp="ovr">
-      <table class="amk-tbl"><thead><tr><th>Scope</th><th>Model</th><th>Type</th><th class="r">Input</th><th class="r">Output</th><th>Updated</th></tr></thead><tbody>
-        <tr><td>Org</td><td>claude-sonnet-5</td><td>Percentage off · −12%</td><td class="r">$2.64</td><td class="r">$13.20</td><td>Nov 12</td></tr>
-        <tr><td>Azure · westeurope</td><td>gpt-5</td><td>Custom rate</td><td class="r">$2.20</td><td class="r">$8.80</td><td>Nov 3</td></tr>
-        <tr><td>GPU pool</td><td>llama-70b</td><td>Internal transfer</td><td class="r">$0.40</td><td class="r">$0.40</td><td>Oct 29</td></tr>
-      </tbody></table>
-    </div>
+    <aside class="amc-drawer" aria-label="Add override">
+      <div class="amc-drawer-h"><div><b>Add override</b><span>Applies to new requests after save</span></div><span class="amc-drawer-x" aria-hidden="true">✕</span></div>
+      <div class="amc-field"><span>Scope</span><em>Organization</em></div>
+      <div class="amc-field"><span>Provider</span><em>Anthropic</em></div>
+      <div class="amc-field"><span>Model</span><em>claude-sonnet-5</em></div>
+      <div class="amc-field"><span>Type</span><em>Percentage off</em></div>
+      <div class="amc-field"><span>Discount</span><em>−12%</em></div>
+      <div class="amc-field-row">
+        <div class="amc-field"><span>Effective input</span><i>$2.64</i></div>
+        <div class="amc-field"><span>Effective output</span><i>$13.20</i></div>
+      </div>
+      <div class="amc-drawer-act"><span class="amk-btn">Cancel</span><span class="amk-btn pri">Save override</span></div>
+    </aside>
   </div>
 </div>
 
 <div class="amk-p" data-kg="cost" data-kp="attr">
   <div class="amk-hd"><span class="amk-crumb">Cost management › Attribution</span><h3>Attribution</h3><p class="amk-desc">Integrations · cost tags · gateways that label spend.</p></div>
-  <div class="amk-ph"><div class="amk-sw"><span class="amk-pill on">Integrations</span><span class="amk-pill">Cost tags</span><span class="amk-pill">Gateways</span></div></div>
-  <div class="amc-int">
-    <div class="amc-int-g"><span>Coding agents</span><div class="amc-int-row"><span class="amc-int-card on">Claude Code</span><span class="amc-int-card">Codex CLI</span><span class="amc-int-card">GitHub Copilot</span><span class="amc-int-card">Cline</span></div></div>
-    <div class="amc-int-g"><span>Chat apps</span><div class="amc-int-row"><span class="amc-int-card">Slack</span><span class="amc-int-card">Microsoft Teams</span><span class="amc-int-card">Discord</span></div></div>
-    <div class="amc-int-g"><span>CI · source control</span><div class="amc-int-row"><span class="amc-int-card">GitHub Actions</span><span class="amc-int-card">GitLab CI</span><span class="amc-int-card">Jenkins</span></div></div>
-  </div>
-  <div class="amk-map" style="margin-top:8px"><b>Claude Code · tags you get</b><span>Headers → Cost tags</span>
-    <table class="amk-tbl"><thead><tr><th>Sent by Claude Code</th><th>Cost tag</th></tr></thead><tbody>
-      <tr><td><code>x-claude-code-session-id</code></td><td>Agent session</td></tr>
-      <tr><td><code>x-claude-code-account-uuid</code></td><td>Account</td></tr>
-      <tr><td><code>ai-cost-scm-repo</code></td><td>Repository</td></tr>
-    </tbody></table>
+  <div class="amc-split">
+    <div class="amc-split-main">
+      <div class="amk-ph"><div class="amk-sw"><span class="amk-pill on">Integrations</span><span class="amk-pill">Cost tags</span><span class="amk-pill">Gateways</span></div></div>
+      <div class="amk-tool"><span class="amk-search">Search integrations</span><span class="amk-pill">All integrations</span></div>
+      <div class="amc-int">
+        <div class="amc-int-g"><span>Coding agents</span><div class="amc-int-row">
+          <span class="amc-int-card on"><i>CC</i><b>Claude Code</b></span>
+          <span class="amc-int-card"><i>CX</i><b>Codex CLI</b></span>
+          <span class="amc-int-card"><i>OC</i><b>OpenCode</b></span>
+          <span class="amc-int-card"><i>GH</i><b>GitHub Copilot</b></span>
+          <span class="amc-int-card"><i>CL</i><b>Cline</b></span>
+          <span class="amc-int-card"><i>AD</i><b>Aider</b></span>
+        </div></div>
+        <div class="amc-int-g"><span>Chat apps</span><div class="amc-int-row">
+          <span class="amc-int-card"><i>SL</i><b>Slack</b></span>
+          <span class="amc-int-card"><i>MS</i><b>Microsoft Teams</b></span>
+          <span class="amc-int-card"><i>DC</i><b>Discord</b></span>
+        </div></div>
+        <div class="amc-int-g"><span>CI · source control</span><div class="amc-int-row">
+          <span class="amc-int-card"><i>GA</i><b>GitHub Actions</b></span>
+          <span class="amc-int-card"><i>GL</i><b>GitLab CI</b></span>
+          <span class="amc-int-card"><i>JK</i><b>Jenkins</b></span>
+          <span class="amc-int-card"><i>BK</i><b>Buildkite</b></span>
+        </div></div>
+      </div>
+    </div>
+    <aside class="amc-drawer" aria-label="Claude Code attribution">
+      <div class="amc-drawer-h"><div><b>Coding agents · Claude Code</b><span>Headers → cost tags per session</span></div><span class="amc-drawer-x" aria-hidden="true">✕</span></div>
+      <div class="amk-map" style="margin:0"><b>Tags you get</b><span>Sent by Claude Code</span>
+        <table class="amk-tbl"><thead><tr><th>Header</th><th>Cost tag</th></tr></thead><tbody>
+          <tr><td><code>x-claude-code-session-id</code></td><td>Agent session</td></tr>
+          <tr><td><code>x-claude-code-account-uuid</code></td><td>Account</td></tr>
+          <tr><td><code>ai-cost-scm-repo</code></td><td>Repository</td></tr>
+          <tr><td><code>ai-cost-scm-provider</code></td><td>SCM provider</td></tr>
+        </tbody></table>
+      </div>
+      <div><b style="display:block;font-size:12.5px;color:var(--heading);margin:0 0 4px">Turn it on in your gateways</b>
+        <div class="amc-tog"><div>gs-ai-gw<em>Hybrid · 2 data planes</em></div><span class="amc-sw on"><i></i></span></div>
+        <div class="amc-tog"><div>gs-ai-gw-mcp<em>Hybrid · 1 data plane</em></div><span class="amc-sw on"><i></i></span></div>
+        <div class="amc-tog"><div>webinar-202610<em>Not set up yet</em></div><span class="amc-sw"><i></i></span></div>
+      </div>
+    </aside>
   </div>
 </div>
 
@@ -7152,62 +7235,71 @@ window_size = 1month</pre>
   <div class="amk-hd"><span class="amk-crumb">Cost management › Org Chart</span><h3>Org Chart</h3><p class="amk-desc">Org structure with optional spend limits per node.</p></div>
   <div class="amk-ph"><div class="amk-sw"><span class="amk-pill on">Chart</span><span class="amk-pill">List</span></div><span class="amk-pill">Spend limits · off</span><span class="amk-btn">Re-upload org structure</span></div>
   <div class="amc-org">
-    <div class="amc-org-node root"><b>DanaWhitfield-E001</b><span>Manager · Dana Whitfield</span><em>No limit · 2 direct</em></div>
+    <div class="amc-org-node root"><b>DanaWhitfield-E001</b><span>Manager · Dana Whitfield</span><em>No limit · 2 direct members</em></div>
+    <div class="amc-org-stem"></div>
+    <div class="amc-org-bar"></div>
     <div class="amc-org-branch">
-      <div class="amc-org-node"><b>HelenCho-E008</b><span>Helen Cho</span><em>No limit</em></div>
-      <div class="amc-org-node"><b>MarcusLee-E003</b><span>Marcus Lee</span><em>No limit</em></div>
-      <div class="amc-org-node"><b>LeoPark-E010</b><span>Leo Park</span><em>No limit</em></div>
-      <div class="amc-org-node"><b>AikoTanaka-E006</b><span>Aiko Tanaka</span><em>No limit</em></div>
+      <div class="amc-org-node"><b>HelenCho-E008</b><span>Helen Cho · Manager</span><em>No limit</em></div>
+      <div class="amc-org-node"><b>MarcusLee-E003</b><span>Marcus Lee · Manager</span><em>No limit</em></div>
+      <div class="amc-org-node"><b>LeoPark-E010</b><span>Leo Park · Manager</span><em>No limit</em></div>
+      <div class="amc-org-node"><b>AikoTanaka-E006</b><span>Aiko Tanaka · Manager</span><em>No limit</em></div>
     </div>
+    <div class="amc-org-zoom" aria-hidden="true"><span>−</span><span>+</span><span>⤢</span></div>
   </div>
 </div>
 
 <div class="amk-p" data-kg="cost" data-kp="export">
   <div class="amk-hd"><span class="amk-crumb">Cost management › Exports</span><h3>Exports</h3><p class="amk-desc">Copy usage events to downloadable files (CSV · Parquet · FOCUS).</p></div>
   <div class="amk-ph"><div class="amk-sw"><span class="amk-pill on">Exports</span><span class="amk-pill">Schedules</span></div><span class="amk-btn pri">+ New export</span></div>
-  <div class="amk-tool"><span class="amk-pill">Status · All</span><span class="amk-pill">Dataset · All</span><span class="amk-pill">Schedule · All</span></div>
-  <table class="amk-tbl"><thead><tr><th>Status</th><th>Dataset</th><th>Format</th><th>Range</th><th class="r">Records</th><th class="r">Size</th><th>Created</th></tr></thead><tbody>
-    <tr><td><span class="amk-st ok">Ready</span></td><td>Usage events</td><td>Parquet</td><td>Nov 1–20</td><td class="r">1.2M</td><td class="r">84 MB</td><td>Nov 21</td></tr>
-    <tr><td><span class="amk-st ok">Ready</span></td><td>FOCUS costs</td><td>CSV</td><td>Oct 1–31</td><td class="r">420K</td><td class="r">12 MB</td><td>Nov 2</td></tr>
-    <tr><td><span class="amk-st warn">Running</span></td><td>Usage events</td><td>CSV</td><td>Nov 1–21</td><td class="r">—</td><td class="r">—</td><td>Nov 21</td></tr>
+  <div class="amk-tool"><span class="amk-search">Search exports</span><span class="amk-pill">Status · All</span><span class="amk-pill">Dataset · All</span><span class="amk-pill">Schedule · All</span></div>
+  <table class="amk-tbl"><thead><tr><th>Status</th><th>Dataset</th><th>Format</th><th>Range</th><th class="r">Records</th><th class="r">Size</th><th>Created</th><th></th></tr></thead><tbody>
+    <tr><td><span class="amk-st ok">Ready</span></td><td>Usage events</td><td>Parquet</td><td>Nov 1–20</td><td class="r">1.24M</td><td class="r">84 MB</td><td>Nov 21 · 08:12</td><td><span class="amk-btn">Download</span></td></tr>
+    <tr><td><span class="amk-st ok">Ready</span></td><td>FOCUS costs</td><td>CSV</td><td>Oct 1–31</td><td class="r">420K</td><td class="r">12 MB</td><td>Nov 2 · 01:04</td><td><span class="amk-btn">Download</span></td></tr>
+    <tr><td><span class="amk-st ok">Ready</span></td><td>Usage events</td><td>CSV</td><td>Sep 1–30</td><td class="r">980K</td><td class="r">61 MB</td><td>Oct 3 · 22:40</td><td><span class="amk-btn">Download</span></td></tr>
+    <tr><td><span class="amk-st warn">Running</span></td><td>Usage events</td><td>CSV</td><td>Nov 1–21</td><td class="r">—</td><td class="r">—</td><td>Nov 21 · 09:02</td><td><span class="amk-pill">In progress</span></td></tr>
+    <tr><td><span class="amk-st">Queued</span></td><td>FOCUS costs</td><td>Parquet</td><td>Nov 1–21</td><td class="r">—</td><td class="r">—</td><td>Nov 21 · 09:05</td><td><span class="amk-pill">Schedule · daily</span></td></tr>
   </tbody></table>
+  <div class="amk-foot"><span>Showing 5 exports · downloadable 30 days</span><span class="amk-pill">20 per page</span></div>
 </div>
 
 <div class="amk-p" data-kg="cost" data-kp="anom">
-  <div class="amk-hd"><span class="amk-crumb">Cost management › Anomalies</span><h3>Anomalies <span class="amk-chip">Soon</span></h3><p class="amk-desc">Detect unusual spend, then notify · pause · block.</p></div>
+  <div class="amk-hd"><span class="amk-crumb">Cost management › Anomalies</span><h3>Anomalies</h3><p class="amk-desc">Detect unusual spend, then notify · pause · block.</p></div>
+  <div class="amc-soon-head"><span class="amk-chip">Coming soon</span><p>기준선 대비 이상 지출을 잡고, 알림 · 일시 중지 · 차단으로 이어집니다.</p></div>
   <div class="amc-soon-grid">
-    <div class="amc-soon-card"><b>Detection rules</b><span>Rate of change · absolute thresholds</span></div>
+    <div class="amc-soon-card"><b>Detection rules</b><span>Rate of change · absolute thresholds · quiet hours</span></div>
     <div class="amc-soon-card"><b>Incident queue</b><span>Every firing anomaly and the traffic behind it</span></div>
     <div class="amc-soon-card"><b>Automated actions</b><span>Notify · pause · block when a rule fires</span></div>
-    <div class="amc-soon-card"><b>Resolution log</b><span>What fired and who resolved it</span></div>
+    <div class="amc-soon-card"><b>Resolution log</b><span>What fired, who resolved it, and why</span></div>
   </div>
-  <div class="amk-pane" style="margin-top:8px"><div class="amk-ph"><b>Active anomaly</b><span class="amk-chip">Baseline deviation</span></div>
-    <div class="amk-kpis"><div class="amk-kpi bad"><span>Last 24h</span><b>$486</b><em>+557% vs normal</em></div><div class="amk-kpi warn"><span>Multiple of baseline</span><b>6.6×</b><em>vs 14-day median</em></div><div class="amk-kpi"><span>Subject</span><b>Alex Doe</b><em>Field Engineering</em></div></div>
+  <div class="amc-anom">
+    <div class="amc-anom-h"><b>Alex Doe</b><span class="amk-chip">Baseline deviation</span><span class="amk-pill">Group · Field Engineering</span></div>
+    <div class="amk-kpis" style="margin:0 0 8px"><div class="amk-kpi bad"><span>Last 24h</span><b>$486</b><em>+557% vs normal</em></div><div class="amk-kpi warn"><span>Multiple of baseline</span><b>6.6×</b><em>vs 14-day median</em></div><div class="amk-kpi"><span>Detected</span><b>Aug 22</b><em>1:38 AM UTC</em></div></div>
+    <p>배치 평가가 14일 중앙값 대비 6.6배 지출을 감지했습니다. 천장(ceiling)이 없어 observe-only로 기록됩니다.</p>
   </div>
 </div>
 
 <div class="amk-p" data-kg="cost" data-kp="save">
-  <div class="amk-hd"><span class="amk-crumb">Cost management › Savings</span><h3>Savings <span class="amk-chip">Soon</span></h3><p class="amk-desc">Measured savings from cache · routing · compression — not estimates.</p></div>
+  <div class="amk-hd"><span class="amk-crumb">Cost management › Savings</span><h3>Savings</h3><p class="amk-desc">Measured savings from cache · routing · compression — not estimates.</p></div>
+  <div class="amc-soon-head"><span class="amk-chip">Coming soon</span><p>캐시 · 라우팅 · 압축으로 실제 트래픽에서 잡은 절감을 측정합니다.</p></div>
+  <div class="amc-soon-grid">
+    <div class="amc-soon-card"><b>Semantic cache</b><span>같은 의미의 프롬프트에 저장된 답을 재사용</span></div>
+    <div class="amc-soon-card"><b>Complexity routing</b><span>단순 요청은 저가 모델, 나머지는 고가 모델</span></div>
+    <div class="amc-soon-card"><b>Prompt compression</b><span>청구 전에 불필요한 토큰을 줄임</span></div>
+    <div class="amc-soon-card"><b>Measured, not claimed</b><span>list 대비 실제 지불액으로만 집계</span></div>
+  </div>
   <div class="amk-kpis"><div class="amk-kpi ok"><span>Total saved</span><b>$8,640</b><em>14.2% off list bill</em></div><div class="amk-kpi"><span>Effective daily</span><b>$393</b><em>22 days elapsed</em></div><div class="amk-kpi warn"><span>Not yet captured</span><b>$6,180</b><em>4 opportunities</em></div></div>
-  <div class="amk-grid">
-    <div class="amk-pane"><div class="amk-ph"><b>Savings over time</b><span class="amk-chip">Per day</span></div>
-      <svg viewBox="0 0 400 72" class="amk-chart" aria-hidden="true"><path d="M0 60H400" class="g"/><path d="M0 30H400" class="g"/>
-        <rect x="18" y="28" width="16" height="32" fill="var(--diag-blue)"/><rect x="18" y="44" width="16" height="16" fill="var(--diag-teal)"/><rect x="18" y="54" width="16" height="6" fill="var(--mark)"/>
-        <rect x="52" y="22" width="16" height="38" fill="var(--diag-blue)"/><rect x="52" y="40" width="16" height="20" fill="var(--diag-teal)"/><rect x="52" y="52" width="16" height="8" fill="var(--mark)"/>
-        <rect x="86" y="18" width="16" height="42" fill="var(--diag-blue)"/><rect x="86" y="36" width="16" height="24" fill="var(--diag-teal)"/><rect x="86" y="50" width="16" height="10" fill="var(--mark)"/>
-        <rect x="120" y="14" width="16" height="46" fill="var(--diag-blue)"/><rect x="120" y="32" width="16" height="28" fill="var(--diag-teal)"/><rect x="120" y="48" width="16" height="12" fill="var(--mark)"/>
-        <rect x="154" y="12" width="16" height="48" fill="var(--diag-blue)"/><rect x="154" y="30" width="16" height="30" fill="var(--diag-teal)"/><rect x="154" y="46" width="16" height="14" fill="var(--mark)"/>
-      </svg>
-      <div class="amk-legend"><span><i class="a"></i>Prompt cache</span><span><i></i>Routing</span><span><i class="t"></i>Semantic cache</span></div>
-    </div>
-    <div class="amk-pane"><div class="amk-ph"><b>Mechanisms</b></div>
-      <table class="amk-tbl"><thead><tr><th>Mechanism</th><th class="r">Saved</th><th>Status</th></tr></thead><tbody>
-        <tr><td>Prompt caching</td><td class="r">$4,180</td><td><span class="amk-st ok">Active</span></td></tr>
-        <tr><td>Complexity routing</td><td class="r">$2,310</td><td><span class="amk-st ok">Active</span></td></tr>
-        <tr><td>Semantic cache</td><td class="r">$1,260</td><td><span class="amk-st ok">Active</span></td></tr>
-        <tr><td>Prompt compression</td><td class="r">$890</td><td><span class="amk-st ok">Active</span></td></tr>
-      </tbody></table>
-    </div>
+  <div class="amk-pane"><div class="amk-ph"><b>Savings over time</b><span class="amk-chip">Per day</span><span class="amk-pill">Cumulative</span></div>
+    <svg viewBox="0 0 560 120" class="amk-chart amc-save-chart" aria-hidden="true"><path d="M0 100H560" class="g"/><path d="M0 60H560" class="g"/><path d="M0 20H560" class="g"/>
+      <rect x="20" y="48" width="22" height="52" fill="var(--diag-blue)"/><rect x="20" y="78" width="22" height="22" fill="var(--diag-teal)"/><rect x="20" y="92" width="22" height="8" fill="var(--mark)"/>
+      <rect x="56" y="40" width="22" height="60" fill="var(--diag-blue)"/><rect x="56" y="72" width="22" height="28" fill="var(--diag-teal)"/><rect x="56" y="90" width="22" height="10" fill="var(--mark)"/>
+      <rect x="92" y="34" width="22" height="66" fill="var(--diag-blue)"/><rect x="92" y="66" width="22" height="34" fill="var(--diag-teal)"/><rect x="92" y="88" width="22" height="12" fill="var(--mark)"/>
+      <rect x="128" y="28" width="22" height="72" fill="var(--diag-blue)"/><rect x="128" y="60" width="22" height="40" fill="var(--diag-teal)"/><rect x="128" y="86" width="22" height="14" fill="var(--mark)"/>
+      <rect x="164" y="24" width="22" height="76" fill="var(--diag-blue)"/><rect x="164" y="56" width="22" height="44" fill="var(--diag-teal)"/><rect x="164" y="84" width="22" height="16" fill="var(--mark)"/>
+      <rect x="200" y="22" width="22" height="78" fill="var(--diag-blue)"/><rect x="200" y="54" width="22" height="46" fill="var(--diag-teal)"/><rect x="200" y="82" width="22" height="18" fill="var(--mark)"/>
+      <rect x="236" y="18" width="22" height="82" fill="var(--diag-blue)"/><rect x="236" y="50" width="22" height="50" fill="var(--diag-teal)"/><rect x="236" y="80" width="22" height="20" fill="var(--mark)"/>
+      <rect x="272" y="16" width="22" height="84" fill="var(--diag-blue)"/><rect x="272" y="48" width="22" height="52" fill="var(--diag-teal)"/><rect x="272" y="78" width="22" height="22" fill="var(--mark)"/>
+    </svg>
+    <div class="amk-legend"><span><i class="a"></i>Prompt cache</span><span><i></i>Routing</span><span><i class="t"></i>Semantic cache</span></div>
   </div>
 </div>
 

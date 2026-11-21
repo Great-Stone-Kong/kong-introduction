@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b0166b5
+
+### Changed
+
+- AI Management > AI Cost Management: Mockup height ~600px. Price Catalog Add override drawer, richer Attribution·Org·Exports·Anomalies·Savings panes
+
 ## 2026.11.21.6b016574
 
 ### Changed

@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b0166b5
+
+### 变更
+
+- AI Management > AI Cost Management：示意高度约 600px。Price Catalog 的 Add override 右侧面板，并提升 Attribution·Org·Exports·Anomalies·Savings 质量
+
 ## 2026.11.21.6b016574
 
 ### 变更

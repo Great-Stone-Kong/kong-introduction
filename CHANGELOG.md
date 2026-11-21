@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b0166b5
+
+### 변경
+
+- AI Management > AI Cost Management : 목업 높이 ~600px. Price Catalog Add override 우측 패널, Attribution·Org·Exports·Anomalies·Savings 퀄리티 개선
+
 ## 2026.11.21.6b016574
 
 ### 변경
