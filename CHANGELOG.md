@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b016b4e
+
+### 변경
+
+- AI Management > AI Cost Management : 탭 설명 영역 높이 고정·보강(SE Enablement 기준 Measure·Govern·Optimize · 파이프라인 · FinOps Export)
+
 ## 2026.11.21.6b016a61
 
 ### 변경

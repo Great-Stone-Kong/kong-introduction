@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b016b4e
+
+### Changed
+
+- AI Management > AI Cost Management: Stabilize tab description height and enrich copy from SE enablement (Measure · Govern · Optimize, pipeline, FinOps export)
+
 ## 2026.11.21.6b016a61
 
 ### Changed

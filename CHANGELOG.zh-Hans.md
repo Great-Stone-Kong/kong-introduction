@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b016b4e
+
+### 变更
+
+- AI Management > AI Cost Management：固定选项卡说明高度，并按 SE Enablement 补充说明（Measure · Govern · Optimize · 流水线 · FinOps Export）
+
 ## 2026.11.21.6b016a61
 
 ### 变更

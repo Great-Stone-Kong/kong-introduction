@@ -6340,5 +6340,21 @@
   "m.d13902113709": "達到 100% 上限時，郵件會顯示在這裡。",
   "m.4dd308f8514b": "達到 80% 臨界值時，Slack 會顯示在這裡。",
   "m.0c54d2856ddd": "Field Engineering pool 已達 80%。",
-  "m.1a41a6a03153": "設定主體 · 期間上限與臨界值通知。通知 Channel 目前支援 Email · Slack，Webhook 之後新增。示例中 80% 送 Slack、100% 送 Email。"
+  "m.1a41a6a03153": "設定主體 · 期間上限與臨界值通知。通知 Channel 目前支援 Email · Slack，Webhook 之後新增。示例中 80% 送 Slack、100% 送 Email。",
+  "m.f7881904e831": "路線圖時程並非確定承諾，以產品文件為準。",
+  "m.1833e1875f74": "僅管理員可上傳結構；預算 · 儀表板依 Team 彙總時使用此樹狀圖。",
+  "m.bf175ac39a88": "在整合畫面依閘道開啟歸屬，並以標頭 → Cost tag 對應追蹤儲存庫 · PR · 頻道。",
+  "m.f72147613e87": "月中在 Gateway 即時查看；結帳後 FinOps 工具會對齊發票做 true-up。下載約保留 30 天。",
+  "m.ac6aad516280": "以提示快取 · 複雜度路由 · 語意快取 · 壓縮，顯示 Gateway 相對 list 實測節省的畫面。Soon 功能。",
+  "m.a7bae01ac793": "目前建議用 AI Gateway 快取 · 路由外掛製造節省，再以 Cost Management 儀表板 · Export 確認效果。",
+  "m.70e2062c182a": "正在準備偵測相對基準線的異常支出並接續通知 · 暫停 · 封鎖。屬 Soon；目前先以預算臨界值通知捕捉異常跡象。",
+  "m.38f83cf5f627": "My Usage · Dashboard · Explorer · Events debugger 讀取相同事件。在帳單前抓住尖峰。時間以 UTC 為準。",
+  "m.308c3a008d63": "上傳組織 CSV 建立 Team 結構，並可為節點設定支出上限。未設上限顯示 No limit。Team 歸屬依 Org Chart 成員關係。",
+  "m.d95281ea5925": "在 Gateway 計測 · 歸屬 · 計價請求後以預算治理。經 FinOps Export 交出相同數字，並在帳單前顯示誰 · 什麼造成支出。",
+  "m.f1ade294803b": "每個預算最多 10 個臨界值。Channel 目前支援 Email · Slack，Webhook 之後新增。示例中 80% 送 Slack、100% 送 Email。",
+  "m.3f401933e75d": "可將使用量事件與 FOCUS（1.3 · 1.4）成本資料匯出為 CSV · Parquet，並設定排程。Kong 不推送檔案，而是提供管線可拉取的臨時 URL。",
+  "m.a746bdf4e255": "可對組織 · 團隊 · 模型 · Cost tag 等範圍設上限。一個預算可給每位使用者個別上限，並可選追蹤（Advisory）或在 Gateway 阻擋（Enforced）。上限以 USD 計。",
+  "m.b6cb1dbc4461": "每次成功的 AI Gateway 請求會累積使用量事件，計價 · 歸屬後反映到儀表板。以 Spend · Projection · Ceiling 與 Where is it going? 在同一畫面分解 Users · Models · Tags。",
+  "m.2714438e0d2d": "將請求掛到 User（Identity · Consumer · OIDC sub）· Group · Team · ai-cost-* 標籤。無匹配則為 Unattributed。Claude Code 等編碼代理會自動送出工作階段 · 代理標籤。",
+  "m.2580ef90e295": "提供商 list price 會自動同步，Data Plane 約每 60 秒重讀目錄。以 Percentage off · Custom rate override 反映合約單價，並套用到組織內所有 AI Gateway。單價為 USD / 百萬 token。"
 }

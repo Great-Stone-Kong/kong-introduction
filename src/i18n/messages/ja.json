@@ -6340,5 +6340,21 @@
   "m.d13902113709": "100% 上限なら Email に表示されます。",
   "m.4dd308f8514b": "80% 閾値なら Slack に表示されます。",
   "m.0c54d2856ddd": "Field Engineering pool が 80% に達しました。",
-  "m.1a41a6a03153": "主体 · 期間ごとの上限と閾値通知を置きます。通知 Channel は現在 Email · Slack をサポートし、Webhook は今後追加されます。例では 80% で Slack、100% で Email が届きます。"
+  "m.1a41a6a03153": "主体 · 期間ごとの上限と閾値通知を置きます。通知 Channel は現在 Email · Slack をサポートし、Webhook は今後追加されます。例では 80% で Slack、100% で Email が届きます。",
+  "m.f7881904e831": "ロードマップ時期は確約ではなく、製品ドキュメントに従います。",
+  "m.1833e1875f74": "管理者だけが構造を上げ、予算 · ダッシュボードで Team 単位に束ねるときにこのツリーを使います。",
+  "m.bf175ac39a88": "統合画面でゲートウェイごとに帰属をオンにし、ヘッダー → Cost tag マッピングでリポジトリ · PR · チャネルまで追跡します。",
+  "m.f72147613e87": "月中は Gateway でリアルタイムに見ます。締め後は FinOps ツールがインボイスに合わせて true-up します。ダウンロードは約 30 日保持されます。",
+  "m.ac6aad516280": "プロンプトキャッシュ · 複雑度ルーティング · セマンティックキャッシュ · 圧縮で Gateway が削ったコストを list 対比で実測表示する画面です。Soon 機能です。",
+  "m.a7bae01ac793": "今は AI Gateway のキャッシュ · ルーティングプラグインで削減を作り、Cost Management ダッシュボード · Export で効果を確認する流れを勧めます。",
+  "m.70e2062c182a": "基準線に対する異常支出を検知し、通知 · 一時停止 · 遮断につなげる機能を準備中です。Soon 項目で、現在は予算閾値通知で異常の兆しを先に掴みます。",
+  "m.38f83cf5f627": "My Usage · Dashboard · Explorer · Events debugger が同じイベントを読みます。請求より先にスパイクを掴みます。時刻は UTC 基準です。",
+  "m.308c3a008d63": "組織 CSV を上げて Team 構造を作り、ノードごとに支出上限を置けます。上限がなければ No limit と表示されます。Team 帰属は Org Chart メンバーシップに従います。",
+  "m.d95281ea5925": "Gateway でリクエストを計測 · 帰属 · 値付けしたあと予算で治理します。FinOps Export で同じ数字を渡し、請求前に誰が · 何が支出を作ったかを示します。",
+  "m.f1ade294803b": "閾値は予算あたり最大 10 個です。Channel は Email · Slack をサポートし、Webhook は今後追加されます。例では 80% で Slack、100% で Email が届きます。",
+  "m.3f401933e75d": "使用量イベントと FOCUS（1.3 · 1.4）コストデータを CSV · Parquet で書き出し、スケジュールを置けます。Kong はファイルを押し出さず、パイプラインが受け取る一時 URL を提供します。",
+  "m.a746bdf4e255": "組織 · チーム · モデル · Cost tag など範囲に上限を置きます。ユーザーごとに個別上限を 1 つの予算で置け、追跡（Advisory）と Gateway で止める Enforced を選べます。上限は USD です。",
+  "m.b6cb1dbc4461": "成功した AI Gateway リクエストごとに使用量イベントが積まれ、単価 · 帰属のあとダッシュボードに反映されます。Spend · Projection · Ceiling と Where is it going? で Users · Models · Tags 分解を一画面で見ます。",
+  "m.2714438e0d2d": "リクエストを User（Identity · Consumer · OIDC sub）· Group · Team · ai-cost-* タグに付けます。一致がなければ Unattributed のままです。Claude Code などコーディングエージェントはセッション · エージェントタグを自動送信します。",
+  "m.2580ef90e295": "プロバイダ list price は自動同期され、Data Plane は約 60 秒ごとにカタログを再読します。Percentage off · Custom rate override で契約単価を反映し、組織のすべての AI Gateway に同じように適用されます。単価は USD / 百万トークンです。"
 }

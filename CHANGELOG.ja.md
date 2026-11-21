@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b016b4e
+
+### 変更
+
+- AI Management > AI Cost Management : タブ説明の高さを固定し、SE Enablement に沿って内容を補強（Measure · Govern · Optimize · パイプライン · FinOps Export）
+
 ## 2026.11.21.6b016a61
 
 ### 変更

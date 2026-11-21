@@ -6340,5 +6340,21 @@
   "m.d13902113709": "At 100% of the limit, the email appears here.",
   "m.4dd308f8514b": "At the 80% threshold, the Slack alert appears here.",
   "m.0c54d2856ddd": "Field Engineering pool reached 80%.",
-  "m.1a41a6a03153": "Set per-subject · period limits and threshold alerts. Channels support Email · Slack today; Webhook comes later. In the example, Slack fires at 80% and Email at 100%."
+  "m.1a41a6a03153": "Set per-subject · period limits and threshold alerts. Channels support Email · Slack today; Webhook comes later. In the example, Slack fires at 80% and Email at 100%.",
+  "m.f7881904e831": "Roadmap timing is not a firm commitment; follow the product docs.",
+  "m.1833e1875f74": "Only admins upload the structure. Budgets and the dashboard use this tree when grouping by Team.",
+  "m.bf175ac39a88": "Turn attribution on per gateway in Integrations, and map headers → Cost tags to track repos · PRs · channels.",
+  "m.f72147613e87": "During the month, watch live in the Gateway. After close, FinOps tools true up to the invoice. Downloads stay available about 30 days.",
+  "m.ac6aad516280": "A view of measured savings vs list from prompt cache · complexity routing · semantic cache · compression at the Gateway. Coming soon.",
+  "m.a7bae01ac793": "For now, create savings with AI Gateway cache · routing plugins, then confirm the effect in Cost Management dashboards · Exports.",
+  "m.70e2062c182a": "Anomaly detection with notify · pause · block is in progress. It is Soon; today, catch signals first with budget threshold alerts.",
+  "m.38f83cf5f627": "My Usage · Dashboard · Explorer · Events debugger read the same events. Catch spikes before the bill. Times are UTC.",
+  "m.308c3a008d63": "Upload an org CSV to build Teams and set spend limits per node. Nodes without a limit show No limit. Team attribution follows Org Chart membership.",
+  "m.d95281ea5925": "Meter · attribute · price each request at the Gateway, then govern with budgets. Hand the same numbers to FinOps via Export, and show who · what drove spend before the bill.",
+  "m.f1ade294803b": "Up to 10 thresholds per budget. Channels support Email · Slack today; Webhook comes later. In the example, Slack fires at 80% and Email at 100%.",
+  "m.3f401933e75d": "Export usage events and FOCUS (1.3 · 1.4) cost data as CSV · Parquet, with schedules. Kong does not push files; it provides a temporary URL for your pipeline to pull.",
+  "m.a746bdf4e255": "Set limits on any slice—org · team · model · Cost tag. One budget can give each user their own limit. Choose Advisory tracking or Enforced blocking at the Gateway. Limits are in USD.",
+  "m.b6cb1dbc4461": "Every successful AI Gateway request becomes a usage event, then is priced · attributed into the dashboard. Spend · Projection · Ceiling and Where is it going? break down Users · Models · Tags in one view.",
+  "m.2714438e0d2d": "Attach each request to User (Identity · Consumer · OIDC sub) · Group · Team · ai-cost-* tags. No match stays Unattributed. Coding agents like Claude Code send session · agent tags automatically.",
+  "m.2580ef90e295": "Provider list prices sync automatically; data planes re-read the catalog about every 60 seconds. Percentage off · Custom rate overrides apply your contract rates across every AI Gateway in the org. Prices are USD per million tokens."
 }

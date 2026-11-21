@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b016b4e
+
+### 變更
+
+- AI Management > AI Cost Management：固定分頁說明高度，並依 SE Enablement 補強說明（Measure · Govern · Optimize · 管線 · FinOps Export）
+
 ## 2026.11.21.6b016a61
 
 ### 變更
