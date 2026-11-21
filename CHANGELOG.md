@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b016574
+
+### 변경
+
+- AI Management > AI Cost Management : 탭 설명 높이 고정. Budgets는 예시 화면 밖 우측에 Slack·Email, Channels 점선 연결. Email·Slack 지원·Webhook 추후 안내
+
 ## 2026.11.21.6b01639c
 
 ### 변경

@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b016574
+
+### 变更
+
+- AI Management > AI Cost Management：固定选项卡说明高度。Budgets 在示例画面外右侧放置 Slack·Email，并以 Channels 虚线连接。说明现支持 Email·Slack，Webhook 稍后提供
+
 ## 2026.11.21.6b01639c
 
 ### 变更

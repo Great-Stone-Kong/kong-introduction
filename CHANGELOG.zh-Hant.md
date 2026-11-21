@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b016574
+
+### 變更
+
+- AI Management > AI Cost Management：固定分頁說明高度。Budgets 在示例畫面外右側放置 Slack·Email，並以 Channels 虛線連接。說明目前支援 Email·Slack，Webhook 之後提供
+
 ## 2026.11.21.6b01639c
 
 ### 變更

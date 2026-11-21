@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b016574
+
+### Changed
+
+- AI Management > AI Cost Management: Stabilize tab description height. Budgets places Slack·Email outside the example screen with Channel dotted links. Notes Email·Slack now and Webhook later
+
 ## 2026.11.21.6b01639c
 
 ### Changed

@@ -6324,5 +6324,10 @@
   "m.19161a3981c5": "Upload an org tree and set spend limits per node. Nodes without a limit show No limit.",
   "m.3418d5cd1a34": "Export usage events and FOCUS cost data as CSV · Parquet, and set schedules.",
   "m.727c15c3af5f": "Detect unusual spend vs baseline, then notify · pause · block. Coming soon.",
-  "m.96d980f1c844": "Separate savings already captured via prompt cache · routing · semantic cache · compression from opportunities still open. Coming soon."
+  "m.96d980f1c844": "Separate savings already captured via prompt cache · routing · semantic cache · compression from opportunities still open. Coming soon.",
+  "m.c9c64fde9d3e": "Alert targets",
+  "m.370087e6e649": "When a threshold is reached, the email appears here.",
+  "m.29ef2479fc4e": "Limits · notification rules · Channels. Email · Slack now; Webhook later.",
+  "m.e498a2f023f5": "Respond before overspend with budget limits and Email · Slack alerts. Webhook comes later.",
+  "m.6b9613f34d36": "Set per-subject · period limits and threshold alerts. Channels support Email · Slack today; Webhook comes later. Outside the example screen on the right: Slack · Email alerts delivered via Channel."
 }
