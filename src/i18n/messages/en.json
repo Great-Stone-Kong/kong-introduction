@@ -6271,5 +6271,7 @@
   "m.3eb079abe6f8": "Example screens for Price Catalog · Attribution · Budgets · Savings · Metering.",
   "m.25a54d0bab9e": "Ties gateway-path usage to attribution, rates, and budgets—showing who and what drove spend before the invoice, and stopping requests at hard limits.",
   "m.f37674a2eb51": "Screen names, amounts, and user names are illustrative examples.",
-  "m.68dd793f4155": "Group by tags to see cost per repository and project. The same dimensions work in budget scopes, so you can manage project-based budgets."
+  "m.68dd793f4155": "Group by tags to see cost per repository and project. The same dimensions work in budget scopes, so you can manage project-based budgets.",
+  "m.1d081366c59d": "07 Metering · monetization",
+  "m.1eb2e7457828": "Break down spend by Users · Models · Tags so you can see who uses what by repository, project, and team."
 }

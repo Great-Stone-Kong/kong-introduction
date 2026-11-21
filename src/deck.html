@@ -296,18 +296,19 @@ html[data-theme="light"] .amk-btn.pri{background:var(--g900);color:#fff;border-c
 #am-cost .amc-why{margin:0 0 var(--space-5)}
 #am-cost .amc-demo-h{margin:var(--space-6) 0 var(--space-2);font-size:20px;color:var(--heading)}
 #am-cost .amc-demo-s{margin:0 0 var(--space-3);font-size:14.5px;color:var(--g300);line-height:1.5}
-#am-cost .amc-where{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(200px,.9fr);gap:var(--space-4);align-items:start}
+#am-cost .amc-where{display:grid;grid-template-columns:minmax(0,1.2fr) auto;gap:var(--space-4);align-items:start}
+#am-cost .amc-where-l{min-width:0}
 #am-cost .amc-where .amk-tbl{font-size:12px}
 #am-cost .amc-where .amk-tbl .nest td:first-child{padding-left:22px;color:var(--g300);font-family:var(--mono);font-size:11.5px}
 #am-cost .amc-where .amk-tbl tr.exp{background:var(--accent-soft)}
 #am-cost .amc-where .amk-tbl tr.exp td:first-child{font-weight:800;color:var(--heading)}
-#am-cost .amc-donut{display:flex;flex-direction:column;align-items:center;gap:var(--space-3);padding:0;margin-top:-6px}
-#am-cost .amc-donut svg{width:210px;height:210px}
-#am-cost .amc-donut ul{list-style:none;margin:0;padding:0;width:100%;font-size:12px;color:var(--g300)}
+#am-cost .amc-donut{display:flex;flex-direction:row;align-items:flex-start;gap:var(--space-3);padding:0;margin:0}
+#am-cost .amc-donut svg{width:200px;height:200px;flex:none}
+#am-cost .amc-donut ul{list-style:none;margin:0;padding:10px 0 0;width:auto;min-width:148px;font-size:12px;color:var(--g300)}
 #am-cost .amc-donut li{display:flex;align-items:center;gap:8px;padding:3px 0}
 #am-cost .amc-donut li i{width:8px;height:8px;border-radius:50%;flex:none}
-#am-cost .amc-donut li b{margin-left:auto;font:700 11.5px var(--mono);color:var(--heading)}
-@media (max-width:900px){#am-cost .amc-where{grid-template-columns:1fr}}
+#am-cost .amc-donut li b{margin-left:auto;font:700 11.5px var(--mono);color:var(--heading);padding-left:8px}
+@media (max-width:900px){#am-cost .amc-where{grid-template-columns:1fr}#am-cost .amc-donut{flex-direction:column;align-items:center}#am-cost .amc-donut ul{padding-top:0;width:100%}}
 #am-obs .amk-main>.amk-stack>.amk-p{display:flex;flex-direction:column}
 #am-obs .amk-tiles,#am-obs .amk-grid.tr{flex:1;min-height:0}
 #am-obs .amk-tr2{padding:2px 4px;grid-template-columns:minmax(150px,230px) minmax(0,1fr) 54px;font-size:11.5px;gap:8px}
@@ -6953,11 +6954,15 @@ window_size = 1month</pre>
 
   <h3 class="amc-demo-h">대시보드 예시</h3>
   <p class="amc-demo-s">태그로 그룹화하면 저장소 · 프로젝트별 비용을 볼 수 있습니다. 예산 범위에도 쓸 수 있어 프로젝트 단위 예산 관리에 활용합니다.</p>
-  <div class="amk-win rv"><div class="amk-bar"><i></i><i></i><i></i><b>Konnect · AI Cost Management</b><span class="amk-tag">예시 화면</span></div><div class="amk-main" style="padding:12px 14px">
-    <div class="amk-hd"><span class="amk-crumb">Cost Management · Dashboard</span><h3>Where is it going?</h3><p class="amk-desc">Top 10 users by spend · Nov 1 – 13</p></div>
-    <div class="amk-tool"><span class="amk-pill">Group by</span><span class="amk-pill on">Users</span><span class="amk-pill">Groups</span><span class="amk-pill">Teams</span><span class="amk-pill">Providers</span><span class="amk-pill">Models</span><span class="amk-pill">Harnesses</span><span class="amk-pill">Tags</span></div>
-    <div class="amk-tool" style="margin-top:-2px"><span class="amk-pill">Breakdown by</span><span class="amk-pill on">Models</span><span class="amk-pill">Providers</span><span class="amk-pill">Tags</span><span class="amk-pill">Harnesses</span></div>
-    <div class="amc-where">
+  <div class="tabs am-tabs" data-amk-sw="cost" role="group"><button type="button" data-k="where" class="on" aria-pressed="true">01 Users · Models</button><button type="button" data-k="price" aria-pressed="false">02 가격 카탈로그</button><button type="button" data-k="attr" aria-pressed="false">03 귀속</button><button type="button" data-k="budget" aria-pressed="false">04 예산</button><button type="button" data-k="ctrl" aria-pressed="false">05 대시보드</button><button type="button" data-k="opt" aria-pressed="false">06 절감</button><button type="button" data-k="mon" aria-pressed="false">07 계량 · 수익화</button></div>
+  <div class="amk-win rv"><div class="amk-bar"><i></i><i></i><i></i><b>Konnect · AI Cost Management</b><span class="amk-tag">예시 화면</span></div><div class="amk-body"><nav class="amk-nav" aria-hidden="true"><span data-kg="cost" data-kh="where" class="hl">Users · Models</span><span data-kg="cost" data-kh="price">Price Catalog</span><span data-kg="cost" data-kh="attr">Attribution</span><span data-kg="cost" data-kh="budget">Budgets</span><span data-kg="cost" data-kh="ctrl">Dashboard</span><span data-kg="cost" data-kh="opt">Savings</span><span data-kg="cost" data-kh="mon">Metering</span></nav><div class="amk-main"><div class="amk-stack">
+
+<div class="amk-p on" data-kg="cost" data-kp="where">
+  <div class="amk-hd"><span class="amk-crumb">Cost Management · Dashboard</span><h3>Where is it going?</h3><p class="amk-desc">Top users by spend · Users × Models · Nov 1 – 13</p></div>
+  <div class="amc-where">
+    <div class="amc-where-l">
+      <div class="amk-tool"><span class="amk-pill">Group by</span><span class="amk-pill on">Users</span><span class="amk-pill">Groups</span><span class="amk-pill">Teams</span><span class="amk-pill">Providers</span><span class="amk-pill">Models</span><span class="amk-pill">Harnesses</span><span class="amk-pill">Tags</span></div>
+      <div class="amk-tool" style="margin-top:-2px"><span class="amk-pill">Breakdown by</span><span class="amk-pill on">Models</span><span class="amk-pill">Providers</span><span class="amk-pill">Tags</span><span class="amk-pill">Harnesses</span></div>
       <table class="amk-tbl"><thead><tr><th>User</th><th class="r">Share</th><th class="r">Spend</th><th class="r">Tokens</th><th class="r">Requests</th></tr></thead><tbody>
         <tr class="exp"><td>▾ Alex Park</td><td class="r">36.0%</td><td class="r">$12,600</td><td class="r">28.4M / 620K</td><td class="r">1,840</td></tr>
         <tr class="nest"><td>claude-sonnet-5-5</td><td class="r">55.0%</td><td class="r">$6,930</td><td class="r">—</td><td class="r">—</td></tr>
@@ -6969,23 +6974,21 @@ window_size = 1month</pre>
         <tr><td>▸ Morgan Han</td><td class="r">14.0%</td><td class="r">$4,900</td><td class="r">9.8M / 210K</td><td class="r">540</td></tr>
         <tr><td>▸ Riley Kim</td><td class="r">10.0%</td><td class="r">$3,500</td><td class="r">7.0M / 150K</td><td class="r">410</td></tr>
       </tbody></table>
-      <div class="amc-donut" aria-hidden="true">
-        <svg viewBox="0 0 120 120" role="img"><circle cx="60" cy="60" r="44" fill="none" stroke="var(--card2)" stroke-width="16"/><circle cx="60" cy="60" r="44" fill="none" stroke="var(--diag-sky)" stroke-width="16" stroke-dasharray="152 276" stroke-dashoffset="0" transform="rotate(-90 60 60)"/><circle cx="60" cy="60" r="44" fill="none" stroke="#8b7cf6" stroke-width="16" stroke-dasharray="61 276" stroke-dashoffset="-152" transform="rotate(-90 60 60)"/><circle cx="60" cy="60" r="44" fill="none" stroke="var(--diag-amber)" stroke-width="16" stroke-dasharray="39 276" stroke-dashoffset="-213" transform="rotate(-90 60 60)"/><circle cx="60" cy="60" r="44" fill="none" stroke="var(--g500)" stroke-width="16" stroke-dasharray="24 276" stroke-dashoffset="-252" transform="rotate(-90 60 60)"/><text x="60" y="56" text-anchor="middle" font-size="12" font-weight="800" fill="var(--heading)">$12.6K</text><text x="60" y="70" text-anchor="middle" font-size="9" fill="var(--g400)">top user</text></svg>
-        <ul>
-          <li><i style="background:var(--diag-sky)"></i>claude-sonnet-5-5<b>55%</b></li>
-          <li><i style="background:#8b7cf6"></i>gpt-5.4<b>22%</b></li>
-          <li><i style="background:var(--diag-amber)"></i>claude-opus-4.5<b>14%</b></li>
-          <li><i style="background:var(--g500)"></i>기타<b>9%</b></li>
-        </ul>
-      </div>
     </div>
-  </div></div>
+    <div class="amc-donut" aria-hidden="true">
+      <svg viewBox="0 0 120 120" role="img"><circle cx="60" cy="60" r="44" fill="none" stroke="var(--card2)" stroke-width="16"/><circle cx="60" cy="60" r="44" fill="none" stroke="var(--diag-sky)" stroke-width="16" stroke-dasharray="152 276" stroke-dashoffset="0" transform="rotate(-90 60 60)"/><circle cx="60" cy="60" r="44" fill="none" stroke="#8b7cf6" stroke-width="16" stroke-dasharray="61 276" stroke-dashoffset="-152" transform="rotate(-90 60 60)"/><circle cx="60" cy="60" r="44" fill="none" stroke="var(--diag-amber)" stroke-width="16" stroke-dasharray="39 276" stroke-dashoffset="-213" transform="rotate(-90 60 60)"/><circle cx="60" cy="60" r="44" fill="none" stroke="var(--g500)" stroke-width="16" stroke-dasharray="24 276" stroke-dashoffset="-252" transform="rotate(-90 60 60)"/><text x="60" y="56" text-anchor="middle" font-size="12" font-weight="800" fill="var(--heading)">$12.6K</text><text x="60" y="70" text-anchor="middle" font-size="9" fill="var(--g400)">top user</text></svg>
+      <ul>
+        <li><i style="background:var(--diag-sky)"></i>claude-sonnet-5-5<b>55%</b></li>
+        <li><i style="background:#8b7cf6"></i>gpt-5.4<b>22%</b></li>
+        <li><i style="background:var(--diag-amber)"></i>claude-opus-4.5<b>14%</b></li>
+        <li><i style="background:var(--g500)"></i>기타<b>9%</b></li>
+      </ul>
+    </div>
+  </div>
+  <div class="amk-val"><b>기능이 제공하는 가치</b> Users · Models · Tags로 지출을 분해해, 저장소 · 프로젝트 · 팀 단위로 누가 무엇을 쓰는지 한눈에 봅니다.</div>
+</div>
 
-  <p class="amc-demo-s" style="margin-top:18px">가격 카탈로그 · 귀속 · 예산 · 절감 · 계량 화면 예시입니다.</p>
-  <div class="tabs am-tabs" data-amk-sw="cost" role="group"><button type="button" data-k="price" class="on" aria-pressed="true">01 가격 카탈로그</button><button type="button" data-k="attr" aria-pressed="false">02 귀속</button><button type="button" data-k="budget" aria-pressed="false">03 예산</button><button type="button" data-k="ctrl" aria-pressed="false">04 대시보드</button><button type="button" data-k="opt" aria-pressed="false">05 절감</button><button type="button" data-k="mon" aria-pressed="false">06 계량 · 수익화</button></div>
-  <div class="amk-win rv"><div class="amk-bar"><i></i><i></i><i></i><b>Konnect · AI Cost Management</b><span class="amk-tag">예시 화면</span></div><div class="amk-body"><nav class="amk-nav" aria-hidden="true"><span data-kg="cost" data-kh="price" class="hl">Price Catalog</span><span data-kg="cost" data-kh="attr">Attribution</span><span data-kg="cost" data-kh="budget">Budgets</span><span data-kg="cost" data-kh="ctrl">Dashboard</span><span data-kg="cost" data-kh="opt">Savings</span><span data-kg="cost" data-kh="mon">Metering</span></nav><div class="amk-main"><div class="amk-stack">
-
-<div class="amk-p on" data-kg="cost" data-kp="price">
+<div class="amk-p" data-kg="cost" data-kp="price">
   <div class="amk-hd"><span class="amk-crumb">Cost Management</span><h3>Price Catalog</h3><p class="amk-desc">What you pay per million tokens after overrides. Open a model for list price and history.</p></div>
   <div class="amk-ph"><div class="amk-sw" data-amk-sw="pricetab" role="group"><button type="button" data-k="eff" class="on" aria-pressed="true">Effective Rates</button><button type="button" data-k="ovr" aria-pressed="false">Provider Overrides</button></div><div class="amk-tool" style="margin:0"><span class="amk-btn">Sync catalog</span><span class="amk-btn pri">+ Add override</span></div></div>
   <div class="amk-stack">
