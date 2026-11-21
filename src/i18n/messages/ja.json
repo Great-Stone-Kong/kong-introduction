@@ -6273,5 +6273,18 @@
   "m.f37674a2eb51": "画面の名前 · 金額 · ユーザー名は説明のための例です。",
   "m.68dd793f4155": "タグでグループ化すると、リポジトリ · プロジェクトごとのコストを確認できます。予算スコープでも使えるため、プロジェクト単位の予算管理にも活用できます。",
   "m.1d081366c59d": "07 計量 · 収益化",
-  "m.1eb2e7457828": "Users · Models · Tags で支出を分解し、リポジトリ · プロジェクト · チーム単位で誰が何を使っているかを一目で把握します。"
+  "m.1eb2e7457828": "Users · Models · Tags で支出を分解し、リポジトリ · プロジェクト · チーム単位で誰が何を使っているかを一目で把握します。",
+  "m.a6aaa8e6ad28": "ダッシュボード · 予算 · 予測の数字は、モデル単価が正しいときに意味を持ちます。Price Catalog はプロバイダーの list price を集め、組織が交渉した割引 · 固定単価を override として反映し、実際の支払単価で使用量を値付けします。",
+  "m.9e26ecb09750": "購買の視点",
+  "m.a7079aa70dc0": "請求前の実コスト",
+  "m.1c3aadadf11a": "公開定価だけだと契約割引が抜け、予算がずれます。Effective rates に override を反映し、財務 · チームに見える支出を契約に合わせます。",
+  "m.a21f98854217": "数千モデル · 1つのカタログ",
+  "m.0adc5a7b531d": "モデルごとの Base input · Output · Cache · Reasoning 単価と価格履歴を1画面で検索 · フィルタします。組織のすべての AI Gateway に同じ単価が適用されます。",
+  "m.cc430d301ef3": "契約の視点",
+  "m.23255eb1b1d3": "割引 · 固定単価 override",
+  "m.e80531cee1de": "プロバイダー全体の Percentage off、またはモデル別 Custom rate で交渉価格を入れます。キャッシュ · Reasoning · Rate card（バッチ · リージョン · Long context）まで合わせられます。",
+  "m.50794a5698a1": "単価の適用順。",
+  "m.f4f5d3e28489": "Target 自体の単価 → モデル Custom rate → プロバイダー Percentage off → カタログ list price。すでに記録された過去リクエストの費用は変わらず、override 以降のリクエストから新しい単価が適用されます。",
+  "m.dc1a842d2af1": "Effective rates: list price と override を反映した有効単価。Base input · Cache write · Cache reads · Reasoning · Output（USD / 1M tokens）。",
+  "m.483e3e0df5b8": "Add rate override: Percentage off list または Custom rate。契約で固定単価がある場合は Custom rate で list price を置き換えます。"
 }

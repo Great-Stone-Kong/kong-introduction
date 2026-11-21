@@ -2535,7 +2535,7 @@
   "m.665b8ec3d0bc": "帶有金鑰認證的通量",
   "m.665e841afd1a": "Bifrost, Portkey, 和 Lite LLM 分別是 LLM / MCP 以 MCP 為中心",
   "m.666637327f9d": "1),\"一年在一起,在你身邊為接下來的十年\"......",
-  "m.666d69e17bb9": "運營視角",
+  "m.666d69e17bb9": "營運觀點",
   "m.6674d2f3496b": "地端 · 客戶雲端 · K8s · VM",
   "m.6696193d0585": "真實金鑰",
   "m.66a89761207d": "從中心連線6項服務的閘道",
@@ -6273,5 +6273,18 @@
   "m.f37674a2eb51": "畫面名稱 · 金額 · 使用者名稱僅為說明用示例。",
   "m.68dd793f4155": "以標籤分組即可查看各儲存庫 · 專案的成本。預算範圍也可使用相同維度，便於專案級預算管理。",
   "m.1d081366c59d": "07 計量 · 變現",
-  "m.1eb2e7457828": "以 Users · Models · Tags 拆解支出，一眼看出各儲存庫 · 專案 · 團隊誰在使用什麼。"
+  "m.1eb2e7457828": "以 Users · Models · Tags 拆解支出，一眼看出各儲存庫 · 專案 · 團隊誰在使用什麼。",
+  "m.a6aaa8e6ad28": "儀表板 · 預算 · 預測數字只有在模型單價正確時才有意義。Price Catalog 彙整供應商 list price，並以 override 反映組織談妥的折扣 · 固定單價，讓用量依實際支付單價計價。",
+  "m.9e26ecb09750": "採購觀點",
+  "m.a7079aa70dc0": "帳單前的真實成本",
+  "m.1c3aadadf11a": "僅用公開牌價會漏掉合約折扣，預算就會偏掉。Effective rates 納入 override，讓財務 · 團隊看到的支出與合約一致。",
+  "m.a21f98854217": "數千模型 · 單一目錄",
+  "m.0adc5a7b531d": "在同一畫面搜尋 · 篩選各模型的 Base input · Output · Cache · Reasoning 單價與價格歷史。組織內所有 AI Gateway 套用相同單價。",
+  "m.cc430d301ef3": "合約觀點",
+  "m.23255eb1b1d3": "折扣 · 固定單價 override",
+  "m.e80531cee1de": "以供應商整體 Percentage off，或依模型 Custom rate 填入議價。也可對齊快取 · Reasoning · Rate card（批次 · 區域 · Long context）。",
+  "m.50794a5698a1": "單價套用順序。",
+  "m.f4f5d3e28489": "Target 自身單價 → 模型 Custom rate → 供應商 Percentage off → 目錄 list price。已記錄的過去請求費用不會變，override 之後的請求才套用新單價。",
+  "m.dc1a842d2af1": "Effective rates：反映 list price 與 override 的有效單價。Base input · Cache write · Cache reads · Reasoning · Output（USD / 1M tokens）。",
+  "m.483e3e0df5b8": "Add rate override：Percentage off list 或 Custom rate。若合約有固定單價，以 Custom rate 取代 list price。"
 }

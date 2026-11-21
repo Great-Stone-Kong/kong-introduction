@@ -6273,5 +6273,18 @@
   "m.f37674a2eb51": "화면의 이름 · 금액 · 사용자명은 설명을 위한 예시입니다.",
   "m.68dd793f4155": "태그로 그룹화하면 저장소 · 프로젝트별 비용을 볼 수 있습니다. 예산 범위에도 쓸 수 있어 프로젝트 단위 예산 관리에 활용합니다.",
   "m.1d081366c59d": "07 계량 · 수익화",
-  "m.1eb2e7457828": "Users · Models · Tags로 지출을 분해해, 저장소 · 프로젝트 · 팀 단위로 누가 무엇을 쓰는지 한눈에 봅니다."
+  "m.1eb2e7457828": "Users · Models · Tags로 지출을 분해해, 저장소 · 프로젝트 · 팀 단위로 누가 무엇을 쓰는지 한눈에 봅니다.",
+  "m.a6aaa8e6ad28": "대시보드 · 예산 · 예측 숫자는 모델 단가가 맞아야 의미가 있습니다. Price Catalog는 제공사 list price를 모으고, 조직이 협상한 할인 · 고정 단가를 override로 반영해 실제 지불 단가로 사용량을 값매깁니다.",
+  "m.9e26ecb09750": "구매 관점",
+  "m.a7079aa70dc0": "청구 전에 실제 원가",
+  "m.1c3aadadf11a": "공개 정가만 쓰면 계약 할인이 빠져 예산이 빗나갑니다. Effective rates에 override를 반영해 재무 · 팀에 보이는 지출이 계약과 맞습니다.",
+  "m.a21f98854217": "수천 모델 · 한 카탈로그",
+  "m.0adc5a7b531d": "모델별 Base input · Output · Cache · Reasoning 단가와 가격 이력을 한 화면에서 검색 · 필터합니다. 조직의 모든 AI Gateway에 동일하게 적용됩니다.",
+  "m.cc430d301ef3": "계약 관점",
+  "m.23255eb1b1d3": "할인 · 고정가 override",
+  "m.e80531cee1de": "제공사 전체 Percentage off, 또는 모델별 Custom rate로 협상가를 넣습니다. 캐시 · Reasoning · Rate card(배치 · 리전 · Long context)까지 맞출 수 있습니다.",
+  "m.50794a5698a1": "단가 적용 순서.",
+  "m.f4f5d3e28489": "Target 자체 단가 → 모델 Custom rate → 제공사 Percentage off → 카탈로그 list price. 이미 기록된 과거 요청 비용은 바뀌지 않고, override 이후 요청부터 새 단가가 적용됩니다.",
+  "m.dc1a842d2af1": "Effective rates: list price와 override가 반영된 유효 단가. Base input · Cache write · Cache reads · Reasoning · Output(USD / 1M tokens).",
+  "m.483e3e0df5b8": "Add rate override: Percentage off list 또는 Custom rate. 계약 고정가가 있으면 Custom rate로 list price를 대체합니다."
 }
