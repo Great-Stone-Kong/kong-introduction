@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b016082
+
+### Changed
+
+- AI Management > AI Cost Management: Replaced feature cards and the long Price Catalog block with bullets, tab mockups, and synced descriptions. Budgets shows a Konnect|Slack over-limit alert animation
+
 ## 2026.11.20.6b00172e
 
 ### Added

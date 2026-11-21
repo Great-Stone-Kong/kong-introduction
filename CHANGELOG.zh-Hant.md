@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b016082
+
+### 變更
+
+- AI Management > AI Cost Management：以要點、分頁示意與下方說明取代功能卡片與冗長價格目錄區塊。Budgets 含 Konnect|Slack 超限警報動畫
+
 ## 2026.11.20.6b00172e
 
 ### 新增
