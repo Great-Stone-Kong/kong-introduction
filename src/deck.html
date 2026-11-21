@@ -296,13 +296,13 @@ html[data-theme="light"] .amk-btn.pri{background:var(--g900);color:#fff;border-c
 #am-cost .amc-why{margin:0 0 var(--space-5)}
 #am-cost .amc-demo-h{margin:var(--space-6) 0 var(--space-2);font-size:20px;color:var(--heading)}
 #am-cost .amc-demo-s{margin:0 0 var(--space-3);font-size:14.5px;color:var(--g300);line-height:1.5}
-#am-cost .amc-where{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(180px,.75fr);gap:var(--space-4);align-items:start}
+#am-cost .amc-where{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(200px,.9fr);gap:var(--space-4);align-items:start}
 #am-cost .amc-where .amk-tbl{font-size:12px}
 #am-cost .amc-where .amk-tbl .nest td:first-child{padding-left:22px;color:var(--g300);font-family:var(--mono);font-size:11.5px}
 #am-cost .amc-where .amk-tbl tr.exp{background:var(--accent-soft)}
 #am-cost .amc-where .amk-tbl tr.exp td:first-child{font-weight:800;color:var(--heading)}
-#am-cost .amc-donut{display:flex;flex-direction:column;align-items:center;gap:var(--space-3);padding:var(--space-2) 0}
-#am-cost .amc-donut svg{width:148px;height:148px}
+#am-cost .amc-donut{display:flex;flex-direction:column;align-items:center;gap:var(--space-3);padding:0;margin-top:-6px}
+#am-cost .amc-donut svg{width:210px;height:210px}
 #am-cost .amc-donut ul{list-style:none;margin:0;padding:0;width:100%;font-size:12px;color:var(--g300)}
 #am-cost .amc-donut li{display:flex;align-items:center;gap:8px;padding:3px 0}
 #am-cost .amc-donut li i{width:8px;height:8px;border-radius:50%;flex:none}
@@ -6952,28 +6952,30 @@ window_size = 1month</pre>
   <div class="callout amc-why"><b>Gateway에서 보는 이유.</b> 공급사 콘솔만으로는 Bedrock · Foundry 등 경로가 빠질 수 있습니다. 게이트웨이에서는 여러 하네스 트래픽을 한 화면에서 보고, Virtual Key로 이용자를 식별합니다. 에이전트에 LLM 키를 두지 않아도 됩니다.</div>
 
   <h3 class="amc-demo-h">대시보드 예시</h3>
-  <p class="amc-demo-s">Dashboard의 Where is it going?에서 Users로 묶고 Models로 한 번 더 분해한 예시입니다.</p>
+  <p class="amc-demo-s">태그로 그룹화하면 저장소 · 프로젝트별 비용을 볼 수 있습니다. 예산 범위에도 쓸 수 있어 프로젝트 단위 예산 관리에 활용합니다.</p>
   <div class="amk-win rv"><div class="amk-bar"><i></i><i></i><i></i><b>Konnect · AI Cost Management</b><span class="amk-tag">예시 화면</span></div><div class="amk-main" style="padding:12px 14px">
     <div class="amk-hd"><span class="amk-crumb">Cost Management · Dashboard</span><h3>Where is it going?</h3><p class="amk-desc">Top 10 users by spend · Nov 1 – 13</p></div>
     <div class="amk-tool"><span class="amk-pill">Group by</span><span class="amk-pill on">Users</span><span class="amk-pill">Groups</span><span class="amk-pill">Teams</span><span class="amk-pill">Providers</span><span class="amk-pill">Models</span><span class="amk-pill">Harnesses</span><span class="amk-pill">Tags</span></div>
     <div class="amk-tool" style="margin-top:-2px"><span class="amk-pill">Breakdown by</span><span class="amk-pill on">Models</span><span class="amk-pill">Providers</span><span class="amk-pill">Tags</span><span class="amk-pill">Harnesses</span></div>
     <div class="amc-where">
       <table class="amk-tbl"><thead><tr><th>User</th><th class="r">Share</th><th class="r">Spend</th><th class="r">Tokens</th><th class="r">Requests</th></tr></thead><tbody>
-        <tr class="exp"><td>▾ Shuhei Kawamura</td><td class="r">88.31%</td><td class="r">$9.46</td><td class="r">13.9M / 125.7K</td><td class="r">654</td></tr>
-        <tr class="nest"><td>claude-sonnet-5-5</td><td class="r">76.12%</td><td class="r">$7.20</td><td class="r">—</td><td class="r">—</td></tr>
-        <tr class="nest"><td>gpt-6-sol</td><td class="r">10.05%</td><td class="r">$0.95</td><td class="r">—</td><td class="r">—</td></tr>
-        <tr class="nest"><td>claude-opus-5-5</td><td class="r">8.56%</td><td class="r">$0.81</td><td class="r">—</td><td class="r">—</td></tr>
-        <tr class="nest"><td>기타 모델</td><td class="r">5.27%</td><td class="r">$0.50</td><td class="r">—</td><td class="r">—</td></tr>
-        <tr><td>▸ Platform Services</td><td class="r">6.40%</td><td class="r">$0.69</td><td class="r">1.1M / 42K</td><td class="r">88</td></tr>
-        <tr><td>▸ CI · Batch agents</td><td class="r">5.29%</td><td class="r">$0.57</td><td class="r">820K / 31K</td><td class="r">120</td></tr>
+        <tr class="exp"><td>▾ Alex Park</td><td class="r">36.0%</td><td class="r">$12,600</td><td class="r">28.4M / 620K</td><td class="r">1,840</td></tr>
+        <tr class="nest"><td>claude-sonnet-5-5</td><td class="r">55.0%</td><td class="r">$6,930</td><td class="r">—</td><td class="r">—</td></tr>
+        <tr class="nest"><td>gpt-5.4</td><td class="r">22.0%</td><td class="r">$2,772</td><td class="r">—</td><td class="r">—</td></tr>
+        <tr class="nest"><td>claude-opus-4.5</td><td class="r">14.0%</td><td class="r">$1,764</td><td class="r">—</td><td class="r">—</td></tr>
+        <tr class="nest"><td>기타 모델</td><td class="r">9.0%</td><td class="r">$1,134</td><td class="r">—</td><td class="r">—</td></tr>
+        <tr><td>▸ Jordan Lee</td><td class="r">22.0%</td><td class="r">$7,700</td><td class="r">16.2M / 340K</td><td class="r">980</td></tr>
+        <tr><td>▸ Sam Choi</td><td class="r">18.0%</td><td class="r">$6,300</td><td class="r">13.1M / 275K</td><td class="r">760</td></tr>
+        <tr><td>▸ Morgan Han</td><td class="r">14.0%</td><td class="r">$4,900</td><td class="r">9.8M / 210K</td><td class="r">540</td></tr>
+        <tr><td>▸ Riley Kim</td><td class="r">10.0%</td><td class="r">$3,500</td><td class="r">7.0M / 150K</td><td class="r">410</td></tr>
       </tbody></table>
       <div class="amc-donut" aria-hidden="true">
-        <svg viewBox="0 0 120 120" role="img"><circle cx="60" cy="60" r="44" fill="none" stroke="var(--card2)" stroke-width="18"/><circle cx="60" cy="60" r="44" fill="none" stroke="var(--diag-sky)" stroke-width="18" stroke-dasharray="207 276" stroke-dashoffset="69" transform="rotate(-90 60 60)"/><circle cx="60" cy="60" r="44" fill="none" stroke="#8b7cf6" stroke-width="18" stroke-dasharray="28 276" stroke-dashoffset="-138" transform="rotate(-90 60 60)"/><circle cx="60" cy="60" r="44" fill="none" stroke="var(--diag-amber)" stroke-width="18" stroke-dasharray="24 276" stroke-dashoffset="-166" transform="rotate(-90 60 60)"/><circle cx="60" cy="60" r="44" fill="none" stroke="var(--g500)" stroke-width="18" stroke-dasharray="17 276" stroke-dashoffset="-190" transform="rotate(-90 60 60)"/><text x="60" y="58" text-anchor="middle" font-size="11" font-weight="800" fill="var(--heading)">$9.46</text><text x="60" y="72" text-anchor="middle" font-size="9" fill="var(--g400)">top user</text></svg>
+        <svg viewBox="0 0 120 120" role="img"><circle cx="60" cy="60" r="44" fill="none" stroke="var(--card2)" stroke-width="16"/><circle cx="60" cy="60" r="44" fill="none" stroke="var(--diag-sky)" stroke-width="16" stroke-dasharray="152 276" stroke-dashoffset="0" transform="rotate(-90 60 60)"/><circle cx="60" cy="60" r="44" fill="none" stroke="#8b7cf6" stroke-width="16" stroke-dasharray="61 276" stroke-dashoffset="-152" transform="rotate(-90 60 60)"/><circle cx="60" cy="60" r="44" fill="none" stroke="var(--diag-amber)" stroke-width="16" stroke-dasharray="39 276" stroke-dashoffset="-213" transform="rotate(-90 60 60)"/><circle cx="60" cy="60" r="44" fill="none" stroke="var(--g500)" stroke-width="16" stroke-dasharray="24 276" stroke-dashoffset="-252" transform="rotate(-90 60 60)"/><text x="60" y="56" text-anchor="middle" font-size="12" font-weight="800" fill="var(--heading)">$12.6K</text><text x="60" y="70" text-anchor="middle" font-size="9" fill="var(--g400)">top user</text></svg>
         <ul>
-          <li><i style="background:var(--diag-sky)"></i>claude-sonnet-5-5<b>76%</b></li>
-          <li><i style="background:#8b7cf6"></i>gpt-6-sol<b>10%</b></li>
-          <li><i style="background:var(--diag-amber)"></i>claude-opus-5-5<b>9%</b></li>
-          <li><i style="background:var(--g500)"></i>기타<b>5%</b></li>
+          <li><i style="background:var(--diag-sky)"></i>claude-sonnet-5-5<b>55%</b></li>
+          <li><i style="background:#8b7cf6"></i>gpt-5.4<b>22%</b></li>
+          <li><i style="background:var(--diag-amber)"></i>claude-opus-4.5<b>14%</b></li>
+          <li><i style="background:var(--g500)"></i>기타<b>9%</b></li>
         </ul>
       </div>
     </div>

@@ -6266,10 +6266,10 @@
   "m.53c7d0c02339": "Why view it at the gateway.",
   "m.3412462b981e": "Provider consoles alone can miss paths such as Bedrock · Foundry. At the gateway you see traffic from multiple harnesses in one place and identify users with Virtual Keys—without putting LLM keys on agents.",
   "m.efcd0646627e": "Dashboard examples",
-  "m.f46a6c5b73fa": "Example of Dashboard “Where is it going?” grouped by Users with a Models breakdown.",
   "m.4cfb5cb5fed3": "Other models",
   "m.2991f61ced07": "Other",
   "m.3eb079abe6f8": "Example screens for Price Catalog · Attribution · Budgets · Savings · Metering.",
   "m.25a54d0bab9e": "Ties gateway-path usage to attribution, rates, and budgets—showing who and what drove spend before the invoice, and stopping requests at hard limits.",
-  "m.f37674a2eb51": "Screen names, amounts, and user names are illustrative examples."
+  "m.f37674a2eb51": "Screen names, amounts, and user names are illustrative examples.",
+  "m.68dd793f4155": "Group by tags to see cost per repository and project. The same dimensions work in budget scopes, so you can manage project-based budgets."
 }
