@@ -342,7 +342,24 @@ html[data-theme="light"] .amk-btn.pri{background:var(--g900);color:#fff;border-c
 #am-cost .amc-wires{width:22px;height:100%;min-height:220px;overflow:visible}
 #am-cost .amc-wire{fill:none;stroke:var(--g500);stroke-width:1.6;stroke-dasharray:5 5;stroke-linecap:round}
 #am-cost .amc-stage.budget-on .amc-wire{animation:amc-dash 1.1s linear infinite}
-#am-cost .amc-stage.show-msg .amc-wire{stroke:var(--danger);stroke-width:2}
+#am-cost .amc-stage.show-slack .amc-wire:first-child,
+#am-cost .amc-stage.show-email .amc-wire:last-child{stroke:var(--danger);stroke-width:2}
+#am-cost [data-kp="budget"] .amc-bud-kpis{grid-template-columns:1fr 1fr;width:100%;margin:0 0 8px}
+#am-cost .amc-ov{display:inline-flex;align-items:center;gap:7px;font:600 12px var(--font);color:var(--g200)}
+#am-cost .amc-ov-mark{width:16px;height:14px;border:1.5px solid #8b9068;border-radius:50%;position:relative;flex:none;box-sizing:border-box}
+#am-cost .amc-ov-mark::after{content:"";position:absolute;left:2px;top:3px;width:5px;height:5px;border-radius:50%;background:#c9cbc4}
+#am-cost .amc-radios{display:flex;flex-direction:column;gap:6px}
+#am-cost .amc-radio{display:flex;align-items:center;gap:8px;font:600 13px var(--font);color:var(--g300);padding:6px 8px;border:1px solid var(--line2);border-radius:8px;background:var(--card)}
+#am-cost .amc-radio.on{color:var(--heading);border-color:color-mix(in srgb,#8b9068 55%,var(--line2));background:color-mix(in srgb,#8b9068 12%,var(--card))}
+#am-cost .amc-radio i{width:16px;height:14px;border:1.5px solid #8b9068;border-radius:50%;position:relative;flex:none;box-sizing:border-box}
+#am-cost .amc-radio.on i::after{content:"";position:absolute;left:3px;top:2px;width:7px;height:7px;border-radius:50%;background:#c9cbc4}
+#am-cost .amc-drawer.slim{overflow-x:hidden}
+#am-cost .amc-drawer.slim .amk-map{overflow:hidden}
+#am-cost .amc-drawer.slim .amk-tbl{table-layout:fixed;width:100%;font-size:11.5px}
+#am-cost .amc-drawer.slim .amk-tbl th,#am-cost .amc-drawer.slim .amk-tbl td{overflow:hidden;text-overflow:ellipsis}
+#am-cost .amc-drawer.slim .amk-tbl th:first-child,#am-cost .amc-drawer.slim .amk-tbl td:first-child{width:48%}
+#am-cost .amc-drawer.slim code{font-size:10.5px;word-break:break-all;white-space:normal}
+#am-cost [data-kp="attr"] .amc-split{overflow:hidden}
 #am-cost .amc-notify{display:flex;flex-direction:column;gap:10px;min-width:0;padding:2px 0}
 #am-cost .amc-bud-s{border:1px solid var(--line2);border-radius:8px;overflow:hidden;background:var(--card);display:flex;flex-direction:column;min-width:0;flex:1}
 #am-cost .amc-bud-body-list{gap:8px}
@@ -351,7 +368,6 @@ html[data-theme="light"] .amk-btn.pri{background:var(--g900);color:#fff;border-c
 #am-cost .amc-ch{margin-top:10px;border-top:1px dashed var(--line2);padding-top:8px}
 #am-cost .amc-ch .amk-tbl td:last-child{width:14px;padding-right:2px}
 #am-cost .amc-ch-port{display:block;width:8px;height:8px;border-radius:50%;background:var(--g500);margin-left:auto;box-shadow:0 0 0 3px color-mix(in srgb,var(--g500) 25%,transparent)}
-#am-cost .amc-stage.show-msg .amc-ch-port{background:var(--danger);box-shadow:0 0 0 3px color-mix(in srgb,var(--danger) 22%,transparent)}
 #am-cost .amc-bud-bar.mail{background:var(--navy-2)}
 #am-cost .amc-bud-mail-body{background:var(--card2)}
 #am-cost .amc-bud-mail .amc-bud-msg-h{color:var(--g300)}
@@ -370,17 +386,27 @@ html[data-theme="light"] .amk-btn.pri{background:var(--g900);color:#fff;border-c
 #am-cost .amc-int-card i{width:28px;height:28px;border-radius:8px;background:var(--card2);display:grid;place-items:center;font:800 11px var(--mono);color:var(--heading)}
 #am-cost .amc-int-card b{font:700 12px var(--font);color:var(--heading);line-height:1.25}
 #am-cost .amc-int-card.on{border-color:var(--lime);background:var(--accent-soft);box-shadow:0 0 0 1px var(--lime)}
-#am-cost .amc-org{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;padding:12px 8px;position:relative;background:radial-gradient(circle at 50% 30%,color-mix(in srgb,var(--mark) 8%,transparent),transparent 55%)}
-#am-cost .amc-org-node{border:1px solid var(--line2);border-radius:10px;padding:10px 12px;background:var(--card);min-width:148px;text-align:left;box-shadow:0 8px 20px -16px rgba(0,0,0,.45)}
-#am-cost .amc-org-node b{display:block;font-size:12.5px;color:var(--heading)}
+#am-cost .amc-org{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;padding:16px 10px 36px;position:relative;background:
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/24px 24px,
+  linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/24px 24px,
+  var(--navy-2);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+#am-cost .amc-org-node{border:1px solid var(--line2);border-radius:10px;padding:10px 12px;background:var(--card);min-width:156px;max-width:180px;text-align:left;box-shadow:0 10px 24px -18px rgba(0,0,0,.55);display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px 10px;align-items:start}
+#am-cost .amc-org-av{width:28px;height:28px;border-radius:50%;background:var(--accent-soft);color:var(--heading);display:grid;place-items:center;font:800 10px var(--font);grid-row:1/3}
+#am-cost .amc-org-node b{display:block;font-size:12px;color:var(--heading);line-height:1.25}
 #am-cost .amc-org-node span{display:block;font-size:11px;color:var(--g300)}
-#am-cost .amc-org-node em{display:block;font-style:normal;font-size:10.5px;color:var(--g400);margin-top:4px}
-#am-cost .amc-org-node.root{border-color:var(--mark)}
-#am-cost .amc-org-stem{width:1px;height:18px;background:var(--line2);margin:0 auto}
-#am-cost .amc-org-bar{width:min(92%,520px);height:1px;background:var(--line2);margin:0 auto}
-#am-cost .amc-org-branch{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;padding-top:18px;position:relative}
-#am-cost .amc-org-branch>.amc-org-node{position:relative}
-#am-cost .amc-org-branch>.amc-org-node::before{content:"";position:absolute;top:-18px;left:50%;width:1px;height:18px;background:var(--line2)}
+#am-cost .amc-org-node em{grid-column:2;font-style:normal;font-size:10.5px;color:var(--g400);margin-top:0}
+#am-cost .amc-org-node em.lim{color:var(--diag-amber)}
+#am-cost .amc-org-node.root{border-color:var(--mark);min-width:200px;max-width:220px}
+#am-cost .amc-org-stem{width:1px;height:16px;background:var(--line2);margin:0 auto}
+#am-cost .amc-org-bar{width:min(88%,560px);height:1px;background:var(--line2);margin:0 auto}
+#am-cost .amc-org-branch{display:flex;flex-wrap:nowrap;justify-content:center;gap:12px;padding-top:16px;position:relative;width:100%;overflow:auto}
+#am-cost .amc-org-col{display:flex;flex-direction:column;align-items:center;gap:0}
+#am-cost .amc-org-col>.amc-org-node{position:relative}
+#am-cost .amc-org-col>.amc-org-node::before{content:"";position:absolute;top:-16px;left:50%;width:1px;height:16px;background:var(--line2)}
+#am-cost .amc-org-sub{display:flex;gap:8px;padding-top:14px;position:relative}
+#am-cost .amc-org-sub::before{content:"";position:absolute;top:0;left:20%;right:20%;height:1px;background:var(--line2)}
+#am-cost .amc-org-sub .amc-org-node{position:relative;min-width:132px;max-width:148px;padding:8px 10px}
+#am-cost .amc-org-sub .amc-org-node::before{content:"";position:absolute;top:-14px;left:50%;width:1px;height:14px;background:var(--line2)}
 #am-cost .amc-org-zoom{position:absolute;left:10px;bottom:10px;display:flex;gap:4px}
 #am-cost .amc-org-zoom span{width:26px;height:26px;border:1px solid var(--line2);border-radius:6px;display:grid;place-items:center;font:700 12px var(--font);color:var(--g300);background:var(--card)}
 #am-cost .amc-soon-head{display:flex;align-items:center;gap:10px;margin:0 0 12px}
@@ -395,7 +421,7 @@ html[data-theme="light"] .amk-btn.pri{background:var(--g900);color:#fff;border-c
 #am-cost .amc-anom-h b{font-size:13.5px;color:var(--heading)}
 #am-cost .amc-anom p{margin:0;font-size:12px;color:var(--g300);line-height:1.45}
 #am-cost .amc-save-chart{max-height:140px;width:100%}
-@media (max-width:900px){#am-cost .amc-soon-grid{grid-template-columns:1fr 1fr}#am-cost .amc-org-branch{flex-direction:column;align-items:stretch}#am-cost .amc-org-bar,#am-cost .amc-org-branch>.amc-org-node::before{display:none}}
+@media (max-width:900px){#am-cost .amc-soon-grid{grid-template-columns:1fr 1fr}#am-cost .amc-org-branch{flex-wrap:wrap}#am-cost .amc-org-sub{display:none}}
 #am-cost .amc-bud-bar{display:flex;align-items:center;gap:6px;padding:7px 10px;border-bottom:1px solid var(--line);background:var(--navy-2);font-size:11.5px;color:var(--g300)}
 #am-cost .amc-bud-bar i{width:7px;height:7px;border-radius:50%;background:var(--g700)}
 #am-cost .amc-bud-bar b{margin-left:4px;color:var(--heading);font-weight:800}
@@ -419,8 +445,12 @@ html[data-theme="light"] .amk-btn.pri{background:var(--g900);color:#fff;border-c
 #am-cost .amc-bud-slack{position:relative;flex:1;padding:12px;background:#0e1114;min-height:120px}
 #am-cost .amc-bud-idle{margin:0;font-size:12px;color:var(--g500);text-align:center;padding:28px 12px}
 #am-cost .amc-bud-msg{opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .32s ease,transform .32s ease}
-#am-cost [data-amc-bud].show-msg .amc-bud-msg{opacity:1;transform:none;pointer-events:auto}
-#am-cost [data-amc-bud].show-msg .amc-bud-idle{display:none}
+#am-cost [data-amc-bud].show-slack [data-amc-dest="slack"] .amc-bud-msg,
+#am-cost [data-amc-bud].show-email [data-amc-dest="email"] .amc-bud-msg{opacity:1;transform:none;pointer-events:auto}
+#am-cost [data-amc-bud].show-slack [data-amc-dest="slack"] .amc-bud-idle,
+#am-cost [data-amc-bud].show-email [data-amc-dest="email"] .amc-bud-idle{display:none}
+#am-cost [data-amc-bud].show-slack [data-amc-port="slack"],
+#am-cost [data-amc-bud].show-email [data-amc-port="email"]{background:var(--danger);box-shadow:0 0 0 3px color-mix(in srgb,var(--danger) 22%,transparent)}
 #am-cost .amc-bud-msg-h{display:flex;gap:8px;align-items:center;margin:0 0 8px;color:#d1d2d3;font-size:12px}
 #am-cost .amc-bud-msg-h b{display:block;color:#fff;font-size:13px}
 #am-cost .amc-bud-msg-h span{color:#ababad;font-size:11px}
@@ -7131,7 +7161,7 @@ window_size = 1month</pre>
 <div class="amk-p" data-kg="cost" data-kp="budget">
   <div class="amk-hd"><span class="amk-crumb">Cost management › Budgets</span><h3>Budgets</h3><p class="amk-desc">한도 · 알림 규칙 · Channels. Email · Slack 지원, Webhook 추후.</p></div>
   <div class="amk-ph"><div class="amk-sw"><span class="amk-pill on">Budgets</span><span class="amk-pill">Notification events</span><span class="amk-pill">Channels</span></div><span class="amk-btn pri">+ New budget</span></div>
-  <div class="amk-kpis" style="margin:0 0 8px"><div class="amk-kpi bad"><span>Breached</span><b data-amc-breach>0</b><em>of 4 · over limit</em></div><div class="amk-kpi"><span>Observe only</span><b>1</b><em>recording</em></div></div>
+  <div class="amk-kpis amc-bud-kpis"><div class="amk-kpi bad"><span>Breached</span><b data-amc-breach>0</b><em>of 4 · over limit</em></div><div class="amk-kpi"><span>Observe only</span><b>1</b><em>recording</em></div></div>
   <div class="amc-bud-row">
     <div class="amc-bud-meta"><b>Field Engineering pool</b><span>$58,000 / month · Claude Code</span></div>
     <span class="amc-bud-pct" data-amc-pct>0%</span>
@@ -7161,24 +7191,28 @@ window_size = 1month</pre>
       <table class="amk-tbl"><thead><tr><th>Model</th><th>Override</th><th class="r">Base input</th><th class="r">Cache writes</th><th class="r">Cache reads</th><th class="r">Output</th><th>Rate cards</th></tr></thead><tbody>
         <tr><td><b>claude-sonnet-5</b><br><span class="amc-prov">Anthropic</span></td><td><span class="amk-chip">List price</span></td><td class="r">$3.00</td><td class="r">$3.75</td><td class="r">$0.30</td><td class="r">$15.00</td><td></td></tr>
         <tr><td><b>claude-opus-4.5</b><br><span class="amc-prov">Anthropic</span></td><td><span class="amk-chip">List price</span></td><td class="r">$15.00</td><td class="r">$18.75</td><td class="r">$1.50</td><td class="r">$75.00</td><td><span class="amk-chip">Long context</span></td></tr>
-        <tr><td><b>gpt-5.4</b><br><span class="amc-prov">OpenAI</span></td><td><span class="amk-chip dot">Custom rate</span></td><td class="r">$2.20</td><td class="r">—</td><td class="r">$1.10</td><td class="r">$8.80</td><td></td></tr>
-        <tr><td><b>gpt-5</b><br><span class="amc-prov">Azure · westeurope</span></td><td><span class="amk-chip dot">Custom rate</span></td><td class="r">$2.20</td><td class="r">—</td><td class="r">—</td><td class="r">$8.80</td><td></td></tr>
-        <tr><td><b>gemini-3-pro</b><br><span class="amc-prov">Google</span></td><td><span class="amk-chip dot">Provider discount</span></td><td class="r">$1.10</td><td class="r">—</td><td class="r">—</td><td class="r">$4.40</td><td></td></tr>
-        <tr><td><b>llama-70b</b><br><span class="amc-prov">GPU pool</span></td><td><span class="amk-chip dot">Internal transfer</span></td><td class="r">$0.40</td><td class="r">—</td><td class="r">—</td><td class="r">$0.40</td><td></td></tr>
+        <tr><td><b>gpt-5.4</b><br><span class="amc-prov">OpenAI</span></td><td><span class="amc-ov"><i class="amc-ov-mark"></i>Custom rate</span></td><td class="r">$2.20</td><td class="r">—</td><td class="r">$1.10</td><td class="r">$8.80</td><td></td></tr>
+        <tr><td><b>gpt-5</b><br><span class="amc-prov">Azure · westeurope</span></td><td><span class="amc-ov"><i class="amc-ov-mark"></i>Custom rate</span></td><td class="r">$2.20</td><td class="r">—</td><td class="r">—</td><td class="r">$8.80</td><td></td></tr>
+        <tr><td><b>gemini-3-pro</b><br><span class="amc-prov">Google</span></td><td><span class="amk-chip">Provider discount</span></td><td class="r">$1.10</td><td class="r">—</td><td class="r">—</td><td class="r">$4.40</td><td></td></tr>
+        <tr><td><b>llama-70b</b><br><span class="amc-prov">GPU pool</span></td><td><span class="amk-chip">Internal transfer</span></td><td class="r">$0.40</td><td class="r">—</td><td class="r">—</td><td class="r">$0.40</td><td></td></tr>
       </tbody></table>
       <div class="amk-foot"><span>1 to 6 of 9,995</span><span class="amk-pill">10 per page</span></div>
     </div>
     <aside class="amc-drawer" aria-label="Add override">
       <div class="amc-drawer-h"><div><b>Add override</b><span>Applies to new requests after save</span></div><span class="amc-drawer-x" aria-hidden="true">✕</span></div>
       <div class="amc-field"><span>Scope</span><em>Organization</em></div>
-      <div class="amc-field"><span>Provider</span><em>Anthropic</em></div>
-      <div class="amc-field"><span>Model</span><em>claude-sonnet-5</em></div>
-      <div class="amc-field"><span>Type</span><em>Percentage off</em></div>
-      <div class="amc-field"><span>Discount</span><em>−12%</em></div>
-      <div class="amc-field-row">
-        <div class="amc-field"><span>Effective input</span><i>$2.64</i></div>
-        <div class="amc-field"><span>Effective output</span><i>$13.20</i></div>
+      <div class="amc-field"><span>Provider · Model</span><em>OpenAI · gpt-5.4</em></div>
+      <div class="amc-field"><span>Type</span>
+        <div class="amc-radios">
+          <span class="amc-radio"><i></i>Percentage off</span>
+          <span class="amc-radio on"><i></i>Custom rate</span>
+        </div>
       </div>
+      <div class="amc-field-row">
+        <div class="amc-field"><span>Input / 1M</span><i>$2.20</i></div>
+        <div class="amc-field"><span>Output / 1M</span><i>$8.80</i></div>
+      </div>
+      <div class="amc-field"><span>Cache reads / 1M</span><i>$1.10</i></div>
       <div class="amc-drawer-act"><span class="amk-btn">Cancel</span><span class="amk-btn pri">Save override</span></div>
     </aside>
   </div>
@@ -7212,20 +7246,19 @@ window_size = 1month</pre>
         </div></div>
       </div>
     </div>
-    <aside class="amc-drawer" aria-label="Claude Code attribution">
-      <div class="amc-drawer-h"><div><b>Coding agents · Claude Code</b><span>Headers → cost tags per session</span></div><span class="amc-drawer-x" aria-hidden="true">✕</span></div>
-      <div class="amk-map" style="margin:0"><b>Tags you get</b><span>Sent by Claude Code</span>
-        <table class="amk-tbl"><thead><tr><th>Header</th><th>Cost tag</th></tr></thead><tbody>
-          <tr><td><code>x-claude-code-session-id</code></td><td>Agent session</td></tr>
-          <tr><td><code>x-claude-code-account-uuid</code></td><td>Account</td></tr>
-          <tr><td><code>ai-cost-scm-repo</code></td><td>Repository</td></tr>
-          <tr><td><code>ai-cost-scm-provider</code></td><td>SCM provider</td></tr>
+    <aside class="amc-drawer slim" aria-label="Claude Code attribution">
+      <div class="amc-drawer-h"><div><b>Claude Code</b><span>Tags · gateways</span></div><span class="amc-drawer-x" aria-hidden="true">✕</span></div>
+      <div class="amk-map" style="margin:0"><b>Tags you get</b><span>Header → tag</span>
+        <table class="amk-tbl"><thead><tr><th>Header</th><th>Tag</th></tr></thead><tbody>
+          <tr><td><code>session-id</code></td><td>Session</td></tr>
+          <tr><td><code>account-uuid</code></td><td>Account</td></tr>
+          <tr><td><code>scm-repo</code></td><td>Repo</td></tr>
         </tbody></table>
       </div>
-      <div><b style="display:block;font-size:12.5px;color:var(--heading);margin:0 0 4px">Turn it on in your gateways</b>
-        <div class="amc-tog"><div>gs-ai-gw<em>Hybrid · 2 data planes</em></div><span class="amc-sw on"><i></i></span></div>
-        <div class="amc-tog"><div>gs-ai-gw-mcp<em>Hybrid · 1 data plane</em></div><span class="amc-sw on"><i></i></span></div>
-        <div class="amc-tog"><div>webinar-202610<em>Not set up yet</em></div><span class="amc-sw"><i></i></span></div>
+      <div><b style="display:block;font-size:12.5px;color:var(--heading);margin:0 0 4px">Gateways</b>
+        <div class="amc-tog"><div>gs-ai-gw<em>2 data planes</em></div><span class="amc-sw on"><i></i></span></div>
+        <div class="amc-tog"><div>gs-ai-gw-mcp<em>1 data plane</em></div><span class="amc-sw on"><i></i></span></div>
+        <div class="amc-tog"><div>webinar-202610<em>Not set up</em></div><span class="amc-sw"><i></i></span></div>
       </div>
     </aside>
   </div>
@@ -7235,14 +7268,26 @@ window_size = 1month</pre>
   <div class="amk-hd"><span class="amk-crumb">Cost management › Org Chart</span><h3>Org Chart</h3><p class="amk-desc">Org structure with optional spend limits per node.</p></div>
   <div class="amk-ph"><div class="amk-sw"><span class="amk-pill on">Chart</span><span class="amk-pill">List</span></div><span class="amk-pill">Spend limits · off</span><span class="amk-btn">Re-upload org structure</span></div>
   <div class="amc-org">
-    <div class="amc-org-node root"><b>DanaWhitfield-E001</b><span>Manager · Dana Whitfield</span><em>No limit · 2 direct members</em></div>
+    <div class="amc-org-node root"><span class="amc-org-av">DW</span><b>DanaWhitfield-E001</b><span>Dana Whitfield · VP Eng</span><em class="lim">Ceiling $120K / mo · 4 directs</em></div>
     <div class="amc-org-stem"></div>
     <div class="amc-org-bar"></div>
     <div class="amc-org-branch">
-      <div class="amc-org-node"><b>HelenCho-E008</b><span>Helen Cho · Manager</span><em>No limit</em></div>
-      <div class="amc-org-node"><b>MarcusLee-E003</b><span>Marcus Lee · Manager</span><em>No limit</em></div>
-      <div class="amc-org-node"><b>LeoPark-E010</b><span>Leo Park · Manager</span><em>No limit</em></div>
-      <div class="amc-org-node"><b>AikoTanaka-E006</b><span>Aiko Tanaka · Manager</span><em>No limit</em></div>
+      <div class="amc-org-col">
+        <div class="amc-org-node"><span class="amc-org-av">HC</span><b>HelenCho-E008</b><span>Helen Cho · FE</span><em class="lim">$58K / mo</em></div>
+        <div class="amc-org-sub">
+          <div class="amc-org-node"><span class="amc-org-av">AP</span><b>AlexPark-E021</b><span>IC</span><em>No limit</em></div>
+          <div class="amc-org-node"><span class="amc-org-av">JL</span><b>JordanLee-E019</b><span>IC</span><em>No limit</em></div>
+        </div>
+      </div>
+      <div class="amc-org-col">
+        <div class="amc-org-node"><span class="amc-org-av">ML</span><b>MarcusLee-E003</b><span>Marcus Lee · Platform</span><em class="lim">$30K / mo</em></div>
+      </div>
+      <div class="amc-org-col">
+        <div class="amc-org-node"><span class="amc-org-av">LP</span><b>LeoPark-E010</b><span>Leo Park · AI</span><em>No limit</em></div>
+      </div>
+      <div class="amc-org-col">
+        <div class="amc-org-node"><span class="amc-org-av">AT</span><b>AikoTanaka-E006</b><span>Aiko Tanaka · DevEx</span><em class="lim">$18K / mo</em></div>
+      </div>
     </div>
     <div class="amc-org-zoom" aria-hidden="true"><span>−</span><span>+</span><span>⤢</span></div>
   </div>
@@ -7316,13 +7361,12 @@ window_size = 1month</pre>
           <div class="amc-bud-msg" data-amc-msg>
             <div class="amc-bud-msg-h"><span class="amc-bud-avatar">K</span><div><b>Kong AI Cost</b><span>APP · just now</span></div></div>
             <div class="amc-bud-card">
-              <b class="amc-bud-card-t">Budget exceeded</b>
-              <p>Field Engineering pool 한도를 넘었습니다.</p>
-              <p class="amc-bud-card-d">Spend $58,420 / $58,000 · 100.7%</p>
-              <p class="amc-bud-card-d">Channel · Slack · threshold 100%</p>
+              <b class="amc-bud-card-t">Budget threshold 80%</b>
+              <p>Field Engineering pool이 80%에 도달했습니다.</p>
+              <p class="amc-bud-card-d">Spend $46,400 / $58,000 · Channel · Slack</p>
             </div>
           </div>
-          <p class="amc-bud-idle">임계값에 도달하면 알림이 여기 표시됩니다.</p>
+          <p class="amc-bud-idle">80% 임계값이면 Slack에 표시됩니다.</p>
         </div>
       </div>
       <div class="amc-bud-s amc-bud-mail" data-amc-dest="email">
@@ -7333,10 +7377,10 @@ window_size = 1month</pre>
             <div class="amc-bud-card">
               <b class="amc-bud-card-t">[AI Cost] Budget exceeded</b>
               <p>Field Engineering pool 한도를 넘었습니다.</p>
-              <p class="amc-bud-card-d">Spend $58,420 / $58,000 · Channel · Email</p>
+              <p class="amc-bud-card-d">Spend $58,420 / $58,000 · Channel · Email · 100%</p>
             </div>
           </div>
-          <p class="amc-bud-idle">임계값에 도달하면 메일이 여기 표시됩니다.</p>
+          <p class="amc-bud-idle">100% 한도면 Email에 표시됩니다.</p>
         </div>
       </div>
     </aside>
@@ -7350,7 +7394,7 @@ window_size = 1month</pre>
     </div>
     <div class="amc-kd" data-kg="cost" data-kd="budget">
       <h4>예산</h4>
-      <p>주체 · 기간별 한도와 임계값 알림을 둡니다. 알림 Channel은 현재 Email · Slack을 지원하고, Webhook은 추후 추가됩니다. 예시 화면 밖 우측은 Channel로 전달되는 Slack · Email 알림입니다.</p>
+      <p>주체 · 기간별 한도와 임계값 알림을 둡니다. 알림 Channel은 현재 Email · Slack을 지원하고, Webhook은 추후 추가됩니다. 예시에서는 80%에 Slack, 100%에 Email이 도착합니다.</p>
       <p class="note">출처: <a href="https://developer.konghq.com/ai-cost-management/budgets/" target="_blank" rel="noopener noreferrer">Budgets in AI Cost Management ↗</a></p>
     </div>
     <div class="amc-kd" data-kg="cost" data-kd="price">
@@ -10034,7 +10078,7 @@ document.querySelectorAll('.amo [data-go]').forEach(g=>{
   const f=()=>{ if(typeof go==='function') go('aimgmt',g.dataset.go); };
   g.addEventListener('click',f); g.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); f(); } });
 });
-/* ---------- AI Cost Budgets · Channel → Slack/Email 알림 루프 ---------- */
+/* ---------- AI Cost Budgets · Channel → Slack(80%) / Email(100%) 1회 ---------- */
 (function(){
   const root=document.querySelector('[data-amc-bud]'); if(!root) return;
   const fill=root.querySelector('[data-amc-fill]');
@@ -10048,7 +10092,7 @@ document.querySelectorAll('.amo [data-go]').forEach(g=>{
   const svg=root.querySelector('.amc-wires');
   const LIMIT=58000;
   const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let timer=null, raf=null, playing=false;
+  let timer=null, raf=null, playing=false, done=false;
 
   function layoutWires(){
     if(!svg||!root.classList.contains('budget-on')) return;
@@ -10075,26 +10119,34 @@ document.querySelectorAll('.amo [data-go]').forEach(g=>{
     if(nameSt){ nameSt.classList.toggle('over',pct>=100); nameSt.classList.toggle('warn',pct>=80&&pct<100); nameSt.classList.toggle('ok',pct<80); }
     root.classList.toggle('warn',pct>=80&&pct<100);
     root.classList.toggle('over',pct>=100);
-    root.classList.toggle('show-msg',pct>=100);
+    root.classList.toggle('show-slack',pct>=80);
+    root.classList.toggle('show-email',pct>=100);
   }
 
   function stop(){ playing=false; if(timer){clearTimeout(timer);timer=null;} if(raf){cancelAnimationFrame(raf);raf=null;} }
 
-  function runLoop(){
+  function finish(){
+    stop();
+    done=true;
+    setPct(100.7);
+  }
+
+  function runOnce(){
+    if(done||playing) return;
     stop();
     layoutWires();
-    if(reduce){ setPct(100.7); return; }
+    if(reduce){ finish(); return; }
     playing=true;
-    const start=performance.now(), dur=3200;
+    const start=performance.now(), dur=3600;
     function frame(now){
       if(!playing) return;
       const t=Math.min(1,(now-start)/dur);
-      const eased=t<.7? (t/.7)*100 : 100+((t-.7)/.3)*5.7;
+      const eased=t<.75? (t/.75)*100 : 100+((t-.75)/.25)*5.7;
       setPct(eased);
       if(t<1) raf=requestAnimationFrame(frame);
-      else timer=setTimeout(()=>{ if(playing){ setPct(0); root.classList.remove('show-msg','warn','over'); timer=setTimeout(runLoop,700); } },1400);
+      else finish();
     }
-    setPct(0); root.classList.remove('show-msg','warn','over');
+    setPct(0); root.classList.remove('show-slack','show-email','warn','over');
     raf=requestAnimationFrame(frame);
   }
 
@@ -10110,15 +10162,22 @@ document.querySelectorAll('.amo [data-go]').forEach(g=>{
 
   window.__amcBudSync=function(){
     root.classList.toggle('budget-on', budgetOn());
-    if(visible()){ requestAnimationFrame(layoutWires); if(!playing) runLoop(); }
-    else{ stop(); root.classList.remove('show-msg','warn','over','budget-on'); }
+    if(visible()){
+      requestAnimationFrame(layoutWires);
+      if(done){ setPct(100.7); }
+      else runOnce();
+    } else {
+      stop();
+      if(!done) root.classList.remove('show-slack','show-email','warn','over');
+      root.classList.remove('budget-on');
+    }
   };
 
   window.addEventListener('resize',()=>{ if(root.classList.contains('budget-on')) layoutWires(); });
-  if(reduce){ root.classList.toggle('budget-on', budgetOn()); setPct(100.7); return; }
+  if(reduce){ root.classList.toggle('budget-on', budgetOn()); finish(); return; }
   const io=new IntersectionObserver(()=>{ window.__amcBudSync(); },{threshold:.25});
   io.observe(root);
-  document.addEventListener('visibilitychange',()=>{ if(document.hidden) stop(); else window.__amcBudSync(); });
+  document.addEventListener('visibilitychange',()=>{ if(!document.hidden) window.__amcBudSync(); });
 })();
 /* ---------- 탭 ---------- */
 document.querySelectorAll('[data-tabs]').forEach(t=>{

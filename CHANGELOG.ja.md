@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b01683f
+
+### 変更
+
+- AI Management > AI Cost Management : Budgets KPI 全幅 · 80% Slack/100% Email · アニメ1回。Custom rate 表示 · Attribution ドロワー縮小 · Org Chart 強化
+
 ## 2026.11.21.6b0166b5
 
 ### 変更

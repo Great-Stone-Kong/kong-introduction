@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b01683f
+
+### 變更
+
+- AI Management > AI Cost Management：Budgets KPI 拉滿寬度 · 80% Slack/100% Email · 動畫只播一次。Custom rate 標記、精簡 Attribution 抽屜、強化 Org Chart
+
 ## 2026.11.21.6b0166b5
 
 ### 變更

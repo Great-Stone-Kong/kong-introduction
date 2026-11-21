@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b01683f
+
+### 변경
+
+- AI Management > AI Cost Management : Budgets KPI 전폭 · 80% Slack/100% Email · 애니메이션 1회. Custom rate 표시 · 귀속 드로어 축소 · Org Chart 보강
+
 ## 2026.11.21.6b0166b5
 
 ### 변경

@@ -6336,5 +6336,9 @@
   "m.0946868a2720": "Send simple prompts to a cheaper model; keep the expensive one for the rest",
   "m.68e9eb264932": "Measure savings captured from real traffic via cache · routing · compression.",
   "m.0b1654e45d48": "Catch unusual spend vs baseline, then notify · pause · block.",
-  "m.caf7ed49c301": "Batch evaluation detected spend 6.6× the 14-day median. No ceiling is set, so it is recorded observe-only."
+  "m.caf7ed49c301": "Batch evaluation detected spend 6.6× the 14-day median. No ceiling is set, so it is recorded observe-only.",
+  "m.d13902113709": "At 100% of the limit, the email appears here.",
+  "m.4dd308f8514b": "At the 80% threshold, the Slack alert appears here.",
+  "m.0c54d2856ddd": "Field Engineering pool reached 80%.",
+  "m.1a41a6a03153": "Set per-subject · period limits and threshold alerts. Channels support Email · Slack today; Webhook comes later. In the example, Slack fires at 80% and Email at 100%."
 }

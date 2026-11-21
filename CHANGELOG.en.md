@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b01683f
+
+### Changed
+
+- AI Management > AI Cost Management: Full-width Budgets KPIs, Slack at 80%/Email at 100%, one-shot animation. Custom rate mark, slimmer Attribution drawer, richer Org Chart
+
 ## 2026.11.21.6b0166b5
 
 ### Changed
