@@ -290,6 +290,24 @@ html[data-theme="light"] .amk-btn.pri{background:var(--g900);color:#fff;border-c
 #am-cost .amk-main>.amk-stack>.amk-p{display:flex;flex-direction:column}
 #am-cost .amk-val{margin-top:auto;padding-top:10px;border-top:1px solid var(--line);font-size:12.5px;line-height:1.55;color:var(--g300)}
 #am-cost .amk-val b{display:block;font:800 11px var(--font);letter-spacing:.06em;color:var(--mark);margin:0 0 4px}
+#am-cost .amc-feat{margin:var(--space-4) 0 var(--space-5)}
+#am-cost .amc-feat .card h3{font-size:15px;margin:0 0 var(--space-1)}
+#am-cost .amc-feat .card p{font-size:13.5px;margin:0}
+#am-cost .amc-why{margin:0 0 var(--space-5)}
+#am-cost .amc-demo-h{margin:var(--space-6) 0 var(--space-2);font-size:20px;color:var(--heading)}
+#am-cost .amc-demo-s{margin:0 0 var(--space-3);font-size:14.5px;color:var(--g300);line-height:1.5}
+#am-cost .amc-where{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(180px,.75fr);gap:var(--space-4);align-items:start}
+#am-cost .amc-where .amk-tbl{font-size:12px}
+#am-cost .amc-where .amk-tbl .nest td:first-child{padding-left:22px;color:var(--g300);font-family:var(--mono);font-size:11.5px}
+#am-cost .amc-where .amk-tbl tr.exp{background:var(--accent-soft)}
+#am-cost .amc-where .amk-tbl tr.exp td:first-child{font-weight:800;color:var(--heading)}
+#am-cost .amc-donut{display:flex;flex-direction:column;align-items:center;gap:var(--space-3);padding:var(--space-2) 0}
+#am-cost .amc-donut svg{width:148px;height:148px}
+#am-cost .amc-donut ul{list-style:none;margin:0;padding:0;width:100%;font-size:12px;color:var(--g300)}
+#am-cost .amc-donut li{display:flex;align-items:center;gap:8px;padding:3px 0}
+#am-cost .amc-donut li i{width:8px;height:8px;border-radius:50%;flex:none}
+#am-cost .amc-donut li b{margin-left:auto;font:700 11.5px var(--mono);color:var(--heading)}
+@media (max-width:900px){#am-cost .amc-where{grid-template-columns:1fr}}
 #am-obs .amk-main>.amk-stack>.amk-p{display:flex;flex-direction:column}
 #am-obs .amk-tiles,#am-obs .amk-grid.tr{flex:1;min-height:0}
 #am-obs .amk-tr2{padding:2px 4px;grid-template-columns:minmax(150px,230px) minmax(0,1fr) 54px;font-size:11.5px;gap:8px}
@@ -6919,9 +6937,49 @@ window_size = 1month</pre>
   <p class="note">출처: <a href="https://konghq.com/blog/product-releases/ai-management-kong-konnect" target="_blank" rel="noopener noreferrer">Introducing AI Management in Kong Konnect ↗</a></p>
 </section>
 <section class="sec" id="am-cost" data-title="AI Cost Management" data-avail="ee-soon">
-  <div class="eyebrow">AI Cost Management</div>
-  <h2>AI 지출의 귀속 · 예산 · 통제</h2>
-  <p class="sub">게이트웨이에서 사용량을 측정해 요청마다 비용을 계산하고, 팀 · 하네스 · 앱 · 고객 같은 비즈니스 단위로 귀속합니다. 예산을 넘기 전에 알리고 막습니다.</p>
+  <div class="eyebrow">Kong Konnect</div>
+  <h2>AI Cost Management</h2>
+  <p class="sub">Kong AI Gateway를 지나는 요청마다 사용량 이벤트를 기록하고, 사용자 · 팀에 귀속한 뒤 Price Catalog로 값을 매겨 대시보드에 보여 줍니다. 예산 임계값 알림과 하드 한도로 과지출을 막습니다.</p>
+  <div class="grid g3 amc-feat">
+    <div class="card"><span class="tag">01 · Dashboard</span><h3>지출 분해</h3><p>기간 지출 추이와 Users · Groups · Teams · Providers · Models · Harnesses · Tags 내역을 봅니다. 두 번째 차원도 겹칠 수 있습니다.</p></div>
+    <div class="card"><span class="tag">02 · Explorer</span><h3>시계열 탐색</h3><p>Spend · Requests · Input · Cached input · Output 토큰을 한 차원으로 묶어 추이를 봅니다.</p></div>
+    <div class="card"><span class="tag">03 · Events</span><h3>이벤트 디버거</h3><p>요청 단위 사용량 이벤트의 속성 · 토큰 · 단가 적용 결과를 상세히 확인합니다.</p></div>
+    <div class="card"><span class="tag">04 · Budgets</span><h3>예산 · 알림</h3><p>예산과 임계값별 알림(이메일 · Slack)을 두고, 한도에 가까워지면 알리거나 막습니다.</p></div>
+    <div class="card"><span class="tag">05 · Attribution</span><h3>귀속 · 하네스</h3><p>분석용 속성을 관리하고 Claude Code · Codex 등 하네스 헤더를 표준 태그로 붙입니다.</p></div>
+    <div class="card"><span class="tag">06 · Price Catalog</span><h3>단가 · 오버라이드</h3><p>모델 단가와 조직 오버라이드(캐시 · Reasoning 포함)로 이벤트에 값을 매깁니다.</p></div>
+    <div class="card"><span class="tag">07 · Exports</span><h3>내보내기</h3><p>사용량 이벤트와 FOCUS 형식 비용 데이터를 CSV · Parquet로 보냅니다.</p></div>
+  </div>
+  <div class="callout amc-why"><b>Gateway에서 보는 이유.</b> 공급사 콘솔만으로는 Bedrock · Foundry 등 경로가 빠질 수 있습니다. 게이트웨이에서는 여러 하네스 트래픽을 한 화면에서 보고, Virtual Key로 이용자를 식별합니다. 에이전트에 LLM 키를 두지 않아도 됩니다.</div>
+
+  <h3 class="amc-demo-h">대시보드 예시</h3>
+  <p class="amc-demo-s">Dashboard의 Where is it going?에서 Users로 묶고 Models로 한 번 더 분해한 예시입니다.</p>
+  <div class="amk-win rv"><div class="amk-bar"><i></i><i></i><i></i><b>Konnect · AI Cost Management</b><span class="amk-tag">예시 화면</span></div><div class="amk-main" style="padding:12px 14px">
+    <div class="amk-hd"><span class="amk-crumb">Cost Management · Dashboard</span><h3>Where is it going?</h3><p class="amk-desc">Top 10 users by spend · Nov 1 – 13</p></div>
+    <div class="amk-tool"><span class="amk-pill">Group by</span><span class="amk-pill on">Users</span><span class="amk-pill">Groups</span><span class="amk-pill">Teams</span><span class="amk-pill">Providers</span><span class="amk-pill">Models</span><span class="amk-pill">Harnesses</span><span class="amk-pill">Tags</span></div>
+    <div class="amk-tool" style="margin-top:-2px"><span class="amk-pill">Breakdown by</span><span class="amk-pill on">Models</span><span class="amk-pill">Providers</span><span class="amk-pill">Tags</span><span class="amk-pill">Harnesses</span></div>
+    <div class="amc-where">
+      <table class="amk-tbl"><thead><tr><th>User</th><th class="r">Share</th><th class="r">Spend</th><th class="r">Tokens</th><th class="r">Requests</th></tr></thead><tbody>
+        <tr class="exp"><td>▾ Shuhei Kawamura</td><td class="r">88.31%</td><td class="r">$9.46</td><td class="r">13.9M / 125.7K</td><td class="r">654</td></tr>
+        <tr class="nest"><td>claude-sonnet-5-5</td><td class="r">76.12%</td><td class="r">$7.20</td><td class="r">—</td><td class="r">—</td></tr>
+        <tr class="nest"><td>gpt-6-sol</td><td class="r">10.05%</td><td class="r">$0.95</td><td class="r">—</td><td class="r">—</td></tr>
+        <tr class="nest"><td>claude-opus-5-5</td><td class="r">8.56%</td><td class="r">$0.81</td><td class="r">—</td><td class="r">—</td></tr>
+        <tr class="nest"><td>기타 모델</td><td class="r">5.27%</td><td class="r">$0.50</td><td class="r">—</td><td class="r">—</td></tr>
+        <tr><td>▸ Platform Services</td><td class="r">6.40%</td><td class="r">$0.69</td><td class="r">1.1M / 42K</td><td class="r">88</td></tr>
+        <tr><td>▸ CI · Batch agents</td><td class="r">5.29%</td><td class="r">$0.57</td><td class="r">820K / 31K</td><td class="r">120</td></tr>
+      </tbody></table>
+      <div class="amc-donut" aria-hidden="true">
+        <svg viewBox="0 0 120 120" role="img"><circle cx="60" cy="60" r="44" fill="none" stroke="var(--card2)" stroke-width="18"/><circle cx="60" cy="60" r="44" fill="none" stroke="var(--diag-sky)" stroke-width="18" stroke-dasharray="207 276" stroke-dashoffset="69" transform="rotate(-90 60 60)"/><circle cx="60" cy="60" r="44" fill="none" stroke="#8b7cf6" stroke-width="18" stroke-dasharray="28 276" stroke-dashoffset="-138" transform="rotate(-90 60 60)"/><circle cx="60" cy="60" r="44" fill="none" stroke="var(--diag-amber)" stroke-width="18" stroke-dasharray="24 276" stroke-dashoffset="-166" transform="rotate(-90 60 60)"/><circle cx="60" cy="60" r="44" fill="none" stroke="var(--g500)" stroke-width="18" stroke-dasharray="17 276" stroke-dashoffset="-190" transform="rotate(-90 60 60)"/><text x="60" y="58" text-anchor="middle" font-size="11" font-weight="800" fill="var(--heading)">$9.46</text><text x="60" y="72" text-anchor="middle" font-size="9" fill="var(--g400)">top user</text></svg>
+        <ul>
+          <li><i style="background:var(--diag-sky)"></i>claude-sonnet-5-5<b>76%</b></li>
+          <li><i style="background:#8b7cf6"></i>gpt-6-sol<b>10%</b></li>
+          <li><i style="background:var(--diag-amber)"></i>claude-opus-5-5<b>9%</b></li>
+          <li><i style="background:var(--g500)"></i>기타<b>5%</b></li>
+        </ul>
+      </div>
+    </div>
+  </div></div>
+
+  <p class="amc-demo-s" style="margin-top:18px">가격 카탈로그 · 귀속 · 예산 · 절감 · 계량 화면 예시입니다.</p>
   <div class="tabs am-tabs" data-amk-sw="cost" role="group"><button type="button" data-k="price" class="on" aria-pressed="true">01 가격 카탈로그</button><button type="button" data-k="attr" aria-pressed="false">02 귀속</button><button type="button" data-k="budget" aria-pressed="false">03 예산</button><button type="button" data-k="ctrl" aria-pressed="false">04 대시보드</button><button type="button" data-k="opt" aria-pressed="false">05 절감</button><button type="button" data-k="mon" aria-pressed="false">06 계량 · 수익화</button></div>
   <div class="amk-win rv"><div class="amk-bar"><i></i><i></i><i></i><b>Konnect · AI Cost Management</b><span class="amk-tag">예시 화면</span></div><div class="amk-body"><nav class="amk-nav" aria-hidden="true"><span data-kg="cost" data-kh="price" class="hl">Price Catalog</span><span data-kg="cost" data-kh="attr">Attribution</span><span data-kg="cost" data-kh="budget">Budgets</span><span data-kg="cost" data-kh="ctrl">Dashboard</span><span data-kg="cost" data-kh="opt">Savings</span><span data-kg="cost" data-kh="mon">Metering</span></nav><div class="amk-main"><div class="amk-stack">
 
@@ -7049,8 +7107,8 @@ window_size = 1month</pre>
 
 </div></div></div></div>
 
-  <p class="am-say"><b>핵심</b> 청구서가 오기 전에 누가 · 무엇이 지출을 만들었는지와 예산 대비 위치를 보여주고, 하드 한도에서는 요청을 멈춥니다.</p>
-  <p class="note">화면의 이름과 금액은 설명을 위한 예시입니다.</p>
+  <p class="am-say"><b>핵심</b> Gateway 경로의 사용량을 귀속 · 단가 · 예산과 묶어, 청구 전에 누가 · 무엇이 지출을 만들었는지 보여 주고 한도에서는 요청을 멈춥니다.</p>
+  <p class="note">화면의 이름 · 금액 · 사용자명은 설명을 위한 예시입니다.</p>
   <p class="note">출처: <a href="https://konghq.com/products/ai-cost-management" target="_blank" rel="noopener noreferrer">AI Cost Management ↗</a> · <a href="https://konghq.com/blog/product-releases/ai-management-kong-konnect" target="_blank" rel="noopener noreferrer">Introducing AI Management in Kong Konnect ↗</a> · <a href="https://konghq.com/products/kong-konnect/features/usage-based-metering-and-billing" target="_blank" rel="noopener noreferrer">Metering &amp; Billing ↗</a></p>
 </section>
 <section class="sec" id="am-obs" data-title="AI Observability" data-avail="konnect">
