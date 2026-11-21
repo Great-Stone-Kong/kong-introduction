@@ -6356,5 +6356,6 @@
   "m.a746bdf4e255": "Set limits on any slice—org · team · model · Cost tag. One budget can give each user their own limit. Choose Advisory tracking or Enforced blocking at the Gateway. Limits are in USD.",
   "m.b6cb1dbc4461": "Every successful AI Gateway request becomes a usage event, then is priced · attributed into the dashboard. Spend · Projection · Ceiling and Where is it going? break down Users · Models · Tags in one view.",
   "m.2714438e0d2d": "Attach each request to User (Identity · Consumer · OIDC sub) · Group · Team · ai-cost-* tags. No match stays Unattributed. Coding agents like Claude Code send session · agent tags automatically.",
-  "m.2580ef90e295": "Provider list prices sync automatically; data planes re-read the catalog about every 60 seconds. Percentage off · Custom rate overrides apply your contract rates across every AI Gateway in the org. Prices are USD per million tokens."
+  "m.2580ef90e295": "Provider list prices sync automatically; data planes re-read the catalog about every 60 seconds. Percentage off · Custom rate overrides apply your contract rates across every AI Gateway in the org. Prices are USD per million tokens.",
+  "m.4048f1248373": "Every successful AI Gateway request becomes a usage event, then is priced · attributed into the dashboard. Spend · Projection · Ceiling and Where is it going? break down Users · Models · Tags in one view. My Usage · Dashboard · Explorer · Events debugger read the same events. Catch spikes before the bill. Times are UTC."
 }

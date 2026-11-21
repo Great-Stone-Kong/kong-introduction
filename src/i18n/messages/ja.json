@@ -6356,5 +6356,6 @@
   "m.a746bdf4e255": "組織 · チーム · モデル · Cost tag など範囲に上限を置きます。ユーザーごとに個別上限を 1 つの予算で置け、追跡（Advisory）と Gateway で止める Enforced を選べます。上限は USD です。",
   "m.b6cb1dbc4461": "成功した AI Gateway リクエストごとに使用量イベントが積まれ、単価 · 帰属のあとダッシュボードに反映されます。Spend · Projection · Ceiling と Where is it going? で Users · Models · Tags 分解を一画面で見ます。",
   "m.2714438e0d2d": "リクエストを User（Identity · Consumer · OIDC sub）· Group · Team · ai-cost-* タグに付けます。一致がなければ Unattributed のままです。Claude Code などコーディングエージェントはセッション · エージェントタグを自動送信します。",
-  "m.2580ef90e295": "プロバイダ list price は自動同期され、Data Plane は約 60 秒ごとにカタログを再読します。Percentage off · Custom rate override で契約単価を反映し、組織のすべての AI Gateway に同じように適用されます。単価は USD / 百万トークンです。"
+  "m.2580ef90e295": "プロバイダ list price は自動同期され、Data Plane は約 60 秒ごとにカタログを再読します。Percentage off · Custom rate override で契約単価を反映し、組織のすべての AI Gateway に同じように適用されます。単価は USD / 百万トークンです。",
+  "m.4048f1248373": "成功した AI Gateway リクエストごとに使用量イベントが積まれ、単価 · 帰属のあとダッシュボードに反映されます。Spend · Projection · Ceiling と Where is it going? で Users · Models · Tags 分解を一画面で見ます。My Usage · Dashboard · Explorer · Events debugger が同じイベントを読みます。請求より先にスパイクを掴みます。時刻は UTC 基準です。"
 }

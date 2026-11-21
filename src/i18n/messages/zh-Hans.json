@@ -6356,5 +6356,6 @@
   "m.a746bdf4e255": "可对组织 · 团队 · 模型 · Cost tag 等范围设上限。一个预算可给每位用户单独上限，并可选跟踪（Advisory）或在 Gateway 阻断（Enforced）。上限以 USD 计。",
   "m.b6cb1dbc4461": "每次成功的 AI Gateway 请求会累积用量事件，计价 · 归属后反映到仪表板。以 Spend · Projection · Ceiling 与 Where is it going? 在同一画面分解 Users · Models · Tags。",
   "m.2714438e0d2d": "将请求挂到 User（Identity · Consumer · OIDC sub）· Group · Team · ai-cost-* 标签。无匹配则为 Unattributed。Claude Code 等编码代理会自动送出会话 · 代理标签。",
-  "m.2580ef90e295": "提供商 list price 会自动同步，Data Plane 约每 60 秒重读目录。以 Percentage off · Custom rate override 反映合约单价，并套用到组织内所有 AI Gateway。单价为 USD / 百万 token。"
+  "m.2580ef90e295": "提供商 list price 会自动同步，Data Plane 约每 60 秒重读目录。以 Percentage off · Custom rate override 反映合约单价，并套用到组织内所有 AI Gateway。单价为 USD / 百万 token。",
+  "m.4048f1248373": "每次成功的 AI Gateway 请求会累积用量事件，计价 · 归属后反映到仪表板。以 Spend · Projection · Ceiling 与 Where is it going? 在同一画面分解 Users · Models · Tags。My Usage · Dashboard · Explorer · Events debugger 读取相同事件。在账单前抓住尖峰。时间以 UTC 为准。"
 }

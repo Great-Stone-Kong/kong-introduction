@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b016c03
+
+### Changed
+
+- AI Management > AI Cost Management: Merge dashboard description into one paragraph
+
 ## 2026.11.21.6b016b4e
 
 ### Changed
