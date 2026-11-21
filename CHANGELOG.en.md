@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b016a61
+
+### Changed
+
+- AI Management > AI Cost Management: Budgets animation pauses briefly at 80% before continuing to 100%
+
 ## 2026.11.21.6b01683f
 
 ### Changed
