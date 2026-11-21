@@ -7,57 +7,13 @@
 
 ## 2026.11.21.6b016c03
 
-### 変更
-
-- AI Management > AI Cost Management : ダッシュボード説明を1段落に統合
-
-## 2026.11.21.6b016b4e
-
-### 変更
-
-- AI Management > AI Cost Management : タブ説明の高さを固定し、SE Enablement に沿って内容を補強（Measure · Govern · Optimize · パイプライン · FinOps Export）
-
-## 2026.11.21.6b016a61
-
-### 変更
-
-- AI Management > AI Cost Management : Budgets アニメが 80% で一旦停止してから 100% へ進行
-
-## 2026.11.21.6b01683f
-
-### 変更
-
-- AI Management > AI Cost Management : Budgets KPI 全幅 · 80% Slack/100% Email · アニメ1回。Custom rate 表示 · Attribution ドロワー縮小 · Org Chart 強化
-
-## 2026.11.21.6b0166b5
-
-### 変更
-
-- AI Management > AI Cost Management : モック高さ ~600px。Price Catalog の Add override 右パネル、Attribution·Org·Exports·Anomalies·Savings の品質改善
-
-## 2026.11.21.6b016574
-
-### 変更
-
-- AI Management > AI Cost Management : タブ説明の高さを固定。Budgetsは例画面の外右側に Slack·Email、Channels 点線接続。Email·Slack 対応・Webhook 今後を案内
-
-## 2026.11.21.6b01639c
-
-### 変更
-
-- AI Management > AI Cost Management : Cost Management 展開メニュー・ダッシュボード(Users×Models)・Budgets|Slack・Price Catalog などモックを Konnect キャプチャに合わせて再構成。価格カタログのスクリーンショットを削除
-
-## 2026.11.21.6b016082
-
-### 変更
-
-- AI Management > AI Cost Management : 特徴カード・価格カタログの長文ブロックを箇条書き・タブモック・下説明に整理。BudgetsはKonnect|Slack超過通知アニメ
-
-## 2026.11.20.6b00172e
-
 ### 追加
 
 - インフラ構成 > ネットワークポリシー : Konnect に必要なネットワークポリシー案内
+
+### 変更
+
+- AI Management > AI Cost Management : ダッシュボードを Konnect 基準に変更
 
 ## 2026.11.13.6af6f847
 

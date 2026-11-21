@@ -7,57 +7,13 @@
 
 ## 2026.11.21.6b016c03
 
-### 변경
-
-- AI Management > AI Cost Management : 대시보드 설명을 한 문단으로 합침
-
-## 2026.11.21.6b016b4e
-
-### 변경
-
-- AI Management > AI Cost Management : 탭 설명 영역 높이 고정·보강(SE Enablement 기준 Measure·Govern·Optimize · 파이프라인 · FinOps Export)
-
-## 2026.11.21.6b016a61
-
-### 변경
-
-- AI Management > AI Cost Management : Budgets 애니메이션이 80%에서 잠시 멈춘 뒤 100%로 진행
-
-## 2026.11.21.6b01683f
-
-### 변경
-
-- AI Management > AI Cost Management : Budgets KPI 전폭 · 80% Slack/100% Email · 애니메이션 1회. Custom rate 표시 · 귀속 드로어 축소 · Org Chart 보강
-
-## 2026.11.21.6b0166b5
-
-### 변경
-
-- AI Management > AI Cost Management : 목업 높이 ~600px. Price Catalog Add override 우측 패널, Attribution·Org·Exports·Anomalies·Savings 퀄리티 개선
-
-## 2026.11.21.6b016574
-
-### 변경
-
-- AI Management > AI Cost Management : 탭 설명 높이 고정. Budgets는 예시 화면 밖 우측에 Slack·Email, Channels 점선 연결. Email·Slack 지원·Webhook 추후 안내
-
-## 2026.11.21.6b01639c
-
-### 변경
-
-- AI Management > AI Cost Management : Cost Management 확장 메뉴·대시보드(Users×Models)·Budgets|Slack·Price Catalog 등 목업을 Konnect 캡처에 맞춰 재구성. 가격 카탈로그 스크린샷 제거
-
-## 2026.11.21.6b016082
-
-### 변경
-
-- AI Management > AI Cost Management : 특징 카드·가격 카탈로그 장황 블록을 불릿·탭 목업·하단 설명으로 정리. Budgets는 Konnect|Slack 한도 초과 알림 연출
-
-## 2026.11.20.6b00172e
-
 ### 추가
 
 - 인프라 구성 > 네트워크 정책 : Konnect의 경우 필요한 네트워크 정책 안내
+
+### 변경
+
+- AI Management > AI Cost Management : 대시보드를 Konnect 기준으로 변경
 
 ## 2026.11.13.6af6f847
 

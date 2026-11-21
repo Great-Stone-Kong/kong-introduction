@@ -7,57 +7,13 @@
 
 ## 2026.11.21.6b016c03
 
-### Changed
-
-- AI Management > AI Cost Management: Merge dashboard description into one paragraph
-
-## 2026.11.21.6b016b4e
-
-### Changed
-
-- AI Management > AI Cost Management: Stabilize tab description height and enrich copy from SE enablement (Measure · Govern · Optimize, pipeline, FinOps export)
-
-## 2026.11.21.6b016a61
-
-### Changed
-
-- AI Management > AI Cost Management: Budgets animation pauses briefly at 80% before continuing to 100%
-
-## 2026.11.21.6b01683f
-
-### Changed
-
-- AI Management > AI Cost Management: Full-width Budgets KPIs, Slack at 80%/Email at 100%, one-shot animation. Custom rate mark, slimmer Attribution drawer, richer Org Chart
-
-## 2026.11.21.6b0166b5
-
-### Changed
-
-- AI Management > AI Cost Management: Mockup height ~600px. Price Catalog Add override drawer, richer Attribution·Org·Exports·Anomalies·Savings panes
-
-## 2026.11.21.6b016574
-
-### Changed
-
-- AI Management > AI Cost Management: Stabilize tab description height. Budgets places Slack·Email outside the example screen with Channel dotted links. Notes Email·Slack now and Webhook later
-
-## 2026.11.21.6b01639c
-
-### Changed
-
-- AI Management > AI Cost Management: Restructured mockups to match Konnect captures (expanded Cost Management nav, Dashboard with Users×Models, Budgets|Slack, Price Catalog). Removed Price Catalog screenshots
-
-## 2026.11.21.6b016082
-
-### Changed
-
-- AI Management > AI Cost Management: Replaced feature cards and the long Price Catalog block with bullets, tab mockups, and synced descriptions. Budgets shows a Konnect|Slack over-limit alert animation
-
-## 2026.11.20.6b00172e
-
 ### Added
 
 - Infrastructure > Network policy: Konnect network policy requirements
+
+### Changed
+
+- AI Management > AI Cost Management: Align the dashboard with Konnect
 
 ## 2026.11.13.6af6f847
 

@@ -7,57 +7,13 @@
 
 ## 2026.11.21.6b016c03
 
-### 變更
-
-- AI Management > AI Cost Management：將儀表板說明合併為一段
-
-## 2026.11.21.6b016b4e
-
-### 變更
-
-- AI Management > AI Cost Management：固定分頁說明高度，並依 SE Enablement 補強說明（Measure · Govern · Optimize · 管線 · FinOps Export）
-
-## 2026.11.21.6b016a61
-
-### 變更
-
-- AI Management > AI Cost Management：Budgets 動畫在 80% 短暫停留後再繼續到 100%
-
-## 2026.11.21.6b01683f
-
-### 變更
-
-- AI Management > AI Cost Management：Budgets KPI 拉滿寬度 · 80% Slack/100% Email · 動畫只播一次。Custom rate 標記、精簡 Attribution 抽屜、強化 Org Chart
-
-## 2026.11.21.6b0166b5
-
-### 變更
-
-- AI Management > AI Cost Management：示意高度約 600px。Price Catalog 的 Add override 右側面板，並提升 Attribution·Org·Exports·Anomalies·Savings 品質
-
-## 2026.11.21.6b016574
-
-### 變更
-
-- AI Management > AI Cost Management：固定分頁說明高度。Budgets 在示例畫面外右側放置 Slack·Email，並以 Channels 虛線連接。說明目前支援 Email·Slack，Webhook 之後提供
-
-## 2026.11.21.6b01639c
-
-### 變更
-
-- AI Management > AI Cost Management：依 Konnect 截圖重組示意（展開的 Cost Management 選單、含 Users×Models 的儀表板、Budgets|Slack、Price Catalog）。移除價格目錄截圖
-
-## 2026.11.21.6b016082
-
-### 變更
-
-- AI Management > AI Cost Management：以要點、分頁示意與下方說明取代功能卡片與冗長價格目錄區塊。Budgets 含 Konnect|Slack 超限警報動畫
-
-## 2026.11.20.6b00172e
-
 ### 新增
 
-- 基礎設施 > 網路政策：Konnect 所需網路政策說明
+- 基礎設施 > 網路原則：Konnect 所需網路原則說明
+
+### 變更
+
+- AI Management > AI Cost Management：依 Konnect 基準調整儀表板
 
 ## 2026.11.13.6af6f847
 
