@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b01639c
+
+### Changed
+
+- AI Management > AI Cost Management: Restructured mockups to match Konnect captures (expanded Cost Management nav, Dashboard with Users×Models, Budgets|Slack, Price Catalog). Removed Price Catalog screenshots
+
 ## 2026.11.21.6b016082
 
 ### Changed

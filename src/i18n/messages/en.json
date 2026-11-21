@@ -6313,5 +6313,16 @@
   "m.cc6beb63b735": "See live spend · forecast · ceiling and runtime limits on one screen. Catch spikes before the invoice.",
   "m.e54cbe00aa54": "Separate savings already captured via prompt cache · routing · semantic cache · compression from opportunities still open.",
   "m.54f7452245b5": "Align usage · revenue · AI cost by customer · product to check margin and entitlements.",
-  "m.052ce10f97dd": "Metering · monetization"
+  "m.052ce10f97dd": "Metering · monetization",
+  "m.1348ce5c0d96": "Break down spend by Users · Models · Tags on the dashboard.",
+  "m.c49d073fcf80": "Use Org Chart · Exports for org limits and usage exports.",
+  "m.0bcd68b81031": "Use Anomalies · Savings to see unusual spend and savings opportunities.",
+  "m.2756f3458a8f": "Click a tab to switch the mockup and the description below. The left side is the Cost Management menu.",
+  "m.23f4d3bbce6f": "See live spend · projection · ceiling and the Where is it going? table for Users · Models · Tags breakdown in one view. Catch spikes before the bill.",
+  "m.ab34b8ccb369": "Set per-subject · period limits and threshold alerts (email · Slack). Left: Konnect budget list. Right: Slack alert example.",
+  "m.c8187ad83cb6": "Label spend with Claude Code and other integrations plus Cost tag · Gateway settings. Trace from aggregates down to a single request.",
+  "m.19161a3981c5": "Upload an org tree and set spend limits per node. Nodes without a limit show No limit.",
+  "m.3418d5cd1a34": "Export usage events and FOCUS cost data as CSV · Parquet, and set schedules.",
+  "m.727c15c3af5f": "Detect unusual spend vs baseline, then notify · pause · block. Coming soon.",
+  "m.96d980f1c844": "Separate savings already captured via prompt cache · routing · semantic cache · compression from opportunities still open. Coming soon."
 }

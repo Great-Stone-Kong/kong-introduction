@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b01639c
+
+### 변경
+
+- AI Management > AI Cost Management : Cost Management 확장 메뉴·대시보드(Users×Models)·Budgets|Slack·Price Catalog 등 목업을 Konnect 캡처에 맞춰 재구성. 가격 카탈로그 스크린샷 제거
+
 ## 2026.11.21.6b016082
 
 ### 변경

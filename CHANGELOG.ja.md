@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b01639c
+
+### 変更
+
+- AI Management > AI Cost Management : Cost Management 展開メニュー・ダッシュボード(Users×Models)・Budgets|Slack・Price Catalog などモックを Konnect キャプチャに合わせて再構成。価格カタログのスクリーンショットを削除
+
 ## 2026.11.21.6b016082
 
 ### 変更

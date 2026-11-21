@@ -5,6 +5,12 @@
 
 ---
 
+## 2026.11.21.6b01639c
+
+### 變更
+
+- AI Management > AI Cost Management：依 Konnect 截圖重組示意（展開的 Cost Management 選單、含 Users×Models 的儀表板、Budgets|Slack、Price Catalog）。移除價格目錄截圖
+
 ## 2026.11.21.6b016082
 
 ### 變更
