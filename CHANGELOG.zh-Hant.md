@@ -5,16 +5,12 @@
 
 ---
 
-## 2026.11.23
+## 2026.11.23.6b044230
 
 ### 新增
 
-- Access Management > Token Vault：架構概覽圖、未使用/使用比較、請求流程時序圖、選擇基準表(祕密管理器·權杖交換·Token Vault)、場景
-
-### 變更
-
-- Identity · Virtual Keys · Token Vault：將「原始金鑰放出」等表述統一為「原始憑證注入」
-- Access Management：將概覽使用流程拆分為模型呼叫與 MCP 呼叫兩條路徑，將 IdP 驗證主體更正為 AI Gateway(JWKS)，將 Virtual Keys 圖改為 AI Vault 查詢結構，整理 Users·Groups 模擬介面
+- AI > Access Management：概覽、Users、Groups、Identity Providers、Token Vault、Virtual Keys
+- API > Identity：概覽、Principals、Authorization servers
 
 ## 2026.11.21.6b016c03
 

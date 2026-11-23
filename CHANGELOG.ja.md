@@ -5,16 +5,12 @@
 
 ---
 
-## 2026.11.23
+## 2026.11.23.6b044230
 
 ### 追加
 
-- Access Management > Token Vault: 構成概要図、未使用・使用の比較、リクエストフローのシーケンス図、選択基準表(シークレット管理・トークン交換・Token Vault)、活用
-
-### 変更
-
-- Identity · Virtual Keys · Token Vault: 「原キー放出」などの表現を「元の資格情報の注入」に統一
-- Access Management: 概要の活用フローをモデル呼び出し・MCP 呼び出しの 2 経路に分離、IdP 検証主体を AI Gateway(JWKS)に訂正、Virtual Keys 図を AI Vault 照会構造に修正、Users・Groups モックアップを整理
+- AI > Access Management : 概要、Users、Groups、Identity Providers、Token Vault、Virtual Keys
+- API > Identity : 概要、Principals、Authorization servers
 
 ## 2026.11.21.6b016c03
 

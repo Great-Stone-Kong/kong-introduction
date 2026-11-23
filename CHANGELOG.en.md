@@ -5,16 +5,12 @@
 
 ---
 
-## 2026.11.23
+## 2026.11.23.6b044230
 
 ### Added
 
-- Access Management > Token Vault: architecture diagram, without/with comparison, request-flow sequence, selection table (secret managers · token exchange · Token Vault), use cases
-
-### Changed
-
-- Identity · Virtual Keys · Token Vault: unify wording to “original credential injection”
-- Access Management: split the overview flow into model-call and MCP-call paths, correct IdP verification to AI Gateway (JWKS), redraw Virtual Keys as an AI Vault lookup, tidy Users · Groups mockups
+- AI > Access Management: Overview, Users, Groups, Identity Providers, Token Vault, Virtual Keys
+- API > Identity: Overview, Principals, Authorization servers
 
 ## 2026.11.21.6b016c03
 
