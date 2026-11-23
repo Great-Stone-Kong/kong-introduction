@@ -6497,5 +6497,9 @@
   "m.00a270548eec": "在 Directory 開啟 Principal 時，群組 · 金鑰 · 存取 · 憑證 · 中繼資料 · 身分屬性會集中在同一畫面。將左側說明與右側 Konnect 畫面區塊對應查看。",
   "m.b2620d7ed630": "記錄在 Directory 的身分屬性。以 ID · Status · Kind · Email · External ID · Provisioned by 與建立 · 修改時間確認來源與狀態。",
   "m.2cd482bd6782": "呼叫 Kong 時使用的虛擬金鑰。以 Name · Expires · Created 管理期限，Access rules 決定金鑰可到達的範圍。用 + New key 簽發。",
-  "m.012f989cb066": "Token Vault 代此身分保管 · 注入的遠端憑證。完成 Enrollment 後會出現 Provider · Status · Enrolled 列。例：github-demo → GitHub MCP Server。"
+  "m.012f989cb066": "Token Vault 代此身分保管 · 注入的遠端憑證。完成 Enrollment 後會出現 Provider · Status · Enrolled 列。例：github-demo → GitHub MCP Server。",
+  "m.1604fc6cf6e1": "User 詳細構成",
+  "m.c95e4de75d35": "Users · 單一身分",
+  "m.c8a70f6f1cb1": "在 Directory 開啟 User · Principal 時，群組 · 金鑰 · 存取 · 憑證 · 中繼資料 · 身分屬性會集中在同一畫面。將左側說明與右側 Konnect 畫面區塊對應查看。",
+  "m.347252f0f69a": "AI Access Management 的 Users 與 Identity 的 Principals 是同一個 Directory 身分。把 Agent · Service · Application · Human 憑證綁成一筆，驗證方式改變時仍以中繼資料套用政策與歸屬。"
 }

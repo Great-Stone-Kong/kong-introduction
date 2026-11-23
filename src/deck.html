@@ -8673,18 +8673,17 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
 <section class="sec" id="idm-users" data-title="Users" data-title-ai="Users" data-title-api="Principals">
   <div class="eyebrow" data-show-rail="ai">Access Management</div>
   <div class="eyebrow" data-show-rail="api">01 · The Principal</div>
-  <h2 data-show-rail="ai">Users</h2>
+  <h2 data-show-rail="ai">Users · 하나의 신원</h2>
   <h2 data-show-rail="api">Principal · 하나의 신원</h2>
-  <p class="sub" data-show-rail="ai">AI Gateway의 Users와 API Gateway의 Principals는 같은 신원 계층입니다. 레일에 따라 이름만 바뀝니다. 상세 내용은 이후 입력합니다.</p>
-  <p class="sub" data-show-rail="api">Agent · Service · Application · Human이 쓰는 자격 증명을 하나의 Principal로 묶습니다. 인증 방식이 바뀌어도 신원은 유지되고, 메타데이터로 정책과 귀속을 겁니다.</p>
+  <p class="sub">AI Access Management의 Users와 Identity의 Principals는 같은 Directory 신원입니다. Agent · Service · Application · Human 자격 증명을 하나로 묶고, 인증 방식이 바뀌어도 메타데이터로 정책과 귀속을 겁니다.</p>
 
-  <div class="idm-val" data-show-rail="api">
+  <div class="idm-val">
     <div class="card"><span class="tag">Mapping</span><h3>자격 증명 통합</h3><p>API Key · OAuth · mTLS · Basic · 서비스 계정을 같은 Principal에 매핑합니다.</p></div>
     <div class="card"><span class="tag">Activity</span><h3>활동 일원화</h3><p>요청 · 자원 접근 · 정책 결정 · 분석 · 감사 이벤트를 하나의 Principal에 붙입니다.</p></div>
     <div class="card"><span class="tag">Metadata</span><h3>컨텍스트 보강</h3><p>팀 · 사업부 · 환경 메타데이터로 정책 집행과 비용 · 사용량 귀속을 합니다.</p></div>
   </div>
 
-  <div class="dia idm-dia rv" data-show-rail="api"><svg viewBox="0 0 960 420" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="여러 엔티티와 자격 증명이 Principal로 수렴하고 메타데이터와 함께 Cross Control Plane 정책으로 이어지는 구조">
+  <div class="dia idm-dia rv"><svg viewBox="0 0 960 420" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="여러 엔티티와 자격 증명이 Principal로 수렴하고 메타데이터와 함께 Cross Control Plane 정책으로 이어지는 구조">
     <text x="480" y="28" text-anchor="middle" font-size="15" font-weight="800" fill="var(--heading)">The Principal · One identity across every interaction</text>
 
     <g>
@@ -8740,17 +8739,18 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
     <circle r="3.2" fill="var(--diag-sky-fill)" opacity="0"><set attributeName="opacity" to="1" begin="0.5s"/><animateMotion dur="1.6s" begin="0.5s" repeatCount="indefinite" path="M780 262H620"/></circle>
     <circle r="3.8" fill="var(--mark)" opacity="0"><set attributeName="opacity" to="1" begin="0.3s"/><animateMotion dur="1.5s" begin="0.3s" repeatCount="indefinite" path="M480 294V336"/></circle>
   </svg></div>
-  <p class="note" data-show-rail="api">Gateway · Event · Portal이 같은 Principal을 보면 플러그인 · 분석 · 감사가 제품 경계를 넘어도 이어집니다.</p>
+  <p class="note">Gateway · Event · Portal이 같은 Principal을 보면 플러그인 · 분석 · 감사가 제품 경계를 넘어도 이어집니다.</p>
 
+  <h3 data-show-rail="ai" style="margin-top:28px">User 상세 구성</h3>
   <h3 data-show-rail="api" style="margin-top:28px">Principal 상세 구성</h3>
-  <p class="sub" data-show-rail="api">Directory에서 Principal을 열면 그룹 · 키 · 접근 · 자격 증명 · 메타데이터 · 신원 속성이 한 화면에 모입니다. 왼쪽 설명과 오른쪽 Konnect 화면 영역을 대응해 봅니다.</p>
-  <div class="idm-detail" data-show-rail="api">
+  <p class="sub">Directory에서 User · Principal을 열면 그룹 · 키 · 접근 · 자격 증명 · 메타데이터 · 신원 속성이 한 화면에 모입니다. 왼쪽 설명과 오른쪽 Konnect 화면 영역을 대응해 봅니다.</p>
+  <div class="idm-detail">
     <div class="idm-detail-top">
       <div class="idm-detail-spacer" aria-hidden="true"></div>
       <div class="idm-wire" aria-hidden="true"><i></i></div>
       <div class="idm-mock-chrome">
-        <div class="amk-bar"><i></i><i></i><i></i><b>Konnect · Identity · Principal</b><span class="amk-tag">예시 화면</span></div>
-        <div class="amk-hd"><span class="amk-crumb">Identity › Principals › tomas.berg</span><h3>tomas.berg</h3><p class="amk-desc">User · Active · External ID D003</p></div>
+        <div class="amk-bar"><i></i><i></i><i></i><b data-show-rail="ai">Konnect · Access Management · User</b><b data-show-rail="api">Konnect · Identity · Principal</b><span class="amk-tag">예시 화면</span></div>
+        <div class="amk-hd"><span class="amk-crumb" data-show-rail="ai">Access Management › Users › tomas.berg</span><span class="amk-crumb" data-show-rail="api">Identity › Principals › tomas.berg</span><h3>tomas.berg</h3><p class="amk-desc">User · Active · External ID D003</p></div>
       </div>
     </div>
 

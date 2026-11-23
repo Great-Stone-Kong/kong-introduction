@@ -6497,5 +6497,9 @@
   "m.00a270548eec": "在 Directory 打开 Principal 时，组 · 密钥 · 访问 · 凭证 · 元数据 · 身份属性会集中在同一画面。将左侧说明与右侧 Konnect 画面区域对应查看。",
   "m.b2620d7ed630": "记录在 Directory 的身份属性。以 ID · Status · Kind · Email · External ID · Provisioned by 与创建 · 修改时间确认来源与状态。",
   "m.2cd482bd6782": "调用 Kong 时使用的虚拟密钥。以 Name · Expires · Created 管理期限，Access rules 决定密钥可到达的范围。用 + New key 签发。",
-  "m.012f989cb066": "Token Vault 代此身份保管 · 注入的远程凭证。完成 Enrollment 后会出现 Provider · Status · Enrolled 行。例：github-demo → GitHub MCP Server。"
+  "m.012f989cb066": "Token Vault 代此身份保管 · 注入的远程凭证。完成 Enrollment 后会出现 Provider · Status · Enrolled 行。例：github-demo → GitHub MCP Server。",
+  "m.1604fc6cf6e1": "User 详细构成",
+  "m.c95e4de75d35": "Users · 单一身份",
+  "m.c8a70f6f1cb1": "在 Directory 打开 User · Principal 时，组 · 密钥 · 访问 · 凭证 · 元数据 · 身份属性会集中在同一画面。将左侧说明与右侧 Konnect 画面区域对应查看。",
+  "m.347252f0f69a": "AI Access Management 的 Users 与 Identity 的 Principals 是同一个 Directory 身份。把 Agent · Service · Application · Human 凭证绑成一条，认证方式改变时仍以元数据套用策略与归属。"
 }

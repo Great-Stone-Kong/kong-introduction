@@ -6497,5 +6497,9 @@
   "m.00a270548eec": "Directory で Principal を開くと、グループ · キー · アクセス · 資格情報 · メタデータ · 身元属性がひとつの画面に集まります。左の説明と右の Konnect 画面領域を対応させて見ます。",
   "m.b2620d7ed630": "Directory に記録された身元属性です。ID · Status · Kind · Email · External ID · Provisioned by と作成 · 更新時刻で出所と状態を確認します。",
   "m.2cd482bd6782": "Kong を呼び出すときに使う仮想キーです。Name · Expires · Created で寿命を管理し、Access rules がキーの到達範囲を決めます。+ New key で発行します。",
-  "m.012f989cb066": "Token Vault がこの身元の代わりに保管 · 注入するリモート資格情報です。Enrollment を終えると Provider · Status · Enrolled 行ができます。例: github-demo → GitHub MCP Server。"
+  "m.012f989cb066": "Token Vault がこの身元の代わりに保管 · 注入するリモート資格情報です。Enrollment を終えると Provider · Status · Enrolled 行ができます。例: github-demo → GitHub MCP Server。",
+  "m.1604fc6cf6e1": "User 詳細構成",
+  "m.c95e4de75d35": "Users · ひとつの身元",
+  "m.c8a70f6f1cb1": "Directory で User · Principal を開くと、グループ · キー · アクセス · 資格情報 · メタデータ · 身元属性がひとつの画面に集まります。左の説明と右の Konnect 画面領域を対応させて見ます。",
+  "m.347252f0f69a": "AI Access Management の Users と Identity の Principals は同じ Directory 身元です。Agent · Service · Application · Human の資格情報をひとつにまとめ、認証方式が変わってもメタデータでポリシーと帰属を掛けます。"
 }

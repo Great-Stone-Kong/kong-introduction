@@ -6497,5 +6497,9 @@
   "m.00a270548eec": "Opening a Principal in Directory gathers groups, keys, access, credentials, metadata, and identity attributes on one screen. Match the left descriptions to the Konnect panels on the right.",
   "m.b2620d7ed630": "Identity attributes recorded in Directory. Use ID, status, kind, email, external ID, provisioned by, and created or modified times to confirm origin and state.",
   "m.2cd482bd6782": "Virtual keys used to call Kong. Manage lifetime with Name, Expires, and Created, while Access rules define what a key can reach. Issue keys with + New key.",
-  "m.012f989cb066": "Remote credentials that Token Vault stores and injects on behalf of this identity. After enrollment, Provider, Status, and Enrolled rows appear. Example: github-demo → GitHub MCP Server."
+  "m.012f989cb066": "Remote credentials that Token Vault stores and injects on behalf of this identity. After enrollment, Provider, Status, and Enrolled rows appear. Example: github-demo → GitHub MCP Server.",
+  "m.1604fc6cf6e1": "User detail layout",
+  "m.c95e4de75d35": "Users · one identity",
+  "m.c8a70f6f1cb1": "Opening a User or Principal in Directory gathers groups, keys, access, credentials, metadata, and identity attributes on one screen. Match the left descriptions to the Konnect panels on the right.",
+  "m.347252f0f69a": "Users in AI Access Management and Principals in Identity are the same Directory identity. Bind credentials for agents, services, applications, and humans into one record so metadata still drives policy and attribution when auth methods change."
 }
