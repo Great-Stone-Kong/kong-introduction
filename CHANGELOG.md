@@ -7,6 +7,10 @@
 
 ## 2026.11.23
 
+### 추가
+
+- Access Management > Token Vault: 미사용·사용 비교, 시크릿 관리자 대비 표, 런타임 흐름, 자격 증명 형태·활용
+
 ### 변경
 
 - Identity · Virtual Keys · Token Vault: 「원본 키 방출」 등 표현을 「원본 자격 증명 주입」으로 통일

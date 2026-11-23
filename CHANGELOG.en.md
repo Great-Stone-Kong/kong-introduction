@@ -5,6 +5,16 @@
 
 ---
 
+## 2026.11.23
+
+### Added
+
+- Access Management > Token Vault: without/with comparison, secret-manager contrast table, runtime flow, credential shapes and use cases
+
+### Changed
+
+- Identity · Virtual Keys · Token Vault: unify wording to “original credential injection”
+
 ## 2026.11.21.6b016c03
 
 ### Added
