@@ -922,7 +922,7 @@ html[data-edition="enterprise"] #p-aimgmt > .sec[data-avail]{display:none!import
 #p-idm .idm-kebab{color:var(--g400);font-weight:800;letter-spacing:.05em;padding:0 4px}
 #p-idm .idm-meta{display:grid;grid-template-columns:1fr 90px 1fr auto;gap:6px;align-items:center;margin-top:6px}
 #p-idm .idm-meta input,#p-idm .idm-meta select{width:100%;border:1px solid var(--line2);border-radius:7px;background:var(--svg-well);color:var(--g300);padding:6px 8px;font:500 11.5px var(--font)}
-#p-idm .idm-meta .idm-add{font:700 11.5px var(--font);color:var(--mark);background:none;border:0;padding:0;text-align:left}
+#p-idm .idm-meta .idm-add,#p-idm .idm-add{font:700 11.5px var(--font);color:var(--mark);background:none;border:0;padding:0;text-align:left;cursor:pointer}
 @media (max-width:1100px){
   #p-idm #idm-authz .idm-ent,#p-idm .idm-diff{grid-template-columns:repeat(2,minmax(0,1fr))}
   #p-idm .idm-detail-top,#p-idm .idm-pair{grid-template-columns:1fr;column-gap:0;row-gap:8px}
@@ -933,6 +933,19 @@ html[data-edition="enterprise"] #p-aimgmt > .sec[data-avail]{display:none!import
   #p-idm .idm-detail > .idm-pair:last-child .idm-sec{border-radius:10px}
 }
 @media (max-width:900px){#p-idm .idm-val,#p-idm .idm-ent,#p-idm .idm-diff{grid-template-columns:1fr}}
+#p-idm .idm-form-lab{display:block;font:700 12px var(--font);color:var(--heading);margin:0 0 5px}
+#p-idm .idm-form-lab .req{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--danger);margin-right:5px;vertical-align:2px}
+#p-idm .idm-form-hint{display:block;margin-top:5px;font-size:11px;color:var(--g400);line-height:1.4}
+#p-idm .idm-form-field{width:100%;border:1px solid var(--line2);border-radius:8px;background:var(--svg-well);color:var(--g300);padding:8px 10px;font:500 12.5px var(--font);box-sizing:border-box}
+#p-idm .idm-form-field.area{min-height:64px;resize:none}
+#p-idm .idm-form-row{margin:0 0 12px}
+#p-idm .idm-form-row:last-child{margin-bottom:0}
+#p-idm .idm-disc{list-style:none;margin:8px 0 0;padding:0;border:1px solid var(--line2);border-radius:8px;background:var(--navy-2);max-height:160px;overflow:auto}
+#p-idm .idm-disc li{padding:7px 10px;font-size:12px;color:var(--g300);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:8px}
+#p-idm .idm-disc li:last-child{border-bottom:0}
+#p-idm .idm-disc li b{color:var(--heading);font-weight:700}
+#p-idm .idm-disc .idm-sel{font:700 10.5px var(--font);color:var(--mark)}
+#p-idm .idm-disc .idm-search{padding:8px 10px;border-bottom:1px solid var(--line);color:var(--g400);font-size:12px}
 #p-idm .idm-aimap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 8px}
 #p-idm .idm-aimap .card{padding:14px 16px}
 #p-idm .idm-aimap h3{font-size:14.5px;margin:0 0 6px}
@@ -8914,7 +8927,103 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
 <section class="sec" id="idm-groups" data-title="Groups" data-show-rail="ai">
   <div class="eyebrow">Access Management</div>
   <h2>Groups</h2>
-  <p class="sub">상세 내용은 이후 입력합니다.</p>
+  <p class="sub">같은 규칙을 공유할 사용자 목록입니다. 멤버마다 Spend limit · 접근 규칙을 반복하지 않고, 그룹에 한 번 붙입니다. 관리자가 수동으로 만들며, 그룹 안에 다른 그룹을 넣을 수 없습니다.</p>
+
+  <div class="callout"><b>Groups ≠ Teams.</b> Teams는 Org Chart CSV가 반영하는 조직도입니다. Groups는 규칙 묶음용으로 관리자가 만들고, 멤버십을 언제든 수정합니다.</div>
+
+  <h3 style="margin-top:22px">활용 범위</h3>
+  <div class="idm-diff">
+    <div class="card"><span class="tag">Spend limit</span><h3>예산 한도 일괄 적용</h3><p>그룹을 Spend limit 대상으로 고르면 소속 Users에 같은 상한이 적용됩니다.</p></div>
+    <div class="card"><span class="tag">Rules</span><h3>규칙 공유</h3><p>접근 · 한도 · 정책을 개인이 아니라 역할 묶음(예: platform-engineers)에 둡니다.</p></div>
+    <div class="card"><span class="tag">Membership</span><h3>유연한 멤버십</h3><p>그룹 상세 또는 User 상세에서 멤버를 추가 · 제거합니다. Org Chart와 독립입니다.</p></div>
+  </div>
+
+  <h3 style="margin-top:28px">그룹 생성 UI</h3>
+  <p class="sub">Create group 화면의 항목과 의미를 왼쪽 설명 · 오른쪽 목업으로 맞춰 봅니다. Membership의 Agents는 출시 예정입니다.</p>
+  <div class="idm-detail">
+    <div class="idm-detail-top">
+      <div class="idm-detail-spacer" aria-hidden="true"></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-mock-chrome">
+        <div class="amk-bar"><i></i><i></i><i></i><b>Konnect · Access Management · Create group</b><span class="amk-tag">예시 화면</span></div>
+        <div class="amk-hd"><span class="amk-crumb">Access Management › Groups › New</span><h3>Create a new group</h3><p class="amk-desc">General information · Membership</p></div>
+      </div>
+    </div>
+
+    <div class="idm-pair">
+      <div class="idm-card"><span class="idm-n">01</span><b>Name</b><span>그룹을 식별하는 필수 이름입니다. 문자 · 숫자 · 하이픈만 허용합니다. 예: platform-engineers.</span></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-sec">
+        <div class="idm-sh"><div><b>General information</b><em>Basic information used to identify the group.</em></div></div>
+        <div class="idm-form-row">
+          <label class="idm-form-lab"><span class="req" aria-hidden="true"></span>Name</label>
+          <input class="idm-form-field" type="text" value="platform-engineers" readonly aria-label="group name">
+          <span class="idm-form-hint">Can only contain letters, numbers, and hyphens.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="idm-pair">
+      <div class="idm-card"><span class="idm-n">02</span><b>Description</b><span>운영자가 읽기 위한 선택 설명입니다. 역할 · 소속 범위를 적어 두면 목록에서 구분하기 쉽습니다.</span></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-sec">
+        <div class="idm-form-row">
+          <label class="idm-form-lab">Description</label>
+          <textarea class="idm-form-field area" readonly aria-label="group description">Backend and infrastructure engineers</textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="idm-pair">
+      <div class="idm-card"><span class="idm-n">03</span><b>Labels</b><span>검색 · 필터용 키 · 값 태그입니다. 부서 · 환경처럼 가벼운 분류에 씁니다.</span></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-sec">
+        <div class="idm-sh"><div><b>Labels</b><em>Key-value tags for filtering.</em></div><button type="button" class="idm-add">+ Add label</button></div>
+        <div class="idm-meta">
+          <input type="text" value="org" readonly aria-label="label key">
+          <select aria-label="label type"><option>String</option></select>
+          <input type="text" value="platform" readonly aria-label="label value">
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="idm-pair">
+      <div class="idm-card"><span class="idm-n">04</span><b>Metadata</b><span>정책 · 귀속에 실을 커스텀 속성입니다. Labels보다 구조적인 값을 둘 때 씁니다.</span></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-sec">
+        <div class="idm-sh"><div><b>Metadata</b><em>Custom attributes for policy and attribution.</em></div><button type="button" class="idm-add">+ Add metadata</button></div>
+        <div class="idm-meta">
+          <input type="text" value="cost-center" readonly aria-label="metadata key">
+          <select aria-label="metadata type"><option>String</option></select>
+          <input type="text" value="ENG-200" readonly aria-label="metadata value">
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="idm-pair">
+      <div class="idm-card"><span class="idm-n">05</span><b>Membership</b><span>지금 멤버를 넣을 수 있습니다. Users를 고르고, Agents는 출시 후 같은 선택기에 포함됩니다. 나중에 그룹 · User 상세에서도 수정합니다.</span></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-sec">
+        <div class="idm-sh"><div><b>Membership</b><em>Optionally add users and agents to the group now.</em></div></div>
+        <div class="idm-form-row">
+          <label class="idm-form-lab">Users and agents</label>
+          <div class="idm-form-field" style="color:var(--g400)">Select one or more members.</div>
+          <ul class="idm-disc" aria-label="member picker">
+            <li class="idm-search">⌕ Search users and agents</li>
+            <li><span><b>DanaWhitfield-E001</b> · 9</span><span class="idm-sel">Select all</span></li>
+            <li><span>aiko.tanaka@example.com</span></li>
+            <li><span>alan.moreau@example.com</span></li>
+            <li><span>ben.carter@example.com</span></li>
+            <li><span>sam.okafor@example.com</span></li>
+          </ul>
+          <span class="idm-form-hint"><em class="amk-soon">예정</em> Agents 멤버십은 이후 지원됩니다. 현재는 Users를 선택합니다.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="note">출처: <a href="https://developer.konghq.com/ai-access-management/concepts" target="_blank" rel="noopener noreferrer">Access management concepts · Groups ↗</a></p>
 </section>
 
 <section class="sec" id="idm-idp" data-title="Identity Providers" data-show-rail="ai">

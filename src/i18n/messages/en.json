@@ -6523,5 +6523,21 @@
   "m.b3fe6070a2b8": "Access Management defines who can call models and MCP, what they may do, which limits apply, and how the organization is structured. Apply rules per user or in bulk with Groups.",
   "m.d3e109874bd4": "Use (planned)",
   "m.dde0ff750f53": "Not released yet. Support for agent callers as Directory identities is planned.",
-  "m.afa7d4550d1c": "Automated and agent callers. Not released yet; planned to apply attribution and limits in the same Directory identity layer as Users."
+  "m.afa7d4550d1c": "Automated and agent callers. Not released yet; planned to apply attribution and limits in the same Directory identity layer as Users.",
+  "m.e697786c353f": "Shared rules",
+  "m.975d15464206": "Flexible membership",
+  "m.2ed30d5037e0": "Group creation UI",
+  "m.1a717f6496bc": "Apply spend limits in bulk",
+  "m.90d5715cee1e": "Agent membership comes later. Select Users for now.",
+  "m.d6e4d47d9b31": "Key-value tags for search and filters. Use them for light classification such as department or environment.",
+  "m.36a0dfd09aab": "Select a group as the spend-limit target to apply the same ceiling to its Users.",
+  "m.69ca2a690f35": "Custom attributes for policy and attribution. Use them when you need more structured values than Labels.",
+  "m.cb49944b44c4": "Add or remove members from the group details or user details. Membership is independent of the Org Chart.",
+  "m.36acd4cf4871": "An optional description for operators. Note the role or scope so the group is easy to tell apart in lists.",
+  "m.2f8cb1989808": "Put access, limits, and policies on a role bundle such as platform-engineers, not on each person.",
+  "m.e429dbb2e106": "Required name that identifies the group. Only letters, numbers, and hyphens are allowed. Example: platform-engineers.",
+  "m.c8d6e5f6de16": "Teams reflect the org chart from CSV import. Groups are admin-created rule bundles whose membership you can edit anytime.",
+  "m.b8dd25f1c93d": "Match Create group fields to the left explanations and the right mockup. Agents in Membership are planned.",
+  "m.c33db00f187a": "You can add members now. Pick Users; Agents join the same picker after release. Edit later from group or user details.",
+  "m.12aab38c1fdd": "A list of users that share the same rules. Attach spend limits and access rules once on the group instead of on every member. Admins create groups manually, and a group cannot contain another group."
 }
