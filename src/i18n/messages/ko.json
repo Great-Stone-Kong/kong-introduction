@@ -6847,7 +6847,6 @@
   "m.244b4376102d": "③ 주입",
   "m.05ba90c6f1fe": "⑪ 응답",
   "m.498d87c723eb": "구성 개요",
-  "m.be3f50af7771": "동의 대기",
   "m.20223ac24dff": "요청 흐름",
   "m.307f0a4fb89f": "이후 호출",
   "m.0d27bea10d14": "구성 절차",
@@ -6889,5 +6888,7 @@
   "m.fc5a8a7786e0": "Enrollment · code exchange · refresh 수행",
   "m.747f7e4965f8": "세 방식은 서로 대체 관계가 아닙니다. 업스트림이 무엇을 신뢰하는지에 따라 고릅니다.",
   "m.9a89e38a2905": "사용자 동의는 첫 호출에만 필요합니다. 이후 호출은 Gateway가 조회 · 주입만 합니다.",
-  "m.5be884f2d2a5": "Agent가 IdP 토큰으로 AI Gateway를 호출하고 Token Vault의 자격 증명이 upstream에 주입되는 구성"
+  "m.5be884f2d2a5": "Agent가 IdP 토큰으로 AI Gateway를 호출하고 Token Vault의 자격 증명이 upstream에 주입되는 구성",
+  "m.1b33c0a98d47": "미등록",
+  "m.e4b0c79fac59": "위임"
 }

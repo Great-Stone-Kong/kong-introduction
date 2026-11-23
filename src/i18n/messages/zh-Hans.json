@@ -6847,7 +6847,6 @@
   "m.244b4376102d": "③ Inject",
   "m.05ba90c6f1fe": "⑪ Response",
   "m.498d87c723eb": "Architecture overview",
-  "m.be3f50af7771": "Pending consent",
   "m.20223ac24dff": "Request flow",
   "m.307f0a4fb89f": "Subsequent calls",
   "m.0d27bea10d14": "Setup steps",
@@ -6889,5 +6888,7 @@
   "m.fc5a8a7786e0": "Handles enrollment, code exchange, and refresh",
   "m.747f7e4965f8": "The three do not replace one another. Choose by what the upstream trusts.",
   "m.9a89e38a2905": "User consent is needed only on the first call. Later calls are just lookup and injection by the Gateway.",
-  "m.5be884f2d2a5": "Agent calls AI Gateway with an IdP token and Token Vault credentials are injected upstream"
+  "m.5be884f2d2a5": "Agent calls AI Gateway with an IdP token and Token Vault credentials are injected upstream",
+  "m.1b33c0a98d47": "Not enrolled",
+  "m.e4b0c79fac59": "Delegate"
 }
