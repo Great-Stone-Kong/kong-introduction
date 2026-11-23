@@ -9,7 +9,7 @@
 
 ### 추가
 
-- Access Management > Token Vault: 미사용·사용 비교, 시크릿 관리자 대비 표, 런타임 흐름, 자격 증명 형태·활용
+- Access Management > Token Vault: 구성 개요 도식, 미사용·사용 비교, 요청 흐름 시퀀스, 선택 기준 표(시크릿 관리자·토큰 교환·Token Vault), 활용
 
 ### 변경
 

@@ -9,7 +9,7 @@
 
 ### 追加
 
-- Access Management > Token Vault: 未使用・使用の比較、シークレット管理との対比表、ランタイム流れ、資格情報の形態・活用
+- Access Management > Token Vault: 構成概要図、未使用・使用の比較、リクエストフローのシーケンス図、選択基準表(シークレット管理・トークン交換・Token Vault)、活用
 
 ### 変更
 

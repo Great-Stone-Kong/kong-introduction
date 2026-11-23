@@ -9,7 +9,7 @@
 
 ### 添加
 
-- Access Management > Token Vault：未使用/使用对比、与密钥管理器对照表、运行时流程、凭证形态与场景
+- Access Management > Token Vault：架构概览图、未使用/使用对比、请求流程时序图、选择标准表(密钥管理器·令牌交换·Token Vault)、场景
 
 ### 变更
 

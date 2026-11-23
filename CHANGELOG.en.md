@@ -9,7 +9,7 @@
 
 ### Added
 
-- Access Management > Token Vault: without/with comparison, secret-manager contrast table, runtime flow, credential shapes and use cases
+- Access Management > Token Vault: architecture diagram, without/with comparison, request-flow sequence, selection table (secret managers · token exchange · Token Vault), use cases
 
 ### Changed
 

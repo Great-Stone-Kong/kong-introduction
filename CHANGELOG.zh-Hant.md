@@ -9,7 +9,7 @@
 
 ### 新增
 
-- Access Management > Token Vault：未使用/使用比較、與祕密管理器對照表、執行期流程、憑證形態與場景
+- Access Management > Token Vault：架構概覽圖、未使用/使用比較、請求流程時序圖、選擇基準表(祕密管理器·權杖交換·Token Vault)、場景
 
 ### 變更
 
