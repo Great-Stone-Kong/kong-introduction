@@ -9049,29 +9049,29 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
 <section class="sec" id="idm-idp" data-title="Identity Providers" data-show-rail="ai">
   <div class="eyebrow">Access Management</div>
   <h2>Identity Providers</h2>
-  <p class="sub">Okta · Auth0처럼 로그인 토큰에 서명하는 외부 IdP입니다. Konnect는 등록한 Issuer URL로 토큰이 진짜인지 검증합니다. Name · Issuer를 두고, 자동 프로비저닝과 Token Vault 신뢰 여부를 켭니다.</p>
+  <p class="sub">Okta · Auth0처럼 로그인 토큰에 서명하는 외부 IdP입니다. Access Management에 Name · Issuer URL로 등록해 두고, 호출자가 가져온 토큰이 그 등록 항목과 맞는지 검증합니다. 자동 프로비저닝과 Token Vault 신뢰 여부도 여기서 켭니다.</p>
 
-  <div class="callout"><b>역할.</b> 호출자가 “누구인지”를 외부 IdP가 증명하고, Access Management는 그 증명을 믿어 Users를 만들고 Token Vault 자격 증명 방출을 허용합니다.</div>
+  <div class="callout"><b>역할.</b> IdP가 로그인 토큰을 서명하고, Konnect는 목록에 등록된 IdP로 그 토큰을 확인합니다. 확인이 끝나면 Users 생성 · Token Vault 방출으로 이어질 수 있습니다.</div>
 
-  <div class="dia idm-dia rv"><svg viewBox="0 0 960 360" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Identity Provider가 로그인 토큰을 서명하고 Konnect가 Users · Token Vault와 연결되는 관계">
-    <text x="480" y="26" text-anchor="middle" font-size="14" font-weight="800" fill="var(--heading)">Identity Provider · trust · provision · vault</text>
+  <div class="dia idm-dia rv"><svg viewBox="0 0 960 400" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Caller가 IdP에서 토큰을 받고 Access Management가 등록된 IdP로 검증한 뒤 Users · Token Vault로 이어지는 흐름">
+    <text x="480" y="24" text-anchor="middle" font-size="13" font-weight="800" fill="var(--svg-muted)">LOGIN → PRESENT → VERIFY (registered IdP) → PROVISION / VAULT</text>
 
-    <rect x="30" y="70" width="160" height="88" rx="12" fill="var(--svg-panel)" stroke="var(--g600)"/>
-    <text x="110" y="108" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">Caller</text>
-    <text x="110" y="128" text-anchor="middle" font-size="11" fill="var(--svg-muted)">User · 로그인</text>
+    <rect x="30" y="90" width="150" height="88" rx="12" fill="var(--svg-panel)" stroke="var(--g600)"/>
+    <text x="105" y="128" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">Caller</text>
+    <text x="105" y="148" text-anchor="middle" font-size="11" fill="var(--svg-muted)">User · 앱</text>
 
-    <rect x="250" y="58" width="200" height="112" rx="14" fill="var(--diag-wash-lime2)" stroke="var(--mark)" stroke-width="1.5"/>
-    <text x="350" y="88" text-anchor="middle" font-size="13" font-weight="800" fill="var(--mark)">Identity Provider</text>
-    <text x="350" y="110" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Okta · Auth0 · Entra</text>
-    <text x="350" y="132" text-anchor="middle" font-size="11" fill="var(--svg-fg)">Issuer URL · 서명</text>
-    <text x="350" y="152" text-anchor="middle" font-size="10.5" fill="var(--svg-muted)">OIDC / OAuth tokens</text>
+    <rect x="250" y="56" width="200" height="156" rx="14" fill="var(--diag-wash-lime2)" stroke="var(--mark)" stroke-width="1.5"/>
+    <text x="350" y="86" text-anchor="middle" font-size="13" font-weight="800" fill="var(--mark)">Identity Provider</text>
+    <text x="350" y="108" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Okta · Auth0 · Entra</text>
+    <rect x="270" y="122" width="160" height="28" rx="7" fill="var(--svg-chip)" stroke="var(--line2)"/><text x="350" y="141" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">Issuer · 서명</text>
+    <rect x="270" y="160" width="160" height="28" rx="7" fill="var(--lime)"/><text x="350" y="179" text-anchor="middle" font-size="11" font-weight="800" fill="var(--on-lime)">등록된 IdP 항목</text>
 
-    <rect x="520" y="48" width="220" height="200" rx="14" fill="var(--diag-zone2)" stroke="var(--mark)" stroke-width="1.5"/>
-    <rect x="538" y="60" width="120" height="20" rx="10" fill="var(--lime)"/><text x="598" y="74" text-anchor="middle" font-size="10" font-weight="900" fill="var(--on-lime)">KONNECT</text>
-    <text x="630" y="104" text-anchor="middle" font-size="13" font-weight="800" fill="var(--mark)">Access Management</text>
-    <rect x="540" y="120" width="180" height="32" rx="8" fill="var(--svg-chip)" stroke="var(--line2)"/><text x="630" y="141" text-anchor="middle" font-size="12" font-weight="700" fill="var(--svg-fg)">Users 자동 프로비저닝</text>
-    <rect x="540" y="162" width="180" height="32" rx="8" fill="var(--svg-chip)" stroke="var(--line2)"/><text x="630" y="183" text-anchor="middle" font-size="12" font-weight="700" fill="var(--svg-fg)">토큰 검증</text>
-    <rect x="540" y="204" width="180" height="32" rx="8" fill="var(--lime)"/><text x="630" y="225" text-anchor="middle" font-size="12" font-weight="800" fill="var(--on-lime)">Vault Trusted IdP</text>
+    <rect x="520" y="56" width="220" height="200" rx="14" fill="var(--diag-zone2)" stroke="var(--mark)" stroke-width="1.5"/>
+    <rect x="538" y="68" width="120" height="20" rx="10" fill="var(--lime)"/><text x="598" y="82" text-anchor="middle" font-size="10" font-weight="900" fill="var(--on-lime)">KONNECT</text>
+    <text x="630" y="112" text-anchor="middle" font-size="13" font-weight="800" fill="var(--mark)">Access Management</text>
+    <rect x="540" y="128" width="180" height="30" rx="8" fill="var(--svg-chip)" stroke="var(--line2)"/><text x="630" y="148" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--svg-fg)">토큰 접수</text>
+    <rect x="540" y="166" width="180" height="30" rx="8" fill="var(--svg-chip)" stroke="var(--mark)" stroke-width="1.2"/><text x="630" y="186" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--mark)">등록 IdP로 검증</text>
+    <rect x="540" y="204" width="180" height="30" rx="8" fill="var(--lime)"/><text x="630" y="224" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--on-lime)">Vault Trusted IdP</text>
 
     <rect x="800" y="70" width="130" height="70" rx="12" fill="var(--svg-chip)" stroke="var(--mark)"/>
     <text x="865" y="100" text-anchor="middle" font-size="13" font-weight="800" fill="var(--mark)">Users</text>
@@ -9081,40 +9081,48 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
     <text x="865" y="198" text-anchor="middle" font-size="13" font-weight="800" fill="var(--mark)">Token Vault</text>
     <text x="865" y="218" text-anchor="middle" font-size="10.5" fill="var(--svg-muted)">자격 증명 방출</text>
 
-    <path d="M190 114H250" fill="none" stroke="var(--mark)" stroke-opacity=".75" stroke-width="1.6" stroke-dasharray="5 5" class="ik-f"/>
-    <path d="M450 114H520" fill="none" stroke="var(--mark)" stroke-opacity=".75" stroke-width="1.6" stroke-dasharray="5 5" class="ik-f"/>
-    <path d="M740 136H800" fill="none" stroke="var(--lime)" stroke-opacity=".9" stroke-width="1.6" stroke-dasharray="4 3" class="ik-f"/>
-    <path d="M740 220H800" fill="none" stroke="var(--lime)" stroke-opacity=".9" stroke-width="1.6" stroke-dasharray="4 3" class="ik-f"/>
-    <text x="220" y="100" text-anchor="middle" font-size="10" fill="var(--mark)">① 로그인</text>
-    <text x="485" y="100" text-anchor="middle" font-size="10" fill="var(--mark)">② 검증</text>
-    <text x="770" y="122" text-anchor="middle" font-size="10" fill="var(--mark)">③ User</text>
-    <text x="770" y="206" text-anchor="middle" font-size="10" fill="var(--mark)">④ Trust</text>
+    <!-- ① 로그인: Caller → IdP -->
+    <path d="M180 120H250" fill="none" stroke="var(--mark)" stroke-opacity=".8" stroke-width="1.6" stroke-dasharray="5 5" class="ik-f"/>
+    <text x="215" y="108" text-anchor="middle" font-size="10" fill="var(--mark)">① 로그인</text>
+    <!-- ② 토큰 제시: Caller → AM (아래 경로) -->
+    <path d="M105 178V250H630V256" fill="none" stroke="var(--mark)" stroke-opacity=".7" stroke-width="1.5" stroke-dasharray="5 5" class="ik-f"/>
+    <text x="360" y="242" text-anchor="middle" font-size="10" fill="var(--mark)">② 토큰 제시</text>
+    <!-- ③ 검증: AM → 등록된 IdP -->
+    <path d="M520 181H450" fill="none" stroke="var(--lime)" stroke-opacity=".95" stroke-width="1.8" stroke-dasharray="4 3" class="ik-f"/>
+    <text x="485" y="168" text-anchor="middle" font-size="10" font-weight="700" fill="var(--lime)">③ 등록 항목 검증</text>
+    <!-- ④⑤ 결과 -->
+    <path d="M740 136H800" fill="none" stroke="var(--lime)" stroke-opacity=".85" stroke-width="1.5" stroke-dasharray="4 3" class="ik-f"/>
+    <path d="M740 220H800" fill="none" stroke="var(--lime)" stroke-opacity=".85" stroke-width="1.5" stroke-dasharray="4 3" class="ik-f"/>
+    <text x="770" y="122" text-anchor="middle" font-size="10" fill="var(--mark)">④ User</text>
+    <text x="770" y="206" text-anchor="middle" font-size="10" fill="var(--mark)">⑤ Vault</text>
 
-    <rect x="30" y="280" width="900" height="60" rx="12" fill="var(--diag-zone2)" stroke="var(--g600)"/>
-    <text x="50" y="306" font-size="12" font-weight="800" fill="var(--heading)">동작 요약</text>
-    <text x="50" y="326" font-size="12" fill="var(--g300)">Caller가 IdP에서 받은 토큰을 제시 → Konnect가 Issuer로 서명 검증 → (옵션) Users 자동 생성 → Trusted IdP면 Token Vault가 원격 자격 증명을 방출</text>
+    <rect x="30" y="300" width="900" height="76" rx="12" fill="var(--diag-zone2)" stroke="var(--g600)"/>
+    <text x="50" y="328" font-size="12" font-weight="800" fill="var(--heading)">동작 요약</text>
+    <text x="50" y="350" font-size="12" fill="var(--g300)">Caller가 IdP에서 토큰을 받은 뒤 Access Management에 제시합니다. Konnect는 목록에 등록된 IdP(Issuer)로 서명을 확인합니다.</text>
+    <text x="50" y="368" font-size="12" fill="var(--g300)">검증이 끝나면 자동 프로비저닝으로 User를 만들 수 있고, Trusted IdP이면 Token Vault가 원격 자격 증명을 내줍니다.</text>
 
-    <circle r="3.5" fill="var(--lime)" opacity="0"><set attributeName="opacity" to="1" begin="0s"/><animateMotion dur="2s" begin="0s" repeatCount="indefinite" path="M190 114H250"/></circle>
-    <circle r="3.5" fill="var(--mark)" opacity="0"><set attributeName="opacity" to="1" begin="0.4s"/><animateMotion dur="2s" begin="0.4s" repeatCount="indefinite" path="M450 114H520"/></circle>
-    <circle r="3.4" fill="var(--lime)" opacity="0"><set attributeName="opacity" to="1" begin="0.8s"/><animateMotion dur="1.8s" begin="0.8s" repeatCount="indefinite" path="M740 136H800"/></circle>
-    <circle r="3.4" fill="var(--lime)" opacity="0"><set attributeName="opacity" to="1" begin="1.1s"/><animateMotion dur="1.8s" begin="1.1s" repeatCount="indefinite" path="M740 220H800"/></circle>
+    <circle r="3.5" fill="var(--lime)" opacity="0"><set attributeName="opacity" to="1" begin="0s"/><animateMotion dur="1.6s" begin="0s" repeatCount="indefinite" path="M180 120H250"/></circle>
+    <circle r="3.5" fill="var(--mark)" opacity="0"><set attributeName="opacity" to="1" begin="0.45s"/><animateMotion dur="2.2s" begin="0.45s" repeatCount="indefinite" path="M105 178V250H630V256"/></circle>
+    <circle r="3.6" fill="var(--lime)" opacity="0"><set attributeName="opacity" to="1" begin="1s"/><animateMotion dur="1.6s" begin="1s" repeatCount="indefinite" path="M520 181H450"/></circle>
+    <circle r="3.3" fill="var(--lime)" opacity="0"><set attributeName="opacity" to="1" begin="1.5s"/><animateMotion dur="1.6s" begin="1.5s" repeatCount="indefinite" path="M740 136H800"/></circle>
+    <circle r="3.3" fill="var(--lime)" opacity="0"><set attributeName="opacity" to="1" begin="1.7s"/><animateMotion dur="1.6s" begin="1.7s" repeatCount="indefinite" path="M740 220H800"/></circle>
   </svg></div>
 
   <div class="flow idm-flow">
-    <div class="st"><span class="n">01</span><b>등록</b><span>IdP Name · Issuer URL을 Access Management에 추가합니다.</span></div>
-    <div class="st"><span class="n">02</span><b>검증</b><span>로그인 토큰 서명을 Issuer 기준으로 확인합니다.</span></div>
-    <div class="st"><span class="n">03</span><b>프로비저닝</b><span>자동 프로비저닝을 켜면 첫 로그인 때 User가 생성됩니다.</span></div>
-    <div class="st"><span class="n">04</span><b>Vault 신뢰</b><span>Trusted IdP로 지정해야 Token Vault가 자격 증명을 내줍니다.</span></div>
+    <div class="st"><span class="n">01</span><b>등록</b><span>IdP Name · Issuer URL을 Access Management 목록에 넣습니다.</span></div>
+    <div class="st"><span class="n">02</span><b>로그인</b><span>Caller가 IdP에서 로그인 토큰을 받습니다.</span></div>
+    <div class="st"><span class="n">03</span><b>검증</b><span>제시된 토큰을 등록된 IdP(Issuer)로 확인합니다.</span></div>
+    <div class="st"><span class="n">04</span><b>이후</b><span>자동 프로비저닝이면 User가 생기고, Trusted IdP면 Vault가 자격 증명을 내줍니다.</span></div>
   </div>
 
   <h3 style="margin-top:22px">다른 구성과의 관계</h3>
   <div class="idm-aimap">
-    <div class="card"><span class="tag">Users</span><h3>자동 프로비저닝</h3><p>IdP 첫 로그인으로 User를 만들 수 있습니다. Vault 자격 증명 접근 권한은 자동으로 생기지 않으며, 관리자가 따로 부여합니다.</p><span class="use"><u>관계</u>IdP → Users 생성 · 이후 Groups · Spend limit · Virtual Keys에 연결</span></div>
-    <div class="card"><span class="tag">Token Vault</span><h3>Trusted IdP</h3><p>Vault는 신뢰 IdP가 최소 1개 필요합니다. 호출자 토큰이 신뢰 목록에 있을 때만 원격 자격 증명을 방출합니다.</p><span class="use"><u>관계</u>신뢰 제거 시 해당 IdP로는 Vault가 더 이상 동작하지 않습니다.</span></div>
-    <div class="card"><span class="tag">Groups</span><h3>간접 연결</h3><p>Groups는 IdP가 만들지 않습니다. 프로비저닝된 Users를 관리자가 그룹에 넣습니다.</p><span class="use"><u>관계</u>IdP → Users → Groups · 규칙</span></div>
-    <div class="card"><span class="tag">Virtual Keys</span><h3>신원 전제</h3><p>Virtual Key는 Directory 신원(User · Principal)에 붙습니다. IdP가 Users를 채우면 키 발급 대상이 생깁니다.</p><span class="use"><u>관계</u>IdP 검증 신원 → Virtual Key · 비용 귀속</span></div>
-    <div class="card"><span class="tag">Teams</span><h3>Org Chart와 분리</h3><p>Teams는 CSV Org Chart에서만 갱신됩니다. IdP 자동 프로비저닝과 조직도 import는 경로가 다릅니다.</p><span class="use"><u>관계</u>IdP ≠ Org Chart · 필요 시 둘 다 운영</span></div>
-    <div class="card"><span class="tag">설정</span><h3>끄기 · 삭제</h3><p>Vault 신뢰를 끊으면 방출만 멈춥니다. IdP 자체를 목록에서 삭제하면 해당 Issuer 검증이 사라집니다.</p><span class="use"><u>관계</u>신뢰 해제 ≠ 삭제 · 목적에 맞게 선택</span></div>
+    <div class="card"><span class="tag">Users</span><h3>자동 프로비저닝</h3><p>자동 프로비저닝을 켜면 처음 로그인할 때 User가 생깁니다. Token Vault 자격 증명 접근은 자동으로 생기지 않고, 관리자가 따로 줍니다.</p><span class="use"><u>관계</u>User가 생긴 뒤 Groups · Spend limit · Virtual Keys에 연결합니다.</span></div>
+    <div class="card"><span class="tag">Token Vault</span><h3>Trusted IdP</h3><p>Vault가 자격 증명을 내려면 신뢰하는 IdP가 하나 이상 있어야 합니다. 신뢰 목록에 없는 IdP 토큰으로는 방출하지 않습니다.</p><span class="use"><u>관계</u>신뢰를 빼면 그 IdP로는 Vault가 더 이상 동작하지 않습니다.</span></div>
+    <div class="card"><span class="tag">Groups</span><h3>멤버십은 수동</h3><p>IdP가 Groups를 만들지는 않습니다. User가 생긴 뒤 관리자가 그룹에 넣습니다.</p><span class="use"><u>관계</u>IdP는 User까지, 그룹 멤버십은 Access Management에서 관리합니다.</span></div>
+    <div class="card"><span class="tag">Virtual Keys</span><h3>키 발급 대상</h3><p>Virtual Key는 User(또는 Principal)에 붙습니다. IdP로 User가 있어야 키를 줄 대상이 생깁니다.</p><span class="use"><u>관계</u>키로 나간 요청 비용은 그 User에게 귀속됩니다.</span></div>
+    <div class="card"><span class="tag">Teams</span><h3>Org Chart와 별개</h3><p>Teams는 Org Chart CSV로만 바뀝니다. IdP 자동 프로비저닝과는 다른 경로입니다.</p><span class="use"><u>관계</u>둘 다 쓸 수 있지만, 서로 자동으로 맞춰지지는 않습니다.</span></div>
+    <div class="card"><span class="tag">설정</span><h3>신뢰 해제 · 삭제</h3><p>Vault 신뢰만 끄면 자격 증명 방출만 멈춥니다. IdP를 목록에서 지우면 그 Issuer로 토큰을 검증할 수 없습니다.</p><span class="use"><u>관계</u>방출만 막을지, 검증 자체를 없앨지에 맞춰 고릅니다.</span></div>
   </div>
 
   <p class="note">출처: <a href="https://developer.konghq.com/ai-access-management/concepts" target="_blank" rel="noopener noreferrer">Access management concepts · Identity providers ↗</a></p>
