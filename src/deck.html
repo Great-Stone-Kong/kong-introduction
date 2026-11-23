@@ -863,6 +863,9 @@ html[data-theme="light"] .amr-res{border-color:var(--mark)}
 .side .nt-subs a.dis:hover{background:none;color:var(--g400)}
 /* AI Management: EE에서는 개요만 본문 노출(좌측은 비활성+EE 예정 배지로 로드맵 표시) */
 html[data-edition="enterprise"] #p-aimgmt > .sec[data-avail]{display:none!important}
+html[data-rail="ai"] [data-show-rail]:not([data-show-rail~="ai"]),
+html[data-rail="api"] [data-show-rail]:not([data-show-rail~="api"]),
+html[data-rail="kong"] [data-show-rail]:not([data-show-rail~="kong"]){display:none!important}
 .ne-hid{margin:12px 0 0;padding-top:10px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--g500)}
 .ne-toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,12px);z-index:95;max-width:min(560px,92vw);background:var(--svg-panel,#0A1F10);color:var(--g200);border:1px solid var(--mark);border-radius:10px;padding:10px 16px;font-size:13px;box-shadow:0 12px 30px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .24s cubic-bezier(.2,.8,.2,1),transform .24s cubic-bezier(.2,.8,.2,1)}
 .ne-toast.on{opacity:1;transform:translate(-50%,0)}
@@ -7616,6 +7619,65 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
 </div>
 
 
+<!-- ============ ACCESS MANAGEMENT · IDENTITY ============ -->
+<div class="page" id="p-idm" data-rail="ai api" data-icon="identity" data-rgroup="AI 거버넌스" data-rgroup-ai="AI 거버넌스" data-rgroup-api="API 연결" data-label="Access Management" data-label-ai="Access Management" data-label-api="Identity" data-desc="Users · Principals · Groups · Token Vault · Auth servers" data-desc-ai="Users · Agents · Groups · IdP · Token Vault · Virtual Keys" data-desc-api="Principals · Authorization servers">
+
+<section class="sec hero" id="idm-intro" data-title="개요">
+  <div class="eyebrow" data-show-rail="ai">AI Gateway · Access Management</div>
+  <div class="eyebrow" data-show-rail="api">Kong Identity</div>
+  <h1 data-show-rail="ai">누가 모델과 MCP를 쓰는지 통제</h1>
+  <h1 data-show-rail="api">인증 주체를 한곳에서 관리</h1>
+  <p class="lead" data-show-rail="ai">Users · Agents · Groups · Identity Providers · Token Vault · Virtual Keys로 AI Gateway 호출 주체와 자격 증명을 관리합니다. 본문 상세는 이후 섹션에서 채웁니다.</p>
+  <p class="lead" data-show-rail="api">Principals · Authorization servers로 Gateway · Event · Dev Portal 인증을 일원화합니다. 본문 상세는 이후 섹션에서 채웁니다.</p>
+  <p class="note" data-show-rail="ai">출처: <a href="https://developer.konghq.com/ai-access-management/" target="_blank" rel="noopener noreferrer">AI Gateway access management ↗</a></p>
+  <p class="note" data-show-rail="api">출처: <a href="https://developer.konghq.com/identity/" target="_blank" rel="noopener noreferrer">Kong Identity ↗</a></p>
+</section>
+
+<section class="sec" id="idm-users" data-title="Users" data-title-ai="Users" data-title-api="Principals">
+  <div class="eyebrow">Shared identity</div>
+  <h2 data-show-rail="ai">Users</h2>
+  <h2 data-show-rail="api">Principals</h2>
+  <p class="sub">AI Gateway의 Users와 API Gateway의 Principals는 같은 신원 계층입니다. 레일에 따라 이름만 바뀝니다. 상세 내용은 이후 입력합니다.</p>
+</section>
+
+<section class="sec" id="idm-agents" data-title="Agents" data-show-rail="ai">
+  <div class="eyebrow">Access Management</div>
+  <h2>Agents</h2>
+  <p class="sub">상세 내용은 이후 입력합니다.</p>
+</section>
+
+<section class="sec" id="idm-groups" data-title="Groups" data-show-rail="ai">
+  <div class="eyebrow">Access Management</div>
+  <h2>Groups</h2>
+  <p class="sub">상세 내용은 이후 입력합니다.</p>
+</section>
+
+<section class="sec" id="idm-idp" data-title="Identity Providers" data-show-rail="ai">
+  <div class="eyebrow">Access Management</div>
+  <h2>Identity Providers</h2>
+  <p class="sub">상세 내용은 이후 입력합니다.</p>
+</section>
+
+<section class="sec" id="idm-vault" data-title="Token Vault" data-show-rail="ai">
+  <div class="eyebrow">Access Management</div>
+  <h2>Token Vault</h2>
+  <p class="sub">상세 내용은 이후 입력합니다.</p>
+</section>
+
+<section class="sec" id="idm-vkeys" data-title="Virtual Keys" data-show-rail="ai">
+  <div class="eyebrow">Access Management</div>
+  <h2>Virtual Keys</h2>
+  <p class="sub">상세 내용은 이후 입력합니다.</p>
+</section>
+
+<section class="sec" id="idm-authz" data-title="Authorization servers" data-show-rail="api">
+  <div class="eyebrow">Kong Identity</div>
+  <h2>Authorization servers</h2>
+  <p class="sub">상세 내용은 이후 입력합니다.</p>
+</section>
+</div>
+
+
 <!-- ============ EVENT GATEWAY ============ -->
 <div class="page" id="p-event" data-rgroup="API 연결" data-icon="event-gateway" data-rail="api" data-edition-lock="konnect" data-label="Event Gateway" data-desc="Kafka · 이벤트 스트림 거버넌스">
 
@@ -11537,6 +11599,12 @@ function visiblePages(){ return PAGES.filter(audienceOk); }
 const RAILS=['kong','ai','api'];
 function pageRails(p){ return ((p&&p.dataset.rail)||'api').split(/\s+/); }
 function curRail(){ return document.documentElement.dataset.rail||'kong'; }
+function pageAttr(p,base,r){ if(!p) return ''; r=r||curRail(); return p.getAttribute('data-'+base+'-'+r)||p.getAttribute('data-'+base)||''; }
+function pageLabel(p,r){ return pageAttr(p,'label',r); }
+function pageRgroup(p,r){ return pageAttr(p,'rgroup',r); }
+function pageDesc(p,r){ return pageAttr(p,'desc',r); }
+function secTitle(s,r){ if(!s) return ''; r=r||curRail(); return s.getAttribute('data-title-'+r)||s.getAttribute('data-title')||''; }
+function railOk(el){ const sr=el&&el.getAttribute('data-show-rail'); return !sr||(' '+sr+' ').indexOf(' '+curRail()+' ')>=0; }
 function railPages(r){ r=r||curRail(); return visiblePages().filter(p=>pageRails(p).includes(r)); }
 function navPages(r){ r=r||curRail(); return PAGES.filter(p=>pageRails(p).includes(r)&&(audienceOk(p)||(langOk(p)&&lockedFor(p)))); }
 const NE_LOCK='Konnect 전용 · 레일 하단에서 Konnect로 전환하면 볼 수 있습니다';
@@ -11546,7 +11614,11 @@ function neSoonT(){ return (window.KONG_I18N&&typeof window.KONG_I18N.t==='funct
 function edBadge(el){ const se=el&&el.getAttribute('data-show-edition'), lk=el&&el.getAttribute('data-edition-lock'); const v=lk||(se&&se.trim().indexOf(' ')<0?se.trim():''); return v?'<em class="ne-bd'+(v==='enterprise'?' ee':'')+'">'+(v==='enterprise'?'EE':'Konnect')+'</em>':''; }
 function railFirst(r){ const p=railPages(r)[0]; return p?p.id.slice(2):'company'; }
 function hashFor(id,sec){ const p=document.getElementById('p-'+id); const pre=(p&&pageRails(p)[0]!==curRail())?curRail()+':':''; return '#'+pre+id+(sec?'/'+sec:''); }
-function visibleSecs(page){ return [...(page||document).querySelectorAll('.sec')].filter(s=>audienceOk(s)); }
+function visibleSecs(page,r){ r=r||curRail(); return [...(page||document).querySelectorAll('.sec')].filter(s=>{
+  if(!audienceOk(s)) return false;
+  const sr=s.getAttribute('data-show-rail');
+  return !sr||(' '+sr+' ').indexOf(' '+r+' ')>=0;
+}); }
 /* EE에서 data-avail 섹션은 좌측만 비활성(본문은 CSS로 숨김). Konnect-only·ee-soon(Konnect 모드)은 Konnect 태그 */
 function secAvailLocked(s){
   if(!s||(document.documentElement.dataset.edition||'enterprise')!=='enterprise') return false;
@@ -11570,7 +11642,15 @@ const PAGES=[...document.querySelectorAll('.page')];
       document.documentElement.dataset.rail=x;
       try{ localStorage.setItem('kong-rail',x); }catch(_){}
       if(typeof window.syncRail==='function') window.syncRail(ch);
-      if(!(opt&&opt.stay)&&typeof go==='function') go(railFirst(x));
+      if(opt&&opt.stay) return;
+      if(typeof go!=='function') return;
+      const pg=typeof cur==='string'?document.getElementById('p-'+cur):null;
+      if(pg&&pageRails(pg).includes(x)){
+        let sec=null;
+        try{ const m=String(location.hash||'').match(/\/([^/?#]+)$/); sec=m&&m[1]; }catch(_){}
+        const el=sec&&document.getElementById(sec);
+        go(cur,(el&&audienceOk(el)&&railOk(el))?sec:null,false,true);
+      }else go(railFirst(x));
     }
   };
 })();
@@ -11870,7 +11950,7 @@ function placeDD(btn){
 function openDD(g){
   const G=GROUPS[g]; if(ddOpen===G.btn){ closeDD(); return; }
   closeDD(); ddOpen=G.btn; G.btn.classList.add('open');
-  navdd.innerHTML=G.items.map(p=>lockedFor(p)?'<button role="menuitem" class="ne-lock" disabled aria-disabled="true" title="'+neLockT()+'"><b>'+p.dataset.label+edBadge(p)+'</b><span>'+(p.dataset.desc||'')+'</span></button>':'<button role="menuitem" data-id="'+p.id.slice(2)+'"'+(p.id==='p-'+cur?' class="on"':'')+'><b>'+p.dataset.label+edBadge(p)+'</b><span>'+(p.dataset.desc||'')+'</span></button>').join('');
+  navdd.innerHTML=G.items.map(p=>lockedFor(p)?'<button role="menuitem" class="ne-lock" disabled aria-disabled="true" title="'+neLockT()+'"><b>'+pageLabel(p)+edBadge(p)+'</b><span>'+(pageDesc(p)||'')+'</span></button>':'<button role="menuitem" data-id="'+p.id.slice(2)+'"'+(p.id==='p-'+cur?' class="on"':'')+'><b>'+pageLabel(p)+edBadge(p)+'</b><span>'+(pageDesc(p)||'')+'</span></button>').join('');
   placeDD(G.btn);
 }
 navdd.addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b||b.disabled) return; closeDD(); go(b.dataset.id); });
@@ -11888,8 +11968,8 @@ function rebuildNav(){
       GROUPS[g].items.push(p); return;
     }
     const b=document.createElement('button'); b.dataset.id=p.id.slice(2);
-    if(lockedFor(p)){ b.className='ne-lock'; b.disabled=true; b.setAttribute('aria-disabled','true'); b.title=neLockT(); b.innerHTML=p.dataset.label+edBadge(p); topnav.appendChild(b); return; }
-    b.innerHTML=p.dataset.label+edBadge(p); b.onclick=()=>go(p.id.slice(2)); topnav.appendChild(b);
+    if(lockedFor(p)){ b.className='ne-lock'; b.disabled=true; b.setAttribute('aria-disabled','true'); b.title=neLockT(); b.innerHTML=pageLabel(p)+edBadge(p); topnav.appendChild(b); return; }
+    b.innerHTML=pageLabel(p)+edBadge(p); b.onclick=()=>go(p.id.slice(2)); topnav.appendChild(b);
   });
   [...topnav.querySelectorAll('button.ddb')].forEach(b=>{ const g=GROUPS[b.dataset.group]; if(!g||!g.items.length) b.remove(); });
 }
@@ -11900,15 +11980,15 @@ function ntIcon(p){ const i=p.dataset.icon; return i?'<svg class="ic" viewBox="0
 function treeHTML(id){
   let h='', lastG=null;
   navPages().forEach(p=>{
-    const g=p.dataset.rgroup||''; if(g!==lastG){ h+='<div class="nt-g">'+g+'</div>'; lastG=g; }
-    const pid=p.id.slice(2);
-    if(lockedFor(p)){ h+='<button type="button" class="nt-it dis" aria-disabled="true" title="'+neLockT()+'">'+ntIcon(p)+'<span class="nt-lb">'+p.dataset.label+'</span>'+edBadge(p)+'</button>'; return; }
+    const g=pageRgroup(p)||''; if(g!==lastG){ h+='<div class="nt-g">'+g+'</div>'; lastG=g; }
+    const pid=p.id.slice(2), pl=pageLabel(p);
+    if(lockedFor(p)){ h+='<button type="button" class="nt-it dis" aria-disabled="true" title="'+neLockT()+'">'+ntIcon(p)+'<span class="nt-lb">'+pl+'</span>'+edBadge(p)+'</button>'; return; }
     const on=pid===id;
-    h+='<button type="button" class="nt-it'+(on?' on':'')+'" data-p="'+pid+'"'+(on?' aria-current="page"':'')+'>'+ntIcon(p)+'<span class="nt-lb">'+p.dataset.label+'</span>'+(p.dataset.editionLock?'':edBadge(p))+NT_CV+'</button>';
+    h+='<button type="button" class="nt-it'+(on?' on':'')+'" data-p="'+pid+'"'+(on?' aria-current="page"':'')+'>'+ntIcon(p)+'<span class="nt-lb">'+pl+'</span>'+(p.dataset.editionLock?'':edBadge(p))+NT_CV+'</button>';
     if(on) h+='<div class="nt-subs">'+visibleSecs(p).map(x=>{
-      const bd=secBadge(x);
-      if(secAvailLocked(x)) return '<a class="dis" aria-disabled="true" tabindex="-1" data-s="'+x.id+'" title="'+secAvailToast(x)+'">'+x.dataset.title+bd+'</a>';
-      return '<a data-s="'+x.id+'" href="'+hashFor(pid,x.id)+'">'+x.dataset.title+bd+'</a>';
+      const bd=secBadge(x), st=secTitle(x);
+      if(secAvailLocked(x)) return '<a class="dis" aria-disabled="true" tabindex="-1" data-s="'+x.id+'" title="'+secAvailToast(x)+'">'+st+bd+'</a>';
+      return '<a data-s="'+x.id+'" href="'+hashFor(pid,x.id)+'">'+st+bd+'</a>';
     }).join('')+'</div>';
   });
   return h;
@@ -11919,14 +11999,14 @@ function npNav(pg){
   const list=railPages(), i=list.indexOf(pg); if(i<0) return;
   const pv=list[i-1], nx=list[i+1]; if(!pv&&!nx) return;
   const n=document.createElement('nav'); n.className='np-nav'; 
-  n.innerHTML=(pv?'<button type="button" class="pv" data-p="'+pv.id.slice(2)+'"><em>← 이전</em><b>'+pv.dataset.label+'</b></button>':'')+(nx?'<button type="button" class="nx" data-p="'+nx.id.slice(2)+'"><em>다음 →</em><b>'+nx.dataset.label+'</b></button>':'');
+  n.innerHTML=(pv?'<button type="button" class="pv" data-p="'+pv.id.slice(2)+'"><em>← 이전</em><b>'+pageLabel(pv)+'</b></button>':'')+(nx?'<button type="button" class="nx" data-p="'+nx.id.slice(2)+'"><em>다음 →</em><b>'+pageLabel(nx)+'</b></button>':'');
   n.addEventListener('click',e=>{ const b=e.target.closest('button[data-p]'); if(b) go(b.dataset.p); });
   const foot=pg.querySelector(':scope > footer.foot'); if(foot) pg.insertBefore(n,foot); else pg.appendChild(n);
 }
 function setCrumb(secEl){
   if(!nb) return; const pg=document.getElementById('p-'+cur); if(!pg) return;
   const tr=x=>(window.KONG_I18N&&window.KONG_I18N.lang!=='ko'&&typeof window.KONG_I18N.t==='function')?window.KONG_I18N.t(x):x;
-  nb.innerHTML='<span>'+RAIL_LAB[curRail()]+'</span><i aria-hidden="true">›</i><span>'+tr(pg.dataset.label)+'</span>'+(secEl?'<i aria-hidden="true">›</i><b aria-current="location">'+tr(secEl.dataset.title)+'</b>':'');
+  nb.innerHTML='<span>'+RAIL_LAB[curRail()]+'</span><i aria-hidden="true">›</i><span>'+tr(pageLabel(pg))+'</span>'+(secEl?'<i aria-hidden="true">›</i><b aria-current="location">'+tr(secTitle(secEl))+'</b>':'');
 }
 function secBadge(s){
   const ed=document.documentElement.dataset.edition||'enterprise';
@@ -12026,7 +12106,7 @@ function go(id,sec,push,keepScroll){
   side.innerHTML=treeHTML(id)+hidNote(pg)+vbox();
   npNav(pg);
   side.classList.remove('open');
-  document.title=pg.dataset.label+' | Kong 소개';
+  document.title=pageLabel(pg)+' | Kong 소개';
   if(secEl){ setTimeout(()=>secEl.scrollIntoView(),30); }
   else if(!keepScroll) window.scrollTo(0,0);
   if(push!==false){ const hh=hashFor(id,sec); try{ history.replaceState(null,'',hh); }catch(e){ location.hash=hh.slice(1); } }
@@ -12047,13 +12127,13 @@ side.addEventListener('click',e=>{
 });
 function printTargets(){
   const pg=document.getElementById('p-'+cur); if(!pg||!audienceOk(pg)) return [];
-  const g=pg.dataset.rgroup;
-  if(g) return railPages().filter(p=>p.dataset.rgroup===g);
+  const g=pageRgroup(pg);
+  if(g) return railPages().filter(p=>pageRgroup(p)===g);
   return [pg];
 }
 function printMenuTitle(targets){
   const pg=targets[0]; if(!pg) return '';
-  return targets.length>1?(pg.dataset.rgroup||pg.dataset.label||''):(pg.dataset.label||'');
+  return targets.length>1?(pageRgroup(pg)||pageLabel(pg)||''):(pageLabel(pg)||'');
 }
 function labelPanesForPrint(root){
   root.querySelectorAll('.print-pane-label').forEach(el=>el.remove());
@@ -12140,11 +12220,11 @@ function buildPrintToc(targets){
   nav.appendChild(title);
   const ol=document.createElement('ol');
   targets.forEach(p=>{
-    const pageLab=p.dataset.label||p.id;
+    const pageLab=pageLabel(p)||p.id;
     visibleSecs(p).forEach(s=>{
       if(s.getAttribute('data-print')==='omit') return;
       const li=document.createElement('li');
-      li.textContent=(targets.length>1?(pageLab+' · '):'')+(s.dataset.title||s.id);
+      li.textContent=(targets.length>1?(pageLab+' · '):'')+(secTitle(s)||s.id);
       ol.appendChild(li);
     });
   });
@@ -12355,10 +12435,10 @@ document.addEventListener('keydown',e=>{
   function index(){
     const out=[], seen=new Set(), cr=curRail(), order=[cr].concat(RAILS.filter(r=>r!==cr));
     order.forEach(r=>railPages(r).forEach(p=>{
-      if(seen.has(p.id)) return; seen.add(p.id);
-      const pid=p.id.slice(2), pl=tr(p.dataset.label||''), ic=p.dataset.icon;
+      const key=r+':'+p.id; if(seen.has(key)) return; seen.add(key);
+      const pid=p.id.slice(2), pl=tr(pageLabel(p,r)||''), ic=p.dataset.icon;
       out.push({r:r,p:pid,s:null,t:pl,sub:RAIL_LAB[r],ic:ic});
-      visibleSecs(p).forEach(x=>{ if(secAvailLocked(x)) return; out.push({r:r,p:pid,s:x.id,t:tr(x.dataset.title||''),sub:RAIL_LAB[r]+' › '+pl,ic:ic}); });
+      visibleSecs(p,r).forEach(x=>{ if(secAvailLocked(x)) return; out.push({r:r,p:pid,s:x.id,t:tr(secTitle(x,r)||''),sub:RAIL_LAB[r]+' › '+pl,ic:ic}); });
     }));
     return out;
   }
@@ -12370,7 +12450,7 @@ document.addEventListener('keydown',e=>{
       .sort((a,b)=>((norm(b.t).indexOf(nk)===0)-(norm(a.t).indexOf(nk)===0))||((a.s?1:0)-(b.s?1:0))).slice(0,40);
     sel=0; let h='', last='';
     if(!hits.length) h='<div class="ns-e">'+esc(k)+' · 0</div>';
-    hits.forEach((x,i)=>{ const g=nk?x.sub.split(' › ')[0]:(tr(document.getElementById('p-'+cur).dataset.label||''));
+    hits.forEach((x,i)=>{ const g=nk?x.sub.split(' › ')[0]:(tr(pageLabel(document.getElementById('p-'+cur))||''));
       if(g!==last){ h+='<div class="ns-g">'+esc(g)+'</div>'; last=g; }
       h+='<div class="ns-x'+(i===0?' on':'')+'" role="option" id="ns-o'+i+'" aria-selected="'+(i===0)+'" data-i="'+i+'">'+(x.ic?'<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ki-'+x.ic+'"/></svg>':'')+'<div class="t"><b>'+hl(x.t,k)+'</b><span>'+esc(x.sub)+'</span></div></div>'; });
     res.innerHTML=h; q.setAttribute('aria-activedescendant',hits.length?'ns-o0':'');

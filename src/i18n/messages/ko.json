@@ -6406,5 +6406,11 @@
   "m.71e1db783a82": "기본 포트는 8001(HTTP) · 8444(HTTPS)입니다. 네트워크에서 Admin API에 도달할 수 있어야 합니다.",
   "m.ee5a67a1dfa5": "Admin API에 접근 가능한 호스트에서 실행합니다. RBAC가 켜져 있으면 Kong-Admin-Token 헤더를 추가합니다.",
   "m.47c54655c4e6": "클러스터마다 리포트를 하나씩 만들고, 파일명에 환경을 표시합니다. 예: PROD_Kong_license_report.json · UAT_Kong_license_report.json",
-  "m.cd875c6c3fba": "자체 관리형 Kong Gateway Enterprise의 Admin API로 배포 스냅샷을 만들고, 압축 파일을 Kong에 전달합니다. 예약 실행은 없고, Kong으로 자동 전송되는 데이터도 없습니다."
+  "m.cd875c6c3fba": "자체 관리형 Kong Gateway Enterprise의 Admin API로 배포 스냅샷을 만들고, 압축 파일을 Kong에 전달합니다. 예약 실행은 없고, Kong으로 자동 전송되는 데이터도 없습니다.",
+  "m.87507d63dbd5": "상세 내용은 이후 입력합니다.",
+  "m.41b083570d92": "누가 모델과 MCP를 쓰는지 통제",
+  "m.617f1dffff79": "인증 주체를 한곳에서 관리",
+  "m.7429fd5cd8d6": "AI Gateway의 Users와 API Gateway의 Principals는 같은 신원 계층입니다. 레일에 따라 이름만 바뀝니다. 상세 내용은 이후 입력합니다.",
+  "m.73b1b432258f": "Users · Agents · Groups · Identity Providers · Token Vault · Virtual Keys로 AI Gateway 호출 주체와 자격 증명을 관리합니다. 본문 상세는 이후 섹션에서 채웁니다.",
+  "m.b01b8cc44305": "Principals · Authorization servers로 Gateway · Event · Dev Portal 인증을 일원화합니다. 본문 상세는 이후 섹션에서 채웁니다."
 }

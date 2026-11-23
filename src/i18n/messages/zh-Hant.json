@@ -6406,5 +6406,11 @@
   "m.71e1db783a82": "預設連接埠為 8001（HTTP）· 8444（HTTPS）。網路須能存取 Admin API。",
   "m.ee5a67a1dfa5": "在可存取 Admin API 的主機上執行。若已啟用 RBAC，請新增 Kong-Admin-Token 請求头。",
   "m.47c54655c4e6": "每个集群產生一份報告，并在文件名中标明環境。例如：PROD_Kong_license_report.json · UAT_Kong_license_report.json",
-  "m.cd875c6c3fba": "透過自管 Kong Gateway Enterprise 的 Admin API 產生部署快照，並將壓縮檔交給 Kong。无定時任务，也不會向 Kong 自動傳送資料。"
+  "m.cd875c6c3fba": "透過自管 Kong Gateway Enterprise 的 Admin API 產生部署快照，並將壓縮檔交給 Kong。无定時任务，也不會向 Kong 自動傳送資料。",
+  "m.87507d63dbd5": "詳細內容將於後續補充。",
+  "m.41b083570d92": "管控誰可以使用模型與 MCP",
+  "m.617f1dffff79": "在一處管理認證主體",
+  "m.7429fd5cd8d6": "AI Gateway 的 Users 與 API Gateway 的 Principals 是同一身分層。僅隨軌道切換名稱。詳細內容將於後續補充。",
+  "m.73b1b432258f": "透過 Users · Agents · Groups · Identity Providers · Token Vault · Virtual Keys 管理 AI Gateway 的呼叫主體與憑證。正文細節將於後續章節補充。",
+  "m.b01b8cc44305": "透過 Principals · Authorization servers 統一 Gateway · Event · Dev Portal 認證。正文細節將於後續章節補充。"
 }

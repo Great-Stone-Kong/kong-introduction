@@ -6406,5 +6406,11 @@
   "m.71e1db783a82": "Default ports are 8001 (HTTP) · 8444 (HTTPS). The network must reach the Admin API.",
   "m.ee5a67a1dfa5": "Run on a host that can reach the Admin API. If RBAC is on, add the Kong-Admin-Token header.",
   "m.47c54655c4e6": "Create one report per cluster and mark the environment in the filename. Example: PROD_Kong_license_report.json · UAT_Kong_license_report.json",
-  "m.cd875c6c3fba": "Create a deployment snapshot with the self-managed Kong Gateway Enterprise Admin API and send the archive to Kong. There is no schedule, and no data is sent to Kong automatically."
+  "m.cd875c6c3fba": "Create a deployment snapshot with the self-managed Kong Gateway Enterprise Admin API and send the archive to Kong. There is no schedule, and no data is sent to Kong automatically.",
+  "m.87507d63dbd5": "Details will be added in a later pass.",
+  "m.41b083570d92": "Control who uses models and MCP",
+  "m.617f1dffff79": "Manage authenticating principals in one place",
+  "m.7429fd5cd8d6": "Users in AI Gateway and Principals in API Gateway are the same identity layer. Only the name changes by rail. Details will be added later.",
+  "m.73b1b432258f": "Manage AI Gateway callers and credentials with Users · Agents · Groups · Identity Providers · Token Vault · Virtual Keys. Section details come later.",
+  "m.b01b8cc44305": "Unify Gateway · Event · Dev Portal authentication with Principals · Authorization servers. Section details come later."
 }
