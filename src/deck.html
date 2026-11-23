@@ -8640,7 +8640,7 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
     <rect x="30" y="56" width="170" height="120" rx="12" fill="var(--diag-zone2)" stroke="var(--g600)"/>
     <text x="115" y="82" text-anchor="middle" font-size="11" font-weight="800" fill="var(--svg-muted)">CALLERS</text>
     <rect x="48" y="96" width="134" height="30" rx="8" fill="var(--svg-panel)" stroke="var(--g600)"/><text x="115" y="116" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--svg-fg)">Users</text>
-    <rect x="48" y="132" width="134" height="34" rx="8" fill="var(--svg-panel)" stroke="var(--g600)"/><text x="115" y="147" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--svg-fg)">Agents</text><text x="115" y="160" text-anchor="middle" font-size="9" font-weight="800" fill="var(--diag-amber)">Soon</text>
+    <rect x="48" y="132" width="134" height="34" rx="8" fill="var(--svg-panel)" stroke="var(--g600)"/><text x="115" y="147" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--svg-fg)">Agents</text><text x="115" y="160" text-anchor="middle" font-size="9" font-weight="800" fill="var(--diag-amber)">예정</text>
 
     <rect x="260" y="48" width="440" height="200" rx="16" fill="var(--diag-wash-lime2)" stroke="var(--mark)" stroke-width="1.6"/>
     <rect x="278" y="60" width="150" height="22" rx="11" fill="var(--lime)"/><text x="353" y="75" text-anchor="middle" font-size="11" font-weight="900" fill="var(--on-lime)">KONNECT</text>
@@ -8675,7 +8675,7 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
 
   <div class="idm-aimap" data-show-rail="ai">
     <div class="card"><span class="tag">01</span><h3>Users</h3><p>모델 · MCP를 쓰는 사람입니다. 수동 생성 · Org Chart CSV · IdP 자동 프로비저닝으로 들어옵니다.</p><span class="use"><u>활용</u>상세에서 Groups · Virtual Keys · Remote credentials · Spend limit을 한 화면에서 봅니다.</span></div>
-    <div class="card"><span class="tag">02</span><h3>Agents <em class="amk-soon">Soon</em></h3><p>자동화 · 에이전트 호출 주체입니다. 아직 출시 전이며, Users와 같은 Directory 신원 계층으로 귀속 · 한도를 걸 예정입니다.</p><span class="use"><u>활용(예정)</u>에이전트별 키 · 메타데이터로 비용과 감사를 분리합니다.</span></div>
+    <div class="card"><span class="tag">02</span><h3>Agents <em class="amk-soon">예정</em></h3><p>자동화 · 에이전트 호출 주체입니다. 아직 출시 전이며, Users와 같은 Directory 신원 계층으로 귀속 · 한도를 걸 예정입니다.</p><span class="use"><u>활용(예정)</u>에이전트별 키 · 메타데이터로 비용과 감사를 분리합니다.</span></div>
     <div class="card"><span class="tag">03</span><h3>Groups</h3><p>같은 규칙을 공유하는 사용자 목록입니다. 관리자가 만들고, 그룹에 Spend limit 등을 한 번 붙입니다.</p><span class="use"><u>활용</u>Teams(조직도)와 달리 규칙 묶음용입니다. 중첩 Groups는 없습니다.</span></div>
     <div class="card"><span class="tag">04</span><h3>Identity Providers</h3><p>Okta · Auth0처럼 로그인 토큰을 서명하는 외부 IdP입니다. Issuer URL로 신뢰를 등록합니다.</p><span class="use"><u>활용</u>자동 프로비저닝 · Token Vault 신뢰 IdP를 켭니다. Vault는 신뢰 IdP가 최소 1개 필요합니다.</span></div>
     <div class="card"><span class="tag">05</span><h3>Token Vault</h3><p>서드파티 자격 증명을 보관하고, 신뢰 IdP로 확인된 호출자 대신 Gateway가 꺼내 씁니다.</p><span class="use"><u>활용</u>MCP outbound 인증 · Remote credentials 목록. OAuth 또는 static API key provider를 둡니다.</span></div>
@@ -8907,7 +8907,7 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
 
 <section class="sec" id="idm-agents" data-title="Agents" data-show-rail="ai" data-avail="soon">
   <div class="eyebrow">Access Management</div>
-  <h2>Agents <em class="amk-soon">Soon</em></h2>
+  <h2>Agents <em class="amk-soon">예정</em></h2>
   <p class="sub">아직 출시되지 않았습니다. 에이전트 호출 주체를 Directory 신원으로 다루는 기능이 예정되어 있습니다.</p>
 </section>
 
@@ -12424,7 +12424,7 @@ function setCrumb(secEl){
 function secBadge(s){
   const ed=document.documentElement.dataset.edition||'enterprise';
   const av=s.getAttribute('data-avail');
-  if(av==='soon') return '<em class="ne-sb soon">Soon</em>';
+  if(av==='soon') return '<em class="ne-sb soon">예정</em>';
   if(av==='ee-soon') return ed==='enterprise'?'<em class="ne-sb soon">EE 예정</em>':'<em class="ne-sb">Konnect</em>';
   if(av==='konnect') return '<em class="ne-sb">Konnect</em>';
   if(av) return '';
