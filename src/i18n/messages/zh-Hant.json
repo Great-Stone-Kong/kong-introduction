@@ -6412,5 +6412,6 @@
   "m.617f1dffff79": "在一處管理認證主體",
   "m.7429fd5cd8d6": "AI Gateway 的 Users 與 API Gateway 的 Principals 是同一身分層。僅隨軌道切換名稱。詳細內容將於後續補充。",
   "m.73b1b432258f": "透過 Users · Agents · Groups · Identity Providers · Token Vault · Virtual Keys 管理 AI Gateway 的呼叫主體與憑證。正文細節將於後續章節補充。",
-  "m.b01b8cc44305": "透過 Principals · Authorization servers 統一 Gateway · Event · Dev Portal 認證。正文細節將於後續章節補充。"
+  "m.b01b8cc44305": "透過 Principals · Authorization servers 統一 Gateway · Event · Dev Portal 認證。正文細節將於後續章節補充。",
+  "m.0b98a5adbf9c": "API 擴充"
 }

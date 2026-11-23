@@ -6412,5 +6412,6 @@
   "m.617f1dffff79": "認証主体を一箇所で管理",
   "m.7429fd5cd8d6": "AI Gateway の Users と API Gateway の Principals は同じアイデンティティ層です。レールに応じて名前だけが変わります。詳細は今後追記します。",
   "m.73b1b432258f": "Users · Agents · Groups · Identity Providers · Token Vault · Virtual Keys で AI Gateway の呼び出し主体と資格情報を管理します。本文の詳細は今後のセクションで追記します。",
-  "m.b01b8cc44305": "Principals · Authorization servers で Gateway · Event · Dev Portal 認証を一元化します。本文の詳細は今後のセクションで追記します。"
+  "m.b01b8cc44305": "Principals · Authorization servers で Gateway · Event · Dev Portal 認証を一元化します。本文の詳細は今後のセクションで追記します。",
+  "m.0b98a5adbf9c": "API 拡張"
 }

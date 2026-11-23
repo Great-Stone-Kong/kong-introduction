@@ -6412,5 +6412,6 @@
   "m.617f1dffff79": "인증 주체를 한곳에서 관리",
   "m.7429fd5cd8d6": "AI Gateway의 Users와 API Gateway의 Principals는 같은 신원 계층입니다. 레일에 따라 이름만 바뀝니다. 상세 내용은 이후 입력합니다.",
   "m.73b1b432258f": "Users · Agents · Groups · Identity Providers · Token Vault · Virtual Keys로 AI Gateway 호출 주체와 자격 증명을 관리합니다. 본문 상세는 이후 섹션에서 채웁니다.",
-  "m.b01b8cc44305": "Principals · Authorization servers로 Gateway · Event · Dev Portal 인증을 일원화합니다. 본문 상세는 이후 섹션에서 채웁니다."
+  "m.b01b8cc44305": "Principals · Authorization servers로 Gateway · Event · Dev Portal 인증을 일원화합니다. 본문 상세는 이후 섹션에서 채웁니다.",
+  "m.0b98a5adbf9c": "API 확장"
 }
