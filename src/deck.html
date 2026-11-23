@@ -873,16 +873,30 @@ html[data-edition="enterprise"] #p-aimgmt > .sec[data-avail]{display:none!import
 #p-idm .idm-ent{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0}
 #p-idm #idm-authz .idm-ent{grid-template-columns:repeat(4,minmax(0,1fr))}
 #p-idm .idm-diff{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 8px}
-#p-idm .idm-detail{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr);gap:16px;margin:18px 0 8px;align-items:start}
-#p-idm .idm-feat{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
-#p-idm .idm-feat li{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:12px 14px}
-#p-idm .idm-feat b{display:block;font-size:13.5px;color:var(--heading);margin:0 0 3px}
-#p-idm .idm-feat span{display:block;font-size:12.5px;color:var(--g300);line-height:1.45}
+#p-idm .idm-detail{display:flex;flex-direction:column;gap:14px;margin:22px 0 8px}
+#p-idm .idm-detail-top{display:grid;grid-template-columns:minmax(260px,1fr) 56px minmax(0,1.25fr);column-gap:18px;align-items:end}
+#p-idm .idm-detail-top .idm-detail-spacer{min-height:1px}
+#p-idm .idm-detail-top .idm-wire{visibility:hidden}
+#p-idm .idm-pair{display:grid;grid-template-columns:minmax(260px,1fr) 56px minmax(0,1.25fr);column-gap:18px;align-items:stretch}
+#p-idm .idm-card{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:14px 16px;display:flex;flex-direction:column;justify-content:center;min-height:100%;box-sizing:border-box}
+#p-idm .idm-card .idm-n{display:inline-block;font:800 10.5px var(--mono);color:var(--mark);letter-spacing:.04em;margin:0 0 6px}
+#p-idm .idm-card b{display:block;font-size:14px;color:var(--heading);margin:0 0 6px}
+#p-idm .idm-card span{display:block;font-size:12.5px;color:var(--g300);line-height:1.5}
+#p-idm .idm-wire{position:relative;display:flex;align-items:center;min-height:100%}
+#p-idm .idm-wire i{display:block;width:100%;height:0;border-top:1.6px dashed color-mix(in srgb,var(--mark) 70%,var(--line2));position:relative}
+#p-idm .idm-wire i::before,#p-idm .idm-wire i::after{content:"";position:absolute;top:50%;width:7px;height:7px;border-radius:50%;background:var(--mark);transform:translateY(-50%)}
+#p-idm .idm-wire i::before{left:-1px}
+#p-idm .idm-wire i::after{right:-1px}
+#p-idm .idm-mock-chrome{border:1px solid var(--line2);border-bottom:0;border-radius:12px 12px 0 0;background:var(--navy-2);overflow:hidden;box-shadow:0 18px 40px -26px rgba(0,0,0,.55)}
+#p-idm .idm-mock-chrome .amk-bar{border-radius:0;margin:0;box-shadow:none}
+#p-idm .idm-mock-chrome .amk-hd{padding:10px 12px 8px;margin:0;border-bottom:1px solid var(--line)}
+#p-idm .idm-pair .idm-sec{margin:0;border-radius:0;min-height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center}
+#p-idm .idm-detail > .idm-pair:nth-child(2) .idm-sec{border-top:0}
+#p-idm .idm-detail > .idm-pair:last-child .idm-sec{border-radius:0 0 12px 12px;box-shadow:0 18px 40px -26px rgba(0,0,0,.55)}
 #p-idm .idm-mock{margin:0}
 #p-idm .idm-mock .amk-body{grid-template-columns:minmax(0,1fr)}
 #p-idm .idm-mock .amk-main{padding:12px}
-#p-idm .idm-sec{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:11px 12px;margin:0 0 8px}
-#p-idm .idm-sec:last-child{margin-bottom:0}
+#p-idm .idm-sec{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:12px 14px;margin:0 0 8px}
 #p-idm .idm-sec .idm-sh{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin:0 0 6px}
 #p-idm .idm-sec .idm-sh b{font-size:13px;color:var(--heading)}
 #p-idm .idm-sec .idm-sh em{font-style:normal;font-size:11px;color:var(--g400);display:block;margin-top:2px;font-weight:500}
@@ -910,7 +924,12 @@ html[data-edition="enterprise"] #p-aimgmt > .sec[data-avail]{display:none!import
 #p-idm .idm-meta .idm-add{font:700 11.5px var(--font);color:var(--mark);background:none;border:0;padding:0;text-align:left}
 @media (max-width:1100px){
   #p-idm #idm-authz .idm-ent,#p-idm .idm-diff{grid-template-columns:repeat(2,minmax(0,1fr))}
-  #p-idm .idm-detail{grid-template-columns:1fr}
+  #p-idm .idm-detail-top,#p-idm .idm-pair{grid-template-columns:1fr;column-gap:0;row-gap:8px}
+  #p-idm .idm-wire,#p-idm .idm-detail-top .idm-detail-spacer{display:none}
+  #p-idm .idm-mock-chrome{border-radius:12px 12px 0 0}
+  #p-idm .idm-pair .idm-sec{border-radius:10px;border:1px solid var(--line);box-shadow:none}
+  #p-idm .idm-detail > .idm-pair:nth-child(2) .idm-sec{border-top:1px solid var(--line)}
+  #p-idm .idm-detail > .idm-pair:last-child .idm-sec{border-radius:10px}
 }
 @media (max-width:900px){#p-idm .idm-val,#p-idm .idm-ent,#p-idm .idm-diff{grid-template-columns:1fr}}
 #p-idm .idm-flow .st b{color:var(--heading)}
@@ -8724,83 +8743,107 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
   <p class="note" data-show-rail="api">Gateway · Event · Portal이 같은 Principal을 보면 플러그인 · 분석 · 감사가 제품 경계를 넘어도 이어집니다.</p>
 
   <h3 data-show-rail="api" style="margin-top:28px">Principal 상세 구성</h3>
-  <p class="sub" data-show-rail="api">Directory에서 Principal을 열면 그룹 · 키 · 접근 · 자격 증명 · 메타데이터 · 신원 속성이 한 화면에 모입니다.</p>
+  <p class="sub" data-show-rail="api">Directory에서 Principal을 열면 그룹 · 키 · 접근 · 자격 증명 · 메타데이터 · 신원 속성이 한 화면에 모입니다. 왼쪽 설명과 오른쪽 Konnect 화면 영역을 대응해 봅니다.</p>
   <div class="idm-detail" data-show-rail="api">
-    <ul class="idm-feat">
-      <li><b>Groups</b><span>직접 소속된 그룹 · 팀입니다. 권한과 한도를 그룹 단위로 묶습니다.</span></li>
-      <li><b>Virtual keys</b><span>Kong을 호출할 때 쓰는 키입니다. 접근 규칙이 키의 도달 범위를 정합니다.</span></li>
-      <li><b>Access</b><span>직접 또는 그룹을 통해 도달할 수 있는 자원 목록입니다. Access rules가 여기에 표시됩니다.</span></li>
-      <li><b>Remote credentials</b><span>Token Vault가 이 신원 대신 보관 · 사용하는 원격 자격 증명입니다. Enrollment 후 Provider · Status · Enrolled가 행으로 나타납니다.</span></li>
-      <li><b>Metadata</b><span>환경 · 팀 등 커스텀 키 · 값입니다. 정책과 귀속에 씁니다.</span></li>
-      <li><b>About</b><span>ID · Status · Kind · Email · External ID · 생성 · 수정 시각 등 신원 속성입니다.</span></li>
-      <li><b>Spend limit</b><span>이 Principal과 소속 그룹 · 팀 중 가장 낮은 한도가 적용됩니다.</span></li>
-    </ul>
-    <div class="amk-win idm-mock rv">
-      <div class="amk-bar"><i></i><i></i><i></i><b>Konnect · Identity · Principal</b><span class="amk-tag">예시 화면</span></div>
-      <div class="amk-body"><div class="amk-main">
+    <div class="idm-detail-top">
+      <div class="idm-detail-spacer" aria-hidden="true"></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-mock-chrome">
+        <div class="amk-bar"><i></i><i></i><i></i><b>Konnect · Identity · Principal</b><span class="amk-tag">예시 화면</span></div>
         <div class="amk-hd"><span class="amk-crumb">Identity › Principals › tomas.berg</span><h3>tomas.berg</h3><p class="amk-desc">User · Active · External ID D003</p></div>
-
-        <div class="idm-sec">
-          <div class="idm-sh"><div><b>Groups</b><em>Groups and teams it belongs to directly.</em></div><span class="idm-act">Add to groups</span></div>
-          <table class="idm-tbl"><thead><tr><th>Name</th><th>Type</th><th>Owner</th></tr></thead><tbody>
-            <tr><td><b>MarcusLee-ED03</b></td><td>Team</td><td>Marcus Lee</td></tr>
-            <tr><td><b>DanaWhitfield-E001</b></td><td>Team</td><td>Dana Whitfield</td></tr>
-          </tbody></table>
-        </div>
-
-        <div class="idm-sec">
-          <div class="idm-sh"><div><b>Virtual keys</b><em>The keys used to call Kong.</em></div><span class="idm-act">+ New key</span></div>
-          <div class="idm-empty"><i>key</i><span>Create your first virtual key. Users · agents · groups가 제공자 자격 증명 없이 모델 · MCP를 호출합니다.</span></div>
-        </div>
-
-        <div class="idm-sec">
-          <div class="idm-sh"><div><b>Access</b><em>Everything it can reach, directly or through a group.</em></div></div>
-          <div class="idm-empty"><i>□</i><span>Access rules are coming. 규칙이 준비되면 여기에 표시됩니다.</span></div>
-        </div>
-
-        <div class="idm-sec">
-          <div class="idm-sh"><div><b>Remote credentials</b><em>Credentials that Token Vault holds for this identity and uses on its behalf.</em></div></div>
-          <table class="idm-tbl"><thead><tr><th>Provider</th><th>Status</th><th>Enrolled</th><th></th></tr></thead><tbody>
-            <tr>
-              <td><b>github-demo</b><span class="idm-prov"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.6 7.6 0 0 1 8 3.85c.68.003 1.36.092 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub MCP Server</span></td>
-              <td><span class="idm-badge on">Active</span></td>
-              <td>Nov 23, 2026, 3:43 PM</td>
-              <td class="idm-kebab" aria-hidden="true">⋮</td>
-            </tr>
-          </tbody></table>
-          <div class="idm-foot"><span class="idm-pg"><span>‹</span><span>›</span></span><span>50 items per page ▾</span></div>
-        </div>
-
-        <div class="idm-sec">
-          <div class="idm-sh"><div><b>Metadata</b><em>Custom key-value data for this identity.</em></div></div>
-          <div class="idm-meta">
-            <input type="text" value="environment" readonly aria-label="metadata key">
-            <select aria-label="value type"><option>String</option></select>
-            <input type="text" value="production" readonly aria-label="metadata value">
-            <button type="button" class="idm-add">+ Add metadata</button>
-          </div>
-        </div>
-
-        <div class="idm-sec">
-          <div class="idm-sh"><div><b>About this user</b></div></div>
-          <dl class="idm-about">
-            <dt>ID</dt><dd>36a1ac3a-3912-462b-8dbc-59f086e4e3e8</dd>
-            <dt>Status</dt><dd><span class="idm-badge on">Active</span></dd>
-            <dt>Kind</dt><dd><span class="idm-badge kind">User</span></dd>
-            <dt>Email</dt><dd>tomas.berg@example.com</dd>
-            <dt>External ID</dt><dd>D003</dd>
-            <dt>Provisioned by</dt><dd>Imported</dd>
-            <dt>Created</dt><dd>Nov 8, 2023 12:44 PM</dd>
-            <dt>Last modified</dt><dd>Nov 8, 2023 12:44 PM</dd>
-          </dl>
-        </div>
-
-        <div class="idm-sec">
-          <div class="idm-sh"><div><b>Spend limit</b><em>The lowest limit from this user, its groups and teams applies.</em></div><span class="idm-act">+ Set spend limit</span></div>
-          <div class="idm-empty"><i>$</i><span>No spend limit is set.</span></div>
-        </div>
-      </div></div>
+      </div>
     </div>
+
+    <div class="idm-pair">
+      <div class="idm-card"><span class="idm-n">01</span><b>Groups</b><span>직접 소속된 팀 · 그룹 목록입니다. 권한 · 접근 · Spend limit을 그룹에 두면 소속 Principal에 상속됩니다. Add to groups로 멤버십을 붙이거나 뗍니다.</span></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-sec">
+        <div class="idm-sh"><div><b>Groups</b><em>Groups and teams it belongs to directly.</em></div><span class="idm-act">Add to groups</span></div>
+        <table class="idm-tbl"><thead><tr><th>Name</th><th>Type</th><th>Owner</th></tr></thead><tbody>
+          <tr><td><b>MarcusLee-ED03</b></td><td>Team</td><td>Marcus Lee</td></tr>
+          <tr><td><b>DanaWhitfield-E001</b></td><td>Team</td><td>Dana Whitfield</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+
+    <div class="idm-pair">
+      <div class="idm-card"><span class="idm-n">02</span><b>Virtual keys</b><span>Kong을 호출할 때 쓰는 가상 키입니다. Name · Expires · Created로 수명을 관리하고, Access rules가 키가 닿을 수 있는 범위를 정합니다. + New key로 발급합니다.</span></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-sec">
+        <div class="idm-sh"><div><b>Virtual keys</b><em>The keys used to call Kong. What a key can reach follows the access rules.</em></div><span class="idm-act">+ New key</span></div>
+        <table class="idm-tbl"><thead><tr><th>Name</th><th>Expires</th><th>Created</th><th></th></tr></thead><tbody>
+          <tr><td><b>demo-key</b></td><td>Feb 21, 2027</td><td>Nov 23, 2026</td><td class="idm-kebab" aria-hidden="true">⋮</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+
+    <div class="idm-pair">
+      <div class="idm-card"><span class="idm-n">03</span><b>Access</b><span>이 Principal이 직접 또는 그룹을 통해 도달할 수 있는 자원 목록입니다. Access rules가 준비되면 모델 · MCP · API 범위가 여기에 채워집니다.</span></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-sec">
+        <div class="idm-sh"><div><b>Access</b><em>Everything it can reach, directly or through a group.</em></div></div>
+        <div class="idm-empty"><i>□</i><span>Access rules are coming. 규칙이 준비되면 여기에 표시됩니다.</span></div>
+      </div>
+    </div>
+
+    <div class="idm-pair">
+      <div class="idm-card"><span class="idm-n">04</span><b>Remote credentials</b><span>Token Vault가 이 신원 대신 보관 · 주입하는 원격 자격 증명입니다. Enrollment를 마치면 Provider · Status · Enrolled 행이 생깁니다. 예: github-demo → GitHub MCP Server.</span></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-sec">
+        <div class="idm-sh"><div><b>Remote credentials</b><em>Credentials that Token Vault holds for this identity and uses on its behalf.</em></div></div>
+        <table class="idm-tbl"><thead><tr><th>Provider</th><th>Status</th><th>Enrolled</th><th></th></tr></thead><tbody>
+          <tr>
+            <td><b>github-demo</b><span class="idm-prov"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.6 7.6 0 0 1 8 3.85c.68.003 1.36.092 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub MCP Server</span></td>
+            <td><span class="idm-badge on">Active</span></td>
+            <td>Nov 23, 2026, 3:43 PM</td>
+            <td class="idm-kebab" aria-hidden="true">⋮</td>
+          </tr>
+        </tbody></table>
+        <div class="idm-foot"><span class="idm-pg"><span>‹</span><span>›</span></span><span>50 items per page ▾</span></div>
+      </div>
+    </div>
+
+    <div class="idm-pair">
+      <div class="idm-card"><span class="idm-n">05</span><b>Metadata</b><span>environment · team 같은 커스텀 키 · 값입니다. 게이트웨이 정책 조건과 비용 · 사용량 귀속에 그대로 실을 수 있습니다.</span></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-sec">
+        <div class="idm-sh"><div><b>Metadata</b><em>Custom key-value data for this identity.</em></div></div>
+        <div class="idm-meta">
+          <input type="text" value="environment" readonly aria-label="metadata key">
+          <select aria-label="value type"><option>String</option></select>
+          <input type="text" value="production" readonly aria-label="metadata value">
+          <button type="button" class="idm-add">+ Add metadata</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="idm-pair">
+      <div class="idm-card"><span class="idm-n">06</span><b>About</b><span>Directory에 기록된 신원 속성입니다. ID · Status · Kind · Email · External ID · Provisioned by와 생성 · 수정 시각으로 출처와 상태를 확인합니다.</span></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-sec">
+        <div class="idm-sh"><div><b>About this user</b></div></div>
+        <dl class="idm-about">
+          <dt>ID</dt><dd>36a1ac3a-3912-462b-8dbc-59f086e4e3e8</dd>
+          <dt>Status</dt><dd><span class="idm-badge on">Active</span></dd>
+          <dt>Kind</dt><dd><span class="idm-badge kind">User</span></dd>
+          <dt>Email</dt><dd>tomas.berg@example.com</dd>
+          <dt>External ID</dt><dd>D003</dd>
+          <dt>Provisioned by</dt><dd>Imported</dd>
+          <dt>Created</dt><dd>Nov 8, 2023 12:44 PM</dd>
+          <dt>Last modified</dt><dd>Nov 8, 2023 12:44 PM</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="idm-pair">
+      <div class="idm-card"><span class="idm-n">07</span><b>Spend limit</b><span>이 Principal과 소속 그룹 · 팀에 걸린 한도 중 가장 낮은 값이 적용됩니다. 예산 초과를 막는 상한선입니다.</span></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-sec">
+        <div class="idm-sh"><div><b>Spend limit</b><em>The lowest limit from this user, its groups and teams applies.</em></div><span class="idm-act">+ Set spend limit</span></div>
+        <div class="idm-empty"><i>$</i><span>No spend limit is set.</span></div>
+      </div>
+    </div>
+  </div>
   </div>
 </section>
 

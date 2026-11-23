@@ -6489,5 +6489,13 @@
   "m.f5f3a2be85ce": "Gateway エッジ",
   "m.833c189f2479": "署名検証は Data Plane の JWKS キャッシュで完了します。ホットパスで IdP 往復はありません。",
   "m.4e45557d1a41": "SSO の代替ではない",
-  "m.0f505665e21b": "社員ログイン IdP は置き換えません。API トークン · Portal アプリ · M2M 層を追加します。"
+  "m.0f505665e21b": "社員ログイン IdP は置き換えません。API トークン · Portal アプリ · M2M 層を追加します。",
+  "m.5f571b466bb8": "この Principal と所属グループ · チームに設定された上限のうち最も低い値が適用されます。予算超過を防ぐ上限です。",
+  "m.92279ffbf165": "environment · team のようなカスタム キー · 値です。ゲートウェイ ポリシー条件とコスト · 使用量の帰属にそのまま載せられます。",
+  "m.24adde824ffc": "この Principal が直接またはグループ経由で到達できるリソース一覧です。Access rules が揃うとモデル · MCP · API 範囲がここに埋まります。",
+  "m.8029f21acfe5": "直接所属するチーム · グループ一覧です。権限 · アクセス · Spend limit をグループに置くと所属 Principal に継承されます。Add to groups でメンバーシップを付け外しします。",
+  "m.00a270548eec": "Directory で Principal を開くと、グループ · キー · アクセス · 資格情報 · メタデータ · 身元属性がひとつの画面に集まります。左の説明と右の Konnect 画面領域を対応させて見ます。",
+  "m.b2620d7ed630": "Directory に記録された身元属性です。ID · Status · Kind · Email · External ID · Provisioned by と作成 · 更新時刻で出所と状態を確認します。",
+  "m.2cd482bd6782": "Kong を呼び出すときに使う仮想キーです。Name · Expires · Created で寿命を管理し、Access rules がキーの到達範囲を決めます。+ New key で発行します。",
+  "m.012f989cb066": "Token Vault がこの身元の代わりに保管 · 注入するリモート資格情報です。Enrollment を終えると Provider · Status · Enrolled 行ができます。例: github-demo → GitHub MCP Server。"
 }

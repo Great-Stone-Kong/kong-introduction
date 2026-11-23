@@ -6489,5 +6489,13 @@
   "m.f5f3a2be85ce": "Gateway 엣지",
   "m.833c189f2479": "서명 검증은 Data Plane JWKS 캐시에서 끝납니다. 핫 패스에서 IdP 왕복이 없습니다.",
   "m.4e45557d1a41": "SSO 대체 아님",
-  "m.0f505665e21b": "직원 로그인 IdP를 바꾸지 않습니다. API 토큰 · Portal 앱 · M2M 계층을 추가합니다."
+  "m.0f505665e21b": "직원 로그인 IdP를 바꾸지 않습니다. API 토큰 · Portal 앱 · M2M 계층을 추가합니다.",
+  "m.5f571b466bb8": "이 Principal과 소속 그룹 · 팀에 걸린 한도 중 가장 낮은 값이 적용됩니다. 예산 초과를 막는 상한선입니다.",
+  "m.92279ffbf165": "environment · team 같은 커스텀 키 · 값입니다. 게이트웨이 정책 조건과 비용 · 사용량 귀속에 그대로 실을 수 있습니다.",
+  "m.24adde824ffc": "이 Principal이 직접 또는 그룹을 통해 도달할 수 있는 자원 목록입니다. Access rules가 준비되면 모델 · MCP · API 범위가 여기에 채워집니다.",
+  "m.8029f21acfe5": "직접 소속된 팀 · 그룹 목록입니다. 권한 · 접근 · Spend limit을 그룹에 두면 소속 Principal에 상속됩니다. Add to groups로 멤버십을 붙이거나 뗍니다.",
+  "m.00a270548eec": "Directory에서 Principal을 열면 그룹 · 키 · 접근 · 자격 증명 · 메타데이터 · 신원 속성이 한 화면에 모입니다. 왼쪽 설명과 오른쪽 Konnect 화면 영역을 대응해 봅니다.",
+  "m.b2620d7ed630": "Directory에 기록된 신원 속성입니다. ID · Status · Kind · Email · External ID · Provisioned by와 생성 · 수정 시각으로 출처와 상태를 확인합니다.",
+  "m.2cd482bd6782": "Kong을 호출할 때 쓰는 가상 키입니다. Name · Expires · Created로 수명을 관리하고, Access rules가 키가 닿을 수 있는 범위를 정합니다. + New key로 발급합니다.",
+  "m.012f989cb066": "Token Vault가 이 신원 대신 보관 · 주입하는 원격 자격 증명입니다. Enrollment를 마치면 Provider · Status · Enrolled 행이 생깁니다. 예: github-demo → GitHub MCP Server."
 }

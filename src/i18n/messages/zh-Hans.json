@@ -6489,5 +6489,13 @@
   "m.f5f3a2be85ce": "Gateway 边缘",
   "m.833c189f2479": "签名验证在 Data Plane 的 JWKS 缓存完成。热路径没有 IdP 往返。",
   "m.4e45557d1a41": "不是 SSO 替代方案",
-  "m.0f505665e21b": "不取代员工登录 IdP。而是新增 API 令牌 · Portal 应用 · M2M 层。"
+  "m.0f505665e21b": "不取代员工登录 IdP。而是新增 API 令牌 · Portal 应用 · M2M 层。",
+  "m.5f571b466bb8": "套用此 Principal 与其组 · 团队中最低的额度。这是防止预算超支的上限。",
+  "m.92279ffbf165": "environment · team 等自定义键值。可直接用于网关策略条件与成本 · 用量归属。",
+  "m.24adde824ffc": "此 Principal 可直接或通过组到达的资源列表。Access rules 就绪后，模型 · MCP · API 范围会填入这里。",
+  "m.8029f21acfe5": "直接所属的团队 · 组列表。把权限 · 访问 · Spend limit 设在组上会继承给所属 Principal。用 Add to groups 附加或移除成员资格。",
+  "m.00a270548eec": "在 Directory 打开 Principal 时，组 · 密钥 · 访问 · 凭证 · 元数据 · 身份属性会集中在同一画面。将左侧说明与右侧 Konnect 画面区域对应查看。",
+  "m.b2620d7ed630": "记录在 Directory 的身份属性。以 ID · Status · Kind · Email · External ID · Provisioned by 与创建 · 修改时间确认来源与状态。",
+  "m.2cd482bd6782": "调用 Kong 时使用的虚拟密钥。以 Name · Expires · Created 管理期限，Access rules 决定密钥可到达的范围。用 + New key 签发。",
+  "m.012f989cb066": "Token Vault 代此身份保管 · 注入的远程凭证。完成 Enrollment 后会出现 Provider · Status · Enrolled 行。例：github-demo → GitHub MCP Server。"
 }
