@@ -6464,7 +6464,7 @@
   "m.cf6f9d637665": "直接所属的组 · 团队。以组为单位汇总权限与额度。",
   "m.b94efc65c358": "调用 Kong 时使用的密钥。访问规则决定密钥可到达的范围。",
   "m.312fa41b7f4e": "直接或通过组可到达的资源列表。Access rules 会显示在这里。",
-  "m.07b71603fab0": "Token Vault 代此身份保管 · 使用的远程凭证。",
+  "m.07b71603fab0": "Token Vault 代此身份保管 · 使用的远程凭证。Enrollment 后会以行显示 Provider · Status · Enrolled。",
   "m.cc5a30203e76": "环境 · 团队等自定义键值。用于策略与归属。",
   "m.29456097d317": "ID · Status · Kind · Email · External ID · 创建 · 修改时间等身份属性。",
   "m.98e0f8d8fe51": "套用此 Principal 与其组 · 团队中最低的额度。",

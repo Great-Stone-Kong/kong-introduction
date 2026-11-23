@@ -6464,7 +6464,7 @@
   "m.cf6f9d637665": "Groups and teams it belongs to directly. Bundle permissions and limits by group.",
   "m.b94efc65c358": "Keys used to call Kong. Access rules determine what a key can reach.",
   "m.312fa41b7f4e": "Everything it can reach directly or through a group. Access rules appear here.",
-  "m.07b71603fab0": "Remote credentials that Token Vault holds and uses on behalf of this identity.",
+  "m.07b71603fab0": "Remote credentials that Token Vault holds and uses on behalf of this identity. After enrollment, Provider, Status, and Enrolled appear as rows.",
   "m.cc5a30203e76": "Custom key-value pairs such as environment and team. Used for policy and attribution.",
   "m.29456097d317": "Identity attributes such as ID, status, kind, email, external ID, and created or modified times.",
   "m.98e0f8d8fe51": "The lowest limit among this Principal and its groups or teams applies.",

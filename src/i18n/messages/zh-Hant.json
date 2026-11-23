@@ -6464,7 +6464,7 @@
   "m.cf6f9d637665": "直接所屬的群組 · 團隊。以群組單位彙總權限與額度。",
   "m.b94efc65c358": "呼叫 Kong 時使用的金鑰。存取規則決定金鑰可到達的範圍。",
   "m.312fa41b7f4e": "直接或透過群組可到達的資源清單。Access rules 會顯示在這裡。",
-  "m.07b71603fab0": "Token Vault 代此身分保管 · 使用的遠端憑證。",
+  "m.07b71603fab0": "Token Vault 代此身分保管 · 使用的遠端憑證。Enrollment 後會以列顯示 Provider · Status · Enrolled。",
   "m.cc5a30203e76": "環境 · 團隊等自訂鍵值。用於政策與歸屬。",
   "m.29456097d317": "ID · Status · Kind · Email · External ID · 建立 · 修改時間等身分屬性。",
   "m.98e0f8d8fe51": "套用此 Principal 與其群組 · 團隊中最低的額度。",

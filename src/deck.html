@@ -899,6 +899,12 @@ html[data-edition="enterprise"] #p-aimgmt > .sec[data-avail]{display:none!import
 #p-idm .idm-badge{display:inline-block;font:700 10.5px var(--font);border-radius:999px;padding:2px 8px;border:1px solid var(--line2)}
 #p-idm .idm-badge.on{background:color-mix(in srgb,var(--diag-sky) 18%,transparent);border-color:color-mix(in srgb,var(--diag-sky) 55%,var(--line));color:var(--diag-sky-fg2,#5CC8FF)}
 #p-idm .idm-badge.kind{background:var(--svg-well);color:var(--g300)}
+#p-idm .idm-prov{display:inline-flex;align-items:center;gap:6px;margin-left:8px;font:600 11px var(--font);color:var(--g300);background:var(--svg-well);border:1px solid var(--line2);border-radius:999px;padding:2px 8px 2px 6px;vertical-align:middle}
+#p-idm .idm-prov svg{width:12px;height:12px;flex:none}
+#p-idm .idm-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px;padding-top:6px;font-size:11.5px;color:var(--g400)}
+#p-idm .idm-foot .idm-pg{display:inline-flex;gap:4px}
+#p-idm .idm-foot .idm-pg span{width:22px;height:22px;border:1px solid var(--line2);border-radius:6px;display:grid;place-items:center;background:var(--svg-well)}
+#p-idm .idm-kebab{color:var(--g400);font-weight:800;letter-spacing:.05em;padding:0 4px}
 #p-idm .idm-meta{display:grid;grid-template-columns:1fr 90px 1fr auto;gap:6px;align-items:center;margin-top:6px}
 #p-idm .idm-meta input,#p-idm .idm-meta select{width:100%;border:1px solid var(--line2);border-radius:7px;background:var(--svg-well);color:var(--g300);padding:6px 8px;font:500 11.5px var(--font)}
 #p-idm .idm-meta .idm-add{font:700 11.5px var(--font);color:var(--mark);background:none;border:0;padding:0;text-align:left}
@@ -8724,7 +8730,7 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
       <li><b>Groups</b><span>직접 소속된 그룹 · 팀입니다. 권한과 한도를 그룹 단위로 묶습니다.</span></li>
       <li><b>Virtual keys</b><span>Kong을 호출할 때 쓰는 키입니다. 접근 규칙이 키의 도달 범위를 정합니다.</span></li>
       <li><b>Access</b><span>직접 또는 그룹을 통해 도달할 수 있는 자원 목록입니다. Access rules가 여기에 표시됩니다.</span></li>
-      <li><b>Remote credentials</b><span>Token Vault가 이 신원 대신 보관 · 사용하는 원격 자격 증명입니다.</span></li>
+      <li><b>Remote credentials</b><span>Token Vault가 이 신원 대신 보관 · 사용하는 원격 자격 증명입니다. Enrollment 후 Provider · Status · Enrolled가 행으로 나타납니다.</span></li>
       <li><b>Metadata</b><span>환경 · 팀 등 커스텀 키 · 값입니다. 정책과 귀속에 씁니다.</span></li>
       <li><b>About</b><span>ID · Status · Kind · Email · External ID · 생성 · 수정 시각 등 신원 속성입니다.</span></li>
       <li><b>Spend limit</b><span>이 Principal과 소속 그룹 · 팀 중 가장 낮은 한도가 적용됩니다.</span></li>
@@ -8753,8 +8759,16 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
         </div>
 
         <div class="idm-sec">
-          <div class="idm-sh"><div><b>Remote credentials</b><em>Credentials that Token Vault holds for this identity.</em></div></div>
-          <div class="idm-empty"><i>↔</i><span>No credentials enrolled yet. Token Vault 등록이 끝나면 여기에 나타납니다.</span></div>
+          <div class="idm-sh"><div><b>Remote credentials</b><em>Credentials that Token Vault holds for this identity and uses on its behalf.</em></div></div>
+          <table class="idm-tbl"><thead><tr><th>Provider</th><th>Status</th><th>Enrolled</th><th></th></tr></thead><tbody>
+            <tr>
+              <td><b>github-demo</b><span class="idm-prov"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.6 7.6 0 0 1 8 3.85c.68.003 1.36.092 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub MCP Server</span></td>
+              <td><span class="idm-badge on">Active</span></td>
+              <td>Nov 23, 2026, 3:43 PM</td>
+              <td class="idm-kebab" aria-hidden="true">⋮</td>
+            </tr>
+          </tbody></table>
+          <div class="idm-foot"><span class="idm-pg"><span>‹</span><span>›</span></span><span>50 items per page ▾</span></div>
         </div>
 
         <div class="idm-sec">
