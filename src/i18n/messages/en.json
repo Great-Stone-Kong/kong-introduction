@@ -6608,5 +6608,17 @@
   "m.6afb0a5c4bcb": "You can use both, but they do not sync to each other automatically.",
   "m.aeaf1808cc31": "Remove trust · delete",
   "m.9234562f5762": "Turning off Vault trust only stops credential release. Deleting the IdP from the list means tokens from that issuer can no longer be verified.",
-  "m.868893699cce": "Choose based on whether you only want to stop release, or remove verification entirely."
+  "m.868893699cce": "Choose based on whether you only want to stop release, or remove verification entirely.",
+  "m.1c4322fdef6c": "01 Register → 02 Sign-in → 03 Verify → 04 Users · Vault",
+  "m.487a694ebbdc": "Four steps: register IdP, sign in, present token and verify against the registered entry, then Users and Token Vault",
+  "m.a8e388ae050d": "Add to IdP list",
+  "m.891c312647bb": "Issue login token",
+  "m.b70f0b81347a": "Present the token to Access Management",
+  "m.dfa03fed3344": "Check against registered IdP",
+  "m.e985bbbb26e9": "Issuer · signature match",
+  "m.c12fa4d9bed3": "Against the list entry from step 01",
+  "m.df1cf033754e": "Created when auto-provisioning is on",
+  "m.11b95135b954": "Release credentials if Trusted IdP",
+  "m.1689177cf738": "First register the IdP in the list. When the caller presents the IdP token to Access Management, Konnect checks the signature against the registered issuer.",
+  "m.de850e77b2b5": "After the check, automatic provisioning can create a User, and if it is a Trusted IdP, Token Vault releases remote credentials."
 }

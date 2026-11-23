@@ -6608,5 +6608,17 @@
   "m.6afb0a5c4bcb": "兩者可並用，但不會自動對齊。",
   "m.aeaf1808cc31": "解除信任 · 刪除",
   "m.9234562f5762": "只關閉 Vault 信任時，只會停止憑證釋出。從清單刪除 IdP 後，就無法再用該 Issuer 驗證權杖。",
-  "m.868893699cce": "依只要擋釋出、還是連驗證都拿掉來選擇。"
+  "m.868893699cce": "依只要擋釋出、還是連驗證都拿掉來選擇。",
+  "m.1c4322fdef6c": "01 註冊 → 02 登入 → 03 驗證 → 04 Users · Vault",
+  "m.487a694ebbdc": "註冊 IdP 後，登入 · 出示權杖 · 依註冊項目驗證 · 再到 Users 與 Token Vault 的四步驟",
+  "m.a8e388ae050d": "加到 IdP 清單",
+  "m.891c312647bb": "簽發登入權杖",
+  "m.b70f0b81347a": "把權杖交給 Access Management",
+  "m.dfa03fed3344": "以已註冊 IdP 確認",
+  "m.e985bbbb26e9": "Issuer · 簽名比對",
+  "m.c12fa4d9bed3": "依 01 加入的清單項目",
+  "m.df1cf033754e": "開啟自動佈建時建立",
+  "m.11b95135b954": "Trusted IdP 時釋出憑證",
+  "m.1689177cf738": "先把 IdP 註冊進清單。Caller 把從 IdP 取得的權杖交給 Access Management 後，以已註冊 Issuer 核對簽名。",
+  "m.de850e77b2b5": "確認後可用自動佈建建立 User；若為 Trusted IdP，Token Vault 會釋出遠端憑證。"
 }
