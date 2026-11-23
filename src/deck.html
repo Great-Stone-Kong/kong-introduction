@@ -9216,7 +9216,7 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
   </svg></div>
 
   <div class="idm-diff">
-    <div class="card"><span class="tag">중앙 보관</span><h3>Agent에 두지 않음</h3><p>GitHub · Slack · Snowflake · 모델 키를 Agent 코드 · 프롬프트 · 런타임에 심지 않습니다. 고객이 등록한 vault key로 암호화하고, 개인키는 AI Gateway에만 있어 Kong도 복호화할 수 없습니다.</p></div>
+    <div class="card"><span class="tag">중앙 보관</span><h3>시크릿 제로</h3><p>GitHub · Slack · Snowflake · 모델 키를 Agent 코드 · 프롬프트 · 런타임에 심지 않습니다. 고객이 등록한 vault key로 암호화하고, 개인키는 AI Gateway에만 있어 Kong도 복호화할 수 없습니다.</p></div>
     <div class="card"><span class="tag">런타임 중개</span><h3>호출 순간 주입</h3><p>AI Gateway만 Vault에서 자격 증명을 받아 outbound 요청에 붙입니다. Agent · MCP client는 Vault를 직접 호출하지 않습니다.</p></div>
     <div class="card"><span class="tag">피해 반경</span><h3>회수 · 교체 중앙화</h3><p>Agent가 침해돼도 원본 자격 증명은 Gateway 뒤에 남습니다. Identity · Policy로 차단하고, Credential Provider · Principal 단위로 회수합니다.</p></div>
   </div>

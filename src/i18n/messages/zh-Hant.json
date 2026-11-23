@@ -6927,5 +6927,6 @@
   "m.0799bf79b7d6": "在 Directory 中啟用 Vault 並註冊受信任 IdP(issuer)。只有開啟 IdP 的 vault_access_enabled,Vault 才接受其權杖。",
   "m.ccb8ef761417": "將 AI MCP Server 的 upstream 驗證設為 token_vault,並選擇 Directory 與 Provider。之後的呼叫由 Gateway 注入。",
   "m.e8f5259c0ec3": "Vault 會在 OAuth 權杖到期前自動 refresh。在 AI MCP Server 中,未登記的呼叫方看到的是 authenticate · check_authentication_status 虛擬工具,而非真實工具。",
-  "m.734b2998a847": "不把 GitHub · Slack · Snowflake · 模型金鑰放進 Agent 程式碼 · 提示詞 · 執行環境。使用客戶註冊的 vault key 加密,私鑰只在 AI Gateway 上,Kong 也無法解密。"
+  "m.734b2998a847": "不把 GitHub · Slack · Snowflake · 模型金鑰放進 Agent 程式碼 · 提示詞 · 執行環境。使用客戶註冊的 vault key 加密,私鑰只在 AI Gateway 上,Kong 也無法解密。",
+  "m.cc0e46d032af": "零金鑰"
 }

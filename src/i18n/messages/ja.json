@@ -6927,5 +6927,6 @@
   "m.0799bf79b7d6": "Directory で Vault を有効にし、信頼する IdP(issuer)を登録します。IdP の vault_access_enabled を有効にすると、Vault がそのトークンを受け付けます。",
   "m.ccb8ef761417": "AI MCP Server の upstream 認証を token_vault にし、Directory と Provider を選びます。以降の呼び出しでは Gateway が注入します。",
   "m.e8f5259c0ec3": "Vault は OAuth トークンを期限切れ前に自動で refresh します。AI MCP Server では、未登録の呼び出し元には実際のツールの代わりに authenticate · check_authentication_status の仮想ツールが表示されます。",
-  "m.734b2998a847": "GitHub · Slack · Snowflake · モデルのキーを Agent のコード · プロンプト · ランタイムに埋め込みません。お客様が登録した vault key で暗号化し、秘密鍵は AI Gateway にのみ存在するため、Kong も復号できません。"
+  "m.734b2998a847": "GitHub · Slack · Snowflake · モデルのキーを Agent のコード · プロンプト · ランタイムに埋め込みません。お客様が登録した vault key で暗号化し、秘密鍵は AI Gateway にのみ存在するため、Kong も復号できません。",
+  "m.cc0e46d032af": "シークレットゼロ"
 }

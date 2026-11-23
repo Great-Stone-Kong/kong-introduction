@@ -6927,5 +6927,6 @@
   "m.0799bf79b7d6": "Enable the Vault on the Directory and register a trusted IdP (issuer). The Vault accepts that IdP's tokens only when vault_access_enabled is on.",
   "m.ccb8ef761417": "Set the AI MCP Server upstream auth to token_vault and pick the Directory and Provider. From then on the Gateway injects credentials.",
   "m.e8f5259c0ec3": "The Vault refreshes OAuth tokens automatically before they expire. On an AI MCP Server, unenrolled callers see virtual authenticate · check_authentication_status tools instead of the real ones.",
-  "m.734b2998a847": "GitHub, Slack, Snowflake, and model keys stay out of agent code, prompts, and runtimes. They are encrypted with a vault key you register; the private key lives only on AI Gateway, so even Kong cannot decrypt them."
+  "m.734b2998a847": "GitHub, Slack, Snowflake, and model keys stay out of agent code, prompts, and runtimes. They are encrypted with a vault key you register; the private key lives only on AI Gateway, so even Kong cannot decrypt them.",
+  "m.cc0e46d032af": "Zero secrets"
 }

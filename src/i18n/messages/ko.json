@@ -6927,5 +6927,6 @@
   "m.0799bf79b7d6": "Directory에서 Vault를 켜고 신뢰 IdP(issuer)를 등록합니다. IdP의 vault_access_enabled를 켜야 Vault가 그 토큰을 받습니다.",
   "m.ccb8ef761417": "AI MCP Server의 upstream 인증을 token_vault로 두고 Directory · Provider를 고릅니다. 이후 호출은 Gateway가 주입합니다.",
   "m.e8f5259c0ec3": "Vault는 OAuth 토큰을 만료 전에 자동 refresh합니다. AI MCP Server에서는 미등록 호출자에게 실제 도구 대신 authenticate · check_authentication_status 가상 도구가 보입니다.",
-  "m.734b2998a847": "GitHub · Slack · Snowflake · 모델 키를 Agent 코드 · 프롬프트 · 런타임에 심지 않습니다. 고객이 등록한 vault key로 암호화하고, 개인키는 AI Gateway에만 있어 Kong도 복호화할 수 없습니다."
+  "m.734b2998a847": "GitHub · Slack · Snowflake · 모델 키를 Agent 코드 · 프롬프트 · 런타임에 심지 않습니다. 고객이 등록한 vault key로 암호화하고, 개인키는 AI Gateway에만 있어 Kong도 복호화할 수 없습니다.",
+  "m.cc0e46d032af": "시크릿 제로"
 }

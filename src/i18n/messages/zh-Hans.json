@@ -6927,5 +6927,6 @@
   "m.0799bf79b7d6": "在 Directory 中启用 Vault 并注册受信任 IdP(issuer)。只有开启 IdP 的 vault_access_enabled,Vault 才接受其令牌。",
   "m.ccb8ef761417": "将 AI MCP Server 的 upstream 认证设为 token_vault,并选择 Directory 与 Provider。之后的调用由 Gateway 注入。",
   "m.e8f5259c0ec3": "Vault 会在 OAuth 令牌过期前自动 refresh。在 AI MCP Server 中,未登记的调用方看到的是 authenticate · check_authentication_status 虚拟工具,而非真实工具。",
-  "m.734b2998a847": "不把 GitHub · Slack · Snowflake · 模型密钥放进 Agent 代码 · 提示词 · 运行时。使用客户注册的 vault key 加密,私钥只在 AI Gateway 上,Kong 也无法解密。"
+  "m.734b2998a847": "不把 GitHub · Slack · Snowflake · 模型密钥放进 Agent 代码 · 提示词 · 运行时。使用客户注册的 vault key 加密,私钥只在 AI Gateway 上,Kong 也无法解密。",
+  "m.cc0e46d032af": "零密钥"
 }
