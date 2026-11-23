@@ -14,6 +14,7 @@
 ### 변경
 
 - Identity · Virtual Keys · Token Vault: 「원본 키 방출」 등 표현을 「원본 자격 증명 주입」으로 통일
+- Access Management: 개요 활용 흐름을 모델 호출·MCP 호출 두 경로로 분리, IdP 검증 주체를 AI Gateway(JWKS)로 정정, Virtual Keys 도식을 AI Vault 조회 구조로 수정, Users·Groups 목업 정리
 
 ## 2026.11.21.6b016c03
 

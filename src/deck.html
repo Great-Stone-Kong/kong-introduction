@@ -946,10 +946,10 @@ html[data-edition="enterprise"] #p-aimgmt > .sec[data-avail]{display:none!import
 #p-idm .idm-disc .idm-tg:last-child{border-bottom:0;padding-bottom:4px}
 #p-idm .idm-disc .idm-tg-h{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px 4px;font-size:12.5px;color:var(--heading);font-weight:700}
 #p-idm .idm-disc .idm-tg-h .idm-sel{font:700 11px var(--font);color:var(--heading);flex:none;background:none;border:0;padding:0;cursor:pointer}
-#p-idm .idm-disc .idm-tg-h span{color:var(--g300);font-weight:600}
+#p-idm .idm-disc .idm-tg-h span{color:var(--g300);font-weight:600;margin-right:auto}
 #p-idm .idm-disc ul{list-style:none;margin:0;padding:0 10px 2px}
-#p-idm .idm-disc ul li{padding:4px 0;font-size:12px;color:var(--g300);font-family:var(--mono)}
-#p-idm .idm-disc ul li.svc{color:var(--g400)}
+#p-idm .idm-disc ul li{padding:4px 0;font-size:12px;color:var(--g300)}
+#p-idm .idm-disc ul li.svc{color:var(--g400);font-family:var(--mono)}
 #p-idm .idm-aimap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 8px}
 #p-idm .idm-aimap .card{padding:14px 16px}
 #p-idm .idm-aimap h3{font-size:14.5px;margin:0 0 6px}
@@ -8649,7 +8649,7 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
   <p class="lead" data-show-rail="ai">누가 모델 · MCP를 호출하는지, 무엇을 할 수 있는지, 어떤 한도가 걸리는지, 조직이 어떻게 나뉘는지를 Access Management에서 정의합니다. 규칙은 사용자 단위 또는 Groups로 일괄 적용합니다.</p>
   <p class="lead" data-show-rail="api">앱 · 서비스 · 사용자 · 워크로드를 Gateway마다 Consumer로 복제하지 않고, Principal 한 번으로 API Gateway · Event Gateway · Dev Portal에 공유합니다. 인증 방식과 메타데이터를 Identity에서 중앙 관리합니다.</p>
 
-  <div class="callout" data-show-rail="ai"><b>호출자 · 규칙 · 자격 증명.</b> Users · Groups로 주체와 규칙을 잡고, Identity Providers로 로그인 토큰을 검증하며, Token Vault · Virtual Keys로 제공자 키를 숨긴 채 Gateway를 호출합니다.</div>
+  <div class="callout" data-show-rail="ai"><b>호출자 · 규칙 · 자격 증명.</b> Users와 Groups로 주체와 규칙을 정하고, Identity Providers로 로그인 토큰을 검증합니다. 원본 자격 증명은 Vault에 두고, 호출자에게는 Virtual Key만 줍니다.</div>
 
   <div class="dia idm-dia rv" data-show-rail="ai"><svg viewBox="0 0 960 380" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="AI Access Management가 Users · Groups · IdP · Token Vault · Virtual Keys로 모델과 MCP 호출을 통제하는 구조">
     <text x="480" y="26" text-anchor="middle" font-size="14" font-weight="800" fill="var(--heading)">AI Access Management · who · what · limits · org</text>
@@ -8667,7 +8667,7 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
     <rect x="280" y="148" width="120" height="40" rx="9" fill="var(--svg-chip)" stroke="var(--mark)"/><text x="340" y="173" text-anchor="middle" font-size="12" font-weight="800" fill="var(--mark)">Groups</text>
     <rect x="420" y="148" width="120" height="40" rx="9" fill="var(--svg-chip)" stroke="var(--mark)"/><text x="480" y="173" text-anchor="middle" font-size="12" font-weight="800" fill="var(--mark)">IdP</text>
     <rect x="560" y="148" width="120" height="40" rx="9" fill="var(--svg-chip)" stroke="var(--mark)"/><text x="620" y="173" text-anchor="middle" font-size="12" font-weight="800" fill="var(--mark)">Token Vault</text>
-    <rect x="350" y="198" width="180" height="36" rx="9" fill="var(--lime)"/><text x="440" y="221" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--on-lime)">Virtual Keys</text>
+    <rect x="390" y="198" width="180" height="36" rx="9" fill="var(--lime)"/><text x="480" y="221" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--on-lime)">Virtual Keys</text>
 
     <rect x="760" y="56" width="170" height="120" rx="12" fill="var(--diag-zone2)" stroke="var(--g600)"/>
     <text x="845" y="82" text-anchor="middle" font-size="11" font-weight="800" fill="var(--svg-muted)">RESOURCES</text>
@@ -8681,8 +8681,10 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
 
     <rect x="30" y="280" width="900" height="78" rx="12" fill="var(--diag-zone2)" stroke="var(--g600)"/>
     <text x="50" y="308" font-size="12" font-weight="800" fill="var(--heading)">활용 흐름</text>
-    <text x="50" y="330" font-size="12" fill="var(--g300)">① IdP로 로그인 · 자동 프로비저닝  →  ② Groups · Spend limit으로 규칙 적용  →  ③ Virtual Key로 Gateway 호출  →  ④ Token Vault가 제공자 자격 증명 주입</text>
-    <text x="50" y="348" font-size="11.5" fill="var(--svg-muted)">Teams는 Org Chart CSV로만 갱신 · Groups는 관리자가 수동으로 규칙을 묶습니다.</text>
+    <text x="50" y="330" font-size="12" font-weight="800" fill="var(--mark)">모델 호출</text>
+    <text x="180" y="330" font-size="12" fill="var(--g300)">Virtual Key 제시  →  holder의 Groups · Spend limit 적용  →  Vault의 원본 키로 모델 호출</text>
+    <text x="50" y="350" font-size="12" font-weight="800" fill="var(--mark)">MCP · SaaS 호출</text>
+    <text x="180" y="350" font-size="12" fill="var(--g300)">IdP 토큰 제시  →  신뢰 IdP로 검증  →  Token Vault의 사용자별 자격 증명 주입</text>
 
     <circle r="3.4" fill="var(--lime)" opacity="0"><set attributeName="opacity" to="1" begin="0s"/><animateMotion dur="2s" begin="0s" repeatCount="indefinite" path="M200 116H260"/></circle>
     <circle r="3.4" fill="var(--lime)" opacity="0"><set attributeName="opacity" to="1" begin="0.4s"/><animateMotion dur="2s" begin="0.4s" repeatCount="indefinite" path="M200 149H260"/></circle>
@@ -8692,11 +8694,11 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
 
   <div class="idm-aimap" data-show-rail="ai">
     <div class="card"><span class="tag">01</span><h3>Users</h3><p>모델 · MCP를 쓰는 사람입니다. 수동 생성 · Org Chart CSV · IdP 자동 프로비저닝으로 들어옵니다.</p><span class="use"><u>활용</u>상세에서 Groups · Virtual Keys · Remote credentials · Spend limit을 한 화면에서 봅니다.</span></div>
-    <div class="card"><span class="tag">02</span><h3>Agents <em class="amk-soon">예정</em></h3><p>자동화 · 에이전트 호출 주체입니다. 아직 출시 전이며, Users와 같은 Directory 신원 계층으로 귀속 · 한도를 걸 예정입니다.</p><span class="use"><u>활용(예정)</u>에이전트별 키 · 메타데이터로 비용과 감사를 분리합니다.</span></div>
+    <div class="card"><span class="tag">02</span><h3>Agents <em class="amk-soon">예정</em></h3><p>자동화 · 에이전트 호출 주체입니다. 아직 출시 전이며, Users와 같은 Directory 신원으로 비용 귀속과 한도를 적용할 예정입니다.</p><span class="use"><u>활용(예정)</u>에이전트별 키 · 메타데이터로 비용과 감사를 분리합니다.</span></div>
     <div class="card"><span class="tag">03</span><h3>Groups</h3><p>같은 규칙을 공유하는 사용자 목록입니다. 관리자가 만들고, 그룹에 Spend limit 등을 한 번 붙입니다.</p><span class="use"><u>활용</u>Teams(조직도)와 달리 규칙 묶음용입니다. 중첩 Groups는 없습니다.</span></div>
-    <div class="card"><span class="tag">04</span><h3>Identity Providers</h3><p>Okta · Auth0처럼 로그인 토큰을 서명하는 외부 IdP입니다. Issuer URL로 신뢰를 등록합니다.</p><span class="use"><u>활용</u>자동 프로비저닝 · Token Vault 신뢰 IdP를 켭니다. Vault는 신뢰 IdP가 최소 1개 필요합니다.</span></div>
-    <div class="card"><span class="tag">05</span><h3>Token Vault</h3><p>서드파티 자격 증명을 Directory에 보관하고, 신뢰 IdP로 확인된 호출 대신 AI Gateway가 런타임에 주입합니다. Agent는 원본 자격 증명을 갖지 않습니다.</p><span class="use"><u>활용</u>Per-user · 공유 OIDC/API key · MCP outbound. Enrollment · 회수 · Secrets Manager와는 역할이 다릅니다.</span></div>
-    <div class="card"><span class="tag">06</span><h3>Virtual Keys</h3><p>호출자가 AI Gateway에 제시하는 API 키입니다. 원본 자격 증명은 Vault에 두고, 개인 키만 배포합니다.</p><span class="use"><u>활용</u>키 발급 · 삭제 · 비용 귀속. Identity Principal 매핑과 Key Auth AI Auth Strategy가 필요합니다.</span></div>
+    <div class="card"><span class="tag">04</span><h3>Identity Providers</h3><p>Okta · Auth0처럼 로그인 토큰을 서명하는 외부 IdP입니다. Issuer URL로 신뢰를 등록합니다.</p><span class="use"><u>활용</u>IdP마다 자동 프로비저닝과 Token Vault 신뢰 여부를 정합니다. Token Vault에는 신뢰 IdP가 최소 1개 필요합니다.</span></div>
+    <div class="card"><span class="tag">05</span><h3>Token Vault</h3><p>서드파티 자격 증명을 Directory에 보관하고, 신뢰 IdP로 확인된 호출 대신 AI Gateway가 런타임에 주입합니다. Agent는 원본 자격 증명을 갖지 않습니다.</p><span class="use"><u>활용</u>사용자별 OAuth, 공유 OAuth, 정적 API key를 MCP 아웃바운드 호출에 씁니다. 범용 시크릿 관리자와 달리 사용자 동의(Enrollment)와 회수까지 다룹니다.</span></div>
+    <div class="card"><span class="tag">06</span><h3>Virtual Keys</h3><p>호출자가 AI Gateway에 제시하는 API 키입니다. 원본 자격 증명은 Vault에 두고, 사람 · 그룹마다 Virtual Key만 나눠 줍니다.</p><span class="use"><u>활용</u>키를 발급 · 삭제하고 비용을 holder에 귀속합니다. 모델 · MCP에 Key Auth 전략을 두고 Principal 매핑을 켜야 합니다.</span></div>
   </div>
 
   <div class="callout" data-show-rail="api"><b>Consumer 대신 Principal.</b> 게이트웨이마다 따로 만들던 인증 주체를 Directory의 Principal로 공통 관리하면, 키 · Basic · OAuth · OIDC가 바뀌어도 같은 신원으로 정책 · 분석 · 감사가 이어집니다.</div>
@@ -8795,18 +8797,18 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
     <path d="M480 190V230" fill="none" stroke="var(--mark)" stroke-opacity=".8" stroke-width="1.8" class="ik-f"/>
 
     <rect x="340" y="230" width="280" height="64" rx="14" fill="var(--lime)" stroke="var(--mark)" stroke-width="1.4"/>
-    <g transform="translate(364 244) scale(.2)" fill="var(--on-lime)"><use href="#kong-mark" width="153" height="137"/></g>
-    <text x="545" y="270" text-anchor="middle" font-size="20" font-weight="900" fill="var(--on-lime)">Principal</text>
+    <g transform="translate(410 248) scale(.2)" fill="var(--on-lime)"><use href="#kong-mark" width="153" height="137"/></g>
+    <text x="452" y="269" font-size="20" font-weight="900" fill="var(--on-lime)">Principal</text>
 
     <rect x="700" y="238" width="160" height="48" rx="10" fill="var(--svg-chip)" stroke="var(--line2)"/>
-    <text x="780" y="258" text-anchor="middle" font-size="12" font-weight="800" fill="var(--svg-fg)">{ } Meta Data</text>
+    <text x="780" y="258" text-anchor="middle" font-size="12" font-weight="800" fill="var(--svg-fg)">{ } Metadata</text>
     <text x="780" y="274" text-anchor="middle" font-size="10.5" fill="var(--svg-muted)">팀 · 환경 · 속성</text>
     <path d="M700 262H620" fill="none" stroke="var(--svg-label)" stroke-opacity=".7" stroke-width="1.5" stroke-dasharray="3 3" class="ik-f"/>
 
     <path d="M480 294V336" fill="none" stroke="var(--mark)" stroke-opacity=".8" stroke-width="1.8" class="ik-f"/>
     <rect x="200" y="336" width="560" height="56" rx="12" fill="var(--navy-2)" stroke="var(--mark)" stroke-opacity=".55"/>
     <text x="480" y="360" text-anchor="middle" font-size="13" font-weight="800" fill="var(--heading)">Cross Control Plane</text>
-    <text x="480" y="378" text-anchor="middle" font-size="11.5" fill="var(--g300)">Principal 기반 · Authentication · Enrichment · Conditional Execution</text>
+    <text x="480" y="378" text-anchor="middle" font-size="11.5" fill="var(--g300)">Principal 기반 인증 · 컨텍스트 보강 · 조건부 실행</text>
 
     <circle r="3.5" fill="var(--lime)" opacity="0"><set attributeName="opacity" to="1" begin="0s"/><animateMotion dur="1.8s" begin="0s" repeatCount="indefinite" path="M130 144V190H480"/></circle>
     <circle r="3.5" fill="var(--lime)" opacity="0"><set attributeName="opacity" to="1" begin="0.3s"/><animateMotion dur="1.6s" begin="0.3s" repeatCount="indefinite" path="M362 144V190H480"/></circle>
@@ -8815,7 +8817,8 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
     <circle r="3.2" fill="var(--diag-sky-fill)" opacity="0"><set attributeName="opacity" to="1" begin="0.5s"/><animateMotion dur="1.6s" begin="0.5s" repeatCount="indefinite" path="M780 262H620"/></circle>
     <circle r="3.8" fill="var(--mark)" opacity="0"><set attributeName="opacity" to="1" begin="0.3s"/><animateMotion dur="1.5s" begin="0.3s" repeatCount="indefinite" path="M480 294V336"/></circle>
   </svg></div>
-  <p class="note">Gateway · Event · Portal이 같은 Principal을 보면 플러그인 · 분석 · 감사가 제품 경계를 넘어도 이어집니다.</p>
+  <p class="note" data-show-rail="api">Gateway · Event · Portal이 같은 Principal을 보면 플러그인 · 분석 · 감사가 제품 경계를 넘어도 이어집니다.</p>
+  <p class="note" data-show-rail="ai">모델과 MCP 호출이 같은 User로 귀속되어, 비용과 한도, 감사 기록이 한 신원에 모입니다.</p>
 
   <h3 data-show-rail="ai" style="margin-top:28px">User 상세 구성</h3>
   <h3 data-show-rail="api" style="margin-top:28px">Principal 상세 구성</h3>
@@ -8858,7 +8861,7 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
       <div class="idm-wire" aria-hidden="true"><i></i></div>
       <div class="idm-sec">
         <div class="idm-sh"><div><b>Access</b><em>Everything it can reach, directly or through a group.</em></div></div>
-        <div class="idm-empty"><i>□</i><span>Access rules are coming. 규칙이 준비되면 여기에 표시됩니다.</span></div>
+        <div class="idm-empty"><i>□</i><span>Access rules are coming.</span></div>
       </div>
     </div>
 
@@ -8905,8 +8908,8 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
           <dt>Email</dt><dd>tomas.berg@example.com</dd>
           <dt>External ID</dt><dd>D003</dd>
           <dt>Provisioned by</dt><dd>Imported</dd>
-          <dt>Created</dt><dd>Nov 8, 2023 12:44 PM</dd>
-          <dt>Last modified</dt><dd>Nov 8, 2023 12:44 PM</dd>
+          <dt>Created</dt><dd>Nov 8, 2026 12:44 PM</dd>
+          <dt>Last modified</dt><dd>Nov 8, 2026 12:44 PM</dd>
         </dl>
       </div>
     </div>
@@ -8920,6 +8923,7 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
       </div>
     </div>
   </div>
+  <p class="note" data-show-rail="ai">Org Chart로 가져온 User는 이름과 이메일이 읽기 전용이며 삭제할 수 없습니다. 새 파일에서 빠지면 비활성화됩니다. 이력을 남긴 채 로그인만 막으려면 삭제 대신 비활성화합니다. 출처: <a href="https://developer.konghq.com/ai-access-management/concepts" target="_blank" rel="noopener noreferrer">Access management concepts · Users ↗</a></p>
 </section>
 
 <section class="sec" id="idm-agents" data-title="Agents" data-show-rail="ai" data-avail="soon">
@@ -9017,13 +9021,13 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
           <div class="idm-disc" aria-label="member picker">
             <div class="idm-search">⌕ Search users and agents</div>
             <div class="idm-tg">
-              <div class="idm-tg-h">AikoTanaka-E006 · <span>1</span><button type="button" class="idm-sel">Select all</button></div>
+              <div class="idm-tg-h">AikoTanaka-E006 <span>1</span><button type="button" class="idm-sel">Select all</button></div>
               <ul>
                 <li>sam.okafor@example.com</li>
               </ul>
             </div>
             <div class="idm-tg">
-              <div class="idm-tg-h">DanaWhitfield-E001 · <span>9</span><button type="button" class="idm-sel">Select all</button></div>
+              <div class="idm-tg-h">DanaWhitfield-E001 <span>9</span><button type="button" class="idm-sel">Select all</button></div>
               <ul>
                 <li>aiko.tanaka@example.com</li>
                 <li>alan.moreau@example.com</li>
@@ -9031,14 +9035,14 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
               </ul>
             </div>
             <div class="idm-tg">
-              <div class="idm-tg-h">No team · <span>2</span><button type="button" class="idm-sel">Select all</button></div>
+              <div class="idm-tg-h">No team <span>2</span><button type="button" class="idm-sel">Select all</button></div>
               <ul>
                 <li>dana.whitfield@example.com</li>
                 <li class="svc">g54ddnlnpmvkire1</li>
               </ul>
             </div>
           </div>
-          <span class="idm-form-hint"><em class="amk-soon">예정</em> Team 헤더는 Org Chart 소속입니다. No team에는 팀 미배정 User · 시스템 ID가 모입니다. Agents 멤버십은 이후 지원됩니다.</span>
+          <span class="idm-form-hint">Team 헤더는 Org Chart 소속입니다. No team에는 팀 미배정 User · 시스템 ID가 모입니다. Agents 멤버십은 이후 지원됩니다.</span>
         </div>
       </div>
     </div>
@@ -9064,7 +9068,7 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
     <text x="120" y="128" text-anchor="middle" font-size="10.5" fill="var(--svg-muted)">IdP 목록에 추가</text>
     <rect x="40" y="146" width="160" height="36" rx="8" fill="var(--svg-chip)" stroke="var(--mark)"/><text x="120" y="169" text-anchor="middle" font-size="12" font-weight="700" fill="var(--svg-fg)">Name · Issuer URL</text>
     <rect x="40" y="192" width="160" height="28" rx="8" fill="var(--svg-panel)" stroke="var(--line2)"/><text x="120" y="211" text-anchor="middle" font-size="11" fill="var(--svg-muted)">자동 프로비저닝</text>
-    <rect x="40" y="228" width="160" height="28" rx="8" fill="var(--lime)"/><text x="120" y="247" text-anchor="middle" font-size="11" font-weight="800" fill="var(--on-lime)">Vault Trusted</text>
+    <rect x="40" y="228" width="160" height="28" rx="8" fill="var(--svg-panel)" stroke="var(--line2)"/><text x="120" y="247" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Token Vault 신뢰</text>
 
     <!-- arrow 01→02 -->
     <path d="M220 160H248" fill="none" stroke="var(--mark)" stroke-opacity=".75" stroke-width="1.6" stroke-dasharray="4 3" class="ik-f"/>
@@ -9090,11 +9094,11 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
     <rect x="476" y="44" width="220" height="230" rx="14" fill="var(--diag-zone2)" stroke="var(--mark)" stroke-width="1.5"/>
     <rect x="492" y="58" width="56" height="22" rx="11" fill="var(--lime)"/><text x="520" y="73" text-anchor="middle" font-size="11" font-weight="900" fill="var(--on-lime)">03</text>
     <text x="564" y="73" font-size="13" font-weight="800" fill="var(--heading)">검증</text>
-    <text x="586" y="104" text-anchor="middle" font-size="11" fill="var(--svg-muted)">토큰을 Access Management에 제시</text>
-    <rect x="496" y="118" width="180" height="32" rx="8" fill="var(--svg-chip)" stroke="var(--line2)"/><text x="586" y="139" text-anchor="middle" font-size="12" font-weight="700" fill="var(--svg-fg)">토큰 접수</text>
+    <text x="586" y="104" text-anchor="middle" font-size="11" fill="var(--svg-muted)">호출에 토큰을 실어 보냄</text>
+    <rect x="496" y="118" width="180" height="32" rx="8" fill="var(--svg-chip)" stroke="var(--line2)"/><text x="586" y="139" text-anchor="middle" font-size="12" font-weight="700" fill="var(--svg-fg)">AI Gateway 수신</text>
     <path d="M586 150V166" fill="none" stroke="var(--lime)" stroke-opacity=".9" stroke-width="1.5" stroke-dasharray="3 3" class="ik-f"/>
-    <rect x="496" y="166" width="180" height="48" rx="8" fill="var(--lime)"/><text x="586" y="188" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--on-lime)">등록된 IdP로 확인</text><text x="586" y="204" text-anchor="middle" font-size="10.5" fill="var(--on-lime)">Issuer · 서명 대조</text>
-    <text x="586" y="244" text-anchor="middle" font-size="10.5" fill="var(--svg-muted)">01에서 넣은 목록 항목 기준</text>
+    <rect x="496" y="166" width="180" height="48" rx="8" fill="var(--lime)"/><text x="586" y="188" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--on-lime)">등록된 IdP로 확인</text><text x="586" y="204" text-anchor="middle" font-size="10.5" fill="var(--on-lime)">Issuer · JWKS 서명 대조</text>
+    <text x="586" y="244" text-anchor="middle" font-size="10.5" fill="var(--svg-muted)">IdP에 다시 묻지 않음</text>
 
     <!-- arrow 03→04 -->
     <path d="M696 160H724" fill="none" stroke="var(--mark)" stroke-opacity=".75" stroke-width="1.6" stroke-dasharray="4 3" class="ik-f"/>
@@ -9112,7 +9116,7 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
 
     <rect x="20" y="294" width="920" height="72" rx="12" fill="var(--diag-zone2)" stroke="var(--g600)"/>
     <text x="40" y="322" font-size="12" font-weight="800" fill="var(--heading)">동작 요약</text>
-    <text x="40" y="344" font-size="12" fill="var(--g300)">먼저 IdP를 목록에 등록합니다. Caller가 IdP에서 받은 토큰을 Access Management에 제시하면, 등록된 Issuer로 서명을 확인합니다.</text>
+    <text x="40" y="344" font-size="12" fill="var(--g300)">먼저 IdP를 목록에 등록합니다. Caller가 IdP에서 받은 토큰을 AI Gateway 호출에 실으면, 등록된 Issuer의 JWKS로 서명을 확인합니다.</text>
     <text x="40" y="362" font-size="12" fill="var(--g300)">확인 후 자동 프로비저닝으로 User를 만들 수 있고, Trusted IdP이면 Token Vault가 원격 자격 증명을 주입합니다.</text>
 
     <circle r="3.4" fill="var(--lime)" opacity="0"><set attributeName="opacity" to="1" begin="0s"/><animateMotion dur="1.4s" begin="0s" repeatCount="indefinite" path="M220 160H248"/></circle>
@@ -9125,8 +9129,8 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
   <div class="flow idm-flow">
     <div class="st"><span class="n">01</span><b>등록</b><span>IdP Name · Issuer URL을 Access Management 목록에 넣습니다.</span></div>
     <div class="st"><span class="n">02</span><b>로그인</b><span>Caller가 IdP에서 로그인 토큰을 받습니다.</span></div>
-    <div class="st"><span class="n">03</span><b>검증</b><span>제시된 토큰을 등록된 IdP(Issuer)로 확인합니다.</span></div>
-    <div class="st"><span class="n">04</span><b>Users · Vault</b><span>자동 프로비저닝이면 User가 생기고, Trusted IdP면 Vault가 자격 증명을 내줍니다.</span></div>
+    <div class="st"><span class="n">03</span><b>검증</b><span>호출에 실린 토큰을 등록된 Issuer의 서명 키(JWKS)로 확인합니다.</span></div>
+    <div class="st"><span class="n">04</span><b>Users · Vault</b><span>자동 프로비저닝이면 User가 생기고, Trusted IdP면 Token Vault가 자격 증명을 주입합니다.</span></div>
   </div>
 
   <h3 style="margin-top:22px">다른 구성과의 관계</h3>
@@ -9382,7 +9386,7 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
 <section class="sec" id="idm-vkeys" data-title="Virtual Keys" data-show-rail="ai">
   <div class="eyebrow">Access Management</div>
   <h2>Virtual Keys</h2>
-  <p class="sub">호출자가 AI Gateway에 제시하는 API 키입니다. 조직의 Anthropic · OpenAI 원본 자격 증명은 Token Vault에 두고, 사람 · 그룹 · CI에는 Virtual Key만 나눠 줍니다.</p>
+  <p class="sub">호출자가 AI Gateway에 제시하는 API 키입니다. 조직의 Anthropic · OpenAI 원본 자격 증명은 AI Vault(백엔드: Token Vault, 클라우드 Secrets Manager 등)에 두고, 사람 · 그룹 · CI에는 Virtual Key만 나눠 줍니다.</p>
 
   <div class="callout"><b>왜 필요한가.</b> 원본 자격 증명을 팀 전체에 공유하면 누가 썼는지 알 수 없고, 유출 시 자격 증명 하나를 통째로 바꿔야 합니다. Virtual Key는 Holder(User/Group)마다 따로 발급하고, Gateway를 거친 뒤에만 모델 · MCP에 닿게 합니다.</div>
 
@@ -9393,8 +9397,8 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
     <div class="card"><span class="tag">통제</span><h3>Gateway 경유</h3><p>키가 있어도 AI Gateway를 통과해야 합니다. 모델 · MCP · Agent에 붙인 Key Auth 전략과 접근 규칙이 호출을 막거나 허용합니다.</p></div>
   </div>
 
-  <div class="dia idm-dia rv"><svg viewBox="0 0 960 360" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Caller가 Virtual Key로 Gateway를 호출하고 Token Vault가 원본 자격 증명을 주입하는 흐름">
-    <text x="480" y="22" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--svg-muted)">VIRTUAL KEY → GATEWAY → VAULT → PROVIDER</text>
+  <div class="dia idm-dia rv"><svg viewBox="0 0 960 470" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Caller가 Virtual Key로 Gateway를 호출하고, Gateway가 Vault에서 원본 키를 조회해 주입한 뒤 Provider를 호출하는 흐름">
+    <text x="480" y="22" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--svg-muted)">VIRTUAL KEY → AI GATEWAY → PROVIDER</text>
 
     <rect x="24" y="56" width="190" height="150" rx="14" fill="var(--svg-panel)" stroke="var(--g600)"/>
     <text x="119" y="88" text-anchor="middle" font-size="11" font-weight="800" fill="var(--svg-muted)">CALLER</text>
@@ -9404,36 +9408,36 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
     <path d="M214 130H268" fill="none" stroke="var(--mark)" stroke-opacity=".8" stroke-width="1.6" stroke-dasharray="4 3" class="ik-f"/>
     <text x="241" y="118" text-anchor="middle" font-size="10" fill="var(--mark)">① 제시</text>
 
-    <rect x="268" y="48" width="250" height="166" rx="14" fill="var(--diag-zone2)" stroke="var(--mark)" stroke-width="1.5"/>
+    <rect x="268" y="48" width="300" height="190" rx="14" fill="var(--diag-zone2)" stroke="var(--mark)" stroke-width="1.5"/>
     <rect x="286" y="60" width="120" height="20" rx="10" fill="var(--lime)"/><text x="346" y="74" text-anchor="middle" font-size="10" font-weight="900" fill="var(--on-lime)">KONNECT</text>
-    <text x="393" y="108" text-anchor="middle" font-size="14" font-weight="800" fill="var(--mark)">AI Gateway</text>
-    <rect x="288" y="124" width="210" height="30" rx="8" fill="var(--svg-chip)" stroke="var(--line2)"/><text x="393" y="144" text-anchor="middle" font-size="12" font-weight="700" fill="var(--svg-fg)">Key Auth · Principal</text>
-    <rect x="288" y="162" width="210" height="30" rx="8" fill="var(--svg-chip)" stroke="var(--line2)"/><text x="393" y="182" text-anchor="middle" font-size="12" font-weight="700" fill="var(--svg-fg)">접근 규칙 · Spend limit</text>
+    <text x="418" y="104" text-anchor="middle" font-size="14" font-weight="800" fill="var(--mark)">AI Gateway</text>
+    <rect x="293" y="118" width="250" height="30" rx="8" fill="var(--svg-chip)" stroke="var(--line2)"/><text x="418" y="138" text-anchor="middle" font-size="12" font-weight="700" fill="var(--svg-fg)">Key Auth · Principal</text>
+    <rect x="293" y="154" width="250" height="30" rx="8" fill="var(--svg-chip)" stroke="var(--line2)"/><text x="418" y="174" text-anchor="middle" font-size="12" font-weight="700" fill="var(--svg-fg)">접근 규칙 · Spend limit</text>
+    <rect x="293" y="190" width="250" height="32" rx="8" fill="var(--lime)"/><text x="418" y="211" text-anchor="middle" font-size="12" font-weight="800" fill="var(--on-lime)">원본 키 주입</text>
 
-    <path d="M518 130H572" fill="none" stroke="var(--mark)" stroke-opacity=".8" stroke-width="1.6" stroke-dasharray="4 3" class="ik-f"/>
-    <text x="545" y="118" text-anchor="middle" font-size="10" fill="var(--mark)">② 주입</text>
+    <path d="M418 238V292" fill="none" stroke="var(--mark)" stroke-opacity=".8" stroke-width="1.6" stroke-dasharray="4 3" class="ik-f"/>
+    <text x="428" y="270" font-size="10" fill="var(--mark)">② 원본 키 조회</text>
 
-    <rect x="572" y="56" width="170" height="150" rx="14" fill="var(--diag-wash-lime2)" stroke="var(--mark)" stroke-width="1.4"/>
-    <text x="657" y="96" text-anchor="middle" font-size="13" font-weight="800" fill="var(--mark)">Token Vault</text>
-    <text x="657" y="118" text-anchor="middle" font-size="11" fill="var(--svg-muted)">원본 자격 증명 보관</text>
-    <rect x="568" y="140" width="178" height="36" rx="8" fill="var(--lime)"/><text x="657" y="163" text-anchor="middle" font-size="12" font-weight="800" fill="var(--on-lime)">원본 자격 증명 주입</text>
+    <rect x="318" y="292" width="200" height="60" rx="12" fill="var(--diag-wash-lime2)" stroke="var(--mark)" stroke-width="1.4"/>
+    <text x="418" y="317" text-anchor="middle" font-size="13" font-weight="800" fill="var(--mark)">AI Vault</text>
+    <text x="418" y="337" text-anchor="middle" font-size="10.5" fill="var(--svg-muted)">Token Vault · Secrets Manager 등</text>
 
-    <path d="M742 130H796" fill="none" stroke="var(--lime)" stroke-opacity=".9" stroke-width="1.6" stroke-dasharray="4 3" class="ik-f"/>
-    <text x="769" y="118" text-anchor="middle" font-size="10" fill="var(--lime)">③ 호출</text>
+    <path d="M568 130H700" fill="none" stroke="var(--lime)" stroke-opacity=".9" stroke-width="1.6" stroke-dasharray="4 3" class="ik-f"/>
+    <text x="634" y="118" text-anchor="middle" font-size="10" fill="var(--lime)">③ 원본 키로 호출</text>
 
-    <rect x="796" y="56" width="140" height="150" rx="14" fill="var(--svg-panel)" stroke="var(--g600)"/>
-    <text x="866" y="112" text-anchor="middle" font-size="13" font-weight="800" fill="var(--svg-fg)">Provider</text>
-    <text x="866" y="134" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Anthropic · OpenAI</text>
-    <text x="866" y="156" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Bedrock · …</text>
+    <rect x="700" y="56" width="236" height="150" rx="14" fill="var(--svg-panel)" stroke="var(--g600)"/>
+    <text x="818" y="112" text-anchor="middle" font-size="13" font-weight="800" fill="var(--svg-fg)">Provider</text>
+    <text x="818" y="134" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Anthropic · OpenAI</text>
+    <text x="818" y="156" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Bedrock · …</text>
 
-    <rect x="24" y="236" width="912" height="96" rx="12" fill="var(--diag-zone2)" stroke="var(--g600)"/>
-    <text x="44" y="266" font-size="12" font-weight="800" fill="var(--heading)">동작 요약</text>
-    <text x="44" y="288" font-size="12" fill="var(--g300)">Caller는 Virtual Key만 들고 Gateway를 호출합니다. Gateway가 키를 Principal(holder)에 매핑하고, 규칙 · Spend limit을 적용합니다.</text>
-    <text x="44" y="310" font-size="12" fill="var(--g300)">업스트림으로 나갈 때 Token Vault가 원본 자격 증명을 주입합니다. 앱에는 원본 자격 증명이 남지 않고, 비용은 holder에게 귀속됩니다.</text>
+    <rect x="24" y="370" width="912" height="84" rx="12" fill="var(--diag-zone2)" stroke="var(--g600)"/>
+    <text x="44" y="396" font-size="12" font-weight="800" fill="var(--heading)">동작 요약</text>
+    <text x="44" y="418" font-size="12" fill="var(--g300)">Caller는 Virtual Key만 들고 Gateway를 호출합니다. Gateway가 키를 holder(User · Group)에 매핑하고 규칙과 Spend limit을 적용합니다.</text>
+    <text x="44" y="440" font-size="12" fill="var(--g300)">Gateway가 AI Vault에서 원본 키를 조회해 업스트림 요청에 주입합니다. 앱에는 원본 키가 남지 않고, 비용은 holder에게 귀속됩니다.</text>
 
     <circle r="3.4" fill="var(--lime)" opacity="0"><set attributeName="opacity" to="1" begin="0s"/><animateMotion dur="1.5s" begin="0s" repeatCount="indefinite" path="M214 130H268"/></circle>
-    <circle r="3.4" fill="var(--mark)" opacity="0"><set attributeName="opacity" to="1" begin="0.45s"/><animateMotion dur="1.5s" begin="0.45s" repeatCount="indefinite" path="M518 130H572"/></circle>
-    <circle r="3.4" fill="var(--lime)" opacity="0"><set attributeName="opacity" to="1" begin="0.9s"/><animateMotion dur="1.5s" begin="0.9s" repeatCount="indefinite" path="M742 130H796"/></circle>
+    <circle r="3.4" fill="var(--mark)" opacity="0"><set attributeName="opacity" to="1" begin="0.45s"/><animateMotion dur="1.5s" begin="0.45s" repeatCount="indefinite" path="M418 238V292"/></circle>
+    <circle r="3.4" fill="var(--lime)" opacity="0"><set attributeName="opacity" to="1" begin="0.9s"/><animateMotion dur="1.5s" begin="0.9s" repeatCount="indefinite" path="M568 130H700"/></circle>
   </svg></div>
 
   <div class="flow idm-flow">

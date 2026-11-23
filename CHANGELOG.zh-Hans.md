@@ -14,6 +14,7 @@
 ### 变更
 
 - Identity · Virtual Keys · Token Vault：将「原始密钥放出」等表述统一为「原始凭证注入」
+- Access Management：将概览使用流程拆分为模型调用与 MCP 调用两条路径，将 IdP 验证主体更正为 AI Gateway(JWKS)，将 Virtual Keys 图改为 AI Vault 查询结构，整理 Users·Groups 模拟界面
 
 ## 2026.11.21.6b016c03
 

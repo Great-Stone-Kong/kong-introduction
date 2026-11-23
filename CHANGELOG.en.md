@@ -14,6 +14,7 @@
 ### Changed
 
 - Identity · Virtual Keys · Token Vault: unify wording to “original credential injection”
+- Access Management: split the overview flow into model-call and MCP-call paths, correct IdP verification to AI Gateway (JWKS), redraw Virtual Keys as an AI Vault lookup, tidy Users · Groups mockups
 
 ## 2026.11.21.6b016c03
 

@@ -14,6 +14,7 @@
 ### 変更
 
 - Identity · Virtual Keys · Token Vault: 「原キー放出」などの表現を「元の資格情報の注入」に統一
+- Access Management: 概要の活用フローをモデル呼び出し・MCP 呼び出しの 2 経路に分離、IdP 検証主体を AI Gateway(JWKS)に訂正、Virtual Keys 図を AI Vault 照会構造に修正、Users・Groups モックアップを整理
 
 ## 2026.11.21.6b016c03
 
