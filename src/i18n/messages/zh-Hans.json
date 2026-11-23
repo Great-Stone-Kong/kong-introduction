@@ -6624,7 +6624,6 @@
   "m.98bb13e4514a": "Caller 以 Virtual Key 调用 Gateway，Token Vault 注入供应商实钥的流程",
   "m.3ff8c06edc76": "调用方向 AI Gateway 出示的 API 密钥。组织的 Anthropic · OpenAI 实钥放在 Token Vault，只把 Virtual Key 分给人员 · 组 · CI。",
   "m.d5ea18d1dc99": "为什么需要。",
-  "m.03eb0186d77f": "把供应商实钥分给整团队就无法知道是谁用的，一旦外泄还得整把换掉。Virtual Key 按 holder 分别签发，且必须经过 Gateway 才能碰到模型 · MCP。",
   "m.cc90ad3eac8e": "实钥分离",
   "m.71c1c57718bb": "不要把供应商密钥放进应用 · 代理 · IDE。Virtual Key 用签发 · 删除来回收。轮换时创建新密钥并删除旧密钥。",
   "m.3664c7509c74": "归属 · 上限",
@@ -6654,5 +6653,6 @@
   "m.6b1b04d3c3b9": "建立如 ci-pipeline 的工作负载密钥，挂到 Group 或专用 User。外泄时只删该密钥。",
   "m.96f69281ea20": "模型 · MCP 访问",
   "m.13fd8763ca2e": "用同一密钥调用已开启 Key Auth 的 AI Model · MCP Server · Agent。访问规则依 holder 的 Groups · Access。",
-  "m.fa31876852dd": "没有专用轮换功能。先创建新密钥再删旧密钥。Virtual Keys 需要 Kong Identity Principal。"
+  "m.fa31876852dd": "没有专用轮换功能。先创建新密钥再删旧密钥。Virtual Keys 需要 Kong Identity Principal。",
+  "m.da6cc4c30a07": "把供应商实钥分给整团队就无法知道是谁用的，一旦外泄还得整把换掉。Virtual Key 按 Holder（User/Group）分别签发，且必须经过 Gateway 才能碰到模型 · MCP。"
 }

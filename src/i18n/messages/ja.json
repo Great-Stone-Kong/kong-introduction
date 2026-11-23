@@ -6624,7 +6624,6 @@
   "m.98bb13e4514a": "Caller が Virtual Key で Gateway を呼び出し、Token Vault がプロバイダー実キーを注入する流れ",
   "m.3ff8c06edc76": "呼び出し元が AI Gateway に提示する API キーです。組織の Anthropic · OpenAI 実キーは Token Vault に置き、人 · グループ · CI には Virtual Key だけを配ります。",
   "m.d5ea18d1dc99": "なぜ必要か。",
-  "m.03eb0186d77f": "プロバイダー実キーをチーム全体で共有すると誰が使ったか分からず、漏洩時はキーを丸ごと替える必要があります。Virtual Key は holder ごとに発行し、Gateway を通ったあとだけモデル · MCP に届きます。",
   "m.cc90ad3eac8e": "実キー分離",
   "m.71c1c57718bb": "アプリ · エージェント · IDE にプロバイダーキーを置きません。Virtual Key は発行 · 削除で回収します。ローテーションは新しいキーを作り、古いキーを消します。",
   "m.3664c7509c74": "帰属 · 上限",
@@ -6654,5 +6653,6 @@
   "m.6b1b04d3c3b9": "ci-pipeline のようにワークロード用キーを作り、Group または専用 User に付けます。漏洩時はそのキーだけ削除します。",
   "m.96f69281ea20": "モデル · MCP アクセス",
   "m.13fd8763ca2e": "Key Auth が付いた AI Model · MCP Server · Agent に同じキーで呼び出します。アクセス規則は holder の Groups · Access に従います。",
-  "m.fa31876852dd": "キー ローテーション専用機能はありません。新しいキーを作ってから古いキーを削除します。Virtual Keys には Kong Identity Principal が必要です。"
+  "m.fa31876852dd": "キー ローテーション専用機能はありません。新しいキーを作ってから古いキーを削除します。Virtual Keys には Kong Identity Principal が必要です。",
+  "m.da6cc4c30a07": "プロバイダー実キーをチーム全体で共有すると誰が使ったか分からず、漏洩時はキーを丸ごと替える必要があります。Virtual Key は Holder（User/Group）ごとに発行し、Gateway を通ったあとだけモデル · MCP に届きます。"
 }
