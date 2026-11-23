@@ -6539,5 +6539,7 @@
   "m.c8d6e5f6de16": "Teams 是 Org Chart CSV 反映的组织图。Groups 由管理员创建作为规则集合，成员资格可随时修改。",
   "m.b8dd25f1c93d": "以左侧说明 · 右侧模型对照 Create group 画面字段与意义。Membership 的 Agents 预定推出。",
   "m.c33db00f187a": "现在就能加入成员。先选 Users，Agents 推出后会出现在同一选择器。之后也可在组 · User 详情修改。",
-  "m.12aab38c1fdd": "共用相同规则的用户列表。不必对每位成员重复设置 Spend limit · 访问规则，只要在组上设一次。由管理员手动创建，组不可包含其他组。"
+  "m.12aab38c1fdd": "共用相同规则的用户列表。不必对每位成员重复设置 Spend limit · 访问规则，只要在组上设一次。由管理员手动创建，组不可包含其他组。",
+  "m.58c4f07a601e": "Team 标题来自 Org Chart。No team 收集未分配团队的 User · 系统 ID。Agents 成员资格稍后支持。",
+  "m.a6af99a22799": "现在就能加入成员。列表按 Team（Org Chart）· No team 分组，Select all 可一次选整队。Agents 推出后会出现在同一选择器。"
 }

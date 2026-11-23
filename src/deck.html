@@ -940,12 +940,16 @@ html[data-edition="enterprise"] #p-aimgmt > .sec[data-avail]{display:none!import
 #p-idm .idm-form-field.area{min-height:64px;resize:none}
 #p-idm .idm-form-row{margin:0 0 12px}
 #p-idm .idm-form-row:last-child{margin-bottom:0}
-#p-idm .idm-disc{list-style:none;margin:8px 0 0;padding:0;border:1px solid var(--line2);border-radius:8px;background:var(--navy-2);max-height:160px;overflow:auto}
-#p-idm .idm-disc li{padding:7px 10px;font-size:12px;color:var(--g300);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:8px}
-#p-idm .idm-disc li:last-child{border-bottom:0}
-#p-idm .idm-disc li b{color:var(--heading);font-weight:700}
-#p-idm .idm-disc .idm-sel{font:700 10.5px var(--font);color:var(--mark)}
+#p-idm .idm-disc{margin:8px 0 0;border:1px solid var(--line2);border-radius:8px;background:var(--navy-2);max-height:220px;overflow:auto}
 #p-idm .idm-disc .idm-search{padding:8px 10px;border-bottom:1px solid var(--line);color:var(--g400);font-size:12px}
+#p-idm .idm-disc .idm-tg{border-bottom:1px solid var(--line);padding:0 0 6px}
+#p-idm .idm-disc .idm-tg:last-child{border-bottom:0;padding-bottom:4px}
+#p-idm .idm-disc .idm-tg-h{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px 4px;font-size:12.5px;color:var(--heading);font-weight:700}
+#p-idm .idm-disc .idm-tg-h .idm-sel{font:700 11px var(--font);color:var(--heading);flex:none;background:none;border:0;padding:0;cursor:pointer}
+#p-idm .idm-disc .idm-tg-h span{color:var(--g300);font-weight:600}
+#p-idm .idm-disc ul{list-style:none;margin:0;padding:0 10px 2px}
+#p-idm .idm-disc ul li{padding:4px 0;font-size:12px;color:var(--g300);font-family:var(--mono)}
+#p-idm .idm-disc ul li.svc{color:var(--g400)}
 #p-idm .idm-aimap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 8px}
 #p-idm .idm-aimap .card{padding:14px 16px}
 #p-idm .idm-aimap h3{font-size:14.5px;margin:0 0 6px}
@@ -9003,22 +9007,38 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
     </div>
 
     <div class="idm-pair">
-      <div class="idm-card"><span class="idm-n">05</span><b>Membership</b><span>지금 멤버를 넣을 수 있습니다. Users를 고르고, Agents는 출시 후 같은 선택기에 포함됩니다. 나중에 그룹 · User 상세에서도 수정합니다.</span></div>
+      <div class="idm-card"><span class="idm-n">05</span><b>Membership</b><span>지금 멤버를 넣을 수 있습니다. 목록은 Team(Org Chart) · No team으로 묶이고, Select all로 팀 단위 선택이 가능합니다. Agents는 출시 후 같은 선택기에 포함됩니다.</span></div>
       <div class="idm-wire" aria-hidden="true"><i></i></div>
       <div class="idm-sec">
         <div class="idm-sh"><div><b>Membership</b><em>Optionally add users and agents to the group now.</em></div></div>
         <div class="idm-form-row">
           <label class="idm-form-lab">Users and agents</label>
           <div class="idm-form-field" style="color:var(--g400)">Select one or more members.</div>
-          <ul class="idm-disc" aria-label="member picker">
-            <li class="idm-search">⌕ Search users and agents</li>
-            <li><span><b>DanaWhitfield-E001</b> · 9</span><span class="idm-sel">Select all</span></li>
-            <li><span>aiko.tanaka@example.com</span></li>
-            <li><span>alan.moreau@example.com</span></li>
-            <li><span>ben.carter@example.com</span></li>
-            <li><span>sam.okafor@example.com</span></li>
-          </ul>
-          <span class="idm-form-hint"><em class="amk-soon">예정</em> Agents 멤버십은 이후 지원됩니다. 현재는 Users를 선택합니다.</span>
+          <div class="idm-disc" aria-label="member picker">
+            <div class="idm-search">⌕ Search users and agents</div>
+            <div class="idm-tg">
+              <div class="idm-tg-h">AikoTanaka-E006 · <span>1</span><button type="button" class="idm-sel">Select all</button></div>
+              <ul>
+                <li>sam.okafor@example.com</li>
+              </ul>
+            </div>
+            <div class="idm-tg">
+              <div class="idm-tg-h">DanaWhitfield-E001 · <span>9</span><button type="button" class="idm-sel">Select all</button></div>
+              <ul>
+                <li>aiko.tanaka@example.com</li>
+                <li>alan.moreau@example.com</li>
+                <li>ben.carter@example.com</li>
+              </ul>
+            </div>
+            <div class="idm-tg">
+              <div class="idm-tg-h">No team · <span>2</span><button type="button" class="idm-sel">Select all</button></div>
+              <ul>
+                <li>dana.whitfield@example.com</li>
+                <li class="svc">g54ddnlnpmvkire1</li>
+              </ul>
+            </div>
+          </div>
+          <span class="idm-form-hint"><em class="amk-soon">예정</em> Team 헤더는 Org Chart 소속입니다. No team에는 팀 미배정 User · 시스템 ID가 모입니다. Agents 멤버십은 이후 지원됩니다.</span>
         </div>
       </div>
     </div>

@@ -6539,5 +6539,7 @@
   "m.c8d6e5f6de16": "Teams reflect the org chart from CSV import. Groups are admin-created rule bundles whose membership you can edit anytime.",
   "m.b8dd25f1c93d": "Match Create group fields to the left explanations and the right mockup. Agents in Membership are planned.",
   "m.c33db00f187a": "You can add members now. Pick Users; Agents join the same picker after release. Edit later from group or user details.",
-  "m.12aab38c1fdd": "A list of users that share the same rules. Attach spend limits and access rules once on the group instead of on every member. Admins create groups manually, and a group cannot contain another group."
+  "m.12aab38c1fdd": "A list of users that share the same rules. Attach spend limits and access rules once on the group instead of on every member. Admins create groups manually, and a group cannot contain another group.",
+  "m.58c4f07a601e": "Team headers come from the Org Chart. No team collects unassigned users and system IDs. Agent membership comes later.",
+  "m.a6af99a22799": "You can add members now. The list is grouped by Team (Org Chart) and No team, and Select all chooses a whole team. Agents join the same picker after release."
 }
