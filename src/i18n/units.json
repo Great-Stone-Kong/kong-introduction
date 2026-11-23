@@ -784,7 +784,7 @@
     "zh-Hant": "<i>輔助控制</i>· 安全監測行動"
   },
   "u.cd946d63b5cc": {
-    "match": "Kong 예방 방식백엔드 자격증명을 Kong이 Vault 연동으로 보관하고 대신 주입. Agent는 원본 키를 갖지 않음",
+    "match": "Kong 예방 방식백엔드 자격 증명을 Kong이 Vault 연동으로 보관하고 대신 주입. Agent는 원본 자격 증명을 갖지 않음",
     "en": "<i>How Kong prevents it</i>Kong stores backend credentials via Vault integration and injects them on the agent's behalf. Agents never hold the original keys",
     "ja": "<i>Kongによる予防</i>バックエンドの認証情報をKongがVault連携で保管し、代わりに注入。Agentは元のキーを持たない",
     "zh-Hans": "<i>如何防止它发生</i>Kong 通过Vault集成存储后端证书,并代为注入. 智能体从不持有原始钥匙",

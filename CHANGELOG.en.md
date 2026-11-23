@@ -5,6 +5,13 @@
 
 ---
 
+## 2026.11.23.6b044230
+
+### Added
+
+- AI > Access Management: Overview, Users, Groups, Identity Providers, Token Vault, Virtual Keys
+- API > Identity: Overview, Principals, Authorization servers
+
 ## 2026.11.21.6b016c03
 
 ### Added

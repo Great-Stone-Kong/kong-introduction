@@ -5,6 +5,13 @@
 
 ---
 
+## 2026.11.23.6b044230
+
+### 添加
+
+- AI > Access Management：概览、Users、Groups、Identity Providers、Token Vault、Virtual Keys
+- API > Identity：概览、Principals、Authorization servers
+
 ## 2026.11.21.6b016c03
 
 ### 添加

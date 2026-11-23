@@ -5,6 +5,13 @@
 
 ---
 
+## 2026.11.23.6b044230
+
+### 추가
+
+- AI > Access Management : 개요, Users, Groups, Identity Providers, Token Vault, Virtual keys
+- API > Identity : 개요, Principals, Authorization servers
+
 ## 2026.11.21.6b016c03
 
 ### 추가
