@@ -6520,5 +6520,8 @@
   "m.42cada25bf2f": "AI Access Management 以 Users · Groups · IdP · Token Vault · Virtual Keys 管控模型与 MCP 调用的结构",
   "m.3761a929175d": "① 以 IdP 登录 · 自动预配 → ② 以 Groups · Spend limit 套用规则 → ③ 以 Virtual Key 调用 Gateway → ④ Token Vault 注入提供者凭证",
   "m.cfa0f2b2b4f9": "以 Users · Groups 定义主体与规则，以 Identity Providers 验证登录令牌，并用 Token Vault · Virtual Keys 在隐藏提供者密钥的情况下调用 Gateway。",
-  "m.b3fe6070a2b8": "在 Access Management 定义谁可调用模型 · MCP、可做什么、套用哪些额度，以及组织如何划分。规则可按用户套用，或以 Groups 批量套用。"
+  "m.b3fe6070a2b8": "在 Access Management 定义谁可调用模型 · MCP、可做什么、套用哪些额度，以及组织如何划分。规则可按用户套用，或以 Groups 批量套用。",
+  "m.d3e109874bd4": "用途（预定）",
+  "m.dde0ff750f53": "尚未推出。预计支持将代理调用主体作为 Directory 身份管理。",
+  "m.afa7d4550d1c": "自动化 · 代理调用主体。尚未推出，预定在与 Users 相同的 Directory 身份层套用归属 · 额度。"
 }

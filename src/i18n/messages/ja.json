@@ -6520,5 +6520,8 @@
   "m.42cada25bf2f": "AI Access Management が Users · Groups · IdP · Token Vault · Virtual Keys でモデルと MCP 呼び出しを統制する構造",
   "m.3761a929175d": "① IdP でログイン · 自動プロビジョニング → ② Groups · Spend limit でルール適用 → ③ Virtual Key で Gateway 呼び出し → ④ Token Vault がプロバイダー資格情報を注入",
   "m.cfa0f2b2b4f9": "Users · Groups で主体とルールを決め、Identity Providers でログイン トークンを検証し、Token Vault · Virtual Keys でプロバイダーキーを隠しつつ Gateway を呼び出します。",
-  "m.b3fe6070a2b8": "誰がモデル · MCP を呼び出すか、何ができるか、どの上限が掛かるか、組織がどう分かれるかを Access Management で定義します。ルールはユーザー単位または Groups で一括適用します。"
+  "m.b3fe6070a2b8": "誰がモデル · MCP を呼び出すか、何ができるか、どの上限が掛かるか、組織がどう分かれるかを Access Management で定義します。ルールはユーザー単位または Groups で一括適用します。",
+  "m.d3e109874bd4": "活用（予定）",
+  "m.dde0ff750f53": "まだリリースされていません。エージェント呼び出し主体を Directory 身元として扱う機能が予定されています。",
+  "m.afa7d4550d1c": "自動化 · エージェント呼び出し主体です。まだ未リリースで、Users と同じ Directory 身元層で帰属 · 上限を掛ける予定です。"
 }

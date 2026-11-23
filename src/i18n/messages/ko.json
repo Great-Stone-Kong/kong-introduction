@@ -6520,5 +6520,8 @@
   "m.42cada25bf2f": "AI Access Management가 Users · Groups · IdP · Token Vault · Virtual Keys로 모델과 MCP 호출을 통제하는 구조",
   "m.3761a929175d": "① IdP로 로그인 · 자동 프로비저닝 → ② Groups · Spend limit으로 규칙 적용 → ③ Virtual Key로 Gateway 호출 → ④ Token Vault가 제공자 자격 증명 주입",
   "m.cfa0f2b2b4f9": "Users · Groups로 주체와 규칙을 잡고, Identity Providers로 로그인 토큰을 검증하며, Token Vault · Virtual Keys로 제공자 키를 숨긴 채 Gateway를 호출합니다.",
-  "m.b3fe6070a2b8": "누가 모델 · MCP를 호출하는지, 무엇을 할 수 있는지, 어떤 한도가 걸리는지, 조직이 어떻게 나뉘는지를 Access Management에서 정의합니다. 규칙은 사용자 단위 또는 Groups로 일괄 적용합니다."
+  "m.b3fe6070a2b8": "누가 모델 · MCP를 호출하는지, 무엇을 할 수 있는지, 어떤 한도가 걸리는지, 조직이 어떻게 나뉘는지를 Access Management에서 정의합니다. 규칙은 사용자 단위 또는 Groups로 일괄 적용합니다.",
+  "m.d3e109874bd4": "활용(예정)",
+  "m.dde0ff750f53": "아직 출시되지 않았습니다. 에이전트 호출 주체를 Directory 신원으로 다루는 기능이 예정되어 있습니다.",
+  "m.afa7d4550d1c": "자동화 · 에이전트 호출 주체입니다. 아직 출시 전이며, Users와 같은 Directory 신원 계층으로 귀속 · 한도를 걸 예정입니다."
 }

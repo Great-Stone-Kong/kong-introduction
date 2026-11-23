@@ -6520,5 +6520,8 @@
   "m.42cada25bf2f": "Structure where AI Access Management controls model and MCP calls with Users, Groups, IdP, Token Vault, and Virtual Keys",
   "m.3761a929175d": "1) Sign in via IdP with optional auto-provisioning → 2) Apply rules with Groups and spend limits → 3) Call the Gateway with a Virtual Key → 4) Token Vault injects provider credentials",
   "m.cfa0f2b2b4f9": "Use Users and Groups for subjects and rules, Identity Providers to verify login tokens, and Token Vault with Virtual Keys so callers reach the Gateway without holding provider secrets.",
-  "m.b3fe6070a2b8": "Access Management defines who can call models and MCP, what they may do, which limits apply, and how the organization is structured. Apply rules per user or in bulk with Groups."
+  "m.b3fe6070a2b8": "Access Management defines who can call models and MCP, what they may do, which limits apply, and how the organization is structured. Apply rules per user or in bulk with Groups.",
+  "m.d3e109874bd4": "Use (planned)",
+  "m.dde0ff750f53": "Not released yet. Support for agent callers as Directory identities is planned.",
+  "m.afa7d4550d1c": "Automated and agent callers. Not released yet; planned to apply attribution and limits in the same Directory identity layer as Users."
 }
