@@ -9151,7 +9151,144 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
 <section class="sec" id="idm-vkeys" data-title="Virtual Keys" data-show-rail="ai">
   <div class="eyebrow">Access Management</div>
   <h2>Virtual Keys</h2>
-  <p class="sub">상세 내용은 이후 입력합니다.</p>
+  <p class="sub">호출자가 AI Gateway에 제시하는 API 키입니다. 조직의 Anthropic · OpenAI 실키는 Token Vault에 두고, 사람 · 그룹 · CI에는 Virtual Key만 나눠 줍니다.</p>
+
+  <div class="callout"><b>왜 필요한가.</b> 제공자 실키를 팀 전체에 공유하면 누가 썼는지 알 수 없고, 유출 시 키 하나를 통째로 바꿔야 합니다. Virtual Key는 holder마다 따로 발급하고, Gateway를 거친 뒤에만 모델 · MCP에 닿게 합니다.</div>
+
+  <h3 style="margin-top:22px">가치</h3>
+  <div class="idm-diff">
+    <div class="card"><span class="tag">보안</span><h3>실키 분리</h3><p>앱 · 에이전트 · IDE에 제공자 키를 두지 않습니다. Virtual Key는 발급 · 삭제로 회수합니다. 로테이션은 새 키를 만들고 이전 키를 지웁니다.</p></div>
+    <div class="card"><span class="tag">비용</span><h3>귀속 · 한도</h3><p>키로 나간 요청은 holder(User · Group)에 붙습니다. 그 사용자 · 그룹에 걸린 Spend limit이 그대로 적용됩니다.</p></div>
+    <div class="card"><span class="tag">통제</span><h3>Gateway 경유</h3><p>키가 있어도 AI Gateway를 통과해야 합니다. 모델 · MCP · Agent에 붙인 Key Auth 전략과 접근 규칙이 호출을 막거나 허용합니다.</p></div>
+  </div>
+
+  <div class="dia idm-dia rv"><svg viewBox="0 0 960 360" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Caller가 Virtual Key로 Gateway를 호출하고 Token Vault가 제공자 실키를 주입하는 흐름">
+    <text x="480" y="22" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--svg-muted)">VIRTUAL KEY → GATEWAY → VAULT → PROVIDER</text>
+
+    <rect x="24" y="56" width="190" height="150" rx="14" fill="var(--svg-panel)" stroke="var(--g600)"/>
+    <text x="119" y="88" text-anchor="middle" font-size="11" font-weight="800" fill="var(--svg-muted)">CALLER</text>
+    <text x="119" y="118" text-anchor="middle" font-size="14" font-weight="800" fill="var(--svg-fg)">User · Group</text>
+    <rect x="44" y="138" width="150" height="42" rx="9" fill="var(--lime)"/><text x="119" y="164" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--on-lime)">Virtual Key</text>
+
+    <path d="M214 130H268" fill="none" stroke="var(--mark)" stroke-opacity=".8" stroke-width="1.6" stroke-dasharray="4 3" class="ik-f"/>
+    <text x="241" y="118" text-anchor="middle" font-size="10" fill="var(--mark)">① 제시</text>
+
+    <rect x="268" y="48" width="250" height="166" rx="14" fill="var(--diag-zone2)" stroke="var(--mark)" stroke-width="1.5"/>
+    <rect x="286" y="60" width="120" height="20" rx="10" fill="var(--lime)"/><text x="346" y="74" text-anchor="middle" font-size="10" font-weight="900" fill="var(--on-lime)">KONNECT</text>
+    <text x="393" y="108" text-anchor="middle" font-size="14" font-weight="800" fill="var(--mark)">AI Gateway</text>
+    <rect x="288" y="124" width="210" height="30" rx="8" fill="var(--svg-chip)" stroke="var(--line2)"/><text x="393" y="144" text-anchor="middle" font-size="12" font-weight="700" fill="var(--svg-fg)">Key Auth · Principal</text>
+    <rect x="288" y="162" width="210" height="30" rx="8" fill="var(--svg-chip)" stroke="var(--line2)"/><text x="393" y="182" text-anchor="middle" font-size="12" font-weight="700" fill="var(--svg-fg)">접근 규칙 · Spend limit</text>
+
+    <path d="M518 130H572" fill="none" stroke="var(--mark)" stroke-opacity=".8" stroke-width="1.6" stroke-dasharray="4 3" class="ik-f"/>
+    <text x="545" y="118" text-anchor="middle" font-size="10" fill="var(--mark)">② 주입</text>
+
+    <rect x="572" y="56" width="170" height="150" rx="14" fill="var(--diag-wash-lime2)" stroke="var(--mark)" stroke-width="1.4"/>
+    <text x="657" y="96" text-anchor="middle" font-size="13" font-weight="800" fill="var(--mark)">Token Vault</text>
+    <text x="657" y="118" text-anchor="middle" font-size="11" fill="var(--svg-muted)">제공자 실키 보관</text>
+    <rect x="592" y="140" width="130" height="36" rx="8" fill="var(--lime)"/><text x="657" y="163" text-anchor="middle" font-size="12" font-weight="800" fill="var(--on-lime)">실키 방출</text>
+
+    <path d="M742 130H796" fill="none" stroke="var(--lime)" stroke-opacity=".9" stroke-width="1.6" stroke-dasharray="4 3" class="ik-f"/>
+    <text x="769" y="118" text-anchor="middle" font-size="10" fill="var(--lime)">③ 호출</text>
+
+    <rect x="796" y="56" width="140" height="150" rx="14" fill="var(--svg-panel)" stroke="var(--g600)"/>
+    <text x="866" y="112" text-anchor="middle" font-size="13" font-weight="800" fill="var(--svg-fg)">Provider</text>
+    <text x="866" y="134" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Anthropic · OpenAI</text>
+    <text x="866" y="156" text-anchor="middle" font-size="11" fill="var(--svg-muted)">Bedrock · …</text>
+
+    <rect x="24" y="236" width="912" height="96" rx="12" fill="var(--diag-zone2)" stroke="var(--g600)"/>
+    <text x="44" y="266" font-size="12" font-weight="800" fill="var(--heading)">동작 요약</text>
+    <text x="44" y="288" font-size="12" fill="var(--g300)">Caller는 Virtual Key만 들고 Gateway를 호출합니다. Gateway가 키를 Principal(holder)에 매핑하고, 규칙 · Spend limit을 적용합니다.</text>
+    <text x="44" y="310" font-size="12" fill="var(--g300)">업스트림으로 나갈 때 Token Vault가 제공자 실키를 붙입니다. 앱에는 실키가 남지 않고, 비용은 holder에게 귀속됩니다.</text>
+
+    <circle r="3.4" fill="var(--lime)" opacity="0"><set attributeName="opacity" to="1" begin="0s"/><animateMotion dur="1.5s" begin="0s" repeatCount="indefinite" path="M214 130H268"/></circle>
+    <circle r="3.4" fill="var(--mark)" opacity="0"><set attributeName="opacity" to="1" begin="0.45s"/><animateMotion dur="1.5s" begin="0.45s" repeatCount="indefinite" path="M518 130H572"/></circle>
+    <circle r="3.4" fill="var(--lime)" opacity="0"><set attributeName="opacity" to="1" begin="0.9s"/><animateMotion dur="1.5s" begin="0.9s" repeatCount="indefinite" path="M742 130H796"/></circle>
+  </svg></div>
+
+  <div class="flow idm-flow">
+    <div class="st"><span class="n">01</span><b>Auth Strategy</b><span>Model · MCP · Agent에 Key Auth AI Auth Strategy를 두고 Kong Identity(Principal) 매핑을 켭니다.</span></div>
+    <div class="st"><span class="n">02</span><b>Holder</b><span>키를 받을 User 또는 Group을 준비합니다. 요청 비용 · 한도는 이 holder에 붙습니다.</span></div>
+    <div class="st"><span class="n">03</span><b>발급</b><span>Access Management에서 Virtual Key를 만듭니다. Kong이 만들거나 직접 값을 넣을 수 있습니다.</span></div>
+    <div class="st"><span class="n">04</span><b>호출</b><span>AI Auth Strategy가 정한 헤더 · 쿼리에 키를 실어 Gateway로 보냅니다.</span></div>
+  </div>
+
+  <h3 style="margin-top:28px">키 생성 UI</h3>
+  <p class="sub">New key 화면의 항목과 의미를 왼쪽 설명 · 오른쪽 목업으로 맞춰 봅니다.</p>
+  <div class="idm-detail">
+    <div class="idm-detail-top">
+      <div class="idm-detail-spacer" aria-hidden="true"></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-mock-chrome">
+        <div class="amk-bar"><i></i><i></i><i></i><b>Konnect · Access Management · New key</b><span class="amk-tag">예시 화면</span></div>
+        <div class="amk-hd"><span class="amk-crumb">Access Management › Virtual keys › New</span><h3>New key</h3><p class="amk-desc">Name · Holder · Key value · Expiry</p></div>
+      </div>
+    </div>
+
+    <div class="idm-pair">
+      <div class="idm-card"><span class="idm-n">01</span><b>Name</b><span>목록에서 키를 구분하는 이름입니다. 예: ci-pipeline, claude-code-aiko.</span></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-sec">
+        <div class="idm-sh"><div><b>Name</b><em>How you recognize this key in lists.</em></div></div>
+        <div class="idm-form-row">
+          <label class="idm-form-lab">Key name</label>
+          <input class="idm-form-field" type="text" value="ci-pipeline" readonly aria-label="key name">
+        </div>
+      </div>
+    </div>
+
+    <div class="idm-pair">
+      <div class="idm-card"><span class="idm-n">02</span><b>Who holds it</b><span>키로 나간 요청이 귀속되는 주체입니다. User 또는 Group을 고릅니다. Gateway는 이 holder를 호출자로 봅니다.</span></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-sec">
+        <div class="idm-sh"><div><b>Who holds it</b><em>Every request with the key is attributed to its holder.</em></div></div>
+        <div class="idm-form-row">
+          <div style="display:flex;gap:6px;margin:0 0 8px">
+            <span class="amk-pill on">User</span>
+            <span class="amk-pill">Group</span>
+          </div>
+          <label class="idm-form-lab">Holder</label>
+          <input class="idm-form-field" type="text" value="aiko.tanaka@example.com" readonly aria-label="key holder">
+        </div>
+      </div>
+    </div>
+
+    <div class="idm-pair">
+      <div class="idm-card"><span class="idm-n">03</span><b>Key value</b><span>Kong이 임의 키를 만들거나, 이미 가진 값을 넣을 수 있습니다. Kong은 식별용 prefix만 보관하고, 전체 값은 생성 직후 한 번만 보여 줍니다.</span></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-sec">
+        <div class="idm-sh"><div><b>Key value</b><em>Kong stores only a short prefix. The key is shown once after create.</em></div></div>
+        <div class="idm-form-row">
+          <div style="display:flex;gap:6px;margin:0 0 8px;flex-wrap:wrap">
+            <span class="amk-pill on">Kong generates the key</span>
+            <span class="amk-pill">Use my own key</span>
+          </div>
+          <span class="idm-form-hint">A random key, shown once after you create it.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="idm-pair">
+      <div class="idm-card"><span class="idm-n">04</span><b>Expiry</b><span>키가 유효한 기간입니다. 30일 · 90일 · 1년 · Never 중 고릅니다. 만료 후에는 새 키를 발급해야 합니다.</span></div>
+      <div class="idm-wire" aria-hidden="true"><i></i></div>
+      <div class="idm-sec">
+        <div class="idm-sh"><div><b>Expiry</b><em>How long the key works before you must replace it.</em></div></div>
+        <div class="idm-form-row">
+          <label class="idm-form-lab">Expires</label>
+          <input class="idm-form-field" type="text" value="90 days" readonly aria-label="key expiry">
+          <span class="idm-form-hint">30 days · 90 days · 1 year · Never</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="idm-diff" style="margin-top:18px">
+    <div class="card"><span class="tag">활용</span><h3>개인 코딩 도구</h3><p>Claude Code · Cursor 사용자마다 Virtual Key를 줍니다. 실키는 공유하지 않고, 사용량은 개인 Spend limit으로 막습니다.</p></div>
+    <div class="card"><span class="tag">활용</span><h3>CI · 파이프라인</h3><p>ci-pipeline처럼 워크로드용 키를 두고 Group 또는 전용 User에 붙입니다. 유출 시 그 키만 삭제합니다.</p></div>
+    <div class="card"><span class="tag">활용</span><h3>모델 · MCP 접근</h3><p>Key Auth가 켜진 AI Model · MCP Server · Agent에 같은 키로 호출합니다. 접근 규칙은 holder의 Groups · Access를 따릅니다.</p></div>
+  </div>
+
+  <p class="note">키 로테이션 전용 기능은 없습니다. 새 키를 만든 뒤 이전 키를 삭제합니다. Virtual Keys는 Kong Identity Principal이 필요합니다.</p>
+  <p class="note">출처: <a href="https://developer.konghq.com/ai-access-management/concepts" target="_blank" rel="noopener noreferrer">Access management concepts · Virtual keys ↗</a></p>
 </section>
 
 <section class="sec" id="idm-authz" data-title="Authorization servers" data-show-rail="api">
