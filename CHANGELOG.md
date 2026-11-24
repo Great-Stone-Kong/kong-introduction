@@ -12,6 +12,13 @@
 - AI > Access Management : 개요, Users, Groups, Identity Providers, Token Vault, Virtual keys
 - API > Identity : 개요, Principals, Authorization servers
 
+### 변경
+
+- AI Gateway > 경쟁 제품 비교
+  - Endpoint DLP를 마지막 탭으로 분리
+  - 범주별 커버 영역(4축)에 Endpoint DLP 담당 범위 반영
+  - 공존 · 보완 · 경쟁 서술과 구조 비교 통합
+
 ## 2026.11.21.6b016c03
 
 ### 추가

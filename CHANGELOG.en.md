@@ -12,6 +12,13 @@
 - AI > Access Management: Overview, Users, Groups, Identity Providers, Token Vault, Virtual Keys
 - API > Identity: Overview, Principals, Authorization servers
 
+### Changed
+
+- AI Gateway > Competitive comparison
+  - Split Endpoint DLP into the last tab
+  - Map Endpoint DLP coverage on the four-axis diagram
+  - Merge coexist · complement · compete narrative with the structural comparison
+
 ## 2026.11.21.6b016c03
 
 ### Added
