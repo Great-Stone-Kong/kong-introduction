@@ -988,7 +988,7 @@ html[data-edition="enterprise"] #p-aimgmt > .sec[data-avail]{display:none!import
 #p-idm .tv-demo .tv-dia .stag.deny circle{fill:color-mix(in srgb,var(--danger) 35%,var(--svg-chip));stroke:var(--danger)}
 #p-idm .tv-demo .tv-dia .stag text{font:800 10px Roboto Mono,monospace;fill:var(--on-lime);text-anchor:middle;dominant-baseline:central}
 #p-idm .tv-demo .tv-dia .stag.deny text{fill:var(--danger-ink)}
-#p-idm .tv-demo .tv-trace{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:12px 14px;min-height:110px}
+#p-idm .tv-demo .tv-trace{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:12px 14px;min-height:148px}
 #p-idm .tv-demo .tv-trace h4{margin:0 0 8px;font:800 12px var(--font);color:var(--heading)}
 #p-idm .tv-demo .tv-trace h4 span.alice{color:#3dd6c6}
 #p-idm .tv-demo .tv-trace h4 span.bob{color:#f0b429}
@@ -1015,9 +1015,10 @@ html[data-edition="enterprise"] #p-aimgmt > .sec[data-avail]{display:none!import
 #p-idm .tv-demo .tv-card.bob .tv-badge{color:#f0b429;border-color:color-mix(in srgb,#f0b429 40%,var(--line))}
 #p-idm .tv-demo .tv-body{padding:12px 14px;display:grid;gap:10px;flex:1}
 #p-idm .tv-demo .tv-blk h4{margin:0 0 6px;font:700 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--g400)}
-#p-idm .tv-demo .tv-ans{font-size:12.5px;line-height:1.5;color:var(--g200);min-height:40px}
+#p-idm .tv-demo .tv-ans{font-size:12.5px;line-height:1.5;color:var(--g200);min-height:48px}
 #p-idm .tv-demo .tv-ans.deny{color:var(--danger-ink)}
 #p-idm .tv-demo .tv-ans .dim,#p-idm .tv-demo .tv-dim{color:var(--g400)}
+#p-idm .tv-demo [data-orders]{min-height:108px}
 #p-idm .tv-demo .tv-tbl{width:100%;border-collapse:collapse;font-size:12px}
 #p-idm .tv-demo .tv-tbl th,#p-idm .tv-demo .tv-tbl td{text-align:left;padding:5px 4px;border-bottom:1px solid var(--line);color:var(--g300)}
 #p-idm .tv-demo .tv-tbl th{font-size:10.5px;color:var(--g400);font-weight:700}
@@ -9365,9 +9366,9 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
   <h3 style="margin-top:28px">데모 목업</h3>
   <p class="sub">Alice(Sales)·Bob(Finance)가 GitHub·Postgres MCP를 호출하는 Token Vault 데모입니다. Agent·LLM에는 원본 키가 없고, Gateway가 Vault에서 주입합니다. 시나리오를 누르면 요청이 Gateway·Vault·MCP를 지나며 결과가 갱신됩니다.</p>
 
-  <div class="tv-demo rv" id="tv-demo" data-sc="alice-gh">
+  <div class="tv-demo rv" id="tv-demo" data-sc="">
     <div class="tv-sc" role="group" aria-label="시나리오">
-      <button type="button" data-sc="alice-gh" class="on">Alice · GitHub</button>
+      <button type="button" data-sc="alice-gh">Alice · GitHub</button>
       <button type="button" data-sc="alice-db">Alice · Postgres</button>
       <button type="button" data-sc="bob-gh" class="deny">Bob · GitHub</button>
       <button type="button" data-sc="bob-db">Bob · Postgres</button>
@@ -9376,57 +9377,57 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
     <div class="tv-board">
       <div class="tv-left">
         <div class="tv-dia">
-          <svg viewBox="0 0 720 360" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Alice Bob이 Kong AI Gateway와 Token Vault를 거쳐 GitHub·Postgres MCP를 호출하는 데모 구성">
+          <svg viewBox="0 0 720 430" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Alice Bob이 Kong AI Gateway와 Token Vault를 거쳐 GitHub·Postgres MCP를 호출하는 데모 구성">
             <rect class="box" data-n="idp" x="160" y="8" width="400" height="34" rx="8"/>
             <text x="360" y="22" text-anchor="middle" font-size="12" font-weight="800" fill="var(--svg-fg)">Kong Identity · Token Vault store</text>
             <text x="360" y="35" text-anchor="middle" font-size="10" fill="var(--svg-muted)">Auth Server · principal · vault key</text>
 
-            <rect x="128" y="54" width="464" height="250" rx="12" fill="var(--diag-zone2)" stroke="var(--mark)" stroke-dasharray="4 4" stroke-opacity=".55"/>
-            <text x="576" y="72" text-anchor="end" font-size="10" font-weight="800" fill="var(--mark)" letter-spacing=".04em">AI GATEWAY DP</text>
+            <rect x="128" y="56" width="464" height="318" rx="12" fill="var(--diag-zone2)" stroke="var(--mark)" stroke-dasharray="4 4" stroke-opacity=".55"/>
+            <text x="576" y="74" text-anchor="end" font-size="10" font-weight="800" fill="var(--mark)" letter-spacing=".04em">AI GATEWAY DP</text>
 
-            <rect class="box" data-n="alice" x="14" y="110" width="88" height="34" rx="8" style="stroke:#3dd6c6"/>
-            <text x="58" y="131" text-anchor="middle" font-size="12" font-weight="800" fill="var(--svg-fg)">Alice</text>
-            <rect class="box" data-n="bob" x="14" y="250" width="88" height="34" rx="8" style="stroke:#f0b429"/>
-            <text x="58" y="271" text-anchor="middle" font-size="12" font-weight="800" fill="var(--svg-fg)">Bob</text>
+            <rect class="box" data-n="alice" x="14" y="118" width="88" height="34" rx="8" style="stroke:#3dd6c6"/>
+            <text x="58" y="139" text-anchor="middle" font-size="12" font-weight="800" fill="var(--svg-fg)">Alice</text>
+            <rect class="box" data-n="bob" x="14" y="310" width="88" height="34" rx="8" style="stroke:#f0b429"/>
+            <text x="58" y="331" text-anchor="middle" font-size="12" font-weight="800" fill="var(--svg-fg)">Bob</text>
 
-            <rect class="box" data-n="oidc" x="148" y="168" width="92" height="40" rx="8"/>
-            <text x="194" y="185" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--svg-fg)">OIDC</text>
-            <text x="194" y="199" text-anchor="middle" font-size="10" fill="var(--svg-muted)">JWT · scope</text>
+            <rect class="box" data-n="oidc" x="148" y="204" width="92" height="40" rx="8"/>
+            <text x="194" y="221" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--svg-fg)">OIDC</text>
+            <text x="194" y="235" text-anchor="middle" font-size="10" fill="var(--svg-muted)">JWT · scope</text>
 
-            <rect class="box" data-n="llm" x="270" y="78" width="110" height="36" rx="8"/>
-            <text x="325" y="94" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--svg-fg)">Model /v1</text>
-            <text x="325" y="107" text-anchor="middle" font-size="10" fill="var(--svg-muted)">demo-chat</text>
+            <rect class="box" data-n="llm" x="270" y="84" width="110" height="36" rx="8"/>
+            <text x="325" y="100" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--svg-fg)">Model /v1</text>
+            <text x="325" y="113" text-anchor="middle" font-size="10" fill="var(--svg-muted)">demo-chat</text>
 
-            <rect class="box" data-n="vault" x="270" y="250" width="110" height="40" rx="8"/>
-            <text x="325" y="267" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--mark)">Token Vault</text>
-            <text x="325" y="281" text-anchor="middle" font-size="10" fill="var(--svg-muted)">inject</text>
+            <rect class="box" data-n="vault" x="270" y="310" width="110" height="40" rx="8"/>
+            <text x="325" y="327" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--mark)">Token Vault</text>
+            <text x="325" y="341" text-anchor="middle" font-size="10" fill="var(--svg-muted)">inject</text>
 
-            <rect x="420" y="168" width="150" height="122" rx="10" fill="none" stroke="var(--g600)"/>
-            <text x="432" y="184" font-size="10" font-weight="800" fill="var(--svg-muted)" letter-spacing=".04em">MCP</text>
-            <rect class="box" data-n="gh" x="432" y="194" width="126" height="36" rx="7"/>
-            <text x="495" y="216" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">/gh · get_user</text>
-            <rect class="box" data-n="db" x="432" y="240" width="126" height="36" rx="7"/>
-            <text x="495" y="262" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">/db · query</text>
+            <rect x="420" y="188" width="150" height="148" rx="10" fill="none" stroke="var(--g600)"/>
+            <text x="432" y="206" font-size="10" font-weight="800" fill="var(--svg-muted)" letter-spacing=".04em">MCP</text>
+            <rect class="box" data-n="gh" x="432" y="218" width="126" height="40" rx="7"/>
+            <text x="495" y="242" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">/gh · get_user</text>
+            <rect class="box" data-n="db" x="432" y="276" width="126" height="40" rx="7"/>
+            <text x="495" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">/db · query</text>
 
-            <rect class="box" data-n="openai" x="600" y="78" width="108" height="36" rx="8"/>
-            <text x="654" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">OpenAI</text>
-            <rect class="box" data-n="ghapi" x="600" y="194" width="108" height="36" rx="7"/>
-            <text x="654" y="216" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">GitHub API</text>
-            <rect class="box" data-n="pg" x="600" y="240" width="108" height="36" rx="7"/>
-            <text x="654" y="262" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">Postgres</text>
+            <rect class="box" data-n="openai" x="600" y="84" width="108" height="36" rx="8"/>
+            <text x="654" y="106" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">OpenAI</text>
+            <rect class="box" data-n="ghapi" x="600" y="218" width="108" height="40" rx="7"/>
+            <text x="654" y="242" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">GitHub API</text>
+            <rect class="box" data-n="pg" x="600" y="276" width="108" height="40" rx="7"/>
+            <text x="654" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">Postgres</text>
 
-            <path class="edge" data-e="alice-oidc" d="M102 127H138V188H148"/>
-            <path class="edge" data-e="bob-oidc" d="M102 267H138V208H148"/>
-            <path class="edge" data-e="deny" d="M148 208H126V267H102"/>
-            <path class="edge" data-e="oidc-idp" d="M194 168V42"/>
-            <path class="edge" data-e="oidc-llm" d="M240 178H256V96H270"/>
-            <path class="edge" data-e="oidc-vault" d="M240 203H256V270H270"/>
-            <path class="edge" data-e="llm-openai" d="M380 96H600"/>
-            <path class="edge" data-e="vault-idp" d="M325 250V220H400V42"/>
-            <path class="edge" data-e="vault-gh" d="M380 260H412V212H432"/>
-            <path class="edge" data-e="vault-db" d="M380 280H416V258H432"/>
-            <path class="edge" data-e="gh-api" d="M558 212H600"/>
-            <path class="edge" data-e="db-pg" d="M558 258H600"/>
+            <path class="edge" data-e="alice-oidc" d="M102 135H138V224H148"/>
+            <path class="edge" data-e="bob-oidc" d="M102 327H138V244H148"/>
+            <path class="edge" data-e="deny" d="M148 244H126V327H102"/>
+            <path class="edge" data-e="oidc-idp" d="M194 204V42"/>
+            <path class="edge" data-e="oidc-llm" d="M240 214H256V102H270"/>
+            <path class="edge" data-e="oidc-vault" d="M240 239H256V330H270"/>
+            <path class="edge" data-e="llm-openai" d="M380 102H600"/>
+            <path class="edge" data-e="vault-idp" d="M325 310V250H400V42"/>
+            <path class="edge" data-e="vault-gh" d="M380 322H412V238H432"/>
+            <path class="edge" data-e="vault-db" d="M380 340H416V296H432"/>
+            <path class="edge" data-e="gh-api" d="M558 238H600"/>
+            <path class="edge" data-e="db-pg" d="M558 296H600"/>
             <g id="tv-chips"></g>
           </svg>
         </div>
@@ -11327,21 +11328,21 @@ document.querySelectorAll('.amo [data-go]').forEach(g=>{
     bob:'<table class="tv-tbl"><thead><tr><th>ID</th><th>SKU</th><th>Amount</th><th>Note</th></tr></thead><tbody><tr><td>1</td><td><b>FIN-900</b></td><td>98000.00</td><td>Quarterly close</td></tr><tr><td>2</td><td><b>FIN-901</b></td><td>1250.00</td><td>Vendor accrual</td></tr></tbody></table>'
   };
   const CHIP={
-    client:{alice:{x:8,y:152,w:100},bob:{x:8,y:292,w:100}},
-    oidc:{x:148,y:218,w:100},
-    llm:{x:390,y:70,w:150},
-    openai:{x:600,y:60,w:110},
-    vault:{x:270,y:300,w:110},
-    mcpGh:{x:432,y:170,w:120},
-    mcpDb:{x:432,y:286,w:120},
-    upGh:{x:600,y:170,w:110},
-    upDb:{x:600,y:286,w:110}
+    client:{alice:{x:8,y:160,w:100},bob:{x:8,y:352,w:100}},
+    oidc:{x:148,y:254,w:100},
+    llm:{x:390,y:74,w:150},
+    openai:{x:600,y:64,w:110},
+    vault:{x:270,y:360,w:110},
+    mcpGh:{x:432,y:192,w:120},
+    mcpDb:{x:432,y:326,w:120},
+    upGh:{x:600,y:192,w:110},
+    upDb:{x:600,y:326,w:110}
   };
   let timers=[];
   const TAG={
-    aliceIn:{x:118,y:118}, bobIn:{x:118,y:258},
-    llm:{x:390,y:96}, vaultGh:{x:495,y:188}, vaultDb:{x:495,y:252},
-    deny:{x:128,y:230}, outAlice:{x:58,y:96}, outBob:{x:58,y:236}
+    aliceIn:{x:118,y:126}, bobIn:{x:118,y:318},
+    llm:{x:390,y:102}, vaultGh:{x:495,y:212}, vaultDb:{x:495,y:290},
+    deny:{x:128,y:276}, outAlice:{x:58,y:104}, outBob:{x:58,y:296}
   };
   const SC={
     'alice-gh':{
@@ -11488,11 +11489,25 @@ document.querySelectorAll('.amo [data-go]').forEach(g=>{
     });
     if(!s.steps.length) applyResult(s);
   }
+  function idle(){
+    timers.forEach(clearTimeout); timers=[];
+    root.dataset.sc='';
+    root.querySelectorAll('.tv-sc [data-sc]').forEach(b=>b.classList.remove('on'));
+    resetMarks();
+    ['alice','bob'].forEach(who=>{
+      root.querySelectorAll('[data-inj="'+who+'"] [data-k]').forEach(c=>c.classList.remove('on','deny'));
+      const ans=root.querySelector('[data-ans="'+who+'"]'); if(ans){ ans.innerHTML=EMPTY; ans.classList.remove('deny'); }
+      const ord=root.querySelector('[data-orders="'+who+'"]'); if(ord) ord.innerHTML=EMPTY;
+      const card=root.querySelector('.tv-card.'+who); if(card) card.classList.remove('dim');
+    });
+    const trace=document.getElementById('tv-trace');
+    if(trace) trace.innerHTML='<div class="empty">시나리오를 누르면 요청이 Gateway·Vault·MCP를 지나며 결과가 갱신됩니다.</div>';
+  }
   root.querySelector('.tv-sc')?.addEventListener('click',e=>{
     const b=e.target.closest('[data-sc]'); if(!b) return;
     play(b.dataset.sc);
   });
-  play(root.dataset.sc||'alice-gh');
+  idle();
 })();
 /* ---------- AI Cost Budgets · Channel → Slack(80%) / Email(100%) 1회 ---------- */
 (function(){

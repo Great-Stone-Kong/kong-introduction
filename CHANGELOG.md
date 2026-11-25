@@ -12,6 +12,7 @@
 - AI Gateway > 경쟁 제품 비교 : Endpoint DLP를 마지막 탭으로 재 추가
 - AI > Access Management > Token Vault : 데모 목업을 Alice/Bob × GitHub/Postgres 4시나리오 · 클릭 흐름 애니메이션으로 정리
 - AI > Access Management > Token Vault : GitHub 응답을 alice ID로 표기 · 단계 원형 숫자 · 활성 흐름 점선 애니메이션
+- AI > Access Management > Token Vault : 로드 시 대기 상태 · Orders 높이 고정 · 다이어그램 세로 간격 확대
 
 ## 2026.11.23.6b044230
 
