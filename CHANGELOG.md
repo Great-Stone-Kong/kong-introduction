@@ -20,6 +20,8 @@
 
 ### 변경
 
+- AI > Access Management > Token Vault : 데모 목업(Alice · Bob · MCP · Vault 주입) 추가
+
 - AI > Access Management > Token Vault : 요청 흐름 · 자격 증명 유형 · 구성 절차 · 선택 기준 · 활용 제거
 
 ## 2026.11.21.6b016c03

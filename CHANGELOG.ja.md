@@ -14,6 +14,8 @@
 
 ### 変更
 
+- AI > Access Management > Token Vault : デモ モックアップ(Alice · Bob · MCP · Vault 注入)を追加
+
 - AI > Access Management > Token Vault : リクエストフロー · 資格情報タイプ · 構成手順 · 選択基準 · 活用を削除
 - AI Gateway > 競合比較
   - Endpoint DLP を最後のタブに分離

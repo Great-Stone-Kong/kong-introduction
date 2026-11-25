@@ -14,6 +14,8 @@
 
 ### 變更
 
+- AI > Access Management > Token Vault：新增示範畫面(Alice · Bob · MCP · Vault 注入)
+
 - AI > Access Management > Token Vault：移除請求流程 · 憑證類型 · 設定步驟 · 選擇基準 · 活用
 
 - AI Gateway > 競品比較

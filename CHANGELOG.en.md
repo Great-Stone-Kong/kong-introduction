@@ -14,6 +14,8 @@
 
 ### Changed
 
+- AI > Access Management > Token Vault: Add demo mockup (Alice · Bob · MCP · Vault injection)
+
 - AI > Access Management > Token Vault: Remove request flow, credential types, setup steps, selection criteria, and usage
 
 - AI Gateway > Competitive comparison
