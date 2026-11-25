@@ -10,6 +10,7 @@
 ### 變更
 
 - AI > Access Management > Token Vault：示範畫面調整為 Alice/Bob × GitHub/Postgres 四情境 · 點選流程動畫
+- AI > Access Management > Token Vault：GitHub 回應改為 alice ID · 步驟圓形編號 · 啟用流程虛線動畫
 
 ## 2026.11.23.6b044230
 

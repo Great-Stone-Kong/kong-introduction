@@ -972,22 +972,33 @@ html[data-edition="enterprise"] #p-aimgmt > .sec[data-avail]{display:none!import
 #p-idm .tv-demo .tv-dia .box.on{stroke:var(--mark);fill:color-mix(in srgb,var(--mark) 12%,var(--svg-panel))}
 #p-idm .tv-demo .tv-dia .box.on.deny{stroke:var(--danger);fill:color-mix(in srgb,var(--danger) 12%,var(--svg-panel))}
 #p-idm .tv-demo .tv-dia .edge{fill:none;stroke:var(--g600);stroke-width:1.4;stroke-opacity:.45;stroke-dasharray:4 4}
-#p-idm .tv-demo .tv-dia .edge.on{stroke:var(--mark);stroke-opacity:.95;stroke-width:2;stroke-dasharray:none}
+#p-idm .tv-demo .tv-dia .edge.on{stroke:var(--mark);stroke-opacity:.95;stroke-width:2.2;stroke-dasharray:7 5;animation:tv-edge-dash .75s linear infinite}
 #p-idm .tv-demo .tv-dia .edge.on.deny{stroke:var(--danger)}
+@keyframes tv-edge-dash{to{stroke-dashoffset:-24}}
+@media (prefers-reduced-motion:reduce){#p-idm .tv-demo .tv-dia .edge.on{animation:none}}
 #p-idm .tv-demo .tv-dia .chip{opacity:0;pointer-events:none}
 #p-idm .tv-demo .tv-dia .chip.on{opacity:1}
 #p-idm .tv-demo .tv-dia .chip rect{fill:var(--svg-chip);stroke:var(--mark);stroke-width:1}
 #p-idm .tv-demo .tv-dia .chip.deny rect{stroke:var(--danger);fill:color-mix(in srgb,var(--danger) 12%,var(--svg-chip))}
 #p-idm .tv-demo .tv-dia .chip text{font:600 9px Roboto Mono,monospace;fill:var(--mark)}
 #p-idm .tv-demo .tv-dia .chip.deny text{fill:var(--danger-ink)}
+#p-idm .tv-demo .tv-dia .stag{opacity:0;pointer-events:none}
+#p-idm .tv-demo .tv-dia .stag.on{opacity:1}
+#p-idm .tv-demo .tv-dia .stag circle{fill:var(--lime);stroke:var(--mark);stroke-width:1}
+#p-idm .tv-demo .tv-dia .stag.deny circle{fill:color-mix(in srgb,var(--danger) 35%,var(--svg-chip));stroke:var(--danger)}
+#p-idm .tv-demo .tv-dia .stag text{font:800 10px Roboto Mono,monospace;fill:var(--on-lime);text-anchor:middle;dominant-baseline:central}
+#p-idm .tv-demo .tv-dia .stag.deny text{fill:var(--danger-ink)}
 #p-idm .tv-demo .tv-trace{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:12px 14px;min-height:110px}
 #p-idm .tv-demo .tv-trace h4{margin:0 0 8px;font:800 12px var(--font);color:var(--heading)}
 #p-idm .tv-demo .tv-trace h4 span.alice{color:#3dd6c6}
 #p-idm .tv-demo .tv-trace h4 span.bob{color:#f0b429}
-#p-idm .tv-demo .tv-trace ol{margin:0;padding:0 0 0 18px;display:grid;gap:6px}
-#p-idm .tv-demo .tv-trace li{font:500 12px/1.45 var(--font);color:var(--g400);opacity:.4;transition:opacity .2s,color .2s}
+#p-idm .tv-demo .tv-trace ol{margin:0;padding:0;display:grid;gap:8px;list-style:none;counter-reset:tv}
+#p-idm .tv-demo .tv-trace li{counter-increment:tv;display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;align-items:start;font:500 12px/1.45 var(--font);color:var(--g400);opacity:.4;transition:opacity .2s,color .2s}
+#p-idm .tv-demo .tv-trace li::before{content:counter(tv);width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 10px Roboto Mono,monospace;background:var(--navy-2);border:1px solid var(--line2);color:var(--g400);flex-shrink:0}
 #p-idm .tv-demo .tv-trace li.on{opacity:1;color:var(--g200)}
+#p-idm .tv-demo .tv-trace li.on::before{background:var(--lime);border-color:var(--lime);color:var(--on-lime)}
 #p-idm .tv-demo .tv-trace li.deny.on{color:var(--danger-ink)}
+#p-idm .tv-demo .tv-trace li.deny.on::before{background:color-mix(in srgb,var(--danger) 28%,var(--navy-2));border-color:var(--danger);color:var(--danger-ink)}
 #p-idm .tv-demo .tv-trace code{font:600 11px var(--mono);color:var(--mark)}
 #p-idm .tv-demo .tv-trace .empty{font-size:12.5px;color:var(--g400)}
 #p-idm .tv-demo .tv-cons{display:grid;grid-template-rows:1fr 1fr;gap:10px}
@@ -11327,17 +11338,22 @@ document.querySelectorAll('.amo [data-go]').forEach(g=>{
     upDb:{x:600,y:286,w:110}
   };
   let timers=[];
+  const TAG={
+    aliceIn:{x:118,y:118}, bobIn:{x:118,y:258},
+    llm:{x:390,y:96}, vaultGh:{x:495,y:188}, vaultDb:{x:495,y:252},
+    deny:{x:128,y:230}, outAlice:{x:58,y:96}, outBob:{x:58,y:236}
+  };
   const SC={
     'alice-gh':{
       who:'alice',title:'Ask AI · GitHub',
       inj:{alice:['gh'],bob:[]},
-      ans:{alice:'Login: <b>Great-Stone</b> · Name: GS Lee · ID: 15207645',bob:'-'},
+      ans:{alice:'Login: <b>alice</b> · Name: Alice · ID: 10001',bob:'-'},
       orders:{alice:'empty',bob:'empty'},
       steps:[
-        {edges:['alice-oidc','oidc-idp'],nodes:['alice','oidc','idp'],chips:[{pos:CHIP.client.alice,t:'→ /v1 chat · JWT'},{pos:CHIP.oidc,t:'OIDC ✓ JWT'}],html:'alice → AI GW <code>POST /v1/chat/completions</code> · model=demo-chat · tools=get_user'},
-        {edges:['oidc-llm','llm-openai'],nodes:['llm','openai'],chips:[{pos:CHIP.llm,t:'→ Who am I on GitHub?'},{pos:CHIP.openai,t:'← tool_calls: get_user'}],html:'Model /v1 → OpenAI · prompt Who am I on GitHub? · ← tool_calls'},
-        {edges:['oidc-vault','vault-idp','vault-gh','gh-api'],nodes:['vault','gh','ghapi'],chips:[{pos:CHIP.vault,t:'← gho_***'},{pos:CHIP.mcpGh,t:'→ GET /user'},{pos:CHIP.upGh,t:'← Great-Stone'}],html:'alice → <code>/gh</code> get_user · Vault OAuth gho_*** → GitHub · login=Great-Stone'},
-        {edges:['llm-openai'],nodes:['llm','openai','alice'],chips:[{pos:CHIP.openai,t:'← final answer'},{pos:CHIP.client.alice,t:'← Great-Stone'}],html:'tool 결과 → OpenAI → Login Great-Stone · Name GS Lee · ID 15207645'}
+        {tag:TAG.aliceIn,edges:['alice-oidc','oidc-idp'],nodes:['alice','oidc','idp'],chips:[{pos:CHIP.client.alice,t:'→ /v1 chat · JWT'},{pos:CHIP.oidc,t:'OIDC ✓ JWT'}],html:'alice → AI GW <code>POST /v1/chat/completions</code> · model=demo-chat · tools=get_user'},
+        {tag:TAG.llm,edges:['oidc-llm','llm-openai'],nodes:['llm','openai'],chips:[{pos:CHIP.llm,t:'→ Who am I on GitHub?'},{pos:CHIP.openai,t:'← tool_calls: get_user'}],html:'Model /v1 → OpenAI · prompt Who am I on GitHub? · ← tool_calls'},
+        {tag:TAG.vaultGh,edges:['oidc-vault','vault-idp','vault-gh','gh-api'],nodes:['vault','gh','ghapi'],chips:[{pos:CHIP.vault,t:'← gho_***'},{pos:CHIP.mcpGh,t:'→ GET /user'},{pos:CHIP.upGh,t:'← alice'}],html:'alice → <code>/gh</code> get_user · Vault OAuth gho_*** → GitHub · login=alice'},
+        {tag:TAG.outAlice,edges:['llm-openai'],nodes:['llm','openai','alice'],chips:[{pos:CHIP.openai,t:'← final answer'},{pos:CHIP.client.alice,t:'← alice'}],html:'tool 결과 → OpenAI → Login alice · Name Alice · ID 10001'}
       ]
     },
     'alice-db':{
@@ -11346,10 +11362,10 @@ document.querySelectorAll('.amo [data-go]').forEach(g=>{
       ans:{alice:'SALES-100 $1200.00 · SALES-210 $450.50 · 2 rows from alice.orders',bob:'-'},
       orders:{alice:'alice',bob:'empty'},
       steps:[
-        {edges:['alice-oidc','oidc-idp'],nodes:['alice','oidc','idp'],chips:[{pos:CHIP.client.alice,t:'→ /v1 chat · JWT'},{pos:CHIP.oidc,t:'OIDC ✓ JWT'}],html:'alice → AI GW <code>POST /v1/chat/completions</code> · tools=query'},
-        {edges:['oidc-llm','llm-openai'],nodes:['llm','openai'],chips:[{pos:CHIP.llm,t:'→ List Alice sales orders'},{pos:CHIP.openai,t:'← tool_calls: query'}],html:'Model /v1 → OpenAI · ← tool_calls query'},
-        {edges:['oidc-vault','vault-idp','vault-db','db-pg'],nodes:['vault','db','pg'],chips:[{pos:CHIP.vault,t:'← alice:***'},{pos:CHIP.mcpDb,t:'→ SELECT … alice.orders'},{pos:CHIP.upDb,t:'← 2 rows'}],html:'alice → <code>/db</code> query · Vault alice:*** · SELECT … FROM alice.orders · 2 rows'},
-        {edges:['llm-openai'],nodes:['llm','openai','alice'],chips:[{pos:CHIP.openai,t:'← final answer'},{pos:CHIP.client.alice,t:'← SALES-100 · 210'}],html:'tool 결과 → OpenAI → SALES-100 $1200 · SALES-210 $450.50'}
+        {tag:TAG.aliceIn,edges:['alice-oidc','oidc-idp'],nodes:['alice','oidc','idp'],chips:[{pos:CHIP.client.alice,t:'→ /v1 chat · JWT'},{pos:CHIP.oidc,t:'OIDC ✓ JWT'}],html:'alice → AI GW <code>POST /v1/chat/completions</code> · tools=query'},
+        {tag:TAG.llm,edges:['oidc-llm','llm-openai'],nodes:['llm','openai'],chips:[{pos:CHIP.llm,t:'→ List Alice sales orders'},{pos:CHIP.openai,t:'← tool_calls: query'}],html:'Model /v1 → OpenAI · ← tool_calls query'},
+        {tag:TAG.vaultDb,edges:['oidc-vault','vault-idp','vault-db','db-pg'],nodes:['vault','db','pg'],chips:[{pos:CHIP.vault,t:'← alice:***'},{pos:CHIP.mcpDb,t:'→ SELECT … alice.orders'},{pos:CHIP.upDb,t:'← 2 rows'}],html:'alice → <code>/db</code> query · Vault alice:*** · SELECT … FROM alice.orders · 2 rows'},
+        {tag:TAG.outAlice,edges:['llm-openai'],nodes:['llm','openai','alice'],chips:[{pos:CHIP.openai,t:'← final answer'},{pos:CHIP.client.alice,t:'← SALES-100 · 210'}],html:'tool 결과 → OpenAI → SALES-100 $1200 · SALES-210 $450.50'}
       ]
     },
     'bob-gh':{
@@ -11358,10 +11374,10 @@ document.querySelectorAll('.amo [data-go]').forEach(g=>{
       ans:{alice:'-',bob:'Access denied · token has db-access only · HTTP 403'},
       orders:{alice:'empty',bob:'empty'},
       steps:[
-        {edges:['bob-oidc','oidc-idp'],nodes:['bob','oidc','idp'],chips:[{pos:CHIP.client.bob,t:'→ /v1 chat · JWT'},{pos:CHIP.oidc,t:'OIDC ✓ JWT'}],html:'bob → AI GW <code>POST /v1/chat/completions</code> · tools=get_user'},
-        {edges:['oidc-llm','llm-openai'],nodes:['llm','openai'],chips:[{pos:CHIP.llm,t:'→ Who am I on GitHub?'},{pos:CHIP.openai,t:'← tool_calls: get_user'}],html:'Model /v1 → OpenAI · ← tool_calls'},
-        {edges:['deny'],nodes:['oidc','bob'],deny:1,chips:[{pos:CHIP.oidc,t:'← 403 no github-access',deny:1},{pos:CHIP.client.bob,t:'← tool: 403',deny:1}],html:'bob → <code>/gh</code> get_user DENIED · scopes_required=github-access (token has db-access only)'},
-        {edges:['llm-openai'],nodes:['llm','openai','bob'],chips:[{pos:CHIP.openai,t:'← denied'},{pos:CHIP.client.bob,t:'← db-access only'}],html:'tool 결과 → OpenAI → Access denied · db-access only'}
+        {tag:TAG.bobIn,edges:['bob-oidc','oidc-idp'],nodes:['bob','oidc','idp'],chips:[{pos:CHIP.client.bob,t:'→ /v1 chat · JWT'},{pos:CHIP.oidc,t:'OIDC ✓ JWT'}],html:'bob → AI GW <code>POST /v1/chat/completions</code> · tools=get_user'},
+        {tag:TAG.llm,edges:['oidc-llm','llm-openai'],nodes:['llm','openai'],chips:[{pos:CHIP.llm,t:'→ Who am I on GitHub?'},{pos:CHIP.openai,t:'← tool_calls: get_user'}],html:'Model /v1 → OpenAI · ← tool_calls'},
+        {tag:TAG.deny,edges:['deny'],nodes:['oidc','bob'],deny:1,chips:[{pos:CHIP.oidc,t:'← 403 no github-access',deny:1},{pos:CHIP.client.bob,t:'← tool: 403',deny:1}],html:'bob → <code>/gh</code> get_user DENIED · scopes_required=github-access (token has db-access only)'},
+        {tag:TAG.outBob,edges:['llm-openai'],nodes:['llm','openai','bob'],chips:[{pos:CHIP.openai,t:'← denied'},{pos:CHIP.client.bob,t:'← db-access only'}],html:'tool 결과 → OpenAI → Access denied · db-access only'}
       ]
     },
     'bob-db':{
@@ -11370,10 +11386,10 @@ document.querySelectorAll('.amo [data-go]').forEach(g=>{
       ans:{alice:'-',bob:'FIN-900 $98000.00 · FIN-901 $1250.00 · 2 rows from bob.orders'},
       orders:{alice:'empty',bob:'bob'},
       steps:[
-        {edges:['bob-oidc','oidc-idp'],nodes:['bob','oidc','idp'],chips:[{pos:CHIP.client.bob,t:'→ /v1 chat · JWT'},{pos:CHIP.oidc,t:'OIDC ✓ JWT'}],html:'bob → AI GW <code>POST /v1/chat/completions</code> · tools=query'},
-        {edges:['oidc-llm','llm-openai'],nodes:['llm','openai'],chips:[{pos:CHIP.llm,t:'→ List Bob finance orders'},{pos:CHIP.openai,t:'← tool_calls: query'}],html:'Model /v1 → OpenAI · ← tool_calls query'},
-        {edges:['oidc-vault','vault-idp','vault-db','db-pg'],nodes:['vault','db','pg'],chips:[{pos:CHIP.vault,t:'← bob:***'},{pos:CHIP.mcpDb,t:'→ SELECT … bob.orders'},{pos:CHIP.upDb,t:'← 2 rows'}],html:'bob → <code>/db</code> query · Vault bob:*** · SELECT … FROM bob.orders · 2 rows'},
-        {edges:['llm-openai'],nodes:['llm','openai','bob'],chips:[{pos:CHIP.openai,t:'← final answer'},{pos:CHIP.client.bob,t:'← FIN-900 · 901'}],html:'tool 결과 → OpenAI → FIN-900 $98000 · FIN-901 $1250'}
+        {tag:TAG.bobIn,edges:['bob-oidc','oidc-idp'],nodes:['bob','oidc','idp'],chips:[{pos:CHIP.client.bob,t:'→ /v1 chat · JWT'},{pos:CHIP.oidc,t:'OIDC ✓ JWT'}],html:'bob → AI GW <code>POST /v1/chat/completions</code> · tools=query'},
+        {tag:TAG.llm,edges:['oidc-llm','llm-openai'],nodes:['llm','openai'],chips:[{pos:CHIP.llm,t:'→ List Bob finance orders'},{pos:CHIP.openai,t:'← tool_calls: query'}],html:'Model /v1 → OpenAI · ← tool_calls query'},
+        {tag:TAG.vaultDb,edges:['oidc-vault','vault-idp','vault-db','db-pg'],nodes:['vault','db','pg'],chips:[{pos:CHIP.vault,t:'← bob:***'},{pos:CHIP.mcpDb,t:'→ SELECT … bob.orders'},{pos:CHIP.upDb,t:'← 2 rows'}],html:'bob → <code>/db</code> query · Vault bob:*** · SELECT … FROM bob.orders · 2 rows'},
+        {tag:TAG.outBob,edges:['llm-openai'],nodes:['llm','openai','bob'],chips:[{pos:CHIP.openai,t:'← final answer'},{pos:CHIP.client.bob,t:'← FIN-900 · 901'}],html:'tool 결과 → OpenAI → FIN-900 $98000 · FIN-901 $1250'}
       ]
     }
   };
@@ -11395,6 +11411,17 @@ document.querySelectorAll('.amo [data-go]').forEach(g=>{
     const raw=String(text||'');
     t.textContent=raw.length>Math.floor((w-8)/5.1)?raw.slice(0,Math.floor((w-8)/5.1)-1)+'…':raw;
     g.appendChild(rect); g.appendChild(t); layer.appendChild(g);
+    return g;
+  }
+  function addStepTag(pos,n,deny){
+    const layer=document.getElementById('tv-chips'); if(!layer||!pos) return null;
+    const g=document.createElementNS(NS,'g');
+    g.setAttribute('class','stag'+(deny?' deny':''));
+    const c=document.createElementNS(NS,'circle');
+    c.setAttribute('cx',pos.x); c.setAttribute('cy',pos.y); c.setAttribute('r','11');
+    const t=document.createElementNS(NS,'text');
+    t.setAttribute('x',pos.x); t.setAttribute('y',pos.y); t.textContent=String(n);
+    g.appendChild(c); g.appendChild(t); layer.appendChild(g);
     return g;
   }
   function resetMarks(){
@@ -11453,6 +11480,8 @@ document.querySelectorAll('.amo [data-go]').forEach(g=>{
           const g=addChip(c.pos,c.t,c.deny||st.deny);
           if(g) requestAnimationFrame(()=>g.classList.add('on'));
         });
+        const tg=addStepTag(st.tag,i+1,st.deny);
+        if(tg) requestAnimationFrame(()=>tg.classList.add('on'));
         if(items[i]) items[i].classList.add('on');
         if(i===s.steps.length-1) applyResult(s);
       },i*STEP_MS));

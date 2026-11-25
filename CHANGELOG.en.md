@@ -10,6 +10,7 @@
 ### Changed
 
 - AI > Access Management > Token Vault: Refine demo mockup to Alice/Bob × GitHub/Postgres with click-through flow animation
+- AI > Access Management > Token Vault: Show alice GitHub identity, circular step tags, and animated dashed active edges
 
 ## 2026.11.23.6b044230
 

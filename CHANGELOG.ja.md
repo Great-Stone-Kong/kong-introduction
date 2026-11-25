@@ -10,6 +10,7 @@
 ### 変更
 
 - AI > Access Management > Token Vault : デモ モックアップを Alice/Bob × GitHub/Postgres の 4 シナリオ · クリック流れアニメに整理
+- AI > Access Management > Token Vault : GitHub 応答を alice ID 表示 · 段階の円形番号 · 活性フロー点線アニメ
 
 ## 2026.11.23.6b044230
 

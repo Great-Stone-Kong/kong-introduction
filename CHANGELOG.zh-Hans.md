@@ -10,6 +10,7 @@
 ### 变更
 
 - AI > Access Management > Token Vault：演示样机调整为 Alice/Bob × GitHub/Postgres 四场景 · 点击流程动画
+- AI > Access Management > Token Vault：GitHub 响应改为 alice ID · 步骤圆形编号 · 激活流程虚线动画
 
 ## 2026.11.23.6b044230
 
