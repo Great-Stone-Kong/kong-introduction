@@ -14,6 +14,8 @@
 
 ### 变更
 
+- AI > Access Management > Token Vault：移除请求流程 · 凭证类型 · 配置步骤 · 选择标准 · 活用
+
 - AI Gateway > 竞品比较
   - 将 Endpoint DLP 拆成最后一个标签页
   - 在四轴覆盖范围图标示 Endpoint DLP 负责范围

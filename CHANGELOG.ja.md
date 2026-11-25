@@ -14,6 +14,7 @@
 
 ### 変更
 
+- AI > Access Management > Token Vault : リクエストフロー · 資格情報タイプ · 構成手順 · 選択基準 · 活用を削除
 - AI Gateway > 競合比較
   - Endpoint DLP を最後のタブに分離
   - 4軸カバー領域に Endpoint DLP の担当範囲を反映

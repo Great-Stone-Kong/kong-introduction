@@ -14,6 +14,8 @@
 
 ### Changed
 
+- AI > Access Management > Token Vault: Remove request flow, credential types, setup steps, selection criteria, and usage
+
 - AI Gateway > Competitive comparison
   - Split Endpoint DLP into the last tab
   - Map Endpoint DLP coverage on the four-axis diagram
