@@ -960,24 +960,36 @@ html[data-edition="enterprise"] #p-aimgmt > .sec[data-avail]{display:none!import
 @media (max-width:900px){#p-idm .idm-aimap{grid-template-columns:1fr}}
 #p-idm .idm-flow .st b{color:var(--heading)}
 #p-idm .tv-demo{margin:28px 0 8px}
-#p-idm .tv-demo .tv-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:0 0 14px}
-#p-idm .tv-demo .tv-steps .st{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px 12px;min-height:72px}
-#p-idm .tv-demo .tv-steps .n{font:800 10.5px var(--mono);color:var(--mark);letter-spacing:.04em}
-#p-idm .tv-demo .tv-steps b{display:block;margin:4px 0 2px;font-size:13px;color:var(--heading)}
-#p-idm .tv-demo .tv-steps span{display:block;font-size:11.5px;color:var(--g300);line-height:1.4}
 #p-idm .tv-demo .tv-sc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
 #p-idm .tv-demo .tv-sc button{font:700 11.5px var(--font);color:var(--g300);background:var(--navy-2);border:1px solid var(--line2);border-radius:999px;padding:5px 11px;cursor:pointer}
 #p-idm .tv-demo .tv-sc button.on{background:var(--lime);border-color:var(--lime);color:var(--on-lime)}
 #p-idm .tv-demo .tv-sc button.deny.on{background:color-mix(in srgb,var(--danger) 22%,var(--navy-2));border-color:var(--danger);color:var(--danger-ink)}
-#p-idm .tv-demo .tv-board{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;align-items:stretch}
+#p-idm .tv-demo .tv-board{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;align-items:stretch}
+#p-idm .tv-demo .tv-left{display:grid;grid-template-rows:auto auto;gap:10px;min-width:0}
 #p-idm .tv-demo .tv-dia{border:1px solid var(--line);border-radius:12px;background:var(--svg-well);padding:10px 8px}
 #p-idm .tv-demo .tv-dia svg{width:100%;height:auto;display:block}
 #p-idm .tv-demo .tv-dia .box{fill:var(--svg-panel);stroke:var(--g600)}
 #p-idm .tv-demo .tv-dia .box.on{stroke:var(--mark);fill:color-mix(in srgb,var(--mark) 12%,var(--svg-panel))}
 #p-idm .tv-demo .tv-dia .box.on.deny{stroke:var(--danger);fill:color-mix(in srgb,var(--danger) 12%,var(--svg-panel))}
 #p-idm .tv-demo .tv-dia .edge{fill:none;stroke:var(--g600);stroke-width:1.4;stroke-opacity:.45;stroke-dasharray:4 4}
-#p-idm .tv-demo .tv-dia .edge.on{stroke:var(--mark);stroke-opacity:.95;stroke-width:2}
+#p-idm .tv-demo .tv-dia .edge.on{stroke:var(--mark);stroke-opacity:.95;stroke-width:2;stroke-dasharray:none}
 #p-idm .tv-demo .tv-dia .edge.on.deny{stroke:var(--danger)}
+#p-idm .tv-demo .tv-dia .chip{opacity:0;pointer-events:none}
+#p-idm .tv-demo .tv-dia .chip.on{opacity:1}
+#p-idm .tv-demo .tv-dia .chip rect{fill:var(--svg-chip);stroke:var(--mark);stroke-width:1}
+#p-idm .tv-demo .tv-dia .chip.deny rect{stroke:var(--danger);fill:color-mix(in srgb,var(--danger) 12%,var(--svg-chip))}
+#p-idm .tv-demo .tv-dia .chip text{font:600 9px Roboto Mono,monospace;fill:var(--mark)}
+#p-idm .tv-demo .tv-dia .chip.deny text{fill:var(--danger-ink)}
+#p-idm .tv-demo .tv-trace{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:12px 14px;min-height:110px}
+#p-idm .tv-demo .tv-trace h4{margin:0 0 8px;font:800 12px var(--font);color:var(--heading)}
+#p-idm .tv-demo .tv-trace h4 span.alice{color:#3dd6c6}
+#p-idm .tv-demo .tv-trace h4 span.bob{color:#f0b429}
+#p-idm .tv-demo .tv-trace ol{margin:0;padding:0 0 0 18px;display:grid;gap:6px}
+#p-idm .tv-demo .tv-trace li{font:500 12px/1.45 var(--font);color:var(--g400);opacity:.4;transition:opacity .2s,color .2s}
+#p-idm .tv-demo .tv-trace li.on{opacity:1;color:var(--g200)}
+#p-idm .tv-demo .tv-trace li.deny.on{color:var(--danger-ink)}
+#p-idm .tv-demo .tv-trace code{font:600 11px var(--mono);color:var(--mark)}
+#p-idm .tv-demo .tv-trace .empty{font-size:12.5px;color:var(--g400)}
 #p-idm .tv-demo .tv-cons{display:grid;grid-template-rows:1fr 1fr;gap:10px}
 #p-idm .tv-demo .tv-card{border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden;display:flex;flex-direction:column}
 #p-idm .tv-demo .tv-card.alice{border-color:color-mix(in srgb,#3dd6c6 40%,var(--line))}
@@ -994,7 +1006,7 @@ html[data-edition="enterprise"] #p-aimgmt > .sec[data-avail]{display:none!import
 #p-idm .tv-demo .tv-blk h4{margin:0 0 6px;font:700 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--g400)}
 #p-idm .tv-demo .tv-ans{font-size:12.5px;line-height:1.5;color:var(--g200);min-height:40px}
 #p-idm .tv-demo .tv-ans.deny{color:var(--danger-ink)}
-#p-idm .tv-demo .tv-ans .dim{color:var(--g400)}
+#p-idm .tv-demo .tv-ans .dim,#p-idm .tv-demo .tv-dim{color:var(--g400)}
 #p-idm .tv-demo .tv-tbl{width:100%;border-collapse:collapse;font-size:12px}
 #p-idm .tv-demo .tv-tbl th,#p-idm .tv-demo .tv-tbl td{text-align:left;padding:5px 4px;border-bottom:1px solid var(--line);color:var(--g300)}
 #p-idm .tv-demo .tv-tbl th{font-size:10.5px;color:var(--g400);font-weight:700}
@@ -1005,7 +1017,6 @@ html[data-edition="enterprise"] #p-aimgmt > .sec[data-avail]{display:none!import
 #p-idm .tv-demo .tv-inj span.deny{border-color:var(--danger);color:var(--danger-ink)}
 #p-idm .tv-demo .tv-card.dim{opacity:.55}
 @media (max-width:1100px){
-  #p-idm .tv-demo .tv-steps{grid-template-columns:1fr 1fr}
   #p-idm .tv-demo .tv-board{grid-template-columns:1fr}
   #p-idm .tv-demo .tv-cons{grid-template-rows:auto}
 }
@@ -9341,94 +9352,74 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
   </div>
 
   <h3 style="margin-top:28px">데모 목업</h3>
-  <p class="sub">Konnect AI Gateway + Token Vault 데모 구성입니다. Alice(Sales)는 GitHub·DB·Weather를 호출하고, Bob(Finance)은 DB·Weather만 가능합니다. Agent·LLM에는 원본 키가 없고, Gateway가 Vault에서 주입합니다.</p>
+  <p class="sub">Alice(Sales)·Bob(Finance)가 GitHub·Postgres MCP를 호출하는 Token Vault 데모입니다. Agent·LLM에는 원본 키가 없고, Gateway가 Vault에서 주입합니다. 시나리오를 누르면 요청이 Gateway·Vault·MCP를 지나며 결과가 갱신됩니다.</p>
 
   <div class="tv-demo rv" id="tv-demo" data-sc="alice-gh">
-    <div class="tv-steps" aria-label="데모 요청 단계">
-      <div class="st"><div class="n">01</div><b>Caller</b><span>Alice / Bob IdP 토큰</span></div>
-      <div class="st"><div class="n">02</div><b>LLM · Agent</b><span>/v1 · /agent/weather</span></div>
-      <div class="st"><div class="n">03</div><b>MCP</b><span>/gh · /db · /wx</span></div>
-      <div class="st"><div class="n">04</div><b>Token Vault</b><span>OAuth · DB role · OpenWeather</span></div>
-      <div class="st"><div class="n">05</div><b>결과</b><span>프로필 · orders · 날씨</span></div>
-    </div>
-
     <div class="tv-sc" role="group" aria-label="시나리오">
       <button type="button" data-sc="alice-gh" class="on">Alice · GitHub</button>
       <button type="button" data-sc="alice-db">Alice · Postgres</button>
-      <button type="button" data-sc="alice-wx">Alice · Weather</button>
-      <button type="button" data-sc="alice-agent">Alice · Agent</button>
-      <button type="button" data-sc="bob-gh" class="deny">Bob · GitHub 거부</button>
+      <button type="button" data-sc="bob-gh" class="deny">Bob · GitHub</button>
       <button type="button" data-sc="bob-db">Bob · Postgres</button>
     </div>
 
     <div class="tv-board">
-      <div class="tv-dia">
-        <svg viewBox="0 0 720 420" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Alice Bob이 Kong AI Gateway와 Token Vault를 거쳐 MCP upstream을 호출하는 데모 구성">
-          <rect class="box" data-n="idp" x="160" y="10" width="400" height="36" rx="8"/>
-          <text x="360" y="26" text-anchor="middle" font-size="12" font-weight="800" fill="var(--svg-fg)">Kong Identity · Token Vault store</text>
-          <text x="360" y="39" text-anchor="middle" font-size="10" fill="var(--svg-muted)">Auth Server · principal · vault key</text>
+      <div class="tv-left">
+        <div class="tv-dia">
+          <svg viewBox="0 0 720 360" font-family="Funnel Sans, Noto Sans KR, sans-serif" role="img" aria-label="Alice Bob이 Kong AI Gateway와 Token Vault를 거쳐 GitHub·Postgres MCP를 호출하는 데모 구성">
+            <rect class="box" data-n="idp" x="160" y="8" width="400" height="34" rx="8"/>
+            <text x="360" y="22" text-anchor="middle" font-size="12" font-weight="800" fill="var(--svg-fg)">Kong Identity · Token Vault store</text>
+            <text x="360" y="35" text-anchor="middle" font-size="10" fill="var(--svg-muted)">Auth Server · principal · vault key</text>
 
-          <rect x="130" y="64" width="460" height="300" rx="12" fill="var(--diag-zone2)" stroke="var(--mark)" stroke-dasharray="4 4" stroke-opacity=".55"/>
-          <text x="574" y="82" text-anchor="end" font-size="10" font-weight="800" fill="var(--mark)" letter-spacing=".04em">AI GATEWAY DP</text>
+            <rect x="128" y="54" width="464" height="250" rx="12" fill="var(--diag-zone2)" stroke="var(--mark)" stroke-dasharray="4 4" stroke-opacity=".55"/>
+            <text x="576" y="72" text-anchor="end" font-size="10" font-weight="800" fill="var(--mark)" letter-spacing=".04em">AI GATEWAY DP</text>
 
-          <rect class="box" data-n="alice" x="16" y="120" width="88" height="34" rx="8" style="stroke:#3dd6c6"/>
-          <text x="60" y="141" text-anchor="middle" font-size="12" font-weight="800" fill="var(--svg-fg)">Alice</text>
-          <rect class="box" data-n="bob" x="16" y="280" width="88" height="34" rx="8" style="stroke:#f0b429"/>
-          <text x="60" y="301" text-anchor="middle" font-size="12" font-weight="800" fill="var(--svg-fg)">Bob</text>
+            <rect class="box" data-n="alice" x="14" y="110" width="88" height="34" rx="8" style="stroke:#3dd6c6"/>
+            <text x="58" y="131" text-anchor="middle" font-size="12" font-weight="800" fill="var(--svg-fg)">Alice</text>
+            <rect class="box" data-n="bob" x="14" y="250" width="88" height="34" rx="8" style="stroke:#f0b429"/>
+            <text x="58" y="271" text-anchor="middle" font-size="12" font-weight="800" fill="var(--svg-fg)">Bob</text>
 
-          <rect class="box" data-n="oidc" x="150" y="190" width="92" height="40" rx="8"/>
-          <text x="196" y="207" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--svg-fg)">OIDC</text>
-          <text x="196" y="221" text-anchor="middle" font-size="10" fill="var(--svg-muted)">JWT · scope</text>
+            <rect class="box" data-n="oidc" x="148" y="168" width="92" height="40" rx="8"/>
+            <text x="194" y="185" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--svg-fg)">OIDC</text>
+            <text x="194" y="199" text-anchor="middle" font-size="10" fill="var(--svg-muted)">JWT · scope</text>
 
-          <rect class="box" data-n="llm" x="270" y="88" width="110" height="36" rx="8"/>
-          <text x="325" y="104" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--svg-fg)">Model /v1</text>
-          <text x="325" y="117" text-anchor="middle" font-size="10" fill="var(--svg-muted)">demo-chat</text>
-          <rect class="box" data-n="agent" x="270" y="138" width="110" height="36" rx="8"/>
-          <text x="325" y="154" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--svg-fg)">Agent</text>
-          <text x="325" y="167" text-anchor="middle" font-size="10" fill="var(--svg-muted)">ops-weather</text>
+            <rect class="box" data-n="llm" x="270" y="78" width="110" height="36" rx="8"/>
+            <text x="325" y="94" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--svg-fg)">Model /v1</text>
+            <text x="325" y="107" text-anchor="middle" font-size="10" fill="var(--svg-muted)">demo-chat</text>
 
-          <rect class="box" data-n="vault" x="270" y="280" width="110" height="40" rx="8"/>
-          <text x="325" y="297" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--mark)">Token Vault</text>
-          <text x="325" y="311" text-anchor="middle" font-size="10" fill="var(--svg-muted)">inject</text>
+            <rect class="box" data-n="vault" x="270" y="250" width="110" height="40" rx="8"/>
+            <text x="325" y="267" text-anchor="middle" font-size="11.5" font-weight="800" fill="var(--mark)">Token Vault</text>
+            <text x="325" y="281" text-anchor="middle" font-size="10" fill="var(--svg-muted)">inject</text>
 
-          <rect x="420" y="190" width="150" height="154" rx="10" fill="none" stroke="var(--g600)"/>
-          <text x="432" y="206" font-size="10" font-weight="800" fill="var(--svg-muted)" letter-spacing=".04em">MCP</text>
-          <rect class="box" data-n="wx" x="432" y="214" width="126" height="34" rx="7"/>
-          <text x="495" y="235" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">/wx · weather</text>
-          <rect class="box" data-n="gh" x="432" y="256" width="126" height="34" rx="7"/>
-          <text x="495" y="277" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">/gh · get_user</text>
-          <rect class="box" data-n="db" x="432" y="298" width="126" height="34" rx="7"/>
-          <text x="495" y="319" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">/db · query</text>
+            <rect x="420" y="168" width="150" height="122" rx="10" fill="none" stroke="var(--g600)"/>
+            <text x="432" y="184" font-size="10" font-weight="800" fill="var(--svg-muted)" letter-spacing=".04em">MCP</text>
+            <rect class="box" data-n="gh" x="432" y="194" width="126" height="36" rx="7"/>
+            <text x="495" y="216" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">/gh · get_user</text>
+            <rect class="box" data-n="db" x="432" y="240" width="126" height="36" rx="7"/>
+            <text x="495" y="262" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">/db · query</text>
 
-          <rect class="box" data-n="openai" x="600" y="88" width="108" height="36" rx="8"/>
-          <text x="654" y="110" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">OpenAI</text>
-          <rect class="box" data-n="ops" x="600" y="138" width="108" height="36" rx="8"/>
-          <text x="654" y="160" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">Weather Agent</text>
-          <rect class="box" data-n="ow" x="600" y="214" width="108" height="34" rx="7"/>
-          <text x="654" y="235" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">OpenWeather</text>
-          <rect class="box" data-n="ghapi" x="600" y="256" width="108" height="34" rx="7"/>
-          <text x="654" y="277" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">GitHub API</text>
-          <rect class="box" data-n="pg" x="600" y="298" width="108" height="34" rx="7"/>
-          <text x="654" y="319" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">Postgres</text>
+            <rect class="box" data-n="openai" x="600" y="78" width="108" height="36" rx="8"/>
+            <text x="654" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">OpenAI</text>
+            <rect class="box" data-n="ghapi" x="600" y="194" width="108" height="36" rx="7"/>
+            <text x="654" y="216" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">GitHub API</text>
+            <rect class="box" data-n="pg" x="600" y="240" width="108" height="36" rx="7"/>
+            <text x="654" y="262" text-anchor="middle" font-size="11" font-weight="700" fill="var(--svg-fg)">Postgres</text>
 
-          <path class="edge" data-e="alice-oidc" d="M104 137H140V210H150"/>
-          <path class="edge" data-e="bob-oidc" d="M104 297H140V230H150"/>
-          <path class="edge" data-e="deny" d="M150 230H128V300H104"/>
-          <path class="edge" data-e="oidc-idp" d="M196 190V48"/>
-          <path class="edge" data-e="oidc-llm" d="M242 200H258V106H270"/>
-          <path class="edge" data-e="oidc-agent" d="M242 208H262V156H270"/>
-          <path class="edge" data-e="oidc-vault" d="M242 225H258V300H270"/>
-          <path class="edge" data-e="llm-openai" d="M380 106H600"/>
-          <path class="edge" data-e="agent-ops" d="M380 156H600"/>
-          <path class="edge" data-e="ops-wx" d="M640 174V190H495V214"/>
-          <path class="edge" data-e="vault-idp" d="M325 280V250H400V48"/>
-          <path class="edge" data-e="vault-wx" d="M380 290H408V231H432"/>
-          <path class="edge" data-e="vault-gh" d="M380 300H412V273H432"/>
-          <path class="edge" data-e="vault-db" d="M380 310H416V315H432"/>
-          <path class="edge" data-e="wx-ow" d="M558 231H600"/>
-          <path class="edge" data-e="gh-api" d="M558 273H600"/>
-          <path class="edge" data-e="db-pg" d="M558 315H600"/>
-        </svg>
+            <path class="edge" data-e="alice-oidc" d="M102 127H138V188H148"/>
+            <path class="edge" data-e="bob-oidc" d="M102 267H138V208H148"/>
+            <path class="edge" data-e="deny" d="M148 208H126V267H102"/>
+            <path class="edge" data-e="oidc-idp" d="M194 168V42"/>
+            <path class="edge" data-e="oidc-llm" d="M240 178H256V96H270"/>
+            <path class="edge" data-e="oidc-vault" d="M240 203H256V270H270"/>
+            <path class="edge" data-e="llm-openai" d="M380 96H600"/>
+            <path class="edge" data-e="vault-idp" d="M325 250V220H400V42"/>
+            <path class="edge" data-e="vault-gh" d="M380 260H412V212H432"/>
+            <path class="edge" data-e="vault-db" d="M380 280H416V258H432"/>
+            <path class="edge" data-e="gh-api" d="M558 212H600"/>
+            <path class="edge" data-e="db-pg" d="M558 258H600"/>
+            <g id="tv-chips"></g>
+          </svg>
+        </div>
+        <div class="tv-trace" id="tv-trace"><div class="empty">시나리오를 누르면 요청이 Gateway·Vault·MCP를 지나며 결과가 갱신됩니다.</div></div>
       </div>
 
       <div class="tv-cons">
@@ -9443,16 +9434,15 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
               <div class="tv-inj" data-inj="alice">
                 <span data-k="gh">GitHub OAuth</span>
                 <span data-k="db">alice DB role</span>
-                <span data-k="wx">OpenWeather key</span>
               </div>
             </div>
             <div class="tv-blk">
               <h4>AI · Agent 응답</h4>
-              <div class="tv-ans" data-ans="alice"></div>
+              <div class="tv-ans" data-ans="alice"><span class="dim">-</span></div>
             </div>
             <div class="tv-blk">
               <h4>Orders · alice.orders</h4>
-              <div data-orders="alice"></div>
+              <div data-orders="alice"><span class="tv-dim">-</span></div>
             </div>
           </div>
         </div>
@@ -9468,16 +9458,15 @@ return late.length</pre><div class="amc-meter"><span>토큰</span><span class="a
               <div class="tv-inj" data-inj="bob">
                 <span data-k="gh">GitHub OAuth</span>
                 <span data-k="db">bob DB role</span>
-                <span data-k="wx">OpenWeather key</span>
               </div>
             </div>
             <div class="tv-blk">
               <h4>AI · Agent 응답</h4>
-              <div class="tv-ans" data-ans="bob"></div>
+              <div class="tv-ans" data-ans="bob"><span class="dim">-</span></div>
             </div>
             <div class="tv-blk">
               <h4>Orders · bob.orders</h4>
-              <div data-orders="bob"></div>
+              <div data-orders="bob"><span class="tv-dim">-</span></div>
             </div>
           </div>
         </div>
@@ -11318,52 +11307,163 @@ document.querySelectorAll('.amo [data-go]').forEach(g=>{
 /* ---------- Token Vault 데모 목업 ---------- */
 (function(){
   const root=document.getElementById('tv-demo'); if(!root) return;
+  const NS='http://www.w3.org/2000/svg';
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const STEP_MS=reduce?0:480;
+  const EMPTY='<span class="tv-dim">-</span>';
   const ORD={
-    alice:'<table class="tv-tbl"><thead><tr><th>id</th><th>sku</th><th>amount</th></tr></thead><tbody><tr><td>1</td><td><b>SALES-100</b></td><td>120</td></tr><tr><td>2</td><td><b>SALES-200</b></td><td>85</td></tr></tbody></table>',
-    bob:'<table class="tv-tbl"><thead><tr><th>id</th><th>sku</th><th>amount</th></tr></thead><tbody><tr><td>1</td><td><b>FIN-10</b></td><td>940</td></tr><tr><td>2</td><td><b>FIN-20</b></td><td>410</td></tr></tbody></table>',
-    empty:'<span class="dim">이 시나리오에서는 호출하지 않습니다.</span>'
+    alice:'<table class="tv-tbl"><thead><tr><th>ID</th><th>SKU</th><th>Amount</th><th>Note</th></tr></thead><tbody><tr><td>1</td><td><b>SALES-100</b></td><td>1200.00</td><td>Enterprise renewal</td></tr><tr><td>2</td><td><b>SALES-210</b></td><td>450.50</td><td>Upsell — Copilot seats</td></tr></tbody></table>',
+    bob:'<table class="tv-tbl"><thead><tr><th>ID</th><th>SKU</th><th>Amount</th><th>Note</th></tr></thead><tbody><tr><td>1</td><td><b>FIN-900</b></td><td>98000.00</td><td>Quarterly close</td></tr><tr><td>2</td><td><b>FIN-901</b></td><td>1250.00</td><td>Vendor accrual</td></tr></tbody></table>'
   };
+  const CHIP={
+    client:{alice:{x:8,y:152,w:100},bob:{x:8,y:292,w:100}},
+    oidc:{x:148,y:218,w:100},
+    llm:{x:390,y:70,w:150},
+    openai:{x:600,y:60,w:110},
+    vault:{x:270,y:300,w:110},
+    mcpGh:{x:432,y:170,w:120},
+    mcpDb:{x:432,y:286,w:120},
+    upGh:{x:600,y:170,w:110},
+    upDb:{x:600,y:286,w:110}
+  };
+  let timers=[];
   const SC={
-    'alice-gh':{who:'alice',nodes:['alice','oidc','idp','llm','openai','vault','gh','ghapi'],edges:['alice-oidc','oidc-idp','oidc-llm','llm-openai','oidc-vault','vault-idp','vault-gh','gh-api'],inj:{alice:['gh'],bob:[]},ans:{alice:'GitHub login alice-demo · Vault가 OAuth 토큰을 /gh에 주입합니다.',bob:'대기 · Alice 시나리오입니다.'},orders:{alice:'empty',bob:'empty'}},
-    'alice-db':{who:'alice',nodes:['alice','oidc','idp','llm','openai','vault','db','pg'],edges:['alice-oidc','oidc-idp','oidc-llm','llm-openai','oidc-vault','vault-idp','vault-db','db-pg'],inj:{alice:['db'],bob:[]},ans:{alice:'Postgres tool_call → alice.orders · Vault가 alice DB role을 주입합니다.',bob:'대기 · Alice 시나리오입니다.'},orders:{alice:'alice',bob:'empty'}},
-    'alice-wx':{who:'alice',nodes:['alice','oidc','idp','llm','openai','vault','wx','ow'],edges:['alice-oidc','oidc-idp','oidc-llm','llm-openai','oidc-vault','vault-idp','vault-wx','wx-ow'],inj:{alice:['wx'],bob:[]},ans:{alice:'Seoul · 맑음 18°C · 공유 OpenWeather 키를 Vault가 /wx에 붙입니다.',bob:'대기 · Alice 시나리오입니다.'},orders:{alice:'empty',bob:'empty'}},
-    'alice-agent':{who:'alice',nodes:['alice','oidc','idp','agent','ops','vault','wx','ow'],edges:['alice-oidc','oidc-idp','oidc-agent','agent-ops','ops-wx','oidc-vault','vault-idp','vault-wx','wx-ow'],inj:{alice:['wx'],bob:[]},ans:{alice:'Agent ops-weather → Kong MCP /wx · 컨테이너에는 API 키가 없습니다.',bob:'대기 · Alice 시나리오입니다.'},orders:{alice:'empty',bob:'empty'}},
-    'bob-gh':{who:'bob',deny:1,nodes:['bob','oidc','idp'],edges:['bob-oidc','oidc-idp','deny'],inj:{alice:[],bob:['gh']},ans:{alice:'대기 · Bob 시나리오입니다.',bob:'거부 · client에 github-access scope가 없어 /gh가 막힙니다.'},orders:{alice:'empty',bob:'empty'}},
-    'bob-db':{who:'bob',nodes:['bob','oidc','idp','llm','openai','vault','db','pg'],edges:['bob-oidc','oidc-idp','oidc-llm','llm-openai','oidc-vault','vault-idp','vault-db','db-pg'],inj:{alice:[],bob:['db']},ans:{alice:'대기 · Bob 시나리오입니다.',bob:'Postgres tool_call → bob.orders · Vault가 bob DB role을 주입합니다.'},orders:{alice:'empty',bob:'bob'}}
+    'alice-gh':{
+      who:'alice',title:'Ask AI · GitHub',
+      inj:{alice:['gh'],bob:[]},
+      ans:{alice:'Login: <b>Great-Stone</b> · Name: GS Lee · ID: 15207645',bob:'-'},
+      orders:{alice:'empty',bob:'empty'},
+      steps:[
+        {edges:['alice-oidc','oidc-idp'],nodes:['alice','oidc','idp'],chips:[{pos:CHIP.client.alice,t:'→ /v1 chat · JWT'},{pos:CHIP.oidc,t:'OIDC ✓ JWT'}],html:'alice → AI GW <code>POST /v1/chat/completions</code> · model=demo-chat · tools=get_user'},
+        {edges:['oidc-llm','llm-openai'],nodes:['llm','openai'],chips:[{pos:CHIP.llm,t:'→ Who am I on GitHub?'},{pos:CHIP.openai,t:'← tool_calls: get_user'}],html:'Model /v1 → OpenAI · prompt Who am I on GitHub? · ← tool_calls'},
+        {edges:['oidc-vault','vault-idp','vault-gh','gh-api'],nodes:['vault','gh','ghapi'],chips:[{pos:CHIP.vault,t:'← gho_***'},{pos:CHIP.mcpGh,t:'→ GET /user'},{pos:CHIP.upGh,t:'← Great-Stone'}],html:'alice → <code>/gh</code> get_user · Vault OAuth gho_*** → GitHub · login=Great-Stone'},
+        {edges:['llm-openai'],nodes:['llm','openai','alice'],chips:[{pos:CHIP.openai,t:'← final answer'},{pos:CHIP.client.alice,t:'← Great-Stone'}],html:'tool 결과 → OpenAI → Login Great-Stone · Name GS Lee · ID 15207645'}
+      ]
+    },
+    'alice-db':{
+      who:'alice',title:'Ask AI · Postgres',
+      inj:{alice:['db'],bob:[]},
+      ans:{alice:'SALES-100 $1200.00 · SALES-210 $450.50 · 2 rows from alice.orders',bob:'-'},
+      orders:{alice:'alice',bob:'empty'},
+      steps:[
+        {edges:['alice-oidc','oidc-idp'],nodes:['alice','oidc','idp'],chips:[{pos:CHIP.client.alice,t:'→ /v1 chat · JWT'},{pos:CHIP.oidc,t:'OIDC ✓ JWT'}],html:'alice → AI GW <code>POST /v1/chat/completions</code> · tools=query'},
+        {edges:['oidc-llm','llm-openai'],nodes:['llm','openai'],chips:[{pos:CHIP.llm,t:'→ List Alice sales orders'},{pos:CHIP.openai,t:'← tool_calls: query'}],html:'Model /v1 → OpenAI · ← tool_calls query'},
+        {edges:['oidc-vault','vault-idp','vault-db','db-pg'],nodes:['vault','db','pg'],chips:[{pos:CHIP.vault,t:'← alice:***'},{pos:CHIP.mcpDb,t:'→ SELECT … alice.orders'},{pos:CHIP.upDb,t:'← 2 rows'}],html:'alice → <code>/db</code> query · Vault alice:*** · SELECT … FROM alice.orders · 2 rows'},
+        {edges:['llm-openai'],nodes:['llm','openai','alice'],chips:[{pos:CHIP.openai,t:'← final answer'},{pos:CHIP.client.alice,t:'← SALES-100 · 210'}],html:'tool 결과 → OpenAI → SALES-100 $1200 · SALES-210 $450.50'}
+      ]
+    },
+    'bob-gh':{
+      who:'bob',title:'Ask AI · GitHub',deny:1,
+      inj:{alice:[],bob:['gh']},
+      ans:{alice:'-',bob:'Access denied · token has db-access only · HTTP 403'},
+      orders:{alice:'empty',bob:'empty'},
+      steps:[
+        {edges:['bob-oidc','oidc-idp'],nodes:['bob','oidc','idp'],chips:[{pos:CHIP.client.bob,t:'→ /v1 chat · JWT'},{pos:CHIP.oidc,t:'OIDC ✓ JWT'}],html:'bob → AI GW <code>POST /v1/chat/completions</code> · tools=get_user'},
+        {edges:['oidc-llm','llm-openai'],nodes:['llm','openai'],chips:[{pos:CHIP.llm,t:'→ Who am I on GitHub?'},{pos:CHIP.openai,t:'← tool_calls: get_user'}],html:'Model /v1 → OpenAI · ← tool_calls'},
+        {edges:['deny'],nodes:['oidc','bob'],deny:1,chips:[{pos:CHIP.oidc,t:'← 403 no github-access',deny:1},{pos:CHIP.client.bob,t:'← tool: 403',deny:1}],html:'bob → <code>/gh</code> get_user DENIED · scopes_required=github-access (token has db-access only)'},
+        {edges:['llm-openai'],nodes:['llm','openai','bob'],chips:[{pos:CHIP.openai,t:'← denied'},{pos:CHIP.client.bob,t:'← db-access only'}],html:'tool 결과 → OpenAI → Access denied · db-access only'}
+      ]
+    },
+    'bob-db':{
+      who:'bob',title:'Ask AI · Postgres',
+      inj:{alice:[],bob:['db']},
+      ans:{alice:'-',bob:'FIN-900 $98000.00 · FIN-901 $1250.00 · 2 rows from bob.orders'},
+      orders:{alice:'empty',bob:'bob'},
+      steps:[
+        {edges:['bob-oidc','oidc-idp'],nodes:['bob','oidc','idp'],chips:[{pos:CHIP.client.bob,t:'→ /v1 chat · JWT'},{pos:CHIP.oidc,t:'OIDC ✓ JWT'}],html:'bob → AI GW <code>POST /v1/chat/completions</code> · tools=query'},
+        {edges:['oidc-llm','llm-openai'],nodes:['llm','openai'],chips:[{pos:CHIP.llm,t:'→ List Bob finance orders'},{pos:CHIP.openai,t:'← tool_calls: query'}],html:'Model /v1 → OpenAI · ← tool_calls query'},
+        {edges:['oidc-vault','vault-idp','vault-db','db-pg'],nodes:['vault','db','pg'],chips:[{pos:CHIP.vault,t:'← bob:***'},{pos:CHIP.mcpDb,t:'→ SELECT … bob.orders'},{pos:CHIP.upDb,t:'← 2 rows'}],html:'bob → <code>/db</code> query · Vault bob:*** · SELECT … FROM bob.orders · 2 rows'},
+        {edges:['llm-openai'],nodes:['llm','openai','bob'],chips:[{pos:CHIP.openai,t:'← final answer'},{pos:CHIP.client.bob,t:'← FIN-900 · 901'}],html:'tool 결과 → OpenAI → FIN-900 $98000 · FIN-901 $1250'}
+      ]
+    }
   };
-  function paint(id){
-    const s=SC[id]; if(!s) return;
-    root.dataset.sc=id;
-    root.querySelectorAll('.tv-sc [data-sc]').forEach(b=>b.classList.toggle('on',b.dataset.sc===id));
-    root.querySelectorAll('.tv-dia [data-n]').forEach(el=>{
-      const on=s.nodes.indexOf(el.dataset.n)>=0;
-      el.classList.toggle('on',on);
-      el.classList.toggle('deny',!!(on&&s.deny&&(el.dataset.n==='bob'||el.dataset.n==='oidc')));
-    });
-    root.querySelectorAll('.tv-dia [data-e]').forEach(el=>{
-      const on=s.edges.indexOf(el.dataset.e)>=0;
-      el.classList.toggle('on',on);
-      el.classList.toggle('deny',!!(on&&el.dataset.e==='deny'));
-    });
+
+  function clearChips(){
+    const layer=document.getElementById('tv-chips');
+    if(layer) while(layer.firstChild) layer.removeChild(layer.firstChild);
+  }
+  function addChip(pos,text,deny){
+    const layer=document.getElementById('tv-chips'); if(!layer||!pos) return null;
+    const g=document.createElementNS(NS,'g');
+    g.setAttribute('class','chip'+(deny?' deny':''));
+    const w=pos.w||110, h=14;
+    const rect=document.createElementNS(NS,'rect');
+    rect.setAttribute('x',pos.x); rect.setAttribute('y',pos.y);
+    rect.setAttribute('width',w); rect.setAttribute('height',h); rect.setAttribute('rx','3');
+    const t=document.createElementNS(NS,'text');
+    t.setAttribute('x',pos.x+4); t.setAttribute('y',pos.y+10);
+    const raw=String(text||'');
+    t.textContent=raw.length>Math.floor((w-8)/5.1)?raw.slice(0,Math.floor((w-8)/5.1)-1)+'…':raw;
+    g.appendChild(rect); g.appendChild(t); layer.appendChild(g);
+    return g;
+  }
+  function resetMarks(){
+    root.querySelectorAll('.tv-dia [data-n], .tv-dia [data-e]').forEach(el=>el.classList.remove('on','deny'));
+    clearChips();
+  }
+  function applyResult(s){
     ['alice','bob'].forEach(who=>{
       const card=root.querySelector('.tv-card.'+who);
       if(card) card.classList.toggle('dim',s.who!==who);
       root.querySelectorAll('[data-inj="'+who+'"] [data-k]').forEach(chip=>{
         const hit=(s.inj[who]||[]).indexOf(chip.dataset.k)>=0;
         chip.classList.toggle('on',hit&&!s.deny);
-        chip.classList.toggle('deny',hit&&!!s.deny&&chip.dataset.k==='gh');
+        chip.classList.toggle('deny',!!(hit&&s.deny&&chip.dataset.k==='gh'));
       });
       const ans=root.querySelector('[data-ans="'+who+'"]');
-      if(ans){ ans.innerHTML=s.ans[who]||''; ans.classList.toggle('deny',!!(s.deny&&who==='bob')); }
+      if(ans){
+        const v=s.ans[who];
+        ans.innerHTML=(!v||v==='-')?EMPTY:v;
+        ans.classList.toggle('deny',!!(s.deny&&who===s.who));
+      }
       const ord=root.querySelector('[data-orders="'+who+'"]');
-      if(ord){ const k=s.orders[who]; ord.innerHTML=k==='alice'?ORD.alice:k==='bob'?ORD.bob:ORD.empty; }
+      if(ord){
+        const k=s.orders[who];
+        ord.innerHTML=k==='alice'?ORD.alice:k==='bob'?ORD.bob:EMPTY;
+      }
     });
+  }
+  function play(id){
+    const s=SC[id]; if(!s) return;
+    timers.forEach(clearTimeout); timers=[];
+    root.dataset.sc=id;
+    root.querySelectorAll('.tv-sc [data-sc]').forEach(b=>b.classList.toggle('on',b.dataset.sc===id));
+    resetMarks();
+    ['alice','bob'].forEach(who=>{
+      root.querySelectorAll('[data-inj="'+who+'"] [data-k]').forEach(c=>c.classList.remove('on','deny'));
+      const ans=root.querySelector('[data-ans="'+who+'"]'); if(ans){ ans.innerHTML=EMPTY; ans.classList.remove('deny'); }
+      const ord=root.querySelector('[data-orders="'+who+'"]'); if(ord) ord.innerHTML=EMPTY;
+      const card=root.querySelector('.tv-card.'+who); if(card) card.classList.toggle('dim',s.who!==who);
+    });
+    const trace=document.getElementById('tv-trace');
+    trace.innerHTML='<h4><span class="'+s.who+'">'+(s.who==='alice'?'Alice':'Bob')+'</span> · '+s.title+'</h4><ol>'+
+      s.steps.map(st=>'<li class="'+(st.deny?'deny':'')+'">'+st.html+'</li>').join('')+'</ol>';
+    const items=trace.querySelectorAll('li');
+    s.steps.forEach((st,i)=>{
+      timers.push(setTimeout(()=>{
+        (st.edges||[]).forEach(e=>{
+          const el=root.querySelector('.tv-dia [data-e="'+e+'"]');
+          if(el){ el.classList.add('on'); if(st.deny||e==='deny') el.classList.add('deny'); }
+        });
+        (st.nodes||[]).forEach(n=>{
+          const el=root.querySelector('.tv-dia [data-n="'+n+'"]');
+          if(el){ el.classList.add('on'); if(st.deny&&(n===s.who||n==='oidc')) el.classList.add('deny'); }
+        });
+        (st.chips||[]).forEach(c=>{
+          const g=addChip(c.pos,c.t,c.deny||st.deny);
+          if(g) requestAnimationFrame(()=>g.classList.add('on'));
+        });
+        if(items[i]) items[i].classList.add('on');
+        if(i===s.steps.length-1) applyResult(s);
+      },i*STEP_MS));
+    });
+    if(!s.steps.length) applyResult(s);
   }
   root.querySelector('.tv-sc')?.addEventListener('click',e=>{
     const b=e.target.closest('[data-sc]'); if(!b) return;
-    paint(b.dataset.sc);
+    play(b.dataset.sc);
   });
-  paint(root.dataset.sc||'alice-gh');
+  play(root.dataset.sc||'alice-gh');
 })();
 /* ---------- AI Cost Budgets · Channel → Slack(80%) / Email(100%) 1회 ---------- */
 (function(){

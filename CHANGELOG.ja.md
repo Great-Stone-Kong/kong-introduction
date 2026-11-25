@@ -5,6 +5,12 @@
 
 ---
 
+## temp
+
+### 変更
+
+- AI > Access Management > Token Vault : デモ モックアップを Alice/Bob × GitHub/Postgres の 4 シナリオ · クリック流れアニメに整理
+
 ## 2026.11.23.6b044230
 
 ### 追加

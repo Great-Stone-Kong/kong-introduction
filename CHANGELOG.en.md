@@ -5,6 +5,12 @@
 
 ---
 
+## temp
+
+### Changed
+
+- AI > Access Management > Token Vault: Refine demo mockup to Alice/Bob × GitHub/Postgres with click-through flow animation
+
 ## 2026.11.23.6b044230
 
 ### Added

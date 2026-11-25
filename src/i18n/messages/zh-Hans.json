@@ -6985,5 +6985,12 @@
   "m.003af34f9395": "Agent ops-weather → Kong MCP /wx · 容器没有 API 密钥。",
   "m.8e817338e8d6": "拒绝 · client 没有 github-access scope，因此 /gh 被拦截。",
   "m.bfe41696ff00": "Postgres tool_call → bob.orders · Vault 注入 bob DB role。",
-  "m.01c5a795986b": "OAuth · DB role · OpenWeather"
+  "m.01c5a795986b": "OAuth · DB role · OpenWeather",
+  "m.65e78ca7dcf0": "Alice（Sales）·Bob（Finance）调用 GitHub·Postgres MCP 的 Token Vault 演示。Agent·LLM 不持有原始密钥，由 Gateway 从 Vault 注入。点击场景可看到请求经 Gateway·Vault·MCP 并更新结果。",
+  "m.27e0a78ce6a0": "点击场景可看到请求经 Gateway·Vault·MCP 并更新结果。",
+  "m.951c9c2809c3": "Alice、Bob 经 Kong AI Gateway 与 Token Vault 调用 GitHub·Postgres MCP 的演示拓扑",
+  "m.8422b47884cb": "tool 结果 → OpenAI → Login Great-Stone · Name GS Lee · ID 15207645",
+  "m.03032177c6e8": "tool 结果 → OpenAI → SALES-100 $1200 · SALES-210 $450.50",
+  "m.d4178e238d50": "tool 结果 → OpenAI → Access denied · db-access only",
+  "m.1508045bc9c6": "tool 结果 → OpenAI → FIN-900 $98000 · FIN-901 $1250"
 }

@@ -6985,5 +6985,12 @@
   "m.003af34f9395": "Agent ops-weather → Kong MCP /wx · 컨테이너에는 API 키가 없습니다.",
   "m.8e817338e8d6": "거부 · client에 github-access scope가 없어 /gh가 막힙니다.",
   "m.bfe41696ff00": "Postgres tool_call → bob.orders · Vault가 bob DB role을 주입합니다.",
-  "m.01c5a795986b": "OAuth · DB role · OpenWeather"
+  "m.01c5a795986b": "OAuth · DB role · OpenWeather",
+  "m.65e78ca7dcf0": "Alice(Sales)·Bob(Finance)가 GitHub·Postgres MCP를 호출하는 Token Vault 데모입니다. Agent·LLM에는 원본 키가 없고, Gateway가 Vault에서 주입합니다. 시나리오를 누르면 요청이 Gateway·Vault·MCP를 지나며 결과가 갱신됩니다.",
+  "m.27e0a78ce6a0": "시나리오를 누르면 요청이 Gateway·Vault·MCP를 지나며 결과가 갱신됩니다.",
+  "m.951c9c2809c3": "Alice Bob이 Kong AI Gateway와 Token Vault를 거쳐 GitHub·Postgres MCP를 호출하는 데모 구성",
+  "m.8422b47884cb": "tool 결과 → OpenAI → Login Great-Stone · Name GS Lee · ID 15207645",
+  "m.03032177c6e8": "tool 결과 → OpenAI → SALES-100 $1200 · SALES-210 $450.50",
+  "m.d4178e238d50": "tool 결과 → OpenAI → Access denied · db-access only",
+  "m.1508045bc9c6": "tool 결과 → OpenAI → FIN-900 $98000 · FIN-901 $1250"
 }

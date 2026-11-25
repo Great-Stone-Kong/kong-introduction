@@ -5,6 +5,12 @@
 
 ---
 
+## temp
+
+### 变更
+
+- AI > Access Management > Token Vault：演示样机调整为 Alice/Bob × GitHub/Postgres 四场景 · 点击流程动画
+
 ## 2026.11.23.6b044230
 
 ### 添加

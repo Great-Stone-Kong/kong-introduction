@@ -6985,5 +6985,12 @@
   "m.003af34f9395": "Agent ops-weather → Kong MCP /wx · the container holds no API key.",
   "m.8e817338e8d6": "Denied · the client lacks github-access scope, so /gh is blocked.",
   "m.bfe41696ff00": "Postgres tool_call → bob.orders · Vault injects the bob DB role.",
-  "m.01c5a795986b": "OAuth · DB role · OpenWeather"
+  "m.01c5a795986b": "OAuth · DB role · OpenWeather",
+  "m.65e78ca7dcf0": "Token Vault demo: Alice (Sales) and Bob (Finance) call GitHub and Postgres MCP. Agents and LLMs hold no raw keys — the Gateway injects them from the Vault. Click a scenario to watch the request move through Gateway · Vault · MCP and update the results.",
+  "m.27e0a78ce6a0": "Click a scenario to watch the request move through Gateway · Vault · MCP and update the results.",
+  "m.951c9c2809c3": "Demo topology: Alice and Bob call GitHub and Postgres MCP through Kong AI Gateway and Token Vault",
+  "m.8422b47884cb": "tool result → OpenAI → Login Great-Stone · Name GS Lee · ID 15207645",
+  "m.03032177c6e8": "tool result → OpenAI → SALES-100 $1200 · SALES-210 $450.50",
+  "m.d4178e238d50": "tool result → OpenAI → Access denied · db-access only",
+  "m.1508045bc9c6": "tool result → OpenAI → FIN-900 $98000 · FIN-901 $1250"
 }
