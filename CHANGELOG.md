@@ -7,12 +7,19 @@
 
 ## temp
 
+### 추가
+
+- AI > Access Management > Token Vault : 데모 추가
+
 ### 변경
 
 - AI Gateway > 경쟁 제품 비교 : Endpoint DLP를 마지막 탭으로 재 추가
-- AI > Access Management > Token Vault : 데모 목업을 Alice/Bob × GitHub/Postgres 4시나리오 · 클릭 흐름 애니메이션으로 정리
-- AI > Access Management > Token Vault : GitHub 응답을 alice ID로 표기 · 단계 원형 숫자 · 활성 흐름 점선 애니메이션
-- AI > Access Management > Token Vault : 로드 시 대기 상태 · Orders 높이 고정 · 다이어그램 세로 간격 확대
+- 인프라 구성 > 권장 사이징 > AI Gateway : 티어(S/M/L/XL) 기준으로 통일, 구성 예·Redis 산정을 티어 선택에 연동
+
+### 삭제
+
+- AI > Access Management > Token Vault : 요청 흐름, 자격 증명 유형, 구성 절차, 선택 기준, 활용 내용
+- 인프라 구성 > 권장 사이징 > AI Gateway : 도입 단계별 기준표(티어와 이중 기준)
 
 ## 2026.11.23.6b044230
 
