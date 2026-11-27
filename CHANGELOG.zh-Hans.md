@@ -5,12 +5,21 @@
 
 ---
 
-## temp
+## 2026.11.27.6b091356
+
+### 添加
+
+- AI > Access Management > Token Vault：演示
 
 ### 变更
 
-- AI > Access Management > Token Vault：演示样机调整为 Alice/Bob × GitHub/Postgres 四场景 · 点击流程动画
-- AI > Access Management > Token Vault：GitHub 响应改为 alice ID · 步骤圆形编号 · 激活流程虚线动画
+- AI Gateway > 竞品比较：重新加入 Endpoint DLP 作为最后一个标签页
+- 基础设施 > 建议规格 > AI Gateway：统一以层级(S/M/L/XL)为准,配置示例 · Redis 测算随层级选择联动
+
+### 删除
+
+- AI > Access Management > Token Vault：请求流程、凭证类型、配置步骤、选择标准、活用
+- 基础设施 > 建议规格 > AI Gateway：导入阶段基准表(与层级重复的标准)
 
 ## 2026.11.23.6b044230
 

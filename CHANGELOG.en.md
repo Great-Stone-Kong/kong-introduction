@@ -5,12 +5,21 @@
 
 ---
 
-## temp
+## 2026.11.27.6b091356
+
+### Added
+
+- AI > Access Management > Token Vault: Demo
 
 ### Changed
 
-- AI > Access Management > Token Vault: Refine demo mockup to Alice/Bob × GitHub/Postgres with click-through flow animation
-- AI > Access Management > Token Vault: Show alice GitHub identity, circular step tags, and animated dashed active edges
+- AI Gateway > Competitive comparison: Re-add Endpoint DLP as the last tab
+- Infrastructure > Recommended sizing > AI Gateway: Unify on tiers (S/M/L/XL); example layout and Redis sizing follow the tier selection
+
+### Removed
+
+- AI > Access Management > Token Vault: Request flow, credential types, setup steps, selection criteria, usage
+- Infrastructure > Recommended sizing > AI Gateway: Adoption-stage table (duplicate criteria alongside tiers)
 
 ## 2026.11.23.6b044230
 

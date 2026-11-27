@@ -5,12 +5,21 @@
 
 ---
 
-## temp
+## 2026.11.27.6b091356
+
+### 追加
+
+- AI > Access Management > Token Vault : デモ
 
 ### 変更
 
-- AI > Access Management > Token Vault : デモ モックアップを Alice/Bob × GitHub/Postgres の 4 シナリオ · クリック流れアニメに整理
-- AI > Access Management > Token Vault : GitHub 応答を alice ID 表示 · 段階の円形番号 · 活性フロー点線アニメ
+- AI Gateway > 競合比較 : Endpoint DLP を最後のタブとして再追加
+- インフラ構成 > 推奨サイジング > AI Gateway : ティア(S/M/L/XL)基準に統一、構成例 · Redis 算定をティア選択に連動
+
+### 削除
+
+- AI > Access Management > Token Vault : リクエストフロー、資格情報タイプ、構成手順、選択基準、活用
+- インフラ構成 > 推奨サイジング > AI Gateway : 導入段階別基準表(ティアとの二重基準)
 
 ## 2026.11.23.6b044230
 
